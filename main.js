@@ -1,10 +1,10 @@
 
-var appchatserver = require('express')(); // chat room gui
-var http = require('http').Server(appchatserver);
+var appmsgserver = require('express')(); // msg room gui
+var http = require('http').Server(appmsgserver);
 var io = require('socket.io')(http);
 
-appchatserver.get('/', function(req, res) {
-   res.sendfile('index-chatroom.html');
+appmsgserver.get('/', function(req, res) {
+   res.sendfile('index-msg.html');
 });
 
 users = [];
