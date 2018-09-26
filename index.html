@@ -80,13 +80,13 @@
                                 </div>
                                 <div id="collapse3-left" class="panel-collapse collapse">
                                     <div class="panel-body">Ex iusturn ut sed Eum, vel Parata victoris, purus te proper quo class, si sit secuti christi non sinistris.</div>
-                                    <p><button class="btnToggleChat">Toggle Chat</button></p>
+                                    <p><button class="btnToggleMsg">Toggle msg</button></p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <button class="btnToggleChat">Toggle Chat</button>
+                    <button class="btnToggleMsg">Toggle msg</button>
 
                 </div>
                 <!-- modal-content -->
@@ -148,9 +148,9 @@
             <!-- modal-dialog -->
         </div>
 
-        <!-- chat modal -->
-        <button class="btnToggleChat">Toggle Chat</button>
-        <div id="myChatObject" class="chatShow container chatPosition"></div>
+        <!-- msg modal -->
+        <button class="btnToggleMsg">Toggle msg</button>
+        <div id="myMsgObject" class="msgShow container msgPosition"></div>
         
     </div>
     <!-- container -->
@@ -168,10 +168,10 @@
     <script type="text/javascript">
         
         $(document).ready(function(){
-            $( ".btnToggleChat" ).click(function() {
-                $("#myChatObject").toggleClass( "chatShow" );
+            $( ".btnToggleMsg" ).click(function() {
+                $("#myMsgObject").toggleClass( "msgShow" );
             });
-            $("#myChatObject").html('<object width="100%" data="http://localhost:3000/"/>');
+            $("#myMsgObject").html('<object width="100%" data="http://localhost:3000/"/>');
         });
     </script>
 
