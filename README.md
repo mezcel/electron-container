@@ -1,2 +1,11 @@
 # electron-container
-electron and socket io
+
+Playing with Node
+
+Messing with ElectronJs and Socket.io.
+
+No Mongo
+
+This app does nothing.
+
+I just wanted to have a skeleton to pick at.
