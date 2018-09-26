@@ -1,7 +1,7 @@
 {
   "name": "electron-container",
   "version": "1.0.0",
-  "description": "bootstrap modal and chat",
+  "description": "bootstrap modal and msg",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
