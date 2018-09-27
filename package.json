@@ -1,26 +1,26 @@
 {
-  "name": "electron-container",
-  "version": "1.0.0",
-  "description": "bootstrap modal and msg",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "repository": "https://github.com/mezcel/electron-container",
-  "keywords": [
-    "Electron",
-    "socket.io"
-  ],
-  "author": "mezcel",
-  "license": "idk-licence",
-  "devDependencies": {
-    "electron": "^2.0.0"
-  },
-  "dependencies": {
-    "bootstrap3": "^3.3.5",
-    "express": "^4.16.3",
-    "jquery": "^3.3.1",
-    "popper.js": "^1.14.4",
-    "socket.io": "^2.1.1"
-  }
+    "name": "electron-container",
+    "version": "1.0.0",
+    "description": "bootstrap modal and msg",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "repository": "https://github.com/mezcel/electron-container",
+    "keywords": [
+        "Electron",
+        "socket.io"
+    ],
+    "author": "mezcel",
+    "license": "idk-licence",
+    "devDependencies": {
+        "electron": "^2.0.0"
+    },
+    "dependencies": {
+        "bootstrap3": "^3.3.5",
+        "express": "^4.16.3",
+        "jquery": "^3.3.1",
+        "popper.js": "^1.14.4",
+        "socket.io": "^2.1.1"
+    }
 }

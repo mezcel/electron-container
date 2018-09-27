@@ -1,48 +1,65 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <title>Hello world</title>
-      <style>
 
-      </style>
-   </head>
+<head>
+    <title>Hello world</title>
+    <style>
+        .msgLog {
+            overflow-y: auto;
+            height: 100px;
+        }
+    </style>
+</head>
 
-   <script src = "/socket.io/socket.io.js"></script> 
-   <script>
-      var socket = io();
-      function setUsername() {
-         socket.emit('setUsername', document.getElementById('name').value);
-      };
-      var user;
-      socket.on('userExists', function(data) {
-         document.getElementById('error-container').innerHTML = data;
-      });
-      socket.on('userSet', function(data) {
-         user = data.username;
-         document.body.innerHTML = '<input type = "text" id = "message">\
-         <button type = "button" name = "button" onclick = "sendMessage()">Send Message</button>\
-         <div id = "message-container"> \
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \
-            </div>';
-      });
+<script src="/socket.io/socket.io.js"></script>
 
-      function sendMessage() {
-         var msg = document.getElementById('message').value;
-         if(msg) {
-            socket.emit('msg', {message: msg, user: user});
-         }
-      }
-      socket.on('newmsg', function(data) {
-         if(user) {
-            document.getElementById('message-container').innerHTML += '<div><b>' +
-               data.user + '</b>: ' + data.message + '</div>'
-         }
-      })
-   </script>
+<script>
+    var socket = io();
 
-   <body>
-      <div id = "error-container"></div>
-      <input id = "name" type = "text" name = "name" value = "" placeholder = "Enter a chat user name!">
-      <button type = "button" name = "button" onclick = "setUsername()"> Enter User Name </button>
-   </body>
+    /* user */
+    function setUsername() {
+        socket.emit('setUsername', document.getElementById('name').value);
+    };
+    var user, color;
+    socket.on('userExists', function(data) {
+        document.getElementById('error-container').innerHTML = data;
+    });
+
+    socket.on('userSet', function(data) {
+        user = data.username;
+        color = data.colorname;
+
+        document.body.innerHTML =
+            '\
+            <input type = "text" id = "message"><button type = "button" name = "button" onclick = "sendMessage()">Send Message</button> \
+            <div id = "message-container" class="msgLog"><i style="color: ' + color +
+            '">*** ' + user + ' joined msg room *** </i></div> ';
+    });
+
+    /* message */
+    function sendMessage() {
+        var msg = document.getElementById('message').value;
+        if (msg) {
+            socket.emit('msg', {
+                message: msg,
+                user: user,
+                color: color
+            });
+        }
+    }
+
+    socket.on('newmsg', function(data) {
+        if (user) {
+            document.getElementById('message-container').innerHTML = '<div><b style="color: ' + data.color + '">' + data.user + '</b>: ' + data.message + '</div>' + document.getElementById('message-container').innerHTML
+        }
+    })
+</script>
+
+
+<body>
+    <div id="error-container"></div>
+    <input id="name" type="text" name="name" value="" placeholder="Enter a chat user name!">
+    <button type="button" name="button" onclick="setUsername()"> Enter User Name </button>
+</body>
+
 </html>
