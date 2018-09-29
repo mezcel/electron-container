@@ -98,36 +98,36 @@ function createWindow() {
         {
             label: 'Menu',
             submenu: [{
-                    label: 'Browser App',
+                    label: 'Web Browser Standalone Instance',
                     click() {
                         shell.openExternal('http://localhost:7777/')
                     }
                 },
                 {
-                    label: 'Exit',
+                    label: 'Quit Electron',
                     click() {
                         app.quit()
                     }
                 }]
         },
         {
-            label: 'Msg',
+            label: 'Messaging',
             submenu: [
                 {
-                    label: 'Show',
+                    label: 'Show Electron Messenger',
                     click() {
                         childWindow.maximize();
                     }
                 },
                 {
-                    label: 'Hide',
+                    label: 'Hide Electron Messenger',
                     click() {
                         childWindow.minimize();
                     }
                 },
                 {type:'separator'},
                 {
-                    label: 'Browser Msg',
+                    label: 'WebBrowser Express Messaging',
                     click() {
                         shell.openExternal('http://localhost:3000/');
                     }
@@ -145,13 +145,13 @@ function createWindow() {
                 },
                 {type:'separator'},
                 {
-                    label: 'Mod/Debug - BrowserWindow',
+                    label: 'Wiki: Mod/Debug - BrowserWindow',
                     click() {
                         shell.openExternal('https://electronjs.org/docs/api/browser-window')
                     }
                 },
                 {
-                    label: 'Mod/Debug - Menu',
+                    label: 'Wiki: Mod/Debug - Menu',
                     click() {
                         shell.openExternal('https://electronjs.org/docs/api/menu')
                     }
