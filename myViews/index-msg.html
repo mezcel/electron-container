@@ -19,23 +19,23 @@
 
         /* log user */
         function setUsername() {
-            socket.emit('setUsername', document.getElementById('name').value);
+            socket.emit('setUsername', document.getElementById('myName').value);
         };
 
-        /* log message */
-        function sendMessage() {
-            var msg = document.getElementById('message').value;
+        /* log myMessage */
+        function sendmyMessage() {
+            var msg = document.getElementById('myMessage').value;
 
             if (msg) {
                 socket.emit('msg', {
-                    message: msg,
+                    myMessage: msg,
                     user: user,
                     usercolor: usercolor
                 });
             }
 
-            document.getElementById('message').value = "";
-            document.getElementById("message").focus();
+            document.getElementById('myMessage').value = "";
+            document.getElementById("myMessage").focus();
         };
 
         /* Socket IO */
@@ -47,30 +47,26 @@
             user = data.username;
             usercolor = data.colorname;
             
-            var myhtmlString='<input id="btnMsgInput" type="button" name="button" value="Send Msg" style="float: right" onclick="sendMessage()"/>\
+            var myhtmlString='<input id="btnMsgInput" type="button" name="button" value="Send Msg" style="float: right" onclick="sendmyMessage();"/>\
                 <div style="overflow: hidden; padding-right: .5em;">\
-                   <input id="message" type="text" name="message" value="" placeholder="Enter a message" type="text" style="width: 100%;"/>\
+                   <input id="myMessage" type="text" name="myMessage" value="" placeholder="Enter a myMessage" type="text" style="width: 100%;"/>\
                 </div>\
                 <hr>\
-                <div id="message-container" class="msgLog"></div>';
+                <div id="myMessage-container" class="msgLog"></div>';
             
-            var myscriptString = '<script> var inputTextEventMsg = document.getElementById("message"); inputTextEventMsg.autofocus;';
-                myscriptString +='document.getElementById("name").removeEventListener("mousemove", myFunction); document.getElementById("message").addEventListener("keyup", function(event) { if (event.keyCode == 13) {sendMessage(); } }); <'+'/script>' ;
-
-            document.body.innerHTML = myhtmlString + myscriptString;
+            document.body.innerHTML = myhtmlString;
             
-            document.getElementById("message").value = '<i style="color: ' + usercolor + '">*** ' + user + ' joined the msg room ***</i>';
-            sendMessage();
-            
-
+            document.getElementById("myMessage").value = '<i style="color: ' + usercolor + '">*** ' + user + ' joined the msg room ***</i>';
+            sendmyMessage();
+            msgKeyUpEvent();
         });
 
         socket.on('newmsg', function(data) {
             if (user) {
-                document.getElementById('message-container').innerHTML =
+                document.getElementById('myMessage-container').innerHTML =
                     '<div> <b style="color: ' + data.usercolor + '">' +
-                    data.user + '</b>: ' + data.message +
-                    '</div>' + document.getElementById('message-container').innerHTML;
+                    data.user + '</b>: ' + data.myMessage +
+                    '</div>' + document.getElementById('myMessage-container').innerHTML;
             }
         });
 
@@ -84,7 +80,7 @@
     <div>
         <input id="btnUsrInput" type="button" name="button" value="Enter Name" style="float: right" onclick="setUsername()"/>
         <div style="overflow: hidden; padding-right: .5em;">
-           <input id="name" type="text" name="name" value="" placeholder="Enter a msg user name!" type="text" style="width: 100%;" autofocus />
+           <input id="myName" type="text" name="name" value="" placeholder="Enter a msg user name!" type="text" style="width: 100%;" autofocus />
         </div>
     </div>
 
@@ -92,11 +88,10 @@
         // Keyboard event handler
         function userNameKeyUpEvent(){
             // Get the input field
-            var inputTextEventUser = document.getElementById("name");
-            inputTextEventUser.addEventListener("keyup", function(event) {
-                event.preventDefault();
+            var inputEventUser = document.getElementById("myName");
+            inputEventUser.addEventListener("keyup", function(mynameevent) {
                 // Number 13 is the "Enter" key on the keyboard
-                if (event.keyCode === 13) {
+                if (mynameevent.keyCode === 13) {
                     setUsername();
                 }
             });
@@ -104,25 +99,16 @@
 
         function msgKeyUpEvent(){
             // Get the input field
-            var inputTextEventUser = document.getElementById("message");
-            inputTextEventUser.addEventListener("keyup", function(event) {
-                event.preventDefault();
+            var inputEventMsg = document.getElementById("myMessage");
+            inputEventMsg.addEventListener("keyup", function(mymessageevent) {
                 // Number 13 is the "Enter" key on the keyboard
-                if (event.keyCode === 13) {
-                    sendMessage();
+                if (mymessageevent.keyCode === 13) {
+                    sendmyMessage();
                 }
             });
         }
 
-	    // Get the input field
-         var inputTextEventUser = document.getElementById("name");
-         inputTextEventUser.addEventListener("keyup", function(event) {
-            event.preventDefault();
-            // Number 13 is the "Enter" key on the keyboard
-            if (event.keyCode === 13) {
-                setUsername();
-            }
-        });
+        userNameKeyUpEvent();
         
 	</script>
 </body>
