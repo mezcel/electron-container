@@ -11,44 +11,27 @@
 
     <link rel="stylesheet" href="node_modules/bootstrap3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="myAssets/css/style.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap3/dist/js/bootstrap.js"></script>
 </head>
 
 <body>
     <nav class="navbar navbar-default">
         <b class="btn btn-toggle-left-sidebar" data-toggle="modal" data-target="#myModal">
-                #myModal
+                #myModal Left
         </b>
-        <div class="text-center">Title</div>
+
+        <div class="text-center">
+            Title
+        </div>
+
         <b class="btn btn-toggle-right-sidebar" data-toggle="modal" data-target="#myModal2">
-            #myModal2
+            #myModal2 Right
         </b>
     </nav>
 
     <div class="container client-gui">
 
-        <h2>Basic Panel1</h2>
-        <div class="panel panel-default">
-            <div class="panel-body">A Basic Panel</div>
-        </div>
-        <h2>Basic Pane2</h2>
-        <div class="panel panel-default">
-            <div class="panel-body">A Basic Panel</div>
-        </div>
-        <h2>Basic Pane3</h2>
-        <div class="panel panel-default">
-            <div class="panel-body">A Basic Panel</div>
-        </div>
-
-
-        <div class="text-center">
-            <button type="button" class="btn btn-client-gui">
-    			Previous
-    		</button>
-            <button type="button" class="btn btn-client-gui">
-    			Next
-    		</button>
-        </div>
         <!-- Modal -->
         <div class="modal left fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -148,6 +131,45 @@
             <!-- modal-dialog -->
         </div>
 
+        <h2>Basic Panel1</h2>
+        
+        <div class="panel panel-default">
+            <div class="panel-body">A Basic Panel</div>
+        </div>
+
+        <h2>Basic Pane2</h2>
+        <div class="panel panel-default">
+            <div class="panel-body">A Basic Panel</div>
+        </div>
+
+        <h2>Basic Pane3</h2>
+        <div class="panel panel-default">
+            <div class="panel-body">A Basic Panel</div>
+        </div>
+
+        <div class="container">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Dummy Dropdown
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Dummy Link 1</a></li>
+                    <li class="disabled"><a href="#">Dummy Link 2</a></li>
+                    <li class="active"><a href="#">Dummy Link 3</a></li>
+                    <li><a href="#">Dummy Link 4</a></li>
+                    <li><a href="http://localhost:3000/" target="_blank">Express Messenger - Modal Alternate</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="button" class="btn btn-client-gui">
+    			Previous
+    		</button>
+            <button type="button" class="btn btn-client-gui">
+    			Next
+    		</button>
+        </div>
+        
     </div>
     <!-- container -->
 
