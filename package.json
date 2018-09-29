@@ -19,7 +19,7 @@
     "dependencies": {
         "bootstrap3": "^3.3.5",
         "express": "^4.16.3",
-        "jquery": "^3.3.1",
+        "jquery": "^1.11.1",
         "popper.js": "^1.14.4",
         "socket.io": "^2.1.1"
     }

@@ -1,25 +1,63 @@
-# electron-container
+# electron-container (a perpetual WIP)
+A Node App using ExpressJS, Socket IO, and Electron
 
-Node Js bench brainstorming
+---
 
-Whats going on:
+### Personal Objective Note::
 
-* Messing with Electron and Socket.io. No Mongo.
+I wanted to assemble a working NodeJs refresher/refference featuring ExpressJS, Socket IO, and Electron. I am also playing the workflow of these NPM packages and how they compare with the workflow of other software API flavorss which do the same things. Trying out different things, I disovered some issues with specific versions of Bootstrap and Jquery. Electron on Win, Linux and Mac differ slightly on what features are exist. I will scrap out the features that don't exist equally on all OS's.
 
-* This app does nothing. It was just to have a skeleton to pick at.
+### Objective Goals:
 
-* The goal is to make a reusable feature to add to some other web app projects. Not sure if I will use socktes to trigger remote controlls or just screen displays ex:text.
+* Skeleton-ish starter refference bench tamplate. (Mostly in the ```main.js```)
+* Works as a Desktop Standalone App
+* Works as a Server Hosted App.
+* Send/Recieve communication between different instances
 
-Todo:
+### Feature Objective:
 
-* The standalone Express component is a bit upsidedown, going to flip it.
+* Focuses on Electron page loading
 
-* Going to add EJS to the Express compnent.
+### Still learning:
+
+* What is the best way to cram multiple different features in one Electron App?
+
+* Should they all be independent running hosted apps loaded by Electron, or should they all be contained within Electron itself.
+
+* Still messing with modal-like features.
+
+---
+
+## package.json
+
+NPM
 
 ```sh
-# install dependancies 
 npm install
-
-# activate app ans server
 npm start
+```
+
+Dependancies
+
+```json
+{
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "keywords": [
+        "Electron",
+        "socket.io"
+    ],
+    "devDependencies": {
+        "electron": "^2.0.0"
+    },
+    "dependencies": {
+        "bootstrap3": "^3.3.5",
+        "express": "^4.16.3",
+        "jquery": "^1.11.1",
+        "popper.js": "^1.14.4",
+        "socket.io": "^2.1.1"
+    }
+}
 ```

@@ -1,6 +1,5 @@
 /*******************************
 * MODAL AS LEFT/RIGHT SIDEBAR
-* Add "left" or "right" in modal parent div, after class="modal".
 *******************************/
 	.modal.left .modal-dialog,
 	.modal.right .modal-dialog {
