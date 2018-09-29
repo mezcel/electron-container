@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Msg Window</title>
+    <style>
+        .msgLog {
+            overflow-y: auto;
+            height: 400px;
+            border: solid 1px;
+        }
+    </style>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+        var socket = io();
+        var user, usercolor;
+
+        /* log user */
+        function setUsername() {
+            socket.emit('setUsername', document.getElementById('name').value);
+        };
+
+        /* log message */
+        function sendMessage() {
+            var msg = document.getElementById('message').value;
+
+            if (msg) {
+                socket.emit('msg', {
+                    message: msg,
+                    user: user,
+                    usercolor: usercolor
+                });
+            }
+
+            document.getElementById('message').value = "";
+            document.getElementById("message").focus();
+        };
+
+        /* Socket IO */
+        socket.on('userExists', function(data) {
+            document.getElementById('error-container').innerHTML = data;
+        });
+
+        socket.on('userSet', function(data) {
+            user = data.username;
+            usercolor = data.colorname;
+            document.body.innerHTML =
+                '<input type="button" name="button" value="Send Msg" style="float: right" onclick="sendMessage()"/>\
+                <div style="overflow: hidden; padding-right: .5em;">\
+                   <input id="message" type="text" name="message" value="" placeholder="Enter a message" type="text" style="width: 100%;" />\
+                </div>\
+                <hr>\
+                <div id="message-container" class="msgLog"><i style="color: ' + usercolor + '">*** ' + user + ' joined the msg room *** </i></div>' ;
+        });
+
+        socket.on('newmsg', function(data) {
+            if (user) {
+                document.getElementById('message-container').innerHTML =
+                    '<div> <b style="color: ' + data.usercolor + '">' +
+                    data.user + '</b>: ' + data.message +
+                    '</div>' + document.getElementById('message-container').innerHTML;
+            }
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div id="error-container"></div>
+
+    <div>
+        <input type="button" name="button" value="Enter Name" style="float: right" onclick="setUsername()"/>
+        <div style="overflow: hidden; padding-right: .5em;">
+           <input id="name" type="text" name="name" value="" placeholder="Enter a msg user name!" type="text" style="width: 100%;" autofocus />
+        </div>
+    </div>
+
+</body>
+
+</html>
