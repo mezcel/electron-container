@@ -30,10 +30,17 @@ I wanted to assemble a working NodeJs refresher/refference featuring ExpressJS, 
 
 ## package.json
 
+Server
+
+> I use ```localhost``` in this demo, change the var ```myHostip``` in ```main.js``` to a netork ip.
+
 NPM
 
 ```sh
+# download and install dependancies
 npm install
+
+# start the app
 npm start
 ```
 
