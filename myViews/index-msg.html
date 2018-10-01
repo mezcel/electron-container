@@ -46,6 +46,7 @@
         socket.on('userSet', function(data) {
             user = data.username;
             usercolor = data.colorname;
+            useriptitle = data.iptitle + ":3000";
             
             var myhtmlString='<input id="btnMsgInput" type="button" name="button" value="Send Msg" style="float: right" onclick="sendmyMessage();"/>\
                 <div style="overflow: hidden; padding-right: .5em;">\
@@ -55,6 +56,7 @@
                 <div id="myMessage-container" class="msgLog"></div>';
             
             document.body.innerHTML = myhtmlString;
+            document.title = "Msg Window: " + useriptitle;
             
             document.getElementById("myMessage").value = '<i style="color: ' + usercolor + '">*** ' + user + ' joined the msg room ***</i>';
             sendmyMessage();
