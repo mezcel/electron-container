@@ -1,26 +1,67 @@
-var myHostip = "http://localhost"; // debug ip
-// var myHostip = "http://10.42.0.1"; // intended linux adhoc hosting
-// var myHostip = "http://192.168.xxx.1xx"; // external router
+var myHostip, myHostip2;
+// var myHostip2= "http://localhost"; // debug ip
+// var myHostip2= "http://10.42.0.1"; // adhoc hosting
+// var myHostip2= "http://192.168.xxx.1xx"; // external router
+
+var ipSubmenuJson = []; // array of existing ips
 
 function ipVarriable() {
-    // ip display info
+    /*  Depreciated because the last val overwites the global val
+        ip display info
+        this will overwite previous var when called by the Menu */
     var os = require( 'os' );
+    var ipArr = [];
     var networkInterfaces = os.networkInterfaces( );
-    var noNetConnections = Object.keys(networkInterfaces).length;
     var keysNetConnections = Object.keys(networkInterfaces);
-    var myethernetIP = "http://" + networkInterfaces.Ethernet[1].address;
-    var mywifiIP = "http://" + networkInterfaces["Wi-Fi"][1].address;
-    var loopbackIP = "http://" + networkInterfaces["Loopback Pseudo-Interface 1"][1].address;
 
-    console.log( networkInterfaces );
-    //myHostip = mywifiIP;
-    //myHostip = "http://localhost";
-    console.log( 'myHostip', myHostip, networkInterfaces);
+    for (i = 0; i < keysNetConnections.length; i++) {
+            ipinterfaceKey = keysNetConnections[i];
+            tempIpAddr = "http://" + networkInterfaces[ipinterfaceKey][1].address;
+            ipArr.push(tempIpAddr); // an array of ips, this may come in handy later
+            ipSubmenuJson.push({ 
+                label: tempIpAddr + ':3000/', 
+                click() {                    
+                    messagingAppView(tempIpAddr);
+                    createChildWindow();
+                    childWindow.loadURL(tempIpAddr + ':3000/');
+                }
+            });
+    }
 }
 
-/* Express jquery-mobile */
+function ipVarriable2() {
+    /**
+     * A Workarround fix for ipVarriable()
+     */
+    var os = require('os');
+
+    var interfaces = os.networkInterfaces();
+    var addresses = [];
+    for (var k in interfaces) {
+        for (var k2 in interfaces[k]) {
+            var address = interfaces[k][k2];
+            if (address.family === 'IPv4' && !address.internal) {
+                addresses.push(address.address);
+            }
+        }
+    }
+    
+    if (addresses.length < 1) {
+        // default to 127.0.0.1
+        myHostip2="http://localhost";
+    } else {
+        // just grab the 1st on the list
+        myHostip2=addresses[0];
+    }
+    
+    console.log(addresses, addresses.length, myHostip2);
+}
+
 /* --------------------------------------------------------------------------- */
-function PrimaryAppViewExpress() {
+/* Express with jquery-mobile DOM */
+/* --------------------------------------------------------------------------- */
+
+function standaloneAppView() {
 
     var myExpressJqm = require("express");
     var myAppJqm = myExpressJqm();
@@ -29,29 +70,26 @@ function PrimaryAppViewExpress() {
     var myAppPath = __dirname + '/';
 
     myAppJqm.get("/", function(req, res) {
-    res.sendfile(myAppPath + "myViews/index.html");
+        res.sendfile(myAppPath + "myViews/index.html");
     });
 
     myAppJqm.use(myExpressJqm.static(myAppPath));
 
     myAppJqm.use("*", function(req, res) {
-    res.sendFile(myAppPath + "404.html");
+        res.sendFile(myAppPath + "404.html");
     });
 
     myAppJqm.listen(7777, function() {
-        console.log("Live at Port " + myHostip + ":7777", myAppPath );
-        var myiphost = this.address().address;
-        var myipport = this.address().port;
-        console.log('running at http://' + myiphost + ':' + myipport)
+        console.log("Live at Port 7777", myAppPath );
     });
     
 }
 
-
 /* --------------------------------------------------------------------------- */
-/* Express Socket IO */
+/* Express Socket IO with Vanilla JS DOM*/
+/* --------------------------------------------------------------------------- */
 
-function SocketIOExpress() {
+function messagingAppView(myHostip) {
 
     var myAppMsgServer = require('express')(); // msg room gui
     var http = require('http').Server(myAppMsgServer);
@@ -80,13 +118,12 @@ function SocketIOExpress() {
     
             if (users.indexOf(data) > -1) {
                 socket.emit('userExists', data + ' username is taken! Try some other username.');
-            } else {
-    
+            } else {    
                 users.push(data);
                 socket.emit('userSet', {
                     username: data,
                     colorname: randomHexColor,
-                    iptitle: myHostip
+                    iptitle: myHostip2
                 });
             }
         });
@@ -98,13 +135,17 @@ function SocketIOExpress() {
     });
     
     http.listen(3000, function() {
-        console.log("listening on " + myHostip + ":3000");
+        console.log("listening on Port :3000");
     });
 }
 
+// Populate Ip Server Menu Json Var
+ipVarriable(); // used for menu, (not needed otherwise)
+ipVarriable2(); // used for dom display flag and ip init
 
-PrimaryAppViewExpress();
-SocketIOExpress();
+// Activate Electron Hosted Pages
+standaloneAppView();
+// messagingAppView();
 
 /* --------------------------------------------------------------------------- */
 /* ELECTRON */
@@ -112,6 +153,7 @@ SocketIOExpress();
     The nice thing about electron is that I dont need to manually mess with Express configs
     For my purposes, it works like a standalone non-server desktop html file
 */
+
 const {
     app,
     appMenuModal,
@@ -128,14 +170,13 @@ function createMainWindow() {
         height: 900
     });
 
-    var myElectronMenu = Menu.buildFromTemplate(
-    [
+    var menuJsonArr = [
         {
             label: 'Menu',
             submenu: [{
                     label: 'Web Browser Standalone Instance',
                     click() {
-                        appMenuModal.openExternal(myHostip + ':7777/')
+                        appMenuModal.openExternal(myHostip2 + ':7777/')
                     }
                 },
                 {
@@ -164,7 +205,7 @@ function createMainWindow() {
                 {
                     label: 'WebBrowser Express Messaging',
                     click() {
-                        appMenuModal.openExternal(myHostip + ':3000/');
+                        appMenuModal.openExternal(myHostip2+ ':3000/');
                     }
                 }
             ]
@@ -193,11 +234,18 @@ function createMainWindow() {
                 }
             ]
         }
-    ]);
+    ];
+
+    var pushIpOptions = {
+        label: 'Message Server Options',
+        submenu: ipSubmenuJson
+    };
+
+    menuJsonArr.push(pushIpOptions);
+
+    var myElectronMenu = Menu.buildFromTemplate(menuJsonArr);
 
     Menu.setApplicationMenu(myElectronMenu);
-
-    
 
     // and load the index.html of the app.
     mainWindow.loadFile('index.html');
@@ -224,14 +272,13 @@ function createChildWindow() {
         height: 500
     });
 
-    childWindow.loadURL('https://github.com');
+    //childWindow.loadURL('https://github.com');
     childWindow.once('ready-to-show', () => {
         childWindow.show()
     });
 
     // and load the index.html of the app.
-    //childWindow.loadFile('index.html');
-    childWindow.loadURL(myHostip + ':3000/');
+    //childWindow.loadURL(myHostip2+ ':3000/');
 
     // Emitted when the window is closed.
     childWindow.on('closed', function() {
@@ -242,8 +289,8 @@ function createChildWindow() {
 // app.on('ready', createMainWindow);
 app.on('ready', function() {
     createMainWindow();
-    createChildWindow();
-    childWindow.minimize();
+    //createChildWindow();
+    //childWindow.minimize();
 });
 
 // Quit when all windows are closed.
