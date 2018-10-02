@@ -1,38 +1,9 @@
-var myHostip, myHostip2;
-// var myHostip2= "http://localhost"; // debug ip
-// var myHostip2= "http://10.42.0.1"; // adhoc hosting
-// var myHostip2= "http://192.168.xxx.1xx"; // external router
+var myHostip = "http://localhost"; // debug ip
+// var myHostip = "http://10.42.0.1"; // intended linux adhoc hosting
+// var myHostip = "http://192.168.xxx.1xx"; // external router
 
-var ipSubmenuJson = []; // array of existing ips
+function getIpStrinVar() {
 
-function ipVarriable() {
-    /*  Depreciated because the last val overwites the global val
-        ip display info
-        this will overwite previous var when called by the Menu */
-    var os = require( 'os' );
-    var ipArr = [];
-    var networkInterfaces = os.networkInterfaces( );
-    var keysNetConnections = Object.keys(networkInterfaces);
-
-    for (i = 0; i < keysNetConnections.length; i++) {
-            ipinterfaceKey = keysNetConnections[i];
-            tempIpAddr = "http://" + networkInterfaces[ipinterfaceKey][1].address;
-            ipArr.push(tempIpAddr); // an array of ips, this may come in handy later
-            ipSubmenuJson.push({ 
-                label: tempIpAddr + ':3000/', 
-                click() {                    
-                    messagingAppView(tempIpAddr);
-                    createChildWindow();
-                    childWindow.loadURL(tempIpAddr + ':3000/');
-                }
-            });
-    }
-}
-
-function ipVarriable2() {
-    /**
-     * A Workarround fix for ipVarriable()
-     */
     var os = require('os');
 
     var interfaces = os.networkInterfaces();
@@ -46,22 +17,23 @@ function ipVarriable2() {
         }
     }
     
+    console.log(addresses, addresses.length);
     if (addresses.length < 1) {
         // default to 127.0.0.1
-        myHostip2="http://localhost";
+        returnIp="http://localhost";
     } else {
         // just grab the 1st on the list
-        myHostip2=addresses[0];
+        returnIp=addresses[0];
     }
     
-    console.log(addresses, addresses.length, myHostip2);
+    return returnIp;
 }
 
-/* --------------------------------------------------------------------------- */
-/* Express with jquery-mobile DOM */
-/* --------------------------------------------------------------------------- */
+myHostip = "http://" + getIpStrinVar();
 
-function standaloneAppView() {
+/* Express jquery-mobile */
+/* --------------------------------------------------------------------------- */
+function PrimaryAppViewExpress() {
 
     var myExpressJqm = require("express");
     var myAppJqm = myExpressJqm();
@@ -70,26 +42,29 @@ function standaloneAppView() {
     var myAppPath = __dirname + '/';
 
     myAppJqm.get("/", function(req, res) {
-        res.sendfile(myAppPath + "myViews/index.html");
+    res.sendfile(myAppPath + "myViews/index.html");
     });
 
     myAppJqm.use(myExpressJqm.static(myAppPath));
 
     myAppJqm.use("*", function(req, res) {
-        res.sendFile(myAppPath + "404.html");
+    res.sendFile(myAppPath + "404.html");
     });
 
     myAppJqm.listen(7777, function() {
-        console.log("Live at Port 7777", myAppPath );
+        console.log("Live at Port " + myHostip + ":7777", myAppPath );
+        var myiphost = this.address().address;
+        var myipport = this.address().port;
+        console.log('running at http://' + myiphost + ':' + myipport)
     });
     
 }
 
-/* --------------------------------------------------------------------------- */
-/* Express Socket IO with Vanilla JS DOM*/
-/* --------------------------------------------------------------------------- */
 
-function messagingAppView(myHostip) {
+/* --------------------------------------------------------------------------- */
+/* Express Socket IO */
+
+function SocketIOExpress() {
 
     var myAppMsgServer = require('express')(); // msg room gui
     var http = require('http').Server(myAppMsgServer);
@@ -118,12 +93,13 @@ function messagingAppView(myHostip) {
     
             if (users.indexOf(data) > -1) {
                 socket.emit('userExists', data + ' username is taken! Try some other username.');
-            } else {    
+            } else {
+    
                 users.push(data);
                 socket.emit('userSet', {
                     username: data,
                     colorname: randomHexColor,
-                    iptitle: myHostip2
+                    iptitle: myHostip
                 });
             }
         });
@@ -135,17 +111,13 @@ function messagingAppView(myHostip) {
     });
     
     http.listen(3000, function() {
-        console.log("listening on Port :3000");
+        console.log("listening on " + myHostip + ":3000");
     });
 }
 
-// Populate Ip Server Menu Json Var
-ipVarriable(); // used for menu, (not needed otherwise)
-ipVarriable2(); // used for dom display flag and ip init
 
-// Activate Electron Hosted Pages
-standaloneAppView();
-// messagingAppView();
+PrimaryAppViewExpress();
+SocketIOExpress();
 
 /* --------------------------------------------------------------------------- */
 /* ELECTRON */
@@ -153,12 +125,11 @@ standaloneAppView();
     The nice thing about electron is that I dont need to manually mess with Express configs
     For my purposes, it works like a standalone non-server desktop html file
 */
-
 const {
     app,
-    appMenuModal,
     BrowserWindow,
-    Menu
+    Menu,
+    shell
 } = require('electron'); // Electron specific vars
 
 let mainWindow, childWindow;
@@ -170,13 +141,15 @@ function createMainWindow() {
         height: 900
     });
 
-    var menuJsonArr = [
+    // electron menu json
+    var myElectronMenu = Menu.buildFromTemplate(
+    [
         {
             label: 'Menu',
             submenu: [{
                     label: 'Web Browser Standalone Instance',
                     click() {
-                        appMenuModal.openExternal(myHostip2 + ':7777/')
+                        shell.openExternal(myHostip + ':7777/')
                     }
                 },
                 {
@@ -205,7 +178,7 @@ function createMainWindow() {
                 {
                     label: 'WebBrowser Express Messaging',
                     click() {
-                        appMenuModal.openExternal(myHostip2+ ':3000/');
+                        shell.openExternal(myHostip + ':3000/');
                     }
                 }
             ]
@@ -216,36 +189,29 @@ function createMainWindow() {
                 {
                     label: 'Github',
                     click() {
-                        appMenuModal.openExternal('http://github.com/mezcel/')
+                        shell.openExternal('http://github.com/mezcel/')
                     }
                 },
                 {type:'separator'},
                 {
                     label: 'Wiki: Mod/Debug - BrowserWindow',
                     click() {
-                        appMenuModal.openExternal('https://electronjs.org/docs/api/browser-window')
+                        shell.openExternal('https://electronjs.org/docs/api/browser-window')
                     }
                 },
                 {
                     label: 'Wiki: Mod/Debug - Menu',
                     click() {
-                        appMenuModal.openExternal('https://electronjs.org/docs/api/menu')
+                        shell.openExternal('https://electronjs.org/docs/api/menu')
                     }
                 }
             ]
         }
-    ];
-
-    var pushIpOptions = {
-        label: 'Message Server Options',
-        submenu: ipSubmenuJson
-    };
-
-    menuJsonArr.push(pushIpOptions);
-
-    var myElectronMenu = Menu.buildFromTemplate(menuJsonArr);
+    ]);
 
     Menu.setApplicationMenu(myElectronMenu);
+
+    
 
     // and load the index.html of the app.
     mainWindow.loadFile('index.html');
@@ -272,25 +238,26 @@ function createChildWindow() {
         height: 500
     });
 
-    //childWindow.loadURL('https://github.com');
     childWindow.once('ready-to-show', () => {
         childWindow.show()
     });
 
     // and load the index.html of the app.
-    //childWindow.loadURL(myHostip2+ ':3000/');
+    //childWindow.loadFile('index.html');
+    childWindow.loadURL(myHostip + ':3000/');
 
     // Emitted when the window is closed.
     childWindow.on('closed', function() {
         childWindow = null;
     });
+
 }
 
 // app.on('ready', createMainWindow);
 app.on('ready', function() {
     createMainWindow();
-    //createChildWindow();
-    //childWindow.minimize();
+    createChildWindow();
+    childWindow.minimize();
 });
 
 // Quit when all windows are closed.
