@@ -16,16 +16,16 @@ function getIPvarString() {
             }
         }
     }
-    
+
     console.log(addresses, addresses.length);
     if (addresses.length < 1) {
         // default to 127.0.0.1
-        returnIp="http://localhost";
+        returnIp = "http://localhost";
     } else {
         // just grab the 1st on the list
-        returnIp=addresses[0];
+        returnIp = addresses[0];
     }
-    
+
     return returnIp;
 }
 
@@ -33,6 +33,7 @@ myHostip = "http://" + getIPvarString();
 
 /* Express jquery-mobile */
 /* --------------------------------------------------------------------------- */
+
 function PrimaryAppViewExpress() {
 
     var myExpressJqm = require("express");
@@ -42,19 +43,19 @@ function PrimaryAppViewExpress() {
     var myAppPath = __dirname + '/';
 
     myAppJqm.get("/", function(req, res) {
-    res.sendfile(myAppPath + "myViews/index.html");
+        res.sendfile(myAppPath + "myViews/index.html");
     });
 
     myAppJqm.use(myExpressJqm.static(myAppPath));
 
     myAppJqm.use("*", function(req, res) {
-    res.sendFile(myAppPath + "404.html");
+        res.sendFile(myAppPath + "404.html");
     });
 
     myAppJqm.listen(7777, function() {
-        console.log("Live at Port " + myHostip + ":7777", myAppPath );
+        console.log("Live at Port " + myHostip + ":7777", myAppPath);
     });
-    
+
 }
 
 
@@ -66,33 +67,34 @@ function SocketIOExpress() {
     var myAppMsgServer = require('express')(); // msg room gui
     var http = require('http').Server(myAppMsgServer);
     var io = require('socket.io')(http);
-    
+    var myAppPath = __dirname + '/';
+
     function getRandomHexColor() {
         var letters = '012345'.split('');
         var hexcolor = '#';
-            hexcolor += letters[Math.round(Math.random() * 5)];
+        hexcolor += letters[Math.round(Math.random() * 5)];
         letters = '0123456789ABCDEF'.split('');
         for (var i = 0; i < 5; i++) {
             hexcolor += letters[Math.round(Math.random() * 15)];
         }
         return hexcolor;
     }
-    
+
     myAppMsgServer.get('/', function(req, res) {
-        res.sendfile('myViews/index-msg.html');
+        res.sendfile(myAppPath + 'myViews/index-msg.html');
     });
-    
+
     users = [];
     var userCounter = 0;
     io.on('connection', function(socket) {
 
         socket.on('setUsername', function(data) {
             var randomHexColor = getRandomHexColor();
-    
+
             if (users.indexOf(data) > -1) {
                 socket.emit('userExists', data + ' username is taken! Try some other username.');
             } else {
-                
+
                 users.push(data);
                 socket.emit('userSet', {
                     username: data,
@@ -104,7 +106,7 @@ function SocketIOExpress() {
                 console.log(users);
             }
         });
-    
+
         socket.on('msg', function(data) {
             //Send message to everyone
             io.sockets.emit('newmsg', data);
@@ -112,7 +114,9 @@ function SocketIOExpress() {
 
         socket.on('removeUser', function(data) {
             // filter remove name from array
-            users = users.filter(function(e) { return e !== data });
+            users = users.filter(function(e) {
+                return e !== data
+            });
             console.log(users);
             socket.emit('userRemove', users);
         });
@@ -122,7 +126,7 @@ function SocketIOExpress() {
         });
 
     });
-    
+
     http.listen(3000, function() {
         console.log("listening on " + myHostip + ":3000");
     });
@@ -156,76 +160,80 @@ function createMainWindow() {
 
     // electron menu json
     var myElectronMenu = Menu.buildFromTemplate(
-    [
-        {
-            label: 'Menu',
-            submenu: [{
-                    label: 'Web Browser Standalone Instance',
-                    click() {
-                        shell.openExternal(myHostip + ':7777/')
+        [{
+                label: 'Menu',
+                submenu: [{
+                        label: 'Web Browser Standalone Instance',
+                        click() {
+                            shell.openExternal(myHostip + ':7777/')
+                        }
+                    },
+                    {
+                        type: 'separator'
+                    },
+                    {
+                        label: 'Quit Electron',
+                        click() {
+                            app.quit()
+                        }
                     }
-                },
-                {type:'separator'},
-                {
-                    label: 'Quit Electron',
-                    click() {
-                        app.quit()
+                ]
+            },
+            {
+                label: 'Messaging',
+                submenu: [{
+                        label: 'Show Electron Messenger',
+                        click() {
+                            childWindow.maximize();
+                        }
+                    },
+                    {
+                        label: 'Hide Electron Messenger',
+                        click() {
+                            childWindow.minimize();
+                        }
+                    },
+                    {
+                        type: 'separator'
+                    },
+                    {
+                        label: 'WebBrowser Express Messaging',
+                        click() {
+                            shell.openExternal(myHostip + ':3000/');
+                        }
                     }
-                }]
-        },
-        {
-            label: 'Messaging',
-            submenu: [
-                {
-                    label: 'Show Electron Messenger',
-                    click() {
-                        childWindow.maximize();
+                ]
+            },
+            {
+                label: 'About',
+                submenu: [{
+                        label: 'Github',
+                        click() {
+                            shell.openExternal('http://github.com/mezcel/')
+                        }
+                    },
+                    {
+                        type: 'separator'
+                    },
+                    {
+                        label: 'Wiki: Mod/Debug - BrowserWindow',
+                        click() {
+                            shell.openExternal('https://electronjs.org/docs/api/browser-window')
+                        }
+                    },
+                    {
+                        label: 'Wiki: Mod/Debug - Menu',
+                        click() {
+                            shell.openExternal('https://electronjs.org/docs/api/menu')
+                        }
                     }
-                },
-                {
-                    label: 'Hide Electron Messenger',
-                    click() {
-                        childWindow.minimize();
-                    }
-                },
-                {type:'separator'},
-                {
-                    label: 'WebBrowser Express Messaging',
-                    click() {
-                        shell.openExternal(myHostip + ':3000/');
-                    }
-                }
-            ]
-        },
-        {
-            label: 'About',
-            submenu: [
-                {
-                    label: 'Github',
-                    click() {
-                        shell.openExternal('http://github.com/mezcel/')
-                    }
-                },
-                {type:'separator'},
-                {
-                    label: 'Wiki: Mod/Debug - BrowserWindow',
-                    click() {
-                        shell.openExternal('https://electronjs.org/docs/api/browser-window')
-                    }
-                },
-                {
-                    label: 'Wiki: Mod/Debug - Menu',
-                    click() {
-                        shell.openExternal('https://electronjs.org/docs/api/menu')
-                    }
-                }
-            ]
-        }
-    ]);
+                ]
+            }
+        ]);
 
     Menu.setApplicationMenu(myElectronMenu);
 
-    
+
 
     // and load the index.html of the app.
     mainWindow.loadFile('index.html');
@@ -249,7 +257,7 @@ function createChildWindow() {
         show: false,
         closable: false,
         width: 700,
-        height: 500
+        height: 550
     });
 
     childWindow.once('ready-to-show', () => {
@@ -286,5 +294,3 @@ app.on('activate', function() {
         createMainWindow();
     }
 });
-
-

@@ -3,19 +3,37 @@
 
 <head>
     <title>Msg Window</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="myAssets/img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="myAssets/img/favicon.ico" type="image/x-icon" />
+
     <style>
+        * {
+            font-size: 100%;
+        }
+        .inputHeight{
+            height:35px;
+        }
+
         .msgLog {
             overflow-y: auto;
             height: 400px;
             border: solid 1px;
+            font-size: 100%;
         }
+        .msgLog div {
+            font-size: 120%;
+        }
+
     </style>
 
     <script src="/socket.io/socket.io.js"></script>
 
     <script>
         var socket = io();
-        var user, usercolor, useriptitle, usersAll, thisClientName;
+        var user, usercolor, useriptitle, usersAll, thisClientName, thisClientNameColor;
 
         /* log user */
         function setUsername() {
@@ -55,16 +73,21 @@
             usercolor = data.colorname;
             useriptitle = data.iptitle + ":3000";
             usersAll = data.allusers;
-            
+
+            thisClientNameColor = usercolor;
+
             // make a new msg dom
-            var myhtmlString='<input id="btnMsgInput" type="button" name="button" value="Send Msg" style="float: right; background-color:lime;" onclick="sendmyMessage();"/><button style="float: left; background-color:red;" onclick="removeUsername()">logout</button>\
-                <div style="overflow: hidden; padding-right: .5em;">\
-                   <input id="myMessage" type="text" name="myMessage" value="" placeholder="Enter a myMessage" type="text" style="width: 100%;"/>\
+            var myhtmlString =
+                '\
+                <input type="button" id="btnMsgInput" name="button" value="Send Msg" style="float: right; background-color:#80d680;" onclick="sendmyMessage();" class="inputHeight" />\
+                <input type="button" style="float: left; background-color:#f3d8d8;" onclick="removeUsername()" value="logout" class="inputHeight" />\
+                <div style="overflow: hidden; padding: .4em;">\
+                   <input type="text" id="myMessage" name="myMessage" value="" placeholder="Enter a message ..."  style="width: 100%; height: 20px;"/>\
                 </div>\
                 <div id="divAllUsers" style="width:100%; background-color: lightgray;"></div>\
                 <hr>\
                 <div id="myMessage-container" class="msgLog"></div>';
-            
+
             document.body.innerHTML = myhtmlString;
             document.title = "Msg Window: " + useriptitle;
             document.getElementById("divAllUsers").innerHTML = usersAll;
@@ -76,7 +99,7 @@
 
         socket.on('userRemove', function(users) {
             document.getElementById("divAllUsers").innerHTML = users;
-            document.getElementById('myMessage').value = thisClientName + " has left";
+            document.getElementById('myMessage').value = '<i style="color: ' + thisClientNameColor + '">*** ' + thisClientName + ' has left the msg room ***</i>';
 
             sendmyMessage();
             window.close();
@@ -86,7 +109,7 @@
         socket.on('newmsg', function(data) {
             if (user) {
                 document.getElementById('myMessage-container').innerHTML = '<div> <b style="color: ' + data.usercolor + '">' + data.user + '</b>: ' + data.myMessage + '</div>' + document.getElementById('myMessage-container').innerHTML;
-                
+
                 document.getElementById("divAllUsers").innerHTML = data.usersAll;
             }
         });
@@ -94,7 +117,6 @@
         window.addEventListener("beforeunload", function(e) {
             removeUsername(); // this function never finishes when called by "beforeunload"
         }, false);
-
     </script>
 
 </head>
@@ -103,16 +125,15 @@
     <div id="error-container"></div>
 
     <div>
-        <input id="btnUsrInput" type="button" name="button" value="Enter Name" style="float: right" onclick="setUsername()"/>
+        <input id="btnUsrInput" type="button" name="button" value="Enter Name" style="float: right" onclick="setUsername()" />
         <div style="overflow: hidden; padding-right: .5em;">
-           <input id="myName" type="text" name="name" value="" placeholder="Enter a msg user name!" type="text" style="width: 100%;" autofocus />
+            <input id="myName" type="text" name="name" value="" placeholder="Enter a msg user name!" type="text" style="width: 100%;" autofocus />
         </div>
     </div>
 
-	<script>
-
+    <script>
         // Keyboard event handler
-        function userNameKeyUpEvent(){
+        function userNameKeyUpEvent() {
             // Get the input field
             var inputEventUser = document.getElementById("myName");
             inputEventUser.addEventListener("keyup", function(mynameevent) {
@@ -123,7 +144,7 @@
             });
         }
 
-        function msgKeyUpEvent(){
+        function msgKeyUpEvent() {
             // Get the input field
             var inputEventMsg = document.getElementById("myMessage");
             inputEventMsg.addEventListener("keyup", function(mymessageevent) {
@@ -135,8 +156,7 @@
         }
 
         userNameKeyUpEvent();
-        
-	</script>
+    </script>
 </body>
 
 </html>
