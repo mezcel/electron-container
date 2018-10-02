@@ -15,22 +15,30 @@
 
     <script>
         var socket = io();
-        var user, usercolor;
+        var user, usercolor, useriptitle, usersAll, thisClientName;
 
         /* log user */
         function setUsername() {
-            socket.emit('setUsername', document.getElementById('myName').value);
+            thisClientName = document.getElementById('myName').value;
+            socket.emit('setUsername', thisClientName);
         };
 
-        /* log myMessage */
+        /* log out user */
+        function removeUsername() {
+            socket.emit('removeUser', thisClientName);
+        };
+
+        /* msg history */
         function sendmyMessage() {
             var msg = document.getElementById('myMessage').value;
+            var divUsers = document.getElementById("divAllUsers").innerHTML;
 
             if (msg) {
                 socket.emit('msg', {
                     myMessage: msg,
                     user: user,
-                    usercolor: usercolor
+                    usercolor: usercolor,
+                    usersAll: divUsers
                 });
             }
 
@@ -38,7 +46,6 @@
             document.getElementById("myMessage").focus();
         };
 
-        /* Socket IO */
         socket.on('userExists', function(data) {
             document.getElementById('error-container').innerHTML = data;
         });
@@ -47,30 +54,46 @@
             user = data.username;
             usercolor = data.colorname;
             useriptitle = data.iptitle + ":3000";
+            usersAll = data.allusers;
             
-            var myhtmlString='<input id="btnMsgInput" type="button" name="button" value="Send Msg" style="float: right" onclick="sendmyMessage();"/>\
+            // make a new msg dom
+            var myhtmlString='<input id="btnMsgInput" type="button" name="button" value="Send Msg" style="float: right; background-color:lime;" onclick="sendmyMessage();"/><button style="float: left; background-color:red;" onclick="removeUsername()">logout</button>\
                 <div style="overflow: hidden; padding-right: .5em;">\
                    <input id="myMessage" type="text" name="myMessage" value="" placeholder="Enter a myMessage" type="text" style="width: 100%;"/>\
                 </div>\
+                <div id="divAllUsers" style="width:100%; background-color: lightgray;"></div>\
                 <hr>\
                 <div id="myMessage-container" class="msgLog"></div>';
             
             document.body.innerHTML = myhtmlString;
             document.title = "Msg Window: " + useriptitle;
-            
+            document.getElementById("divAllUsers").innerHTML = usersAll;
             document.getElementById("myMessage").value = '<i style="color: ' + usercolor + '">*** ' + user + ' joined the msg room ***</i>';
+
             sendmyMessage();
-            msgKeyUpEvent();
+            msgKeyUpEvent(); // event binding
+        });
+
+        socket.on('userRemove', function(users) {
+            document.getElementById("divAllUsers").innerHTML = users;
+            document.getElementById('myMessage').value = thisClientName + " has left";
+
+            sendmyMessage();
+            window.close();
+
         });
 
         socket.on('newmsg', function(data) {
             if (user) {
-                document.getElementById('myMessage-container').innerHTML =
-                    '<div> <b style="color: ' + data.usercolor + '">' +
-                    data.user + '</b>: ' + data.myMessage +
-                    '</div>' + document.getElementById('myMessage-container').innerHTML;
+                document.getElementById('myMessage-container').innerHTML = '<div> <b style="color: ' + data.usercolor + '">' + data.user + '</b>: ' + data.myMessage + '</div>' + document.getElementById('myMessage-container').innerHTML;
+                
+                document.getElementById("divAllUsers").innerHTML = data.usersAll;
             }
         });
+
+        window.addEventListener("beforeunload", function(e) {
+            removeUsername(); // this function never finishes when called by "beforeunload"
+        }, false);
 
     </script>
 
@@ -87,6 +110,7 @@
     </div>
 
 	<script>
+
         // Keyboard event handler
         function userNameKeyUpEvent(){
             // Get the input field

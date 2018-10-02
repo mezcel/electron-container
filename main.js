@@ -2,21 +2,34 @@ var myHostip = "http://localhost"; // debug ip
 // var myHostip = "http://10.42.0.1"; // intended linux adhoc hosting
 // var myHostip = "http://192.168.xxx.1xx"; // external router
 
-function ipVarriable() {
-    // ip display info
-    var os = require( 'os' );
-    var networkInterfaces = os.networkInterfaces( );
-    var noNetConnections = Object.keys(networkInterfaces).length;
-    var keysNetConnections = Object.keys(networkInterfaces);
-    var myethernetIP = "http://" + networkInterfaces.Ethernet[1].address;
-    var mywifiIP = "http://" + networkInterfaces["Wi-Fi"][1].address;
-    var loopbackIP = "http://" + networkInterfaces["Loopback Pseudo-Interface 1"][1].address;
+function getIPvarString() {
 
-    console.log( networkInterfaces );
-    //myHostip = mywifiIP;
-    //myHostip = "http://localhost";
-    console.log( 'myHostip', myHostip, networkInterfaces);
+    var os = require('os');
+
+    var interfaces = os.networkInterfaces();
+    var addresses = [];
+    for (var k in interfaces) {
+        for (var k2 in interfaces[k]) {
+            var address = interfaces[k][k2];
+            if (address.family === 'IPv4' && !address.internal) {
+                addresses.push(address.address);
+            }
+        }
+    }
+    
+    console.log(addresses, addresses.length);
+    if (addresses.length < 1) {
+        // default to 127.0.0.1
+        returnIp="http://localhost";
+    } else {
+        // just grab the 1st on the list
+        returnIp=addresses[0];
+    }
+    
+    return returnIp;
 }
+
+myHostip = "http://" + getIPvarString();
 
 /* Express jquery-mobile */
 /* --------------------------------------------------------------------------- */
@@ -40,9 +53,6 @@ function PrimaryAppViewExpress() {
 
     myAppJqm.listen(7777, function() {
         console.log("Live at Port " + myHostip + ":7777", myAppPath );
-        var myiphost = this.address().address;
-        var myipport = this.address().port;
-        console.log('running at http://' + myiphost + ':' + myipport)
     });
     
 }
@@ -73,28 +83,44 @@ function SocketIOExpress() {
     });
     
     users = [];
+    var userCounter = 0;
     io.on('connection', function(socket) {
-    
+
         socket.on('setUsername', function(data) {
             var randomHexColor = getRandomHexColor();
     
             if (users.indexOf(data) > -1) {
                 socket.emit('userExists', data + ' username is taken! Try some other username.');
             } else {
-    
+                
                 users.push(data);
                 socket.emit('userSet', {
                     username: data,
+                    allusers: users,
                     colorname: randomHexColor,
                     iptitle: myHostip
                 });
+                userCounter += 1;
+                console.log(users);
             }
         });
     
         socket.on('msg', function(data) {
             //Send message to everyone
             io.sockets.emit('newmsg', data);
-        })
+        });
+
+        socket.on('removeUser', function(data) {
+            // filter remove name from array
+            users = users.filter(function(e) { return e !== data });
+            console.log(users);
+            socket.emit('userRemove', users);
+        });
+
+        socket.on('disconnect', function() {
+            console.log('a user disconnected');
+        });
+
     });
     
     http.listen(3000, function() {
@@ -114,9 +140,9 @@ SocketIOExpress();
 */
 const {
     app,
-    appMenuModal,
     BrowserWindow,
-    Menu
+    Menu,
+    shell
 } = require('electron'); // Electron specific vars
 
 let mainWindow, childWindow;
@@ -128,6 +154,7 @@ function createMainWindow() {
         height: 900
     });
 
+    // electron menu json
     var myElectronMenu = Menu.buildFromTemplate(
     [
         {
@@ -135,9 +162,10 @@ function createMainWindow() {
             submenu: [{
                     label: 'Web Browser Standalone Instance',
                     click() {
-                        appMenuModal.openExternal(myHostip + ':7777/')
+                        shell.openExternal(myHostip + ':7777/')
                     }
                 },
+                {type:'separator'},
                 {
                     label: 'Quit Electron',
                     click() {
@@ -164,7 +192,7 @@ function createMainWindow() {
                 {
                     label: 'WebBrowser Express Messaging',
                     click() {
-                        appMenuModal.openExternal(myHostip + ':3000/');
+                        shell.openExternal(myHostip + ':3000/');
                     }
                 }
             ]
@@ -175,20 +203,20 @@ function createMainWindow() {
                 {
                     label: 'Github',
                     click() {
-                        appMenuModal.openExternal('http://github.com/mezcel/')
+                        shell.openExternal('http://github.com/mezcel/')
                     }
                 },
                 {type:'separator'},
                 {
                     label: 'Wiki: Mod/Debug - BrowserWindow',
                     click() {
-                        appMenuModal.openExternal('https://electronjs.org/docs/api/browser-window')
+                        shell.openExternal('https://electronjs.org/docs/api/browser-window')
                     }
                 },
                 {
                     label: 'Wiki: Mod/Debug - Menu',
                     click() {
-                        appMenuModal.openExternal('https://electronjs.org/docs/api/menu')
+                        shell.openExternal('https://electronjs.org/docs/api/menu')
                     }
                 }
             ]
@@ -224,7 +252,6 @@ function createChildWindow() {
         height: 500
     });
 
-    childWindow.loadURL('https://github.com');
     childWindow.once('ready-to-show', () => {
         childWindow.show()
     });
@@ -237,6 +264,7 @@ function createChildWindow() {
     childWindow.on('closed', function() {
         childWindow = null;
     });
+
 }
 
 // app.on('ready', createMainWindow);
