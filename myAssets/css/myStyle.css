@@ -1,0 +1,11 @@
+/* external style sheet doesent seem to work in MY jquery-mobile */
+@media all and (max-width: 500px){
+    html {
+        font-size: 80%;
+    }
+    /*
+    #entireBody{
+        font-size: 10px;
+    }
+    */
+}
