@@ -1,5 +1,9 @@
-# electron-container (a perpetual WIP)
+# electron-container ( -w- jquery-mobile )
+## I ported my jquery-mobile-rosary app to this electron demo
+
 A Node App using ExpressJS, Socket IO, and Electron
+
+> This is the social version of a previous Jquery-Mobile app I made a while back. The only thing new is the Electron and SocketIO implementation.
 
 ---
 
