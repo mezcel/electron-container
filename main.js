@@ -2,7 +2,7 @@ var myHostip = "http://localhost"; // debug ip
 // var myHostip = "http://10.42.0.1"; // intended linux adhoc hosting
 // var myHostip = "http://192.168.xxx.1xx"; // external router
 
-function getIpStrinVar() {
+function getIPvarString() {
 
     var os = require('os');
 
@@ -29,7 +29,7 @@ function getIpStrinVar() {
     return returnIp;
 }
 
-myHostip = "http://" + getIpStrinVar();
+myHostip = "http://" + getIPvarString();
 
 /* Express jquery-mobile */
 /* --------------------------------------------------------------------------- */
@@ -53,9 +53,6 @@ function PrimaryAppViewExpress() {
 
     myAppJqm.listen(7777, function() {
         console.log("Live at Port " + myHostip + ":7777", myAppPath );
-        var myiphost = this.address().address;
-        var myipport = this.address().port;
-        console.log('running at http://' + myiphost + ':' + myipport)
     });
     
 }
@@ -86,28 +83,44 @@ function SocketIOExpress() {
     });
     
     users = [];
+    var userCounter = 0;
     io.on('connection', function(socket) {
-    
+
         socket.on('setUsername', function(data) {
             var randomHexColor = getRandomHexColor();
     
             if (users.indexOf(data) > -1) {
                 socket.emit('userExists', data + ' username is taken! Try some other username.');
             } else {
-    
+                
                 users.push(data);
                 socket.emit('userSet', {
                     username: data,
+                    allusers: users,
                     colorname: randomHexColor,
                     iptitle: myHostip
                 });
+                userCounter += 1;
+                console.log(users);
             }
         });
     
         socket.on('msg', function(data) {
             //Send message to everyone
             io.sockets.emit('newmsg', data);
-        })
+        });
+
+        socket.on('removeUser', function(data) {
+            // filter remove name from array
+            users = users.filter(function(e) { return e !== data });
+            console.log(users);
+            socket.emit('userRemove', users);
+        });
+
+        socket.on('disconnect', function() {
+            console.log('a user disconnected');
+        });
+
     });
     
     http.listen(3000, function() {
@@ -152,6 +165,7 @@ function createMainWindow() {
                         shell.openExternal(myHostip + ':7777/')
                     }
                 },
+                {type:'separator'},
                 {
                     label: 'Quit Electron',
                     click() {
