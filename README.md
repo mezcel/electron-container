@@ -48,10 +48,6 @@ Dependancies
     "scripts": {
         "start": "electron ."
     },
-    "keywords": [
-        "Electron",
-        "socket.io"
-    ],
     "devDependencies": {
         "electron": "^2.0.0"
     },
