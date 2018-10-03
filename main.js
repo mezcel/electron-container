@@ -7,10 +7,12 @@ function getIPvarString() {
     var os = require('os');
 
     var interfaces = os.networkInterfaces();
+    //console.log('interfaces\n',interfaces);
     var addresses = [];
     for (var k in interfaces) {
         for (var k2 in interfaces[k]) {
             var address = interfaces[k][k2];
+            console.log('networkInterfaces address\n',address.family + ' -', address.address);
             if (address.family === 'IPv4' && !address.internal) {
                 addresses.push(address.address);
             }

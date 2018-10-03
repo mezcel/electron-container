@@ -24,6 +24,8 @@ I wanted to assemble a working NodeJs refresher/refference featuring ExpressJS, 
 
 ### Still learning:
 
+* Best way for multiple hosts to become clients of a common service?
+
 * What is the best way to cram multiple different features in one Electron App?
 
 * Should they all be independent running hosted apps loaded by Electron, or should they all be contained within Electron itself.
@@ -32,9 +34,8 @@ I wanted to assemble a working NodeJs refresher/refference featuring ExpressJS, 
 
 ---
 
-## package.json
 
-NPM
+NPM Dependancies
 
 ```sh
 # download and install dependancies
@@ -44,7 +45,7 @@ npm install
 npm start
 ```
 
-Dependancies
+## package.json
 
 ```json
 {
@@ -56,7 +57,6 @@ Dependancies
         "electron": "^2.0.0"
     },
     "dependencies": {
-        "bootstrap3": "^3.3.5",
         "express": "^4.16.3",
         "jquery": "^1.11.1",
         "popper.js": "^1.14.4",
