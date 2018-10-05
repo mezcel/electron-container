@@ -3,7 +3,7 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Mezcel, mezcel@hotmail.com">
         <meta name="description" content="DOM Rosary"/>
         <meta name="subject" content="religion and spirituality">
@@ -38,7 +38,7 @@
             <div data-role="header" data-position="fixed">
                 <!-- App Header -->
                 <a href="#homePanel" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
-                <h1 id="appHeaderTitle">jQuery Mobile Rosary</h1>
+                <h1 id="appHeaderTitle">JQM Rosary</h1>
                 <a href="#infoPanel" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left">Info</a>
             </div>
 
@@ -91,7 +91,7 @@
                 <div data-role="collapsible"><h3>Christain Books</h3>
                     <!-- JSON bible list -->
                     <ul data-role="listview" id="bible-list" data-divider-theme="b">
-                        <li data-role="list-divider" data-theme="b" role="heading">(Json) Database Readings</li>
+                        <li data-role="list-divider" data-theme="b" role="heading">Database Quotes</li>
                     </ul>
                 </div>
                 
@@ -99,8 +99,8 @@
                 <div data-role="collapsible">
                     <h4>Catechism</h4>
                     <ul data-role="listview">
-                        <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(0)">Constitution</a></li>
-                        <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(1)">Mother of the Church</a></li>
+                        <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(0)">Drafting</a></li>
+                        <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(1)">Saint Mary</a></li>
                     </ul>
                 </div>
             </div>
@@ -149,10 +149,10 @@
                         <hr>
                         <fieldset data-role="controlgroup" data-type="horizontal">
                             <div>http://10.42.0.1xx:3000</div>
-                            <div>http://192.168.xxx.xxx:3000</div>
+                            <div>http://192.168.x.xxx:3000</div>
                             <hr>
                             <input name="text-1" id="inputMsgIp" value="http://localhost:3000" type="text" placeholder="http://'desited-ip':3000">
-                            <a id='btnMessenger' target='_blank' class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-icon-comment ui-btn-icon-left">Open New Window</a>
+                            <a id='btnMessenger' target='_blank' class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-icon-comment ui-btn-icon-left">Open New</a>
                         </fieldset>
                     </form>
                 </div>
@@ -160,13 +160,13 @@
             </div>
 
             <!-- Information Popup Dialog -->
-            <div data-role="popup" id="myDialogPopUp">
+            <div data-role="popup" class="ui-content" id="myDialogPopUp" data-position="fixed">
                 <span id="infoHeader" style="text-align: center" data-role="header"></span>
-                <span id="infoSubHeader"></span>
+                <h4 id="infoSubHeader" class="ui-content"></h4>
                 <div id="infoBody" class="ui-content" style="overflow-y:scroll"></div>
-                <div id="infoBody2" data-role="bibleContent"></div>
+                <div id="infoBody2" class="ui-content" data-role="bibleContent"></div>
                 <!-- JSON bible content -->
-                <a href="#pageone" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
+                <a href="#pageone" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
                 <span id="infoFooter" style="text-align: center" data-role="footer"></span>
             </div>
 
