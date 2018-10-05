@@ -5,9 +5,7 @@ A Node App using ExpressJS, Socket IO, and Electron
 
 > This is the social version of a previous Jquery-Mobile app I made a while back. The only thing new is the Electron and SocketIO implementation.
 
-> Not sure if this would be considered a fork of the Heroku app version or considered a whole new version. v4.2 or v5
-
-Note: At the moment this is just a desktop application. The mobile display is no good. The Jqm is not looking like my older applications of JQM. Perhaps looking into React may hadle the visuals a bit better.
+> Not sure if this would be considered a 'fork off the Heroku app versio'n or considered a whole 'new version', v4.2 or v5
 ---
 
 ### Personal Objective Note::
