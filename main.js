@@ -26,6 +26,7 @@ function getIPvarString() {
         returnIp = "http://localhost";
     } else {
         // just grab the 1st on the list
+        // on a real deployment you may want give it a dedicated static ip (you are not inherently secure... expecially on Socket IO)
         returnIp = addresses[0];
     }
 
@@ -64,7 +65,7 @@ function PrimaryAppViewExpress() {
 }
 
 /* ---------------------------------------------------------------------------
- * Express Socket IO
+ * Express Socket IO - Messaging Port
  * -------------------------------------------------------------------------- */
 
 function SocketIOExpress() {
