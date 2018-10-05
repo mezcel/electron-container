@@ -2558,7 +2558,7 @@ var rosaryJSON = {
             "decadeID": 0,
             "mysteryIndex": 0,
             "decadeNo": 0,
-            "decadeName": "&#x1f4d6;",
+            "decadeName": "",
             "decadeArt": "http:\/\/1.bp.blogspot.com\/-YvXtiei6hRA/VNRnxBrmgPI\/AAAAAAAAJoc\/64W4plee7t0\/s1600\/Atr%2BGoswijn%2Bvan%2Bder%2BWeyden_15%2BMysteries%2Band%2BVirgin%2Bof%2Bthe%2BRosary_c.1515-20_Met.jpg"
         },
         {
@@ -2735,8 +2735,8 @@ var rosaryJSON = {
     "book": [
         {
             "bookID": 0,
-            "bookName": "&#x1f4d6;",
-            "library": "&#x1f4d6;"
+            "bookName": "",
+            "library": ""
         },
         {
             "bookID": 1,
@@ -2755,7 +2755,7 @@ var rosaryJSON = {
         },
         {
             "bookID": 4,
-            "bookName": "Songs",
+            "bookName": "Songs a.ka. Ecclesiastes",
             "library": "<a href='http:\/\/www.usccb.org\/bible\/ecclesiastes\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
         },
         {
@@ -2820,7 +2820,7 @@ var rosaryJSON = {
             "bookIndex": 0,
             "chapterIndex": 0,
             "verseIndex": 0,
-            "scriptureText": "&#x1f4d6;"
+            "scriptureText": ""
         },
         {
             "scriptureID": 1,
@@ -4226,7 +4226,7 @@ var rosaryJSON = {
     "message": [
         {
             "messageID": 0,
-            "mesageText": "&#x1f4d6;"
+            "mesageText": ""
         },
         {
             "messageID": 1,
@@ -4312,8 +4312,8 @@ var rosaryJSON = {
     "prayer": [
         {
             "prayerID": 0,
-            "prayerName": "&#x1f4d6;",
-            "prayerText": "&#x1f64f;"
+            "prayerName": "",
+            "prayerText": "..."
         },
         {
             "prayerID": 1,
@@ -4525,9 +4525,9 @@ var rosaryJSON = {
         {
             "infoID": 0,
             "infoHeader": "Catechism of the Catholic Church",
-            "infoSubHeader": "<h3>Apostolic Constitution Fidei Depositum (ch.1, p.3-4)</h3>",
-            "infoFooter": "Vatican Online <a href=\"http:\/\/www.vatican.va\" target=\"_blank\">Link<\/a>",
-            "infoText": "<h2>The Process and Spirit of Drafting the Text</h2><p>The Catechism of the Catholic Church is the result of very extensive collaboration; it was prepared over six years of intense work done in a spirit of complete openness and fervent zeal.</p> <p>In 1986, I (Pope John Paul II) entrusted a commission of twelve Cardinals and Bishops, chaired by Cardinal Joseph Ratzinger, with the task of preparing a draft of the catechism requested by the Synod Fathers. An editorial committee of seven diocesan Bishops, experts in theology and catechesis, assisted the commission in its work.</p> <p>The commission, charged with giving directives and with overseeing the course of the work, attentively followed all the stages in editing the nine subsequent drafts. The editorial committee, for its part, assumed responsibility for writing the text, making the emendations requested by the commission and examining the observations of numerous theologians, exegetes and catechists, and, above all, of the Bishops of the whole world, in order to produce a better text. In the committee various opinions were compared with great profit, and thus a richer text has resulted whose unity and coherence are assured. </p> <p> The project was the object of extensive consultation among all Catholic Bishops, their Episcopal Conferences or Synods, and of theological and catechetical institutes. As a whole, it received a broadly favorable acceptance on the part of the Episcopate. It can be said that this Catechism is the result of the collaboration of the whole Episcopate of the Catholic Church, who generously ac ceptedmy invitation to share responsibility for an enterprise which directly concerns the life of the Church. This response elicits in me a deep feeling of joy, because the harmony of so many voices truly expresses what could be called the “symphony” of the faith. The achievement of this Catechism thus reflects the collegial nature of the Episcopate; it testifies to the Church’s catholicity. </p>"
+            "infoSubHeader": "Apostolic Constitution Fidei Depositum (ch.1, p.3-4)",
+            "infoFooter": "Vatican Online <a href=\"http:\/\/www.vatican.va\/archive\/ccc_css\/archive\/catechism\/aposcons.htm\" target=\"_blank\">Link<\/a>",
+            "infoText": "<b>The Process and Spirit of Drafting the Text</b><p>\"The Catechism of the Catholic Church is the result of very extensive collaboration; it was prepared over six years of intense work done in a spirit of complete openness and fervent zeal.</p> <p>In 1986, I entrusted a commission of twelve Cardinals and Bishops, chaired by Cardinal Joseph Ratzinger, with the task of preparing a draft of the catechism requested by the Synod Fathers. An editorial committee of seven diocesan Bishops, experts in theology and catechesis, assisted the commission in its work.</p> <p>The commission, charged with giving directives and with overseeing the course of the work, attentively followed all the stages in editing the nine subsequent drafts. The editorial committee, for its part, assumed responsibility for writing the text, making the emendations requested by the commission and examining the observations of numerous theologians, exegetes and catechists, and, above all, of the Bishops of the whole world, in order to produce a better text. In the committee various opinions were compared with great profit, and thus a richer text has resulted whose unity and coherence are assured. </p> <p> The project was the object of extensive consultation among all Catholic Bishops, their Episcopal Conferences or Synods, and of theological and catechetical institutes. As a whole, it received a broadly favorable acceptance on the part of the Episcopate. It can be said that this Catechism is the result of the collaboration of the whole Episcopate of the Catholic Church, who generously accepted my invitation to share responsibility for an enterprise which directly concerns the life of the Church. This response elicits in me a deep feeling of joy, because the harmony of so many voices truly expresses what could be called the “symphony” of the faith. The achievement of this Catechism thus reflects the collegial nature of the Episcopate; it testifies to the Church’s catholicity.\"</p> - <b>Pope John Paul II</b> <i>(11 October 1992, the thirtieth anniversary of the opening of the Second Vatican Ecumenical Council)</i><hr><p>The Catechism of the Catholic Church came about as a result of a proposal of Synod of Bishops in 1985. It appeared first in French in 1992. Subsequently, an English translation was published in 1982. In September of 1997, the Latin Typical Edition was approved and promulgated. This second edition in the United States of the English <i>Catechism of the Catholic Church</i> incorperates the modifications that appeared in the Latin text.</p>"
         },
         {
             "infoID": 1,
