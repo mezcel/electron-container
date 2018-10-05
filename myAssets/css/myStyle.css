@@ -1,11 +1,19 @@
 /* external style sheet doesent seem to work in MY jquery-mobile */
 @media all and (max-width: 500px){
+    
     html {
         font-size: 80%;
     }
-    /*
-    #entireBody{
-        font-size: 10px;
+
+    #appHeaderTitle {
+        font-size: 125%;
     }
-    */
+
+    #myDialogPopUp {
+        font-size: 110%;
+    }
+    
+    /*#entireBody{
+        font-size: 10px;
+    }*/
 }

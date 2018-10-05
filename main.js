@@ -2,29 +2,31 @@ var myHostip = "http://localhost"; // debug ip
 // var myHostip = "http://10.42.0.1"; // intended linux adhoc hosting
 // var myHostip = "http://192.168.xxx.1xx"; // external router
 
+/* --------------------------------------------------------------------------- */
+
 function getIPvarString() {
 
     var os = require('os');
 
     var interfaces = os.networkInterfaces();
-    //console.log('interfaces\n',interfaces);
     var addresses = [];
     for (var k in interfaces) {
         for (var k2 in interfaces[k]) {
             var address = interfaces[k][k2];
-            console.log('networkInterfaces address\n',address.family + ' -', address.address);
+            console.log('Available Network Interface Address\n',address.family + ' -', address.address); // debug
             if (address.family === 'IPv4' && !address.internal) {
                 addresses.push(address.address);
             }
         }
     }
 
-    console.log(addresses, addresses.length);
+    console.log('IPv4 Addresses: \n' + addresses, "Number of IPv4 Addresses: " + addresses.length + "\n"); // debug
     if (addresses.length < 1) {
         // default to 127.0.0.1
         returnIp = "http://localhost";
     } else {
         // just grab the 1st on the list
+        // on a real deployment you may want give it a dedicated static ip (you are not inherently secure... expecially on Socket IO)
         returnIp = addresses[0];
     }
 
@@ -33,8 +35,9 @@ function getIPvarString() {
 
 myHostip = "http://" + getIPvarString();
 
-/* Express jquery-mobile */
-/* --------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------
+ * Express jquery-mobile
+ * -------------------------------------------------------------------------- */
 
 function PrimaryAppViewExpress() {
 
@@ -45,7 +48,8 @@ function PrimaryAppViewExpress() {
     var myAppPath = __dirname + '/';
 
     myAppJqm.get("/", function(req, res) {
-        res.sendfile(myAppPath + "myViews/index.html");
+        // res.sendfile(myAppPath + "myViews/index.html");
+        res.sendfile(myAppPath + "index.html");
     });
 
     myAppJqm.use(myExpressJqm.static(myAppPath));
@@ -60,9 +64,9 @@ function PrimaryAppViewExpress() {
 
 }
 
-
-/* --------------------------------------------------------------------------- */
-/* Express Socket IO */
+/* ---------------------------------------------------------------------------
+ * Express Socket IO - Messaging Port
+ * -------------------------------------------------------------------------- */
 
 function SocketIOExpress() {
 
@@ -87,7 +91,6 @@ function SocketIOExpress() {
     });
 
     users = [];
-    var userCounter = 0;
     io.on('connection', function(socket) {
 
         socket.on('setUsername', function(data) {
@@ -104,8 +107,8 @@ function SocketIOExpress() {
                     colorname: randomHexColor,
                     iptitle: myHostip
                 });
-                userCounter += 1;
-                console.log(users);
+                
+                console.log('A user was added\n\t Current User Arr: ' + users); // display updated user array in Node
             }
         });
 
@@ -119,12 +122,12 @@ function SocketIOExpress() {
             users = users.filter(function(e) {
                 return e !== data
             });
-            console.log(users);
+            console.log('A user was removed\n\t Current User Arr: ' + users); // display updated user array in Node
             socket.emit('userRemove', users);
         });
 
         socket.on('disconnect', function() {
-            console.log('a user disconnected');
+            console.log('a user disconnected'); // display updated user array in Node
         });
 
     });
@@ -138,12 +141,10 @@ function SocketIOExpress() {
 PrimaryAppViewExpress();
 SocketIOExpress();
 
-/* --------------------------------------------------------------------------- */
-/* ELECTRON */
-/*
-    The nice thing about electron is that I dont need to manually mess with Express configs
-    For my purposes, it works like a standalone non-server desktop html file
-*/
+/* ---------------------------------------------------------------------------
+ * ELECTRON
+ * -------------------------------------------------------------------------- */
+
 const {
     app,
     BrowserWindow,
@@ -154,17 +155,21 @@ const {
 let mainWindow, childWindow;
 
 function createMainWindow() {
+
     // Create the browser window.
     mainWindow = new BrowserWindow({
         width: 700,
-        height: 900
+        height: 900,
+        icon: "./myAssets/img/favicon.ico"
     });
 
     // electron menu json
     var myElectronMenu = Menu.buildFromTemplate(
-        [{
+        [
+            {
                 label: 'Menu',
-                submenu: [{
+                submenu: [
+                    {
                         label: 'Web Browser Standalone Instance',
                         click() {
                             shell.openExternal(myHostip + ':7777/')
@@ -183,7 +188,8 @@ function createMainWindow() {
             },
             {
                 label: 'Messaging',
-                submenu: [{
+                submenu: [
+                    {
                         label: 'Show Electron Messenger',
                         click() {
                             childWindow.maximize();
@@ -208,7 +214,8 @@ function createMainWindow() {
             },
             {
                 label: 'About',
-                submenu: [{
+                submenu: [
+                    {
                         label: 'Github',
                         click() {
                             shell.openExternal('http://github.com/mezcel/')
@@ -231,15 +238,14 @@ function createMainWindow() {
                     }
                 ]
             }
-        ]);
+        ]
+    );
 
     Menu.setApplicationMenu(myElectronMenu);
 
-
-
     // and load the index.html of the app.
     mainWindow.loadFile('index.html');
-    //mainWindow.loadURL(`http://localhost:7777/`)
+    // mainWindow.loadFile(__dirname + '/index.html');
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function() {
@@ -247,7 +253,7 @@ function createMainWindow() {
     });
 
     mainWindow.once('ready-to-show', () => {
-        splash.destroy();
+        // splash.destroy();
         mainWindow.show();
     });
 }
@@ -259,7 +265,8 @@ function createChildWindow() {
         show: false,
         closable: false,
         width: 700,
-        height: 550
+        height: 550,
+        icon: "./myAssets/img/favicon.ico"
     });
 
     childWindow.once('ready-to-show', () => {

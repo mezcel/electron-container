@@ -1,18 +1,20 @@
 {
     "name": "electron-container",
-    "version": "1.0.0",
-    "description": "bootstrap modal and msg",
+    "version": "0.3.0",
+    "description": "ported my old jquery-mobile-rosary into a ElectronJs Application with SocketIO messaging features.",
     "main": "main.js",
     "scripts": {
         "start": "electron ."
     },
     "repository": "https://github.com/mezcel/electron-container",
     "keywords": [
-        "Electron",
-        "socket.io"
+        "electron",
+        "express",
+        "socket.io",
+        "jquery-mobile"
     ],
-    "author": "mezcel",
-    "license": "idk-licence",
+    "author": "Mezcel",
+    "license": "I do not own rights or licenses for the NPM dependancies, the rest is my free gift to anyone who wants it in order to be used for good or for bad.",
     "devDependencies": {
         "electron": "^2.0.0"
     },

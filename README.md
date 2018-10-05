@@ -5,6 +5,7 @@ A Node App using ExpressJS, Socket IO, and Electron
 
 > This is the social version of a previous Jquery-Mobile app I made a while back. The only thing new is the Electron and SocketIO implementation.
 
+> Not sure if this would be considered a 'fork off the Heroku app versio'n or considered a whole 'new version', v4.2 or v5
 ---
 
 ### Personal Objective Note::
@@ -24,13 +25,9 @@ I wanted to assemble a working NodeJs refresher/refference featuring ExpressJS, 
 
 ### Still learning:
 
-* Best way for multiple hosts to become clients of a common service?
+* Should they all be modular indpendent running hosted apps loaded by Electron, or should they all be contained within Electron itself.
 
-* What is the best way to cram multiple different features in one Electron App?
-
-* Should they all be independent running hosted apps loaded by Electron, or should they all be contained within Electron itself.
-
-* Still messing with modal-like features.
+* Not sure what to do about that perpetual vertical scrollbar (a jqm side effect). I dont need it, but it is better to have it than not have it.
 
 ---
 
