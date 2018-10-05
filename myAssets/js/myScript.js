@@ -322,10 +322,10 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() {
         var bookID = info["bookID"];
 
         $("#infoHeader").html(info["bookName"]);
-        info_view += '<ol>';
+        info_view += '<ol style="list-style: none; padding-left: 0;">';
         for (var iLoop = 0; iLoop < rosaryJSON.scripture.length; iLoop += 1) {
             if (rosaryJSON.scripture[iLoop].bookIndex === bookID) {
-                info_view += '<li style="border-bottom: 1px solid black;">(' + rosaryJSON.scripture[iLoop].chapterIndex + ":" + rosaryJSON.scripture[iLoop].verseIndex + ") | Quote: <b>" + rosaryJSON.scripture[iLoop].scriptureText + '</b></li>';
+                info_view += '<li style="border-bottom: .5px solid black; "><strong>(' + rosaryJSON.scripture[iLoop].chapterIndex + ":" + rosaryJSON.scripture[iLoop].verseIndex + ") &#128489;</strong> " + rosaryJSON.scripture[iLoop].scriptureText + '</li>';
             }
         }
         info_view += '</ol>';
