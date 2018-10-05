@@ -4,6 +4,14 @@
     html {
         font-size: 80%;
     }
+
+    #appHeaderTitle {
+        font-size: 125%;
+    }
+
+    #myDialogPopUp {
+        font-size: 110%;
+    }
     
     /*#entireBody{
         font-size: 10px;
