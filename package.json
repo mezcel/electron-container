@@ -14,7 +14,7 @@
         "jquery-mobile"
     ],
     "author": "Mezcel",
-    "license": "I do not own rights or licenses for the JQM, NPM, or the audio, the rest is mine & you can have it.",
+    "license": "I do not own rights for the JQM, NPM, images or audio, the rest is mine & you can have it.",
     "devDependencies": {
         "electron": "^2.0.0"
     },
