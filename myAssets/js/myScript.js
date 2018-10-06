@@ -251,14 +251,45 @@ function populateBookJsonList() { // populate the left pannel list with bible co
     });
 }
 
-function messengerLinkEvent() { // allow user to set which server to message with
+function getBrowserUrl() { // get ipurl to string
+    // var currentFileUrl = document.URL; //http://192.168.x.xxx:3000
+    const hostUrl = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port: '');
+    var urlParse = new URL(hostUrl);
 
+    //  Get any piece of the url you're interested in
+    urlParse.hostname;  //  'example.com'
+    urlParse.port;      //  12345
+    urlParse.search;    //  '?startIndex=1&pageSize=10'
+    urlParse.pathname;  //  '/blog/foo/bar'
+    urlParse.protocol;  //  'http:'
+
+    if (urlParse.protocol == 'http:') {
+        // assumes we are connected on the same server ip
+        urlParse.port = 3000;
+    } else {
+        // assumes we are on host machine
+        urlParse = 'http://localhost:3000';
+    }
+    
+    $('#inputMsgIp').val(urlParse);
+    $('#show-val').attr('placeholder', urlParse);
+}
+
+function messengerLinkEvent() { // allow user to set which server to message with    
+
+    getBrowserUrl();
+
+    // Messenger popup button
     $( "#btnMessenger" ).on( "click", function() {
+
         /// inputMsgIp
         var href = $('#inputMsgIp').val();
-        var link = $('<a href="' + href + '" />');
-        link.attr('target', '_blank');
-        window.open(link.attr('href'));
+        if (href !== 'No Network' ) {
+            var link = $('<a href="' + href + '" />');
+            link.attr('target', '_blank');
+            window.open(link.attr('href'));
+        }
+        
     });
 }
 
@@ -266,7 +297,7 @@ function initAudioVolume() { // initial audio setting
     $("#audioAveMaria").prop('volume', 0.25);
 }
 
-/* configure progressbars */
+/* configure progressbars  */
 $(document).on('pageshow', '#pageone', function() {
 
     $('<input>').appendTo('[ data-role="decadeProgress"]').attr({
@@ -307,9 +338,7 @@ $(document).on('pageshow', '#pageone', function() {
     progressBar.setValue(beadCounter, beadCounter);
     document.getElementById('prayer').innerHTML = rosaryJSON.prayer[1].prayerText;
 
-    populateBookJsonList();
-    messengerLinkEvent();
-    initAudioVolume();
+
 
 });
 
@@ -374,6 +403,18 @@ $(document).on("pagecreate", function() {
 
         }
     });
+
+    
+
+
+});
+
+/* initialize features provided the page's DOM is loaded */
+$( document ).ready(function() {
+    populateBookJsonList();
+    getBrowserUrl();
+    messengerLinkEvent();
+    initAudioVolume();
 });
 
 ////
