@@ -1,6 +1,6 @@
 var myHostip = "http://localhost"; // debug ip
 // var myHostip = "http://10.42.0.1"; // intended linux adhoc hosting
-// var myHostip = "http://192.168.xxx.1xx"; // external router
+// var myHostip = "http://192.168.x.1xx"; // external router
 
 /* --------------------------------------------------------------------------- */
 
@@ -170,20 +170,14 @@ function createMainWindow() {
                 label: 'Menu',
                 submenu: [
                     {
-                        label: 'Web Browser Standalone Instance',
+                        label: 'Web Browser Instance',
                         click() {
                             shell.openExternal(myHostip + ':7777/')
                         }
                     },
-                    {
-                        type: 'separator'
-                    },
-                    {
-                        label: 'Quit Electron',
-                        click() {
-                            app.quit()
-                        }
-                    }
+                    {type: 'separator'},
+                    {role: 'minimize'},
+                    {role: 'quit'}
                 ]
             },
             {
@@ -199,6 +193,7 @@ function createMainWindow() {
                         label: 'Hide Electron Messenger',
                         click() {
                             childWindow.minimize();
+
                         }
                     },
                     {
