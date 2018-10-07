@@ -61,3 +61,21 @@ npm start
     }
 }
 ```
+
+## Build as an executable
+
+If you want to build this app into a standalone executabel, use ```electron-packager```
+
+```sh
+## Globally install electron-packager
+
+npm install -g electron-packager
+
+## Linux install workarround/fix
+##      sudo npm install electron -g --unsafe-perm=true --verbose --allow-root
+
+
+## perform the packager on my desired Electron App directory.
+
+electron-packager .
+```
