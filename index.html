@@ -44,64 +44,71 @@
 
             <!-- Right Panel - Mysteries and Scriptures  -->
             <div data-role="panel" id="infoPanel" data-position="right">
-                <h3>Mysteries</h3>
-                <div data-role="collapsible">
-                    <h4>Joyful Mysteries</h4>
-                    <ul data-role="listview">
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(1)">Annunciation</a></li>
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(2)">Visitation</a></li>
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(3)">Nativity</a></li>
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(4)">Presentation</a></li>
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(5)">Finding Jesus</a></li>
-                    </ul>
-                </div>
-                <div data-role="collapsible">
-                    <h4>Luminous Mysteries</h4>
-                    <ul data-role="listview">
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(6)">Baptism of Jesus</a></li>
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(7)">Wedding at Cana</a></li>
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(8)">Kingdom of God</a></li>
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(9)">Transfiguration</a></li>
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(10)">Institution of the Eucharist</a></li>
-                    </ul>
-                </div>
-                <div data-role="collapsible">
-                    <h4>Sorrowful Mysteries</h4>
-                    <ul data-role="listview">
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(11)">Agony in the Garden</a></li>
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(12)">Scourging at the Pillar</a></li>
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(13)">Crowning with Thorns</a></li>
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(14)">Carrying of the Cross</a></li>
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(15)">Crucifixion and Death</a></li>
-                    </ul>
-                </div>
-                <div data-role="collapsible">
-                    <h4>Glorious Mysteries</h4>
-                    <ul data-role="listview">
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(16)">Resurrection</a></li>
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(17)">Ascension</a></li>
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(18)">The Holy Spirit</a></li>
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(19)">Assumption of Mary</a></li>
-                        <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(20)">Coronation</a></li>
-                    </ul>
-                </div>
+                <div data-role="collapsible-set">  
 
+                    <h3>Mysteries</h3>
+                    <div data-role="collapsible">
+                        <h4>Joyful Mysteries</h4>
+                        <ul data-role="listview">
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(1, 7)">Annunciation</a></li>
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(2, 21)">Visitation</a></li>
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(3, 35)">Nativity</a></li>
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(4, 49)">Presentation</a></li>
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(5, 63)">Finding Jesus</a></li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible">
+                        <h4>Luminous Mysteries</h4>
+                        <ul data-role="listview">
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(6, 86)">Baptism of Jesus</a></li>
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(7, 100)">Wedding at Cana</a></li>
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(8, 114)">Kingdom of God</a></li>
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(9, 128)">Transfiguration</a></li>
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(10, 142)">Institution of the Eucharist</a></li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible">
+                        <h4>Sorrowful Mysteries</h4>
+                        <ul data-role="listview">
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(11, 165)">Agony in the Garden</a></li>
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(12, 179)">Scourging at the Pillar</a></li>
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(13, 193)">Crowning with Thorns</a></li>
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(14, 207)">Carrying of the Cross</a></li>
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(15, 221)">Crucifixion and Death</a></li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible">
+                        <h4>Glorious Mysteries</h4>
+                        <ul data-role="listview">
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(16, 244)">Resurrection</a></li>
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(17, 258)">Ascension</a></li>
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(18, 272)">The Holy Spirit</a></li>
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(19, 286)">Assumption of Mary</a></li>
+                            <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(20, 300)">Coronation</a></li>
+                        </ul>
+                    </div>
+                
+                </div>
+                
                 <h3>Sacred Scriptures</h3>
-                <!-- <div data-role="content">-->
-                <div data-role="collapsible"><h3>Christain Books</h3>
+                <div data-role="collapsible">
+                    <h3>Christain Books</h3>
                     <!-- JSON bible list -->
                     <ul data-role="listview" id="bible-list" data-divider-theme="b">
                         <li data-role="list-divider" data-theme="b" role="heading">Database Quotes</li>
                     </ul>
                 </div>
                 
-                <h3>Authority</h3>
-                <div data-role="collapsible">
-                    <h4>Catechism</h4>
-                    <ul data-role="listview">
-                        <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(0)">Drafting</a></li>
-                        <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(1)">Saint Mary</a></li>
-                    </ul>
+                <div data-role="collapsible-set">  
+                    <h3>Authority</h3>
+                    <div data-role="collapsible">
+                        <h4>Catechism</h4>
+                        <ul data-role="listview">
+                            <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(0)">Drafting</a></li>
+                            <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(1)">Saint Mary</a></li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
 
