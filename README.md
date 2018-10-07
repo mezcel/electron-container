@@ -13,14 +13,14 @@ A Node App using ExpressJS, Socket IO, and Electron.
 
 ### My Rationale:
 
-I wanted to assemble a working NodeJs refresher/refference featuring ExpressJS, Socket IO, and Electron. I am also playing the workflow of these NPM packages and how they compare with the workflow of other software API flavorss which do the same things. Trying out different things, I disovered some compatibility issues with specific versions of Bootstrap and Jquery. Electron on Win, Linux and Mac differ slightly on what features exist.
+I wanted to assemble a working NodeJs refresher/reference featuring ExpressJS, Socket IO, and Electron. I am also playing the workflow of these NPM packages and how they compare with the workflow of other software API flavors which do the same things. Trying out different things, I discovered some compatibility issues with specific versions of Bootstrap and Jquery. Electron on Win, Linux and Mac differ slightly on what features exist.
 
 ### Objective Goals:
 
-* Skeleton-ish starter tamplate for future refference. (Mostly in the ```main.js```)
+* Skeleton-ish starter templates for future reference. (Mostly in the ```main.js```)
 * Desktop and mobile app
 * Works as a Server Hosted App.
-* Send/Recieve communication between different instances
+* Send/Receive communication between different instances
 
 ### Feature Objective:
 
@@ -35,7 +35,7 @@ Not sure if React would have been better than JQM. React would have had more UI 
 NPM Dependancies
 
 ```sh
-# download and install dependancies
+# download and install dependencies
 npm install
 
 # start the app
@@ -64,14 +64,14 @@ npm start
 
 ## Build as an executable
 
-If you want to build this app into a standalone executabel, use ```electron-packager```
+If you want to build this app into a standalone executable, use ```electron-packager```
 
 ```sh
 ## Globally install electron-packager
 
 npm install -g electron-packager
 
-## Linux install workarround/fix
+## Linux install workaround/fix
 ##      sudo npm install electron -g --unsafe-perm=true --verbose --allow-root
 
 
