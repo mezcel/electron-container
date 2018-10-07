@@ -19,12 +19,23 @@ var progressBar = {
     }
 };
 
+function jumpToBeadPosition(mysteryInfoID, jumptoBeadID) {
+    // close all popups before opening one
+
+    var onclickFunction = jumptoBeadID + '; hailmaryCounter = ' + ((mysteryInfoID * 10) - 10) + '; beadFwd(); progressBar.setValue(hailmaryCounter % 10, hailmaryCounter % 50);';
+
+    var btnMysteryString = '<p><a href="#pageone" class="ui-btn ui-corner-all ui-icon-actiont" data-rel="back" onclick="beadCounter = ' + onclickFunction + '">Start</a><p>';
+
+    return btnMysteryString;
+}
+
 /* dynamic fill function */
-function fillMysteryInfoContent(mysteryInfoID) {
+function fillMysteryInfoContent(mysteryInfoID, jumptoBeadID) {
     showBibleListFlag = false;
+    var btnMysteryString = '<a href="#pageone" class="ui-btn" data-rel="back">Jump to location</a>';
     $("#infoHeader").html(rosaryJSON.mysteryInfo[mysteryInfoID].infoHeader);
     $("#infoSubHeader").html(rosaryJSON.mysteryInfo[mysteryInfoID].infoSubHeader);
-    $("#infoBody").html(rosaryJSON.mysteryInfo[mysteryInfoID].infoText);
+    $("#infoBody").html(rosaryJSON.mysteryInfo[mysteryInfoID].infoText + jumpToBeadPosition(mysteryInfoID, jumptoBeadID - 1));
     $("#infoFooter").html("this is suplimentary information about this mystery: " + rosaryJSON.mysteryInfo[mysteryInfoID].infoRefference);
 }
 
@@ -291,6 +302,7 @@ function messengerLinkEvent() { // allow user to set which server to message wit
         }
         
     });
+
 }
 
 function initAudioVolume() { // initial audio setting
@@ -337,9 +349,6 @@ $(document).on('pageshow', '#pageone', function() {
     // initialize progressbar and prayer display
     progressBar.setValue(beadCounter, beadCounter);
     document.getElementById('prayer').innerHTML = rosaryJSON.prayer[1].prayerText;
-
-
-
 });
 
 /* the code destination for dynamically generated bible list */
@@ -415,6 +424,7 @@ $( document ).ready(function() {
     getBrowserUrl();
     messengerLinkEvent();
     initAudioVolume();
+
 });
 
 ////
