@@ -18,6 +18,7 @@ I wanted to assemble a working NodeJs refresher/refference featuring ExpressJS, 
 
 ### Main Goals:
 
+
 * Desktop standalone and mobile networked app
 * Works as a Server Hosted App.
 * Send/Recieve text communication between different app instances
@@ -40,7 +41,7 @@ Perhaps that will be another version later down the road. A Swift(iOS)/VS2017(.N
 NPM Dependancies
 
 ```sh
-# download and install dependancies
+# download and install dependencies
 npm install
 
 # start the app
@@ -71,14 +72,14 @@ package.json
 
 ## Build as an executable
 
-If you want to build this app into a standalone executabel, use ```electron-packager```
+If you want to build this app into a standalone executable, use ```electron-packager```
 
 ```sh
 ## Globally install electron-packager
 
 npm install -g electron-packager
 
-## Linux install workarround/fix
+## Linux install workaround/fix
 ##      sudo npm install electron -g --unsafe-perm=true --verbose --allow-root
 
 
