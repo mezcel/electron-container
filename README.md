@@ -1,8 +1,8 @@
 # electron-container ( -w- jquery-mobile )
 
-### A port of an older [jquery-mobile-rosary](https://github.com/mezcel/rosary-jquery-mobile) app into ElectronJs
+### A port of an older html web page, [jquery-mobile-rosary](https://github.com/mezcel/rosary-jquery-mobile), into ElectronJs.
 
-A Node App using ExpressJS, Socket IO, and Electron.
+This is a Node App using ExpressJS, Socket IO, and Electron.
 
 ---
 
@@ -17,18 +17,21 @@ I wanted to assemble a working NodeJs refresher/refference featuring ExpressJS, 
 
 ### Objective Goals:
 
-* Skeleton-ish starter tamplate for future refference. (Mostly in the ```main.js```)
 * Desktop and mobile app
 * Works as a Server Hosted App.
-* Send/Recieve communication between different instances
+* Send/Recieve text communication between different app instances
+* The user experience closer resembles an even older rosary version I made a while back, [rosary.net](https://github.com/mezcel/rosary.net). (_It has less features and visuals, but it is a social networking application._)
 
 ### Feature Objective:
 
-* Focuses on Electron page loading
+* Focuses on Electron page loading and modals
+* Express instant messaging
+* Date specific app events
+* modular json db
 
 ### Doubts:
 
-Not sure if React would have been better than JQM. React would have had more UI features, but other than 'skinning', the JQM has all necessary UI built into it.
+I wonder if React would have been better than JQM. React would have had more UI features, but other than 'skinning', the JQM has all necessary UI built into it.
 
 ---
 
