@@ -4,11 +4,7 @@
 
 > This is a Node App using ExpressJS, Socket IO, and Electron.
 
-## About:
-
----
-
-### My Thoughts & Rationale:
+### My Thoughts, Rationale, and Ramblings:
 
 I wanted to assemble a working NodeJs refresher/refference featuring ExpressJS, Socket IO, and Electron. I am also playing the workflow of these NPM packages and how they compare with the workflow of other software API flavorss which do the same things. Trying out different things, I disovered some compatibility issues with specific versions of Bootstrap and Jquery. Electron on Win, Linux and Mac differ slightly on what features exist.
 
@@ -20,27 +16,26 @@ I wanted to assemble a working NodeJs refresher/refference featuring ExpressJS, 
 
 ---
 
-### Objective Goals:
+### Main Goals:
 
 * Desktop standalone and mobile networked app
 * Works as a Server Hosted App.
 * Send/Recieve text communication between different app instances
 
-### Feature Objective:
+### Key Features:
 
 * Focuses on Electron page loading and modals
 * Express instant messaging
 * Date specific app events
 * modular json db
 
-### Lingering Doubts:
+### Ideas for the next version:
 
 I wonder if React would have been better than JQM. React would have had more UI features, but other than 'skinning', the JQM has all necessary UI built into it. Jqm was quicker ```for me``` because of its fixed and consistent platform constraints. React would have been more feature rich and robust, but would demand more development pollishing and fine tuning to account for all the variable options React has.
 
-Perhaps that will be another version later down the road.
+Perhaps that will be another version later down the road. A Swift(iOS)/VS2017(.Net) style app.
 
 ## NPM
----
 
 NPM Dependancies
 
@@ -52,7 +47,7 @@ npm install
 npm start
 ```
 
-## package.json
+package.json
 
 ```json
 {
@@ -71,6 +66,8 @@ npm start
     }
 }
 ```
+
+---
 
 ## Build as an executable
 
