@@ -1,16 +1,17 @@
-console.log("o---+---+---+---o---+---+---+---o \nJOYFUL MYSTERY OF THE ROSARY \no---+---+---+---o \nMotivation: \nI made this app as a way to recite the rosary differently than I have done before. I also made this to give developers a working test-bench to build off of. \no---+---+---+---o\nMod:\nEdit the JSON variable 'var rosaryJSON;' to customize the chaplet text content. \no---+---+---+---o---+---+---+---o");
+/***************************************************************
+ *  Global Vars 
+ * */
 
-/* Global Vars */
+var initialMysteryFlag = false; // Initiated 1st mystery after the Mary Icon
+var showBibleListFlag = false; // whether or not an html list was dynamically populated
+
 var initialHailMaryCounter = 0;
 var stringSpaceCounter = 0;
 var hailmaryCounter = 0;
 var beadCounter = 0;
-// var rosaryJSON = a json var defined in rosaryJSON.js
+/* var rosaryJSON; // a json var defined in rosaryJSON.js */
 
-var showBibleListFlag = false; // whether or not an html list was dynamically populated
-
-/* var to contain progress state display  */
-var progressBar = {
+var progressBar = { // var containing progressbar state
     setValue: function(beadCounterDecade, beadCounterRosary) {
         $('#decadeSlider').val(beadCounterDecade);
         $('#decadeSlider').slider("refresh");
@@ -19,27 +20,59 @@ var progressBar = {
     }
 };
 
-function jumpToBeadPosition(mysteryInfoID, jumptoBeadID) {
-    // close all popups before opening one
+/***************************************************************
+ * My Function Objects
+ */
 
-    var onclickFunction = jumptoBeadID + '; hailmaryCounter = ' + ((mysteryInfoID * 10) - 10) + '; beadFwd(); progressBar.setValue(hailmaryCounter % 10, hailmaryCounter % 50);';
+function initialMystery() { // initial mystery based on weekday
+    // (Sun = Wed), (Mon = Sat), (Tue = Fri)
 
-    var btnMysteryString = '<p><a href="#pageone" class="ui-btn ui-corner-all ui-icon-actiont" data-rel="back" onclick="beadCounter = ' + onclickFunction + '">Start</a><p>';
+    var initialMysteryArr = []; // [decade mystery, db bead no]
+    var myDate = new Date();
+    var dayOrderNo = myDate.getDay();
+
+    switch(dayOrderNo) {
+        case 0 || 3: // Sunday, Wednesday
+            initialMysteryArr = [16,244];
+            break;
+        case 1 || 6: // Monday, Saturday
+            initialMysteryArr = [1,7];
+            break;
+        case 2 || 5: // Tuesday, Friday
+            initialMysteryArr = [11,165];
+            break;
+        case 3: // Thursday
+            initialMysteryArr = [6,86];
+            break;
+        default: // default to monday
+            initialMysteryArr = [1,7];
+    }
+
+    return initialMysteryArr;
+    
+}
+
+function populateJumpToPosition(mysteryInfoID, jumptoBeadID) { // populate button and function
+
+    // jump to positions function string
+    var onclickFunction = 'beadCounter = ' + jumptoBeadID + '; hailmaryCounter = ' + ((mysteryInfoID * 10) - 10) + '; beadFwd(); progressBar.setValue(hailmaryCounter % 10, hailmaryCounter % 50);';
+
+    // dynamic populate button
+    var btnMysteryString = '<p><a href="#pageone" class="ui-btn ui-corner-all ui-icon-actiont" data-rel="back" onclick="' + onclickFunction + '">Start</a><p>';
 
     return btnMysteryString;
 }
 
-/* dynamic fill function */
-function fillMysteryInfoContent(mysteryInfoID, jumptoBeadID) {
+function fillMysteryInfoContent(mysteryInfoID, jumptoBeadID) { // populate mystery and scripture DOM display
     showBibleListFlag = false;
-    var btnMysteryString = '<a href="#pageone" class="ui-btn" data-rel="back">Jump to location</a>';
+
     $("#infoHeader").html(rosaryJSON.mysteryInfo[mysteryInfoID].infoHeader);
     $("#infoSubHeader").html(rosaryJSON.mysteryInfo[mysteryInfoID].infoSubHeader);
-    $("#infoBody").html(rosaryJSON.mysteryInfo[mysteryInfoID].infoText + jumpToBeadPosition(mysteryInfoID, jumptoBeadID - 1));
+    $("#infoBody").html(rosaryJSON.mysteryInfo[mysteryInfoID].infoText + populateJumpToPosition(mysteryInfoID, jumptoBeadID - 1));
     $("#infoFooter").html("this is suplimentary information about this mystery: " + rosaryJSON.mysteryInfo[mysteryInfoID].infoRefference);
 }
 
-function fillAppInfoContent(infoID) {
+function fillAppInfoContent(infoID) { // called within html 
     showBibleListFlag = false;
     document.getElementById('infoHeader').innerHTML = rosaryJSON.appInfo[infoID].infoHeader;
     document.getElementById('infoSubHeader').innerHTML = rosaryJSON.appInfo[infoID].infoSubHeader;
@@ -87,23 +120,21 @@ function beadRev() {
 }
 
 function beadProcess(directionFwRw) { // event displays based on bead counter sequence
-	/*
-	 * Progress Calculation Variables:
-	 * 	hailmaryCounter
-	 * 	thisDecadeSet
-	 * 	beadCounter
+	/* Note:
+	 *  Progress Calculation Variables:
+	 * 	    hailmaryCounter
+	 * 	    thisDecadeSet
+	 * 	    beadCounter
 	 * */
 
-	beadCounter += directionFwRw; // increment
-    fillRosaryBeadPage(beadCounter);
-
+    beadCounter += directionFwRw; // increment
     mysteryProgress = 0;
 
     var decadeIndex = rosaryJSON.rosaryBead[beadCounter].decadeIndex;
     var beadIndex 	= rosaryJSON.rosaryBead[beadCounter].beadIndex;
     var beadType 	= rosaryJSON.bead[beadIndex].beadID;
 
-    switch (beadType) { // the bead type is used to configre count settings
+    switch (beadType) { // the bead type is used to configre count/progress settings
 		case 2:
 			if (decadeIndex !== 0){
 
@@ -132,6 +163,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
 			if (decadeIndex == 0) { // handles only the intro hail marys
                 if (directionFwRw > 0) {
+
                     // fwd
                     if (initialHailMaryCounter == 0) {
                         initialHailMaryCounter = 1;
@@ -204,12 +236,19 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
             break;
 
-		case 5: // mary icon / bigbead
+		case 5: // mary icon / bigbead alt
             $("#beadMarker").html("Mary Icon");
             if (directionFwRw < 0) {
                 stringSpaceCounter = 3;
             }
             stringSpaceCounter = 0;
+            
+            // App's initial startup mystery, a one time toggle            
+            if (initialMysteryFlag == false) {
+                beadCounter = initialMystery()[1];
+                hailmaryCounter = ((initialMystery()[0] * 10) - 10);
+                initialMysteryFlag = true;
+            }
             break;
 
         case 6: // cross
@@ -218,13 +257,15 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             progressBar.setValue(0, 0);
             stringSpaceCounter = 0;
             break;
+
         default:
             thisDecadeSet = 0;
             $("#beadMarker").html("0 / 0");
             stringSpaceCounter = 0;
-            fillRosaryBeadPage(beadCounter); // populate bead text readings
             break;
     }
+
+    fillRosaryBeadPage(beadCounter); // populare dom with text
 
 }
 
@@ -308,6 +349,10 @@ function messengerLinkEvent() { // allow user to set which server to message wit
 function initAudioVolume() { // initial audio setting
     $("#audioAveMaria").prop('volume', 0.25);
 }
+
+/***************************************************************
+ * Page Load Events
+ */
 
 /* configure progressbars  */
 $(document).on('pageshow', '#pageone', function() {
