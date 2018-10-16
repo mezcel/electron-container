@@ -2,25 +2,29 @@
 
 ### A port of an older html web page, [jquery-mobile-rosary](https://github.com/mezcel/rosary-jquery-mobile), into ElectronJs.
 
-This is a Node App using ExpressJS, Socket IO, and Electron.
+> This is a Node App using ExpressJS, Socket IO, and Electron.
+
+## About:
 
 ---
 
-> This is the social version of a previous Jquery-Mobile app I made a while back. The only thing new is the Electron and SocketIO implementation.
-
-> Not sure if this would be considered a 'fork' off the [Heroku app](https://github.com/mezcel/heroku-joyful-mystery) versio'n or considered a whole 'new version', v4.2 or v5
----
-
-### My Rationale:
+### My Thoughts & Rationale:
 
 I wanted to assemble a working NodeJs refresher/refference featuring ExpressJS, Socket IO, and Electron. I am also playing the workflow of these NPM packages and how they compare with the workflow of other software API flavorss which do the same things. Trying out different things, I disovered some compatibility issues with specific versions of Bootstrap and Jquery. Electron on Win, Linux and Mac differ slightly on what features exist.
 
+* This is the social version of a previous Jquery-Mobile app I made a while back. The only thing new is the Electron and SocketIO implementation.
+
+* Not sure if this would be considered a 'fork' off the [Heroku app](https://github.com/mezcel/heroku-joyful-mystery) version or considered a whole 'new version', ex: v4.2 or v5
+
+* The user experience closer resembles an even older rosary version I made a while back, [rosary.net](https://github.com/mezcel/rosary.net). (_It has less features and visuals, but now it now falls under the category of social networking application again._)
+
+---
+
 ### Objective Goals:
 
-* Desktop and mobile app
+* Desktop standalone and mobile networked app
 * Works as a Server Hosted App.
 * Send/Recieve text communication between different app instances
-* The user experience closer resembles an even older rosary version I made a while back, [rosary.net](https://github.com/mezcel/rosary.net). (_It has less features and visuals, but it is a social networking application._)
 
 ### Feature Objective:
 
@@ -29,10 +33,13 @@ I wanted to assemble a working NodeJs refresher/refference featuring ExpressJS, 
 * Date specific app events
 * modular json db
 
-### Doubts:
+### Lingering Doubts:
 
-I wonder if React would have been better than JQM. React would have had more UI features, but other than 'skinning', the JQM has all necessary UI built into it.
+I wonder if React would have been better than JQM. React would have had more UI features, but other than 'skinning', the JQM has all necessary UI built into it. Jqm was quicker ```for me``` because of its fixed and consistent platform constraints. React would have been more feature rich and robust, but would demand more development pollishing and fine tuning to account for all the variable options React has.
 
+Perhaps that will be another version later down the road.
+
+## NPM
 ---
 
 NPM Dependancies
