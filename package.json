@@ -1,7 +1,7 @@
 {
-    "name": "electron-container",
+    "name": "electron-rosary",
     "version": "0.3.0",
-    "description": "ported my old jquery-mobile-rosary into a ElectronJs Application with SocketIO messaging features.",
+    "description": "I ported my old jquery-mobile-rosary html page into an ElectronJs Application with SocketIO messaging features.",
     "main": "main.js",
     "scripts": {
         "start": "electron ."
@@ -14,7 +14,7 @@
         "jquery-mobile"
     ],
     "author": "Mezcel",
-    "license": "I do not own rights for the JQM, NPM, images or audio, the rest is mine & you can have it.",
+    "license": "I do not own the technology medium, such as the rights for the JQM, NPM Packages, biblical scriptures, images or audio. I freely distribute, just the code and its application, because it is a product of my thoughts and efforts.",
     "devDependencies": {
         "electron": "^2.0.0"
     },
