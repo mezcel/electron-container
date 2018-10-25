@@ -3,9 +3,14 @@
 /* .ui-icon-action {
     width: 50% !important;
 }*/
+hr {
+    /* Gradient transparent - color - transparent */
+    border: 0; height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0));
+}
 
 @media all and (max-width: 500px){
-    
+
     html {
         font-size: 80%;
     }
