@@ -1,5 +1,7 @@
 # electron-container ( -w- jquery-mobile )
 
+```git branch v0.3.2-vulgate``` is focused on making a .json db based on the Latin Vulgate translation of the Bible
+
 ### A port of an older html web page, [jquery-mobile-rosary](https://github.com/mezcel/rosary-jquery-mobile), into ElectronJs.
 
 > This is a Node App using ExpressJS, Socket IO, and Electron.
