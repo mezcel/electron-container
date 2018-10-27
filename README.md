@@ -2,13 +2,23 @@
 
 ```git branch v0.3.2-vulgate``` is focused on making a .json db based on the Latin Vulgate translation of the Bible
 
-### A port of an older html web page, [jquery-mobile-rosary](https://github.com/mezcel/rosary-jquery-mobile), into ElectronJs.
+> A port of an older html web page, [jquery-mobile-rosary](https://github.com/mezcel/rosary-jquery-mobile), into ElectronJs.
+
+I am still making the Vulgate translation. I also need to go back and find misc typos and 7x77 check all the verses. After all the edits and dynamic automation... I am sure something got overlooked.
+
+Messed with jQuery Mobile themes:
+
+* added liturgical calender colors. [themeroller link](https://themeroller.jquerymobile.com:443/?ver=1.4.5&style_id=20181026-7)
+* fixed week day initializations
+* translation place holder
 
 > This is a Node App using ExpressJS, Socket IO, and Electron.
 
+---
+
 ### My Thoughts, Rationale, and Ramblings:
 
-I wanted to assemble a working NodeJs refresher/refference featuring ExpressJS, Socket IO, and Electron. I am also playing the workflow of these NPM packages and how they compare with the workflow of other software API flavorss which do the same things. Trying out different things, I disovered some compatibility issues with specific versions of Bootstrap and Jquery. Electron on Win, Linux and Mac differ slightly on what features exist.
+I wanted to assemble a working NodeJs refresher/reference featuring ExpressJS, Socket IO, and Electron. I am also playing the workflow of these NPM packages and how they compare with the workflow of other software API flavors which do the same things. Trying out different things, I discovered some compatibility issues with specific versions of Bootstrap and Jquery. Electron on Win, Linux and Mac differ slightly on what features exist.
 
 * This is the social version of a previous Jquery-Mobile app I made a while back. The only thing new is the Electron and SocketIO implementation.
 
@@ -23,7 +33,7 @@ I wanted to assemble a working NodeJs refresher/refference featuring ExpressJS, 
 
 * Desktop standalone and mobile networked app
 * Works as a Server Hosted App.
-* Send/Recieve text communication between different app instances
+* Send/Receive text communication between different app instances
 
 ### Key Features:
 
@@ -34,13 +44,13 @@ I wanted to assemble a working NodeJs refresher/refference featuring ExpressJS, 
 
 ### Ideas for the next version:
 
-I wonder if React would have been better than JQM. React would have had more UI features, but other than 'skinning', the JQM has all necessary UI built into it. Jqm was quicker ```for me``` because of its fixed and consistent platform constraints. React would have been more feature rich and robust, but would demand more development pollishing and fine tuning to account for all the variable options React has.
+I wonder if React would have been better than JQM. React would have had more UI features, but other than 'skinning', the JQM has all necessary UI built into it. Jqm was quicker ```for me``` because of its fixed and consistent platform constraints. React would have been more feature rich and robust, but would demand more development polishing and fine tuning to account for all the variable options React has.
 
 Perhaps that will be another version later down the road. A Swift(iOS)/VS2017(.Net) style app.
 
 ## NPM
 
-NPM Dependancies
+NPM Dependencies
 
 ```sh
 # download and install dependencies
