@@ -9,8 +9,8 @@ var initialHailMaryCounter = 0;
 var stringSpaceCounter = 0;
 var hailmaryCounter = 0;
 var beadCounter = 0;
-var rosaryJSON = rosaryJSONusccb; // rosaryJSONusccb was defined in myAssets/database/rosaryJSON-usccb.js
-// var rosaryJSON = rosaryJSONvulgate; // rosaryJSONusccb was defined in myAssets/database/rosaryJSON-vulgate.js
+var rosaryJSON = rosaryJSONnab; // rosaryJSONnab was defined in myAssets/database/rosaryJSON-nab.js
+// var rosaryJSON = rosaryJSONvulgate; // rosaryJSONnab was defined in myAssets/database/rosaryJSON-vulgate.js
 
 var progressBar = { // var containing progressbar state
     setValue: function(beadCounterDecade, beadCounterRosary) {
@@ -201,6 +201,9 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
                     hailmaryCounter -= 1;
                 }
             }
+
+            progressBar.setValue(0, hailmaryCounter % 50);
+
             break;
 
         case 4: // string space
@@ -209,12 +212,12 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 				if (stringSpaceCounter == 0) {
 					stringSpaceCounter = 1;
 					if ((hailmaryCounter % 10) == 0) {
-						hailmaryCounter += 1;
+                        hailmaryCounter += 1;
 					}
 				} else if (stringSpaceCounter == 1) {
 					stringSpaceCounter = 2;
 					if ((hailmaryCounter % 10) > 0) {
-						hailmaryCounter -= 1;
+                        hailmaryCounter -= 1;
 					}
 				}
 
@@ -228,7 +231,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 				} else if (stringSpaceCounter == 2) {
 					stringSpaceCounter = 1;
 					if ((hailmaryCounter % 10) == 0) {
-						hailmaryCounter += 1;
+                        hailmaryCounter += 1;
 					}
 				}
             }
@@ -431,12 +434,66 @@ $(document).on("pagecreate", "#pageone", function() {
     $(".mySwipeClass").on("swipeleft", function() {
         beadFwd();
     });
-    // keyboard arrow controlls
+
+    // keyboard controlls
     $("html").on("keydown", function(event) {
-        if (event.which == 39 ){
-            beadFwd();
-        } else if (event.which == 37) {
-            beadRev();
+
+        switch(event.which) {
+            case 39: //lt arrow
+                beadFwd();
+                break;
+            case 37: //rt arrow
+                beadRev();
+                break;
+            case 49: case 97: // no 1
+                $('#btnHomePanel').click();
+                break;
+            case 50: case 98: // no2
+                $('#btnInfoPanel').click();
+                break;
+            case 78: // letter n
+                $('#nabTranslation').click();
+                break;
+            case 86: // letter v
+                $('#vulgateTranslation').click();
+                break;
+            case 81: // letter q
+                $('#daynightSwitch').click();
+                break;
+            case 87: // letter w
+                $('#feastRed').click();
+                break;
+            case 69: // letter e
+                $('#marianBlue').click();
+                break;
+            case 82: // letter r
+                $('#adventPurple').click();
+                break;
+            case 84: // letter t
+                $('#ordinaryGreen').click();
+                break;
+            case 89: // letter y
+                $('#easterGold').click();
+                break;
+            case 80: // letter p
+                let firstAudioTrack = $('audio')[0];
+                firstAudioTrack[firstAudioTrack.paused ? 'play' : 'pause']();
+                // $('#audioAveMaria').trigger("play");
+                break;
+            case 38: // up arrow
+                var volLevel = $('audio')[0].volume;
+                $('audio')[0].volume = volLevel + 0.25;
+                break;
+            case 40: // down arrow
+                var volLevel = $('audio')[0].volume;
+                $('audio')[0].volume = volLevel - 0.25;
+                break;
+            default:
+                /*// flicker screen
+                $('html').css('display', 'none');
+                setTimeout(function(){
+                    $('html').css('display', 'block');
+                }, 10);*/
         }
 
     });
@@ -489,20 +546,17 @@ $(document).on("pagecreate", function() {
         console.log('$("#language input").on("change", function(event)');
         if (event.target.name === "rdoTranslation") {
 
-            if ($("#usccbTranslation").is(":checked")) {
-                rosaryJSON = rosaryJSONusccb;
-
-                $("#bible-list").html(''); //clear dom list
-                populateBookJsonList(); // repopulate dom list
+            if ($("#nabTranslation").is(":checked")) {
+                rosaryJSON = rosaryJSONnab;
             }
 
             if ($("#vulgateTranslation").is(":checked")) {
                 rosaryJSON = rosaryJSONvulgate;
-
-                $("#bible-list").html(''); //clear dom list
-                populateBookJsonList(); // repopulate dom list
             }
 
+            $("#bible-list").html(''); //clear dom list
+            populateBookJsonList(); // repopulate dom list
+            fillRosaryBeadPage(beadCounter); // display translation of current bead
         }
     });
 
