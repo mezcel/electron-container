@@ -2770,18 +2770,18 @@ var rosaryJSONvulgate = {
         },
         {
             "bookID": 7,
-            "bookName": "Matthew",
-            "library": "<a href='http:\/\/www.usccb.org\/bible\/matthew\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+            "bookName": "Matthaeum",
+            "library": "<a href='http://vulgate.org/nt/gospel/matthew_1.htm' target='_blank'>The Latin Vulgate New Testament Bible<\/a>"
         },
         {
             "bookID": 8,
-            "bookName": "Mark",
-            "library": "<a href='http:\/\/www.usccb.org\/bible\/mark\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+            "bookName": "Marcum",
+            "library": "<a href='http://vulgate.org/nt/gospel/mark_1.htm' target='_blank'>The Latin Vulgate New Testament Bible<\/a>"
         },
         {
             "bookID": 9,
-            "bookName": "Luke",
-            "library": "<a href='http:\/\/www.usccb.org\/bible\/luke\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+            "bookName": "Lucam",
+            "library": "<a href='http://vulgate.org/nt/gospel/luke_1.htm' target='_blank'>The Latin Vulgate New Testament Bible<\/a>"
         },
         {
             "bookID": 10,
@@ -2925,21 +2925,21 @@ var rosaryJSONvulgate = {
             "bookIndex": 9,
             "chapterIndex": 1,
             "verseIndex": 26,
-            "scriptureText": "In the sixth month, the angel Gabriel was sent from God to a town of Galilee called Nazareth <hr> John beareth witness of him and crieth out, saying: This was he of whom I spoke: He that shall come after me is preferred before me: because he was before me. - Luke 1:26"
+            "scriptureText": "in mense autem sexto missus est angelus Gabrihel a Deo in civitatem Galilaeae cui nomen Nazareth <hr> And in the sixth month, the angel Gabriel was sent from God into a city of Galilee, called Nazareth, - Luke 1:26"
         },
         {
             "scriptureID": 16,
             "bookIndex": 9,
             "chapterIndex": 1,
             "verseIndex": 27,
-            "scriptureText": "to a virgin betrothed to a man named Joseph, of the house of David, and the virgin's name was Mary  - Luke 1:27"
+            "scriptureText": "ad virginem desponsatam viro cui nomen erat Ioseph de domo David et nomen virginis Maria <hr> To a virgin espoused to a man whose name was Joseph, of the house of David: and the virgin's name was Mary.  - Luke 1:27"
         },
         {
             "scriptureID": 17,
             "bookIndex": 9,
             "chapterIndex": 1,
             "verseIndex": 28,
-            "scriptureText": "And coming to her, he said, \"Hail, favored one! The Lord is with you.\" - Luke 1:28"
+            "scriptureText": "et ingressus angelus ad eam dixit have gratia plena Dominus tecum benedicta tu in mulieribus <hr> And the angel being come in, said unto her: Hail, full of grace, the Lord is with thee: blessed art thou among women. - Luke 1:28"
         },
         {
             "scriptureID": 18,
@@ -3184,14 +3184,14 @@ var rosaryJSONvulgate = {
             "bookIndex": 8,
             "chapterIndex": 1,
             "verseIndex": 7,
-            "scriptureText": " And John preached, saying, / 'After me comes he who is mightier than I, / the thong of whose sandals I am not worthy to stoop down and untie.' - Mark 1:7"
+            "scriptureText": "et praedicabat dicens venit fortior me post me cuius non sum dignus procumbens solvere corrigiam calciamentorum eius <hr> And he preached, saying: There cometh after me one mightier than I, the latchet of whose shoes I am not worthy to stoop down and loose. - Mark 1:7"
         },
         {
             "scriptureID": 53,
             "bookIndex": 7,
             "chapterIndex": 3,
             "verseIndex": 11,
-            "scriptureText": "'I baptize you with water for repentance, but he who is coming after me . . . will baptize you with the Holy Spirit and with fire.' - Matthew 3:11"
+            "scriptureText": "ego quidem vos baptizo in aqua in paenitentiam qui autem post me venturus est fortior me est cuius non sum dignus calciamenta portare ipse vos baptizabit in Spiritu Sancto et igni <hr> I indeed baptize you in water unto penance, but he that shall come after me, is mightier than I, whose shoes I am not worthy to bear: he shall baptize you in the Holy Ghost and fire. - Matthew 3:11"
         },
         {
             "scriptureID": 54,
@@ -3205,42 +3205,42 @@ var rosaryJSONvulgate = {
             "bookIndex": 7,
             "chapterIndex": 3,
             "verseIndex": 13,
-            "scriptureText": "Then Jesus came from Galilee to the Jordan to John, / to be baptized by him. - Matthew 3:13"
+            "scriptureText": "tunc venit Iesus a Galilaea in Iordanen ad Iohannem ut baptizaretur ab eo <hr> Then cometh Jesus from Galilee to the Jordan, unto John, to be baptized by him. - Matthew 3:13"
         },
         {
             "scriptureID": 56,
             "bookIndex": 7,
             "chapterIndex": 3,
             "verseIndex": 14,
-            "scriptureText": "John would have prevented him, saying, / 'I need to be baptized by you, and do you come to me?' - Matthew 3:14"
+            "scriptureText": "Iohannes autem prohibebat eum dicens ego a te debeo baptizari et tu venis ad me <hr> But John stayed him, saying: I ought to be baptized by thee, and comest thou to me? - Matthew 3:14"
         },
         {
             "scriptureID": 57,
             "bookIndex": 7,
             "chapterIndex": 3,
             "verseIndex": 15,
-            "scriptureText": "But Jesus answered him, / 'Let it be so now, / for thus it is fitting for us to fulfill all righteousness.' / Then John consented. - Matthew 3:15"
+            "scriptureText": "respondens autem Iesus dixit ei sine modo sic enim decet nos implere omnem iustitiam tunc dimisit eum <hr> And Jesus answering, said to him: Suffer it to be so now. For so it becometh us to fulfil all justice. Then he suffered him. - Matthew 3:15"
         },
         {
             "scriptureID": 58,
             "bookIndex": 7,
             "chapterIndex": 3,
             "verseIndex": 16,
-            "scriptureText": "And when Jesus was baptized, / he went up immediately from the water, / and behold, the heavens were opened, / and he saw the Spirit of God descending like a dove / and alighting on him. - Matthew 3:16"
+            "scriptureText": "baptizatus autem confestim ascendit de aqua et ecce aperti sunt ei caeli et vidit Spiritum Dei descendentem sicut columbam venientem super se <hr> And Jesus being baptized, forthwith came out of the water: and lo, the heavens were opened to him: and he saw the Spirit of God descending as a dove, and coming upon him. - Matthew 3:16"
         },
         {
             "scriptureID": 59,
             "bookIndex": 7,
             "chapterIndex": 3,
             "verseIndex": 17,
-            "scriptureText": "And behold, / a voice from heaven, saying, / 'This is my beloved Son, with whom I am well pleased.' - Matthew 3:17"
+            "scriptureText": "et ecce vox de caelis dicens hic est Filius meus dilectus in quo mihi conplacui <hr> And behold a voice from heaven saying: This is my beloved Son, in whom I am well pleased. - Matthew 3:17"
         },
         {
             "scriptureID": 60,
             "bookIndex": 8,
             "chapterIndex": 1,
             "verseIndex": 12,
-            "scriptureText": "The Spirit immediately drove him out into the wilderness, and he was in the wilderness forty days, tempted by Satan. - Mark 1:12-13"
+            "scriptureText": "et statim Spiritus expellit eum in desertum / et erat in deserto quadraginta diebus et quadraginta noctibus et temptabatur a Satana eratque cum bestiis et angeli ministrabant illi <hr> And immediately the Spirit drove him out into the desert. / And he was in the desert forty days and forty nights, and was tempted by Satan. And he was with beasts: and the angels ministered to him. - Mark 1:12-13"
         },
         {
             "scriptureID": 61,
@@ -3317,7 +3317,7 @@ var rosaryJSONvulgate = {
             "bookIndex": 8,
             "chapterIndex": 2,
             "verseIndex": 11,
-            "scriptureText": "Now after John was arrested, / Jesus came into Galilee, / preaching the gospel of God - Mark 1:14"
+            "scriptureText": "postquam autem traditus est Iohannes venit Iesus in Galilaeam praedicans evangelium regni Dei <hr> And after that John was delivered up, Jesus came in Galilee, preaching the gospel of the kingdom of God, - Mark 1:14"
         },
         {
             "scriptureID": 72,
@@ -3331,49 +3331,49 @@ var rosaryJSONvulgate = {
             "bookIndex": 8,
             "chapterIndex": 1,
             "verseIndex": 15,
-            "scriptureText": "Jesus said, 'The time is fulfilled, / and the kingdom of God is at hand; / repent, and believe in the gospel.' - Mark 1:15"
+            "scriptureText": "et dicens quoniam impletum est tempus et adpropinquavit regnum Dei paenitemini et credite evangelio <hr> And saying: The time is accomplished and the kingdom of God is at hand. Repent and believe the gospel: - Mark 1:15"
         },
         {
             "scriptureID": 74,
             "bookIndex": 8,
             "chapterIndex": 2,
             "verseIndex": 2,
-            "scriptureText": "And many were gathered together, / so that there was no longer room for them . . . and he was preaching the word to them. - Mark 2:2"
+            "scriptureText": "et auditum est quod in domo esset et convenerunt multi ita ut non caperet neque ad ianuam et loquebatur eis verbum <hr> And it was heard that he was in the house. And many came together, so that there was no room: no, not even at the door. And he spoke to them the word. - Mark 2:2"
         },
         {
             "scriptureID": 75,
             "bookIndex": 8,
             "chapterIndex": 2,
             "verseIndex": 4,
-            "scriptureText": "And when they could not get near Jesus because of the crowd, / they removed the roof above him; / and when they had made an opening, / they let down the pallet on which the paralytic lay. - Mark 2:4"
+            "scriptureText": "et cum non possent offerre eum illi prae turba nudaverunt tectum ubi erat et patefacientes submiserunt grabattum in quo paralyticus iacebat <hr> And when they could not offer him unto him for the multitude, they uncovered the roof where he was: and opening it, they let down the bed wherein the man sick of the palsy lay. - Mark 2:4"
         },
         {
             "scriptureID": 76,
             "bookIndex": 8,
             "chapterIndex": 2,
             "verseIndex": 9,
-            "scriptureText": "'Which is easier, / to say to the paralytic, 'Your sins are forgiven,' / or to say, 'Rise, pick up your pallet and walk?'' - Mark 2:9"
+            "scriptureText": "quid est facilius dicere paralytico dimittuntur tibi peccata an dicere surge et tolle grabattum tuum et ambula <hr> Which is easier, to say to the sick of the palsy: Thy sins are forgiven thee; or to say: Arise, take up thy bed and walk? - Mark 2:9"
         },
         {
             "scriptureID": 77,
             "bookIndex": 8,
             "chapterIndex": 2,
             "verseIndex": 10,
-            "scriptureText": "'But that you may know that the Son of man has authority on earth to forgive sins' / - he said to the paralytic - / 'I say to you, rise, take up your pallet and go home.' - Mark 2:10-11"
+            "scriptureText": "ut autem sciatis quia potestatem habet Filius hominis in terra dimittendi peccata ait paralytico / tibi dico surge tolle grabattum tuum et vade in domum tuam <hr> But that you may know that the Son of man hath power on earth to forgive sins (he saith to the sick of the palsy): / I say to thee: Arise. Take up thy bed and go into thy house. - Mark 2:10-11"
         },
         {
             "scriptureID": 78,
             "bookIndex": 7,
             "chapterIndex": 10,
             "verseIndex": 1,
-            "scriptureText": "And Jesus called to him his twelve disciples / and gave them authority over unclean spirits, / to cast them out, / and to heal every disease and every infirmity. - Matthew 10:1"
+            "scriptureText": "et convocatis duodecim discipulis suis dedit illis potestatem spirituum inmundorum ut eicerent eos et curarent omnem languorem et omnem infirmitatem <hr> And having called his twelve disciples together, he gave them power over unclean spirits, to cast them out, and to heal all manner of diseases, and all manner of infirmities. - Matthew 10:1"
         },
         {
             "scriptureID": 79,
             "bookIndex": 7,
             "chapterIndex": 10,
             "verseIndex": 5,
-            "scriptureText": "These Twelve Jesus sent out charging them  . . . to preach . . .  / 'The kingdom of heaven is at hand.' - Matthew 10:5 & 7"
+            "scriptureText": "hos duodecim misit Iesus praecipiens eis et dicens in viam gentium ne abieritis et in civitates Samaritanorum ne intraveritis / euntes autem praedicate dicentes quia adpropinquavit regnum caelorum <hr> These twelve Jesus sent: commanding them, saying: Go ye not into the way of the Gentiles, and into the city of the Samaritans enter ye not. / And going, preach, saying: The kingdom of heaven is at hand. - Matthew 10:5 & 7"
         },
         {
             "scriptureID": 80,
@@ -3384,7 +3384,7 @@ var rosaryJSONvulgate = {
         },
         {
             "scriptureID": 81,
-            "bookIndex": 7,
+            "bookIndex": 9,
             "chapterIndex": 17,
             "verseIndex": 2,
             "scriptureText": "Now about eight days after these saying / Jesus took with him Peter and John and James, / and went up on the mountain to pray. - Luke 9:28"
@@ -3394,14 +3394,14 @@ var rosaryJSONvulgate = {
             "bookIndex": 7,
             "chapterIndex": 17,
             "verseIndex": 2,
-            "scriptureText": "And Jesus was transfigured before them, / and his face shone like the sun, / and his garments became white as light - Matthew 17:2"
+            "scriptureText": "et transfiguratus est ante eos et resplenduit facies eius sicut sol vestimenta autem eius facta sunt alba sicut nix <hr> And he was transfigured before them. And his face did shine as the sun: and his garments became white as snow. - Matthew 17:2"
         },
         {
             "scriptureID": 83,
-            "bookIndex": 8,
+            "bookIndex": 7,
             "chapterIndex": 17,
             "verseIndex": 3,
-            "scriptureText": "And behold, / there appeared to them Moses and Elijah, / talking with him - Matthew 17:3"
+            "scriptureText": "et ecce apparuit illis Moses et Helias cum eo loquentes <hr> And behold there appeared to them Moses and Elias talking with him. - Matthew 17:3"
         },
         {
             "scriptureID": 84,
@@ -3415,7 +3415,7 @@ var rosaryJSONvulgate = {
             "bookIndex": 7,
             "chapterIndex": 17,
             "verseIndex": 4,
-            "scriptureText": "And Peter said to Jesus, /  'Lord, it is well that we are here; / if you wish, I will make three booths here, / one for you, one for Moses, and one for Elijah.' - Matthew 17:4"
+            "scriptureText": "respondens autem Petrus dixit ad Iesum Domine bonum est nos hic esse si vis faciamus hic tria tabernacula tibi unum et Mosi unum et Heliae unum <hr> And Peter answering, said to Jesus: Lord, it is good for us to be here: if thou wilt, let us make here three tabernacles, one for thee, and one for Moses, and one for Elias. - Matthew 17:4"
         },
         {
             "scriptureID": 86,
@@ -3436,35 +3436,35 @@ var rosaryJSONvulgate = {
             "bookIndex": 8,
             "chapterIndex": 9,
             "verseIndex": 8,
-            "scriptureText": "And suddenly looking around / they no longer saw any one with them but Jesus only. - Mark 9:8"
+            "scriptureText": "et descendentibus illis de monte praecepit illis ne cui quae vidissent narrarent nisi cum Filius hominis a mortuis resurrexerit <hr> And as they came down from the mountain, he charged them not to tell any man what things they had seen, till the Son of man shall be risen again from the dead. - Mark 9:8"
         },
         {
             "scriptureID": 89,
             "bookIndex": 8,
             "chapterIndex": 9,
             "verseIndex": 9,
-            "scriptureText": "And as they were coming down the mountain, / Jesus charged them to tell no one what they had seen, / until the Son of man should have risen from the dead. - Mark 9:9"
+            "scriptureText": "et verbum continuerunt apud se conquirentes quid esset cum a mortuis resurrexerit <hr> And they kept the word to themselves; questioning together what that should mean, when he shall be risen from the dead. - Mark 9:9"
         },
         {
             "scriptureID": 90,
             "bookIndex": 8,
             "chapterIndex": 9,
             "verseIndex": 10,
-            "scriptureText": "So they kept the matter to themselves, / questioning what the rising from the dead meant. - Mark 9:10"
+            "scriptureText": "et interrogabant eum dicentes quid ergo dicunt Pharisaei et scribae quia Heliam oporteat venire primum <hr> And they asked him, saying: Why then do the Pharisees and scribes say that Elias must come first? - Mark 9:10"
         },
         {
             "scriptureID": 91,
             "bookIndex": 7,
             "chapterIndex": 26,
             "verseIndex": 17,
-            "scriptureText": "Now on the first day of Unleavened Bread, / the disciples came to Jesus, saying, / 'Where will you have us prepare for you to eat the Passover?' - Matthew 26:17"
+            "scriptureText": "prima autem azymorum accesserunt discipuli ad Iesum dicentes ubi vis paremus tibi comedere pascha <hr> And on the first day of the Azymes, the disciples came to Jesus, saying: Where wilt thou that we prepare for thee to eat the pasch? - Matthew 26:17"
         },
         {
             "scriptureID": 92,
             "bookIndex": 7,
             "chapterIndex": 26,
             "verseIndex": 18,
-            "scriptureText": "Jesus said, / 'Go into the city to a such a one, and say to him, / 'The Teacher says, My  time is at hand; / I will keep the Passover at your house with my disciples.'' - Matthew 26:18"
+            "scriptureText": "at Iesus dixit ite in civitatem ad quendam et dicite ei magister dicit tempus meum prope est apud te facio pascha cum discipulis meis <hr> But Jesus said: Go ye into the city to a certain man and say to him: The master saith, My time is near at hand. With thee I make the pasch with my disciples. - Matthew 26:18"
         },
         {
             "scriptureID": 93,
@@ -3478,28 +3478,28 @@ var rosaryJSONvulgate = {
             "bookIndex": 7,
             "chapterIndex": 26,
             "verseIndex": 21,
-            "scriptureText": "And as they were eating, he said, / 'Truly, I say to you, / one of you will betray me.' - Matthew 26:21"
+            "scriptureText": "et edentibus illis dixit amen dico vobis quia unus vestrum me traditurus est <hr> And whilst they were eating, he said: Amen I say to you that one of you is about to betray me. - Matthew 26:21"
         },
         {
             "scriptureID": 95,
             "bookIndex": 7,
             "chapterIndex": 26,
             "verseIndex": 25,
-            "scriptureText": "Judas, who betrayed him, said, / 'Is it I, Master?' - Matthew 26:25"
+            "scriptureText": "respondens autem Iudas qui tradidit eum dixit numquid ego sum rabbi ait illi tu dixisti <hr> And Judas that betrayed him answering, said: Is it I, Rabbi? He saith to him: Thou hast said it. - Matthew 26:25"
         },
         {
             "scriptureID": 96,
             "bookIndex": 7,
             "chapterIndex": 26,
             "verseIndex": 26,
-            "scriptureText": "Now as they were eating, / Jesus took bread, and blessed, and broke it, / and gave it to the disciples and said, / 'Take, eat; / this is my body.' - Matthew 26:26"
+            "scriptureText": "cenantibus autem eis accepit Iesus panem et benedixit ac fregit deditque discipulis suis et ait accipite et comedite hoc est corpus meum <hr> And whilst they were at supper, Jesus took bread and blessed and broke and gave to his disciples and said: Take ye and eat. This is my body. - Matthew 26:26"
         },
         {
             "scriptureID": 97,
             "bookIndex": 7,
             "chapterIndex": 26,
             "verseIndex": 27,
-            "scriptureText": "And he took a chalice, / and when he had given thanks / he gave it to them, saying, /  'Drink of it, all of you; / for this is my blood of the covenant, / which is poured out for many for the forgiveness of sins.' - Matthew 26:27-28"
+            "scriptureText": "et accipiens calicem gratias egit et dedit illis dicens bibite ex hoc omnes / hic est enim sanguis meus novi testamenti qui pro multis effunditur in remissionem peccatorum <hr> And taking the chalice, he gave thanks and gave to them, saying: Drink ye all of this.  / For this is my blood of the new testament, which shall be shed for many unto remission of sins. - Matthew 26:27-28"
         },
         {
             "scriptureID": 98,
@@ -3527,14 +3527,14 @@ var rosaryJSONvulgate = {
             "bookIndex": 7,
             "chapterIndex": 26,
             "verseIndex": 36,
-            "scriptureText": "Then Jesus went with them to a place called Gethsemane. / And he began to be sorrowful and troubled. - Matthew 26:36-37"
+            "scriptureText": "tunc venit Iesus cum illis in villam quae dicitur Gethsemani et dixit discipulis suis sedete hic donec vadam illuc et orem / et adsumpto Petro et duobus filiis Zebedaei coepit contristari et maestus esse <hr> Then Jesus came with them into a country place which is called Gethsemani. And he said to his disciples: Sit you here, till I go yonder and pray. / And taking with him Peter and the two sons of Zebedee, he began to grow sorrowful and to be sad. - Matthew 26:36-37"
         },
         {
             "scriptureID": 102,
             "bookIndex": 7,
             "chapterIndex": 26,
             "verseIndex": 38,
-            "scriptureText": "Then he said to them, / ''My soul is very sorrowful, even to death; / remain here, and watch with me.'' - Matthew 26:38"
+            "scriptureText": "tunc ait illis tristis est anima mea usque ad mortem sustinete hic et vigilate mecum <hr> Then he saith to them: My soul is sorrowful even unto death. Stay you here and watch with me. - Matthew 26:38"
         },
         {
             "scriptureID": 103,
@@ -3576,28 +3576,28 @@ var rosaryJSONvulgate = {
             "bookIndex": 7,
             "chapterIndex": 26,
             "verseIndex": 40,
-            "scriptureText": "And he came back to his disciples and found them sleeping; / and he said to Peter, / ''So,  could you not watch with me one hour?'' - Matthew 26:40"
+            "scriptureText": "et venit ad discipulos et invenit eos dormientes et dicit Petro sic non potuistis una hora vigilare mecum <hr> And he cometh to his disciples and findeth them asleep. And he saith to Peter: What? Could you not watch one hour with me? - Matthew 26:40"
         },
         {
             "scriptureID": 109,
             "bookIndex": 7,
             "chapterIndex": 26,
             "verseIndex": 41,
-            "scriptureText": "''Watch and pray / that you may not enter into temptation.'' - Matthew 26:41"
+            "scriptureText": "vigilate et orate ut non intretis in temptationem spiritus quidem promptus est caro autem infirma <hr> Watch ye: and pray that ye enter not into temptation. The spirit indeed is willing, but the flesh is weak. - Matthew 26:41"
         },
         {
             "scriptureID": 110,
             "bookIndex": 7,
             "chapterIndex": 26,
             "verseIndex": 41,
-            "scriptureText": "''The spirit indeed is willing, / but the flesh is weak.'' - Matthew 26:41"
+            "scriptureText": "vigilate et orate ut non intretis in temptationem spiritus quidem promptus est caro autem infirma <hr> Watch ye: and pray that ye enter not into temptation. The spirit indeed is willing, but the flesh is weak. - Matthew 26:41"
         },
         {
             "scriptureID": 111,
             "bookIndex": 8,
             "chapterIndex": 15,
             "verseIndex": 1,
-            "scriptureText": "And as soon as it was morning / the chief priests, with the elders and scribes, / and the whole council held a consultation; / and they bound Jesus and led him away / and delivered him to Pilate./ And Pilate asked him, / ''Are you the king of the Jews?'' - Mark 15:1-2"
+            "scriptureText": "et confestim mane consilium facientes summi sacerdotes cum senioribus et scribis et universo concilio vincientes Iesum duxerunt et tradiderunt Pilato / et interrogavit eum Pilatus tu es rex Iudaeorum at ille respondens ait illi tu dicis <hr> And straightway in the morning, the chief priests holding a consultation with the ancients and the scribes and the whole council, binding Jesus, led him away and delivered him to Pilate. / And Pilate asked him: Art thou the king of the Jews? But he answering, saith to him: Thou sayest it. - Mark 15:1-2"
         },
         {
             "scriptureID": 112,
@@ -3666,36 +3666,36 @@ var rosaryJSONvulgate = {
             "scriptureID": 121,
             "bookIndex": 8,
             "chapterIndex": 15,
-            "verseIndex": 16,
-            "scriptureText": "And the soldiers led him away to the Praetorium. / And they stripped him and put a scarlet robe upon him. - Mark 15:16-17, Matthew 27:28"
+            "verseIndex": 17,
+            "scriptureText": "et induunt eum purpuram et inponunt ei plectentes spineam coronam <hr> And they clothed him with purple: and, platting a crown of thorns, they put it upon him. - Mark 15:17"
         },
         {
             "scriptureID": 122,
             "bookIndex": 7,
             "chapterIndex": 27,
             "verseIndex": 29,
-            "scriptureText": "And plaiting a crown of thorns / they put it on his head, / and put a reed in his right hand. - Matthew 27:29"
+            "scriptureText": "et plectentes coronam de spinis posuerunt super caput eius et harundinem in dextera eius et genu flexo ante eum inludebant dicentes have rex Iudaeorum <hr> And platting a crown of thorns, they put it upon his head, and a reed in his right hand. And bowing the knee before him, they mocked him, saying: Hail, King of the Jews.  - Matthew 27:29"
         },
         {
             "scriptureID": 123,
             "bookIndex": 7,
             "chapterIndex": 27,
             "verseIndex": 29,
-            "scriptureText": "And kneeling before him they mocked him, saying, / ''Hail, king of the Jews!'' - Matthew 27:29"
+            "scriptureText": "et plectentes coronam de spinis posuerunt super caput eius et harundinem in dextera eius et genu flexo ante eum inludebant dicentes have rex Iudaeorum <hr> And platting a crown of thorns, they put it upon his head, and a reed in his right hand. And bowing the knee before him, they mocked him, saying: Hail, King of the Jews. - Matthew 27:29"
         },
         {
             "scriptureID": 124,
             "bookIndex": 7,
             "chapterIndex": 27,
             "verseIndex": 30,
-            "scriptureText": "And they spat upon him / and took the reed and struck him on the head. - Matthew 27:30"
+            "scriptureText": "et expuentes in eum acceperunt harundinem et percutiebant caput eius <hr> And spitting upon him, they took the reed and struck his head. - Matthew 27:30"
         },
         {
             "scriptureID": 125,
             "bookIndex": 7,
             "chapterIndex": 27,
             "verseIndex": 24,
-            "scriptureText": "Then Pilate took water / and washed his hands before the crowd, saying, / ''I am innocent of this righteous man’s blood; / see to it yourselves.'' - Matthew 27:24"
+            "scriptureText": "videns autem Pilatus quia nihil proficeret sed magis tumultus fieret accepta aqua lavit manus coram populo dicens innocens ego sum a sanguine iusti huius vos videritis <hr> And Pilate seeing that he prevailed nothing, but that rather a tumult was made, taking water washed his hands before the people, saying: I am innocent of the blood of this just man. Look you to it. - Matthew 27:24"
         },
         {
             "scriptureID": 126,
@@ -3716,7 +3716,7 @@ var rosaryJSONvulgate = {
             "bookIndex": 8,
             "chapterIndex": 15,
             "verseIndex": 14,
-            "scriptureText": "And Pilate said to them, / ''Why, what evil has he done?'' / But they shouted all the more, /  ''Crucify him.'' - Mark 15:14"
+            "scriptureText": "Pilatus vero dicebat eis quid enim mali fecit at illi magis clamabant crucifige eum <hr> And Pilate saith to them: Why, what evil hath he done? But they cried out the more: Crucify him. - Mark 15:14"
         },
         {
             "scriptureID": 129,
@@ -3730,7 +3730,7 @@ var rosaryJSONvulgate = {
             "bookIndex": 8,
             "chapterIndex": 15,
             "verseIndex": 15,
-            "scriptureText": "So Pilate, wishing to satisfy the crowd,/ released for them Barabbas; / and having scouraged Jesus, / he delivered him to be crucified. - Mark 15:15"
+            "scriptureText": "Pilatus autem volens populo satisfacere dimisit illis Barabban et tradidit Iesum flagellis caesum ut crucifigeretur <hr> And so Pilate being willing to satisfy the people, released to them Barabbas: and delivered up Jesus, when he had scourged him, to be crucified. - Mark 15:15"
         },
         {
             "scriptureID": 131,
@@ -3765,21 +3765,21 @@ var rosaryJSONvulgate = {
             "bookIndex": 7,
             "chapterIndex": 11,
             "verseIndex": 29,
-            "scriptureText": "''Take my yoke upon you, / and learn from me.'' - Matthew 11:29"
+            "scriptureText": "tollite iugum meum super vos et discite a me quia mitis sum et humilis corde et invenietis requiem animabus vestris <hr> Take up my yoke upon you, and learn of me, because I am meek, and humble of heart: And you shall find rest to your souls. - Matthew 11:29"
         },
         {
             "scriptureID": 136,
             "bookIndex": 7,
             "chapterIndex": 11,
             "verseIndex": 29,
-            "scriptureText": "''For I am gentle/ and lowly in heart.'' - Matthew 11:29"
+            "scriptureText": "tollite iugum meum super vos et discite a me quia mitis sum et humilis corde et invenietis requiem animabus vestris <hr> Take up my yoke upon you, and learn of me, because I am meek, and humble of heart: And you shall find rest to your souls. - Matthew 11:29"
         },
         {
             "scriptureID": 137,
             "bookIndex": 7,
             "chapterIndex": 11,
-            "verseIndex": 29,
-            "scriptureText": "''And you will find rest for your souls. / For my yoke is easy, / and my burden light.'' - Matthew 11:29-30"
+            "verseIndex": 30,
+            "scriptureText": "iugum enim meum suave est et onus meum leve est <hr> For my yoke is sweet and my burden light. - Matthew 11:30"
         },
         {
             "scriptureID": 138,
@@ -3898,14 +3898,14 @@ var rosaryJSONvulgate = {
             "bookIndex": 7,
             "chapterIndex": 28,
             "verseIndex": 2,
-            "scriptureText": "For an angel of the Lord descended from heaven / and came and rolled back the stone, / and sat upon it. - Matthew 28:2"
+            "scriptureText": "et ecce terraemotus factus est magnus angelus enim Domini descendit de caelo et accedens revolvit lapidem et sedebat super eum <hr> And behold there was a great earthquake. For an angel of the Lord descended from heaven and coming rolled back the stone and sat upon it. - Matthew 28:2"
         },
         {
             "scriptureID": 155,
             "bookIndex": 7,
             "chapterIndex": 28,
             "verseIndex": 5,
-            "scriptureText": "''Do not be afraid; / for I know that you seek Jesus / who was crucified./ He is not here.'' - Matthew 28:5-6"
+            "scriptureText": "respondens autem angelus dixit mulieribus nolite timere vos scio enim quod Iesum qui crucifixus est quaeritis / non est hic surrexit enim sicut dixit venite videte locum ubi positus erat Dominus <hr> And the angel answering, said to the women: Fear not you: for I know that you seek Jesus who was crucified. / He is not here. For he is risen, as he said. Come, and see the place where the Lord was laid. - Matthew 28:5-6"
         },
         {
             "scriptureID": 156,
@@ -3919,14 +3919,14 @@ var rosaryJSONvulgate = {
             "bookIndex": 7,
             "chapterIndex": 28,
             "verseIndex": 7,
-            "scriptureText": "''He is going before you to Galilee; / there you will see him.'' - Matthew 28:7"
+            "scriptureText": "et cito euntes dicite discipulis eius quia surrexit et ecce praecedit vos in Galilaeam ibi eum videbitis ecce praedixi vobis <hr> And going quickly, tell ye his disciples that he is risen. And behold he will go before you into Galilee. There you shall see him. Lo, I have foretold it to you. - Matthew 28:7"
         },
         {
             "scriptureID": 158,
-            "bookIndex": 8,
+            "bookIndex": 7,
             "chapterIndex": 16,
             "verseIndex": 8,
-            "scriptureText": "And the women went out and fled from the tomb / with fear and great joy, / and ran to tell his disciples. - Mark 16:8; Mt 28:8"
+            "scriptureText": "et exierunt cito de monumento cum timore et magno gaudio currentes nuntiare discipulis eius <hr> And they went out quickly from the sepulchre with fear and great joy, running to tell his disciples. - Matthew 28:8"
         },
         {
             "scriptureID": 159,
@@ -3954,49 +3954,49 @@ var rosaryJSONvulgate = {
             "bookIndex": 7,
             "chapterIndex": 28,
             "verseIndex": 18,
-            "scriptureText": "And Jesus came and said, ''All authority in heaven and on earth / has been given to me.'' - Matthew 28:18"
+            "scriptureText": "et accedens Iesus locutus est eis dicens data est mihi omnis potestas in caelo et in terra <hr> And Jesus coming, spoke to them, saying: All power is given to me in heaven and in earth. - Matthew 28:18"
         },
         {
             "scriptureID": 163,
             "bookIndex": 7,
             "chapterIndex": 28,
             "verseIndex": 19,
-            "scriptureText": "''Go, therefore / and make disciples of all nations.'' - Matthew 28:19"
+            "scriptureText": "euntes ergo docete omnes gentes baptizantes eos in nomine Patris et Filii et Spiritus Sancti <hr> Going therefore, teach ye all nations: baptizing them in the name of the Father and of the Son and of the Holy Ghost. - Matthew 28:19"
         },
         {
             "scriptureID": 164,
             "bookIndex": 7,
             "chapterIndex": 28,
             "verseIndex": 19,
-            "scriptureText": "''. . . baptizing them in the name of the Father / and of the Son / and of the Holy Spirit.'' - Matthew 28:19"
+            "scriptureText": "euntes ergo docete omnes gentes baptizantes eos in nomine Patris et Filii et Spiritus Sancti <hr> Going therefore, teach ye all nations: baptizing them in the name of the Father and of the Son and of the Holy Ghost. - Matthew 28:19"
         },
         {
             "scriptureID": 165,
             "bookIndex": 7,
             "chapterIndex": 28,
             "verseIndex": 20,
-            "scriptureText": "''. . . teaching them to observe/ all that I have commanded you.'' - Matthew 28:20"
+            "scriptureText": "docentes eos servare omnia quaecumque mandavi vobis et ecce ego vobiscum sum omnibus diebus usque ad consummationem saeculi <hr> Teaching them to observe all things whatsoever I have commanded you. And behold I am with you all days, even to the consummation of the world. - Matthew 28:20"
         },
         {
             "scriptureID": 166,
             "bookIndex": 8,
             "chapterIndex": 16,
             "verseIndex": 16,
-            "scriptureText": "''He who believes and is baptized / will be saved.'' - Mark 16:16"
+            "scriptureText": "qui crediderit et baptizatus fuerit salvus erit qui vero non crediderit condemnabitur <hr> He that believeth and is baptized shall be saved: but he that believeth not shall he condemned. - Mark 16:16"
         },
         {
             "scriptureID": 167,
             "bookIndex": 8,
             "chapterIndex": 16,
             "verseIndex": 16,
-            "scriptureText": "''But he who does not believe will be condemned.'' - Mark 16:16"
+            "scriptureText": "qui crediderit et baptizatus fuerit salvus erit qui vero non crediderit condemnabitur <hr> He that believeth and is baptized shall be saved: but he that believeth not shall he condemned. - Mark 16:16"
         },
         {
             "scriptureID": 168,
             "bookIndex": 7,
             "chapterIndex": 28,
             "verseIndex": 20,
-            "scriptureText": "''And behold, /  I am with you always, / to the close of the age.'' - Matthew 28:20"
+            "scriptureText": "docentes eos servare omnia quaecumque mandavi vobis et ecce ego vobiscum sum omnibus diebus usque ad consummationem saeculi <hr> Teaching them to observe all things whatsoever I have commanded you. And behold I am with you all days, even to the consummation of the world. - Matthew 28:20"
         },
         {
             "scriptureID": 169,
@@ -4010,7 +4010,7 @@ var rosaryJSONvulgate = {
             "bookIndex": 8,
             "chapterIndex": 16,
             "verseIndex": 19,
-            "scriptureText": "So then the Lord Jesus, after he had spoken to them, / was taken up into heaven, / and sat down at the right hand of God. - Mark 16:19"
+            "scriptureText": "et Dominus quidem postquam locutus est eis adsumptus est in caelum et sedit a dextris Dei <hr> And the Lord Jesus, after he had spoken to them, was taken up into heaven and sitteth on the right hand of God. - Mark 16:19"
         },
         {
             "scriptureID": 171,
@@ -4411,7 +4411,7 @@ var rosaryJSONvulgate = {
             "infoSubHeader": "The Baptism in the Jordan",
             "infoFooter": "-",
             "infoText": "<p>The Jordan River flows through the Jordan Rift Valley into the Sea of the Galilee and then continues down into the Dead Sea with no outlet. It is a place of many important biblical events. However, for most Christians the first association with the river would be the scene of Jesus Christ being baptized by John the Baptist.<\/p><p>According to the Christian faith, the Jordan River is considered the third most holy site in the Holy Land, just after Nativity Grotto in Bethlehem and Golgotha in Jerusalem, because it is the site of the most important event of Jesus’ life – His baptism and beginning of his ministry.<\/p>",
-            "infoRefference": "<a href=\'https://travelujah.com/stories/celebrating-baptism-the-jordan-river-in-the-time-of-jesus\' target=\'_blank\'>link<\/a>"
+            "infoRefference": "<a href='https://travelujah.com/stories/celebrating-baptism-the-jordan-river-in-the-time-of-jesus' target='_blank'>link<\/a>"
         },
         {
             "infoID": 7,
@@ -4563,6 +4563,20 @@ var rosaryJSONvulgate = {
             "infoSubHeader": "<b>Wiki/Github</b>",
             "infoFooter": "footer",
             "infoText": "<p><a href=\"http:\/\/www.github.com\/mezcel\" target=\"_blank\">github.com/mezcel</a></p><p><a href=\"http:\/\/www.github.com\/mezcel\/rosary-jquery-mobile\" target=\"_blank\">jQuery-Mobile Version: https://github.com/mezcel/rosary-jquery-mobile</a></p><p><a href=\"http:\/\/www.github.com\/mezcel\/rosary-jquery-mobile\" target=\"_blank\">Electron Version: https://github.com/mezcel/electron-container</a></p>"
+        },
+        {
+            "infoID": 6,
+            "infoHeader": "New American Bible",
+            "infoSubHeader": "Preface to the New American Bible (excerpt)",
+            "infoFooter": "<a href='http://www.vatican.va/archive/ENG0839/__P1.HTM' target='blank'>http://www.vatican.va/archive/ENG0839</a>",
+            "infoText": "<p>On September 30, 1943, His Holiness Pope Pius XII issued his now famous encyclical on scripture studies, Divino afflante Spiritu. He wrote: \"We ought to explain the original text which was written by the inspired author himself and has more authority and greater weight than any, even the very best, translation whether ancient or modern. This can be done all the more easily and fruitfully if to the knowledge of languages be joined a real skill in literary criticism of the same text.\"</p> <p>The first English Catholic version of the Bible, the Douay-Rheims (1582-1609/10), and its revision by Bishop Challoner (1750) were based on the Latin Vulgate.</p> <p>The text of the books contained in The New American Bible is a completely new translation throughout. From the original and the oldest available texts of the sacred books, it aims to convey as directly as possible the thought and individual style of the inspired writers. The better understanding of Hebrew and Greek, and the steady development of the science of textual criticism, the fruit of patient study since the time of St. Jerome, have allowed the translators and editors in their use of all available materials to approach more closely than ever before the sense of what the sacred authors actually wrote.</p>"
+        },
+        {
+            "infoID": 7,
+            "infoHeader": "Vulgate",
+            "infoSubHeader": "St. Jerome's Latin Translation",
+            "infoFooter": "<a href='http://vulgate.org/' target='blank'>vulgate.org/</a>",
+            "infoText": "<p>The Vulgate is a Latin version of the Holy Bible, and largely the result of the labors of St Jerome (Eusebius Sophronius Hieronymus), who was commissioned by Pope Damasus I in 382 A.D. to make a revision of the old Latin translations. By the 13th century this revision had come to be called the versio vulgata, that is, the \"commonly used translation\", and ultimately it became the definitive and officially promulgated Latin version of the Holy Bible in the Catholic Church.</p><p>Of the Old Testament texts not found in the Hebrew, St. Jerome translated Tobit and Judith anew from the Aramaic; and from the Greek, the additions to Esther from the Septuagint, and the additions to Daniel from Theodotion. The others, Baruch, Wisdom of Solomon, Ecclesiasticus, 1 Maccabees and 2 Maccabees, 3 Esdras and 4 Esdras, the Prayer of Manasses, Psalm 151, and Laodiceans retain in Vulgate manuscripts their Old Latin renderings. Their style is still markedly distinguishable from St. Jerome's. In the Vulgate text, St. Jerome's translations from the Greek of the additions to Esther and Daniel are combined with his separate translations of these books from the Hebrew.</p><hr><h4>St. Jerome's Preface to the Vulgate Version of the New Testament</h4><i>Addressed to Pope Damasus, A.D. 383</i><p>\"You urge me to revise the old Latin version, and, as it were, to sit in judgment on the copies of the Scriptures which are now scattered throughout the whole world; and, inasmuch as they differ from one another, you would have me decide which of them agree with the Greek original. The labour is one of love, but at the same time both perilous and presumptuous; for in judging others I must be content to be judged by all; and how can I dare to change the language of the world in its hoary old age, and carry it back to the early days of its infancy? Is there a man, learned or unlearned, who will not, when he takes the volume into his hands, and perceives that what he reads does not suit his settled tastes, break out immediately into violent language, and call me a forger and a profane person for having the audacity to add anything to the ancient books, or to make any changes or corrections therein? Now there are two consoling reflections which enable me to bear the odium—in the first place, the command is given by you who are the supreme bishop; and secondly, even on the showing of those who revile us, readings at variance with the early copies cannot be right. For if we are to pin our faith to the Latin texts, it is for our opponents to tell us which; for there are almost as many forms of texts as there are copies. If, on the other hand, we are to glean the truth from a comparison of many, why not go back to the original Greek and correct the mistakes introduced by inaccurate translators, and the blundering alterations of confident but ignorant critics, and, further, all that has been inserted or changed by copyists more asleep than awake?\"</p><p>\"I am not discussing the Old Testament, which was turned into Greek by the Seventy elders, and has reached us by a descent of three steps. I do not ask what Aquila and Symmachus think, or why Theodotion takes a middle course between the ancients and the moderns. I am willing to let that be the true translation which had apostolic approval. I am now speaking of the New Testament. This was undoubtedly composed in Greek, with the exception of the work of Matthew the Apostle, who was the first to commit to writing the Gospel of Christ, and who published his work in Judæa in Hebrew characters. We must confess that as we have it in our language it is marked by discrepancies, and now that the stream is distributed into different channels we must go back to the fountainhead. I pass over those manuscripts which are associated with the names of Lucian and Hesychius, and the authority of which is perversely maintained by a handful of disputatious persons. It is obvious that these writers could not amend anything in the Old Testament after the labours of the Seventy; and it was useless to correct the New, for versions of Scripture which already exist in the languages of many nations show that their additions are false. I therefore promise in this short Preface the four Gospels only, which are to be taken in the following order, Matthew, Mark, Luke, John, as they have been revised by a comparison of the Greek manuscripts. Only early ones have been used. But to avoid any great divergences from the Latin which we are accustomed to read, I have used my pen with some restraint, and while I have corrected only such passages as seemed to convey a different meaning, I have allowed the rest to remain as they are.\"</p>"
         }
     ]
 };
