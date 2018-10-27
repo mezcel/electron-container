@@ -19,6 +19,7 @@
 
         <!-- dom style -->
         <link rel="stylesheet" href="myAssets/css/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="myAssets/css/liturgical-colors.min.css" />
         <link rel="stylesheet" href="myAssets/css/myStyle.css" />
 
         <!-- application framework -->
@@ -26,12 +27,13 @@
         <script src="myAssets/js/jquery.mobile-1.4.5.min.js"></script>
 
         <!-- my dom Application -->
-        <script type="text/javascript" src="myAssets/database/rosaryJSON.js"></script>
+        <script type="text/javascript" src="myAssets/database/rosaryJSON-usccb.js"></script>
+        <script type="text/javascript" src="myAssets/database/rosaryJSON-vulgate.js"></script>
         <script src="myAssets/js/myScript.js"></script>
     </head>
 
     <body id="entireBody" class="ui-page-theme-a ui-content">
-        
+
         <div data-role="page" id="pageone">
 
             <!-- header top bar -->
@@ -44,7 +46,7 @@
 
             <!-- Right Panel - Mysteries and Scriptures  -->
             <div data-role="panel" id="infoPanel" data-position="right">
-                <div data-role="collapsible-set">  
+                <div data-role="collapsible-set">
 
                     <h3>Mysteries</h3>
                     <div data-role="collapsible">
@@ -87,25 +89,25 @@
                             <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(20, 300)">Coronation</a></li>
                         </ul>
                     </div>
-                
+
                 </div>
-                
+
                 <h3>Sacred Scriptures</h3>
                 <div data-role="collapsible">
-                    <h3>Christain Books</h3>
+                    <h4>Christain Books</h4>
                     <!-- JSON bible list -->
-                    <ul data-role="listview" id="bible-list" data-divider-theme="b">
-                        <li data-role="list-divider" data-theme="b" role="heading">Database Quotes</li>
-                    </ul>
+                    <ul data-role="listview" id="bible-list" data-divider-theme="b"></ul>
                 </div>
-                
-                <div data-role="collapsible-set">  
+
+                <div data-role="collapsible-set">
                     <h3>Authority</h3>
                     <div data-role="collapsible">
                         <h4>Catechism</h4>
                         <ul data-role="listview">
                             <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(0)">Drafting</a></li>
                             <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(1)">Saint Mary</a></li>
+                            <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(6)">usccb</a></li>
+                            <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(7)">Vulgate</a></li>
                         </ul>
                     </div>
 
@@ -127,7 +129,7 @@
                 <h3>Audio</h3>
                 <div data-role="collapsible">
                     <h4>Ave Maria Music</h4>
-                    <hr> 
+                    <hr>
                     <audio id="audioAveMaria" style="width:100%" controls autoplay loop>
                         <source src="myAssets/audio/tumblr_lia3pvqnO81qzvvkmo1.mp3" type="audio/mpeg"><!-- Maria Callas -->
                         Your browser does not support the audio element.
@@ -139,14 +141,55 @@
                     </audio> - by: Maria Callas
                     <hr>
                 </div>
-                <h3>Brightness:</h3>
-                <div data-role="collapsible">
-                    <h4>Toggle Switch</h4>
-                    <form id="settings">
-                        <fieldset data-role="controlgroup" data-type="horizontal" id="theme-setting">
-                            <input type="checkbox" name="theme" id="daynightSwitch" data-role="flipswitch" data-on-text="day" data-off-text="night" checked>
-                        </fieldset>
-                    </form>
+                <div data-role="collapsible-set">
+                    <h3>Settings:</h3>
+
+                    <div data-role="collapsible">
+                        <h4>Colors</h4>
+                        <form id="darklight">
+                            <fieldset data-role="controlgroup" data-type="horizontal" id="theme-setting">
+                                <input type="checkbox" name="theme" id="daynightSwitch" data-role="flipswitch" data-on-text="day" data-off-text="night" checked> day/night
+                            </fieldset>
+                        </form>
+                        Liturgical Colors:
+                        <div id="liturgicalColors" data-role="controlgroup">
+                            <fieldset data-role="controlgroup" data-mini="true">
+                                <input type="radio" name="rdoLiturgicalColors" id="feastRed" value="liturgical1" />
+                                <label for="feastRed">Feast Days</label> <!-- red -->
+
+                                <input type="radio" name="rdoLiturgicalColors" id="marianBlue" value="liturgical2"  />
+                                <label for="marianBlue">Marian Blue</label> <!-- blue -->
+
+                                <input type="radio" name="rdoLiturgicalColors" id="adventPurple" value="liturgical3"  />
+                                <label for="adventPurple">Advent / Lent</label> <!-- purple -->
+
+                                <input type="radio" name="rdoLiturgicalColors" id="ordinaryGreen" value="liturgical4"  />
+                                <label for="ordinaryGreen">Ordinary Time</label> <!-- green -->
+
+                                <input type="radio" name="rdoLiturgicalColors" id="easterGold" value="liturgical5"  />
+                                <label for="easterGold">Easter / Christmas</label> <!--  gold -->
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <div data-role="collapsible">
+                        <h4>Translation</h4>
+                        <form id="language">
+                            <fieldset data-role="controlgroup" data-mini="true" data-iconpos="right">
+                                <legend>Toggle Language</legend>
+
+                                <input type="radio" name="rdoTranslation" id="usccbTranslation" value="translation1" checked="checked">
+                                <label for="usccbTranslation">English - usccb</label>
+
+                                <input type="radio" name="rdoTranslation" id="vulgateTranslation" value="translation2">
+                                <label for="vulgateTranslation">Latin - vulgate</label>
+
+                                <input type="radio" name="rdoTranslation" id="otherTranslation" value="translation3" disabled="disabled">
+                                <label for="otherTranslation">other (n/a)</label>
+                            </fieldset>
+                        </form>
+
+                    </div>
                 </div>
                 <h3>Social Messaging:</h3>
                 <div data-role="collapsible">
@@ -159,11 +202,11 @@
                             <div>http://192.168.x.xxx:3000</div>
                             <hr>
                             <input name="text-1" id="inputMsgIp" value="" type="text" placeholder="http://'desired-ip':3000">
-                            <a id='btnMessenger' target='_blank' class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-icon-comment ui-btn-icon-left">Open New</a>
+                            <a id='btnMessenger' target='_blank' class="ui-btn ui-btn-b ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-left">Open New Msg</a>
                         </fieldset>
                     </form>
                 </div>
-                
+
             </div>
 
             <!-- Information Popup Dialog -->
@@ -181,10 +224,10 @@
             <div data-role="main" class="ui-content mySwipeClass" data-position="fixed">
                 <!-- App Main View -->
                 <div id="rosaryBeadText">
-                    <!-- Text Readings for each bead -->
-                    <div id="mystery" class="ui-bar ui-bar-a"></div>
-                    <!-- Mystery Name for each bead -->
-                    <div id="decade" class="ui-bar ui-bar-b"></div>
+                    <div class="ui-bar ui-content ui-shadow" >
+                        <div><b id="mystery"></b></div>
+                        <div><i id="decade"></i></div>
+                    </div>
                     <!-- Decade Name for each bead -->
                     <h3>Scripture:</h3>
                     <div id="scripture"></div>
@@ -200,11 +243,11 @@
 
             <!-- footer bottom bar -->
             <div data-role="footer" data-position="fixed">
-                <div style="width:100%; background: white;" class="ui-grid-a">
+                <div class="ui-grid-a">
                     <div class="ui-block-a"><button style="width:98.5%" onclick="beadRev()">Bead Reverse</button></div>
                     <div class="ui-block-b"><button style="width:98.5%" onclick="beadFwd()">Bead Forward</button></div>
                 </div>
-                <span id="beadMarker" class="ui-bar ui-bar-a" style="text-align: center">0 / 0</span>
+                <span id="beadMarker" class="ui-bar" style="text-align: center">0 / 0</span>
                 <div data-role="decadeProgress"></div><!-- decade progress bar -->
                 <div data-role="rosaryProgress"></div><!-- rosary progress bar -->
             </div>
