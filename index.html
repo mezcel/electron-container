@@ -27,7 +27,7 @@
         <script src="myAssets/js/jquery.mobile-1.4.5.min.js"></script>
 
         <!-- my dom Application -->
-        <script type="text/javascript" src="myAssets/database/rosaryJSON-usccb.js"></script>
+        <script type="text/javascript" src="myAssets/database/rosaryJSON-nab.js"></script>
         <script type="text/javascript" src="myAssets/database/rosaryJSON-vulgate.js"></script>
         <script src="myAssets/js/myScript.js"></script>
     </head>
@@ -39,9 +39,9 @@
             <!-- header top bar -->
             <div data-role="header" data-position="fixed">
                 <!-- App Header -->
-                <a href="#homePanel" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
-                <h1 id="appHeaderTitle">JQM Rosary</h1>
-                <a href="#infoPanel" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left">Info</a>
+                <a id="btnHomePanel" href="#homePanel" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+                <h1 id="mystery">ElectronJS JQM Rosary</h1>
+                <a id="btnInfoPanel" href="#infoPanel" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left">Info</a>
             </div>
 
             <!-- Right Panel - Mysteries and Scriptures  -->
@@ -106,10 +106,16 @@
                         <ul data-role="listview">
                             <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(0)">Drafting</a></li>
                             <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(1)">Saint Mary</a></li>
-                            <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(6)">usccb</a></li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible">
+                        <h4>Bible</h4>
+                        <ul data-role="listview">
+                            <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(6)">NAB</a></li>
                             <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(7)">Vulgate</a></li>
                         </ul>
                     </div>
+
 
                 </div>
             </div>
@@ -135,7 +141,7 @@
                         Your browser does not support the audio element.
                     </audio> - by: Barbara Bonney
                     <hr>
-                    <audio id="audioAveMaria" style="width:100%" controls loop>
+                    <audio id="audioAveMaria2" style="width:100%" controls loop>
                         <source src="myAssets/audio/--Ave-Maria-Musica-Sacra-----Maria-Callas---Mozart---Opera.mp3" type="audio/mpeg"><!-- Barbara Bonney -->
                         Your browser does not support the audio element. BJR Enterprises, Inc. has legally transferred the copyright of all their Maria Callas vinyl disc editions to Divina Records/Maria Callas Museum on September 9, 2009
                     </audio> - by: Maria Callas
@@ -178,8 +184,8 @@
                             <fieldset data-role="controlgroup" data-mini="true" data-iconpos="right">
                                 <legend>Toggle Language</legend>
 
-                                <input type="radio" name="rdoTranslation" id="usccbTranslation" value="translation1" checked="checked">
-                                <label for="usccbTranslation">English - usccb</label>
+                                <input type="radio" name="rdoTranslation" id="nabTranslation" value="translation1" checked="checked">
+                                <label for="nabTranslation">English - NAB</label>
 
                                 <input type="radio" name="rdoTranslation" id="vulgateTranslation" value="translation2">
                                 <label for="vulgateTranslation">Latin - vulgate</label>
@@ -225,18 +231,17 @@
                 <!-- App Main View -->
                 <div id="rosaryBeadText">
                     <div class="ui-bar ui-content ui-shadow" >
-                        <div><b id="mystery"></b></div>
-                        <div><i id="decade"></i></div>
+                        <i id="decade"></i>
                     </div>
                     <!-- Decade Name for each bead -->
                     <h3>Scripture:</h3>
-                    <div id="scripture"></div>
+                    <div id="scripture" class="ui-bar ui-content ui-shadow"></div>
                     <!-- Scripture Readings for each bead -->
                     <h3>Message:</h3>
-                    <div id="message"></div>
+                    <div id="message" class="ui-bar ui-content ui-shadow"></div>
                     <!-- Custom Message for each bead -->
                     <h3>Prayer:</h3>
-                    <div id="prayer"></div>
+                    <div id="prayer" class="ui-bar ui-content ui-shadow"></div>
                     <!-- Prayer Readings for each bead -->
                 </div>
             </div>
