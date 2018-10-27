@@ -1,4 +1,4 @@
-var rosaryJSON = {
+var rosaryJSONvulgate = {
     "rosaryBead": [
         {
             "rosaryBeadID": 0,
@@ -2904,7 +2904,7 @@ var rosaryJSON = {
             "bookIndex": 10,
             "chapterIndex": 1,
             "verseIndex": 12,
-            "scriptureText": "quotquot autem receperunt eum dedit eis potestatem filios Dei fieri his qui credunt in nomine eius <hr> But as many as received him, he gave them power to be made the sons of God, to them that believe in his name. <hr> But as many as received him, he gave them power to be made the sons of God, to them that believe in his name. - John 1:12"
+            "scriptureText": "quotquot autem receperunt eum dedit eis potestatem filios Dei fieri his qui credunt in nomine eius <hr> But as many as received him, he gave them power to be made the sons of God, to them that believe in his name. - John 1:12"
         },
         {
             "scriptureID": 13,
@@ -4565,4 +4565,4 @@ var rosaryJSON = {
             "infoText": "<p><a href=\"http:\/\/www.github.com\/mezcel\" target=\"_blank\">github.com/mezcel</a></p><p><a href=\"http:\/\/www.github.com\/mezcel\/rosary-jquery-mobile\" target=\"_blank\">jQuery-Mobile Version: https://github.com/mezcel/rosary-jquery-mobile</a></p><p><a href=\"http:\/\/www.github.com\/mezcel\/rosary-jquery-mobile\" target=\"_blank\">Electron Version: https://github.com/mezcel/electron-container</a></p>"
         }
     ]
-}
+};
