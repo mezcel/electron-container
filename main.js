@@ -172,6 +172,7 @@ function createMainWindow() {
                 submenu: [
                     {
                         label: 'Web Browser Instance',
+                        accelerator: 'CmdOrCtrl+`',
                         click() {
                             shell.openExternal(myHostip + ':7777/')
                         }
@@ -186,6 +187,7 @@ function createMainWindow() {
                 submenu: [
                     {
                         label: 'Show Electron Messenger',
+                        accelerator: 'CmdOrCtrl+Up',
                         click() {
                             childWindow.maximize();
                         }
