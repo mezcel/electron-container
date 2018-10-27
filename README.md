@@ -6,6 +6,8 @@
 
 I am still making the Vulgate translation. I also need to go back and find misc typos and 7x77 check all the verses. After all the edits and dynamic automation... I am sure something got overlooked.
 
+```The quotes are right, but the DB is not 100% consistent matching some book/verse id/index pointers. I discovered a lot of mismatching when I was overwriting the Vulgate from the Usccb template.```
+
 Messed with jQuery Mobile themes:
 
 * added liturgical calender colors. [themeroller link](https://themeroller.jquerymobile.com:443/?ver=1.4.5&style_id=20181026-7)
