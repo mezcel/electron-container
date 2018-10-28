@@ -6,7 +6,9 @@
 
 I am still making the Vulgate translation. I also need to go back and find misc typos and 7x77 check all the verses. After all the edits and dynamic automation... I am sure something got overlooked.
 
-```The quotes are right, but the DB is not 100% consistent matching some book/verse id/index pointers. I discovered a lot of mismatching when I was overwriting the Vulgate from the Usccb template.```
+> I am pretty sure I screwed up the Old Testament organization and translation. Fyi.
+
+```The quotes are right, but the DB is not a 100% match with of the some book/verse pointers between the different translations. I discovered a lot of mismatching when I was overwriting the Vulgate from the Usccb template. I may need to curate my own scripture package. For now I just going to try to 'fix' this one.```
 
 Messed with jQuery Mobile themes:
 
