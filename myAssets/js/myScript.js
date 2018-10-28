@@ -508,11 +508,14 @@ $(document).on("pagecreate", function() {
             $('input:radio[name=rdoLiturgicalColors]:checked').prop('checked', false).checkboxradio("refresh");
 
             $("#entireBody").removeClass("ui-page-theme-a ui-page-theme-b ui-page-theme-c ui-page-theme-d ui-page-theme-e ui-page-theme-f ui-page-theme-g");
+            $(".myUiBody").removeClass("ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e ui-body-f ui-body-g");
 
             if ($("#daynightSwitch").is(":checked")) {
                 $("#entireBody").addClass("ui-page-theme-a");
+                $(".myUiBody").addClass("ui-body-a");
             } else {
                 $("#entireBody").addClass("ui-page-theme-b");
+                $(".myUiBody").addClass("ui-body-b");
             }
 
         }
@@ -521,21 +524,27 @@ $(document).on("pagecreate", function() {
     $("#liturgicalColors input").on("change", function(event) {
         if (event.target.name === "rdoLiturgicalColors") {
             $("#entireBody").removeClass("ui-page-theme-a ui-page-theme-b ui-page-theme-c ui-page-theme-d ui-page-theme-e ui-page-theme-f ui-page-theme-g");
+            $(".myUiBody").removeClass("ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e ui-body-f ui-body-g");
 
             if ($("#feastRed").is(":checked")) {
                 $("#entireBody").addClass("ui-page-theme-c");
+                $(".myUiBody").addClass("ui-body-c");
             }
             if ($("#marianBlue").is(":checked")) {
                 $("#entireBody").addClass("ui-page-theme-d");
+                $(".myUiBody").addClass("ui-body-d");
             }
             if ($("#adventPurple").is(":checked")) {
                 $("#entireBody").addClass("ui-page-theme-e");
+                $(".myUiBody").addClass("ui-body-e");
             }
             if ($("#ordinaryGreen").is(":checked")) {
                 $("#entireBody").addClass("ui-page-theme-f");
+                $(".myUiBody").addClass("ui-body-f");
             }
             if ($("#easterGold").is(":checked")) {
                 $("#entireBody").addClass("ui-page-theme-g");
+                $(".myUiBody").addClass("ui-body-g");
             }
 
         }
