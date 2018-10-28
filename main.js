@@ -159,8 +159,10 @@ function createMainWindow() {
     // Create the browser window.
     mainWindow = new BrowserWindow({
         /* My personal settings: 700x900 */
-        width: 700,
-        height: 900,
+        // tablet reff: 768 x 1024
+        // -25% = 576x768
+        width: 576,
+        height: 768,
         icon: './myAssets/img/favicon.ico'
     });
 
@@ -263,8 +265,8 @@ function createChildWindow() {
         parent: mainWindow,
         show: false,
         closable: false,
-        width: 700,
-        height: 550,
+        width: 576,
+        height: 520,
         icon: './myAssets/img/favicon.ico'
     });
 
