@@ -2741,32 +2741,32 @@ var rosaryJSONvulgate = {
         {
             "bookID": 1,
             "bookName": "Judith",
-            "library": "<a href='http:\/\/www.usccb.org\/bible\/judith\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+            "library": "<a href='http://vulgate.org/ot/judith_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 2,
-            "bookName": "Psalms",
-            "library": "<a href='http:\/\/www.usccb.org\/bible\/psalms\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+            "bookName": "Psalmi",
+            "library": "<a href='http://vulgate.org/ot/psalms_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>, <a href='http://www.bookofhours.org/psalms/tool_150_comparison.htm' target='_blank'>bookofhours.org</a> "
         },
         {
             "bookID": 3,
-            "bookName": "Proverbs",
-            "library": "<a href='http:\/\/www.usccb.org\/bible\/proverbs\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+            "bookName": "Proverbia",
+            "library": "<a href='http://vulgate.org/ot/proverbs_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 4,
-            "bookName": "Ecclesiastes",
-            "library": "<a href='http:\/\/www.usccb.org\/bible\/ecclesiastes\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+            "bookName": "Canticum Canticorum",
+            "library": "<a href='http://vulgate.org/ot/songofsolomon_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 5,
-            "bookName": "Sirach",
-            "library": "<a href='http:\/\/www.usccb.org\/bible\/sirach\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+            "bookName": "Ecclesiasticus",
+            "library": "<a href='http://vulgate.org/ot/ecclesiasticus_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 6,
             "bookName": "Isiah",
-            "library": "<a href='http://www.usccb.org\/bible\/scripture.cfm?bk=Isaiah&ch=' target='_blank'>The New American Bible USCCB .org<\/a>"
+            "library": "<a href='http://vulgate.org/ot/isaiah_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 7,
@@ -2786,32 +2786,32 @@ var rosaryJSONvulgate = {
         {
             "bookID": 10,
             "bookName": "Ioannem",
-            "library": "<a href='http://vulgate.org/nt/gospel/john_1.htm' target='_blank'>The Latin Vulgate New Testament Bible<\/a>"
+            "library": "<a href='http://vulgate.org/nt/gospel/john_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 11,
-            "bookName": "Acts",
-            "library": "<a href='http:\/\/www.usccb.org\/bible\/acts\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+            "bookName": "Actus Apostolorum",
+            "library": "<a href='http://vulgate.org/nt/gospel/acts_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 12,
-            "bookName": "1 Corinthians",
-            "library": "<a href='http:\/\/www.usccb.org\/bible\/scripture.cfm?bk=1%20Corinthians&ch=' target='_blank'>The New American Bible USCCB .org<\/a>"
+            "bookName": "Ad Corinthios I",
+            "library": "<a href='http://vulgate.org/nt/epistle/1corinthians_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 13,
-            "bookName": "Revelations",
-            "library": "<a href='http:\/\/www.usccb.org\/bible\/scripture.cfm?bk=Revelation&ch=' target='_blank'>The New American Bible USCCB .org<\/a>"
+            "bookName": "Apocalypsis Ioannis",
+            "library": "<a href='http://vulgate.org/nt/epistle/revelation_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 14,
             "bookName": "Queenship of the B.V.M., Gradual",
-            "library": "<a href='http:\/\/w2.vatican.va\/content\/pius-xii\/en\/encyclicals\/documents\/hf_p-xii_enc_11101954_ad-caeli-reginam.html' target='_blank'>AD CAELI REGINAM - ENCYCLICAL OF POPE PIUS XII, October 11, 1954 <\/a>"
+            "library": "<a href='http://w2.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html' target='_blank'>AD CAELI REGINAM - ENCYCLICAL OF POPE PIUS XII, October 11, 1954 <\/a>"
         },
         {
             "bookID": 15,
             "bookName": "Oremus",
-            "library": "<a href='http:\/\/www.oremus.org\/liturgy\/ccp\/07mon.html' target='_blank'>Pentecost Alleluia<\/a>"
+            "library": "<a href='http://www.oremus.org/liturgy/ccp/07mon.html' target='_blank'>Pentecost Alleluia<\/a>, <a href='http://www.liturgies.net/Liturgies/Catholic/loh/pentecostor.htm' target='_blank'>Office of Readings<\/a>, <a href='http://www.preces-latinae.org/thesaurus/Spiritus/VSS.html' target='_blank'>Veni, Sancte Spiritus Come<\/a> "
         }
     ],
     "scripture": [
@@ -3506,7 +3506,7 @@ var rosaryJSONvulgate = {
             "bookIndex": 12,
             "chapterIndex": 11,
             "verseIndex": 26,
-            "scriptureText": "For as often as you eat this bread and drink the chalice, you proclaim the Lord’s death until he comes. - 1 Corinthians 11:26"
+            "scriptureText": "quotienscumque enim manducabitis panem hunc et calicem bibetis mortem Domini adnuntiatis donec veniat <hr> For as often as you shall eat this bread and drink the chalice, you shall shew the death of the Lord, until he come. - 1 Corinthians 11:26"
         },
         {
             "scriptureID": 99,
@@ -3632,35 +3632,35 @@ var rosaryJSONvulgate = {
             "bookIndex": 6,
             "chapterIndex": 53,
             "verseIndex": 3,
-            "scriptureText": "He was despised and rejected by men;/ a man of sorrows, / and acquainted with grief; / and as one from whom men hide their faces / he was despised, / and we esteemed him not. - Isaiah 53:3"
+            "scriptureText": "despectum et novissimum virorum virum dolorum et scientem infirmitatem et quasi absconditus vultus eius et despectus unde nec reputavimus eum <hr> Despised, and the most abject of men, a man of sorrows, and acquainted with infirmity: and his look was as it were hidden and despised, whereupon we esteemed him not. - Isaiah 53:3"
         },
         {
             "scriptureID": 117,
             "bookIndex": 6,
             "chapterIndex": 3,
             "verseIndex": 7,
-            "scriptureText": "He was oppressed, / and he was afflicted, / yet he opened not his mouth; / like a lamb that is led to the slaughter, / and like a sheep that before its shearers is silent, / so he opened not his mouth. - Isaiah 53:7"
+            "scriptureText": "oblatus est quia ipse voluit et non aperuit os suum sicut ovis ad occisionem ducetur et quasi agnus coram tondente obmutescet et non aperiet os suum <hr> He was offered because it was his own will, and he opened not his mouth: he shall be led as a sheep to the slaughter, and shall be dumb as a lamb before his shearer, and he shall not open his mouth. - Isaiah 53:7"
         },
         {
             "scriptureID": 118,
             "bookIndex": 6,
             "chapterIndex": 53,
             "verseIndex": 5,
-            "scriptureText": "But he was wounded for our transgressions, / he was bruised for our iniquities. - Isaiah 53:5"
+            "scriptureText": "ipse autem vulneratus est propter iniquitates nostras adtritus est propter scelera nostra disciplina pacis nostrae super eum et livore eius sanati sumus <hr> But he was wounded for our iniquities, he was bruised for our sins: the chastisement of our peace was upon him, and by his bruises we are healed. - Isaiah 53:5"
         },
         {
             "scriptureID": 119,
             "bookIndex": 6,
             "chapterIndex": 53,
             "verseIndex": 4,
-            "scriptureText": "Surely he has borne our griefs / and carried our sorrows  Yet we esteemed him stricken, / struck down by God, and afflicted. - Isaiah 53:4"
+            "scriptureText": "vere languores nostros ipse tulit et dolores nostros ipse portavit et nos putavimus eum quasi leprosum et percussum a Deo et humiliatum <hr> Surely he hath borne our infirmities and carried our sorrows: and we have thought him as it were a leper, and as one struck by God and afflicted. - Isaiah 53:4"
         },
         {
             "scriptureID": 120,
             "bookIndex": 6,
             "chapterIndex": 53,
             "verseIndex": 5,
-            "scriptureText": "Upon him was the chastisement that made us whole, / and with his stripes we are healed. - Isaiah 53:5"
+            "scriptureText": "ipse autem vulneratus est propter iniquitates nostras adtritus est propter scelera nostra disciplina pacis nostrae super eum et livore eius sanati sumus <hr> But he was wounded for our iniquities, he was bruised for our sins: the chastisement of our peace was upon him, and by his bruises we are healed. - Isaiah 53:5"
         },
         {
             "scriptureID": 121,
@@ -4003,7 +4003,7 @@ var rosaryJSONvulgate = {
             "bookIndex": 11,
             "chapterIndex": 1,
             "verseIndex": 9,
-            "scriptureText": "And when he had said this, / as they were looking on, / he was lifted up, / and a cloud took him out of their sight. - Acts 1:9"
+            "scriptureText": "et cum haec dixisset videntibus illis elevatus est et nubes suscepit eum ab oculis eorum <hr> And when he had said these things, while they looked on, he was raised up: and a cloud received him out of their sight. - Acts 1:9"
         },
         {
             "scriptureID": 170,
@@ -4017,203 +4017,203 @@ var rosaryJSONvulgate = {
             "bookIndex": 11,
             "chapterIndex": 2,
             "verseIndex": 1,
-            "scriptureText": "When the day of Pentecost day had come, / they were all together in one place. - Acts 2:1"
+            "scriptureText": "et cum conplerentur dies pentecostes erant omnes pariter in eodem loco <hr> And when the days of the Pentecost were accomplished, they were all together in one place:  - Acts 2:1"
         },
         {
             "scriptureID": 172,
             "bookIndex": 11,
             "chapterIndex": 2,
             "verseIndex": 2,
-            "scriptureText": "And suddenly a sound came from heaven like the rush of a mighty wind, / and it filled all the house where they were sitting. - Acts 2:2"
+            "scriptureText": "et factus est repente de caelo sonus tamquam advenientis spiritus vehementis et replevit totam domum ubi erant sedentes <hr> And suddenly there came a sound from heaven, as of a mighty wind coming: and it filled the whole house where they were sitting. - Acts 2:2"
         },
         {
             "scriptureID": 173,
             "bookIndex": 11,
             "chapterIndex": 2,
             "verseIndex": 3,
-            "scriptureText": "And there appeared to them tongues as of fire, / distributed and resting on each one of them. - Acts 2:3"
+            "scriptureText": "et apparuerunt illis dispertitae linguae tamquam ignis seditque supra singulos eorum <hr> And there appeared to them parted tongues, as it were of fire: and it sat upon every one of them. - Acts 2:3"
         },
         {
             "scriptureID": 174,
             "bookIndex": 11,
             "chapterIndex": 2,
             "verseIndex": 4,
-            "scriptureText": "And they were all filled with the Holy Spirit,/ and began to tell the mighty works of God. - Acts 2:4, 11"
+            "scriptureText": "et repleti sunt omnes Spiritu Sancto et coeperunt loqui aliis linguis prout Spiritus Sanctus dabat eloqui illis / Iudaei quoque et proselyti Cretes et Arabes audivimus loquentes eos nostris linguis magnalia Dei <hr> And they were all filled with the Holy Ghost: and they began to speak with divers tongues, according as the Holy Ghost gave them to speak. / Jews also, and proselytes, Cretes, and Arabians: we have heard them speak in our own tongues the wonderful works of God. - Acts 2:4, 11"
         },
         {
             "scriptureID": 175,
             "bookIndex": 11,
             "chapterIndex": 2,
             "verseIndex": 5,
-            "scriptureText": "Now there were dwelling in Jerusalem Jews, / devout men from every nation under heaven. - Acts 2:5"
+            "scriptureText": "erant autem in Hierusalem habitantes Iudaei viri religiosi ex omni natione quae sub caelo sunt <hr> Now there were dwelling at Jerusalem, Jews, devout men, out of every nation under heaven. - Acts 2:5"
         },
         {
             "scriptureID": 176,
             "bookIndex": 11,
             "chapterIndex": 2,
             "verseIndex": 14,
-            "scriptureText": "But Peter, / standing with the Eleven, / lifted up his voice and addressed them. - Acts 2:14"
+            "scriptureText": "stans autem Petrus cum undecim levavit vocem suam et locutus est eis viri iudaei et qui habitatis Hierusalem universi hoc vobis notum sit et auribus percipite verba mea <hr> But Peter standing up with the eleven, lifted up his voice, and spoke to them: Ye men of Judea, and all you that dwell in Jerusalem, be this known to you and with your ears receive my words. - Acts 2:14"
         },
         {
             "scriptureID": 177,
             "bookIndex": 11,
             "chapterIndex": 2,
             "verseIndex": 38,
-            "scriptureText": "And Peter said to them, / ''Repent, and be baptized every one of you / in the name of Jesus Christ / for the forgiveness of your sins; / and you shall receive the gift of the Holy Spirit.'' - Acts 2:38"
+            "scriptureText": "Petrus vero ad illos paenitentiam inquit agite et baptizetur unusquisque vestrum in nomine Iesu Christi in remissionem peccatorum vestrorum et accipietis donum Sancti Spiritus <hr> But Peter said to them: Do penance: and be baptized every one of you in the name of Jesus Christ, for the remission of your sins. And you shall receive the gift of the Holy Ghost. - Acts 2:38"
         },
         {
             "scriptureID": 178,
             "bookIndex": 11,
             "chapterIndex": 2,
             "verseIndex": 41,
-            "scriptureText": "So those who received his word were baptized, / and there were added that day about three thousand souls. - Acts 2:41"
+            "scriptureText": "qui ergo receperunt sermonem eius baptizati sunt et adpositae sunt in illa die animae circiter tria milia <hr> They therefore that received his word were baptized: and there were added in that day about three thousand souls. - Acts 2:41"
         },
         {
             "scriptureID": 179,
             "bookIndex": 15,
             "chapterIndex": 0,
             "verseIndex": 0,
-            "scriptureText": "Send forth your Spirit, and they shall be created;/ and you shall renew the face of the earth. - Pentecost Alleluia"
+            "scriptureText": "Emitte Spiritum tuum et creabuntur; / Et renovabis faciem terrae. <hr> Send forth your Spirit, and they shall be created;/ and you shall renew the face of the earth. - Pentecost Alleluia, Psalm 104 Antiphon 3"
         },
         {
             "scriptureID": 180,
             "bookIndex": 15,
             "chapterIndex": 0,
             "verseIndex": 0,
-            "scriptureText": "Come, Holy Spirit, fill the hearts of your faithful;/ and kindle in them the fire of your love. - Pentecost Alleluia"
+            "scriptureText": "VENI, Sancte Spiritus, reple tuorum corda fidelium, et tui amoris in eis ignem accende. <hr> Come, Holy Spirit, fill the hearts of your faithful;/ and kindle in them the fire of your love. - Pentecost Alleluia"
         },
         {
             "scriptureID": 181,
             "bookIndex": 4,
             "chapterIndex": 2,
             "verseIndex": 11,
-            "scriptureText": "''My beloved speaks and says to me: / ''Arise, my love, / my dove, my fair one, / and come away.'' - Songs 2:10"
+            "scriptureText": "et dilectus meus loquitur mihi surge propera amica mea formonsa mea et veni <hr> Behold my beloved speaketh to me: Arise, make haste, my love, my dove, my beautiful one, and come. - Songs 2:10"
         },
         {
             "scriptureID": 182,
             "bookIndex": 4,
             "chapterIndex": 2,
             "verseIndex": 11,
-            "scriptureText": "''For behold, the winter is past, / the rain is over and gone.''' - Songs 2:11"
+            "scriptureText": "iam enim hiemps transiit imber abiit et recessit <hr> For winter is now past, the rain is over and gone. - Songs 2:11"
         },
         {
             "scriptureID": 183,
             "bookIndex": 4,
             "chapterIndex": 2,
             "verseIndex": 14,
-            "scriptureText": "''Let me see your face, / let me hear your voice, / for your voice is sweet, / and your face is comely.'' - Songs 2:14"
+            "scriptureText": "columba mea in foraminibus petrae in caverna maceriae ostende mihi faciem tuam sonet vox tua in auribus meis vox enim tua dulcis et facies tua decora <hr> My dove in the clefts of the rock, in the hollow places of the wall, shew me thy face, let thy voice sound in my ears: for thy voice is sweet, and thy face comely. - Songs 2:14"
         },
         {
             "scriptureID": 184,
             "bookIndex": 13,
             "chapterIndex": 11,
             "verseIndex": 19,
-            "scriptureText": "Then God's temple in heaven was opened, / and the ark of his covenant was seen within his temple; / and there were flashes of lightning, / loud noises, peals of thunder, / an earthquake, and heavy hail. - Revelations 11:19"
+            "scriptureText": "et apertum est templum Dei in caelo et visa est arca testamenti eius in templo eius et facta sunt fulgora et voces et terraemotus et grando magna <hr> And the temple of God was opened in heaven: and the ark of his testament was seen in his temple. And there were lightnings and voices and an earthquake and great hail. - Revelations 11:19"
         },
         {
             "scriptureID": 185,
             "bookIndex": 13,
             "chapterIndex": 12,
             "verseIndex": 1,
-            "scriptureText": "And a great sign appeared in heaven, / a woman clothed with the sun. - Revelations 12:1"
+            "scriptureText": "et signum magnum paruit in caelo mulier amicta sole et luna sub pedibus eius et in capite eius corona stellarum duodecim <hr> And a great sign appeared in heaven: A woman clothed with the sun, and the moon under her feet, and on her head a crown of twelve stars. - Revelations 12:1"
         },
         {
             "scriptureID": 186,
             "bookIndex": 13,
             "chapterIndex": 12,
             "verseIndex": 1,
-            "scriptureText": ". . . with the moon under her feet, / and on her head a crown of twelve stars.  - Revelations 12:1"
+            "scriptureText": "et signum magnum paruit in caelo mulier amicta sole et luna sub pedibus eius et in capite eius corona stellarum duodecim <hr> And a great sign appeared in heaven: A woman clothed with the sun, and the moon under her feet, and on her head a crown of twelve stars. - Revelations 12:1"
         },
         {
             "scriptureID": 187,
             "bookIndex": 2,
             "chapterIndex": 45,
             "verseIndex": 13,
-            "scriptureText": "The daughter of the king is decked in her chamber / with gold-woven robes; /  in many-colored robes she is led to the king. - Psalm 45:13-14"
+            "scriptureText": "filiae regum in honore tuo stetit coniux in dextera tua in diademate aureo / audi filia et vide et inclina aurem tuam et obliviscere populi tui et domus patris tui / et concupiscet rex decorem tuum quia ipse est dominus tuus et adora eum<i>filiae regum in honore tuo adstetit regina a dextris tuis in vestitu deaurato circumdata varietate / audi filia et vide et inclina aurem tuam et obliviscere populum tuum et domum patris tui / et concupiscet rex decorem tuum quoniam ipse est dominus tuus et adorabunt eum </i> <hr> with which kings' daughters have gladdened thee for thine honour: the queen stood by on thy right hand, clothed in vesture wrought with gold, and arrayed in divers colours. / Hear, O daughter, and see, and incline thine ear; forget also thy people, and thy father's house. / Because the king has desired thy beauty; for he is thy Lord.  - Psalm 45:13-14 or Psalmi 44:10-12"
         },
         {
             "scriptureID": 188,
             "bookIndex": 1,
             "chapterIndex": 13,
             "verseIndex": 18,
-            "scriptureText": "''O daughter, you are blessed by the Most High God above all women on earth.'' - Judith 13:18"
+            "scriptureText": "et in me ancillam suam adimplevit misericordiam suam quam promisit domui Israhel et interfecit in manu mea hostem populi sui in hac nocte <hr> And by me his handmaid he hath fulfilled his mercy, which he promised to the house of Israel: and he hath killed the enemy of his people by my hand this night. - Judith 13:18"
         },
         {
             "scriptureID": 189,
             "bookIndex": 1,
             "chapterIndex": 13,
             "verseIndex": 19,
-            "scriptureText": "''Your hope will never depart from the hearts of men, / as they remember the power of God.'' - Judith 13:19"
+            "scriptureText": "et proferens de pera caput Holofernis ostendit illis dicens ecce caput Holofernis principis militiae Assyriorum et ecce conopeum illius in quo recumbebat in ebrietate sua ubi et per manum feminae percussit illum Dominus Deus noster <hr> Then she brought forth the head of Holofernes out of the wallet, and shewed it them, saying: Behold the head of Holofernes the general of the army of the Assyrians, and behold his canopy, wherein he lay in his drunkenness, where the Lord our God slew him by the hand of a woman. - Judith 13:19"
         },
         {
             "scriptureID": 190,
             "bookIndex": 1,
             "chapterIndex": 15,
             "verseIndex": 9,
-            "scriptureText": "''You are the exaltation of Jerusalem, / you are the great pride of our nation!'' - Judith 15:9"
+            "scriptureText": "Ioachim autem summus pontifex de Hierusalem venit in Bethuliam cum universis presbyteris suis ut videret Iudith <hr> And Joachim the high priest came from Jerusalem to Bethulia with all his ancients to see Judith. - Judith 15:9"
         },
         {
             "scriptureID": 191,
             "bookIndex": 4,
             "chapterIndex": 6,
             "verseIndex": 10,
-            "scriptureText": "Who is this that looks forth like the dawn, / fair as the moon, / bright as the sun?'' - Songs 6:10"
+            "scriptureText": "quae est ista quae progreditur quasi aurora consurgens pulchra ut luna electa ut sol terribilis ut acies ordinata <hr> Who is she that cometh forth as the morning rising, fair as the moon, bright as the sun, terrible as an army set in array? - Songs 6:10"
         },
         {
             "scriptureID": 192,
             "bookIndex": 5,
             "chapterIndex": 50,
             "verseIndex": 7,
-            "scriptureText": "Like the rainbow gleaming in glorious clouds; / like roses in the days of the first fruits. - Sirach 50:7-8"
+            "scriptureText": "et quasi sol refulgens sic ille effulsit in templo Dei / quasi arcus effulgens in nebulam gloriae et quasi flos rosarum in diebus veris quasi lilia quae sunt in transitu aquae et quasi tus redolens in diebus aestatis <hr> And as the sun when it shineth, so did he shine in the temple of God. / And as the rainbow giving light in bright clouds, and as the flower of roses in the days of the spring, and as the lilies that are on the brink of the water, and as the sweet smelling frankincense in the time of summer. - Sirach 50:7-8 or THE WISDOM OF BEN SIRA or ecclesiasticus"
         },
         {
             "scriptureID": 193,
             "bookIndex": 4,
             "chapterIndex": 2,
             "verseIndex": 1,
-            "scriptureText": "I am a rose of Sharon, / a lily of the valleys. - Songs 2:1"
+            "scriptureText": "ego flos campi et lilium convallium <hr> I am the flower of the field, and the lily of the valleys. - Songs 2:1"
         },
         {
             "scriptureID": 194,
             "bookIndex": 5,
             "chapterIndex": 24,
             "verseIndex": 4,
-            "scriptureText": "My throne was in a pillar of cloud, / and for eternity I shall not cease to exist. - Sirach 24:4,9"
+            "scriptureText": "in medio populo exaltabitur et in plenitudine sancta admirabitur / in multitudine electorum habebit laudem et inter benedictos benedicetur dicens <hr> And in the midst of her own people she shall be exalted, and shall be admired in the holy assembly. / And in the multitude of the elect she shall have praise, and among the blessed she shall be blessed, saying: - Sirach 24:3-4 or THE WISDOM OF BEN SIRA or ecclesiasticus"
         },
         {
             "scriptureID": 195,
             "bookIndex": 5,
             "chapterIndex": 24,
             "verseIndex": 19,
-            "scriptureText": "Come to me, you who desire me, / and eat your fill of my produce. - Sirach 24:19"
+            "scriptureText": "quasi oliva speciosa in campis et quasi platanus exaltata sum iuxta aquam in plateis <hr> As a fair olive tree in the plains, and as a plane tree by the water in the streets, was I exalted. - Sirach 24:19 ???"
         },
         {
             "scriptureID": 196,
             "bookIndex": 5,
             "chapterIndex": 24,
-            "verseIndex": 17,
-            "scriptureText": "Like a terebinth I spread out my branches, / my teaching is sweeter than honey. - Sirach 24:17,20"
+            "verseIndex": 27,
+            "scriptureText": "spiritus enim meus super melle dulcis et hereditas mea super mel et favum <hr> For my spirit is sweet above honey, and my inheritance above honey and the honeycomb - Sirach 24:27"
         },
         {
             "scriptureID": 197,
             "bookIndex": 3,
             "chapterIndex": 8,
             "verseIndex": 23,
-            "scriptureText": "And now, my sons, listen to me; / happy are those who keep my ways.  Hear instruction and be wise.' - Proverbs 8:32-33"
+            "scriptureText": "nunc ergo filii audite me beati qui custodiunt vias meas / audite disciplinam et estote sapientes et nolite abicere eam <hr> Now, therefore, ye children, hear me: blessed are they that keep my ways. / Hear instruction, and be wise, and refuse it not. - Proverbs 8:32-33"
         },
         {
             "scriptureID": 198,
             "bookIndex": 3,
             "chapterIndex": 8,
             "verseIndex": 32,
-            "scriptureText": "Happy are those who keep my ways,/ watching daily at my gates.' - Proverbs 8:32,34"
+            "scriptureText": "beatus homo qui audit me qui vigilat ad fores meas cotidie et observat ad postes ostii mei <hr> Blessed is the man that heareth me, and that watcheth daily at my gates, and waiteth at the posts of my doors. - Proverbs 8:34"
         },
         {
             "scriptureID": 199,
             "bookIndex": 3,
             "chapterIndex": 8,
             "verseIndex": 35,
-            "scriptureText": "For he who finds me finds life / and obtains favor from the Lord. - Proverbs 8:35"
+            "scriptureText": "qui me invenerit inveniet vitam et hauriet salutem a Domino <hr> He that shall find me, shall find life, and shall have salvation from the Lord. - Proverbs 8:35"
         },
         {
             "scriptureID": 200,
