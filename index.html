@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Mezcel, mezcel@hotmail.com">
-        <meta name="description" content="DOM Rosary"/>
+        <meta name="description" content="ExpressJs Rosary"/>
         <meta name="subject" content="religion and spirituality">
         <meta name="url" content="https://github.com/mezcel/electron-container">
 
@@ -20,6 +20,7 @@
         <!-- dom style -->
         <link rel="stylesheet" href="myAssets/css/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet" href="myAssets/css/liturgical-colors.min.css" />
+        <!--<link rel="stylesheet" href="myAssets/css/liturgical-colors-lessbright.min.css" /> -->
         <link rel="stylesheet" href="myAssets/css/myStyle.css" />
 
         <!-- application framework -->
@@ -39,7 +40,7 @@
             <!-- header top bar -->
             <div data-role="header" data-position="fixed">
                 <!-- App Header -->
-                <a id="btnHomePanel" href="#homePanel" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+                <a id="btnHomePanel" href="#homePanel" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-left">Home</a>
                 <h1 id="mystery">ElectronJS JQM Rosary</h1>
                 <a id="btnInfoPanel" href="#infoPanel" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left">Info</a>
             </div>
@@ -94,13 +95,14 @@
 
                 <h3>Sacred Scriptures</h3>
                 <div data-role="collapsible">
-                    <h4>Christain Books</h4>
+                    <h4>Refference</h4>
                     <!-- JSON bible list -->
                     <ul data-role="listview" id="bible-list" data-divider-theme="b"></ul>
                 </div>
 
                 <div data-role="collapsible-set">
                     <h3>Authority</h3>
+
                     <div data-role="collapsible">
                         <h4>Catechism</h4>
                         <ul data-role="listview">
@@ -108,6 +110,7 @@
                             <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(1)">Saint Mary</a></li>
                         </ul>
                     </div>
+
                     <div data-role="collapsible">
                         <h4>Bible</h4>
                         <ul data-role="listview">
@@ -136,12 +139,12 @@
                 <div data-role="collapsible">
                     <h4>Ave Maria Music</h4>
                     <hr>
-                    <audio id="audioAveMaria" style="width:100%" controls autoplay loop>
+                    <audio id="audioAveMaria" class="audioStyle" controls autoplay loop>
                         <source src="myAssets/audio/tumblr_lia3pvqnO81qzvvkmo1.mp3" type="audio/mpeg"><!-- Maria Callas -->
                         Your browser does not support the audio element.
                     </audio> - by: Barbara Bonney
                     <hr>
-                    <audio id="audioAveMaria2" style="width:100%" controls loop>
+                    <audio id="audioAveMaria2" class="audioStyle" controls loop>
                         <source src="myAssets/audio/--Ave-Maria-Musica-Sacra-----Maria-Callas---Mozart---Opera.mp3" type="audio/mpeg"><!-- Barbara Bonney -->
                         Your browser does not support the audio element. BJR Enterprises, Inc. has legally transferred the copyright of all their Maria Callas vinyl disc editions to Divina Records/Maria Callas Museum on September 9, 2009
                     </audio> - by: Maria Callas
@@ -216,32 +219,35 @@
             </div>
 
             <!-- Information Popup Dialog -->
-            <div data-role="popup" class="ui-content" id="myDialogPopUp" data-position="fixed">
+            <div data-role="popup" id="myDialogPopUp" class="ui-content" data-overlay-theme="b" data-position="fixed">
+                <a href="#pageone" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-left ui-shadow ui-btn-up-a" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Close"></a>
                 <span id="infoHeader" style="text-align: center" data-role="header"></span>
                 <h4 id="infoSubHeader" class="ui-content"></h4>
                 <div id="infoBody" class="ui-content" style="overflow-y:scroll"></div>
                 <div id="infoBody2" class="ui-content" data-role="bibleContent"></div>
-                <!-- JSON bible content -->
-                <a href="#pageone" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
+                    <!-- JSON bible content -->
+                    <!--<a href="#pageone" class="ui-btn ui-content ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a> -->
                 <span id="infoFooter" style="text-align: center" data-role="footer"></span>
+
             </div>
 
             <!-- Main Center View -->
             <div data-role="main" class="ui-content mySwipeClass" data-position="fixed">
+
                 <!-- App Main View -->
                 <div id="rosaryBeadText">
-                    <div class="ui-bar ui-content ui-shadow" >
-                        <i id="decade"></i>
+                    <div class="myUiBody ui-body ui-body-a ui-corner-all ui-shadow" style="text-align: center;">
+                        <i id="decade" ></i>
                     </div>
                     <!-- Decade Name for each bead -->
                     <h3>Scripture:</h3>
-                    <div id="scripture" class="ui-bar ui-content ui-shadow"></div>
+                    <div id="scripture" class="ui-content ui-shadow"></div>
                     <!-- Scripture Readings for each bead -->
                     <h3>Message:</h3>
-                    <div id="message" class="ui-bar ui-content ui-shadow"></div>
+                    <div id="message" class="ui-content ui-shadow"></div>
                     <!-- Custom Message for each bead -->
                     <h3>Prayer:</h3>
-                    <div id="prayer" class="ui-bar ui-content ui-shadow"></div>
+                    <div id="prayer" class="ui-content ui-shadow">...</div>
                     <!-- Prayer Readings for each bead -->
                 </div>
             </div>
