@@ -10,6 +10,6 @@ St. Jerome Latin translation 16th Century: [rosaryJSON-vulgate](myAssets/databas
 
 #### vulgate translation stop point
 * I had to group things a little different from the nab version since I don't know how latin reads outside of its literal context.
-* translated Mt,Mk,Jn
+* I think I messed things up in the old testament. Psalms, Songs, Ecclesiasticus, Sirach are affected. I may need to curate more relevant scriptures for this app.
 * working on Lk
 * stop point: Luke 1:28 (line: 2942)
