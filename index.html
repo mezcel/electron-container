@@ -117,6 +117,7 @@
                         <ul data-role="listview">
                             <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(0)">Drafting</a></li>
                             <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(1)">Saint Mary</a></li>
+                            <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(8)">Queenship of the BVM</a></li>
                         </ul>
                     </div>
 
@@ -231,11 +232,13 @@
             <div data-role="popup" id="myDialogPopUp" class="ui-content" data-overlay-theme="b" data-position="fixed">
                 <a href="#pageone" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-left ui-shadow ui-btn-up-a" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Close"></a>
                 <span id="infoHeader" style="text-align: center" data-role="header"></span>
+                
                 <h4 id="infoSubHeader" class="ui-content"></h4>
-                <div id="infoBody" class="ui-content" style="overflow-y:scroll"></div>
-                <div id="infoBody2" class="ui-content" data-role="bibleContent"></div>
-                    <!-- JSON bible content -->
-                    <!--<a href="#pageone" class="ui-btn ui-content ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a> -->
+                <div id="infoBody" class="ui-content" style="overflow-y:auto"></div>
+                
+                <div data-role="bibleContent"></div>
+                <div data-role="prayerContent"></div>
+                
                 <span id="infoFooter" style="text-align: center" data-role="footer"></span>
 
             </div>
