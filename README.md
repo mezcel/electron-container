@@ -1,6 +1,6 @@
 # electron-container ( -w- jquery-mobile )
 
-```git branch v0.3.2-vulgate``` is focused on making a .json db based on the Latin Vulgate translation of the Bible
+```git branch v0.4``` is focused on Latin Vulgate translation of the Bible and fixing issues only with that DB. I am also introducing a list of standalone prayers and additional church history behind the Marian ministry.
 
 > A port of an older html web page, [jquery-mobile-rosary](https://github.com/mezcel/rosary-jquery-mobile), into ElectronJs.
 
