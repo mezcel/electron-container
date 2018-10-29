@@ -10,6 +10,8 @@ var initialHailMaryCounter = 0;
 var stringSpaceCounter = 0;
 var hailmaryCounter = 0;
 var beadCounter = 0;
+
+/* translation db variable initialization */ 
 // var rosaryJSON = rosaryJSONnab; // rosaryJSONnab was defined in myAssets/database/rosaryJSON-nab.js
 var rosaryJSON = rosaryJSONvulgate; // rosaryJSONnab was defined in myAssets/database/rosaryJSON-vulgate.js
 
@@ -27,7 +29,7 @@ var progressBar = { // var containing progressbar state
  */
 
 function initialMystery() { // initial mystery based on weekday
-    // (Sun = Wed), (Mon = Sat), (Tue = Fri)
+    // (Sun = Wed), (Mon = Sat), (Tue = Fri), Thursday
 
     var initialMysteryArr = []; // [decade mystery, db bead no]
     var myDate = new Date();
@@ -134,7 +136,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 	 * 	    beadCounter
 	 * */
 
-    beadCounter += directionFwRw; // increment
+    beadCounter += directionFwRw; // increment 
     mysteryProgress = 0;
 
     var decadeIndex = rosaryJSON.rosaryBead[beadCounter].decadeIndex;
@@ -147,11 +149,10 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 			if (decadeIndex !== 0){
 
 				if(directionFwRw > 0) {
-					//fwd
+					// fwd
 					hailmaryCounter = hailmaryCounter + 1;
 				} else {
-					//rev
-
+					// rev
 					hailmaryCounter = hailmaryCounter - 1;
 				}
 
@@ -159,6 +160,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 				if (thisDecadeSet == 0) {
 					thisDecadeSet = 10;
 				}
+				
 				var mysteryProgress = hailmaryCounter % 50;
 				if (mysteryProgress == 0){
 					mysteryProgress = 50;
@@ -190,7 +192,6 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
                     }
 
                     $("#beadMarker").html("small rosary bead: " + initialHailMaryCounter + " / 3");
-                    // initialHailMaryCounter = initialHailMaryCounter + (1 * directionFwRw);
                 }
             }
 
@@ -204,7 +205,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
             $("#beadMarker").html("big bead");
             if (directionFwRw < 0) {
-                //rev
+                // rev
                 if ((hailmaryCounter % 10) > 0) {
                     hailmaryCounter -= 1;
                 }
@@ -216,7 +217,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
         case 4: // string space
             if (directionFwRw > 0) {
-				//fwd
+				// fwd
 				if (stringSpaceCounter == 0) {
 					stringSpaceCounter = 1;
 					if ((hailmaryCounter % 10) == 0) {
@@ -248,7 +249,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
             break;
 
-		case 5: // mary icon / bigbead alt
+		case 5: // Mary icon / bigbead alternate
             $("#beadMarker").html("Mary Icon");
             if (directionFwRw < 0) {
                 stringSpaceCounter = 3;
@@ -271,7 +272,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             stringSpaceCounter = 0;
             break;
 
-        default:
+        default: // just when the app turns on
             thisDecadeSet = 0;
             $("#beadMarker").html("0 / 0");
             stringSpaceCounter = 0;
@@ -287,7 +288,7 @@ function populateBookJsonList() { // populate the right pannel list with bible c
 
     var li = '<li data-theme="b" class="ui-bar">Database Quotes</li>';
     var tempbookIndex = [];
-    //container for $li to be added
+    //container for $li's to be added
     $.each(rosaryJSON.scripture, function(i, name) {
         if ($.inArray(name.bookIndex, tempbookIndex) !== -1) { // -1 = false
         } else {
@@ -303,11 +304,12 @@ function populateBookJsonList() { // populate the right pannel list with bible c
         li += '" class="infoDisp">' + rosaryJSON.book[tempbookIndex[iLoop]].bookName + '</a></li>';
     }
 
-    //append list to ul
+    //append li to ul
     $("#bible-list").append(li).promise().done(function() {
         $(this).on("click", ".infoDisp", function(e) {
             $("#infoSubHeader").hide();
             $("#infoBody").hide();
+            
             showBibleListFlag = true;
             showPrayerListFlag = false;
 
@@ -332,11 +334,12 @@ function populatePrayerJsonList() { // populate the right pannel list with bible
         li += '" class="infoDisp">' + rosaryJSON.prayer[tempprayerIndex[iLoop]].prayerName + '</a></li>';
     }
     
-    //append list to ul
+    //append li to ul
     $("#prayer-list").append(li).promise().done(function() {
         $(this).on("click", ".infoDisp", function(e) {
             $("#infoSubHeader").hide();
             $("#infoBody").hide();
+            
             showPrayerListFlag = true;
             showBibleListFlag = false;
 
@@ -354,7 +357,7 @@ function getBrowserUrl() { // get ipurl to string
 
     //  Get any piece of the url you're interested in
     urlParse.hostname;  //  'example.com'
-    urlParse.port;      //  12345
+    urlParse.port;      //   12345
     urlParse.search;    //  '?startIndex=1&pageSize=10'
     urlParse.pathname;  //  '/blog/foo/bar'
     urlParse.protocol;  //  'http:'
@@ -372,25 +375,20 @@ function getBrowserUrl() { // get ipurl to string
 }
 
 function messengerLinkEvent() { // allow user to set which server to message with
-
     getBrowserUrl();
 
     // Messenger popup button
     $( "#btnMessenger" ).on( "click", function() {
-
-        /// inputMsgIp
         var href = $('#inputMsgIp').val();
         if (href !== 'No Network' ) {
             var link = $('<a href="' + href + '" />');
             link.attr('target', '_blank');
             window.open(link.attr('href'));
         }
-
     });
-
 }
 
-function initAudioVolume() { // initial audio setting
+function initAudioVolume() { // initial audio volume setting
     $("#audioAveMaria").prop('volume', 0.25);
 }
 
@@ -452,7 +450,6 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
         $(this).find("[data-role=prayerContent]").html('');
         $("#infoSubHeader").css("display","none");
         $("#infoBody").css("display","none");
-
         
         for (var iLoop = 0; iLoop < rosaryJSON.scripture.length; iLoop += 1) {
             if (rosaryJSON.scripture[iLoop].bookIndex === bookID) {
@@ -491,9 +488,11 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
 
 /* swipe event to trigger buttons */
 $(document).on("pagecreate", "#pageone", function() {
+	
     $(".mySwipeClass").on("swiperight", function() {
         beadRev();
     });
+    
     $(".mySwipeClass").on("swipeleft", function() {
         beadFwd();
     });
@@ -546,10 +545,12 @@ $(document).on("pagecreate", "#pageone", function() {
             case 38: // up arrow
                 var volLevel = $('audio')[0].volume;
                 $('audio')[0].volume = volLevel + 0.25;
+                $('audio')[1].volume = volLevel + 0.25;
                 break;
             case 40: // down arrow
                 var volLevel = $('audio')[0].volume;
                 $('audio')[0].volume = volLevel - 0.25;
+                $('audio')[1].volume = volLevel - 0.25;
                 break;
             default:
                 /*// flicker screen
