@@ -41,7 +41,9 @@
             <div data-role="header" data-position="fixed">
                 <!-- App Header -->
                 <a id="btnHomePanel" href="#homePanel" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-left">Home</a>
-                <h1 id="mystery">ElectronJS JQM Rosary</h1>
+                <h1 id="appHeaderTitle">
+					<em id="mystery">ElectronJS JQM Rosary</em>
+                </h1>
                 <a id="btnInfoPanel" href="#infoPanel" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left">Info</a>
             </div>
 
@@ -187,10 +189,10 @@
                             <fieldset data-role="controlgroup" data-mini="true" data-iconpos="right">
                                 <legend>Toggle Language</legend>
 
-                                <input type="radio" name="rdoTranslation" id="nabTranslation" value="translation1" checked="checked">
+                                <input type="radio" name="rdoTranslation" id="nabTranslation" value="translation1">
                                 <label for="nabTranslation">English - NAB</label>
 
-                                <input type="radio" name="rdoTranslation" id="vulgateTranslation" value="translation2">
+                                <input type="radio" name="rdoTranslation" id="vulgateTranslation" value="translation2" checked="checked">
                                 <label for="vulgateTranslation">Latin - vulgate</label>
 
                                 <input type="radio" name="rdoTranslation" id="otherTranslation" value="translation3" disabled="disabled">
