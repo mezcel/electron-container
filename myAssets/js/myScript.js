@@ -136,6 +136,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
     var beadType 	= rosaryJSON.bead[beadIndex].beadID;
 
     switch (beadType) { // the bead type is used to configre count/progress settings
+
 		case 2:
 			if (decadeIndex !== 0){
 
@@ -190,6 +191,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             stringSpaceCounter = 0;
 
 			break;
+
 		case 3: // big bead
 			stringSpaceCounter = 0;
             initialHailMaryCounter = 0;
@@ -253,6 +255,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
                 hailmaryCounter = ((initialMystery()[0] * 10) - 10);
                 initialMysteryFlag = true;
             }
+
             break;
 
         case 6: // cross
@@ -266,6 +269,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             thisDecadeSet = 0;
             $("#beadMarker").html("0 / 0");
             stringSpaceCounter = 0;
+
             break;
     }
 
@@ -287,10 +291,12 @@ function populateBookJsonList() { // populate the right pannel list with bible c
             });
         }
     });
+
     for (var iLoop = 0; iLoop < tempbookIndex.length; iLoop += 1) {
         li += '<li><a href="#" id="' + tempbookIndex[iLoop];
         li += '" class="infoDisp">' + rosaryJSON.book[tempbookIndex[iLoop]].bookName + '</a></li>';
     }
+
     //append list to ul
     $("#bible-list").append(li).promise().done(function() {
         $(this).on("click", ".infoDisp", function(e) {
@@ -307,7 +313,6 @@ function populateBookJsonList() { // populate the right pannel list with bible c
 }
 
 function getBrowserUrl() { // get ipurl to string
-    // var currentFileUrl = document.URL; //http://192.168.x.xxx:3000
     const hostUrl = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port: '');
     var urlParse = new URL(hostUrl);
 
@@ -409,15 +414,16 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() {
 
         $("#infoHeader").html(info["bookName"]);
         info_view += '<ol style="list-style: none; padding-left: 0;">';
+
         for (var iLoop = 0; iLoop < rosaryJSON.scripture.length; iLoop += 1) {
             if (rosaryJSON.scripture[iLoop].bookIndex === bookID) {
-                info_view += '<li class="ui-field-contain ui-corner-all ui-shadow"><strong>(' + rosaryJSON.scripture[iLoop].chapterIndex + ":" + rosaryJSON.scripture[iLoop].verseIndex + ") &#x270d; </strong>" + rosaryJSON.scripture[iLoop].scriptureText + '</li>'; // style="border-bottom: .5px solid black; "
+                info_view += '<li class="ui-field-contain ui-corner-all ui-shadow"><strong>(' + rosaryJSON.scripture[iLoop].chapterIndex + ":" + rosaryJSON.scripture[iLoop].verseIndex + ") &#x270d; </strong>" + rosaryJSON.scripture[iLoop].scriptureText + '</li>';
             }
         }
+
         info_view += '</ol>';
         $(this).find("[data-role=bibleContent]").html(info_view);
         $("#infoBody2").show();
-        // $("#infoFooter").html("Scripture reffence to the Rosary: <u>The New American Bible</u>");
         $("#infoFooter").html("Readings found in: " + info["library"]);
     } else {
         $("#infoBody2").hide();
@@ -572,7 +578,7 @@ $(document).on("pagecreate", function() {
 });
 
 /* initialize features provided the page's DOM is loaded */
-$( document ).ready(function() {
+$( document ).ready( function() {
     populateBookJsonList();
     getBrowserUrl();
     messengerLinkEvent();
