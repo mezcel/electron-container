@@ -4,6 +4,7 @@
 
 var initialMysteryFlag = false; // Initiated 1st mystery after the Mary Icon
 var showBibleListFlag = false; // whether or not an html list was dynamically populated
+var showPrayerListFlag = false; // whether or not an html list was dynamically populated
 
 var initialHailMaryCounter = 0;
 var stringSpaceCounter = 0;
@@ -66,6 +67,7 @@ function populateJumpToPosition(mysteryInfoID, jumptoBeadID) { // populate butto
 
 function fillMysteryInfoContent(mysteryInfoID, jumptoBeadID) { // populate mystery and scripture DOM display
     showBibleListFlag = false;
+    showPrayerListFlag = false;
 
     $("#infoHeader").html(rosaryJSON.mysteryInfo[mysteryInfoID].infoHeader);
     $("#infoSubHeader").html(rosaryJSON.mysteryInfo[mysteryInfoID].infoSubHeader);
@@ -75,6 +77,8 @@ function fillMysteryInfoContent(mysteryInfoID, jumptoBeadID) { // populate myste
 
 function fillAppInfoContent(infoID) { // called within html
     showBibleListFlag = false;
+    showPrayerListFlag = false;
+    
     document.getElementById('infoHeader').innerHTML = rosaryJSON.appInfo[infoID].infoHeader;
     document.getElementById('infoSubHeader').innerHTML = rosaryJSON.appInfo[infoID].infoSubHeader;
     document.getElementById('infoBody').innerHTML = rosaryJSON.appInfo[infoID].infoText;
@@ -83,6 +87,8 @@ function fillAppInfoContent(infoID) { // called within html
 
 function fillRosaryBeadPage(counterNo) {
     showBibleListFlag = false;
+    showPrayerListFlag = false;
+    
     var decadeIndex = rosaryJSON.rosaryBead[counterNo].decadeIndex;
     var mysteryIndex = rosaryJSON.rosaryBead[counterNo].mysteryIndex;
     var prayerIndex = rosaryJSON.rosaryBead[counterNo].prayerIndex;
@@ -279,7 +285,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
 function populateBookJsonList() { // populate the right pannel list with bible content
 
-    var li = '<li data-role="list-divider" data-theme="b" class="ui-bar">Database Quotes</li>';
+    var li = '<li data-theme="b" class="ui-bar">Database Quotes</li>';
     var tempbookIndex = [];
     //container for $li to be added
     $.each(rosaryJSON.scripture, function(i, name) {
@@ -303,9 +309,39 @@ function populateBookJsonList() { // populate the right pannel list with bible c
             $("#infoSubHeader").hide();
             $("#infoBody").hide();
             showBibleListFlag = true;
+            showPrayerListFlag = false;
 
             e.preventDefault();
-            $("#myDialogPopUp").data("myDataJsonVar", rosaryJSON.book[this.id]); //"id" is a builtin data designation var
+            $("#myDialogPopUp").data("myDataJsonVar", rosaryJSON.book[this.id]);
+            $("#myDialogPopUp").popup("open");
+        });
+        $(this).listview("refresh");
+    });
+}
+
+function populatePrayerJsonList() { // populate the right pannel list with bible content
+    var li = '<li data-theme="b" class="ui-bar">List of prayers</li>';
+    var tempprayerIndex = [];
+    //container for $li to be added
+    $.each(rosaryJSON.prayer, function(i, name) {
+        tempprayerIndex.push(name.prayerID);
+    });
+	
+    for (var iLoop = 0; iLoop < tempprayerIndex.length; iLoop += 1) {
+        li += '<li><a href="#" id="' + tempprayerIndex[iLoop];
+        li += '" class="infoDisp">' + rosaryJSON.prayer[tempprayerIndex[iLoop]].prayerName + '</a></li>';
+    }
+    
+    //append list to ul
+    $("#prayer-list").append(li).promise().done(function() {
+        $(this).on("click", ".infoDisp", function(e) {
+            $("#infoSubHeader").hide();
+            $("#infoBody").hide();
+            showPrayerListFlag = true;
+            showBibleListFlag = false;
+
+            e.preventDefault();
+            $("#myDialogPopUp").data("myDataJsonVar2", rosaryJSON.prayer[this.id]);
             $("#myDialogPopUp").popup("open");
         });
         $(this).listview("refresh");
@@ -405,31 +441,52 @@ $(document).on('pageshow', '#pageone', function() {
 });
 
 /* the code destination for dynamically generated bible list */
-$(document).on("popupbeforeposition", "#myDialogPopUp", function() {
-    //get this from data... you put this here when the a link was clicked in the previous page
+$(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamically populated list content when active is clicked
+	
+    // Bible Book list in right panel
     if (showBibleListFlag === true) {
         var info = $("#myDialogPopUp").data("myDataJsonVar");
-        var info_view = "";
+        var info_view = '<ol style="list-style: none; padding-left: 0;">';
         var bookID = info["bookID"];
+        
+        $(this).find("[data-role=prayerContent]").html('');
+        $("#infoSubHeader").css("display","none");
+        $("#infoBody").css("display","none");
 
-        $("#infoHeader").html(info["bookName"]);
-        info_view += '<ol style="list-style: none; padding-left: 0;">';
-
+        
         for (var iLoop = 0; iLoop < rosaryJSON.scripture.length; iLoop += 1) {
             if (rosaryJSON.scripture[iLoop].bookIndex === bookID) {
                 info_view += '<li class="ui-field-contain ui-corner-all ui-shadow"><strong>(' + rosaryJSON.scripture[iLoop].chapterIndex + ":" + rosaryJSON.scripture[iLoop].verseIndex + ") &#x270d; </strong>" + rosaryJSON.scripture[iLoop].scriptureText + '</li>';
             }
         }
-
         info_view += '</ol>';
+        
+        $("#infoHeader").html(info["bookName"]);
         $(this).find("[data-role=bibleContent]").html(info_view);
-        $("#infoBody2").show();
         $("#infoFooter").html("Readings found in: " + info["library"]);
+        
+        
+    } else if (showPrayerListFlag === true) {
+        var info = $("#myDialogPopUp").data("myDataJsonVar2");
+        var prayerID = info["prayerID"];
+        var info_view = '<ol style="list-style: none; padding-left: 0;"><li class="ui-field-contain ui-corner-all ui-shadow">' + rosaryJSON.prayer[prayerID].prayerText + '</li></ol>';
+        
+        $(this).find("[data-role=bibleContent]").html('');
+        $("#infoSubHeader").css("display","none");
+        $("#infoBody").css("display","none");
+        
+        $("#infoHeader").html(rosaryJSON.prayer[prayerID].prayerName);
+        $(this).find("[data-role=prayerContent]").html(info_view);
+        $("#infoFooter").html("footer");
+        
+
     } else {
-        $("#infoBody2").hide();
+		$(this).find("[data-role=bibleContent]").html('');
+		$(this).find("[data-role=prayerContent]").html('');
         $("#infoSubHeader").show();
         $("#infoBody").show();
     }
+        
 });
 
 /* swipe event to trigger buttons */
@@ -566,11 +623,14 @@ $(document).on("pagecreate", function() {
             }
 
             if ($("#vulgateTranslation").is(":checked")) {
-                rosaryJSON = rosaryJSONvulgate;
-            }
+                rosaryJSON = rosaryJSONvulgate;            }
 
             $("#bible-list").html(''); //clear dom list
+            $("#prayer-list").html(''); //clear dom list
+            
             populateBookJsonList(); // repopulate dom list
+            populatePrayerJsonList(); // repopulate dom list
+            
             fillRosaryBeadPage(beadCounter); // display translation of current bead
         }
     });
@@ -580,6 +640,7 @@ $(document).on("pagecreate", function() {
 /* initialize features provided the page's DOM is loaded */
 $( document ).ready( function() {
     populateBookJsonList();
+    populatePrayerJsonList();
     getBrowserUrl();
     messengerLinkEvent();
     initAudioVolume();
