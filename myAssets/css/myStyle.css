@@ -1,9 +1,3 @@
-/* external style sheet doesent seem to work in MY jquery-mobile */
-
-/* .ui-icon-action {
-    width: 50% !important;
-}*/
-
 hr {
     border: 0;
     height: 1px;
@@ -21,19 +15,21 @@ hr {
     font-size: 2em;
 }
 
+/* this is intended for mobile screen displays */
+@media all and (max-width: 500px) {
 
-@media all and (max-width: 500px){
-
-    html {
+    /*html {
         font-size: 80%;
-    }
-
-    #appHeaderTitle {
-        font-size: 125%;
-    }
+    }*/
 
     #myDialogPopUp {
         font-size: 110%;
+    }
+    #entireBody {
+        font-size: 80%;
+    }
+    #appHeaderTitle {
+        font-size: 115%;
     }
 
 }
