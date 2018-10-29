@@ -2559,7 +2559,7 @@ var rosaryJSONnab = {
 			"decadeID": 0,
 			"mysteryIndex": 0,
 			"decadeNo": 0,
-			"decadeName": "...",
+			"decadeName": "",
 			"decadeArt": "http:\/\/1.bp.blogspot.com\/-YvXtiei6hRA/VNRnxBrmgPI\/AAAAAAAAJoc\/64W4plee7t0\/s1600\/Atr%2BGoswijn%2Bvan%2Bder%2BWeyden_15%2BMysteries%2Band%2BVirgin%2Bof%2Bthe%2BRosary_c.1515-20_Met.jpg"
 		},
 		{
@@ -2821,7 +2821,7 @@ var rosaryJSONnab = {
 			"bookIndex": 0,
 			"chapterIndex": 0,
 			"verseIndex": 0,
-			"scriptureText": "..."
+			"scriptureText": ""
 		},
 		{
 			"scriptureID": 1,
@@ -4227,7 +4227,7 @@ var rosaryJSONnab = {
 	"message": [
 		{
 			"messageID": 0,
-			"mesageText": "..."
+			"mesageText": ""
 		},
 		{
 			"messageID": 1,
