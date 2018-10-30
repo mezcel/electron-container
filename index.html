@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Mezcel, mezcel@hotmail.com">
-        <meta name="description" content="DOM Rosary"/>
+        <meta name="description" content="ExpressJs Rosary"/>
         <meta name="subject" content="religion and spirituality">
         <meta name="url" content="https://github.com/mezcel/electron-container">
 
@@ -19,34 +19,39 @@
 
         <!-- dom style -->
         <link rel="stylesheet" href="myAssets/css/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="myAssets/css/liturgical-colors.min.css" />
         <link rel="stylesheet" href="myAssets/css/myStyle.css" />
 
         <!-- application framework -->
         <script src="myAssets/js/jquery-1.11.3.min.js"></script>
         <script src="myAssets/js/jquery.mobile-1.4.5.min.js"></script>
 
-        <!-- my dom Application -->
-        <script type="text/javascript" src="myAssets/database/rosaryJSON.js"></script>
+        <!-- my dom Application data and instructions -->
+        <script type="text/javascript" src="myAssets/database/rosaryJSON-nab.js"></script>
+        <script type="text/javascript" src="myAssets/database/rosaryJSON-vulgate.js"></script>
         <script src="myAssets/js/myScript.js"></script>
     </head>
 
     <body id="entireBody" class="ui-page-theme-a ui-content">
-        
+
         <div data-role="page" id="pageone">
 
             <!-- header top bar -->
             <div data-role="header" data-position="fixed">
                 <!-- App Header -->
-                <a href="#homePanel" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
-                <h1 id="appHeaderTitle">JQM Rosary</h1>
-                <a href="#infoPanel" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left">Info</a>
+                <a id="btnHomePanel" href="#homePanel" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-left">Home</a>
+                <h1 id="appHeaderTitle">
+					<em id="mystery">ElectronJS JQM Rosary</em>
+                </h1>
+                <a id="btnInfoPanel" href="#infoPanel" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left">Info</a>
             </div>
 
             <!-- Right Panel - Mysteries and Scriptures  -->
             <div data-role="panel" id="infoPanel" data-position="right">
-                <div data-role="collapsible-set">  
+                <div data-role="collapsible-set">
 
                     <h3>Mysteries</h3>
+
                     <div data-role="collapsible">
                         <h4>Joyful Mysteries</h4>
                         <ul data-role="listview">
@@ -87,27 +92,47 @@
                             <li><a href="#myDialogPopUp" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillMysteryInfoContent(20, 300)">Coronation</a></li>
                         </ul>
                     </div>
-                
+
                 </div>
-                
+
                 <h3>Sacred Scriptures</h3>
-                <div data-role="collapsible">
-                    <h3>Christain Books</h3>
-                    <!-- JSON bible list -->
-                    <ul data-role="listview" id="bible-list" data-divider-theme="b">
-                        <li data-role="list-divider" data-theme="b" role="heading">Database Quotes</li>
-                    </ul>
+
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible">
+                        <h4>Refference</h4>
+                        <!-- JSON bible list -->
+                        <ul data-role="listview" id="bible-list" data-divider-theme="b"></ul>
+                    </div>
+                    <div data-role="collapsible">
+                        <h4>Prayers</h4>
+                        <!-- JSON prayer list -->
+                        <ul data-role="listview" id="prayer-list" data-divider-theme="b"></ul>
+                    </div>
                 </div>
-                
-                <div data-role="collapsible-set">  
+
+                <div data-role="collapsible-set">
+
                     <h3>Authority</h3>
+
                     <div data-role="collapsible">
                         <h4>Catechism</h4>
                         <ul data-role="listview">
+							<li data-theme="b" class="ui-bar">Doctrine Refferences</li>
                             <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(0)">Drafting</a></li>
                             <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(1)">Saint Mary</a></li>
+                            <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(8)">Queenship of the BVM</a></li>
                         </ul>
                     </div>
+
+                    <div data-role="collapsible">
+                        <h4>Bible</h4>
+                        <ul data-role="listview">
+							<li data-theme="b" class="ui-bar">Versions</li>
+                            <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(6)">NAB</a></li>
+                            <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(7)">Vulgate</a></li>
+                        </ul>
+                    </div>
+
 
                 </div>
             </div>
@@ -119,34 +144,84 @@
                     <h4>Development Model</h4>
                     <ul data-role="listview">
                         <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(2)">Objective</a></li>
-                        <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(3)">Features Tradeoff</a></li>
-                        <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(4)">Platform</a></li>
-                        <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(5)">Wiki / Github</a></li>
+                        <!-- <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(3)">Features Tradeoff</a></li>
+                        <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(4)">Platform</a></li> -->
+                        <li><a id= "btnGithub" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(5)">Source Code</a></li>
                     </ul>
                 </div>
                 <h3>Audio</h3>
                 <div data-role="collapsible">
                     <h4>Ave Maria Music</h4>
-                    <hr> 
-                    <audio id="audioAveMaria" style="width:100%" controls autoplay loop>
+                    <hr>
+                    <audio id="audioAveMaria" class="audioStyle" controls autoplay loop>
                         <source src="myAssets/audio/tumblr_lia3pvqnO81qzvvkmo1.mp3" type="audio/mpeg"><!-- Maria Callas -->
                         Your browser does not support the audio element.
                     </audio> - by: Barbara Bonney
                     <hr>
-                    <audio id="audioAveMaria" style="width:100%" controls loop>
+                    <audio id="audioAveMaria2" class="audioStyle" controls loop>
                         <source src="myAssets/audio/--Ave-Maria-Musica-Sacra-----Maria-Callas---Mozart---Opera.mp3" type="audio/mpeg"><!-- Barbara Bonney -->
                         Your browser does not support the audio element. BJR Enterprises, Inc. has legally transferred the copyright of all their Maria Callas vinyl disc editions to Divina Records/Maria Callas Museum on September 9, 2009
                     </audio> - by: Maria Callas
                     <hr>
                 </div>
-                <h3>Brightness:</h3>
-                <div data-role="collapsible">
-                    <h4>Toggle Switch</h4>
-                    <form id="settings">
-                        <fieldset data-role="controlgroup" data-type="horizontal" id="theme-setting">
-                            <input type="checkbox" name="theme" id="daynightSwitch" data-role="flipswitch" data-on-text="day" data-off-text="night" checked>
-                        </fieldset>
-                    </form>
+                <div data-role="collapsible-set">
+                    <h3>Settings:</h3>
+
+                    <div data-role="collapsible">
+                        <h4>Colors</h4>
+                        <form id="darklight">
+                            <fieldset data-role="controlgroup" data-type="horizontal" id="theme-setting">
+                                <input type="checkbox" name="theme" id="daynightSwitch" data-role="flipswitch" data-on-text="day" data-off-text="night" checked> day/night
+                            </fieldset>
+                        </form>
+                        Liturgical Colors:
+                        <div id="liturgicalColors" data-role="controlgroup">
+                            <fieldset data-role="controlgroup" data-mini="true">
+                                <input type="radio" name="rdoLiturgicalColors" id="feastRed" value="liturgical1" />
+                                <label for="feastRed">Feast Days</label> <!-- red -->
+
+                                <input type="radio" name="rdoLiturgicalColors" id="marianBlue" value="liturgical2"  />
+                                <label for="marianBlue">Marian Blue</label> <!-- blue -->
+
+                                <input type="radio" name="rdoLiturgicalColors" id="adventPurple" value="liturgical3"  />
+                                <label for="adventPurple">Advent / Lent</label> <!-- purple -->
+
+                                <input type="radio" name="rdoLiturgicalColors" id="ordinaryGreen" value="liturgical4"  />
+                                <label for="ordinaryGreen">Ordinary Time</label> <!-- green -->
+
+                                <input type="radio" name="rdoLiturgicalColors" id="easterGold" value="liturgical5"  />
+                                <label for="easterGold">Easter / Christmas</label> <!--  gold -->
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <div data-role="collapsible">
+                        <h4>Translation</h4>
+                        <form id="language">
+                            <fieldset data-role="controlgroup" data-mini="true" data-iconpos="right">
+                                <legend>Toggle Language</legend>
+
+                                <input type="radio" name="rdoTranslation" id="nabTranslation" value="translation1">
+                                <label for="nabTranslation">English - NAB</label>
+
+                                <input type="radio" name="rdoTranslation" id="vulgateTranslation" value="translation2" checked="checked">
+                                <label for="vulgateTranslation">Latin - vulgate</label>
+
+                                <input type="radio" name="rdoTranslation" id="otherTranslation" value="translation3" disabled="disabled">
+                                <label for="otherTranslation">other (n/a)</label>
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <div data-role="collapsible">
+                        <h4>Shortcuts</h4>
+                        <form>
+                            <a id="btnShortcuts" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(9)">Shortcut Table</a>
+                        </form>
+                    </div>
+
+
+
                 </div>
                 <h3>Social Messaging:</h3>
                 <div data-role="collapsible">
@@ -159,52 +234,55 @@
                             <div>http://192.168.x.xxx:3000</div>
                             <hr>
                             <input name="text-1" id="inputMsgIp" value="" type="text" placeholder="http://'desired-ip':3000">
-                            <a id='btnMessenger' target='_blank' class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-icon-comment ui-btn-icon-left">Open New</a>
+                            <a id='btnMessenger' target='_blank' class="ui-btn ui-btn-b ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-left">Open New Msg</a>
                         </fieldset>
                     </form>
                 </div>
-                
+
             </div>
 
             <!-- Information Popup Dialog -->
-            <div data-role="popup" class="ui-content" id="myDialogPopUp" data-position="fixed">
+            <div data-role="popup" id="myDialogPopUp" class="ui-content" data-overlay-theme="b" data-position="fixed">
+                <a href="#pageone" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-left ui-shadow ui-btn-up-a" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Close"></a>
                 <span id="infoHeader" style="text-align: center" data-role="header"></span>
                 <h4 id="infoSubHeader" class="ui-content"></h4>
-                <div id="infoBody" class="ui-content" style="overflow-y:scroll"></div>
-                <div id="infoBody2" class="ui-content" data-role="bibleContent"></div>
-                <!-- JSON bible content -->
-                <a href="#pageone" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
+                <div id="infoBody" class="ui-content" style="overflow-y:auto"></div>
+                <!-- populated by list buttons on right panel -->
+                <div data-role="bibleContent"></div>
+                <div data-role="prayerContent"></div>
+
                 <span id="infoFooter" style="text-align: center" data-role="footer"></span>
+
             </div>
 
             <!-- Main Center View -->
             <div data-role="main" class="ui-content mySwipeClass" data-position="fixed">
+
                 <!-- App Main View -->
                 <div id="rosaryBeadText">
-                    <!-- Text Readings for each bead -->
-                    <div id="mystery" class="ui-bar ui-bar-a"></div>
-                    <!-- Mystery Name for each bead -->
-                    <div id="decade" class="ui-bar ui-bar-b"></div>
+                    <div class="myUiBody ui-body ui-body-a ui-corner-all ui-shadow" style="text-align: center;">
+                        <i id="decade" ></i>
+                    </div>
                     <!-- Decade Name for each bead -->
                     <h3>Scripture:</h3>
-                    <div id="scripture"></div>
+                    <div id="scripture" class="ui-content ui-shadow"></div>
                     <!-- Scripture Readings for each bead -->
                     <h3>Message:</h3>
-                    <div id="message"></div>
+                    <div id="message" class="ui-content ui-shadow"></div>
                     <!-- Custom Message for each bead -->
                     <h3>Prayer:</h3>
-                    <div id="prayer"></div>
+                    <div id="prayer" class="ui-content ui-shadow">...</div>
                     <!-- Prayer Readings for each bead -->
                 </div>
             </div>
 
             <!-- footer bottom bar -->
             <div data-role="footer" data-position="fixed">
-                <div style="width:100%; background: white;" class="ui-grid-a">
+                <div class="ui-grid-a">
                     <div class="ui-block-a"><button style="width:98.5%" onclick="beadRev()">Bead Reverse</button></div>
                     <div class="ui-block-b"><button style="width:98.5%" onclick="beadFwd()">Bead Forward</button></div>
                 </div>
-                <span id="beadMarker" class="ui-bar ui-bar-a" style="text-align: center">0 / 0</span>
+                <span id="beadMarker" class="ui-bar" style="text-align: center">0 / 0</span>
                 <div data-role="decadeProgress"></div><!-- decade progress bar -->
                 <div data-role="rosaryProgress"></div><!-- rosary progress bar -->
             </div>

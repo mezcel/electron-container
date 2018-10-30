@@ -1,21 +1,67 @@
-/* external style sheet doesent seem to work in MY jquery-mobile */
+hr {
+    border: 0;
+    height: 1px;
+    /*filter: invert(100%);*/
+    /*background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));*/
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.4));
+}
 
-/* .ui-icon-action {
-    width: 50% !important;
-}*/
+.audioStyle {
+    width: 100%;
+    background-color: red;
+}
 
-@media all and (max-width: 500px){
-    
-    html {
+.ui-icon-delete { /* close modal icon */
+    font-size: 2em;
+}
+
+/* table style  */
+.myTableStyle thead th,
+.myTableStyle tbody th .ui-table-cell-label,
+.myTableStyle tbody td .ui-table-cell-label {
+    text-transform: uppercase;
+    font-size: .7em;
+    color: rgba(0,0,0,0.5);
+    font-weight: normal;
+}
+
+.myTableStyle tbody th {
+    font-size: 1.2em;
+    background-color: #fff;
+    color: #77bbff;
+    text-align: center;
+}
+
+.myTableStyle tbody td.title {
+    padding-left: .8em;
+}
+
+.myTableStyle thead th {
+    border-bottom: 1px solid #d6d6d6; /* non-RGBA fallback */
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.myTableStyle tbody th,
+.myTableStyle tbody td {
+    border-bottom: 1px solid #e6e6e6; /* non-RGBA fallback  */
+    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+/* this is intended for mobile screen displays */
+@media all and (max-width: 500px) {
+
+    /*html {
         font-size: 80%;
-    }
-
-    #appHeaderTitle {
-        font-size: 125%;
-    }
+    }*/
 
     #myDialogPopUp {
         font-size: 110%;
+    }
+    #entireBody {
+        font-size: 80%;
+    }
+    #appHeaderTitle {
+        font-size: 115%;
     }
 
 }

@@ -107,7 +107,7 @@ function SocketIOExpress() {
                     colorname: randomHexColor,
                     iptitle: myHostip
                 });
-                
+
                 console.log('A user was added\n\t Current User Arr: ' + users); // display updated user array in Node
             }
         });
@@ -158,9 +158,12 @@ function createMainWindow() {
 
     // Create the browser window.
     mainWindow = new BrowserWindow({
-        width: 700,
-        height: 900,
-        icon: "./myAssets/img/favicon.ico"
+        /* My personal settings: 700x900 */
+        // tablet reff: 768 x 1024
+        // -25% = 576x768
+        width: 576,
+        height: 768,
+        icon: './myAssets/img/favicon.ico'
     });
 
     // electron menu json
@@ -171,6 +174,7 @@ function createMainWindow() {
                 submenu: [
                     {
                         label: 'Web Browser Instance',
+                        accelerator: 'CmdOrCtrl+`',
                         click() {
                             shell.openExternal(myHostip + ':7777/')
                         }
@@ -185,6 +189,7 @@ function createMainWindow() {
                 submenu: [
                     {
                         label: 'Show Electron Messenger',
+                        accelerator: 'CmdOrCtrl+Up',
                         click() {
                             childWindow.maximize();
                         }
@@ -251,6 +256,7 @@ function createMainWindow() {
         // splash.destroy();
         mainWindow.show();
     });
+
 }
 
 function createChildWindow() {
@@ -259,9 +265,9 @@ function createChildWindow() {
         parent: mainWindow,
         show: false,
         closable: false,
-        width: 700,
-        height: 550,
-        icon: "./myAssets/img/favicon.ico"
+        width: 576,
+        height: 520,
+        icon: './myAssets/img/favicon.ico'
     });
 
     childWindow.once('ready-to-show', () => {
