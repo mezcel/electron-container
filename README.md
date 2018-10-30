@@ -1,24 +1,24 @@
 # electron-container ( -w- jquery-mobile )
 
-> This is a Node App using ExpressJS, Socket IO, and Electron.
+___This is a Node App using ExpressJS, Socket IO, and Electron.___
 
 ---
 
-### My Thoughts, Rationale, and Ramblings:
+### Development thoughts, rationale, and pending changes:
 
-* This is the social version of a previous Jquery-Mobile app I made a while back. The Electron and SocketIO implementation is new and I discovered some additional jqm theme techniques.
+* This is the social version of a previous Jquery-Mobile app I made a while back. The Electron and SocketIO implementation is new and I discovered some additional jqm theme techniques along the way.
 
     * [/myAssets/database/README.md](./myAssets/database/README.md) Has more information regarding what is new with the DB.
 
 
 * Not sure if this would be considered a 'fork' off the [Heroku app](https://github.com/mezcel/heroku-joyful-mystery) version or considered a whole 'new version', ex: v4.2 or v5
 
+    * That version is depreciated and not maintained.
     * Heroku was an Express App with Ejs. This still uses Express, but I avoided ejs.
-
 
 * The user experience closer resembles an even older C# rosary version I made a while back, [rosary.net](https://github.com/mezcel/rosary.net). (_It has less features and visuals, but now it now falls under the category of social networking application again._)
 
-### Readability?
+##### Readability?
 * Many versions ago I produced a DB from a pamphlet. That db went though various transposing from: css, odb, sql, mysql, json, and a slew of other Regex style parsing. Somewhere I may have even scraped an online resource to auto generated a db.
 * When I started to do the English/Latin translation I discovered a lot of inconsistencies.
 * The version as it is now is not as charismatic as my original source DB, but it is at least consistent with the NAB and Vulgate.
@@ -103,3 +103,13 @@ npm install -g electron-packager
 
 electron-packager .
 ```
+
+---
+
+Repo size proportions
+
+dir | MiB
+--- | ---
+Git Clone | 79.6
+Git with Node packages | 261.1
+Just the ```main branch``` files | 14.5
