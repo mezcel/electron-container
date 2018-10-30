@@ -20,14 +20,13 @@
         <!-- dom style -->
         <link rel="stylesheet" href="myAssets/css/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet" href="myAssets/css/liturgical-colors.min.css" />
-        <!--<link rel="stylesheet" href="myAssets/css/liturgical-colors-lessbright.min.css" /> -->
         <link rel="stylesheet" href="myAssets/css/myStyle.css" />
 
         <!-- application framework -->
         <script src="myAssets/js/jquery-1.11.3.min.js"></script>
         <script src="myAssets/js/jquery.mobile-1.4.5.min.js"></script>
 
-        <!-- my dom Application -->
+        <!-- my dom Application data and instructions -->
         <script type="text/javascript" src="myAssets/database/rosaryJSON-nab.js"></script>
         <script type="text/javascript" src="myAssets/database/rosaryJSON-vulgate.js"></script>
         <script src="myAssets/js/myScript.js"></script>
@@ -52,6 +51,7 @@
                 <div data-role="collapsible-set">
 
                     <h3>Mysteries</h3>
+
                     <div data-role="collapsible">
                         <h4>Joyful Mysteries</h4>
                         <ul data-role="listview">
@@ -96,6 +96,7 @@
                 </div>
 
                 <h3>Sacred Scriptures</h3>
+
                 <div data-role="collapsible-set">
                     <div data-role="collapsible">
                         <h4>Refference</h4>
@@ -110,12 +111,13 @@
                 </div>
 
                 <div data-role="collapsible-set">
+
                     <h3>Authority</h3>
 
                     <div data-role="collapsible">
                         <h4>Catechism</h4>
                         <ul data-role="listview">
-							<li data-theme="b" class="ui-bar">Doctrine Reff</li>
+							<li data-theme="b" class="ui-bar">Doctrine Refferences</li>
                             <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(0)">Drafting</a></li>
                             <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(1)">Saint Mary</a></li>
                             <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(8)">Queenship of the BVM</a></li>
@@ -125,7 +127,7 @@
                     <div data-role="collapsible">
                         <h4>Bible</h4>
                         <ul data-role="listview">
-							<li data-theme="b" class="ui-bar">Translations</li>
+							<li data-theme="b" class="ui-bar">Versions</li>
                             <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(6)">NAB</a></li>
                             <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(7)">Vulgate</a></li>
                         </ul>
@@ -142,9 +144,9 @@
                     <h4>Development Model</h4>
                     <ul data-role="listview">
                         <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(2)">Objective</a></li>
-                        <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(3)">Features Tradeoff</a></li>
-                        <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(4)">Platform</a></li>
-                        <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(5)">Wiki / Github</a></li>
+                        <!-- <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(3)">Features Tradeoff</a></li>
+                        <li><a href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(4)">Platform</a></li> -->
+                        <li><a id= "btnGithub" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(5)">Source Code</a></li>
                     </ul>
                 </div>
                 <h3>Audio</h3>
@@ -209,8 +211,17 @@
                                 <label for="otherTranslation">other (n/a)</label>
                             </fieldset>
                         </form>
-
                     </div>
+
+                    <div data-role="collapsible">
+                        <h4>Shortcuts</h4>
+                        <form>
+                            <a id="btnShortcuts" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(9)">Shortcut Table</a>
+                        </form>
+                    </div>
+
+
+
                 </div>
                 <h3>Social Messaging:</h3>
                 <div data-role="collapsible">
@@ -239,7 +250,7 @@
                 <!-- populated by list buttons on right panel -->
                 <div data-role="bibleContent"></div>
                 <div data-role="prayerContent"></div>
-                
+
                 <span id="infoFooter" style="text-align: center" data-role="footer"></span>
 
             </div>
