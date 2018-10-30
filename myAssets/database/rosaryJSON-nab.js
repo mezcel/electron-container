@@ -3192,7 +3192,7 @@ var rosaryJSONnab = {
 			"bookIndex": 7,
 			"chapterIndex": 3,
 			"verseIndex": 11,
-			"scriptureText": "'I baptize you with water for repentance, but he who is coming after me . . . will baptize you with the Holy Spirit and with fire.' - Matthew 3:11"
+			"scriptureText": "I am baptizing you with water, for repentance, but the one who is coming after me is mightier than I. I am not worthy to carry his sandals. He will baptize you with the holy Spirit and fire. - Matthew 3:11"
 		},
 		{
 			"scriptureID": 54,
@@ -3206,35 +3206,35 @@ var rosaryJSONnab = {
 			"bookIndex": 7,
 			"chapterIndex": 3,
 			"verseIndex": 13,
-			"scriptureText": "Then Jesus came from Galilee to the Jordan to John, / to be baptized by him. - Matthew 3:13"
+			"scriptureText": "Then Jesus came from Galilee to John at the Jordan to be baptized by him. - Matthew 3:13"
 		},
 		{
 			"scriptureID": 56,
 			"bookIndex": 7,
 			"chapterIndex": 3,
 			"verseIndex": 14,
-			"scriptureText": "John would have prevented him, saying, / 'I need to be baptized by you, and do you come to me?' - Matthew 3:14"
+			"scriptureText": "John tried to prevent him, saying, \"I need to be baptized by you, and yet you are coming to me?\" - Matthew 3:14"
 		},
 		{
 			"scriptureID": 57,
 			"bookIndex": 7,
 			"chapterIndex": 3,
 			"verseIndex": 15,
-			"scriptureText": "But Jesus answered him, / 'Let it be so now, / for thus it is fitting for us to fulfill all righteousness.' / Then John consented. - Matthew 3:15"
+			"scriptureText": "Jesus said to him in reply, \"Allow it now, for thus it is fitting for us to fulfill all righteousness.\" Then he allowed him.  - Matthew 3:15"
 		},
 		{
 			"scriptureID": 58,
 			"bookIndex": 7,
 			"chapterIndex": 3,
 			"verseIndex": 16,
-			"scriptureText": "And when Jesus was baptized, / he went up immediately from the water, / and behold, the heavens were opened, / and he saw the Spirit of God descending like a dove / and alighting on him. - Matthew 3:16"
+			"scriptureText": "After Jesus was baptized, he came up from the water and behold, the heavens were opened [for him], and he saw the Spirit of God descending like a dove [and] coming upon him. - Matthew 3:16"
 		},
 		{
 			"scriptureID": 59,
 			"bookIndex": 7,
 			"chapterIndex": 3,
 			"verseIndex": 17,
-			"scriptureText": "And behold, / a voice from heaven, saying, / 'This is my beloved Son, with whom I am well pleased.' - Matthew 3:17"
+			"scriptureText": "And a voice came from the heavens, saying, \"This is my beloved Son,* with whom I am well pleased.\" - Matthew 3:17"
 		},
 		{
 			"scriptureID": 60,
@@ -3367,14 +3367,14 @@ var rosaryJSONnab = {
 			"bookIndex": 7,
 			"chapterIndex": 10,
 			"verseIndex": 1,
-			"scriptureText": "And Jesus called to him his twelve disciples / and gave them authority over unclean spirits, / to cast them out, / and to heal every disease and every infirmity. - Matthew 10:1"
+			"scriptureText": "Then he summoned his twelve disciples* and gave them authority over unclean spirits to drive them out and to cure every disease and every illness. - Matthew 10:1"
 		},
 		{
 			"scriptureID": 79,
 			"bookIndex": 7,
 			"chapterIndex": 10,
 			"verseIndex": 5,
-			"scriptureText": "These Twelve Jesus sent out charging them  . . . to preach . . .  / 'The kingdom of heaven is at hand.' - Matthew 10:5 & 7"
+			"scriptureText": "Jesus sent out these twelve* after instructing them thus, \"Do not go into pagan territory or enter a Samaritan town. / As you go, make this proclamation: 'The kingdom of heaven is at hand.' - Matthew 10:5 & 7"
 		},
 		{
 			"scriptureID": 80,
@@ -3388,14 +3388,14 @@ var rosaryJSONnab = {
 			"bookIndex": 7,
 			"chapterIndex": 17,
 			"verseIndex": 2,
-			"scriptureText": "Now about eight days after these saying / Jesus took with him Peter and John and James, / and went up on the mountain to pray. - Luke 9:28"
+			"scriptureText": "When he entered the house, the blind men approached him and Jesus said to them, \"Do you believe that I can do this?\" \"Yes, Lord,\" they said to him. - Luke 9:28"
 		},
 		{
 			"scriptureID": 82,
 			"bookIndex": 7,
 			"chapterIndex": 17,
 			"verseIndex": 2,
-			"scriptureText": "And Jesus was transfigured before them, / and his face shone like the sun, / and his garments became white as light - Matthew 17:2"
+			"scriptureText": "And he was transfigured before them; his face shone like the sun and his clothes became white as light.  - Matthew 17:2"
 		},
 		{
 			"scriptureID": 83,
@@ -3416,7 +3416,7 @@ var rosaryJSONnab = {
 			"bookIndex": 7,
 			"chapterIndex": 17,
 			"verseIndex": 4,
-			"scriptureText": "And Peter said to Jesus, /  'Lord, it is well that we are here; / if you wish, I will make three booths here, / one for you, one for Moses, and one for Elijah.' - Matthew 17:4"
+			"scriptureText": "Then Peter said to Jesus in reply, \"Lord, it is good that we are here. If you wish, I will make three tents* here, one for you, one for Moses, and one for Elijah.\" - Matthew 17:4"
 		},
 		{
 			"scriptureID": 86,
@@ -3458,14 +3458,14 @@ var rosaryJSONnab = {
 			"bookIndex": 7,
 			"chapterIndex": 26,
 			"verseIndex": 17,
-			"scriptureText": "Now on the first day of Unleavened Bread, / the disciples came to Jesus, saying, / 'Where will you have us prepare for you to eat the Passover?' - Matthew 26:17"
+			"scriptureText": "On the first day of the Feast of Unleavened Bread,* the disciples approached Jesus and said, \"Where do you want us to prepare for you to eat the Passover?\" - Matthew 26:17"
 		},
 		{
 			"scriptureID": 92,
 			"bookIndex": 7,
 			"chapterIndex": 26,
 			"verseIndex": 18,
-			"scriptureText": "Jesus said, / 'Go into the city to a such a one, and say to him, / 'The Teacher says, My  time is at hand; / I will keep the Passover at your house with my disciples.'' - Matthew 26:18"
+			"scriptureText": "He said, \"Go into the city to a certain man and tell him, 'The teacher says, \"My appointed time draws near; in your house I shall celebrate the Passover with my disciples.\" ' \" - Matthew 26:18"
 		},
 		{
 			"scriptureID": 93,
@@ -3479,28 +3479,28 @@ var rosaryJSONnab = {
 			"bookIndex": 7,
 			"chapterIndex": 26,
 			"verseIndex": 21,
-			"scriptureText": "And as they were eating, he said, / 'Truly, I say to you, / one of you will betray me.' - Matthew 26:21"
+			"scriptureText": "And while they were eating, he said, \"Amen, I say to you, one of you will betray me.\" - Matthew 26:21"
 		},
 		{
 			"scriptureID": 95,
 			"bookIndex": 7,
 			"chapterIndex": 26,
 			"verseIndex": 25,
-			"scriptureText": "Judas, who betrayed him, said, / 'Is it I, Master?' - Matthew 26:25"
+			"scriptureText": "Then Judas, his betrayer, said in reply, \"Surely it is not I, Rabbi?\" He answered, \"You have said so.\" - Matthew 26:25"
 		},
 		{
 			"scriptureID": 96,
 			"bookIndex": 7,
 			"chapterIndex": 26,
 			"verseIndex": 26,
-			"scriptureText": "Now as they were eating, / Jesus took bread, and blessed, and broke it, / and gave it to the disciples and said, / 'Take, eat; / this is my body.' - Matthew 26:26"
+			"scriptureText": "While they were eating, Jesus took bread, said the blessing, broke it, and giving it to his disciples said, \"Take and eat; this is my body.\" - Matthew 26:26"
 		},
 		{
 			"scriptureID": 97,
 			"bookIndex": 7,
 			"chapterIndex": 26,
 			"verseIndex": 27,
-			"scriptureText": "And he took a chalice, / and when he had given thanks / he gave it to them, saying, /  'Drink of it, all of you; / for this is my blood of the covenant, / which is poured out for many for the forgiveness of sins.' - Matthew 26:27-28"
+			"scriptureText": "Then he took a cup, gave thanks,* and gave it to them, saying, \"Drink from it, all of you, / for this is my blood of the covenant, which will be shed on behalf of many for the forgiveness of sins.  - Matthew 26:27-28"
 		},
 		{
 			"scriptureID": 98,
@@ -3535,7 +3535,7 @@ var rosaryJSONnab = {
 			"bookIndex": 7,
 			"chapterIndex": 26,
 			"verseIndex": 38,
-			"scriptureText": "Then he said to them, / ''My soul is very sorrowful, even to death; / remain here, and watch with me.'' - Matthew 26:38"
+			"scriptureText": "Then Jesus came with them to a place called Gethsemane,* and he said to his disciples, \"Sit here while I go over there and pray.\" / He took along Peter and the two sons of Zebedee,* and began to feel sorrow and distress. - Matthew 26:38"
 		},
 		{
 			"scriptureID": 103,
@@ -3577,21 +3577,21 @@ var rosaryJSONnab = {
 			"bookIndex": 7,
 			"chapterIndex": 26,
 			"verseIndex": 40,
-			"scriptureText": "And he came back to his disciples and found them sleeping; / and he said to Peter, / ''So,  could you not watch with me one hour?'' - Matthew 26:40"
+			"scriptureText": "When he returned to his disciples he found them asleep. He said to Peter, \"So you could not keep watch with me for one hour? - Matthew 26:40"
 		},
 		{
 			"scriptureID": 109,
 			"bookIndex": 7,
 			"chapterIndex": 26,
 			"verseIndex": 41,
-			"scriptureText": "''Watch and pray / that you may not enter into temptation.'' - Matthew 26:41"
+			"scriptureText": "Watch and pray that you may not undergo the test.* The spirit is willing, but the flesh is weak.\" - Matthew 26:41"
 		},
 		{
 			"scriptureID": 110,
 			"bookIndex": 7,
 			"chapterIndex": 26,
 			"verseIndex": 41,
-			"scriptureText": "''The spirit indeed is willing, / but the flesh is weak.'' - Matthew 26:41"
+			"scriptureText": "Watch and pray that you may not undergo the test.* The spirit is willing, but the flesh is weak.\" - Matthew 26:41"
 		},
 		{
 			"scriptureID": 111,
@@ -3633,35 +3633,35 @@ var rosaryJSONnab = {
 			"bookIndex": 6,
 			"chapterIndex": 53,
 			"verseIndex": 3,
-			"scriptureText": "He was despised and rejected by men;/ a man of sorrows, / and acquainted with grief; / and as one from whom men hide their faces / he was despised, / and we esteemed him not. - Isaiah 53:3"
+			"scriptureText": "He was spurned and avoided by men, a man of suffering, knowing pain, Like one from whom you turn your face, spurned, and we held him in no esteem. - Isaiah 53:3"
 		},
 		{
 			"scriptureID": 117,
 			"bookIndex": 6,
 			"chapterIndex": 3,
 			"verseIndex": 7,
-			"scriptureText": "He was oppressed, / and he was afflicted, / yet he opened not his mouth; / like a lamb that is led to the slaughter, / and like a sheep that before its shearers is silent, / so he opened not his mouth. - Isaiah 53:7"
+			"scriptureText": "Though harshly treated, he submitted and did not open his mouth; Like a lamb led to slaughter or a sheep silent before shearers, he did not open his mouth. - Isaiah 53:7"
 		},
 		{
 			"scriptureID": 118,
 			"bookIndex": 6,
 			"chapterIndex": 53,
 			"verseIndex": 5,
-			"scriptureText": "But he was wounded for our transgressions, / he was bruised for our iniquities. - Isaiah 53:5"
+			"scriptureText": "But he was pierced for our sins, crushed for our iniquity. He bore the punishment that makes us whole, by his wounds we were healed. - Isaiah 53:5"
 		},
 		{
 			"scriptureID": 119,
 			"bookIndex": 6,
 			"chapterIndex": 53,
 			"verseIndex": 4,
-			"scriptureText": "Surely he has borne our griefs / and carried our sorrows  Yet we esteemed him stricken, / struck down by God, and afflicted. - Isaiah 53:4"
+			"scriptureText": "Yet it was our pain that he bore, our sufferings he endured. We thought of him as stricken, struck down by God* and afflicted, - Isaiah 53:4"
 		},
 		{
 			"scriptureID": 120,
 			"bookIndex": 6,
 			"chapterIndex": 53,
 			"verseIndex": 5,
-			"scriptureText": "Upon him was the chastisement that made us whole, / and with his stripes we are healed. - Isaiah 53:5"
+			"scriptureText": "But he was pierced for our sins, crushed for our iniquity. He bore the punishment that makes us whole, by his wounds we were healed. - Isaiah 53:5"
 		},
 		{
 			"scriptureID": 121,
@@ -3675,28 +3675,28 @@ var rosaryJSONnab = {
 			"bookIndex": 7,
 			"chapterIndex": 27,
 			"verseIndex": 29,
-			"scriptureText": "And plaiting a crown of thorns / they put it on his head, / and put a reed in his right hand. - Matthew 27:29"
+			"scriptureText": "Weaving a crown out of thorns,* they placed it on his head, and a reed in his right hand. And kneeling before him, they mocked him, saying, \"Hail, King of the Jews!\" - Matthew 27:29"
 		},
 		{
 			"scriptureID": 123,
 			"bookIndex": 7,
 			"chapterIndex": 27,
 			"verseIndex": 29,
-			"scriptureText": "And kneeling before him they mocked him, saying, / ''Hail, king of the Jews!'' - Matthew 27:29"
+			"scriptureText": "Weaving a crown out of thorns,* they placed it on his head, and a reed in his right hand. And kneeling before him, they mocked him, saying, \"Hail, King of the Jews!\" - Matthew 27:29"
 		},
 		{
 			"scriptureID": 124,
 			"bookIndex": 7,
 			"chapterIndex": 27,
 			"verseIndex": 30,
-			"scriptureText": "And they spat upon him / and took the reed and struck him on the head. - Matthew 27:30"
+			"scriptureText": "They spat upon him* and took the reed and kept striking him on the head. - Matthew 27:30"
 		},
 		{
 			"scriptureID": 125,
 			"bookIndex": 7,
 			"chapterIndex": 27,
 			"verseIndex": 24,
-			"scriptureText": "Then Pilate took water / and washed his hands before the crowd, saying, / ''I am innocent of this righteous man’s blood; / see to it yourselves.'' - Matthew 27:24"
+			"scriptureText": "When Pilate saw that he was not succeeding at all, but that a riot was breaking out instead, he took water and washed his hands in the sight of the crowd, saying, \"I am innocent of this man’s blood. Look to it yourselves.\" - Matthew 27:24"
 		},
 		{
 			"scriptureID": 126,
@@ -3765,22 +3765,22 @@ var rosaryJSONnab = {
 			"scriptureID": 135,
 			"bookIndex": 7,
 			"chapterIndex": 11,
-			"verseIndex": 29,
-			"scriptureText": "''Take my yoke upon you, / and learn from me.'' - Matthew 11:29"
+			"verseIndex": 28,
+			"scriptureText": "\"Come to me, all you who labor and are burdened,* and I will give you rest. - Matthew 11:28"
 		},
 		{
 			"scriptureID": 136,
 			"bookIndex": 7,
 			"chapterIndex": 11,
 			"verseIndex": 29,
-			"scriptureText": "''For I am gentle/ and lowly in heart.'' - Matthew 11:29"
+			"scriptureText": "Take my yoke upon you and learn from me, for I am meek and humble of heart; and you will find rest for yourselves. - Matthew 11:29"
 		},
 		{
 			"scriptureID": 137,
 			"bookIndex": 7,
 			"chapterIndex": 11,
-			"verseIndex": 29,
-			"scriptureText": "''And you will find rest for your souls. / For my yoke is easy, / and my burden light.'' - Matthew 11:29-30"
+			"verseIndex": 30,
+			"scriptureText": "For my yoke is easy, and my burden light.\" - Matthew 11:30"
 		},
 		{
 			"scriptureID": 138,
@@ -3899,28 +3899,28 @@ var rosaryJSONnab = {
 			"bookIndex": 7,
 			"chapterIndex": 28,
 			"verseIndex": 2,
-			"scriptureText": "For an angel of the Lord descended from heaven / and came and rolled back the stone, / and sat upon it. - Matthew 28:2"
+			"scriptureText": "And behold, there was a great earthquake; for an angel of the Lord descended from heaven, approached, rolled back the stone, and sat upon it. - Matthew 28:2"
 		},
 		{
 			"scriptureID": 155,
 			"bookIndex": 7,
 			"chapterIndex": 28,
 			"verseIndex": 5,
-			"scriptureText": "''Do not be afraid; / for I know that you seek Jesus / who was crucified./ He is not here.'' - Matthew 28:5-6"
+			"scriptureText": "Then the angel said to the women in reply, “Do not be afraid! I know that you are seeking Jesus the crucified. - Matthew 28:5"
 		},
 		{
 			"scriptureID": 156,
 			"bookIndex": 9,
 			"chapterIndex": 24,
 			"verseIndex": 6,
-			"scriptureText": "''For he has risen, as he said. / Come, see the place where he lay.'' - Luke 24:6"
+			"scriptureText": "He is not here, for he has been raised just as he said. Come and see the place where he lay. - Luke 24:6"
 		},
 		{
 			"scriptureID": 157,
 			"bookIndex": 7,
 			"chapterIndex": 28,
 			"verseIndex": 7,
-			"scriptureText": "''He is going before you to Galilee; / there you will see him.'' - Matthew 28:7"
+			"scriptureText": "Then go quickly and tell his disciples, 'He has been raised from the dead, and he is going before you to Galilee; there you will see him.' Behold, I have told you.\" - Matthew 28:7"
 		},
 		{
 			"scriptureID": 158,
@@ -3955,28 +3955,28 @@ var rosaryJSONnab = {
 			"bookIndex": 7,
 			"chapterIndex": 28,
 			"verseIndex": 18,
-			"scriptureText": "And Jesus came and said, ''All authority in heaven and on earth / has been given to me.'' - Matthew 28:18"
+			"scriptureText": "Then Jesus approached and said to them, \"All power in heaven and on earth has been given to me. - Matthew 28:18"
 		},
 		{
 			"scriptureID": 163,
 			"bookIndex": 7,
 			"chapterIndex": 28,
 			"verseIndex": 19,
-			"scriptureText": "''Go, therefore / and make disciples of all nations.'' - Matthew 28:19"
+			"scriptureText": "Go, therefore,* and make disciples of all nations, baptizing them in the name of the Father, and of the Son, and of the holy Spirit, - Matthew 28:19"
 		},
 		{
 			"scriptureID": 164,
 			"bookIndex": 7,
 			"chapterIndex": 28,
 			"verseIndex": 19,
-			"scriptureText": "''. . . baptizing them in the name of the Father / and of the Son / and of the Holy Spirit.'' - Matthew 28:19"
+			"scriptureText": "Go, therefore,* and make disciples of all nations, baptizing them in the name of the Father, and of the Son, and of the holy Spirit, - Matthew 28:19"
 		},
 		{
 			"scriptureID": 165,
 			"bookIndex": 7,
 			"chapterIndex": 28,
 			"verseIndex": 20,
-			"scriptureText": "''. . . teaching them to observe/ all that I have commanded you.'' - Matthew 28:20"
+			"scriptureText": "teaching them to observe all that I have commanded you.* And behold, I am with you always, until the end of the age.\" - Matthew 28:20"
 		},
 		{
 			"scriptureID": 166,
@@ -3997,7 +3997,7 @@ var rosaryJSONnab = {
 			"bookIndex": 7,
 			"chapterIndex": 28,
 			"verseIndex": 20,
-			"scriptureText": "''And behold, /  I am with you always, / to the close of the age.'' - Matthew 28:20"
+			"scriptureText": "teaching them to observe all that I have commanded you.* And behold, I am with you always, until the end of the age.\" - Matthew 28:20"
 		},
 		{
 			"scriptureID": 169,
@@ -4087,22 +4087,22 @@ var rosaryJSONnab = {
 			"scriptureID": 181,
 			"bookIndex": 4,
 			"chapterIndex": 2,
-			"verseIndex": 11,
-			"scriptureText": "''My beloved speaks and says to me: / ''Arise, my love, / my dove, my fair one, / and come away.'' - Songs 2:10"
+			"verseIndex": 10,
+			"scriptureText": "My lover speaks and says to me, \"Arise, my friend, my beautiful one, and come! - Songs 2:10"
 		},
 		{
 			"scriptureID": 182,
 			"bookIndex": 4,
 			"chapterIndex": 2,
 			"verseIndex": 11,
-			"scriptureText": "''For behold, the winter is past, / the rain is over and gone.''' - Songs 2:11"
+			"scriptureText": "For see, the winter is past, the rains are over and gone. - Songs 2:11"
 		},
 		{
 			"scriptureID": 183,
 			"bookIndex": 4,
 			"chapterIndex": 2,
 			"verseIndex": 14,
-			"scriptureText": "''Let me see your face, / let me hear your voice, / for your voice is sweet, / and your face is comely.'' - Songs 2:14"
+			"scriptureText": "My dove in the clefts of the rock, in the secret recesses of the cliff, Let me see your face, let me hear your voice, For your voice is sweet, and your face is lovely.\" - Songs 2:14"
 		},
 		{
 			"scriptureID": 184,
@@ -4130,28 +4130,28 @@ var rosaryJSONnab = {
 			"bookIndex": 2,
 			"chapterIndex": 45,
 			"verseIndex": 13,
-			"scriptureText": "The daughter of the king is decked in her chamber / with gold-woven robes; /  in many-colored robes she is led to the king. - Psalm 45:13-14"
+			"scriptureText": "honor him, daughter of Tyre. Then the richest of the people will seek your favor with gifts. / All glorious is the king’s daughter as she enters, her raiment threaded with gold; - Psalm 45:13-14"
 		},
 		{
 			"scriptureID": 188,
 			"bookIndex": 1,
 			"chapterIndex": 13,
 			"verseIndex": 18,
-			"scriptureText": "''O daughter, you are blessed by the Most High God above all women on earth.'' - Judith 13:18"
+			"scriptureText": "Then Uzziah said to her, “Blessed are you, daughter, by the Most High God, above all the women on earth; and blessed be the Lord God, the creator of heaven and earth, who guided your blow at the head of the leader of our enemies. - Judith 13:18"
 		},
 		{
 			"scriptureID": 189,
 			"bookIndex": 1,
 			"chapterIndex": 13,
 			"verseIndex": 19,
-			"scriptureText": "''Your hope will never depart from the hearts of men, / as they remember the power of God.'' - Judith 13:19"
+			"scriptureText": "Your deed of hope will never be forgotten by those who recall the might of God. - Judith 13:19"
 		},
 		{
 			"scriptureID": 190,
 			"bookIndex": 1,
 			"chapterIndex": 15,
 			"verseIndex": 9,
-			"scriptureText": "''You are the exaltation of Jerusalem, / you are the great pride of our nation!'' - Judith 15:9"
+			"scriptureText": "When they came to her, all with one accord blessed her, saying: \"You are the glory of Jerusalem! You are the great pride of Israel! You are the great boast of our nation! - Judith 15:9"
 		},
 		{
 			"scriptureID": 191,
@@ -4165,56 +4165,56 @@ var rosaryJSONnab = {
 			"bookIndex": 5,
 			"chapterIndex": 50,
 			"verseIndex": 7,
-			"scriptureText": "Like the rainbow gleaming in glorious clouds; / like roses in the days of the first fruits. - Sirach 50:7-8"
+			"scriptureText": "Like sun shining upon the temple of the King, like a rainbow appearing in the cloudy sky; / Like blossoms on the branches in springtime, like a lily by running waters; Like a green shoot on Lebanon in summer, - Sirach 50:7-8"
 		},
 		{
 			"scriptureID": 193,
 			"bookIndex": 4,
 			"chapterIndex": 2,
 			"verseIndex": 1,
-			"scriptureText": "I am a rose of Sharon, / a lily of the valleys. - Songs 2:1"
+			"scriptureText": "I am a flower of Sharon, a lily of the valleys. - Songs 2:1"
 		},
 		{
 			"scriptureID": 194,
 			"bookIndex": 5,
 			"chapterIndex": 24,
 			"verseIndex": 4,
-			"scriptureText": "My throne was in a pillar of cloud, / and for eternity I shall not cease to exist. - Sirach 24:4,9"
+			"scriptureText": "In the heights of heaven I dwelt, and my throne was in a pillar of cloud. / Before all ages, from the beginning, he created me, and through all ages I shall not cease to be. - Sirach 24:4,9"
 		},
 		{
 			"scriptureID": 195,
 			"bookIndex": 5,
 			"chapterIndex": 24,
 			"verseIndex": 19,
-			"scriptureText": "Come to me, you who desire me, / and eat your fill of my produce. - Sirach 24:19"
+			"scriptureText": "Come to me, all who desire me, and be filled with my fruits. - Sirach 24:19"
 		},
 		{
 			"scriptureID": 196,
 			"bookIndex": 5,
 			"chapterIndex": 24,
 			"verseIndex": 17,
-			"scriptureText": "Like a terebinth I spread out my branches, / my teaching is sweeter than honey. - Sirach 24:17,20"
+			"scriptureText": "I bud forth delights like a vine; my blossoms are glorious and rich fruit. / You will remember me as sweeter than honey, better to have than the honeycomb. - Sirach 24:17,20"
 		},
 		{
 			"scriptureID": 197,
 			"bookIndex": 3,
 			"chapterIndex": 8,
-			"verseIndex": 23,
-			"scriptureText": "And now, my sons, listen to me; / happy are those who keep my ways.  Hear instruction and be wise.' - Proverbs 8:32-33"
+			"verseIndex": 32,
+			"scriptureText": "Now, children, listen to me; happy are they who keep my ways. / Listen to instruction and grow wise, do not reject it! - Proverbs 8:32-33"
 		},
 		{
 			"scriptureID": 198,
 			"bookIndex": 3,
 			"chapterIndex": 8,
-			"verseIndex": 32,
-			"scriptureText": "Happy are those who keep my ways,/ watching daily at my gates.' - Proverbs 8:32,34"
+			"verseIndex": 34,
+			"scriptureText": "Happy the one who listens to me, attending daily at my gates, keeping watch at my doorposts; - Proverbs 8:34"
 		},
 		{
 			"scriptureID": 199,
 			"bookIndex": 3,
 			"chapterIndex": 8,
 			"verseIndex": 35,
-			"scriptureText": "For he who finds me finds life / and obtains favor from the Lord. - Proverbs 8:35"
+			"scriptureText": "For whoever finds me finds life, and wins favor from the LORD; - Proverbs 8:35"
 		},
 		{
 			"scriptureID": 200,
@@ -4374,7 +4374,7 @@ var rosaryJSONnab = {
         {
             "prayerID": 12,
             "prayerName": "Act of Contrition",
-            "prayerText": "O my God, I am heartily sorry for having offended Thee,<br>and I detest my sins above every other evil<br>because they are displeasing to Thee, my God.<br>Who for thy infinite goodness are so deserving of all my love<br>and I firmly resolve by Thy holy grace<br>never more to offend Thee and to amend my life. Amen.<hr>O my God, I am heartily sorry for having offended Thee,<br>and I detest my sins most of all because they offend Thee,<br>who are all good and deserving of all my love.<br>I firmly resolve, with the help of your grace,<br>to sin no more and to amend my life. Amen."
+            "prayerText": "O my God, I am heartily sorry for having offended Thee,<br>and I detest my sins above every other evil<br>because they are displeasing to Thee, my God.<br>Who for thy infinite goodness are so deserving of all my love<br>and I firmly resolve by Thy holy grace<br>never more to offend Thee and to amend my life. Amen."
         },
         {
             "prayerID": 13,
@@ -4620,7 +4620,7 @@ var rosaryJSONnab = {
             "infoSubHeader": "<i>excerpt</i>",
             "infoFooter": "<a href='http://w2.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html' target='blank'>AD CAELI REGINAM - © Copyright - Libreria Editrice Vaticana</a>",
             "infoText": "AD CAELI REGINAM ENCYCLICAL OF POPE PIUS XII<br> ON PROCLAIMING THE QUEENSHIP OF MARY<br> TO THE VENERABLE BRETHREN, THE PATRIARCHS, PRIMATES,<br> ARCHBISHOPS, BISHIOPS, AND OTHER LOCAL ORDINARIES<br> IN PEACE AND COMMUNION WITH THE HOLY SEE<br><p>8. From early times Christians have believed, and not without reason, that she of whom was born the Son of the Most High received privileges of grace above all other beings created by God. He \"will reign in the house of Jacob forever,\"[5] \"the Prince of Peace,\"[6] the \"King of Kings and Lord of Lords.\"[7] And when Christians reflected upon the intimate connection that obtains between a mother and a son, they readily acknowledged the supreme royal dignity of the Mother of God.</p><p>9. Hence it is not surprising that the early writers of the Church called Mary \"the Mother of the King\" and \"the Mother of the Lord,\" basing their stand on the words of St. Gabriel the archangel, who foretold that the Son of Mary would reign forever,[8] and on the words of Elizabeth who greeted her with reverence and called her \"the Mother of my Lord.\"[9] Thereby they clearly signified that she derived a certain eminence and exalted station from the royal dignity of her Son.</p><p>10. So it is that St. Ephrem, burning with poetic inspiration, represents her as speaking in this way: \"Let Heaven sustain me in its embrace, because I am honored above it. For heaven was not Thy mother, but Thou hast made it Thy throne. How much more honorable and venerable than the throne of a king is her mother.\"[10] And in another place he thus prays to her: \". . . Majestic and Heavenly Maid, Lady, Queen, protect and keep me under your wing lest Satan the sower of destruction glory over me, lest my wicked foe be victorious against me.\"[11]</p><p>11. St. Gregory Nazianzen calls Mary \"the Mother of the King of the universe,\" and the \"Virgin Mother who brought forth the King of the whole world,\"[12] while Prudentius asserts that the Mother marvels \"that she has brought forth God as man, and even as Supreme King.\"[13]</p><p>12. And this royal dignity of the Blessed Virgin Mary is quite clearly indicated through direct assertion by those who call her \"Lady,\" \"Ruler\" and \"Queen.\"</p><p>13. In one of the homilies attributed to Origen, Elizabeth calls Mary \"the Mother of my Lord.\" and even addresses her as \"Thou, my Lady.\"[14]</p><p>14. The same thing is found in the writings of St. Jerome where he makes the following statement amidst various interpretations of Mary's name: \"We should realize that Mary means Lady in the Syrian Language.\"[15] After him St. Chrysologus says the same thing more explicitly in these words: \"The Hebrew word 'Mary' means 'Domina.' The Angel therefore addresses her as 'Lady' to preclude all servile fear in the Lord's Mother, who was born and was called 'Lady' by the authority and command of her own Son.\"[16]</p> <b> - Pope Pius XII</b><hr><p>5. Luc. I, 32.</p><p>6. Isai. IX, 6.</p><p>7. Apoc. XIX, 16.</p><p>8. Cf. Luc. I, 32, 33.</p><p>9. Luc. I, 43.</p><p>10. S. Ephraem, Hymni de B. Maria, ed. Th. J. Lamy, t. II, Mechliniae, 1886, hymn. XIX, p. 624.</p><p>11. Idem, Oratio ad Ssmam Dei Matrem; Opera omnia, Ed. Assemani, t. III (graece), Romae, 1747, pag. 546.</p><p>12. S. Gregorius Naz., Poemata dogmatica, XVIII, v. 58; PG XXXVII, 485.</p><p>13. Prudentius, Dittochaeum, XXVII: PL LX, 102 A.</p><p>14. Hom. in S. Lucam, hom. VII; ed. Rauer, Origenes' Werke, T. IX, p. 48 (ex catena Marcarii Chrysocephali). Cf. PG XIII, 1902 D.</p><p>15. S. Hieronymus, Liber de nominibus hebraeis: PL XXIII, 886.</p><p>16. S. Petrus Chrysologus, Sermo 142, De Annuntiatione B.M.V.: PL LII, 579 C; cf. etiam 582 B; 584 A: \"Regina totius exstitit castitatis.\"</p>"
-			
+
 		},
         {
 			"infoID": 9,
@@ -4628,7 +4628,7 @@ var rosaryJSONnab = {
             "infoSubHeader": "",
             "infoFooter": "<a href='' target='blank'></a>",
             "infoText": ""
-			
+
 		}
     ]
-};
+}
