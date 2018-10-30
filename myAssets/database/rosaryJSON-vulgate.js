@@ -4595,9 +4595,9 @@ var rosaryJSONvulgate = {
         {
             "infoID": 5,
             "infoHeader": "Source Code",
-            "infoSubHeader": "<b>Wiki/Github</b>",
+            "infoSubHeader": "<b>Wiki & Git</b>",
             "infoFooter": "footer",
-            "infoText": "<p><a href=\"http:\/\/www.github.com\/mezcel\" target=\"_blank\">github.com/mezcel</a></p><p><a href=\"http:\/\/www.github.com\/mezcel\/rosary-jquery-mobile\" target=\"_blank\">jQuery-Mobile Version: https://github.com/mezcel/rosary-jquery-mobile</a></p><p><a href=\"http:\/\/www.github.com\/mezcel\/rosary-jquery-mobile\" target=\"_blank\">Electron Version: https://github.com/mezcel/electron-container</a></p>"
+            "infoText": "<table data-role='table' data-mode='reflow' class='myTableStyle'><thead><tr><th>Resource</th><th>link</th></tr></thead><tbody><tr><td>Github</td><td><a href='https://github.com/mezcel' target='_blank'>https://github.com/mezcel</a></td></tr><tr><td>Git</td><td><a href='https://github.com/mezcel/electron-container' target='_blank'>ElectronJS App</a></td></tr><tr><td>Legacy Wiki Website</td><td><a href='http://mezcel.wixsite.com/rosary' target='_blank'>Project Design of an earlier C# Version</a></td></tr><tr><td>Original JQM Version Git</td><td><a href='https://github.com/mezcel/rosary-jquery-mobile' target='_blank'>The original JQM project this app is based off of</a></td></tr></tbody></table>"
         },
         {
             "infoID": 6,
@@ -4615,19 +4615,18 @@ var rosaryJSONvulgate = {
         },
         {
 			"infoID": 8,
-            "infoHeader": "AD CAELI REGINAM ENCYCLICAL OF POPE PIUS XII",
+            "infoHeader": "AD CAELI REGINAM Encyclical of Pope Pius XII",
             "infoSubHeader": "<i>excerpt</i>",
             "infoFooter": "<a href='http://w2.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html' target='blank'>AD CAELI REGINAM - © Copyright - Libreria Editrice Vaticana</a>",
             "infoText": "AD CAELI REGINAM ENCYCLICAL OF POPE PIUS XII<br> ON PROCLAIMING THE QUEENSHIP OF MARY<br> TO THE VENERABLE BRETHREN, THE PATRIARCHS, PRIMATES,<br> ARCHBISHOPS, BISHIOPS, AND OTHER LOCAL ORDINARIES<br> IN PEACE AND COMMUNION WITH THE HOLY SEE<br><p>8. From early times Christians have believed, and not without reason, that she of whom was born the Son of the Most High received privileges of grace above all other beings created by God. He \"will reign in the house of Jacob forever,\"[5] \"the Prince of Peace,\"[6] the \"King of Kings and Lord of Lords.\"[7] And when Christians reflected upon the intimate connection that obtains between a mother and a son, they readily acknowledged the supreme royal dignity of the Mother of God.</p><p>9. Hence it is not surprising that the early writers of the Church called Mary \"the Mother of the King\" and \"the Mother of the Lord,\" basing their stand on the words of St. Gabriel the archangel, who foretold that the Son of Mary would reign forever,[8] and on the words of Elizabeth who greeted her with reverence and called her \"the Mother of my Lord.\"[9] Thereby they clearly signified that she derived a certain eminence and exalted station from the royal dignity of her Son.</p><p>10. So it is that St. Ephrem, burning with poetic inspiration, represents her as speaking in this way: \"Let Heaven sustain me in its embrace, because I am honored above it. For heaven was not Thy mother, but Thou hast made it Thy throne. How much more honorable and venerable than the throne of a king is her mother.\"[10] And in another place he thus prays to her: \". . . Majestic and Heavenly Maid, Lady, Queen, protect and keep me under your wing lest Satan the sower of destruction glory over me, lest my wicked foe be victorious against me.\"[11]</p><p>11. St. Gregory Nazianzen calls Mary \"the Mother of the King of the universe,\" and the \"Virgin Mother who brought forth the King of the whole world,\"[12] while Prudentius asserts that the Mother marvels \"that she has brought forth God as man, and even as Supreme King.\"[13]</p><p>12. And this royal dignity of the Blessed Virgin Mary is quite clearly indicated through direct assertion by those who call her \"Lady,\" \"Ruler\" and \"Queen.\"</p><p>13. In one of the homilies attributed to Origen, Elizabeth calls Mary \"the Mother of my Lord.\" and even addresses her as \"Thou, my Lady.\"[14]</p><p>14. The same thing is found in the writings of St. Jerome where he makes the following statement amidst various interpretations of Mary's name: \"We should realize that Mary means Lady in the Syrian Language.\"[15] After him St. Chrysologus says the same thing more explicitly in these words: \"The Hebrew word 'Mary' means 'Domina.' The Angel therefore addresses her as 'Lady' to preclude all servile fear in the Lord's Mother, who was born and was called 'Lady' by the authority and command of her own Son.\"[16]</p> <b> - Pope Pius XII</b><hr><p>5. Luc. I, 32.</p><p>6. Isai. IX, 6.</p><p>7. Apoc. XIX, 16.</p><p>8. Cf. Luc. I, 32, 33.</p><p>9. Luc. I, 43.</p><p>10. S. Ephraem, Hymni de B. Maria, ed. Th. J. Lamy, t. II, Mechliniae, 1886, hymn. XIX, p. 624.</p><p>11. Idem, Oratio ad Ssmam Dei Matrem; Opera omnia, Ed. Assemani, t. III (graece), Romae, 1747, pag. 546.</p><p>12. S. Gregorius Naz., Poemata dogmatica, XVIII, v. 58; PG XXXVII, 485.</p><p>13. Prudentius, Dittochaeum, XXVII: PL LX, 102 A.</p><p>14. Hom. in S. Lucam, hom. VII; ed. Rauer, Origenes' Werke, T. IX, p. 48 (ex catena Marcarii Chrysocephali). Cf. PG XIII, 1902 D.</p><p>15. S. Hieronymus, Liber de nominibus hebraeis: PL XXIII, 886.</p><p>16. S. Petrus Chrysologus, Sermo 142, De Annuntiatione B.M.V.: PL LII, 579 C; cf. etiam 582 B; 584 A: \"Regina totius exstitit castitatis.\"</p>"
-			
+
 		},
         {
-			"infoID": 9,
-            "infoHeader": "",
-            "infoSubHeader": "",
-            "infoFooter": "<a href='' target='blank'></a>",
-            "infoText": ""
-			
-		}
+            "infoID": 9,
+            "infoHeader": "Keyboard Shortcuts",
+            "infoSubHeader": "Ascii Keyboard Controlls",
+            "infoFooter": "footer",
+            "infoText": "<table data-role='table' id='myShorcutsTable' data-mode='reflow' class='myTableStyle'><thead><tr><th>trigger key</th><th>event</th></tr></thead><tbody><tr><td>&larr; / &rarr;</td><td>back / next</td></tr><tr><td>n</td><td>Toggle NAB - English Translation</td></tr><tr><td>v</td><td>Toggle Vulgate - Latin Translation</td></tr><tr><td>p</td><td>start/pause audio</td></tr><tr><td>&uarr; / &darr;</td><td>audio volume</td></tr><tr><td>q</td><td>toggle black/white (color theme)</td></tr><tr><td>w,e,r,t,y</td><td>toggle liturgical calendar (color theme)</td></tr><tr><td>1 / 2</td><td>toggle left / right (panel)</td></tr><tr><td>i</td><td>toggle github source code links</td></tr><tr><td>h</td><td>toggle shortcut display</td></tr></tbody></table>"
+        }
     ]
 };
