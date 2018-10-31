@@ -590,11 +590,9 @@ $(document).on("pagecreate", function() {
             $(".myUiBody").removeClass("ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e ui-body-f ui-body-g");
 
             if ($("#daynightSwitch").is(":checked")) {
-                $("#pageone").addClass("ui-page-theme-a");
                 $("#entireBody").addClass("ui-page-theme-a");
                 $(".myUiBody").addClass("ui-body-a");
             } else {
-                $("#pageone").addClass("ui-page-theme-b");
                 $("#entireBody").addClass("ui-page-theme-b");
                 $(".myUiBody").addClass("ui-body-b");
             }
@@ -608,27 +606,22 @@ $(document).on("pagecreate", function() {
             $(".myUiBody").removeClass("ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e ui-body-f ui-body-g");
 
             if ($("#feastRed").is(":checked")) {
-                $("#pageone").addClass("ui-page-theme-c");
                 $("#entireBody").addClass("ui-page-theme-c");
                 $(".myUiBody").addClass("ui-body-c");
             }
             if ($("#marianBlue").is(":checked")) {
-                $("#pageone").addClass("ui-page-theme-d");
                 $("#entireBody").addClass("ui-page-theme-d");
                 $(".myUiBody").addClass("ui-body-d");
             }
             if ($("#adventPurple").is(":checked")) {
-                $("#pageone").addClass("ui-page-theme-e");
                 $("#entireBody").addClass("ui-page-theme-e");
                 $(".myUiBody").addClass("ui-body-e");
             }
             if ($("#ordinaryGreen").is(":checked")) {
-                $("#pageone").addClass("ui-page-theme-f");
                 $("#entireBody").addClass("ui-page-theme-f");
                 $(".myUiBody").addClass("ui-body-f");
             }
             if ($("#easterGold").is(":checked")) {
-                $("#pageone").addClass("ui-page-theme-g");
                 $("#entireBody").addClass("ui-page-theme-g");
                 $(".myUiBody").addClass("ui-body-g");
             }
