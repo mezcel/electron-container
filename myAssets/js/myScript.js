@@ -12,16 +12,6 @@ var hailmaryCounter = 0;
 var beadCounter = 0;
 var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
 
-/* translation db variable initialization */
-// pagebeforeshow
-// pagebeforecreate
-// pagecreate
-// http://demos.jquerymobile.com/1.0a4.1/#docs/api/events.html
-
-
-
-/////
-
 var progressBar = { // var containing progressbar state
     setValue: function(beadCounterDecade, beadCounterRosary) {
         $('#decadeSlider').val(beadCounterDecade);
@@ -412,7 +402,7 @@ function initUi() {
 /***************************************************************
  * Page Load Events
  */
- 
+
  $(document).on('pageshow', '#splashpage', function() {
     $("#popupStartApp").popup("open");
 });
@@ -673,37 +663,30 @@ $(document).on("pagecreate", function() {
 
 });
 
-/*$(document).on('pagecreate',function(event){
-    populateBookJsonList();
-    populatePrayerJsonList();
-    getBrowserUrl();
-    messengerLinkEvent();
-    initAudioVolume();
-});*/
-
+/* translation db variable initialization */
 $(document).on('pageinit', '#rosary', function(e, data){ // import json files
 	// there are other ways to do this, but ajax script works the best with JQM
 	// Note: https://joshzeigler.com/technology/web-development/how-big-is-too-big-for-json
-	
+
 	// import nab and define global nab json
 	$.ajax({url: 'myAssets/database/rosaryJSON-min-nab.json',
         dataType: "json",
         async: true,
-        success: function (result) {            
+        success: function (result) {
             rosaryJSONnab = result;
             //alert('rosaryJSONnab');
         },
         error: function (request,error) {
             alert('NAB translation did not upload');
         }
-    }); 
-    
+    });
+
     // import Vulgate and define global vulgate json
     // vulgate will also be my initial language
     $.ajax({url: 'myAssets/database/rosaryJSON-min-vulgate.json',
         dataType: "json",
         async: true,
-        success: function (result) {            
+        success: function (result) {
             rosaryJSONvulgate = result;
             rosaryJSON = rosaryJSONvulgate;
             // alert('rosaryJSONvulgate');
@@ -712,17 +695,21 @@ $(document).on('pageinit', '#rosary', function(e, data){ // import json files
             alert('Vulgate translation did not upload');
         }
     });
-        
+
 });
 
 /* initialize features provided the page's DOM is loaded */
-/**$( document ).ready( function() {
-    //initUi();
-    $("#popupStartApp").popup("open");
-});*/
 $(document).on('pageshow', '#rosary', function() {
 	initUi();
 });
+
+/*$(document).on('pagecreate',function(event){
+    populateBookJsonList();
+    populatePrayerJsonList();
+    getBrowserUrl();
+    messengerLinkEvent();
+    initAudioVolume();
+});*/
 
 
 ////
