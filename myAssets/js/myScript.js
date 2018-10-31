@@ -10,10 +10,17 @@ var initialHailMaryCounter = 0;
 var stringSpaceCounter = 0;
 var hailmaryCounter = 0;
 var beadCounter = 0;
+var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
 
 /* translation db variable initialization */
-// var rosaryJSON = rosaryJSONnab; // rosaryJSONnab was defined in myAssets/database/rosaryJSON-nab.js
-var rosaryJSON = rosaryJSONvulgate; // rosaryJSONnab was defined in myAssets/database/rosaryJSON-vulgate.js
+// pagebeforeshow
+// pagebeforecreate
+// pagecreate
+// http://demos.jquerymobile.com/1.0a4.1/#docs/api/events.html
+
+
+
+/////
 
 var progressBar = { // var containing progressbar state
     setValue: function(beadCounterDecade, beadCounterRosary) {
@@ -62,7 +69,7 @@ function populateJumpToPosition(mysteryInfoID, jumptoBeadID) { // populate butto
     var onclickFunction = 'beadCounter = ' + jumptoBeadID + '; hailmaryCounter = ' + ((mysteryInfoID * 10) - 10) + '; beadFwd(); progressBar.setValue(hailmaryCounter % 10, hailmaryCounter % 50);';
 
     // dynamic populate button
-    var btnMysteryString = '<p><a href="#pageone" class="ui-btn ui-corner-all ui-icon-actiont" data-rel="back" onclick="' + onclickFunction + '">Start</a><p>';
+    var btnMysteryString = '<p><a href="#rosary" class="ui-btn ui-corner-all ui-icon-actiont" data-rel="back" onclick="' + onclickFunction + '">Start</a><p>';
 
     return btnMysteryString;
 }
@@ -394,12 +401,24 @@ function initAudioVolume() { // initial audio volume setting
     $("#audioAveMaria").prop('volume', 0.25);
 }
 
+function initUi() {
+	populateBookJsonList();
+    populatePrayerJsonList();
+    getBrowserUrl();
+    messengerLinkEvent();
+    initAudioVolume();
+}
+
 /***************************************************************
  * Page Load Events
  */
+ 
+ $(document).on('pageshow', '#splashpage', function() {
+    $("#popupStartApp").popup("open");
+});
 
 /* configure progressbars  */
-$(document).on('pageshow', '#pageone', function() {
+$(document).on('pageshow', '#rosary', function() {
 
     $('<input>').appendTo('[ data-role="decadeProgress"]').attr({
         'name': 'decadeSlider',
@@ -493,9 +512,10 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
 
 });
 
-/* swipe event to trigger buttons */
-$(document).on("pagecreate", "#pageone", function() {
+/* UI swipe, slicks, & keydown triggers */
+$(document).on("pagecreate", "#rosary", function() {
 
+	// swipe
     $(".mySwipeClass").on("swiperight", function() { beadRev(); });
 
     $(".mySwipeClass").on("swipeleft", function() { beadFwd(); });
@@ -558,13 +578,13 @@ $(document).on("pagecreate", "#pageone", function() {
             case 73: // letter i
                 // hacky but it works as a toggle
                 $("#myDialogPopUp").popup("close");
-                $('#pageone').click();
+                $('#rosary').click();
                 $('#btnGithub').click();
                 break;
             case 72: // letter h
                 // hacky but it works as a toggle
                 $("#myDialogPopUp").popup("close");
-                $('#pageone').click();
+                $('#rosary').click();
                 $('#btnShortcuts').click();
                 break;
             default:
@@ -653,14 +673,57 @@ $(document).on("pagecreate", function() {
 
 });
 
-/* initialize features provided the page's DOM is loaded */
-$( document ).ready( function() {
+/*$(document).on('pagecreate',function(event){
     populateBookJsonList();
     populatePrayerJsonList();
     getBrowserUrl();
     messengerLinkEvent();
     initAudioVolume();
+});*/
+
+$(document).on('pageinit', '#rosary', function(e, data){ // import json files
+	// there are other ways to do this, but ajax script works the best with JQM
+	// Note: https://joshzeigler.com/technology/web-development/how-big-is-too-big-for-json
+	
+	// import nab and define global nab json
+	$.ajax({url: 'myAssets/database/rosaryJSON-min-nab.json',
+        dataType: "json",
+        async: true,
+        success: function (result) {            
+            rosaryJSONnab = result;
+            //alert('rosaryJSONnab');
+        },
+        error: function (request,error) {
+            alert('NAB translation did not upload');
+        }
+    }); 
+    
+    // import Vulgate and define global vulgate json
+    // vulgate will also be my initial language
+    $.ajax({url: 'myAssets/database/rosaryJSON-min-vulgate.json',
+        dataType: "json",
+        async: true,
+        success: function (result) {            
+            rosaryJSONvulgate = result;
+            rosaryJSON = rosaryJSONvulgate;
+            // alert('rosaryJSONvulgate');
+        },
+        error: function (request,error) {
+            alert('Vulgate translation did not upload');
+        }
+    });
+        
 });
+
+/* initialize features provided the page's DOM is loaded */
+/**$( document ).ready( function() {
+    //initUi();
+    $("#popupStartApp").popup("open");
+});*/
+$(document).on('pageshow', '#rosary', function() {
+	initUi();
+});
+
 
 ////
 /* prevent images from getting dragged on swipe */
