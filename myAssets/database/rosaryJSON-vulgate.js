@@ -2559,28 +2559,28 @@ var rosaryJSONvulgate = {
             "mysteryIndex": 0,
             "decadeNo": 0,
             "decadeName": "",
-            "decadeArt": "http:\/\/1.bp.blogspot.com\/-YvXtiei6hRA/VNRnxBrmgPI\/AAAAAAAAJoc\/64W4plee7t0\/s1600\/Atr%2BGoswijn%2Bvan%2Bder%2BWeyden_15%2BMysteries%2Band%2BVirgin%2Bof%2Bthe%2BRosary_c.1515-20_Met.jpg"
+            "decadeArt": "http://1.bp.blogspot.com/-YvXtiei6hRA/VNRnxBrmgPI/AAAAAAAAJoc/64W4plee7t0/s1600/Atr%2BGoswijn%2Bvan%2Bder%2BWeyden_15%2BMysteries%2Band%2BVirgin%2Bof%2Bthe%2BRosary_c.1515-20_Met.jpg"
         },
         {
             "decadeID": 1,
             "mysteryIndex": 1,
             "decadeNo": 1,
             "decadeName": "The First Joyful Mystery: The Annunciation",
-            "decadeArt": "http:\/\/www.joyfulheart.com\/christmas\/tissot-christmas-childhood\/tissot-the-annunciation-753x590x72.jpg"
+            "decadeArt": "http://www.joyfulheart.com/christmas/tissot-christmas-childhood/tissot-the-annunciation-753x590x72.jpg"
         },
         {
             "decadeID": 2,
             "mysteryIndex": 2,
             "decadeNo": 2,
             "decadeName": "The Second Joyful Mystery: The Visitation",
-            "decadeArt": "http:\/\/3.bp.blogspot.com\/-nH9kVrV2d6s\/Tgry1A3xx9I\/AAAAAAAAAG8\/bmvEkFl57pQ\/s1600\/DSC01145.JPG"
+            "decadeArt": "http://3.bp.blogspot.com/-nH9kVrV2d6s/Tgry1A3xx9I/AAAAAAAAAG8/bmvEkFl57pQ/s1600/DSC01145.JPG"
         },
         {
             "decadeID": 3,
             "mysteryIndex": 4,
             "decadeNo": 3,
             "decadeName": "The Third Joyful Mystery: The Nativity",
-            "decadeArt": "https:\/\/benedictsbeads.files.wordpress.com\/2015\/04\/duccio_di_buoninsegna_-_the_nativity_with_the_prophets_isaiah_and_ezekiel_-_google_art_project.jpg?w=1024&h=415&crop=1"
+            "decadeArt": "https://benedictsbeads.files.wordpress.com/2015/04/duccio_di_buoninsegna_-_the_nativity_with_the_prophets_isaiah_and_ezekiel_-_google_art_project.jpg?w=1024&h=415&crop=1"
         },
         {
             "decadeID": 4,
@@ -2741,77 +2741,77 @@ var rosaryJSONvulgate = {
         {
             "bookID": 1,
             "bookName": "Judith",
-            "library": "<a href='http://vulgate.org/ot/judith_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
+            "library": "<a class='ui-link' href='http://vulgate.org/ot/judith_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 2,
             "bookName": "Psalmi",
-            "library": "<a href='http://vulgate.org/ot/psalms_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>, <a href='http://www.bookofhours.org/psalms/tool_150_comparison.htm' target='_blank'>bookofhours.org</a> "
+            "library": "<a class='ui-link' href='http://vulgate.org/ot/psalms_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>, <a class='ui-link' href='http://www.bookofhours.org/psalms/tool_150_comparison.htm' target='_blank'>bookofhours.org</a> "
         },
         {
             "bookID": 3,
             "bookName": "Proverbia",
-            "library": "<a href='http://vulgate.org/ot/proverbs_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
+            "library": "<a class='ui-link' href='http://vulgate.org/ot/proverbs_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 4,
             "bookName": "Canticum Canticorum",
-            "library": "<a href='http://vulgate.org/ot/songofsolomon_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
+            "library": "<a class='ui-link' href='http://vulgate.org/ot/songofsolomon_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 5,
             "bookName": "Ecclesiasticus",
-            "library": "<a href='http://vulgate.org/ot/ecclesiasticus_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
+            "library": "<a class='ui-link' href='http://vulgate.org/ot/ecclesiasticus_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 6,
             "bookName": "Isiah",
-            "library": "<a href='http://vulgate.org/ot/isaiah_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
+            "library": "<a class='ui-link' href='http://vulgate.org/ot/isaiah_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 7,
             "bookName": "Matthaeum",
-            "library": "<a href='http://vulgate.org/nt/gospel/matthew_1.htm' target='_blank'>The Latin Vulgate New Testament Bible<\/a>"
+            "library": "<a class='ui-link' href='http://vulgate.org/nt/gospel/matthew_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 8,
             "bookName": "Marcum",
-            "library": "<a href='http://vulgate.org/nt/gospel/mark_1.htm' target='_blank'>The Latin Vulgate New Testament Bible<\/a>"
+            "library": "<a class='ui-link' href='http://vulgate.org/nt/gospel/mark_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 9,
             "bookName": "Lucam",
-            "library": "<a href='http://vulgate.org/nt/gospel/luke_1.htm' target='_blank'>The Latin Vulgate New Testament Bible<\/a>"
+            "library": "<a class='ui-link' href='http://vulgate.org/nt/gospel/luke_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 10,
             "bookName": "Ioannem",
-            "library": "<a href='http://vulgate.org/nt/gospel/john_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
+            "library": "<a class='ui-link' href='http://vulgate.org/nt/gospel/john_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 11,
             "bookName": "Actus Apostolorum",
-            "library": "<a href='http://vulgate.org/nt/gospel/acts_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
+            "library": "<a class='ui-link' href='http://vulgate.org/nt/gospel/acts_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 12,
             "bookName": "Ad Corinthios I",
-            "library": "<a href='http://vulgate.org/nt/epistle/1corinthians_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
+            "library": "<a class='ui-link' href='http://vulgate.org/nt/epistle/1corinthians_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 13,
             "bookName": "Apocalypsis Ioannis",
-            "library": "<a href='http://vulgate.org/nt/epistle/revelation_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
+            "library": "<a class='ui-link' href='http://vulgate.org/nt/epistle/revelation_1.htm' target='_blank'>The Latin Vulgate New Testament Bible</a>"
         },
         {
             "bookID": 14,
             "bookName": "Queenship of the B.V.M., Gradual",
-            "library": "<a href='http://w2.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html' target='_blank'>AD CAELI REGINAM - ENCYCLICAL OF POPE PIUS XII, October 11, 1954 <\/a>"
+            "library": "<a class='ui-link' href='http://w2.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html' target='_blank'>AD CAELI REGINAM - ENCYCLICAL OF POPE PIUS XII, October 11, 1954 </a>"
         },
         {
             "bookID": 15,
             "bookName": "Oremus",
-            "library": "<a href='http://www.oremus.org/liturgy/ccp/07mon.html' target='_blank'>Pentecost Alleluia<\/a>, <a href='http://www.liturgies.net/Liturgies/Catholic/loh/pentecostor.htm' target='_blank'>Office of Readings<\/a>, <a href='http://www.preces-latinae.org/thesaurus/Spiritus/VSS.html' target='_blank'>Veni, Sancte Spiritus Come<\/a> "
+            "library": "<a class='ui-link' href='http://www.oremus.org/liturgy/ccp/07mon.html' target='_blank'>Pentecost Alleluia</a>, <a class='ui-link' href='http://www.liturgies.net/Liturgies/Catholic/loh/pentecostor.htm' target='_blank'>Office of Readings</a>, <a class='ui-link' href='http://www.preces-latinae.org/thesaurus/Spiritus/VSS.html' target='_blank'>Veni, Sancte Spiritus Come</a> "
         }
     ],
     "scripture": [
@@ -4313,82 +4313,104 @@ var rosaryJSONvulgate = {
         {
             "prayerID": 0,
             "prayerName": "",
-            "prayerText": "..."
+            "prayerText": "...",
+            "prayerFooter": ""
         },
         {
             "prayerID": 1,
             "prayerName": "Signum Crucis",
-            "prayerText": "In nómine Patris, et Fílii, et Spíritus Sancti. Amen.<hr><em>(As you say this, with your right hand touch your forehead when you say Father, touch your breastbone when you say Son, touch your left shoulder when you say Holy, and touch your right shoulder when you say Spirit.)</em>"
+            "prayerText": "In nómine Patris, et Fílii, et Spíritus Sancti. Amen.<hr><em>(As you say this, with your right hand touch your forehead when you say Father, touch your breastbone when you say Son, touch your left shoulder when you say Holy, and touch your right shoulder when you say Spirit.)</em>",
+            "prayerFooter": ""
         },
         {
             "prayerID": 2,
             "prayerName": "Credo in Deum Patrem",
-            "prayerText": "Credo in Deum Patrem omnipoténtem, Creatórem cćli et terrć. Et in Iesum Christum, Fílium eius únicum, Dóminum nostrum, qui concéptus est de Spíritu Sancto, natus ex María Vírgine, passus sub Póntio Piláto, crucifíxus, mórtuus, et sepúltus, descéndit ad ínfernos, tértia die resurréxit a mórtuis, ascéndit ad cćlos, sedet ad déxteram Dei Patris omnipoténtis, inde ventúrus est iudicáre vivos et mórtuos. Credo in Spíritum Sanctum, sanctam Ecclésiam cathólicam, sanctórum communiónem, remissiónem peccatórum, carnis resurrectiónem, vitam ćtérnam. Amen."
+            "prayerText": "Credo in Deum Patrem omnipoténtem, Creatórem cćli et terrć. Et in Iesum Christum, Fílium eius únicum, Dóminum nostrum, qui concéptus est de Spíritu Sancto, natus ex María Vírgine, passus sub Póntio Piláto, crucifíxus, mórtuus, et sepúltus, descéndit ad ínfernos, tértia die resurréxit a mórtuis, ascéndit ad cćlos, sedet ad déxteram Dei Patris omnipoténtis, inde ventúrus est iudicáre vivos et mórtuos. Credo in Spíritum Sanctum, sanctam Ecclésiam cathólicam, sanctórum communiónem, remissiónem peccatórum, carnis resurrectiónem, vitam ćtérnam. Amen.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 3,
             "prayerName": "Pater noster",
-            "prayerText": "Pater noster, qui es in cćlis, sanctificétur nomen tuum. Advéniat regnum tuum. Fiat volúntas tua, sicut in cćlo, et in terra. Panem nostrum cotidiánum da nobis hódie, et dimítte nobis débita nostra sicut et nos dimíttimus debitóribus nostris. Et ne nos indúcas in tentatiónem, sed líbera nos a malo. Amen."
+            "prayerText": "Pater noster, qui es in cćlis, sanctificétur nomen tuum. Advéniat regnum tuum. Fiat volúntas tua, sicut in cćlo, et in terra. Panem nostrum cotidiánum da nobis hódie, et dimítte nobis débita nostra sicut et nos dimíttimus debitóribus nostris. Et ne nos indúcas in tentatiónem, sed líbera nos a malo. Amen.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 4,
             "prayerName": "Ave Maria",
-            "prayerText": "Ave María, grátia plena, Dóminus tecum. Benedícta tu in muliéribus, et benedíctus fructus ventris tui, Iesus. Sancta María, Mater Dei, ora pro nobis peccatóribus, nunc, et in hora mortis nostrć. Amen."
+            "prayerText": "Ave María, grátia plena, Dóminus tecum. Benedícta tu in muliéribus, et benedíctus fructus ventris tui, Iesus. Sancta María, Mater Dei, ora pro nobis peccatóribus, nunc, et in hora mortis nostrć. Amen.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 5,
             "prayerName": "Gloria Patri",
-            "prayerText": "Glória Patri, et Fílio, et Spirítui Sancto. Sicut erat in princípio, et nunc, et semper, et in sćcula sćculórum. Amen."
+            "prayerText": "Glória Patri, et Fílio, et Spirítui Sancto. Sicut erat in princípio, et nunc, et semper, et in sćcula sćculórum. Amen.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 6,
             "prayerName": "O mi Iesu",
-            "prayerText": "Domine Iesu, dimitte nobis debita nostra, salva nos ab igne inferiori, perduc in cćlum omnes animas, prćsertim eas, quć misericordić tuć maxime indigent. Amen."
+            "prayerText": "Domine Iesu, dimitte nobis debita nostra, salva nos ab igne inferiori, perduc in cćlum omnes animas, prćsertim eas, quć misericordić tuć maxime indigent. Amen.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 7,
             "prayerName": "Salve Regina",
-            "prayerText": "Salve Regína, Mater misericórdić; Vita dulcédo, et spes nostra, salve. Ad te Clamámus éxsules fílii Evć; Ad te Suspirámus, geméntes et flentes in hac lacrimárum valle. Eia ergo, Advocáta nostra, Illos tuos misericórdes óculos ad nos convérte: Et Iesum, benedíctum fructum ventris tui, Nobis post hoc exsílium osténde. O clemens, o pia, o dulcis Virgo María. V/. Ora pro nobis, Sancta Dei Génetrix. R/. Ut digni efficiámur promissionibus Christi. Amen."
+            "prayerText": "Salve Regína, Mater misericórdić; Vita dulcédo, et spes nostra, salve. Ad te Clamámus éxsules fílii Evć; Ad te Suspirámus, geméntes et flentes in hac lacrimárum valle. Eia ergo, Advocáta nostra, Illos tuos misericórdes óculos ad nos convérte: Et Iesum, benedíctum fructum ventris tui, Nobis post hoc exsílium osténde. O clemens, o pia, o dulcis Virgo María. V/. Ora pro nobis, Sancta Dei Génetrix. R/. Ut digni efficiámur promissionibus Christi. Amen.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 8,
             "prayerName": "Oremus",
-            "prayerText": "Deus, cujus Unigénitus, per vitam, mortem et resurrectiónem suam nobis salútis ćtérnć prćmia comparávit: concéde, qućsumus; ut, hćc mystéria sanctíssimo beátć Maríć Virginis Rosário recoléntes; et imitémur quod cóntinent, et quod promíttunt, assequámur. Per eúmdem Christum Dóminum nostrum. Amen."
+            "prayerText": "Deus, cujus Unigénitus, per vitam, mortem et resurrectiónem suam nobis salútis ćtérnć prćmia comparávit: concéde, qućsumus; ut, hćc mystéria sanctíssimo beátć Maríć Virginis Rosário recoléntes; et imitémur quod cóntinent, et quod promíttunt, assequámur. Per eúmdem Christum Dóminum nostrum. Amen.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 9,
             "prayerName": "Litaniae Lauretanae",
-            "prayerText": "<p>Kyrie, eleison.<br> <b>R.</b> Christe, eleison. <br> Kyrie, eleison.<br> Christe, audi nos.<br> <b>R.</b> Christe, exaudi nos.</p><p>Pater de caelis, Deus,<br> <b>R. miserere nobis.</b> &#8634;<br> &#8627; Fili, Redemptor mundi, Deus,<br> &#8627; Spiritus Sancte Deus,<br> &#8627; Sancta Trinitas, unus Deus,</p><p>Sancta Maria,<br> <b>R. ora pro nobis.</b> &#8634;<br> &#8627; Sancta Dei Genetrix,<br> &#8627; Sancta Virgo virginum,<br> &#8627; Mater Christi,<br> &#8627; Mater Ecclesiae,<br> &#8627; Mater Divinae gratiae,<br> &#8627; Mater purissima,<br> &#8627; Mater castissima,<br> &#8627; Mater inviolata,<br> &#8627; Mater intemerata,<br> &#8627; Mater amabilis,<br> &#8627; Mater admirabilis,<br> &#8627; Mater boni Consilii,<br> &#8627; Mater Creatoris,<br> &#8627; Mater Salvatoris,<br> &#8627; Mother of mercy,<br> &#8627; Virgo prudentissima,<br> &#8627; Virgo veneranda,<br> &#8627; Virgo praedicanda,<br> &#8627; Virgo potens,<br> &#8627; Virgo clemens,<br> &#8627; Virgo fidelis,<br> &#8627; Speculum iustitiae,<br> &#8627; Sedes sapientiae,<br> &#8627; Causa nostrae laetitiae,<br> &#8627; Vas spirituale,<br> &#8627; Vas honorabile,<br> &#8627; Vas insigne devotionis,<br> &#8627; Rosa mystica,<br> &#8627; Turris Davidica,<br> &#8627; Turris eburnea,<br> &#8627; Domus aurea,<br> &#8627; Foederis arca,<br> &#8627; Stella matutina,<br> &#8627; Ianua caeli,<br> &#8627; Salus infirmorum,<br> &#8627; Refugium peccatorum,<br> &#8627; Consolatrix afflictorum,<br> &#8627; Auxilium Christianorum,<br> &#8627; Regina Angelorum,<br> &#8627; Regina Patriarcharum,<br> &#8627; Regina Prophetarum,<br> &#8627; Regina Apostolorum,<br> &#8627; Regina Martyrum,<br> &#8627; Regina Confessorum,<br> &#8627; Regina Virginum,<br> &#8627; Regina Sanctorum omnium,<br> &#8627; Regina sine labe originali concepta,<br> &#8627; Regina in caelum assumpta,<br> &#8627; Regina Sacratissimi Rosarii<br> &#8627; Regina familiae,<br> &#8627; Regina pacis,</p><p>Agnus Dei, qui tollis peccata mundi,<br> <b>R. parce nobis, Domine. </b></p><p>Agnus Dei, qui tollis peccata mundi,<br> <b>R. exaudi nos, Domine. </b></p><p>Agnus Dei, qui tollis peccata mundi,<br> <b>R. miserere nobis.</b></p><p>Ora pro nobis, Sancta Dei Genetrix,<br> <b>R. Ut digni efficiamur promissionibus Christi. </b></p><p>Oremus<br> Concede nos famulos tuos, quaesumus, Domine Deus, perpetua mentis et corporis sanitate gaudere: et gloriosa beatae Mariae semper Virginis intercessione, a praesenti liberari tristitia, et aeterna perfrui laetitia. Per Christum Dominum nostrum.</p> <b>R.</b> Amen."
+            "prayerText": "<p>Kyrie, eleison.<br> <b>R.</b> Christe, eleison. <br> Kyrie, eleison.<br> Christe, audi nos.<br> <b>R.</b> Christe, exaudi nos.</p><p>Pater de caelis, Deus,<br> <b>R. miserere nobis.</b> &#8634;<br> &#8627; Fili, Redemptor mundi, Deus,<br> &#8627; Spiritus Sancte Deus,<br> &#8627; Sancta Trinitas, unus Deus,</p><p>Sancta Maria,<br> <b>R. ora pro nobis.</b> &#8634;<br> &#8627; Sancta Dei Genetrix,<br> &#8627; Sancta Virgo virginum,<br> &#8627; Mater Christi,<br> &#8627; Mater Ecclesiae,<br> &#8627; Mater Divinae gratiae,<br> &#8627; Mater purissima,<br> &#8627; Mater castissima,<br> &#8627; Mater inviolata,<br> &#8627; Mater intemerata,<br> &#8627; Mater amabilis,<br> &#8627; Mater admirabilis,<br> &#8627; Mater boni Consilii,<br> &#8627; Mater Creatoris,<br> &#8627; Mater Salvatoris,<br> &#8627; Mother of mercy,<br> &#8627; Virgo prudentissima,<br> &#8627; Virgo veneranda,<br> &#8627; Virgo praedicanda,<br> &#8627; Virgo potens,<br> &#8627; Virgo clemens,<br> &#8627; Virgo fidelis,<br> &#8627; Speculum iustitiae,<br> &#8627; Sedes sapientiae,<br> &#8627; Causa nostrae laetitiae,<br> &#8627; Vas spirituale,<br> &#8627; Vas honorabile,<br> &#8627; Vas insigne devotionis,<br> &#8627; Rosa mystica,<br> &#8627; Turris Davidica,<br> &#8627; Turris eburnea,<br> &#8627; Domus aurea,<br> &#8627; Foederis arca,<br> &#8627; Stella matutina,<br> &#8627; Ianua caeli,<br> &#8627; Salus infirmorum,<br> &#8627; Refugium peccatorum,<br> &#8627; Consolatrix afflictorum,<br> &#8627; Auxilium Christianorum,<br> &#8627; Regina Angelorum,<br> &#8627; Regina Patriarcharum,<br> &#8627; Regina Prophetarum,<br> &#8627; Regina Apostolorum,<br> &#8627; Regina Martyrum,<br> &#8627; Regina Confessorum,<br> &#8627; Regina Virginum,<br> &#8627; Regina Sanctorum omnium,<br> &#8627; Regina sine labe originali concepta,<br> &#8627; Regina in caelum assumpta,<br> &#8627; Regina Sacratissimi Rosarii<br> &#8627; Regina familiae,<br> &#8627; Regina pacis,</p><p>Agnus Dei, qui tollis peccata mundi,<br> <b>R. parce nobis, Domine. </b></p><p>Agnus Dei, qui tollis peccata mundi,<br> <b>R. exaudi nos, Domine. </b></p><p>Agnus Dei, qui tollis peccata mundi,<br> <b>R. miserere nobis.</b></p><p>Ora pro nobis, Sancta Dei Genetrix,<br> <b>R. Ut digni efficiamur promissionibus Christi. </b></p><p>Oremus<br> Concede nos famulos tuos, quaesumus, Domine Deus, perpetua mentis et corporis sanitate gaudere: et gloriosa beatae Mariae semper Virginis intercessione, a praesenti liberari tristitia, et aeterna perfrui laetitia. Per Christum Dominum nostrum.</p> <b>R.</b> Amen.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 10,
             "prayerName": "Credo",
-            "prayerText": "<p> Credo in unum Deum,<br> Patrem omnipotentem,<br> factorem caeli et terrae,<br> visibilium omnium et invisibilium;</p></p> Et in unum Dominum Iesum Christum,<br> Filium Dei unigenitum,<br> et ex Patre natum, ante omnia saecula,<br> Deum de Deo, lumen de lumine,<br> Deum verum de Deo vero,<br> genitum, non factum, consubstantialem Patri,<br> per quem omnia facta sunt,<br> Qui propter nos homines et propter nostram salutem<br> descendit de caelis,</p></p> Et incarnatus est de Spiritu Sancto<br> ex Maria Virgine, et homo factus est,</p></p> Crucifixus etiam pro nobis sub Pontio Pilato,<br> passus et sepultus est,<br> et resurrexit tertia die,<br> secundum Scripturas,<br> et ascendit in caelum,<br> sedet ad dexteram Patris,<br> Et iterum venturus est cum gloria,<br> iudicare vivos et mortuos,<br> cuius regni non erit finis;</p></p> Et in Spiritum Sanctum, Dominum et vivificantem,<br> qui ex Patre Filioque procedit,<br> Qui cum Patre et Filio simul adoratur et conglorificatur,<br> qui locutus est per prophetas;</p></p> Et unam, sanctam, catholicam et apostolicam Ecclesiam,<br> Confiteor unum baptisma in remissionem peccatorum,<br> Et exspecto resurrectionem mortuorum,<br> et vitam venturi saeculi.</p> Amen"
+            "prayerText": "<p> Credo in unum Deum,<br> Patrem omnipoténtem,<br> factórem caeli et terrae,<br> visibílium ómnium et invisibílium;</p><p> Et in unum Dóminum Iesum Christum,<br> Fílium Dei unigénitum,<br> et ex Patre natum, ante ómnia saécula,<br> Deum de Deo, lumen de lúmine,<br> Deum verum de Deo vero,<br> génitum, non factum, consubstantiálem Patri,<br> per quem ómnia facta sunt,<br> Qui propter nos hómines et propter nostram salútem<br> descéndit de caelis,</p><p> Et incarnátus est de Spíritu Sancto<br> ex María Vírgine, et homo factus est,</p><p> Crucifíxus étiam pro nobis sub Póntio Piláto,<br> passus et sepúltus est,<br> et resurréxit tértia die,<br> secúndum Scriptúras,<br> et ascéndit in caelum,<br> sedet ad déxteram Patris,<br> Et íterum ventúrus est cum glória,<br> iudicáre vivos et mórtuos,<br> cuius regni non erit finis;</p><p> Et in Spíritum Sanctum, Dóminum et vivificántem,<br> qui ex Patre Filióque procédit,<br> Qui cum Patre et Fílio simul adorátur et conglorificátur,<br> qui locútus est per prophétas;</p><p> Et unam, sanctam, cathólicam et apostólicam Ecclésiam,<br> Confíteor unum baptísma in remissiónem peccatórum,<br> Et exspecto resurrectiónem mortuórum,<br> et vitam ventúri saéculi.</p> Amen",
+            "prayerFooter": ""
         },
         {
             "prayerID": 11,
-            "prayerName": "Magnificat",
-            "prayerText": "Magnificat anima mea Dominum,<br> et exsultavit spiritus meus<br> in Deo salvatore meo,<br> quia respexit humilitatem<br> ancillae suae.<br> Ecce enim ex hoc beatam<br> me dicent omnes generationes,<br> quia fecit mihi magna,<br> qui potens est,<br> et sanctum nomen eius,<br> et misericordia eius in progenies<br> et progenies timentibus eum.<br> Fecit potentiam in brachio suo,<br> dispersit superbos<br> mente cordis sui;<br> deposuit potentes de sede<br> et exaltavit humiles.<br> Esurientes implevit bonis<br> et divites dimisit inanes.<br> Suscepit Israël puerum suum,<br> recordatus misericordiae,<br> sicut locutus est ad patres nostros,<br> Abraham et semini eius in saecula.<br> Gloria Patri et Filio<br> et Spiritui Sancto.<br> Sicut erat in principio,<br> et nunc et semper,<br> et in saecula saeculorum.<br> Amen."
+            "prayerName": "Magníficat",
+            "prayerText": "Magníficat ánima mea Dóminum,<br> et exsultávit spíritus meus<br> in Deo salvatóre meo,<br> quia respéxit humilitátem<br> ancíllae suae.<br> Ecce enim ex hoc beátam<br> me dicent omnes generatiónes,<br> quia fecit mihi magna,<br> qui potens est,<br> et sanctum nomen eius,<br> et misericórdia eius in progénies<br> et progénies timéntibus eum.<br> Fecit poténtiam in bráchio suo,<br> dispérsit supérbos<br> mente cordis sui;<br> depósuit poténtes de sede<br> et exaltávit húmiles.<br> Esuriéntes implévit bonis<br> et dívites dimísit inánes.<br> Suscépit Ísraël púerum suum,<br> recordátus misericórdiae,<br> sicut locútus est ad patres nostros,<br> Ábraham et sémini eius in saécula.<br> Glória Patri et Fílio<br> et Spirítui Sancto.<br> Sicut erat in princípio,<br> et nunc et semper,<br> et in saécula saeculórum.<br> Amen.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 12,
             "prayerName": "Actus Contritiónis",
-            "prayerText": "Deus meus, ex toto corde pǽnitet me <br> ómnium meórum peccatórum, <br> éaque detéstor, quia peccándo, <br> non solum pœnas a te juste <br> statútas proméritus sum, <br> sed præsértim quia offéndi te, <br> summum bonum, <br> ac dignum qui super ómnia diligáris. <br> Ídeo fírmiter propóno, <br> adjuvánte grátia tua, <br> de cétero me non peccatúrum <br> peccandíque occasiónes próximas fugitúrum. <br> Amen."
+            "prayerText": "Deus meus, ex toto corde pǽnitet me <br> ómnium meórum peccatórum, <br> éaque detéstor, quia peccándo, <br> non solum pœnas a te juste <br> statútas proméritus sum, <br> sed præsértim quia offéndi te, <br> summum bonum, <br> ac dignum qui super ómnia diligáris. <br> Ídeo fírmiter propóno, <br> adjuvánte grátia tua, <br> de cétero me non peccatúrum <br> peccandíque occasiónes próximas fugitúrum. <br> Amen.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 13,
             "prayerName": "Actus Fidei",
-            "prayerText": "Domine Deus,<br> firma fide credo et confiteor omnia et singula<br> quae sancta Ecclesia Catholica proponit,<br> quia tu, Deus, ea omnia revelasti,<br> qui es aeterna veritas et sapientia<br> quae nec fallere nec falli potest.<br> In hac fide vivere et mori statuo.<br> Amen."
+            "prayerText": "Dómine Deus,<br>firma fide credo et confíteor ómnia et síngula<br>quae sancta Ecclésia Cathólica propónit,<br>quia tu, Deus, ea ómnia revelásti,<br>qui es aetérna véritas et sapiéntia<br>quae nec fállere nec falli potest.<br>In hac fide vívere et mori státuo.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 14,
             "prayerName": "Actus Spei",
-            "prayerText": "Domine Deus,<br> spero per gratiam tuam<br> remissionem omnium peccatorum,<br> et post hanc vitam<br> aeternam felicitatem me esse consecuturum,<br> quia tu promisisti,<br> qui es infinite potens,<br> fidelis, benignus, et misericors.<br> In hac spe vivere et mori statuo.<br> Amen."
+            "prayerText": "Dómine Deus,<br>spero per grátiam tuam<br>remissiónem ómnium peccatórum,<br>et post hanc vitam<br>aetérnam felicitátem me esse consecutúrum,<br>quia tu promisísti,<br>qui es infiníte potens,<br>fidélis, benígnus, et miséricors.<br>In hac spe vívere et mori státuo.<br>Amen.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 15,
             "prayerName": "Actus Caritatis",
-            "prayerText": "Domine Deus,<br> amo te super omnia<br> et proximum meum propter te,<br> quia tu es summum,<br> infinitum et perfectissimum bonum,<br> omni dilectione dignum.<br> In hac caritate vivere et mori statuo.<br> Amen."
+            "prayerText": "Dómine Deus,<br>amo te super ómnia<br>et próximum meum propter te,<br>quia tu es summum,<br>infinítum et perfectíssimum bonum,<br> omni dilectióne dignum.<br>In hac caritáte vívere et mori státuo.<br> Amen.",
+            "prayerFooter": ""
+        },
+        {
+            "prayerID": 16,
+            "prayerName": "Sancte Míchaël Archángele",
+            "prayerText": "Sancte Míchaël Archángele,<br> defénde nos in proélio;<br> contra nequítiam et insídias<br> diáboli esto praesídium.<br> Ímperet illi Deus,<br> súpplices deprecámur,<br> tuque, Princeps milítiae caeléstis,<br> Sátanam aliósque spíritus malígnos,<br> qui ad perditiónem animárum<br> pervagántur in mundo,<br> divína virtúte, in inférnum detrúde.<br> Amen.",
+            "prayerFooter": ""
         }
     ],
     "mysteryInfo": [
@@ -4405,48 +4427,48 @@ var rosaryJSONvulgate = {
             "infoHeader": "First Joyful Mystery",
             "infoSubHeader": "Annuntiatio",
             "infoFooter": "",
-            "infoText": "<p>The Annunciation (from Latin annuntiatio), also referred to as the Annunciation to the Blessed Virgin Mary, the Annunciation of Our Lady, or the Annunciation of the Lord, is the Christian celebration of the announcement by the angel Gabriel to the Virgin Mary that she would conceive and become the mother of Jesus, the Son of God, marking his Incarnation. Gabriel told Mary to name her son Yehoshua , meaning \"YHWH is salvation\".<\/p> <p>According to Luke 1:26, the Annunciation occurred in \"the sixth month\" of Elizabeth's pregnancy with John the Baptist. Many Christians observe this event with the Feast of the Annunciation on 25 March, an approximation of the northern vernal equinox nine full months before Christmas, the ceremonial birthday of Jesus. In England, this came to be known as Lady Day. It marked the new year until 1752. The 2nd-century writer Irenaeus of Lyon regarded the conception of Jesus as 25 March coinciding with the Passion.<\/p> <p>The Annunciation has been a key topic in Christian art in general, as well as in Marian art in the Catholic Church, particularly during the Middle Ages and Renaissance. A work of art depicting the Annunciation is sometimes itself called an Annunciation.<\/p>",
-            "infoRefference": "<a href='https:\/\/en.wikipedia.org\/wiki\/Annunciation' target='_blank'>link<\/a>"
+            "infoText": "<p>The Annunciation (from Latin annuntiatio), also referred to as the Annunciation to the Blessed Virgin Mary, the Annunciation of Our Lady, or the Annunciation of the Lord, is the Christian celebration of the announcement by the angel Gabriel to the Virgin Mary that she would conceive and become the mother of Jesus, the Son of God, marking his Incarnation. Gabriel told Mary to name her son Yehoshua , meaning \"YHWH is salvation\".</p> <p>According to Luke 1:26, the Annunciation occurred in \"the sixth month\" of Elizabeth's pregnancy with John the Baptist. Many Christians observe this event with the Feast of the Annunciation on 25 March, an approximation of the northern vernal equinox nine full months before Christmas, the ceremonial birthday of Jesus. In England, this came to be known as Lady Day. It marked the new year until 1752. The 2nd-century writer Irenaeus of Lyon regarded the conception of Jesus as 25 March coinciding with the Passion.</p> <p>The Annunciation has been a key topic in Christian art in general, as well as in Marian art in the Catholic Church, particularly during the Middle Ages and Renaissance. A work of art depicting the Annunciation is sometimes itself called an Annunciation.</p>",
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Annunciation' target='_blank'>link</a>"
         },
         {
             "infoID": 2,
             "infoHeader": "Second Joyful Mystery",
             "infoSubHeader": "Visitatio",
             "infoFooter": "",
-            "infoText": "<p>In the Gospel of Luke, the author's accounts of the Annunciation and Visitation are constructed using eight points of literary parallelism to compare Mary to the Ark of the Covenant.<\/p><p>In Catholicism, it is held that the purpose of this visit was to bring divine grace to both Elizabeth and her unborn child. Even though he was still in his mother's womb, John became aware of the presence of Christ, and leapt for joy as he was cleansed from original sin and filled with divine grace. Elizabeth also responded and recognized the presence of Jesus, and thus Mary exercised her function as mediatrix between God and man for the first time.<\/p>",
-            "infoRefference": "<a href='https:\/\/en.wikipedia.org\/wiki\/Visitation_(Christianity)' target='_blank'>link<\/a>"
+            "infoText": "<p>In the Gospel of Luke, the author's accounts of the Annunciation and Visitation are constructed using eight points of literary parallelism to compare Mary to the Ark of the Covenant.</p><p>In Catholicism, it is held that the purpose of this visit was to bring divine grace to both Elizabeth and her unborn child. Even though he was still in his mother's womb, John became aware of the presence of Christ, and leapt for joy as he was cleansed from original sin and filled with divine grace. Elizabeth also responded and recognized the presence of Jesus, and thus Mary exercised her function as mediatrix between God and man for the first time.</p>",
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Visitation_(Christianity)' target='_blank'>link</a>"
         },
         {
             "infoID": 3,
             "infoHeader": "Third Joyful Mystery",
             "infoSubHeader": "Nativitas",
             "infoFooter": "",
-            "infoText": "<p>In Christian theology the nativity marks the incarnation of Jesus as the second Adam, in fulfillment of the divine will of God, undoing the damage caused by the fall of the first man, Adam. The artistic depiction of the nativity has been an important subject for Christian artists since the 4th century. Since the 13th century, the nativity scene has emphasized the humility of Jesus and promoted a more tender image of him, as a major turning point from the early \"Lord and Master\" image, which has had an effect on the basic approaches of Christian pastoral ministry.<\/p><p>The nativity plays a major role in the Christian liturgical year. Christian congregations of the Western tradition (including the Catholic Church, the Western Rite Orthodox, the Anglican Communion, and many Protestants) begin observing the season of Advent four Sundays before Christmas, the traditional feast-day of his birth, which falls on December 25.<\/p>",
-            "infoRefference": "<a href='https:\/\/en.wikipedia.org\/wiki\/Nativity_of_Jesus' target='_blank'>link<\/a>"
+            "infoText": "<p>In Christian theology the nativity marks the incarnation of Jesus as the second Adam, in fulfillment of the divine will of God, undoing the damage caused by the fall of the first man, Adam. The artistic depiction of the nativity has been an important subject for Christian artists since the 4th century. Since the 13th century, the nativity scene has emphasized the humility of Jesus and promoted a more tender image of him, as a major turning point from the early \"Lord and Master\" image, which has had an effect on the basic approaches of Christian pastoral ministry.</p><p>The nativity plays a major role in the Christian liturgical year. Christian congregations of the Western tradition (including the Catholic Church, the Western Rite Orthodox, the Anglican Communion, and many Protestants) begin observing the season of Advent four Sundays before Christmas, the traditional feast-day of his birth, which falls on December 25.</p>",
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Nativity_of_Jesus' target='_blank'>link</a>"
         },
         {
             "infoID": 4,
             "infoHeader": "Fourth Joyful Mystery",
             "infoSubHeader": "Donatio Domini",
             "infoFooter": "",
-            "infoText": "<p>The Presentation of Jesus at the Temple is an early episode in the life of Jesus that is celebrated by the Church on the holiday of Candlemas. It is described in the Gospel of Luke of the New Testament in the Christian Bible.[1] Within the account, \"Luke's narration of the Presentation in the Temple combines the purification rite with the Jewish ceremony of the redemption of the firstborn (Luke 2:23-24).\"<\/p>",
-            "infoRefference": "<a href='https:\/\/en.wikipedia.org\/wiki\/Presentation_of_Jesus_at_the_Temple' target='_blank'>link<\/a>"
+            "infoText": "<p>The Presentation of Jesus at the Temple is an early episode in the life of Jesus that is celebrated by the Church on the holiday of Candlemas. It is described in the Gospel of Luke of the New Testament in the Christian Bible.[1] Within the account, \"Luke's narration of the Presentation in the Temple combines the purification rite with the Jewish ceremony of the redemption of the firstborn (Luke 2:23-24).\"</p>",
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Presentation_of_Jesus_at_the_Temple' target='_blank'>link</a>"
         },
         {
             "infoID": 5,
             "infoHeader": "Fifth Joyful Mystery",
             "infoSubHeader": "Inventio",
             "infoFooter": "",
-            "infoText": "<p>The episode is described in Luke 2:41-52. Jesus at the age of twelve accompanies Mary, Joseph and a large group of their relatives and friends to Jerusalem on pilgrimage, following \"the custom of the feast\" (NKJV) - that is, Passover. On the day of their return, Jesus \"lingered\" in the Temple, but Mary and Joseph thought that he was among their group. Mary and Joseph headed back home and after a day of travel realized Jesus was missing, so they returned to Jerusalem, finding Jesus three days later.<\/p><p>The story was slightly elaborated in later literature, such as the apocryphal 2nd-century Infancy Gospel of Thomas (19:1-12). The losing of Jesus is the third of the Seven Sorrows of Mary, and the Finding in the Temple is the fifth Joyful Mystery of the Rosary.<\/p>",
-            "infoRefference": "<a href='https:\/\/en.wikipedia.org\/wiki\/Finding_in_the_Temple' target='_blank'>link<\/a>"
+            "infoText": "<p>The episode is described in Luke 2:41-52. Jesus at the age of twelve accompanies Mary, Joseph and a large group of their relatives and friends to Jerusalem on pilgrimage, following \"the custom of the feast\" (NKJV) - that is, Passover. On the day of their return, Jesus \"lingered\" in the Temple, but Mary and Joseph thought that he was among their group. Mary and Joseph headed back home and after a day of travel realized Jesus was missing, so they returned to Jerusalem, finding Jesus three days later.</p><p>The story was slightly elaborated in later literature, such as the apocryphal 2nd-century Infancy Gospel of Thomas (19:1-12). The losing of Jesus is the third of the Seven Sorrows of Mary, and the Finding in the Temple is the fifth Joyful Mystery of the Rosary.</p>",
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Finding_in_the_Temple' target='_blank'>link</a>"
         },
         {
             "infoID": 6,
             "infoHeader": "First Luminous Mystery",
             "infoSubHeader": "The Baptism in the Jordan",
             "infoFooter": "-",
-            "infoText": "<p>The Jordan River flows through the Jordan Rift Valley into the Sea of the Galilee and then continues down into the Dead Sea with no outlet. It is a place of many important biblical events. However, for most Christians the first association with the river would be the scene of Jesus Christ being baptized by John the Baptist.<\/p><p>According to the Christian faith, the Jordan River is considered the third most holy site in the Holy Land, just after Nativity Grotto in Bethlehem and Golgotha in Jerusalem, because it is the site of the most important event of Jesus’ life – His baptism and beginning of his ministry.<\/p>",
-            "infoRefference": "<a href='https://travelujah.com/stories/celebrating-baptism-the-jordan-river-in-the-time-of-jesus' target='_blank'>link<\/a>"
+            "infoText": "<p>The Jordan River flows through the Jordan Rift Valley into the Sea of the Galilee and then continues down into the Dead Sea with no outlet. It is a place of many important biblical events. However, for most Christians the first association with the river would be the scene of Jesus Christ being baptized by John the Baptist.</p><p>According to the Christian faith, the Jordan River is considered the third most holy site in the Holy Land, just after Nativity Grotto in Bethlehem and Golgotha in Jerusalem, because it is the site of the most important event of Jesus’ life – His baptism and beginning of his ministry.</p>",
+            "infoRefference": "<a class='ui-link' href='https://travelujah.com/stories/celebrating-baptism-the-jordan-river-in-the-time-of-jesus' target='_blank'>link</a>"
         },
         {
             "infoID": 7,
@@ -4454,7 +4476,7 @@ var rosaryJSONvulgate = {
             "infoSubHeader": "The wedding at Cana",
             "infoFooter": "-",
             "infoText": "<p>The transformation of water into wine at the Marriage at Cana or Wedding at Cana is the first miracle attributed to Jesus in the Gospel of John. In the Gospel account, Jesus, his mother and his disciples are invited to a wedding, and when the wine runs out, Jesus delivers a sign of his glory by turning water into wine.</p>",
-            "infoRefference": "<a href='https://en.wikipedia.org/wiki/Marriage_at_Cana' target='_blank'>link<\/a>"
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Marriage_at_Cana' target='_blank'>link</a>"
         },
         {
             "infoID": 8,
@@ -4462,7 +4484,7 @@ var rosaryJSONvulgate = {
             "infoSubHeader": "The Proclamation of the Kingdom",
             "infoFooter": "-",
             "infoText": "<p>The \"Kingdom of God\" and its equivalent form \"Kingdom of Heaven\" in the Gospel of Matthew is one of the key elements of the teachings of Jesus in the New Testament. The Gospel of Mark indicates that the gospel is the good news about the Kingdom of God. The term pertains to the kingdom that Jesus will establish on the earth when he returns. Kingdom of \"heaven\" appears in Matthew's gospel due primarily to Jewish sensibilities about uttering the \"name\" (God).</p>",
-            "infoRefference": "<a href='https://en.wikipedia.org/wiki/Kingship_and_kingdom_of_God' target='_blank'>link<\/a>"
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Kingship_and_kingdom_of_God' target='_blank'>link</a>"
         },
         {
             "infoID": 9,
@@ -4470,7 +4492,7 @@ var rosaryJSONvulgate = {
             "infoSubHeader": "The Transfiguration",
             "infoFooter": "-",
             "infoText": "<p>The transfiguration of Jesus is an event reported in the New Testament when Jesus is transfigured and becomes radiant in glory upon a mountain. Jesus and three of his apostles, Peter, James, John, go to a mountain (the Mount of Transfiguration) to pray. On the mountain, Jesus begins to shine with bright rays of light. Then the prophets Moses and Elijah appear next to him and he speaks with them. Jesus is then called \"Son\" by a voice in the sky, assumed to be God the Father, as in the Baptism of Jesus.</p>",
-            "infoRefference": "<a href='https://en.wikipedia.org/wiki/Transfiguration_of_Jesus' target='_blank'>link<\/a>"
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Transfiguration_of_Jesus' target='_blank'>link</a>"
         },
         {
             "infoID": 10,
@@ -4478,15 +4500,15 @@ var rosaryJSONvulgate = {
             "infoSubHeader": "The Last Supper",
             "infoFooter": "-",
             "infoText": "<p>The Last Supper is the final meal that, in the Gospel accounts, Jesus shared with his Apostles in Jerusalem before his crucifixion. The Last Supper is commemorated by Christians especially on Maundy Thursday. The Last Supper provides the scriptural basis for the Eucharist, also known as \"Holy Communion\" or \"The Lord's Supper\". </p>",
-            "infoRefference": "<a href='https://en.wikipedia.org/wiki/Last_Supper' target='_blank'>link<\/a>"
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Last_Supper' target='_blank'>link</a>"
         },
         {
             "infoID": 11,
             "infoHeader": "First Sorrowful Mystery",
             "infoSubHeader": "Cruciatus In Horto",
             "infoFooter": "-",
-            "infoText": "<p>Jesus did not allow his fears to turn him away from his passion and death. Instead, he made the decision with seven simple words: \"Not my will, but yours be done!\"<\/p>",
-            "infoRefference": "<a href='http://blog.franciscanmedia.org/sam/lessons-from-jesus-agony-in-the-garden' target='_blank'>link<\/a>"
+            "infoText": "<p>Jesus did not allow his fears to turn him away from his passion and death. Instead, he made the decision with seven simple words: \"Not my will, but yours be done!\"</p>",
+            "infoRefference": "<a class='ui-link' href='http://blog.franciscanmedia.org/sam/lessons-from-jesus-agony-in-the-garden' target='_blank'>link</a>"
         },
         {
             "infoID": 12,
@@ -4494,7 +4516,7 @@ var rosaryJSONvulgate = {
             "infoSubHeader": "Verbera",
             "infoFooter": "-",
             "infoText": "<p>According to all four Gospels, immediately after the Last Supper, Jesus took a walk to pray. The gospels of Matthew and Mark identify this place of prayer as Gethsemane. Jesus was accompanied by three Apostles: Peter, John and James, whom he asked to stay awake and pray.</p>",
-            "infoRefference": "<a href='https://en.wikipedia.org/wiki/Agony_in_the_Garden' target='_blank'>link<\/a>"
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Agony_in_the_Garden' target='_blank'>link</a>"
         },
         {
             "infoID": 13,
@@ -4502,7 +4524,7 @@ var rosaryJSONvulgate = {
             "infoSubHeader": "Coronatio Cum Spinis",
             "infoFooter": "-",
             "infoText": "<p>According to three of the canonical Gospels, a woven crown of thorns was placed on the head of Jesus during the events leading up to the crucifixion of Jesus. It was one of the instruments of the Passion, employed by Jesus' captors both to cause him pain and to mock his claim of authority.</p>",
-            "infoRefference": "<a href='https://en.wikipedia.org/wiki/Crown_of_thorns' target='_blank'>link<\/a>"
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Crown_of_thorns' target='_blank'>link</a>"
         },
         {
             "infoID": 14,
@@ -4517,42 +4539,42 @@ var rosaryJSONvulgate = {
             "infoSubHeader": "Crucificatio",
             "infoFooter": "-",
             "infoText": "<p>The crucifixion of Jesus occurred in 1st-century Judea, most likely between AD 30 and 33.</p>",
-            "infoRefference": "<a href='https://en.wikipedia.org/wiki/Crucifixion_of_Jesus' target='_blank'>link<\/a>"
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Crucifixion_of_Jesus' target='_blank'>link</a>"
         }, {
             "infoID": 16,
             "infoHeader": "First Glorious Mystery",
             "infoSubHeader": "Resurrectio",
             "infoFooter": "-",
             "infoText": "<p>The resurrection of Jesus or resurrection of Christ is the Christian religious belief that, after being put to death, Jesus rose again from the dead: as the Nicene Creed expresses it, \"On the third day he rose again in accordance with the Scriptures\"</p>",
-            "infoRefference": "<a href='https://en.wikipedia.org/wiki/Resurrection_of_Jesus' target='_blank'>link<\/a>"
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Resurrection_of_Jesus' target='_blank'>link</a>"
         }, {
             "infoID": 17,
             "infoHeader": "Second Glorious Mystery",
             "infoSubHeader": "Ascencio",
             "infoFooter": "-",
             "infoText": "<p>In the Christian tradition, reflected in the major Christian creeds and confessional statements, the ascension is connected with the exaltation of Jesus, meaning that through his ascension, Jesus took his seat at the right hand of God</p>",
-            "infoRefference": "<a href='https://en.wikipedia.org/wiki/Ascension_of_Jesus' target='_blank'>link<\/a>"
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Ascension_of_Jesus' target='_blank'>link</a>"
         }, {
             "infoID": 18,
             "infoHeader": "Third Glorious Mystery",
             "infoSubHeader": "Descensus Spiritus Sancti",
             "infoFooter": "-",
             "infoText": "<p>The Christian feast day of Pentecost is seven weeks after Easter Sunday: that is to say, the fiftieth day after Easter inclusive of Easter Sunday. It commemorates the descent of the Holy Spirit upon the Apostles and other followers of Jesus Christ while they were in Jerusalem celebrating the Feast of Weeks, as described in the Acts of the Apostles. Some Christians believe that this event represents the birth of the Church.</p>",
-            "infoRefference": "<a href='https://en.wikipedia.org/wiki/Pentecost' target='_blank'>link<\/a>"
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Pentecost' target='_blank'>link</a>"
         }, {
             "infoID": 19,
             "infoHeader": "Fourth Glorious Mystery",
             "infoSubHeader": "Assumptio",
             "infoFooter": "-",
             "infoText": "<p>The Catholic Church teaches as dogma that the Virgin Mary \"having completed the course of her earthly life, was assumed body and soul into heavenly glory\".[5] This doctrine was dogmatically defined by Pope Pius XII on 1 November 1950, in the apostolic constitution Munificentissimus Deus by exercising papal infallibility.</p>",
-            "infoRefference": "<a href='https://en.wikipedia.org/wiki/Assumption_of_Mary' target='_blank'>link<\/a>"
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Assumption_of_Mary' target='_blank'>link</a>"
         }, {
             "infoID": 20,
             "infoHeader": "Fifth Glorious Mystery",
             "infoSubHeader": "Coronatio",
             "infoFooter": "-",
             "infoText": "<p>The belief in Mary as Queen of Heaven obtained the papal sanction of Pope Pius XII in his encyclical Ad Caeli Reginam (English: Queenship of Mary in Heaven) of October 11, 1954. It is also the fifth Glorious Mystery of the Rosary. The Roman Catholic Church celebrates the feast every August 22, where it replaced the former octave of the Assumption of Mary in 1969, a move made by Pope Paul VI.</p>",
-            "infoRefference": "<a href='https://en.wikipedia.org/wiki/Coronation_of_the_Virgin' target='_blank'>link<\/a>"
+            "infoRefference": "<a class='ui-link' href='https://en.wikipedia.org/wiki/Coronation_of_the_Virgin' target='_blank'>link</a>"
         }
 
     ],
@@ -4561,22 +4583,22 @@ var rosaryJSONvulgate = {
             "infoID": 0,
             "infoHeader": "Catechism of the Catholic Church",
             "infoSubHeader": "Apostolic Constitution Fidei Depositum (ch.1, p.3-4)",
-            "infoFooter": "Vatican Online <a href=\"http:\/\/www.vatican.va\/archive\/ccc_css\/archive\/catechism\/aposcons.htm\" target=\"_blank\">Link<\/a>",
+            "infoFooter": "Vatican Online <a class='ui-link' href='http://www.vatican.va/archive/ccc_css/archive/catechism/aposcons.htm' target='_blank'>Link</a>",
             "infoText": "<b>The Process and Spirit of Drafting the Text</b><p>\"The Catechism of the Catholic Church is the result of very extensive collaboration; it was prepared over six years of intense work done in a spirit of complete openness and fervent zeal.</p> <p>In 1986, I entrusted a commission of twelve Cardinals and Bishops, chaired by Cardinal Joseph Ratzinger, with the task of preparing a draft of the catechism requested by the Synod Fathers. An editorial committee of seven diocesan Bishops, experts in theology and catechesis, assisted the commission in its work.</p> <p>The commission, charged with giving directives and with overseeing the course of the work, attentively followed all the stages in editing the nine subsequent drafts. The editorial committee, for its part, assumed responsibility for writing the text, making the emendations requested by the commission and examining the observations of numerous theologians, exegetes and catechists, and, above all, of the Bishops of the whole world, in order to produce a better text. In the committee various opinions were compared with great profit, and thus a richer text has resulted whose unity and coherence are assured. </p> <p> The project was the object of extensive consultation among all Catholic Bishops, their Episcopal Conferences or Synods, and of theological and catechetical institutes. As a whole, it received a broadly favorable acceptance on the part of the Episcopate. It can be said that this Catechism is the result of the collaboration of the whole Episcopate of the Catholic Church, who generously accepted my invitation to share responsibility for an enterprise which directly concerns the life of the Church. This response elicits in me a deep feeling of joy, because the harmony of so many voices truly expresses what could be called the “symphony” of the faith. The achievement of this Catechism thus reflects the collegial nature of the Episcopate; it testifies to the Church’s catholicity.\"</p> - <b>Pope John Paul II</b> <i>(11 October 1992, the thirtieth anniversary of the opening of the Second Vatican Ecumenical Council)</i><hr><p>The Catechism of the Catholic Church came about as a result of a proposal of Synod of Bishops in 1985. It appeared first in French in 1992. Subsequently, an English translation was published in 1982. In September of 1997, the Latin Typical Edition was approved and promulgated. This second edition in the United States of the English <i>Catechism of the Catholic Church</i> incorperates the modifications that appeared in the Latin text.</p>"
         },
         {
             "infoID": 1,
             "infoHeader": "Catechism of the Catholic Church",
             "infoSubHeader": "<b>PART ONE, THE PROFESSION OF FAITH, SECTION TWO, THE PROFESSION OF THE CHRISTIAN FAITH, CHAPTER THREE, ARTICLE 9, Paragraph 6. Mary - Mother of Christ, Mother of the Church</b>",
-            "infoFooter": "<a href=\"http:\/\/www.vatican.va\/archive\/ccc_css\/archive\/catechism\/p1s2c3a8.htm#721\" target=\"_blank\">Vatican Online Link<\/a>",
-            "infoText": "<p><b>Paragraph 6. Mary - Mother of Christ, Mother of the Church<\/b><\/p><p>963 Since the Virgin Mary's role in the mystery of Christ and the Spirit has been treated, it is fitting now to consider her place in the mystery of the Church. \"The Virgin Mary... is acknowledged and honored as being truly the Mother of God and of the redeemer... She is \"clearly the mother of the members of Christ\"... since she has by her charity joined in bringing about the birth of believers in the Church, who are members of its head.\"502 \"Mary, Mother of Christ, Mother of the Church\".503<\/p><p><b>I. MARY'S MOTHERHOOD WITH REGARD TO THE CHURCH<\/b><\/p><p>Wholly united with her Son... <\/p><p>964 Mary's role in the Church is inseparable from her union with Christ and flows directly from it. \"This union of the mother with the Son in the work of salvation is made manifest from the time of Christ's virginal conception up to his death\";504 it is made manifest above all at the hour of his Passion:<\/p><p>Thus the Blessed Virgin advanced in her pilgrimage of faith, and faithfully persevered in her union with her Son unto the cross. There she stood, in keeping with the divine plan, enduring with her only begotten Son the intensity of his suffering, joining herself with his sacrifice in her mother's heart, and lovingly consenting to the immolation of this victim, born of her: to be given, by the same Christ Jesus dying on the cross, as a mother to his disciple, with these words: \"Woman, behold your son.\"505\n965 After her Son's Ascension, Mary \"aided the beginnings of the Church by her prayers.\"506 In her association with the apostles and several women, \"we also see Mary by her prayers imploring the gift of the Spirit, who had already overshadowed her in the Annunciation.\"507<\/p><p>... also in her Assumption<\/p><p>966 \"Finally the Immaculate Virgin, preserved free from all stain of original sin, when the course of her earthly life was finished, was taken up body and soul into heavenly glory, and exalted by the Lord as Queen over all things, so that she might be the more fully conformed to her Son, the Lord of lords and conqueror of sin and death.\"508 The Assumption of the Blessed Virgin is a singular participation in her Son's Resurrection and an anticipation of the resurrection of other Christians:<\/p><p>In giving birth you kept your virginity; in your Dormition you did not leave the world, O Mother of God, but were joined to the source of Life. You conceived the living God and, by your prayers, will deliver our souls from death.509\n... she is our Mother in the order of grace<\/p><p>967 By her complete adherence to the Father's will, to his Son's redemptive work, and to every prompting of the Holy Spirit, the Virgin Mary is the Church's model of faith and charity. Thus she is a \"preeminent and... wholly unique member of the Church\"; indeed, she is the \"exemplary realization\" (typus)510 of the Church.<\/p><p>968 Her role in relation to the Church and to all humanity goes still further. \"In a wholly singular way she cooperated by her obedience, faith, hope, and burning charity in the Savior's work of restoring supernatural life to souls. For this reason she is a mother to us in the order of grace.\"511<\/p><p>969 \"This motherhood of Mary in the order of grace continues uninterruptedly from the consent which she loyally gave at the Annunciation and which she sustained without wavering beneath the cross, until the eternal fulfillment of all the elect. Taken up to heaven she did not lay aside this saving office but by her manifold intercession continues to bring us the gifts of eternal salvation... . Therefore the Blessed Virgin is invoked in the Church under the titles of Advocate, Helper, Benefactress, and Mediatrix.\"512<\/p><p>970 \"Mary's function as mother of men in no way obscures or diminishes this unique mediation of Christ, but rather shows its power. But the Blessed Virgin's salutary influence on men... flows forth from the superabundance of the merits of Christ, rests on his mediation, depends entirely on it, and draws all its power from it.\"513 \"No creature could ever be counted along with the Incarnate Word and Redeemer; but just as the priesthood of Christ is shared in various ways both by his ministers and the faithful, and as the one goodness of God is radiated in different ways among his creatures, so also the unique mediation of the Redeemer does not exclude but rather gives rise to a manifold cooperation which is but a sharing in this one source.\"514<\/p> <p><b>* II. DEVOTION TO THE BLESSED VIRGIN<\/b><\/p><p>971 \"All generations will call me blessed\": \"The Church's devotion to the Blessed Virgin is intrinsic to Christian worship.\"515 The Church rightly honors \"the Blessed Virgin with special devotion. From the most ancient times the Blessed Virgin has been honored with the title of 'Mother of God,' to whose protection the faithful fly in all their dangers and needs... . This very special devotion... differs essentially from the adoration which is given to the incarnate Word and equally to the Father and the Holy Spirit, and greatly fosters this adoration.\"516 The liturgical feasts dedicated to the Mother of God and Marian prayer, such as the rosary, an \"epitome of the whole Gospel,\" express this devotion to the Virgin Mary.517<\/p><p><b>III. MARY - ESCHATOLOGICAL ICON OF THE CHURCH<\/b><\/p><p>972 After speaking of the Church, her origin, mission, and destiny, we can find no better way to conclude than by looking to Mary. In her we contemplate what the Church already is in her mystery on her own \"pilgrimage of faith,\" and what she will be in the homeland at the end of her journey. There, \"in the glory of the Most Holy and Undivided Trinity,\" \"in the communion of all the saints,\"518 the Church is awaited by the one she venerates as Mother of her Lord and as her own mother.<\/p>"
+            "infoFooter": "<a class='ui-link' href='http://www.vatican.va/archive/ccc_css/archive/catechism/p1s2c3a8.htm#721' target='_blank'>Vatican Online Link</a>",
+            "infoText": "<p><b>Paragraph 6. Mary - Mother of Christ, Mother of the Church</b></p><p>963 Since the Virgin Mary's role in the mystery of Christ and the Spirit has been treated, it is fitting now to consider her place in the mystery of the Church. \"The Virgin Mary... is acknowledged and honored as being truly the Mother of God and of the redeemer... She is \"clearly the mother of the members of Christ\"... since she has by her charity joined in bringing about the birth of believers in the Church, who are members of its head.\"502 \"Mary, Mother of Christ, Mother of the Church\".503</p><p><b>I. MARY'S MOTHERHOOD WITH REGARD TO THE CHURCH</b></p><p>Wholly united with her Son... </p><p>964 Mary's role in the Church is inseparable from her union with Christ and flows directly from it. \"This union of the mother with the Son in the work of salvation is made manifest from the time of Christ's virginal conception up to his death\";504 it is made manifest above all at the hour of his Passion:</p><p>Thus the Blessed Virgin advanced in her pilgrimage of faith, and faithfully persevered in her union with her Son unto the cross. There she stood, in keeping with the divine plan, enduring with her only begotten Son the intensity of his suffering, joining herself with his sacrifice in her mother's heart, and lovingly consenting to the immolation of this victim, born of her: to be given, by the same Christ Jesus dying on the cross, as a mother to his disciple, with these words: \"Woman, behold your son.\"505\n965 After her Son's Ascension, Mary \"aided the beginnings of the Church by her prayers.\"506 In her association with the apostles and several women, \"we also see Mary by her prayers imploring the gift of the Spirit, who had already overshadowed her in the Annunciation.\"507</p><p>... also in her Assumption</p><p>966 \"Finally the Immaculate Virgin, preserved free from all stain of original sin, when the course of her earthly life was finished, was taken up body and soul into heavenly glory, and exalted by the Lord as Queen over all things, so that she might be the more fully conformed to her Son, the Lord of lords and conqueror of sin and death.\"508 The Assumption of the Blessed Virgin is a singular participation in her Son's Resurrection and an anticipation of the resurrection of other Christians:</p><p>In giving birth you kept your virginity; in your Dormition you did not leave the world, O Mother of God, but were joined to the source of Life. You conceived the living God and, by your prayers, will deliver our souls from death.509\n... she is our Mother in the order of grace</p><p>967 By her complete adherence to the Father's will, to his Son's redemptive work, and to every prompting of the Holy Spirit, the Virgin Mary is the Church's model of faith and charity. Thus she is a \"preeminent and... wholly unique member of the Church\"; indeed, she is the \"exemplary realization\" (typus)510 of the Church.</p><p>968 Her role in relation to the Church and to all humanity goes still further. \"In a wholly singular way she cooperated by her obedience, faith, hope, and burning charity in the Savior's work of restoring supernatural life to souls. For this reason she is a mother to us in the order of grace.\"511</p><p>969 \"This motherhood of Mary in the order of grace continues uninterruptedly from the consent which she loyally gave at the Annunciation and which she sustained without wavering beneath the cross, until the eternal fulfillment of all the elect. Taken up to heaven she did not lay aside this saving office but by her manifold intercession continues to bring us the gifts of eternal salvation... . Therefore the Blessed Virgin is invoked in the Church under the titles of Advocate, Helper, Benefactress, and Mediatrix.\"512</p><p>970 \"Mary's function as mother of men in no way obscures or diminishes this unique mediation of Christ, but rather shows its power. But the Blessed Virgin's salutary influence on men... flows forth from the superabundance of the merits of Christ, rests on his mediation, depends entirely on it, and draws all its power from it.\"513 \"No creature could ever be counted along with the Incarnate Word and Redeemer; but just as the priesthood of Christ is shared in various ways both by his ministers and the faithful, and as the one goodness of God is radiated in different ways among his creatures, so also the unique mediation of the Redeemer does not exclude but rather gives rise to a manifold cooperation which is but a sharing in this one source.\"514</p> <p><b>* II. DEVOTION TO THE BLESSED VIRGIN</b></p><p>971 \"All generations will call me blessed\": \"The Church's devotion to the Blessed Virgin is intrinsic to Christian worship.\"515 The Church rightly honors \"the Blessed Virgin with special devotion. From the most ancient times the Blessed Virgin has been honored with the title of 'Mother of God,' to whose protection the faithful fly in all their dangers and needs... . This very special devotion... differs essentially from the adoration which is given to the incarnate Word and equally to the Father and the Holy Spirit, and greatly fosters this adoration.\"516 The liturgical feasts dedicated to the Mother of God and Marian prayer, such as the rosary, an \"epitome of the whole Gospel,\" express this devotion to the Virgin Mary.517</p><p><b>III. MARY - ESCHATOLOGICAL ICON OF THE CHURCH</b></p><p>972 After speaking of the Church, her origin, mission, and destiny, we can find no better way to conclude than by looking to Mary. In her we contemplate what the Church already is in her mystery on her own \"pilgrimage of faith,\" and what she will be in the homeland at the end of her journey. There, \"in the glory of the Most Holy and Undivided Trinity,\" \"in the communion of all the saints,\"518 the Church is awaited by the one she venerates as Mother of her Lord and as her own mother.</p>"
         },
         {
             "infoID": 2,
             "infoHeader": "Vision behind this App version",
-            "infoSubHeader": "<b>A ElectronJs jQuery Mobile App version in my Rosary App series<\/b>",
+            "infoSubHeader": "<b>A ElectronJs jQuery Mobile App version in my Rosary App series</b>",
             "infoFooter": "footer",
-            "infoText": "<p>This is the NodeJs, Express, and Electron version of my jQuery-mobile Rosary App series. This is the latest working test bench and proof of concept for an educational DIY rosary app tutorial. The visual are minimal: White, Black and Gray. This app thoroughly covers 1 of the 4 mysteries in the Rosary. The Rosary/Chaplet text readings are all contained within a JSON variable called rosaryJSON.  This is the focal point of all future content modifications. A sold JSON lends for scalability and modular app development.<\/p><p>I made this Rosary app as an act of prayer, and as a fun way to teach myself how to use jQuery Mobile. There is no excuse to \"not incorporate\" our faith in everything we do.<\/p>"
+            "infoText": "<p>This is the NodeJs, Express, and Electron version of my jQuery-mobile Rosary App series. This is the latest working test bench and proof of concept for an educational DIY rosary app tutorial. The visual are minimal: White, Black and Gray. This app thoroughly covers 1 of the 4 mysteries in the Rosary. The Rosary/Chaplet text readings are all contained within a JSON variable called rosaryJSON.  This is the focal point of all future content modifications. A sold JSON lends for scalability and modular app development.</p><p>I made this Rosary app as an act of prayer, and as a fun way to teach myself how to use jQuery Mobile. There is no excuse to \"not incorporate\" our faith in everything we do.</p>"
         },
         {
             "infoID": 3,
@@ -4597,27 +4619,27 @@ var rosaryJSONvulgate = {
             "infoHeader": "Source Code",
             "infoSubHeader": "<b>Wiki & Git</b>",
             "infoFooter": "footer",
-            "infoText": "<table data-role='table' data-mode='reflow' class='myTableStyle'><thead><tr><th>Resource</th><th>link</th></tr></thead><tbody><tr><td>Github</td><td><a href='https://github.com/mezcel' target='_blank'>https://github.com/mezcel</a></td></tr><tr><td>Git</td><td><a href='https://github.com/mezcel/electron-container' target='_blank'>ElectronJS App</a></td></tr><tr><td>Legacy Wiki Website</td><td><a href='http://mezcel.wixsite.com/rosary' target='_blank'>Project Design of an earlier C# Version</a></td></tr><tr><td>Original JQM Version Git</td><td><a href='https://github.com/mezcel/rosary-jquery-mobile' target='_blank'>The original JQM project this app is based off of</a></td></tr></tbody></table>"
+            "infoText": "<table data-role='table' data-mode='reflow' class='myTableStyle'><thead><tr><th>Resource</th><th>link</th></tr></thead><tbody><tr><td>Github</td><td><a class='ui-link' href='https://github.com/mezcel' target='_blank'>https://github.com/mezcel</a></td></tr><tr><td>Git</td><td><a class='ui-link' href='https://github.com/mezcel/electron-container' target='_blank'>ElectronJS App</a></td></tr><tr><td>Legacy Wiki Website</td><td><a class='ui-link' href='http://mezcel.wixsite.com/rosary' target='_blank'>Project Design of an earlier C# Version</a></td></tr><tr><td>Original JQM Version Git</td><td><a class='ui-link' href='https://github.com/mezcel/rosary-jquery-mobile' target='_blank'>The original JQM project this app is based off of</a></td></tr></tbody></table>"
         },
         {
             "infoID": 6,
             "infoHeader": "New American Bible",
             "infoSubHeader": "Preface to the New American Bible (excerpt)",
-            "infoFooter": "<a href='http://www.vatican.va/archive/ENG0839/__P1.HTM' target='blank'>http://www.vatican.va/archive/ENG0839</a>",
+            "infoFooter": "<a class='ui-link' href='http://www.vatican.va/archive/ENG0839/__P1.HTM' target='blank'>http://www.vatican.va/archive/ENG0839</a>",
             "infoText": "<p>On September 30, 1943, His Holiness Pope Pius XII issued his now famous encyclical on scripture studies, Divino afflante Spiritu. He wrote: \"We ought to explain the original text which was written by the inspired author himself and has more authority and greater weight than any, even the very best, translation whether ancient or modern. This can be done all the more easily and fruitfully if to the knowledge of languages be joined a real skill in literary criticism of the same text.\"</p> <p>The first English Catholic version of the Bible, the Douay-Rheims (1582-1609/10), and its revision by Bishop Challoner (1750) were based on the Latin Vulgate.</p> <p>The text of the books contained in The New American Bible is a completely new translation throughout. From the original and the oldest available texts of the sacred books, it aims to convey as directly as possible the thought and individual style of the inspired writers. The better understanding of Hebrew and Greek, and the steady development of the science of textual criticism, the fruit of patient study since the time of St. Jerome, have allowed the translators and editors in their use of all available materials to approach more closely than ever before the sense of what the sacred authors actually wrote.</p>"
         },
         {
             "infoID": 7,
             "infoHeader": "Vulgate",
             "infoSubHeader": "St. Jerome's Latin Translation",
-            "infoFooter": "<a href='http://vulgate.org/' target='blank'>vulgate.org/</a>",
+            "infoFooter": "<a class='ui-link' href='http://vulgate.org/' target='blank'>vulgate.org/</a>",
             "infoText": "<p>The Vulgate is a Latin version of the Holy Bible, and largely the result of the labors of St Jerome (Eusebius Sophronius Hieronymus), who was commissioned by Pope Damasus I in 382 A.D. to make a revision of the old Latin translations. By the 13th century this revision had come to be called the versio vulgata, that is, the \"commonly used translation\", and ultimately it became the definitive and officially promulgated Latin version of the Holy Bible in the Catholic Church.</p><p>Of the Old Testament texts not found in the Hebrew, St. Jerome translated Tobit and Judith anew from the Aramaic; and from the Greek, the additions to Esther from the Septuagint, and the additions to Daniel from Theodotion. The others, Baruch, Wisdom of Solomon, Ecclesiasticus, 1 Maccabees and 2 Maccabees, 3 Esdras and 4 Esdras, the Prayer of Manasses, Psalm 151, and Laodiceans retain in Vulgate manuscripts their Old Latin renderings. Their style is still markedly distinguishable from St. Jerome's. In the Vulgate text, St. Jerome's translations from the Greek of the additions to Esther and Daniel are combined with his separate translations of these books from the Hebrew.</p><hr><h4>St. Jerome's Preface to the Vulgate Version of the New Testament</h4><i>Addressed to Pope Damasus, A.D. 383</i><p>\"You urge me to revise the old Latin version, and, as it were, to sit in judgment on the copies of the Scriptures which are now scattered throughout the whole world; and, inasmuch as they differ from one another, you would have me decide which of them agree with the Greek original. The labour is one of love, but at the same time both perilous and presumptuous; for in judging others I must be content to be judged by all; and how can I dare to change the language of the world in its hoary old age, and carry it back to the early days of its infancy? Is there a man, learned or unlearned, who will not, when he takes the volume into his hands, and perceives that what he reads does not suit his settled tastes, break out immediately into violent language, and call me a forger and a profane person for having the audacity to add anything to the ancient books, or to make any changes or corrections therein? Now there are two consoling reflections which enable me to bear the odium—in the first place, the command is given by you who are the supreme bishop; and secondly, even on the showing of those who revile us, readings at variance with the early copies cannot be right. For if we are to pin our faith to the Latin texts, it is for our opponents to tell us which; for there are almost as many forms of texts as there are copies. If, on the other hand, we are to glean the truth from a comparison of many, why not go back to the original Greek and correct the mistakes introduced by inaccurate translators, and the blundering alterations of confident but ignorant critics, and, further, all that has been inserted or changed by copyists more asleep than awake?\"</p><p>\"I am not discussing the Old Testament, which was turned into Greek by the Seventy elders, and has reached us by a descent of three steps. I do not ask what Aquila and Symmachus think, or why Theodotion takes a middle course between the ancients and the moderns. I am willing to let that be the true translation which had apostolic approval. I am now speaking of the New Testament. This was undoubtedly composed in Greek, with the exception of the work of Matthew the Apostle, who was the first to commit to writing the Gospel of Christ, and who published his work in Judæa in Hebrew characters. We must confess that as we have it in our language it is marked by discrepancies, and now that the stream is distributed into different channels we must go back to the fountainhead. I pass over those manuscripts which are associated with the names of Lucian and Hesychius, and the authority of which is perversely maintained by a handful of disputatious persons. It is obvious that these writers could not amend anything in the Old Testament after the labours of the Seventy; and it was useless to correct the New, for versions of Scripture which already exist in the languages of many nations show that their additions are false. I therefore promise in this short Preface the four Gospels only, which are to be taken in the following order, Matthew, Mark, Luke, John, as they have been revised by a comparison of the Greek manuscripts. Only early ones have been used. But to avoid any great divergences from the Latin which we are accustomed to read, I have used my pen with some restraint, and while I have corrected only such passages as seemed to convey a different meaning, I have allowed the rest to remain as they are.\"</p>"
         },
         {
 			"infoID": 8,
             "infoHeader": "AD CAELI REGINAM Encyclical of Pope Pius XII",
             "infoSubHeader": "<i>excerpt</i>",
-            "infoFooter": "<a href='http://w2.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html' target='blank'>AD CAELI REGINAM - © Copyright - Libreria Editrice Vaticana</a>",
+            "infoFooter": "<a class='ui-link' href='http://w2.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html' target='blank'>AD CAELI REGINAM - © Copyright - Libreria Editrice Vaticana</a>",
             "infoText": "AD CAELI REGINAM ENCYCLICAL OF POPE PIUS XII<br> ON PROCLAIMING THE QUEENSHIP OF MARY<br> TO THE VENERABLE BRETHREN, THE PATRIARCHS, PRIMATES,<br> ARCHBISHOPS, BISHIOPS, AND OTHER LOCAL ORDINARIES<br> IN PEACE AND COMMUNION WITH THE HOLY SEE<br><p>8. From early times Christians have believed, and not without reason, that she of whom was born the Son of the Most High received privileges of grace above all other beings created by God. He \"will reign in the house of Jacob forever,\"[5] \"the Prince of Peace,\"[6] the \"King of Kings and Lord of Lords.\"[7] And when Christians reflected upon the intimate connection that obtains between a mother and a son, they readily acknowledged the supreme royal dignity of the Mother of God.</p><p>9. Hence it is not surprising that the early writers of the Church called Mary \"the Mother of the King\" and \"the Mother of the Lord,\" basing their stand on the words of St. Gabriel the archangel, who foretold that the Son of Mary would reign forever,[8] and on the words of Elizabeth who greeted her with reverence and called her \"the Mother of my Lord.\"[9] Thereby they clearly signified that she derived a certain eminence and exalted station from the royal dignity of her Son.</p><p>10. So it is that St. Ephrem, burning with poetic inspiration, represents her as speaking in this way: \"Let Heaven sustain me in its embrace, because I am honored above it. For heaven was not Thy mother, but Thou hast made it Thy throne. How much more honorable and venerable than the throne of a king is her mother.\"[10] And in another place he thus prays to her: \". . . Majestic and Heavenly Maid, Lady, Queen, protect and keep me under your wing lest Satan the sower of destruction glory over me, lest my wicked foe be victorious against me.\"[11]</p><p>11. St. Gregory Nazianzen calls Mary \"the Mother of the King of the universe,\" and the \"Virgin Mother who brought forth the King of the whole world,\"[12] while Prudentius asserts that the Mother marvels \"that she has brought forth God as man, and even as Supreme King.\"[13]</p><p>12. And this royal dignity of the Blessed Virgin Mary is quite clearly indicated through direct assertion by those who call her \"Lady,\" \"Ruler\" and \"Queen.\"</p><p>13. In one of the homilies attributed to Origen, Elizabeth calls Mary \"the Mother of my Lord.\" and even addresses her as \"Thou, my Lady.\"[14]</p><p>14. The same thing is found in the writings of St. Jerome where he makes the following statement amidst various interpretations of Mary's name: \"We should realize that Mary means Lady in the Syrian Language.\"[15] After him St. Chrysologus says the same thing more explicitly in these words: \"The Hebrew word 'Mary' means 'Domina.' The Angel therefore addresses her as 'Lady' to preclude all servile fear in the Lord's Mother, who was born and was called 'Lady' by the authority and command of her own Son.\"[16]</p> <b> - Pope Pius XII</b><hr><p>5. Luc. I, 32.</p><p>6. Isai. IX, 6.</p><p>7. Apoc. XIX, 16.</p><p>8. Cf. Luc. I, 32, 33.</p><p>9. Luc. I, 43.</p><p>10. S. Ephraem, Hymni de B. Maria, ed. Th. J. Lamy, t. II, Mechliniae, 1886, hymn. XIX, p. 624.</p><p>11. Idem, Oratio ad Ssmam Dei Matrem; Opera omnia, Ed. Assemani, t. III (graece), Romae, 1747, pag. 546.</p><p>12. S. Gregorius Naz., Poemata dogmatica, XVIII, v. 58; PG XXXVII, 485.</p><p>13. Prudentius, Dittochaeum, XXVII: PL LX, 102 A.</p><p>14. Hom. in S. Lucam, hom. VII; ed. Rauer, Origenes' Werke, T. IX, p. 48 (ex catena Marcarii Chrysocephali). Cf. PG XIII, 1902 D.</p><p>15. S. Hieronymus, Liber de nominibus hebraeis: PL XXIII, 886.</p><p>16. S. Petrus Chrysologus, Sermo 142, De Annuntiatione B.M.V.: PL LII, 579 C; cf. etiam 582 B; 584 A: \"Regina totius exstitit castitatis.\"</p>"
 
 		},
