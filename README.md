@@ -2,6 +2,8 @@
 
 ___This is a Node App using ExpressJS, Socket IO, and Electron.___
 
+Git: [https://github.com/mezcel/electron-container](https://github.com/mezcel/electron-container)
+
 ---
 
 ### Development thoughts, rationale, and pending changes:
@@ -106,7 +108,7 @@ electron-packager .
 
 ---
 
-Repo size proportions
+Repo size proportions (aproximately)
 
 dir | MiB
 --- | ---
