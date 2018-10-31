@@ -1,43 +1,45 @@
 # electron-container ( -w- jquery-mobile )
 
-```git branch v0.4``` is focused on Latin Vulgate translation of the Bible and fixing issues only with that DB. I am also introducing a list of standalone prayers and additional church history behind the Marian ministry.
+___This is a Node App using ExpressJS, Socket IO, and Electron.___
 
-> A port of an older html web page, [jquery-mobile-rosary](https://github.com/mezcel/rosary-jquery-mobile), into ElectronJs.
-
-I am still making the Vulgate translation. I also need to go back and find misc typos and 7x77 check all the verses. After all the edits and dynamic automation... I am sure something got overlooked.
-
-> I am pretty sure I screwed up the Old Testament organization and translation. Fyi.
-
-```The quotes are right, but the DB is not a 100% match with of the some book/verse pointers between the different translations. I discovered a lot of mismatching when I was overwriting the Vulgate from the Usccb template. I may need to curate my own scripture package. For now I just going to try to 'fix' this one.```
-
-Messed with jQuery Mobile themes:
-
-* added liturgical calender colors. [themeroller link](https://themeroller.jquerymobile.com:443/?ver=1.4.5&style_id=20181026-7)
-* fixed week day initializations
-* translation place holder
-
-> This is a Node App using ExpressJS, Socket IO, and Electron.
+Git: [https://github.com/mezcel/electron-container](https://github.com/mezcel/electron-container)
 
 ---
 
-### My Thoughts, Rationale, and Ramblings:
+### Development thoughts, rationale, and pending changes:
 
-I wanted to assemble a working NodeJs refresher/reference featuring ExpressJS, Socket IO, and Electron. I am also playing the workflow of these NPM packages and how they compare with the workflow of other software API flavors which do the same things. Trying out different things, I discovered some compatibility issues with specific versions of Bootstrap and Jquery. Electron on Win, Linux and Mac differ slightly on what features exist.
+* This is the social version of a previous Jquery-Mobile app I made a while back. The Electron and SocketIO implementation is new and I discovered some additional jqm theme techniques along the way.
 
-* This is the social version of a previous Jquery-Mobile app I made a while back. The only thing new is the Electron and SocketIO implementation.
+    * [/myAssets/database/README.md](./myAssets/database/README.md) Has more information regarding what is new with the DB.
+
 
 * Not sure if this would be considered a 'fork' off the [Heroku app](https://github.com/mezcel/heroku-joyful-mystery) version or considered a whole 'new version', ex: v4.2 or v5
 
-* The user experience closer resembles an even older rosary version I made a while back, [rosary.net](https://github.com/mezcel/rosary.net). (_It has less features and visuals, but now it now falls under the category of social networking application again._)
+    * That version is depreciated and not maintained.
+    * Heroku was an Express App with Ejs. This still uses Express, but I avoided ejs.
+
+* The user experience closer resembles an even older C# rosary version I made a while back, [rosary.net](https://github.com/mezcel/rosary.net). (_It has less features and visuals, but now it now falls under the category of social networking application again._)
+
+##### Readability?
+* Many versions ago I produced a DB from a pamphlet. That db went though various transposing from: css, odb, sql, mysql, json, and a slew of other Regex style parsing. Somewhere I may have even scraped an online resource to auto generated a db.
+* When I started to do the English/Latin translation I discovered a lot of inconsistencies.
+* The version as it is now is not as charismatic as my original source DB, but it is at least consistent with the NAB and Vulgate.
 
 ---
 
 ### Main Goals:
 
-
 * Desktop standalone and mobile networked app
 * Works as a Server Hosted App.
 * Send/Receive text communication between different app instances
+
+### Intended user:
+
+* local intranet or ad-hoc networks
+* servers hosted on mobile devices with NodeJs server
+* 1-8 Clients who turn off application when not using it
+* absolutely trusted private networks
+
 
 ### Key Features:
 
@@ -45,12 +47,12 @@ I wanted to assemble a working NodeJs refresher/reference featuring ExpressJS, S
 * Express instant messaging
 * Date specific app events
 * modular json db
+* themes and keyboard shortcuts
+* New: English/Latin languages
 
-### Ideas for the next version:
+### Ideas for another version:
 
-I wonder if React would have been better than JQM. React would have had more UI features, but other than 'skinning', the JQM has all necessary UI built into it. Jqm was quicker ```for me``` because of its fixed and consistent platform constraints. React would have been more feature rich and robust, but would demand more development polishing and fine tuning to account for all the variable options React has.
-
-Perhaps that will be another version later down the road. A Swift(iOS)/VS2017(.Net) style app.
+React has good reviews regarding having the cross compatibility and robust features to compete with Swift and Andriod Studio Apps. Perhaps if I want to beef up the Social networking features, I will consider it. JQM was pretty much a 1 stop shop, and it is lighter in weight than Bootstrap/Angular and other leading frameworks. I found myself having to 'make stuff' as needed with JQM and JQM apps look like Jqm. _...The iPhone 1 generation know what I mean._
 
 ## NPM
 
@@ -103,3 +105,13 @@ npm install -g electron-packager
 
 electron-packager .
 ```
+
+---
+
+Repo size proportions (aproximately)
+
+dir | MiB
+--- | ---
+Git Clone | 79.6
+Git with Node packages | 261.1
+Just the ```main branch``` files | 14.5

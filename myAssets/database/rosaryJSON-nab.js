@@ -2560,28 +2560,28 @@ var rosaryJSONnab = {
 			"mysteryIndex": 0,
 			"decadeNo": 0,
 			"decadeName": "",
-			"decadeArt": "http:\/\/1.bp.blogspot.com\/-YvXtiei6hRA/VNRnxBrmgPI\/AAAAAAAAJoc\/64W4plee7t0\/s1600\/Atr%2BGoswijn%2Bvan%2Bder%2BWeyden_15%2BMysteries%2Band%2BVirgin%2Bof%2Bthe%2BRosary_c.1515-20_Met.jpg"
+			"decadeArt": "http://1.bp.blogspot.com/-YvXtiei6hRA/VNRnxBrmgPI/AAAAAAAAJoc/64W4plee7t0/s1600/Atr%2BGoswijn%2Bvan%2Bder%2BWeyden_15%2BMysteries%2Band%2BVirgin%2Bof%2Bthe%2BRosary_c.1515-20_Met.jpg"
 		},
 		{
 			"decadeID": 1,
 			"mysteryIndex": 1,
 			"decadeNo": 1,
 			"decadeName": "The First Joyful Mystery: The Annunciation",
-			"decadeArt": "http:\/\/www.joyfulheart.com\/christmas\/tissot-christmas-childhood\/tissot-the-annunciation-753x590x72.jpg"
+			"decadeArt": "http://www.joyfulheart.com/christmas/tissot-christmas-childhood/tissot-the-annunciation-753x590x72.jpg"
 		},
 		{
 			"decadeID": 2,
 			"mysteryIndex": 2,
 			"decadeNo": 2,
 			"decadeName": "The Second Joyful Mystery: The Visitation",
-			"decadeArt": "http:\/\/3.bp.blogspot.com\/-nH9kVrV2d6s\/Tgry1A3xx9I\/AAAAAAAAAG8\/bmvEkFl57pQ\/s1600\/DSC01145.JPG"
+			"decadeArt": "http://3.bp.blogspot.com/-nH9kVrV2d6s/Tgry1A3xx9I/AAAAAAAAAG8/bmvEkFl57pQ/s1600/DSC01145.JPG"
 		},
 		{
 			"decadeID": 3,
 			"mysteryIndex": 4,
 			"decadeNo": 3,
 			"decadeName": "The Third Joyful Mystery: The Nativity",
-			"decadeArt": "https:\/\/benedictsbeads.files.wordpress.com\/2015\/04\/duccio_di_buoninsegna_-_the_nativity_with_the_prophets_isaiah_and_ezekiel_-_google_art_project.jpg?w=1024&h=415&crop=1"
+			"decadeArt": "https://benedictsbeads.files.wordpress.com/2015/04/duccio_di_buoninsegna_-_the_nativity_with_the_prophets_isaiah_and_ezekiel_-_google_art_project.jpg?w=1024&h=415&crop=1"
 		},
 		{
 			"decadeID": 4,
@@ -2742,77 +2742,77 @@ var rosaryJSONnab = {
 		{
 			"bookID": 1,
 			"bookName": "Judith",
-			"library": "<a href='http:\/\/www.usccb.org\/bible\/judith\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+			"library": "<a href='http://www.usccb.org/bible/judith/0' target='_blank'>The New American Bible USCCB .org</a>"
 		},
 		{
 			"bookID": 2,
 			"bookName": "Psalms",
-			"library": "<a href='http:\/\/www.usccb.org\/bible\/psalms\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+			"library": "<a href='http://www.usccb.org/bible/psalms/0' target='_blank'>The New American Bible USCCB .org</a>"
 		},
 		{
 			"bookID": 3,
 			"bookName": "Proverbs",
-			"library": "<a href='http:\/\/www.usccb.org\/bible\/proverbs\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+			"library": "<a href='http://www.usccb.org/bible/proverbs/0' target='_blank'>The New American Bible USCCB .org</a>"
 		},
 		{
 			"bookID": 4,
 			"bookName": "Songs a.ka. Ecclesiastes",
-			"library": "<a href='http:\/\/www.usccb.org\/bible\/ecclesiastes\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+			"library": "<a href='http://www.usccb.org/bible/ecclesiastes/0' target='_blank'>The New American Bible USCCB .org</a>"
 		},
 		{
 			"bookID": 5,
 			"bookName": "Sirach",
-			"library": "<a href='http:\/\/www.usccb.org\/bible\/sirach\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+			"library": "<a href='http://www.usccb.org/bible/sirach/0' target='_blank'>The New American Bible USCCB .org</a>"
 		},
 		{
 			"bookID": 6,
 			"bookName": "Isiah",
-			"library": "<a href='http://www.usccb.org\/bible\/scripture.cfm?bk=Isaiah&ch=' target='_blank'>The New American Bible USCCB .org<\/a>"
+			"library": "<a href='http://www.usccb.org/bible/scripture.cfm?bk=Isaiah&ch=' target='_blank'>The New American Bible USCCB .org</a>"
 		},
 		{
 			"bookID": 7,
 			"bookName": "Matthew",
-			"library": "<a href='http:\/\/www.usccb.org\/bible\/matthew\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+			"library": "<a href='http://www.usccb.org/bible/matthew/0' target='_blank'>The New American Bible USCCB .org</a>"
 		},
 		{
 			"bookID": 8,
 			"bookName": "Mark",
-			"library": "<a href='http:\/\/www.usccb.org\/bible\/mark\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+			"library": "<a href='http://www.usccb.org/bible/mark/0' target='_blank'>The New American Bible USCCB .org</a>"
 		},
 		{
 			"bookID": 9,
 			"bookName": "Luke",
-			"library": "<a href='http:\/\/www.usccb.org\/bible\/luke\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+			"library": "<a href='http://www.usccb.org/bible/luke/0' target='_blank'>The New American Bible USCCB .org</a>"
 		},
 		{
 			"bookID": 10,
 			"bookName": "John",
-			"library": "<a href='http:\/\/www.usccb.org\/bible\/luke\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+			"library": "<a href='http://www.usccb.org/bible/luke/0' target='_blank'>The New American Bible USCCB .org</a>"
 		},
 		{
 			"bookID": 11,
 			"bookName": "Acts",
-			"library": "<a href='http:\/\/www.usccb.org\/bible\/acts\/0' target='_blank'>The New American Bible USCCB .org<\/a>"
+			"library": "<a href='http://www.usccb.org/bible/acts/0' target='_blank'>The New American Bible USCCB .org</a>"
 		},
 		{
 			"bookID": 12,
 			"bookName": "1 Corinthians",
-			"library": "<a href='http:\/\/www.usccb.org\/bible\/scripture.cfm?bk=1%20Corinthians&ch=' target='_blank'>The New American Bible USCCB .org<\/a>"
+			"library": "<a href='http://www.usccb.org/bible/scripture.cfm?bk=1%20Corinthians&ch=' target='_blank'>The New American Bible USCCB .org</a>"
 		},
 		{
 			"bookID": 13,
 			"bookName": "Revelations",
-			"library": "<a href='http:\/\/www.usccb.org\/bible\/scripture.cfm?bk=Revelation&ch=' target='_blank'>The New American Bible USCCB .org<\/a>"
+			"library": "<a href='http://www.usccb.org/bible/scripture.cfm?bk=Revelation&ch=' target='_blank'>The New American Bible USCCB .org</a>"
 		},
 		{
 			"bookID": 14,
 			"bookName": "Queenship of the B.V.M., Gradual",
-			"library": "<a href='http:\/\/w2.vatican.va\/content\/pius-xii\/en\/encyclicals\/documents\/hf_p-xii_enc_11101954_ad-caeli-reginam.html' target='_blank'>AD CAELI REGINAM - ENCYCLICAL OF POPE PIUS XII, October 11, 1954 <\/a>"
+			"library": "<a href='http://w2.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html' target='_blank'>AD CAELI REGINAM - ENCYCLICAL OF POPE PIUS XII, October 11, 1954 </a>"
 		},
 		{
 			"bookID": 15,
 			"bookName": "Oremus",
-			"library": "<a href='http:\/\/www.oremus.org\/liturgy\/ccp\/07mon.html' target='_blank'>Pentecost Alleluia<\/a>"
+			"library": "<a href='http://www.oremus.org/liturgy/ccp/07mon.html' target='_blank'>Pentecost Alleluia</a>"
 		}
 	],
 	"scripture": [
@@ -3014,178 +3014,178 @@ var rosaryJSONnab = {
 		},
 		{
 			"scriptureID": 28,
-			"bookIndex": 9,
-			"chapterIndex": 2,
+			"bookIndex": 7,
+			"chapterIndex": 1,
 			"verseIndex": 20,
-			"scriptureText": "Such was his intention when, behold, the angel of the Lord* appeared to him in a dream and said, “Joseph, son of David, do not be afraid to take Mary your wife into your home. For it is through the holy Spirit that this child has been conceived in her. - Luke 2: 20"
+			"scriptureText": "Such was his intention when, behold, the angel of the Lord* appeared to him in a dream and said, \"Joseph, son of David, do not be afraid to take Mary your wife into your home. For it is through the holy Spirit that this child has been conceived in her. - Matthew 1:20"
 		},
 		{
 			"scriptureID": 29,
-			"bookIndex": 9,
-			"chapterIndex": 2,
+			"bookIndex": 7,
+			"chapterIndex": 1,
 			"verseIndex": 21,
-			"scriptureText": "She will bear a son and you are to name him Jesus,* because he will save his people from their sins. - Luke 2: 21"
+			"scriptureText": "She will bear a son and you are to name him Jesus,* because he will save his people from their sins.\" -  Matthew 1:21"
 		},
 		{
 			"scriptureID": 30,
-			"bookIndex": 9,
-			"chapterIndex": 2,
+			"bookIndex": 7,
+			"chapterIndex": 1,
 			"verseIndex": 22,
-			"scriptureText": "All this took place to fulfill what the Lord had said through the prophet - Luke 2: 22"
+			"scriptureText": "All this took place to fulfill what the Lord had said through the prophet: - Matthew 1:22"
 		},
 		{
 			"scriptureID": 31,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 39,
-			"scriptureText": "During those days Mary set out and traveled to the hill country in haste to a town of Judah, - Luke 2:39"
+			"scriptureText": "During those days Mary set out and traveled to the hill country in haste to a town of Judah, - Luke 1:39"
 		},
 		{
 			"scriptureID": 32,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 40,
-			"scriptureText": "where she entered the house of Zechariah and greeted Elizabeth. - Luke 2:40"
+			"scriptureText": "where she entered the house of Zechariah and greeted Elizabeth. - Luke 1:40"
 		},
 		{
 			"scriptureID": 33,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 41,
-			"scriptureText": "When Elizabeth heard Mary's greeting, the infant leaped in her womb, and Elizabeth, filled with the holy Spirit, - Luke 2:41"
+			"scriptureText": "When Elizabeth heard Mary's greeting, the infant leaped in her womb, and Elizabeth, filled with the holy Spirit, - Luke 1:41"
 		},
 		{
 			"scriptureID": 34,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 42,
-			"scriptureText": "cried out in a loud voice and said, Most blessed are you among women, and blessed is the fruit of your womb. - Luke 2:42"
+			"scriptureText": "cried out in a loud voice and said, \"Most blessed are you among women, and blessed is the fruit of your womb. - Luke 1:42"
 		},
 		{
 			"scriptureID": 35,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 43,
-			"scriptureText": "And how does this happen to me, that the mother of my Lordshould come to me? - Luke 2:43"
+			"scriptureText": "And how does this happen to me, that the mother of my Lordshould come to me? - Luke 1:43"
 		},
 		{
 			"scriptureID": 36,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 44,
-			"scriptureText": "For at the moment the sound of your greeting reached my ears, the infant in my womb leaped for joy. - Luke 2:44"
+			"scriptureText": "For at the moment the sound of your greeting reached my ears, the infant in my womb leaped for joy. - Luke 1:44"
 		},
 		{
 			"scriptureID": 37,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 45,
-			"scriptureText": "Blessed are you who believed that what was spoken to you by the Lord would be fulfilled.\" - Luke 2:45"
+			"scriptureText": "Blessed are you who believed that what was spoken to you by the Lord would be fulfilled.\" - Luke 1:45"
 		},
 		{
 			"scriptureID": 38,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 46,
-			"scriptureText": "And Mary said: \"My soul proclaims the greatness of the Lord; - Luke 2:46"
+			"scriptureText": "And Mary said: \"My soul proclaims the greatness of the Lord; - Luke 1:46"
 		},
 		{
 			"scriptureID": 39,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 47,
-			"scriptureText": "my spirit rejoices in God my savior. - Luke 2:47"
+			"scriptureText": "my spirit rejoices in God my savior. - Luke 1:47"
 		},
 		{
 			"scriptureID": 40,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 48,
-			"scriptureText": "For he has looked upon his handmaid's lowliness; behold, from now on will all ages call me blessed. - Luke 2:48"
+			"scriptureText": "For he has looked upon his handmaid's lowliness; behold, from now on will all ages call me blessed. - Luke 1:48"
 		},
 		{
 			"scriptureID": 41,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 49,
-			"scriptureText": "The Mighty One has done great things for me, and holy is his name. - Luke 2:49"
+			"scriptureText": "The Mighty One has done great things for me, and holy is his name. - Luke 1:49"
 		},
 		{
 			"scriptureID": 42,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 50,
-			"scriptureText": "His mercy is from age to age to those who fear him. - Luke 2:50"
+			"scriptureText": "His mercy is from age to age to those who fear him. - Luke 1:50"
 		},
 		{
 			"scriptureID": 43,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 51,
-			"scriptureText": "He has shown might with his arm, dispersed the arrogant of mind and heart. - Luke 2:51"
+			"scriptureText": "He has shown might with his arm, dispersed the arrogant of mind and heart. - Luke 1:51"
 		},
 		{
 			"scriptureID": 44,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 52,
-			"scriptureText": "He has thrown down the rulers from their thrones but lifted up the lowly. - Luke 2:52"
+			"scriptureText": "He has thrown down the rulers from their thrones but lifted up the lowly. - Luke 1:52"
 		},
 		{
 			"scriptureID": 45,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 53,
-			"scriptureText": "The hungry he has filled with good things, the rich he has sent away empty. - Luke 2:53"
+			"scriptureText": "The hungry he has filled with good things, the rich he has sent away empty. - Luke 1:53"
 		},
 		{
 			"scriptureID": 46,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 54,
-			"scriptureText": "He has helped Israel his servant, remembering his mercy, - Luke 2:54"
+			"scriptureText": "He has helped Israel his servant, remembering his mercy, - Luke 1:54"
 		},
 		{
 			"scriptureID": 47,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 55,
-			"scriptureText": "according to his promise to our fathers, to Abraham and to his descendants forever.\" - Luke 2:55"
+			"scriptureText": "according to his promise to our fathers, to Abraham and to his descendants forever.\" - Luke 1:55"
 		},
 		{
 			"scriptureID": 48,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 56,
-			"scriptureText": "Mary remained with her about three months and then returned to her home. - Luke 2:56"
+			"scriptureText": "Mary remained with her about three months and then returned to her home. - Luke 1:56"
 		},
 		{
 			"scriptureID": 49,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 57,
-			"scriptureText": "When the time arrived for Elizabeth to have her child she gave birth to a son. - Luke 2:57"
+			"scriptureText": "When the time arrived for Elizabeth to have her child she gave birth to a son. - Luke 1:57"
 		},
 		{
 			"scriptureID": 50,
 			"bookIndex": 9,
-			"chapterIndex": 2,
+			"chapterIndex": 1,
 			"verseIndex": 58,
-			"scriptureText": "When they came on the eighth day to circumcise the child, they were going to call him Zechariah after his father, - Luke 2:58"
+			"scriptureText": "Her neighbors and relatives heard that the Lord had shown his great mercy toward her, and they rejoiced with her. - Luke 1:58"
 		},
 		{
 			"scriptureID": 51,
 			"bookIndex": 10,
 			"chapterIndex": 1,
 			"verseIndex": 23,
-			"scriptureText": "John the Baptist said, / 'I am the voice of one crying in the wilderness, / 'Make straight the way of the Lord,' / as the prophet Isaiah said.' - John 1:23"
+			"scriptureText": "He (John the Baptist) said: \"I am 'the voice of one crying out in the desert, \"Make straight the way of the Lord,\"' as Isaiah the prophet said.\" - John 1:23"
 		},
 		{
 			"scriptureID": 52,
 			"bookIndex": 8,
 			"chapterIndex": 1,
 			"verseIndex": 7,
-			"scriptureText": " And John preached, saying, / 'After me comes he who is mightier than I, / the thong of whose sandals I am not worthy to stoop down and untie.' - Mark 1:7"
+			"scriptureText": "And this is what he (John the Baptist) proclaimed: \"One mightier than I is coming after me. I am not worthy to stoop and loosen the thongs of his sandals. - Mark 1:7"
 		},
 		{
 			"scriptureID": 53,
@@ -3199,7 +3199,7 @@ var rosaryJSONnab = {
 			"bookIndex": 10,
 			"chapterIndex": 1,
 			"verseIndex": 29,
-			"scriptureText": "John saw Jesus coming toward him, and said, / 'Behold, the Lamb of God, who takes away the sin of the world!' - John 1:29"
+			"scriptureText": "The next day he saw Jesus coming toward him and said, \"Behold, the Lamb of God,* who takes away the sin of the world. - John 1:29"
 		},
 		{
 			"scriptureID": 55,
@@ -3241,126 +3241,126 @@ var rosaryJSONnab = {
 			"bookIndex": 8,
 			"chapterIndex": 1,
 			"verseIndex": 12,
-			"scriptureText": "The Spirit immediately drove him out into the wilderness, and he was in the wilderness forty days, tempted by Satan. - Mark 1:12-13"
+			"scriptureText": "At once the Spirit drove him out into the desert / and he remained in the desert for forty days, tempted by Satan. He was among wild beasts, and the angels ministered to him. - Mark 1:12-13"
 		},
 		{
 			"scriptureID": 61,
 			"bookIndex": 10,
 			"chapterIndex": 2,
 			"verseIndex": 1,
-			"scriptureText": "There was a marriage at Cana in Galilee, / and the mother of Jesus was there. - John 2:1"
+			"scriptureText": "On the third day there was a wedding* in Cana* in Galilee, and the mother of Jesus was there. - John 2:1"
 		},
 		{
 			"scriptureID": 62,
 			"bookIndex": 10,
 			"chapterIndex": 2,
 			"verseIndex": 3,
-			"scriptureText": "When the wine failed, the mother of Jesus said to him, / 'They have no wine.' - John 2:3"
+			"scriptureText": "When the wine ran short, the mother of Jesus said to him, \"They have no wine.\" - John 2:3"
 		},
 		{
 			"scriptureID": 63,
 			"bookIndex": 10,
 			"chapterIndex": 2,
 			"verseIndex": 4,
-			"scriptureText": "And Jesus said to her, / 'O woman, what have you to do with me? / My hour has not yet come.' - John 2:4"
+			"scriptureText": "[And] Jesus said to her, \"Woman, how does your concern affect me? My hour has not yet come.\" - John 2:4"
 		},
 		{
 			"scriptureID": 64,
 			"bookIndex": 10,
 			"chapterIndex": 2,
 			"verseIndex": 5,
-			"scriptureText": "His mother said to the servers, / 'Do whatever he tells you.' - John 2:5"
+			"scriptureText": "His mother said to the servers, \"Do whatever he tells you.\" - John 2:5"
 		},
 		{
 			"scriptureID": 65,
 			"bookIndex": 10,
 			"chapterIndex": 2,
 			"verseIndex": 6,
-			"scriptureText": "Now six stone jars were standing there, / for the Jewish rites of purification, / each holding twenty or thirty gallons. - John 2:6"
+			"scriptureText": "Now there were six stone water jars there for Jewish ceremonial washings,d each holding twenty to thirty gallons. - John 2:6"
 		},
 		{
 			"scriptureID": 66,
 			"bookIndex": 10,
 			"chapterIndex": 2,
 			"verseIndex": 7,
-			"scriptureText": "Jesus said to them, / 'Fill the jars with water.' / And they filled them to the brim. - John 2:7"
+			"scriptureText": "Jesus told them, \"Fill the jars with water.\" So they filled them to the brim. - John 2:7"
 		},
 		{
 			"scriptureID": 67,
 			"bookIndex": 10,
 			"chapterIndex": 2,
 			"verseIndex": 8,
-			"scriptureText": "He said to them, / 'Now draw some out, / and take it to the steward of the feast.' - John 2:8"
+			"scriptureText": "Then he told them, \"Draw some out now and take it to the headwaiter.\" So they took it. - John 2:8"
 		},
 		{
 			"scriptureID": 68,
 			"bookIndex": 10,
 			"chapterIndex": 2,
 			"verseIndex": 9,
-			"scriptureText": "When the steward of the feast tasted the water now become wine, / and did not know where it came from, / . . .  the steward of the feast called the bridegroom. - John 2:9"
+			"scriptureText": "And when the headwaiter tasted the water that had become wine, without knowing where it came from (although the servers who had drawn the water knew), the headwaiter called the bridegroom - John 2:9"
 		},
 		{
 			"scriptureID": 69,
 			"bookIndex": 10,
 			"chapterIndex": 2,
 			"verseIndex": 10,
-			"scriptureText": "And the steward of the feast said to the bridegroom, / 'Every man serves the good wine first; / and when men have drunk freely, / then the poor wine; / but you have kept the good wine until now.' - John 2:10"
+			"scriptureText": "and said to him, \"Everyone serves good wine first, and then when people have drunk freely, an inferior one; but you have kept the good wine until now.\" - John 2:10"
 		},
 		{
 			"scriptureID": 70,
 			"bookIndex": 10,
 			"chapterIndex": 2,
 			"verseIndex": 11,
-			"scriptureText": "This, the first of his signs, / Jesus did at Cana in Galilee, /  and manifested his glory, /  and his disciples believed in him. - John 2:11"
+			"scriptureText": "Jesus did this as the beginning of his signs* in Cana in Galilee and so revealed his glory, and his disciples began to believe in him. - John 2:11"
 		},
 		{
 			"scriptureID": 71,
-			"bookIndex": 10,
-			"chapterIndex": 2,
-			"verseIndex": 11,
-			"scriptureText": "Now after John was arrested, / Jesus came into Galilee, / preaching the gospel of God - Mark 1:14"
+			"bookIndex": 8,
+			"chapterIndex": 1,
+			"verseIndex": 14,
+			"scriptureText": "After John had been arrested,* Jesus came to Galilee proclaiming the gospel of God: - Mark 1:14"
 		},
 		{
 			"scriptureID": 72,
 			"bookIndex": 10,
 			"chapterIndex": 1,
 			"verseIndex": 4,
-			"scriptureText": "In him was life, / and the life was the light of men. / The light shines in the darkness, / and the darkness has not overcome it. - John 1:4-5"
+			"scriptureText": "through him was life, and this life was the light of the human race; / the light shines in the darkness, and the darkness has not overcome it. - John 1:4-5"
 		},
 		{
 			"scriptureID": 73,
 			"bookIndex": 8,
 			"chapterIndex": 1,
 			"verseIndex": 15,
-			"scriptureText": "Jesus said, 'The time is fulfilled, / and the kingdom of God is at hand; / repent, and believe in the gospel.' - Mark 1:15"
+			"scriptureText": "\"This is the time of fulfillment. The kingdom of God is at hand. Repent, and believe in the gospel.\" - Mark 1:15"
 		},
 		{
 			"scriptureID": 74,
 			"bookIndex": 8,
 			"chapterIndex": 2,
 			"verseIndex": 2,
-			"scriptureText": "And many were gathered together, / so that there was no longer room for them . . . and he was preaching the word to them. - Mark 2:2"
+			"scriptureText": "Many gathered together so that there was no longer room for them, not even around the door, and he preached the word to them. - Mark 2:2"
 		},
 		{
 			"scriptureID": 75,
 			"bookIndex": 8,
 			"chapterIndex": 2,
 			"verseIndex": 4,
-			"scriptureText": "And when they could not get near Jesus because of the crowd, / they removed the roof above him; / and when they had made an opening, / they let down the pallet on which the paralytic lay. - Mark 2:4"
+			"scriptureText": "Unable to get near Jesus because of the crowd, they opened up the roof above him. After they had broken through, they let down the mat on which the paralytic was lying. - Mark 2:4"
 		},
 		{
 			"scriptureID": 76,
 			"bookIndex": 8,
 			"chapterIndex": 2,
 			"verseIndex": 9,
-			"scriptureText": "'Which is easier, / to say to the paralytic, 'Your sins are forgiven,' / or to say, 'Rise, pick up your pallet and walk?'' - Mark 2:9"
+			"scriptureText": "Which is easier, to say to the paralytic, 'Your sins are forgiven,' or to say, 'Rise, pick up your mat and walk'? - Mark 2:9"
 		},
 		{
 			"scriptureID": 77,
 			"bookIndex": 8,
 			"chapterIndex": 2,
 			"verseIndex": 10,
-			"scriptureText": "'But that you may know that the Son of man has authority on earth to forgive sins' / - he said to the paralytic - / 'I say to you, rise, take up your pallet and go home.' - Mark 2:10-11"
+			"scriptureText": "But that you may know that the Son of Man has authority to forgive sins on earth\" / he said to the paralytic, \"I say to you, rise, pick up your mat, and go home.\" - Mark 2:10-11"
 		},
 		{
 			"scriptureID": 78,
@@ -3381,7 +3381,7 @@ var rosaryJSONnab = {
 			"bookIndex": 10,
 			"chapterIndex": 20,
 			"verseIndex": 22,
-			"scriptureText": "And when Jesus had said this, / he breathed on them and said to them, / 'Receive the Holy Spirit. / If you forgive the sins of any, / they are forgiven; / if you retain the sins of any, they are retained.' - John 20:22-23"
+			"scriptureText": "And when he had said this, he breathed on them and said to them, \"Receive the holy Spirit. / Whose sins you forgive are forgiven them, and whose sins you retain are retained.\" - John 20:22-23"
 		},
 		{
 			"scriptureID": 81,
@@ -3399,17 +3399,17 @@ var rosaryJSONnab = {
 		},
 		{
 			"scriptureID": 83,
-			"bookIndex": 8,
+			"bookIndex": 7,
 			"chapterIndex": 17,
 			"verseIndex": 3,
-			"scriptureText": "And behold, / there appeared to them Moses and Elijah, / talking with him - Matthew 17:3"
+			"scriptureText": "And behold, Moses and Elijah appeared to them, conversing with him. - Matthew 17:3"
 		},
 		{
 			"scriptureID": 84,
 			"bookIndex": 9,
 			"chapterIndex": 9,
 			"verseIndex": 31,
-			"scriptureText": "Moses and Elijah . . . spoke of Jesus’ exodus / that he was to accomplish in Jerusalem. - Luke 9:31"
+			"scriptureText": "who appeared in glory and spoke of his exodus that he was going to accomplish in Jerusalem. - Luke 9:31"
 		},
 		{
 			"scriptureID": 85,
@@ -3423,35 +3423,35 @@ var rosaryJSONnab = {
 			"bookIndex": 9,
 			"chapterIndex": 9,
 			"verseIndex": 34,
-			"scriptureText": "As Peter said this, / a cloud came and overshadowed them; / and they were afraid as they entered the cloud. - Luke 9:34"
+			"scriptureText": "While he was still speaking, a cloud came and cast a shadow over them, and they became frightened when they entered the cloud. - Luke 9:34"
 		},
 		{
 			"scriptureID": 87,
 			"bookIndex": 9,
 			"chapterIndex": 9,
 			"verseIndex": 35,
-			"scriptureText": "And a voice came out of the cloud, / 'This is my Son, my Chosen; / listen to him!' - Luke 9:35"
+			"scriptureText": "Then from the cloud came a voice that said, \"This is my chosen Son; listen to him.\" - Luke 9:35"
 		},
 		{
 			"scriptureID": 88,
 			"bookIndex": 8,
 			"chapterIndex": 9,
 			"verseIndex": 8,
-			"scriptureText": "And suddenly looking around / they no longer saw any one with them but Jesus only. - Mark 9:8"
+			"scriptureText": "Suddenly, looking around, they no longer saw anyone but Jesus alone with them. - Mark 9:8"
 		},
 		{
 			"scriptureID": 89,
 			"bookIndex": 8,
 			"chapterIndex": 9,
 			"verseIndex": 9,
-			"scriptureText": "And as they were coming down the mountain, / Jesus charged them to tell no one what they had seen, / until the Son of man should have risen from the dead. - Mark 9:9"
+			"scriptureText": "As they were coming down from the mountain, he charged them not to relate what they had seen to anyone, except when the Son of Man had risen from the dead. - Mark 9:9"
 		},
 		{
 			"scriptureID": 90,
 			"bookIndex": 8,
 			"chapterIndex": 9,
 			"verseIndex": 10,
-			"scriptureText": "So they kept the matter to themselves, / questioning what the rising from the dead meant. - Mark 9:10"
+			"scriptureText": "So they kept the matter to themselves, questioning what rising from the dead meant. - Mark 9:10"
 		},
 		{
 			"scriptureID": 91,
@@ -3472,7 +3472,7 @@ var rosaryJSONnab = {
 			"bookIndex": 9,
 			"chapterIndex": 22,
 			"verseIndex": 14,
-			"scriptureText": "And when the hour came, / he sat at table, and the apostles with him. / And he said to them, / 'I have earnestly desired to eat this Passover with you before I suffer.' - Luke 22:14-15"
+			"scriptureText": "When the hour came, he took his place at table with the apostles. / He said to them, \"I have eagerly desired to eat this Passover* with you before I suffer, - Luke 22:14-15"
 		},
 		{
 			"scriptureID": 94,
@@ -3507,21 +3507,21 @@ var rosaryJSONnab = {
 			"bookIndex": 12,
 			"chapterIndex": 11,
 			"verseIndex": 26,
-			"scriptureText": "For as often as you eat this bread and drink the chalice, you proclaim the Lord’s death until he comes. - 1 Corinthians 11:26"
+			"scriptureText": "For as often as you eat this bread and drink the cup, you proclaim the death of the Lord until he comes. - 1 Corinthians 11:26"
 		},
 		{
 			"scriptureID": 99,
 			"bookIndex": 10,
 			"chapterIndex": 6,
 			"verseIndex": 51,
-			"scriptureText": "'I am the living bread which comes down from heaven; / if any one eats of this bread, / he will live forever; / and the bread which I shall give for the life of the world / is my flesh.' - John 6:51"
+			"scriptureText": "I am the living bread that came down from heaven; whoever eats this bread will live forever; and the bread that I will give is my flesh for the life of the world.\" - John 6:51"
 		},
 		{
 			"scriptureID": 100,
 			"bookIndex": 10,
 			"chapterIndex": 6,
 			"verseIndex": 54,
-			"scriptureText": "'He who eats my flesh and drinks my blood has eternal life, / and I will raise him at the last day.' - John 6:54"
+			"scriptureText": "'He who eats my flesh and drinks my blood has eternal life, and I will raise him at the last day.' - John 6:54"
 		},
 		{
 			"scriptureID": 101,
@@ -3542,35 +3542,35 @@ var rosaryJSONnab = {
 			"bookIndex": 9,
 			"chapterIndex": 22,
 			"verseIndex": 41,
-			"scriptureText": "And he withdrew from them / about a stone’s throw, / and knelt down and prayed. - Luke 22:41"
+			"scriptureText": "After withdrawing about a stone’s throw from them and kneeling, he prayed, - Luke 22:41"
 		},
 		{
 			"scriptureID": 104,
 			"bookIndex": 9,
 			"chapterIndex": 22,
 			"verseIndex": 42,
-			"scriptureText": "''Father, if you are willing, / remove this chalice from me; / nevertheless not my will, but  yours, be done.'' - Luke 22:42"
+			"scriptureText": "saying, \"Father, if you are willing, take this cup away from me; still, not my will but yours be done.\" - Luke 22:42"
 		},
 		{
 			"scriptureID": 105,
 			"bookIndex": 9,
 			"chapterIndex": 22,
 			"verseIndex": 43,
-			"scriptureText": "And there appeared to him an angel from heaven, / strengthening him. - Luke 22:43"
+			"scriptureText": "And to strengthen him an angel from heaven appeared to him. - Luke 22:43"
 		},
 		{
 			"scriptureID": 106,
 			"bookIndex": 9,
 			"chapterIndex": 22,
 			"verseIndex": 44,
-			"scriptureText": "And being in agony / he prayed more earnestly. - Luke 22:44"
+			"scriptureText": "He was in such agony and he prayed so fervently that his sweat became like drops of blood falling on the ground.] - Luke 22:44 - Luke 22:44"
 		},
 		{
 			"scriptureID": 107,
 			"bookIndex": 9,
 			"chapterIndex": 22,
 			"verseIndex": 44,
-			"scriptureText": "And his sweat became like great drops of blood / falling down upon the ground. - Luke 22:44"
+			"scriptureText": "He was in such agony and he prayed so fervently that his sweat became like drops of blood falling on the ground.] - Luke 22:44"
 		},
 		{
 			"scriptureID": 108,
@@ -3598,35 +3598,35 @@ var rosaryJSONnab = {
 			"bookIndex": 8,
 			"chapterIndex": 15,
 			"verseIndex": 1,
-			"scriptureText": "And as soon as it was morning / the chief priests, with the elders and scribes, / and the whole council held a consultation; / and they bound Jesus and led him away / and delivered him to Pilate./ And Pilate asked him, / ''Are you the king of the Jews?'' - Mark 15:1-2"
+			"scriptureText": "As soon as morning came, the chief priests with the elders and the scribes, that is, the whole Sanhedrin, held a council.* They bound Jesus, led him away, and handed him over to Pilate. / Pilate questioned him, \"Are you the king of the Jews?\"* He said to him in reply, \"You say so.\" - Mark 15:1-2"
 		},
 		{
 			"scriptureID": 112,
 			"bookIndex": 10,
 			"chapterIndex": 18,
 			"verseIndex": 36,
-			"scriptureText": "Jesus answered, / ''My kingdom is not of this world; / if my kingship were of this world, / my servants would fight, / that I might not be handed over to the Jews; / but my kingship is not from the world.'' - John 18:36"
+			"scriptureText": "Jesus answered, \"My kingdom does not belong to this world. If my kingdom did belong to this world, my attendants [would] be fighting to keep me from being handed over to the Jews. But as it is, my kingdom is not here.\" - John 18:36"
 		},
 		{
 			"scriptureID": 113,
 			"bookIndex": 10,
 			"chapterIndex": 18,
 			"verseIndex": 37,
-			"scriptureText": "Pilate said to him, / ''So you are a king?'' / Jesus answered, / ''You say that I am a king.  / For this I was born, / and for this I have come into the world, / to bear witness to the truth. / Every one who is of the truth hears my voice.'' - John 18:37"
+			"scriptureText": "So Pilate said to him, \"Then you are a king?\" Jesus answered, \"You say I am a king.* For this I was born and for this I came into the world, to testify to the truth. Everyone who belongs to the truth listens to my voice.\" - John 18:37"
 		},
 		{
 			"scriptureID": 114,
 			"bookIndex": 10,
 			"chapterIndex": 18,
 			"verseIndex": 38,
-			"scriptureText": "Pilate said to him, / ''What is truth?''  After he had said this, / he went out to the Jews again and told them, / ''I find no crime in him.'' - John 18:38"
+			"scriptureText": "Pilate said to him, \"What is truth?\" When he had said this, he again went out to the Jews and said to them, \"I find no guilt in him. - John 18:38"
 		},
 		{
 			"scriptureID": 115,
 			"bookIndex": 9,
 			"chapterIndex": 23,
 			"verseIndex": 16,
-			"scriptureText": "''I will therefore chastise him and release him.''  / Then Pilate took Jesus and scourged him. - Luke 23:16, John 19:1"
+			"scriptureText": "Therefore I shall have him flogged and then release him.\" / Then Pilate took Jesus and had him scourged. - Luke 23:16, John 19:1"
 		},
 		{
 			"scriptureID": 116,
@@ -3668,7 +3668,7 @@ var rosaryJSONnab = {
 			"bookIndex": 8,
 			"chapterIndex": 15,
 			"verseIndex": 16,
-			"scriptureText": "And the soldiers led him away to the Praetorium. / And they stripped him and put a scarlet robe upon him. - Mark 15:16-17, Matthew 27:28"
+			"scriptureText": "The soldiers led him away inside the palace, that is, the praetorium, and assembled the whole cohort. / They clothed him in purple and, weaving a crown of thorns, placed it on him. / They stripped off his clothes and threw a scarlet military cloak* about him. - Mark 15:16-17, Matthew 27:28"
 		},
 		{
 			"scriptureID": 122,
@@ -3703,63 +3703,63 @@ var rosaryJSONnab = {
 			"bookIndex": 10,
 			"chapterIndex": 19,
 			"verseIndex": 15,
-			"scriptureText": "So Jesus came out, / wearing the crown of thorns and the purple robe. - John 19:5"
+			"scriptureText": "So Jesus came out, wearing the crown of thorns and the purple cloak. And he said to them, \"Behold, the man!\" - John 19:5"
 		},
 		{
 			"scriptureID": 127,
 			"bookIndex": 10,
 			"chapterIndex": 19,
 			"verseIndex": 15,
-			"scriptureText": "Pilate said to the Jews, / ''Here is your King!'' / They cried out, / ''Away with him, away with him, / Crucify him!'' - John 19:15"
+			"scriptureText": "They cried out, \"Take him away, take him away! Crucify him!\" Pilate said to them, \"Shall I crucify your king?\" The chief priests answered, \"We have no king but Caesar.\" - John 19:15"
 		},
 		{
 			"scriptureID": 128,
 			"bookIndex": 8,
 			"chapterIndex": 15,
 			"verseIndex": 14,
-			"scriptureText": "And Pilate said to them, / ''Why, what evil has he done?'' / But they shouted all the more, /  ''Crucify him.'' - Mark 15:14"
+			"scriptureText": "Pilate said to them, \"Why? What evil has he done?\" They only shouted the louder, \"Crucify him.\" - Mark 15:14"
 		},
 		{
 			"scriptureID": 129,
 			"bookIndex": 10,
 			"chapterIndex": 19,
 			"verseIndex": 15,
-			"scriptureText": "''Shall I crucify your king?'' / The chief priests answered, ''We have no king but Caesar.'' - John 19:15"
+			"scriptureText": "They cried out, \"Take him away, take him away! Crucify him!\" Pilate said to them, \"Shall I crucify your king?\" The chief priests answered, \"We have no king but Caesar.\" - John 19:15"
 		},
 		{
 			"scriptureID": 130,
 			"bookIndex": 8,
 			"chapterIndex": 15,
 			"verseIndex": 15,
-			"scriptureText": "So Pilate, wishing to satisfy the crowd,/ released for them Barabbas; / and having scouraged Jesus, / he delivered him to be crucified. - Mark 15:15"
+			"scriptureText": "So Pilate, wishing to satisfy the crowd, released Barabbas to them and, after he had Jesus scourged, handed him over to be crucified. - Mark 15:15"
 		},
 		{
 			"scriptureID": 131,
 			"bookIndex": 9,
 			"chapterIndex": 9,
 			"verseIndex": 23,
-			"scriptureText": "''If any man would come after me, / let him deny himself.'' - Luke 9:23"
+			"scriptureText": "Then he said to all, \"If anyone wishes to come after me, he must deny himself and take up his cross daily* and follow me. - Luke 9:23"
 		},
 		{
 			"scriptureID": 132,
-			"bookIndex": 10,
+			"bookIndex": 9,
 			"chapterIndex": 9,
 			"verseIndex": 23,
-			"scriptureText": "''And take up his cross daily / and follow me.'' - Luke 9:23"
+			"scriptureText": "Then he said to all, \"If anyone wishes to come after me, he must deny himself and take up his cross daily* and follow me. - Luke 9:23"
 		},
 		{
 			"scriptureID": 133,
 			"bookIndex": 10,
 			"chapterIndex": 19,
 			"verseIndex": 17,
-			"scriptureText": "So they took Jesus, / and he went out, / carrying his own cross. - John 19:17"
+			"scriptureText": "and carrying the cross himself* he went out to what is called the Place of the Skull, in Hebrew, Golgotha. - John 19:17"
 		},
 		{
 			"scriptureID": 134,
 			"bookIndex": 9,
 			"chapterIndex": 23,
 			"verseIndex": 26,
-			"scriptureText": "And as the led him away, they seized one Simon of Cyrene, / who was coming in from the country, /  and laid on him the cross, / to carry it behind Jesus. - Luke 23:26"
+			"scriptureText": "As they led him away they took hold of a certain Simon, a Cyrenian, who was coming in from the country; and after laying the cross on him, they made him carry it behind Jesus. - Luke 23:26"
 		},
 		{
 			"scriptureID": 135,
@@ -3787,91 +3787,91 @@ var rosaryJSONnab = {
 			"bookIndex": 9,
 			"chapterIndex": 23,
 			"verseIndex": 27,
-			"scriptureText": "And there followed him a great multitude of the people, / and of women who bewailed  and lamented him. - Luke 23:27"
+			"scriptureText": "A large crowd of people followed Jesus, including many women who mourned and lamented him. - Luke 23:27"
 		},
 		{
 			"scriptureID": 139,
 			"bookIndex": 9,
 			"chapterIndex": 23,
 			"verseIndex": 28,
-			"scriptureText": "But Jesus turning to them said, / ''Daughters of Jerusalem, / do not weep for me, / but weep for yourselves and for your children.'' - Luke 23:28"
+			"scriptureText": "Jesus turned to them and said, \"Daughters of Jerusalem, do not weep for me; weep instead for yourselves and for your children, - Luke 23:28"
 		},
 		{
 			"scriptureID": 140,
 			"bookIndex": 9,
 			"chapterIndex": 23,
 			"verseIndex": 31,
-			"scriptureText": "''For if they do this when the wood is green, / what will happen when it is dry?'' - Luke 23:31"
+			"scriptureText": "for if these things are done when the wood is green what will happen when it is dry?\" - Luke 23:31"
 		},
 		{
 			"scriptureID": 141,
 			"bookIndex": 9,
 			"chapterIndex": 23,
 			"verseIndex": 33,
-			"scriptureText": "And when they came to the place which is called The Skull, / there they crucified him. - Luke 23:33"
+			"scriptureText": "When they came to the place called the Skull, they crucified him and the criminals there, one on his right, the other on his left. - Luke 23:33"
 		},
 		{
 			"scriptureID": 142,
 			"bookIndex": 9,
 			"chapterIndex": 23,
 			"verseIndex": 34,
-			"scriptureText": "And Jesus said, / ''Father, forgive them;/ for they know not what they do.'' - Luke 23:34"
+			"scriptureText": "[Then Jesus said, “Father, forgive them, they know not what they do.”]* They divided his garments by casting lots. - Luke 23:34"
 		},
 		{
 			"scriptureID": 143,
 			"bookIndex": 9,
 			"chapterIndex": 23,
 			"verseIndex": 39,
-			"scriptureText": "One of the criminals who were crucified with him said, ''Jesus, remember me/ when you come in your kingly power.'' - Luke 23:39, 42; Mark 15:32"
+			"scriptureText": "Now one of the criminals hanging there reviled Jesus, saying, \"Are you not the Messiah? Save yourself and us.\" / Let the Messiah, the King of Israel, come down now from the cross that we may see and believe.\" Those who were crucified with him also kept abusing him. - Luke 23:39, 42; Mark 15:32"
 		},
 		{
 			"scriptureID": 144,
 			"bookIndex": 9,
 			"chapterIndex": 23,
 			"verseIndex": 43,
-			"scriptureText": "''Truly, I say to you, / today you will be with me in paradise.'' - Luke 23:43"
+			"scriptureText": "He replied to him, \"Amen, I say to you, today you will be with me in Paradise.\" - Luke 23:43"
 		},
 		{
 			"scriptureID": 145,
 			"bookIndex": 10,
 			"chapterIndex": 19,
 			"verseIndex": 25,
-			"scriptureText": "But standing by the cross of Jesus were his mother . . . / and the disciple whom he loved. - John 19:25-26"
+			"scriptureText": "Standing by the cross of Jesus were his mother and his mother’s sister, Mary the wife of Clopas, and Mary of Magdala. - John 19:25"
 		},
 		{
 			"scriptureID": 146,
 			"bookIndex": 10,
 			"chapterIndex": 19,
 			"verseIndex": 26,
-			"scriptureText": "Jesus said to his mother, ''Woman, behold, your son.'' / Then he said to the disciple, / ''Behold, your mother.'' - John 19:26-27"
+			"scriptureText": "JThen he said to the disciple, \"Behold, your mother.\" And from that hour the disciple took her into his home. - John 19:26"
 		},
 		{
 			"scriptureID": 147,
 			"bookIndex": 10,
 			"chapterIndex": 19,
 			"verseIndex": 27,
-			"scriptureText": "And from that hour / the disciple took her to his own home. - John 19:27"
+			"scriptureText": "Then he said to the disciple, “Behold, your mother.” And from that hour the disciple took her into his home. - John 19:27"
 		},
 		{
 			"scriptureID": 148,
 			"bookIndex": 9,
 			"chapterIndex": 23,
 			"verseIndex": 44,
-			"scriptureText": "And there was darkness over the whole land. /  And behold, the curtain of the temple was torn in two / from top to bottom, / and the earth shook. - Luke 23:44; Matthew 27:51"
+			"scriptureText": "It was now about noon and darkness came over the whole land until three in the afternoon / And behold, the veil of the sanctuary was torn in two from top to bottom.* The earth quaked, rocks were split, - Luke 23:44; Matthew 27:51"
 		},
 		{
 			"scriptureID": 149,
 			"bookIndex": 9,
 			"chapterIndex": 23,
 			"verseIndex": 46,
-			"scriptureText": "Then Jesus, crying with a loud voice, said / ''Father, into your hands I commit my spirit!'' - Luke 23:46"
+			"scriptureText": "Jesus cried out in a loud voice, \"Father, into your hands I commend my spirit\"; and when he had said this he breathed his last. - Luke 23:46"
 		},
 		{
 			"scriptureID": 150,
 			"bookIndex": 10,
 			"chapterIndex": 19,
 			"verseIndex": 30,
-			"scriptureText": "And he bowed his head / and gave up his spirit. - John 19:30"
+			"scriptureText": "When Jesus had taken the wine, he said, \"It is finished.\" And bowing his head, he handed over the spirit. - John 19:30"
 		},
 		{
 			"scriptureID": 151,
@@ -3885,14 +3885,14 @@ var rosaryJSONnab = {
 			"bookIndex": 10,
 			"chapterIndex": 16,
 			"verseIndex": 22,
-			"scriptureText": "''But I will see you again, / and your hearts will rejoice, / and no one will take your joy from you.'' - John 16:22"
+			"scriptureText": "So you also are now in anguish. But I will see you again, and your hearts will rejoice, and no one will take your joy away from you. - John 16:22"
 		},
 		{
 			"scriptureID": 153,
 			"bookIndex": 9,
 			"chapterIndex": 24,
 			"verseIndex": 1,
-			"scriptureText": "At the early dawn, / they went to the tomb, / taking the spices which they had prepared. - Luke 24:1"
+			"scriptureText": "But at daybreak on the first day of the week they took the spices they had prepared and went to the tomb. - Luke 24:1"
 		},
 		{
 			"scriptureID": 154,
@@ -3913,7 +3913,7 @@ var rosaryJSONnab = {
 			"bookIndex": 9,
 			"chapterIndex": 24,
 			"verseIndex": 6,
-			"scriptureText": "He is not here, for he has been raised just as he said. Come and see the place where he lay. - Luke 24:6"
+			"scriptureText": "He is not here, but he has been raised.* Remember what he said to you while he was still in Galilee, - Luke 24:6"
 		},
 		{
 			"scriptureID": 157,
@@ -3927,7 +3927,7 @@ var rosaryJSONnab = {
 			"bookIndex": 8,
 			"chapterIndex": 16,
 			"verseIndex": 8,
-			"scriptureText": "And the women went out and fled from the tomb / with fear and great joy, / and ran to tell his disciples. - Mark 16:8; Mt 28:8"
+			"scriptureText": "Then they went out and fled from the tomb, seized with trembling and bewilderment. They said nothing to anyone, for they were afraid. / Then they went away quickly from the tomb, fearful yet overjoyed, and ran to announce* this to his disciples. - Mark 16:8; Mt 28:8"
 		},
 		{
 			"scriptureID": 159,
@@ -3941,14 +3941,14 @@ var rosaryJSONnab = {
 			"bookIndex": 10,
 			"chapterIndex": 11,
 			"verseIndex": 26,
-			"scriptureText": "''And whoever lives and believes in me / shall never die.'' - John 11:26"
+			"scriptureText": "and everyone who lives and believes in me will never die. Do you believe this?\" - John 11:26"
 		},
 		{
 			"scriptureID": 161,
 			"bookIndex": 9,
 			"chapterIndex": 24,
 			"verseIndex": 50,
-			"scriptureText": "Then Jesus led them out as far as Bethany,/ and lifting up his hands he blessed them. - Luke 24:50"
+			"scriptureText": "Then he led them [out] as far as Bethany, raised his hands, and blessed them. - Luke 24:50"
 		},
 		{
 			"scriptureID": 162,
@@ -3983,14 +3983,14 @@ var rosaryJSONnab = {
 			"bookIndex": 8,
 			"chapterIndex": 16,
 			"verseIndex": 16,
-			"scriptureText": "''He who believes and is baptized / will be saved.'' - Mark 16:16"
+			"scriptureText": "Whoever believes and is baptized will be saved; whoever does not believe will be condemned. - Mark 16:16"
 		},
 		{
 			"scriptureID": 167,
 			"bookIndex": 8,
 			"chapterIndex": 16,
 			"verseIndex": 16,
-			"scriptureText": "''But he who does not believe will be condemned.'' - Mark 16:16"
+			"scriptureText": "Whoever believes and is baptized will be saved; whoever does not believe will be condemned. - Mark 16:16"
 		},
 		{
 			"scriptureID": 168,
@@ -4004,70 +4004,70 @@ var rosaryJSONnab = {
 			"bookIndex": 11,
 			"chapterIndex": 1,
 			"verseIndex": 9,
-			"scriptureText": "And when he had said this, / as they were looking on, / he was lifted up, / and a cloud took him out of their sight. - Acts 1:9"
+			"scriptureText": "When he had said this, as they were looking on, he was lifted up, and a cloud took him from their sight. - Acts 1:9"
 		},
 		{
 			"scriptureID": 170,
 			"bookIndex": 8,
 			"chapterIndex": 16,
 			"verseIndex": 19,
-			"scriptureText": "So then the Lord Jesus, after he had spoken to them, / was taken up into heaven, / and sat down at the right hand of God. - Mark 16:19"
+			"scriptureText": "So then the Lord Jesus, after he spoke to them, was taken up into heaven and took his seat at the right hand of God. - Mark 16:19"
 		},
 		{
 			"scriptureID": 171,
 			"bookIndex": 11,
 			"chapterIndex": 2,
 			"verseIndex": 1,
-			"scriptureText": "When the day of Pentecost day had come, / they were all together in one place. - Acts 2:1"
+			"scriptureText": "When the time for Pentecost was fulfilled, they were all in one place together. - Acts 2:1"
 		},
 		{
 			"scriptureID": 172,
 			"bookIndex": 11,
 			"chapterIndex": 2,
 			"verseIndex": 2,
-			"scriptureText": "And suddenly a sound came from heaven like the rush of a mighty wind, / and it filled all the house where they were sitting. - Acts 2:2"
+			"scriptureText": "And suddenly there came from the sky a noise like a strong driving wind,* and it filled the entire house in which they were. - Acts 2:2"
 		},
 		{
 			"scriptureID": 173,
 			"bookIndex": 11,
 			"chapterIndex": 2,
 			"verseIndex": 3,
-			"scriptureText": "And there appeared to them tongues as of fire, / distributed and resting on each one of them. - Acts 2:3"
+			"scriptureText": "Then there appeared to them tongues as of fire,* which parted and came to rest on each one of them. - Acts 2:3"
 		},
 		{
 			"scriptureID": 174,
 			"bookIndex": 11,
 			"chapterIndex": 2,
 			"verseIndex": 4,
-			"scriptureText": "And they were all filled with the Holy Spirit,/ and began to tell the mighty works of God. - Acts 2:4, 11"
+			"scriptureText": "And they were all filled with the holy Spirit and began to speak in different tongues,* as the Spirit enabled them to proclaim. / both Jews and converts to Judaism, Cretans and Arabs, yet we hear them speaking in our own tongues of the mighty acts of God.\" - Acts 2:4,11"
 		},
 		{
 			"scriptureID": 175,
 			"bookIndex": 11,
 			"chapterIndex": 2,
 			"verseIndex": 5,
-			"scriptureText": "Now there were dwelling in Jerusalem Jews, / devout men from every nation under heaven. - Acts 2:5"
+			"scriptureText": "Now there were devout Jews from every nation under heaven staying in Jerusalem. - Acts 2:5"
 		},
 		{
 			"scriptureID": 176,
 			"bookIndex": 11,
 			"chapterIndex": 2,
 			"verseIndex": 14,
-			"scriptureText": "But Peter, / standing with the Eleven, / lifted up his voice and addressed them. - Acts 2:14"
+			"scriptureText": "Then Peter stood up with the Eleven, raised his voice, and proclaimed to them, \"You who are Jews, indeed all of you staying in Jerusalem. Let this be known to you, and listen to my words. - Acts 2:14"
 		},
 		{
 			"scriptureID": 177,
 			"bookIndex": 11,
 			"chapterIndex": 2,
 			"verseIndex": 38,
-			"scriptureText": "And Peter said to them, / ''Repent, and be baptized every one of you / in the name of Jesus Christ / for the forgiveness of your sins; / and you shall receive the gift of the Holy Spirit.'' - Acts 2:38"
+			"scriptureText": "Peter [said] to them, \"Repent and be baptized,* every one of you, in the name of Jesus Christ for the forgiveness of your sins; and you will receive the gift of the holy Spirit. - Acts 2:38"
 		},
 		{
 			"scriptureID": 178,
 			"bookIndex": 11,
 			"chapterIndex": 2,
 			"verseIndex": 41,
-			"scriptureText": "So those who received his word were baptized, / and there were added that day about three thousand souls. - Acts 2:41"
+			"scriptureText": "Those who accepted his message were baptized, and about three thousand persons were added that day. - Acts 2:41"
 		},
 		{
 			"scriptureID": 179,
@@ -4109,21 +4109,21 @@ var rosaryJSONnab = {
 			"bookIndex": 13,
 			"chapterIndex": 11,
 			"verseIndex": 19,
-			"scriptureText": "Then God's temple in heaven was opened, / and the ark of his covenant was seen within his temple; / and there were flashes of lightning, / loud noises, peals of thunder, / an earthquake, and heavy hail. - Revelations 11:19"
+			"scriptureText": "Then God’s temple in heaven was opened, and the ark of his covenant could be seen in the temple. There were flashes of lightning, rumblings, and peals of thunder, an earthquake, and a violent hailstorm. - Revelations 11:19"
 		},
 		{
 			"scriptureID": 185,
 			"bookIndex": 13,
 			"chapterIndex": 12,
 			"verseIndex": 1,
-			"scriptureText": "And a great sign appeared in heaven, / a woman clothed with the sun. - Revelations 12:1"
+			"scriptureText": "A great sign appeared in the sky, a woman* clothed with the sun, with the moon under her feet, and on her head a crown of twelve stars. - Revelations 12:1"
 		},
 		{
 			"scriptureID": 186,
 			"bookIndex": 13,
 			"chapterIndex": 12,
 			"verseIndex": 1,
-			"scriptureText": ". . . with the moon under her feet, / and on her head a crown of twelve stars.  - Revelations 12:1"
+			"scriptureText": "A great sign appeared in the sky, a woman* clothed with the sun, with the moon under her feet, and on her head a crown of twelve stars. 12:1"
 		},
 		{
 			"scriptureID": 187,
@@ -4314,82 +4314,104 @@ var rosaryJSONnab = {
 		{
 			"prayerID": 0,
 			"prayerName": "",
-			"prayerText": "..."
+			"prayerText": "...",
+            "prayerFooter": ""
 		},
 		{
 			"prayerID": 1,
 			"prayerName": "Sign of the Cross",
-			"prayerText": "IN THE NAME of the Father, and of the Son, and of the Holy Spirit. Amen. <hr> (As you say this, with your right hand touch your forehead when you say Father, touch your breastbone when you say Son, touch your left shoulder when you say Holy, and touch your right shoulder when you say Spirit.)"
+			"prayerText": "IN THE NAME of the Father, and of the Son, and of the Holy Spirit. Amen. <hr> (As you say this, with your right hand touch your forehead when you say Father, touch your breastbone when you say Son, touch your left shoulder when you say Holy, and touch your right shoulder when you say Spirit.)",
+            "prayerFooter": ""
 		},
 		{
 			"prayerID": 2,
 			"prayerName": "Apostle's Crede",
-			"prayerText": "I BELIEVE IN GOD, the Father almighty, Creator of Heaven and earth. And in Jesus Christ, His only Son, our Lord, Who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate; was crucified, died, and was buried. He descended into Hell. The third day He rose again from the dead. He ascended into Heaven, and sits at the right hand of God,the Father almighty. He shall come again to judge the living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen"
+			"prayerText": "I BELIEVE IN GOD, the Father almighty, Creator of Heaven and earth. And in Jesus Christ, His only Son, our Lord, Who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate; was crucified, died, and was buried. He descended into Hell. The third day He rose again from the dead. He ascended into Heaven, and sits at the right hand of God,the Father almighty. He shall come again to judge the living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen",
+            "prayerFooter": ""
 		},
 		{
 			"prayerID": 3,
 			"prayerName": "Our Father",
-			"prayerText": "OUR FATHER, Who art in Heaven, hallowed be Thy Name. Thy kingdom come, Thy will be done on earth as it is in Heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from evil. Amen."
+			"prayerText": "OUR FATHER, Who art in Heaven, hallowed be Thy Name. Thy kingdom come, Thy will be done on earth as it is in Heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from evil. Amen.",
+            "prayerFooter": ""
 		},
 		{
 			"prayerID": 4,
 			"prayerName": "Hail Mary",
-			"prayerText": "HAIL MARY, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen."
+			"prayerText": "HAIL MARY, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+            "prayerFooter": ""
 		},
 		{
 			"prayerID": 5,
 			"prayerName": "Glory Be",
-			"prayerText": "GLORY BE to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning is now, and ever shall be, world without end. Amen."
+			"prayerText": "GLORY BE to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning is now, and ever shall be, world without end. Amen.",
+            "prayerFooter": ""
 		},
 		{
 			"prayerID": 6,
 			"prayerName": "O My Jesus",
-			"prayerText": "O MY JESUS, forgive us our sins, save us from the fires of Hell; lead all souls to Heaven, especially those in most need of Thy mercy. Amen."
+			"prayerText": "O MY JESUS, forgive us our sins, save us from the fires of Hell; lead all souls to Heaven, especially those in most need of Thy mercy. Amen.",
+            "prayerFooter": ""
 		},
 		{
 			"prayerID": 7,
 			"prayerName": "Hail Holy Queen",
-			"prayerText": "HAIL HOLY QUEEN, mother of mercy; our life, our sweetness, and our hope. To thee do we cry, poor banished children of Eve. To thee do we send up our sighs, mourning and weeping in this vale of tears. Turn, then, most gracious advocate, thine eyes of mercy toward us. And after this, our exile, show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary. Pray for us, O holy Mother of God, that we may be made worthy of the promises of Christ. Amen."
+			"prayerText": "HAIL HOLY QUEEN, mother of mercy; our life, our sweetness, and our hope. To thee do we cry, poor banished children of Eve. To thee do we send up our sighs, mourning and weeping in this vale of tears. Turn, then, most gracious advocate, thine eyes of mercy toward us. And after this, our exile, show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary. Pray for us, O holy Mother of God, that we may be made worthy of the promises of Christ. Amen.",
+            "prayerFooter": ""
 		},
 		{
 			"prayerID": 8,
 			"prayerName": "O God",
-			"prayerText": "O GOD, WHOSE only-begotten Son by His life, death and resurrection, has purchased for us the rewards of eternal life; grant, we beseech Thee, that by meditating upon these mysteries of the Most Holy Rosary of the Blessed Virgin Mary, we may imitate what they contain and obtain what they promise, through the same Christ our Lord. Amen. Pour forth we beseech Thee, O Lord, Thy grace into our hearts, that we to whom the incarnation of Christ, Thy Son, was made known by the message of an angel, may by His passion and cross be brought to the glory of His resurrection, through the same Christ Our Lord. Amen."
+			"prayerText": "O GOD, WHOSE only-begotten Son by His life, death and resurrection, has purchased for us the rewards of eternal life; grant, we beseech Thee, that by meditating upon these mysteries of the Most Holy Rosary of the Blessed Virgin Mary, we may imitate what they contain and obtain what they promise, through the same Christ our Lord. Amen. Pour forth we beseech Thee, O Lord, Thy grace into our hearts, that we to whom the incarnation of Christ, Thy Son, was made known by the message of an angel, may by His passion and cross be brought to the glory of His resurrection, through the same Christ Our Lord. Amen.",
+            "prayerFooter": ""
 		},
         {
             "prayerID": 9,
             "prayerName": "Litany of Loreto",
-            "prayerText": "<p>Lord have mercy on us.<br> <b>R.</b> Christ have mercy on us.<br> Lord have mercy.<br> Christ hear us.<br> <b>R.</b> Christ graciously hear us.</p><p>God, the Father of heaven,<br> <b>R. have mercy on us.</b> &#8634;</br> &#8627; God the Son, Redeemer of the world,<br> &#8627; God the Holy Spirit,<br> &#8627; Holy Trinity, one God,</p><p>Holy Mary,<br> <b>R. pray for us.</b> &#8634;<br> &#8627; Holy Mother of God,<br> &#8627; Holy Virgin of virgins,<br> &#8627; Mother of Christ,<br> &#8627; Mother of the Church,<br> &#8627; Mother of divine grace,<br> &#8627; Mother most pure,<br> &#8627; Mother most chaste,<br> &#8627; Mother inviolate,<br> &#8627; Mother undefiled,<br> &#8627; Mother most amiable,<br> &#8627; Mother admirable,<br> &#8627; Mother of good counsel,<br> &#8627; Mother of our Creator,<br> &#8627; Mother of our Saviour,<br> &#8627; Mother of mercy,<br> &#8627; Virgin most prudent,<br> &#8627; Virgin most venerable,<br> &#8627; Virgin most renowned,<br> &#8627; Virgin most powerful,<br> &#8627; Virgin most merciful,<br> &#8627; Virgin most faithful,<br> &#8627; Mirror of justice,<br> &#8627; Seat of wisdom,<br> &#8627; Cause of our joy,<br> &#8627; Spiritual vessel,<br> &#8627; Vessel of honour,<br> &#8627; Singular vessel of devotion,<br> &#8627; Mystical rose,<br> &#8627; Tower of David,<br> &#8627; Tower if ivory,<br> &#8627; House of gold,<br> &#8627; Ark of the covenant,<br> &#8627; Gate of heaven,<br> &#8627; Morning star,<br> &#8627; Health of the sick,<br> &#8627; Refuge of sinners,<br> &#8627; Comfort of the afflicted,<br> &#8627; Help of Christians,<br> &#8627; Queen of Angels,<br> &#8627; Queen of Patriarchs,<br> &#8627; Queen of Prophets,<br> &#8627; Queen of Apostles,<br> &#8627; Queen of Martyrs,<br> &#8627; Queen of Confessors,<br> &#8627; Queen of Virgins,<br> &#8627; Queen of all Saints,<br> &#8627; Queen conceived without original sin,<br> &#8627; Queen assumed into heaven,<br> &#8627; Queen of the most holy Rosary,<br> &#8627; Queen of families,<br> &#8627; Queen of peace.</p><p>Lamb of God, who takest away the sins of the world,<br> <b>R. spare us, O Lord.</b></p><p>Lamb of God, who takest away the sins of the world,<br> <b>R. graciously hear us, O Lord.</b></p><p>Lamb of God, who takest away the sins of the world,<br> <b>R. have mercy on us.</b></p><p>Pray for us, O holy Mother of God.<br> <b>R. That we may be made worthy of the promises of Christ.</b></p><p>Let us pray.<br> Grant, we beseech thee,<br> O Lord God,<br> that we, your servants,<br> may enjoy perpetual health of mind and body;<br> and by the intercession of the Blessed Mary, ever Virgin,<br> may be delivered from present sorrow,<br> and obtain eternal joy.<br> Through Christ our Lord.<br> Amen.</p>"
+            "prayerText": "<p>Lord have mercy on us.<br> <b>R.</b> Christ have mercy on us.<br> Lord have mercy.<br> Christ hear us.<br> <b>R.</b> Christ graciously hear us.</p><p>God, the Father of heaven,<br> <b>R. have mercy on us.</b> &#8634;</br> &#8627; God the Son, Redeemer of the world,<br> &#8627; God the Holy Spirit,<br> &#8627; Holy Trinity, one God,</p><p>Holy Mary,<br> <b>R. pray for us.</b> &#8634;<br> &#8627; Holy Mother of God,<br> &#8627; Holy Virgin of virgins,<br> &#8627; Mother of Christ,<br> &#8627; Mother of the Church,<br> &#8627; Mother of divine grace,<br> &#8627; Mother most pure,<br> &#8627; Mother most chaste,<br> &#8627; Mother inviolate,<br> &#8627; Mother undefiled,<br> &#8627; Mother most amiable,<br> &#8627; Mother admirable,<br> &#8627; Mother of good counsel,<br> &#8627; Mother of our Creator,<br> &#8627; Mother of our Saviour,<br> &#8627; Mother of mercy,<br> &#8627; Virgin most prudent,<br> &#8627; Virgin most venerable,<br> &#8627; Virgin most renowned,<br> &#8627; Virgin most powerful,<br> &#8627; Virgin most merciful,<br> &#8627; Virgin most faithful,<br> &#8627; Mirror of justice,<br> &#8627; Seat of wisdom,<br> &#8627; Cause of our joy,<br> &#8627; Spiritual vessel,<br> &#8627; Vessel of honour,<br> &#8627; Singular vessel of devotion,<br> &#8627; Mystical rose,<br> &#8627; Tower of David,<br> &#8627; Tower if ivory,<br> &#8627; House of gold,<br> &#8627; Ark of the covenant,<br> &#8627; Gate of heaven,<br> &#8627; Morning star,<br> &#8627; Health of the sick,<br> &#8627; Refuge of sinners,<br> &#8627; Comfort of the afflicted,<br> &#8627; Help of Christians,<br> &#8627; Queen of Angels,<br> &#8627; Queen of Patriarchs,<br> &#8627; Queen of Prophets,<br> &#8627; Queen of Apostles,<br> &#8627; Queen of Martyrs,<br> &#8627; Queen of Confessors,<br> &#8627; Queen of Virgins,<br> &#8627; Queen of all Saints,<br> &#8627; Queen conceived without original sin,<br> &#8627; Queen assumed into heaven,<br> &#8627; Queen of the most holy Rosary,<br> &#8627; Queen of families,<br> &#8627; Queen of peace.</p><p>Lamb of God, who takest away the sins of the world,<br> <b>R. spare us, O Lord.</b></p><p>Lamb of God, who takest away the sins of the world,<br> <b>R. graciously hear us, O Lord.</b></p><p>Lamb of God, who takest away the sins of the world,<br> <b>R. have mercy on us.</b></p><p>Pray for us, O holy Mother of God.<br> <b>R. That we may be made worthy of the promises of Christ.</b></p><p>Let us pray.<br> Grant, we beseech thee,<br> O Lord God,<br> that we, your servants,<br> may enjoy perpetual health of mind and body;<br> and by the intercession of the Blessed Mary, ever Virgin,<br> may be delivered from present sorrow,<br> and obtain eternal joy.<br> Through Christ our Lord.<br> Amen.</p>",
+            "prayerFooter": ""
         },
         {
             "prayerID": 10,
             "prayerName": "Nicene Creed",
-            "prayerText": "<p> I believe in one God<br> the Father almighty,<br> maker of heaven and earth<br> of all things visible and invisible.</p><p> I believe in one Lord Jesus Christ,<br> the Only-begotten Son of God,<br> born of the Father before all ages.<br> God from God, Light from Light,<br> true God from true God,<br> begotten, not made, consubstantial with the Father;<br> through Him all things were made.<br> For us men and for our salvation<br> He came down from heaven,.</p><p> and by the Holy Ghost was incarnate<br> of the Virgin Mary, and became man..</p><p> For our sake He was crucified under Pontius Pilate,<br> He suffered death and was buried,<br> and rose again on the third day<br> in accordance with the Scriptures.<br> He ascended into heaven<br> and is seated at the right hand of the Father.<br> He will come again in glory<br> to judge the living and the dead.<br> His kingdom will have no end..</p><p> I believe in the Holy Ghost, the Lord, the giver of life<br> who proceeds from the Father and the Son,<br> who with the Father and the Son is adored and glorified,<br> who has spoken through the prophets;.</p><p> I believe in one, holy, catholic, and apostolic Church.<br> I confess one baptism for the forgiveness of sins.<br> I look forward to the resurrection of the dead<br> and the life of the world to come..</p> Amen."
+            "prayerText": "<p> I believe in one God<br> the Father almighty,<br> maker of heaven and earth<br> of all things visible and invisible.</p><p> I believe in one Lord Jesus Christ,<br> the Only-begotten Son of God,<br> born of the Father before all ages.<br> God from God, Light from Light,<br> true God from true God,<br> begotten, not made, consubstantial with the Father;<br> through Him all things were made.<br> For us men and for our salvation<br> He came down from heaven,.</p><p> and by the Holy Ghost was incarnate<br> of the Virgin Mary, and became man..</p><p> For our sake He was crucified under Pontius Pilate,<br> He suffered death and was buried,<br> and rose again on the third day<br> in accordance with the Scriptures.<br> He ascended into heaven<br> and is seated at the right hand of the Father.<br> He will come again in glory<br> to judge the living and the dead.<br> His kingdom will have no end..</p><p> I believe in the Holy Ghost, the Lord, the giver of life<br> who proceeds from the Father and the Son,<br> who with the Father and the Son is adored and glorified,<br> who has spoken through the prophets;.</p><p> I believe in one, holy, catholic, and apostolic Church.<br> I confess one baptism for the forgiveness of sins.<br> I look forward to the resurrection of the dead<br> and the life of the world to come..</p> Amen.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 11,
             "prayerName": "Magnificat",
-            "prayerText": "My soul magnifies the Lord,<br> And my spirit rejoices<br> in God my Savior.<br> For He has regarded the low estate<br> of His handmaiden,<br> For behold, henceforth all generations<br> shall call me blessed.<br> For He who is mighty<br> has done great things for me,<br> and holy is His name.<br> And His mercy is on those who fear Him<br> from generation to generation.<br> He has shown strength with His arm.<br> He has scattered the proud<br> in the imagination of their hearts.<br> He has put down the mighty from their thrones,<br> and exalted those of low degree.<br> He has filled the hungry with good things,<br> and the rich He has sent empty away.<br> He has helped His servant Israel,<br> in remembrance of His mercy,<br> as He spoke to our fathers,<br> to Abraham and to his posterity forever.<br> Glory be to the Father and to the Son <br> and to the Holy Ghost.<br> As it was in the beginning,<br> is now and ever shall be,<br> world without end.<br> Amen."
+            "prayerText": "My soul magnifies the Lord,<br> And my spirit rejoices<br> in God my Savior.<br> For He has regarded the low estate<br> of His handmaiden,<br> For behold, henceforth all generations<br> shall call me blessed.<br> For He who is mighty<br> has done great things for me,<br> and holy is His name.<br> And His mercy is on those who fear Him<br> from generation to generation.<br> He has shown strength with His arm.<br> He has scattered the proud<br> in the imagination of their hearts.<br> He has put down the mighty from their thrones,<br> and exalted those of low degree.<br> He has filled the hungry with good things,<br> and the rich He has sent empty away.<br> He has helped His servant Israel,<br> in remembrance of His mercy,<br> as He spoke to our fathers,<br> to Abraham and to his posterity forever.<br> Glory be to the Father and to the Son <br> and to the Holy Ghost.<br> As it was in the beginning,<br> is now and ever shall be,<br> world without end.<br> Amen.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 12,
             "prayerName": "Act of Contrition",
-            "prayerText": "O my God, I am heartily sorry for having offended Thee,<br>and I detest my sins above every other evil<br>because they are displeasing to Thee, my God.<br>Who for thy infinite goodness are so deserving of all my love<br>and I firmly resolve by Thy holy grace<br>never more to offend Thee and to amend my life. Amen."
+            "prayerText": "O my God, I am heartily sorry for having offended Thee,<br>and I detest my sins above every other evil<br>because they are displeasing to Thee, my God.<br>Who for thy infinite goodness are so deserving of all my love<br>and I firmly resolve by Thy holy grace<br>never more to offend Thee and to amend my life. Amen.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 13,
             "prayerName": "Act of Faith",
-            "prayerText": "O Lord God,<br> I firmly believe all the truths<br> which the Holy Catholic Church teaches<br> because thou hast revealed them<br> who art eternal truth and wisdom,<br> who can neither deceive nor be deceived.<br> In this faith I intend to live and die.<br> Amen."
+            "prayerText": "O Lord God,<br> I firmly believe all the truths<br> which the Holy Catholic Church teaches<br> because thou hast revealed them<br> who art eternal truth and wisdom,<br> who can neither deceive nor be deceived.<br> In this faith I intend to live and die.<br> Amen.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 14,
             "prayerName": "Act of Hope",
-            "prayerText": "O Lord God,<br> I hope by thy grace<br> for the pardon of all my sins,<br> and after life here<br> to gain eternal happiness,<br> because thou hast promised it<br> who art infinitely powerful,<br> faithful, kind, and merciful.<br> In this hope I intend to live and die.<br> Amen."
+            "prayerText": "O Lord God,<br> I hope by thy grace<br> for the pardon of all my sins,<br> and after life here<br> to gain eternal happiness,<br> because thou hast promised it<br> who art infinitely powerful,<br> faithful, kind, and merciful.<br> In this hope I intend to live and die.<br> Amen.",
+            "prayerFooter": ""
         },
         {
             "prayerID": 15,
             "prayerName": "Act of Love",
-            "prayerText": "O Lord God,<br> I love thee above all things<br> and I love my neighbor for thy sake,<br> because thou art the highest,<br> infinite and perfect good,<br> worthy of all my love.<br> In this love I intend to live and die.<br> Amen."
+            "prayerText": "O Lord God,<br> I love thee above all things<br> and I love my neighbor for thy sake,<br> because thou art the highest,<br> infinite and perfect good,<br> worthy of all my love.<br> In this love I intend to live and die.<br> Amen.",
+            "prayerFooter": ""
+        },
+        {
+            "prayerID": 16,
+            "prayerName": "To Saint Michael",
+            "prayerText": "Saint Michael the Archangel,<br> defend us in battle,<br> be our protection<br> against the wickedness and snares of the devil.<br> May God rebuke him,<br> we humbly pray,<br> and do thou, O Prince of the heavenly host,<br> by the power of God, thrust into hell<br> Satan and all the evil spirits<br> who prowl about the world<br> seeking the ruin of souls.<br> Amen.",
+            "prayerFooter": ""
         }
 	],
 	"mysteryInfo": [
@@ -4406,48 +4428,48 @@ var rosaryJSONnab = {
 			"infoHeader": "First Joyful Mystery",
 			"infoSubHeader": "The Annunciation",
 			"infoFooter": "",
-			"infoText": "<p>The Annunciation (from Latin annuntiatio), also referred to as the Annunciation to the Blessed Virgin Mary, the Annunciation of Our Lady, or the Annunciation of the Lord, is the Christian celebration of the announcement by the angel Gabriel to the Virgin Mary that she would conceive and become the mother of Jesus, the Son of God, marking his Incarnation. Gabriel told Mary to name her son Yehoshua , meaning \"YHWH is salvation\".<\/p> <p>According to Luke 1:26, the Annunciation occurred in \"the sixth month\" of Elizabeth's pregnancy with John the Baptist. Many Christians observe this event with the Feast of the Annunciation on 25 March, an approximation of the northern vernal equinox nine full months before Christmas, the ceremonial birthday of Jesus. In England, this came to be known as Lady Day. It marked the new year until 1752. The 2nd-century writer Irenaeus of Lyon regarded the conception of Jesus as 25 March coinciding with the Passion.<\/p> <p>The Annunciation has been a key topic in Christian art in general, as well as in Marian art in the Catholic Church, particularly during the Middle Ages and Renaissance. A work of art depicting the Annunciation is sometimes itself called an Annunciation.<\/p>",
-			"infoRefference": "<a href='https:\/\/en.wikipedia.org\/wiki\/Annunciation' target='_blank'>link<\/a>"
+			"infoText": "<p>The Annunciation (from Latin annuntiatio), also referred to as the Annunciation to the Blessed Virgin Mary, the Annunciation of Our Lady, or the Annunciation of the Lord, is the Christian celebration of the announcement by the angel Gabriel to the Virgin Mary that she would conceive and become the mother of Jesus, the Son of God, marking his Incarnation. Gabriel told Mary to name her son Yehoshua , meaning \"YHWH is salvation\".</p> <p>According to Luke 1:26, the Annunciation occurred in \"the sixth month\" of Elizabeth's pregnancy with John the Baptist. Many Christians observe this event with the Feast of the Annunciation on 25 March, an approximation of the northern vernal equinox nine full months before Christmas, the ceremonial birthday of Jesus. In England, this came to be known as Lady Day. It marked the new year until 1752. The 2nd-century writer Irenaeus of Lyon regarded the conception of Jesus as 25 March coinciding with the Passion.</p> <p>The Annunciation has been a key topic in Christian art in general, as well as in Marian art in the Catholic Church, particularly during the Middle Ages and Renaissance. A work of art depicting the Annunciation is sometimes itself called an Annunciation.</p>",
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Annunciation' target='_blank'>link</a>"
 		},
 		{
 			"infoID": 2,
 			"infoHeader": "Second Joyful Mystery",
 			"infoSubHeader": "The Visitation",
 			"infoFooter": "",
-			"infoText": "<p>In the Gospel of Luke, the author's accounts of the Annunciation and Visitation are constructed using eight points of literary parallelism to compare Mary to the Ark of the Covenant.<\/p><p>In Catholicism, it is held that the purpose of this visit was to bring divine grace to both Elizabeth and her unborn child. Even though he was still in his mother's womb, John became aware of the presence of Christ, and leapt for joy as he was cleansed from original sin and filled with divine grace. Elizabeth also responded and recognized the presence of Jesus, and thus Mary exercised her function as mediatrix between God and man for the first time.<\/p>",
-			"infoRefference": "<a href='https:\/\/en.wikipedia.org\/wiki\/Visitation_(Christianity)' target='_blank'>link<\/a>"
+			"infoText": "<p>In the Gospel of Luke, the author's accounts of the Annunciation and Visitation are constructed using eight points of literary parallelism to compare Mary to the Ark of the Covenant.</p><p>In Catholicism, it is held that the purpose of this visit was to bring divine grace to both Elizabeth and her unborn child. Even though he was still in his mother's womb, John became aware of the presence of Christ, and leapt for joy as he was cleansed from original sin and filled with divine grace. Elizabeth also responded and recognized the presence of Jesus, and thus Mary exercised her function as mediatrix between God and man for the first time.</p>",
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Visitation_(Christianity)' target='_blank'>link</a>"
 		},
 		{
 			"infoID": 3,
 			"infoHeader": "Third Joyful Mystery",
 			"infoSubHeader": "Nativity of Jesus",
 			"infoFooter": "",
-			"infoText": "<p>In Christian theology the nativity marks the incarnation of Jesus as the second Adam, in fulfillment of the divine will of God, undoing the damage caused by the fall of the first man, Adam. The artistic depiction of the nativity has been an important subject for Christian artists since the 4th century. Since the 13th century, the nativity scene has emphasized the humility of Jesus and promoted a more tender image of him, as a major turning point from the early \"Lord and Master\" image, which has had an effect on the basic approaches of Christian pastoral ministry.<\/p><p>The nativity plays a major role in the Christian liturgical year. Christian congregations of the Western tradition (including the Catholic Church, the Western Rite Orthodox, the Anglican Communion, and many Protestants) begin observing the season of Advent four Sundays before Christmas, the traditional feast-day of his birth, which falls on December 25.<\/p>",
-			"infoRefference": "<a href='https:\/\/en.wikipedia.org\/wiki\/Nativity_of_Jesus' target='_blank'>link<\/a>"
+			"infoText": "<p>In Christian theology the nativity marks the incarnation of Jesus as the second Adam, in fulfillment of the divine will of God, undoing the damage caused by the fall of the first man, Adam. The artistic depiction of the nativity has been an important subject for Christian artists since the 4th century. Since the 13th century, the nativity scene has emphasized the humility of Jesus and promoted a more tender image of him, as a major turning point from the early \"Lord and Master\" image, which has had an effect on the basic approaches of Christian pastoral ministry.</p><p>The nativity plays a major role in the Christian liturgical year. Christian congregations of the Western tradition (including the Catholic Church, the Western Rite Orthodox, the Anglican Communion, and many Protestants) begin observing the season of Advent four Sundays before Christmas, the traditional feast-day of his birth, which falls on December 25.</p>",
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Nativity_of_Jesus' target='_blank'>link</a>"
 		},
 		{
 			"infoID": 4,
 			"infoHeader": "Fourth Joyful Mystery",
 			"infoSubHeader": "Presentation of Jesus at the Temple",
 			"infoFooter": "",
-			"infoText": "<p>The Presentation of Jesus at the Temple is an early episode in the life of Jesus that is celebrated by the Church on the holiday of Candlemas. It is described in the Gospel of Luke of the New Testament in the Christian Bible.[1] Within the account, \"Luke's narration of the Presentation in the Temple combines the purification rite with the Jewish ceremony of the redemption of the firstborn (Luke 2:23-24).\"<\/p>",
-			"infoRefference": "<a href='https:\/\/en.wikipedia.org\/wiki\/Presentation_of_Jesus_at_the_Temple' target='_blank'>link<\/a>"
+			"infoText": "<p>The Presentation of Jesus at the Temple is an early episode in the life of Jesus that is celebrated by the Church on the holiday of Candlemas. It is described in the Gospel of Luke of the New Testament in the Christian Bible.[1] Within the account, \"Luke's narration of the Presentation in the Temple combines the purification rite with the Jewish ceremony of the redemption of the firstborn (Luke 2:23-24).\"</p>",
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Presentation_of_Jesus_at_the_Temple' target='_blank'>link</a>"
 		},
 		{
 			"infoID": 5,
 			"infoHeader": "Fifth Joyful Mystery",
 			"infoSubHeader": "Finding in the Temple",
 			"infoFooter": "",
-			"infoText": "<p>The episode is described in Luke 2:41-52. Jesus at the age of twelve accompanies Mary, Joseph and a large group of their relatives and friends to Jerusalem on pilgrimage, following \"the custom of the feast\" (NKJV) - that is, Passover. On the day of their return, Jesus \"lingered\" in the Temple, but Mary and Joseph thought that he was among their group. Mary and Joseph headed back home and after a day of travel realized Jesus was missing, so they returned to Jerusalem, finding Jesus three days later.<\/p><p>The story was slightly elaborated in later literature, such as the apocryphal 2nd-century Infancy Gospel of Thomas (19:1-12). The losing of Jesus is the third of the Seven Sorrows of Mary, and the Finding in the Temple is the fifth Joyful Mystery of the Rosary.<\/p>",
-			"infoRefference": "<a href='https:\/\/en.wikipedia.org\/wiki\/Finding_in_the_Temple' target='_blank'>link<\/a>"
+			"infoText": "<p>The episode is described in Luke 2:41-52. Jesus at the age of twelve accompanies Mary, Joseph and a large group of their relatives and friends to Jerusalem on pilgrimage, following \"the custom of the feast\" (NKJV) - that is, Passover. On the day of their return, Jesus \"lingered\" in the Temple, but Mary and Joseph thought that he was among their group. Mary and Joseph headed back home and after a day of travel realized Jesus was missing, so they returned to Jerusalem, finding Jesus three days later.</p><p>The story was slightly elaborated in later literature, such as the apocryphal 2nd-century Infancy Gospel of Thomas (19:1-12). The losing of Jesus is the third of the Seven Sorrows of Mary, and the Finding in the Temple is the fifth Joyful Mystery of the Rosary.</p>",
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Finding_in_the_Temple' target='_blank'>link</a>"
 		},
 		{
 			"infoID": 6,
 			"infoHeader": "First Luminous Mystery",
 			"infoSubHeader": "The Baptism in the Jordan",
 			"infoFooter": "-",
-			"infoText": "<p>The Jordan River flows through the Jordan Rift Valley into the Sea of the Galilee and then continues down into the Dead Sea with no outlet. It is a place of many important biblical events. However, for most Christians the first association with the river would be the scene of Jesus Christ being baptized by John the Baptist.<\/p><p>According to the Christian faith, the Jordan River is considered the third most holy site in the Holy Land, just after Nativity Grotto in Bethlehem and Golgotha in Jerusalem, because it is the site of the most important event of Jesus’ life – His baptism and beginning of his ministry.<\/p>",
-			"infoRefference": "<a href='https://travelujah.com/stories/celebrating-baptism-the-jordan-river-in-the-time-of-jesus' target='_blank'>link<\/a>"
+			"infoText": "<p>The Jordan River flows through the Jordan Rift Valley into the Sea of the Galilee and then continues down into the Dead Sea with no outlet. It is a place of many important biblical events. However, for most Christians the first association with the river would be the scene of Jesus Christ being baptized by John the Baptist.</p><p>According to the Christian faith, the Jordan River is considered the third most holy site in the Holy Land, just after Nativity Grotto in Bethlehem and Golgotha in Jerusalem, because it is the site of the most important event of Jesus’ life – His baptism and beginning of his ministry.</p>",
+			"infoRefference": "<a href='https://travelujah.com/stories/celebrating-baptism-the-jordan-river-in-the-time-of-jesus' target='_blank'>link</a>"
 		},
 		{
 			"infoID": 7,
@@ -4455,7 +4477,7 @@ var rosaryJSONnab = {
 			"infoSubHeader": "The wedding at Cana",
 			"infoFooter": "-",
 			"infoText": "<p>The transformation of water into wine at the Marriage at Cana or Wedding at Cana is the first miracle attributed to Jesus in the Gospel of John. In the Gospel account, Jesus, his mother and his disciples are invited to a wedding, and when the wine runs out, Jesus delivers a sign of his glory by turning water into wine.</p>",
-			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Marriage_at_Cana' target='_blank'>link<\/a>"
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Marriage_at_Cana' target='_blank'>link</a>"
 		},
 		{
 			"infoID": 8,
@@ -4463,7 +4485,7 @@ var rosaryJSONnab = {
 			"infoSubHeader": "The Proclamation of the Kingdom",
 			"infoFooter": "-",
 			"infoText": "<p>The \"Kingdom of God\" and its equivalent form \"Kingdom of Heaven\" in the Gospel of Matthew is one of the key elements of the teachings of Jesus in the New Testament. The Gospel of Mark indicates that the gospel is the good news about the Kingdom of God. The term pertains to the kingdom that Jesus will establish on the earth when he returns. Kingdom of \"heaven\" appears in Matthew's gospel due primarily to Jewish sensibilities about uttering the \"name\" (God).</p>",
-			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Kingship_and_kingdom_of_God' target='_blank'>link<\/a>"
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Kingship_and_kingdom_of_God' target='_blank'>link</a>"
 		},
 		{
 			"infoID": 9,
@@ -4471,7 +4493,7 @@ var rosaryJSONnab = {
 			"infoSubHeader": "The Transfiguration",
 			"infoFooter": "-",
 			"infoText": "<p>The transfiguration of Jesus is an event reported in the New Testament when Jesus is transfigured and becomes radiant in glory upon a mountain. Jesus and three of his apostles, Peter, James, John, go to a mountain (the Mount of Transfiguration) to pray. On the mountain, Jesus begins to shine with bright rays of light. Then the prophets Moses and Elijah appear next to him and he speaks with them. Jesus is then called \"Son\" by a voice in the sky, assumed to be God the Father, as in the Baptism of Jesus.</p>",
-			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Transfiguration_of_Jesus' target='_blank'>link<\/a>"
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Transfiguration_of_Jesus' target='_blank'>link</a>"
 		},
 		{
 			"infoID": 10,
@@ -4479,15 +4501,15 @@ var rosaryJSONnab = {
 			"infoSubHeader": "The Last Supper",
 			"infoFooter": "-",
 			"infoText": "<p>The Last Supper is the final meal that, in the Gospel accounts, Jesus shared with his Apostles in Jerusalem before his crucifixion. The Last Supper is commemorated by Christians especially on Maundy Thursday. The Last Supper provides the scriptural basis for the Eucharist, also known as \"Holy Communion\" or \"The Lord's Supper\". </p>",
-			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Last_Supper' target='_blank'>link<\/a>"
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Last_Supper' target='_blank'>link</a>"
 		},
 		{
 			"infoID": 11,
 			"infoHeader": "First Sorrowful Mystery",
 			"infoSubHeader": "The Agony in the Garden",
 			"infoFooter": "-",
-			"infoText": "<p>Jesus did not allow his fears to turn him away from his passion and death. Instead, he made the decision with seven simple words: \"Not my will, but yours be done!\"<\/p>",
-			"infoRefference": "<a href='http://blog.franciscanmedia.org/sam/lessons-from-jesus-agony-in-the-garden' target='_blank'>link<\/a>"
+			"infoText": "<p>Jesus did not allow his fears to turn him away from his passion and death. Instead, he made the decision with seven simple words: \"Not my will, but yours be done!\"</p>",
+			"infoRefference": "<a href='http://blog.franciscanmedia.org/sam/lessons-from-jesus-agony-in-the-garden' target='_blank'>link</a>"
 		},
 		{
 			"infoID": 12,
@@ -4495,7 +4517,7 @@ var rosaryJSONnab = {
 			"infoSubHeader": "The Scourging At The Pillar",
 			"infoFooter": "-",
 			"infoText": "<p>According to all four Gospels, immediately after the Last Supper, Jesus took a walk to pray. The gospels of Matthew and Mark identify this place of prayer as Gethsemane. Jesus was accompanied by three Apostles: Peter, John and James, whom he asked to stay awake and pray.</p>",
-			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Agony_in_the_Garden' target='_blank'>link<\/a>"
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Agony_in_the_Garden' target='_blank'>link</a>"
 		},
 		{
 			"infoID": 13,
@@ -4503,7 +4525,7 @@ var rosaryJSONnab = {
 			"infoSubHeader": "The Crowning with Thorns",
 			"infoFooter": "-",
 			"infoText": "<p>According to three of the canonical Gospels, a woven crown of thorns was placed on the head of Jesus during the events leading up to the crucifixion of Jesus. It was one of the instruments of the Passion, employed by Jesus' captors both to cause him pain and to mock his claim of authority.</p>",
-			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Crown_of_thorns' target='_blank'>link<\/a>"
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Crown_of_thorns' target='_blank'>link</a>"
 		},
 		{
 			"infoID": 14,
@@ -4518,42 +4540,42 @@ var rosaryJSONnab = {
 			"infoSubHeader": "The Crucifixion of Our Lord",
 			"infoFooter": "-",
 			"infoText": "<p>The crucifixion of Jesus occurred in 1st-century Judea, most likely between AD 30 and 33.</p>",
-			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Crucifixion_of_Jesus' target='_blank'>link<\/a>"
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Crucifixion_of_Jesus' target='_blank'>link</a>"
 		}, {
 			"infoID": 16,
 			"infoHeader": "First Glorious Mystery",
 			"infoSubHeader": "The Resurrection",
 			"infoFooter": "-",
 			"infoText": "<p>The resurrection of Jesus or resurrection of Christ is the Christian religious belief that, after being put to death, Jesus rose again from the dead: as the Nicene Creed expresses it, \"On the third day he rose again in accordance with the Scriptures\"</p>",
-			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Resurrection_of_Jesus' target='_blank'>link<\/a>"
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Resurrection_of_Jesus' target='_blank'>link</a>"
 		}, {
 			"infoID": 17,
 			"infoHeader": "Second Glorious Mystery",
 			"infoSubHeader": "The Ascension",
 			"infoFooter": "-",
 			"infoText": "<p>In the Christian tradition, reflected in the major Christian creeds and confessional statements, the ascension is connected with the exaltation of Jesus, meaning that through his ascension, Jesus took his seat at the right hand of God</p>",
-			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Ascension_of_Jesus' target='_blank'>link<\/a>"
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Ascension_of_Jesus' target='_blank'>link</a>"
 		}, {
 			"infoID": 18,
 			"infoHeader": "Third Glorious Mystery",
 			"infoSubHeader": "The Descent of the Holy Spirit",
 			"infoFooter": "-",
 			"infoText": "<p>The Christian feast day of Pentecost is seven weeks after Easter Sunday: that is to say, the fiftieth day after Easter inclusive of Easter Sunday. It commemorates the descent of the Holy Spirit upon the Apostles and other followers of Jesus Christ while they were in Jerusalem celebrating the Feast of Weeks, as described in the Acts of the Apostles. Some Christians believe that this event represents the birth of the Church.</p>",
-			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Pentecost' target='_blank'>link<\/a>"
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Pentecost' target='_blank'>link</a>"
 		}, {
 			"infoID": 19,
 			"infoHeader": "Fourth Glorious Mystery",
 			"infoSubHeader": "The Assumption",
 			"infoFooter": "-",
 			"infoText": "<p>The Catholic Church teaches as dogma that the Virgin Mary \"having completed the course of her earthly life, was assumed body and soul into heavenly glory\".[5] This doctrine was dogmatically defined by Pope Pius XII on 1 November 1950, in the apostolic constitution Munificentissimus Deus by exercising papal infallibility.</p>",
-			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Assumption_of_Mary' target='_blank'>link<\/a>"
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Assumption_of_Mary' target='_blank'>link</a>"
 		}, {
 			"infoID": 20,
 			"infoHeader": "Fifth Glorious Mystery",
 			"infoSubHeader": "The Coronation",
 			"infoFooter": "-",
 			"infoText": "<p>The belief in Mary as Queen of Heaven obtained the papal sanction of Pope Pius XII in his encyclical Ad Caeli Reginam (English: Queenship of Mary in Heaven) of October 11, 1954. It is also the fifth Glorious Mystery of the Rosary. The Roman Catholic Church celebrates the feast every August 22, where it replaced the former octave of the Assumption of Mary in 1969, a move made by Pope Paul VI.</p>",
-			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Coronation_of_the_Virgin' target='_blank'>link<\/a>"
+			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Coronation_of_the_Virgin' target='_blank'>link</a>"
 		}
 
 	],
@@ -4562,22 +4584,22 @@ var rosaryJSONnab = {
             "infoID": 0,
             "infoHeader": "Catechism of the Catholic Church",
             "infoSubHeader": "Apostolic Constitution Fidei Depositum (ch.1, p.3-4)",
-            "infoFooter": "Vatican Online <a href=\"http:\/\/www.vatican.va\/archive\/ccc_css\/archive\/catechism\/aposcons.htm\" target=\"_blank\">Link<\/a>",
+            "infoFooter": "Vatican Online <a href='http://www.vatican.va/archive/ccc_css/archive/catechism/aposcons.htm' target='_blank'>Link</a>",
             "infoText": "<b>The Process and Spirit of Drafting the Text</b><p>\"The Catechism of the Catholic Church is the result of very extensive collaboration; it was prepared over six years of intense work done in a spirit of complete openness and fervent zeal.</p> <p>In 1986, I entrusted a commission of twelve Cardinals and Bishops, chaired by Cardinal Joseph Ratzinger, with the task of preparing a draft of the catechism requested by the Synod Fathers. An editorial committee of seven diocesan Bishops, experts in theology and catechesis, assisted the commission in its work.</p> <p>The commission, charged with giving directives and with overseeing the course of the work, attentively followed all the stages in editing the nine subsequent drafts. The editorial committee, for its part, assumed responsibility for writing the text, making the emendations requested by the commission and examining the observations of numerous theologians, exegetes and catechists, and, above all, of the Bishops of the whole world, in order to produce a better text. In the committee various opinions were compared with great profit, and thus a richer text has resulted whose unity and coherence are assured. </p> <p> The project was the object of extensive consultation among all Catholic Bishops, their Episcopal Conferences or Synods, and of theological and catechetical institutes. As a whole, it received a broadly favorable acceptance on the part of the Episcopate. It can be said that this Catechism is the result of the collaboration of the whole Episcopate of the Catholic Church, who generously accepted my invitation to share responsibility for an enterprise which directly concerns the life of the Church. This response elicits in me a deep feeling of joy, because the harmony of so many voices truly expresses what could be called the “symphony” of the faith. The achievement of this Catechism thus reflects the collegial nature of the Episcopate; it testifies to the Church’s catholicity.\"</p> - <b>Pope John Paul II</b> <i>(11 October 1992, the thirtieth anniversary of the opening of the Second Vatican Ecumenical Council)</i><hr><p>The Catechism of the Catholic Church came about as a result of a proposal of Synod of Bishops in 1985. It appeared first in French in 1992. Subsequently, an English translation was published in 1982. In September of 1997, the Latin Typical Edition was approved and promulgated. This second edition in the United States of the English <i>Catechism of the Catholic Church</i> incorperates the modifications that appeared in the Latin text.</p>"
         },
         {
             "infoID": 1,
             "infoHeader": "Catechism of the Catholic Church",
             "infoSubHeader": "<b>PART ONE, THE PROFESSION OF FAITH, SECTION TWO, THE PROFESSION OF THE CHRISTIAN FAITH, CHAPTER THREE, ARTICLE 9, Paragraph 6. Mary - Mother of Christ, Mother of the Church</b>",
-            "infoFooter": "<a href=\"http:\/\/www.vatican.va\/archive\/ccc_css\/archive\/catechism\/p1s2c3a8.htm#721\" target=\"_blank\">Vatican Online Link<\/a>",
-            "infoText": "<p><b>Paragraph 6. Mary - Mother of Christ, Mother of the Church<\/b><\/p><p>963 Since the Virgin Mary's role in the mystery of Christ and the Spirit has been treated, it is fitting now to consider her place in the mystery of the Church. \"The Virgin Mary... is acknowledged and honored as being truly the Mother of God and of the redeemer... She is \"clearly the mother of the members of Christ\"... since she has by her charity joined in bringing about the birth of believers in the Church, who are members of its head.\"502 \"Mary, Mother of Christ, Mother of the Church\".503<\/p><p><b>I. MARY'S MOTHERHOOD WITH REGARD TO THE CHURCH<\/b><\/p><p>Wholly united with her Son... <\/p><p>964 Mary's role in the Church is inseparable from her union with Christ and flows directly from it. \"This union of the mother with the Son in the work of salvation is made manifest from the time of Christ's virginal conception up to his death\";504 it is made manifest above all at the hour of his Passion:<\/p><p>Thus the Blessed Virgin advanced in her pilgrimage of faith, and faithfully persevered in her union with her Son unto the cross. There she stood, in keeping with the divine plan, enduring with her only begotten Son the intensity of his suffering, joining herself with his sacrifice in her mother's heart, and lovingly consenting to the immolation of this victim, born of her: to be given, by the same Christ Jesus dying on the cross, as a mother to his disciple, with these words: \"Woman, behold your son.\"505\n965 After her Son's Ascension, Mary \"aided the beginnings of the Church by her prayers.\"506 In her association with the apostles and several women, \"we also see Mary by her prayers imploring the gift of the Spirit, who had already overshadowed her in the Annunciation.\"507<\/p><p>... also in her Assumption<\/p><p>966 \"Finally the Immaculate Virgin, preserved free from all stain of original sin, when the course of her earthly life was finished, was taken up body and soul into heavenly glory, and exalted by the Lord as Queen over all things, so that she might be the more fully conformed to her Son, the Lord of lords and conqueror of sin and death.\"508 The Assumption of the Blessed Virgin is a singular participation in her Son's Resurrection and an anticipation of the resurrection of other Christians:<\/p><p>In giving birth you kept your virginity; in your Dormition you did not leave the world, O Mother of God, but were joined to the source of Life. You conceived the living God and, by your prayers, will deliver our souls from death.509\n... she is our Mother in the order of grace<\/p><p>967 By her complete adherence to the Father's will, to his Son's redemptive work, and to every prompting of the Holy Spirit, the Virgin Mary is the Church's model of faith and charity. Thus she is a \"preeminent and... wholly unique member of the Church\"; indeed, she is the \"exemplary realization\" (typus)510 of the Church.<\/p><p>968 Her role in relation to the Church and to all humanity goes still further. \"In a wholly singular way she cooperated by her obedience, faith, hope, and burning charity in the Savior's work of restoring supernatural life to souls. For this reason she is a mother to us in the order of grace.\"511<\/p><p>969 \"This motherhood of Mary in the order of grace continues uninterruptedly from the consent which she loyally gave at the Annunciation and which she sustained without wavering beneath the cross, until the eternal fulfillment of all the elect. Taken up to heaven she did not lay aside this saving office but by her manifold intercession continues to bring us the gifts of eternal salvation... . Therefore the Blessed Virgin is invoked in the Church under the titles of Advocate, Helper, Benefactress, and Mediatrix.\"512<\/p><p>970 \"Mary's function as mother of men in no way obscures or diminishes this unique mediation of Christ, but rather shows its power. But the Blessed Virgin's salutary influence on men... flows forth from the superabundance of the merits of Christ, rests on his mediation, depends entirely on it, and draws all its power from it.\"513 \"No creature could ever be counted along with the Incarnate Word and Redeemer; but just as the priesthood of Christ is shared in various ways both by his ministers and the faithful, and as the one goodness of God is radiated in different ways among his creatures, so also the unique mediation of the Redeemer does not exclude but rather gives rise to a manifold cooperation which is but a sharing in this one source.\"514<\/p> <p><b>* II. DEVOTION TO THE BLESSED VIRGIN<\/b><\/p><p>971 \"All generations will call me blessed\": \"The Church's devotion to the Blessed Virgin is intrinsic to Christian worship.\"515 The Church rightly honors \"the Blessed Virgin with special devotion. From the most ancient times the Blessed Virgin has been honored with the title of 'Mother of God,' to whose protection the faithful fly in all their dangers and needs... . This very special devotion... differs essentially from the adoration which is given to the incarnate Word and equally to the Father and the Holy Spirit, and greatly fosters this adoration.\"516 The liturgical feasts dedicated to the Mother of God and Marian prayer, such as the rosary, an \"epitome of the whole Gospel,\" express this devotion to the Virgin Mary.517<\/p><p><b>III. MARY - ESCHATOLOGICAL ICON OF THE CHURCH<\/b><\/p><p>972 After speaking of the Church, her origin, mission, and destiny, we can find no better way to conclude than by looking to Mary. In her we contemplate what the Church already is in her mystery on her own \"pilgrimage of faith,\" and what she will be in the homeland at the end of her journey. There, \"in the glory of the Most Holy and Undivided Trinity,\" \"in the communion of all the saints,\"518 the Church is awaited by the one she venerates as Mother of her Lord and as her own mother.<\/p>"
+            "infoFooter": "<a href='http://www.vatican.va/archive/ccc_css/archive/catechism/p1s2c3a8.htm#721' target='_blank'>Vatican Online Link</a>",
+            "infoText": "<p><b>Paragraph 6. Mary - Mother of Christ, Mother of the Church</b></p><p>963 Since the Virgin Mary's role in the mystery of Christ and the Spirit has been treated, it is fitting now to consider her place in the mystery of the Church. \"The Virgin Mary... is acknowledged and honored as being truly the Mother of God and of the redeemer... She is \"clearly the mother of the members of Christ\"... since she has by her charity joined in bringing about the birth of believers in the Church, who are members of its head.\"502 \"Mary, Mother of Christ, Mother of the Church\".503</p><p><b>I. MARY'S MOTHERHOOD WITH REGARD TO THE CHURCH</b></p><p>Wholly united with her Son... </p><p>964 Mary's role in the Church is inseparable from her union with Christ and flows directly from it. \"This union of the mother with the Son in the work of salvation is made manifest from the time of Christ's virginal conception up to his death\";504 it is made manifest above all at the hour of his Passion:</p><p>Thus the Blessed Virgin advanced in her pilgrimage of faith, and faithfully persevered in her union with her Son unto the cross. There she stood, in keeping with the divine plan, enduring with her only begotten Son the intensity of his suffering, joining herself with his sacrifice in her mother's heart, and lovingly consenting to the immolation of this victim, born of her: to be given, by the same Christ Jesus dying on the cross, as a mother to his disciple, with these words: \"Woman, behold your son.\"505\n965 After her Son's Ascension, Mary \"aided the beginnings of the Church by her prayers.\"506 In her association with the apostles and several women, \"we also see Mary by her prayers imploring the gift of the Spirit, who had already overshadowed her in the Annunciation.\"507</p><p>... also in her Assumption</p><p>966 \"Finally the Immaculate Virgin, preserved free from all stain of original sin, when the course of her earthly life was finished, was taken up body and soul into heavenly glory, and exalted by the Lord as Queen over all things, so that she might be the more fully conformed to her Son, the Lord of lords and conqueror of sin and death.\"508 The Assumption of the Blessed Virgin is a singular participation in her Son's Resurrection and an anticipation of the resurrection of other Christians:</p><p>In giving birth you kept your virginity; in your Dormition you did not leave the world, O Mother of God, but were joined to the source of Life. You conceived the living God and, by your prayers, will deliver our souls from death.509\n... she is our Mother in the order of grace</p><p>967 By her complete adherence to the Father's will, to his Son's redemptive work, and to every prompting of the Holy Spirit, the Virgin Mary is the Church's model of faith and charity. Thus she is a \"preeminent and... wholly unique member of the Church\"; indeed, she is the \"exemplary realization\" (typus)510 of the Church.</p><p>968 Her role in relation to the Church and to all humanity goes still further. \"In a wholly singular way she cooperated by her obedience, faith, hope, and burning charity in the Savior's work of restoring supernatural life to souls. For this reason she is a mother to us in the order of grace.\"511</p><p>969 \"This motherhood of Mary in the order of grace continues uninterruptedly from the consent which she loyally gave at the Annunciation and which she sustained without wavering beneath the cross, until the eternal fulfillment of all the elect. Taken up to heaven she did not lay aside this saving office but by her manifold intercession continues to bring us the gifts of eternal salvation... . Therefore the Blessed Virgin is invoked in the Church under the titles of Advocate, Helper, Benefactress, and Mediatrix.\"512</p><p>970 \"Mary's function as mother of men in no way obscures or diminishes this unique mediation of Christ, but rather shows its power. But the Blessed Virgin's salutary influence on men... flows forth from the superabundance of the merits of Christ, rests on his mediation, depends entirely on it, and draws all its power from it.\"513 \"No creature could ever be counted along with the Incarnate Word and Redeemer; but just as the priesthood of Christ is shared in various ways both by his ministers and the faithful, and as the one goodness of God is radiated in different ways among his creatures, so also the unique mediation of the Redeemer does not exclude but rather gives rise to a manifold cooperation which is but a sharing in this one source.\"514</p> <p><b>* II. DEVOTION TO THE BLESSED VIRGIN</b></p><p>971 \"All generations will call me blessed\": \"The Church's devotion to the Blessed Virgin is intrinsic to Christian worship.\"515 The Church rightly honors \"the Blessed Virgin with special devotion. From the most ancient times the Blessed Virgin has been honored with the title of 'Mother of God,' to whose protection the faithful fly in all their dangers and needs... . This very special devotion... differs essentially from the adoration which is given to the incarnate Word and equally to the Father and the Holy Spirit, and greatly fosters this adoration.\"516 The liturgical feasts dedicated to the Mother of God and Marian prayer, such as the rosary, an \"epitome of the whole Gospel,\" express this devotion to the Virgin Mary.517</p><p><b>III. MARY - ESCHATOLOGICAL ICON OF THE CHURCH</b></p><p>972 After speaking of the Church, her origin, mission, and destiny, we can find no better way to conclude than by looking to Mary. In her we contemplate what the Church already is in her mystery on her own \"pilgrimage of faith,\" and what she will be in the homeland at the end of her journey. There, \"in the glory of the Most Holy and Undivided Trinity,\" \"in the communion of all the saints,\"518 the Church is awaited by the one she venerates as Mother of her Lord and as her own mother.</p>"
         },
-        {
+		{
             "infoID": 2,
             "infoHeader": "Vision behind this App version",
-            "infoSubHeader": "<b>A ElectronJs jQuery Mobile App version in my Rosary App series<\/b>",
+            "infoSubHeader": "<b>A ElectronJs jQuery Mobile App version in my Rosary App series</b>",
             "infoFooter": "footer",
-            "infoText": "<p>This is the NodeJs, Express, and Electron version of my jQuery-mobile Rosary App series. This is the latest working test bench and proof of concept for an educational DIY rosary app tutorial. The visual are minimal: White, Black and Gray. This app thoroughly covers 1 of the 4 mysteries in the Rosary. The Rosary/Chaplet text readings are all contained within a JSON variable called rosaryJSON.  This is the focal point of all future content modifications. A sold JSON lends for scalability and modular app development.<\/p><p>I made this Rosary app as an act of prayer, and as a fun way to teach myself how to use jQuery Mobile. There is no excuse to \"not incorporate\" our faith in everything we do.<\/p>"
+            "infoText": "<p>This is the NodeJs, Express, and Electron version of my jQuery-mobile Rosary App series. This is the latest working test bench and proof of concept for an educational DIY rosary app tutorial. The visual are minimal: White, Black and Gray. This app thoroughly covers 1 of the 4 mysteries in the Rosary. The Rosary/Chaplet text readings are all contained within a JSON variable called rosaryJSON.  This is the focal point of all future content modifications. A sold JSON lends for scalability and modular app development.</p><p>I made this Rosary app as both a fun way to teach myself how to use jQuery Mobile, and as a prayerful activity. There is no excuse to \"not incorporate\" our faith in everything we do.</p>"
         },
         {
             "infoID": 3,
@@ -4611,7 +4633,7 @@ var rosaryJSONnab = {
             "infoID": 7,
             "infoHeader": "Vulgate",
             "infoSubHeader": "St. Jerome's Latin Translation",
-            "infoFooter": "<a href='http://vulgate.org/' target='blank'>vulgate.org/</a>",
+            "infoFooter": "<a href='http://vulgate.org' target='blank'>vulgate.org</a>",
             "infoText": "<p>The Vulgate is a Latin version of the Holy Bible, and largely the result of the labors of St Jerome (Eusebius Sophronius Hieronymus), who was commissioned by Pope Damasus I in 382 A.D. to make a revision of the old Latin translations. By the 13th century this revision had come to be called the versio vulgata, that is, the \"commonly used translation\", and ultimately it became the definitive and officially promulgated Latin version of the Holy Bible in the Catholic Church.</p><p>Of the Old Testament texts not found in the Hebrew, St. Jerome translated Tobit and Judith anew from the Aramaic; and from the Greek, the additions to Esther from the Septuagint, and the additions to Daniel from Theodotion. The others, Baruch, Wisdom of Solomon, Ecclesiasticus, 1 Maccabees and 2 Maccabees, 3 Esdras and 4 Esdras, the Prayer of Manasses, Psalm 151, and Laodiceans retain in Vulgate manuscripts their Old Latin renderings. Their style is still markedly distinguishable from St. Jerome's. In the Vulgate text, St. Jerome's translations from the Greek of the additions to Esther and Daniel are combined with his separate translations of these books from the Hebrew.</p><hr><h4>St. Jerome's Preface to the Vulgate Version of the New Testament</h4><i>Addressed to Pope Damasus, A.D. 383</i><p>\"You urge me to revise the old Latin version, and, as it were, to sit in judgment on the copies of the Scriptures which are now scattered throughout the whole world; and, inasmuch as they differ from one another, you would have me decide which of them agree with the Greek original. The labour is one of love, but at the same time both perilous and presumptuous; for in judging others I must be content to be judged by all; and how can I dare to change the language of the world in its hoary old age, and carry it back to the early days of its infancy? Is there a man, learned or unlearned, who will not, when he takes the volume into his hands, and perceives that what he reads does not suit his settled tastes, break out immediately into violent language, and call me a forger and a profane person for having the audacity to add anything to the ancient books, or to make any changes or corrections therein? Now there are two consoling reflections which enable me to bear the odium—in the first place, the command is given by you who are the supreme bishop; and secondly, even on the showing of those who revile us, readings at variance with the early copies cannot be right. For if we are to pin our faith to the Latin texts, it is for our opponents to tell us which; for there are almost as many forms of texts as there are copies. If, on the other hand, we are to glean the truth from a comparison of many, why not go back to the original Greek and correct the mistakes introduced by inaccurate translators, and the blundering alterations of confident but ignorant critics, and, further, all that has been inserted or changed by copyists more asleep than awake?\"</p><p>\"I am not discussing the Old Testament, which was turned into Greek by the Seventy elders, and has reached us by a descent of three steps. I do not ask what Aquila and Symmachus think, or why Theodotion takes a middle course between the ancients and the moderns. I am willing to let that be the true translation which had apostolic approval. I am now speaking of the New Testament. This was undoubtedly composed in Greek, with the exception of the work of Matthew the Apostle, who was the first to commit to writing the Gospel of Christ, and who published his work in Judæa in Hebrew characters. We must confess that as we have it in our language it is marked by discrepancies, and now that the stream is distributed into different channels we must go back to the fountainhead. I pass over those manuscripts which are associated with the names of Lucian and Hesychius, and the authority of which is perversely maintained by a handful of disputatious persons. It is obvious that these writers could not amend anything in the Old Testament after the labours of the Seventy; and it was useless to correct the New, for versions of Scripture which already exist in the languages of many nations show that their additions are false. I therefore promise in this short Preface the four Gospels only, which are to be taken in the following order, Matthew, Mark, Luke, John, as they have been revised by a comparison of the Greek manuscripts. Only early ones have been used. But to avoid any great divergences from the Latin which we are accustomed to read, I have used my pen with some restraint, and while I have corrected only such passages as seemed to convey a different meaning, I have allowed the rest to remain as they are.\"</p>"
         },
         {
@@ -4630,4 +4652,4 @@ var rosaryJSONnab = {
             "infoText": "<table data-role='table' id='myShorcutsTable' data-mode='reflow' class='myTableStyle'><thead><tr><th>trigger key</th><th>event</th></tr></thead><tbody><tr><td>&larr; / &rarr;</td><td>back / next</td></tr><tr><td>n</td><td>Toggle NAB - English Translation</td></tr><tr><td>v</td><td>Toggle Vulgate - Latin Translation</td></tr><tr><td>p</td><td>start/pause audio</td></tr><tr><td>&uarr; / &darr;</td><td>audio volume</td></tr><tr><td>q</td><td>toggle black/white (color theme)</td></tr><tr><td>w,e,r,t,y</td><td>toggle liturgical calendar (color theme)</td></tr><tr><td>1 / 2</td><td>toggle left / right (panel)</td></tr><tr><td>i</td><td>toggle github source code links</td></tr><tr><td>h</td><td>toggle shortcut display</td></tr></tbody></table>"
         }
     ]
-};
+}

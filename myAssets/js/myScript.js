@@ -289,7 +289,7 @@ function populateBookJsonList() { // populate the right pannel list with bible c
     var li = '<li data-theme="b" class="ui-bar">Database Quotes</li>';
     var tempbookIndex = [];
     //container for $li's to be added
-    $.each(rosaryJSON.scripture, function(i, name) {
+    $.each(rosaryJSON.scripture, function(i, name) { // consolidate scriptured from the same book
         if ($.inArray(name.bookIndex, tempbookIndex) !== -1) { // -1 = false
         } else {
             tempbookIndex.push(name.bookIndex);
@@ -299,7 +299,7 @@ function populateBookJsonList() { // populate the right pannel list with bible c
         }
     });
 
-    for (var iLoop = 0; iLoop < tempbookIndex.length; iLoop += 1) {
+    for (var iLoop = 0; iLoop < tempbookIndex.length; iLoop += 1) { // collect book names for display
         li += '<li><a href="#" id="' + tempbookIndex[iLoop];
         li += '" class="infoDisp">' + rosaryJSON.book[tempbookIndex[iLoop]].bookName + '</a></li>';
     }
@@ -310,6 +310,7 @@ function populateBookJsonList() { // populate the right pannel list with bible c
             $("#infoSubHeader").hide();
             $("#infoBody").hide();
 
+            // flag to determine bible verses will display in popup
             showBibleListFlag = true;
             showPrayerListFlag = false;
 
@@ -329,7 +330,7 @@ function populatePrayerJsonList() { // populate the right pannel list with bible
         tempprayerIndex.push(name.prayerID);
     });
 
-    for (var iLoop = 0; iLoop < tempprayerIndex.length; iLoop += 1) {
+    for (var iLoop = 0; iLoop < tempprayerIndex.length; iLoop += 1) { // collect prayer names
         li += '<li><a href="#" id="' + tempprayerIndex[iLoop];
         li += '" class="infoDisp">' + rosaryJSON.prayer[tempprayerIndex[iLoop]].prayerName + '</a></li>';
     }
@@ -340,6 +341,7 @@ function populatePrayerJsonList() { // populate the right pannel list with bible
             $("#infoSubHeader").hide();
             $("#infoBody").hide();
 
+            // flag to determine prayers will display in popup
             showPrayerListFlag = true;
             showBibleListFlag = false;
 
@@ -441,15 +443,10 @@ $(document).on('pageshow', '#pageone', function() {
 /* the code destination for dynamically generated bible list */
 $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamically populated list content when active is clicked
 
-    // Bible Book list in right panel
-    if (showBibleListFlag === true) {
+    if (showBibleListFlag === true) { // Bible Book list in right panel
         var info = $("#myDialogPopUp").data("myDataJsonVar");
         var info_view = '<ol style="list-style: none; padding-left: 0;">';
         var bookID = info["bookID"];
-
-        $(this).find("[data-role=prayerContent]").html('');
-        $("#infoSubHeader").css("display","none");
-        $("#infoBody").css("display","none");
 
         for (var iLoop = 0; iLoop < rosaryJSON.scripture.length; iLoop += 1) {
             if (rosaryJSON.scripture[iLoop].bookIndex === bookID) {
@@ -458,28 +455,38 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
         }
         info_view += '</ol>';
 
+        // hide extra elements
+        $(this).find("[data-role=prayerContent]").html('');
+        $("#infoSubHeader").css("display","none");
+        $("#infoBody").css("display","none");
+
+        // show modal content
         $("#infoHeader").html(info["bookName"]);
         $(this).find("[data-role=bibleContent]").html(info_view);
         $("#infoFooter").html("Readings found in: " + info["library"]);
 
 
-    } else if (showPrayerListFlag === true) {
+    } else if (showPrayerListFlag === true) { // Prayer Book list in right panel
         var info = $("#myDialogPopUp").data("myDataJsonVar2");
         var prayerID = info["prayerID"];
         var info_view = '<ol style="list-style: none; padding-left: 0;"><li class="ui-field-contain ui-corner-all ui-shadow">' + rosaryJSON.prayer[prayerID].prayerText + '</li></ol>';
 
+        // hide extra elements
         $(this).find("[data-role=bibleContent]").html('');
         $("#infoSubHeader").css("display","none");
         $("#infoBody").css("display","none");
 
+        // show modal content
         $("#infoHeader").html(rosaryJSON.prayer[prayerID].prayerName);
         $(this).find("[data-role=prayerContent]").html(info_view);
         $("#infoFooter").html("footer");
 
-
-    } else {
+    } else { // the other content
+        // hide bible verse and prayer elements
 		$(this).find("[data-role=bibleContent]").html('');
 		$(this).find("[data-role=prayerContent]").html('');
+
+        // show modal content
         $("#infoSubHeader").show();
         $("#infoBody").show();
     }
@@ -489,13 +496,9 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
 /* swipe event to trigger buttons */
 $(document).on("pagecreate", "#pageone", function() {
 
-    $(".mySwipeClass").on("swiperight", function() {
-        beadRev();
-    });
+    $(".mySwipeClass").on("swiperight", function() { beadRev(); });
 
-    $(".mySwipeClass").on("swipeleft", function() {
-        beadFwd();
-    });
+    $(".mySwipeClass").on("swipeleft", function() { beadFwd(); });
 
     // keyboard controlls
     $("html").on("keydown", function(event) {
@@ -579,7 +582,7 @@ $(document).on("pagecreate", "#pageone", function() {
 $(document).on("pagecreate", function() {
 
     /* Color themes */
-    $("#darklight input").on("change", function(event) {
+    $("#darklight input").on("change", function(event) { // black white
         if (event.target.name === "theme") {
             $('input:radio[name=rdoLiturgicalColors]:checked').prop('checked', false).checkboxradio("refresh");
 
@@ -597,7 +600,7 @@ $(document).on("pagecreate", function() {
         }
     });
 
-    $("#liturgicalColors input").on("change", function(event) {
+    $("#liturgicalColors input").on("change", function(event) { // multi color
         if (event.target.name === "rdoLiturgicalColors") {
             $("#entireBody").removeClass("ui-page-theme-a ui-page-theme-b ui-page-theme-c ui-page-theme-d ui-page-theme-e ui-page-theme-f ui-page-theme-g");
             $(".myUiBody").removeClass("ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e ui-body-f ui-body-g");
