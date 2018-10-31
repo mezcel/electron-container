@@ -6,6 +6,17 @@ hr {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.4));
 }
 
+.coverImg { 
+	/*
+	 * alt='\"Open To\" by Ellen Wright source: https://i.pinimg.com/474x/53/1c/e3/531ce3f04d38c74230aa0058eff5425a--art-original-rosaries.jpg' 
+	 * */
+	background: url(../img/Open-To_by_Ellen-Wright.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 #myDialogPopUp a.ui-link {text-decoration: none}
 
 .audioStyle {
