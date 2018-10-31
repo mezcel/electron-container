@@ -3,7 +3,7 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
         <meta name="author" content="Mezcel, mezcel@hotmail.com">
         <meta name="description" content="ExpressJs Rosary"/>
         <meta name="subject" content="religion and spirituality">
@@ -13,7 +13,7 @@
         <link rel="shortcut icon" href="myAssets/img/favicon.ico" type="image/x-icon" />
 
 		<script>
-            // i need this for node for some reasion, it's nodejs not nodejq, lol
+            // i need this for node for some reasion with stand alone electron
 			window.$ = window.jQuery = require('jquery');
 		</script>
 
@@ -27,14 +27,16 @@
         <script src="myAssets/js/jquery.mobile-1.4.5.min.js"></script>
 
         <!-- my dom Application data and instructions -->
-        <script type="text/javascript" src="myAssets/database/rosaryJSON-nab.js"></script>
-        <script type="text/javascript" src="myAssets/database/rosaryJSON-vulgate.js"></script>
         <script src="myAssets/js/myScript.js"></script>
     </head>
 
     <body id="entireBody" class="ui-page-theme-a ui-content">
+		
+		<!-- cover page -->
+		<a data-role="page" id="splashpage" href="#rosary" class="btnCenterPage coverImg"></a>
+            
 
-        <div data-role="page" id="pageone">
+        <div data-role="page" id="rosary">
 
             <!-- header top bar -->
             <div data-role="header" data-position="fixed">
@@ -242,9 +244,8 @@
             </div>
 
             <!-- Information Popup Dialog -->
-
             <div data-role="popup" id="myDialogPopUp" class="ui-content" data-overlay-theme="b" data-position="fixed">
-                <a href="#pageone" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-left ui-shadow ui-btn-up-a" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Close"></a>
+                <a href="#rosary" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-left ui-shadow ui-btn-up-a" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Close"></a>
                 <span id="infoHeader" style="text-align: center" data-role="header"></span>
                 <h4 id="infoSubHeader" class="ui-content"></h4>
                 <div id="infoBody" class="ui-content" style="overflow-y:auto"></div>
@@ -253,7 +254,6 @@
                 <div data-role="prayerContent"></div>
 
                 <span id="infoFooter" style="text-align: center" data-role="footer"></span>
-
             </div>
 
             <!-- Main Center View -->
