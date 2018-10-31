@@ -4598,7 +4598,7 @@ var rosaryJSONvulgate = {
             "infoHeader": "Vision behind this App version",
             "infoSubHeader": "<b>A ElectronJs jQuery Mobile App version in my Rosary App series</b>",
             "infoFooter": "footer",
-            "infoText": "<p>This is the NodeJs, Express, and Electron version of my jQuery-mobile Rosary App series. This is the latest working test bench and proof of concept for an educational DIY rosary app tutorial. The visual are minimal: White, Black and Gray. This app thoroughly covers 1 of the 4 mysteries in the Rosary. The Rosary/Chaplet text readings are all contained within a JSON variable called rosaryJSON.  This is the focal point of all future content modifications. A sold JSON lends for scalability and modular app development.</p><p>I made this Rosary app as an act of prayer, and as a fun way to teach myself how to use jQuery Mobile. There is no excuse to \"not incorporate\" our faith in everything we do.</p>"
+            "infoText": "<p>This is the NodeJs, Express, and Electron version of my jQuery-mobile Rosary App series. This is the latest working test bench and proof of concept for an educational DIY rosary app tutorial. The visual are minimal: White, Black and Gray. This app thoroughly covers 1 of the 4 mysteries in the Rosary. The Rosary/Chaplet text readings are all contained within a JSON variable called rosaryJSON.  This is the focal point of all future content modifications. A sold JSON lends for scalability and modular app development.</p><p>I made this Rosary app as both a fun way to teach myself how to use jQuery Mobile, and as a prayerful activity. There is no excuse to \"not incorporate\" our faith in everything we do.</p>"
         },
         {
             "infoID": 3,
