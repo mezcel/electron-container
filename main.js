@@ -152,7 +152,7 @@ const {
     shell
 } = require('electron'); // Electron specific vars
 
-let mainWindow, childWindow;
+let mainWindow, childWindow, splash;
 
 function createMainWindow() {
 
@@ -285,7 +285,8 @@ function createChildWindow() {
 
 }
 
-// app.on('ready', createMainWindow);
+// Run the app 
+  
 app.on('ready', function() {
     createMainWindow();
     createChildWindow();
