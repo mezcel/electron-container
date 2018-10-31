@@ -590,11 +590,11 @@ $(document).on("pagecreate", function() {
             $(".myUiBody").removeClass("ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e ui-body-f ui-body-g");
 
             if ($("#daynightSwitch").is(":checked")) {
-                $("html").css("background-color", "white");
+                $("#pageone").css("background-color", "white");
                 $("#entireBody").addClass("ui-page-theme-a");
                 $(".myUiBody").addClass("ui-body-a");
             } else {
-                $("html").css("background-color", "black");
+                $("#pageone").css("background-color", "black");
                 $("#entireBody").addClass("ui-page-theme-b");
                 $(".myUiBody").addClass("ui-body-b");
             }
@@ -608,27 +608,27 @@ $(document).on("pagecreate", function() {
             $(".myUiBody").removeClass("ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e ui-body-f ui-body-g");
 
             if ($("#feastRed").is(":checked")) {
-                $("html").css("background-color", "red");
+                $("#pageone").css("background-color", "red");
                 $("#entireBody").addClass("ui-page-theme-c");
                 $(".myUiBody").addClass("ui-body-c");
             }
             if ($("#marianBlue").is(":checked")) {
-                $("html").css("background-color", "blue");
+                $("#pageone").css("background-color", "blue");
                 $("#entireBody").addClass("ui-page-theme-d");
                 $(".myUiBody").addClass("ui-body-d");
             }
             if ($("#adventPurple").is(":checked")) {
-                $("html").css("background-color", "purple");
+                $("#pageone").css("background-color", "purple");
                 $("#entireBody").addClass("ui-page-theme-e");
                 $(".myUiBody").addClass("ui-body-e");
             }
             if ($("#ordinaryGreen").is(":checked")) {
-                $("html").css("background-color", "green");
+                $("#pageone").css("background-color", "green");
                 $("#entireBody").addClass("ui-page-theme-f");
                 $(".myUiBody").addClass("ui-body-f");
             }
             if ($("#easterGold").is(":checked")) {
-                $("html").css("background-color", "yellow");
+                $("#pageone").css("background-color", "yellow");
                 $("#entireBody").addClass("ui-page-theme-g");
                 $(".myUiBody").addClass("ui-body-g");
             }
