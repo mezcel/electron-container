@@ -8,9 +8,10 @@ hr {
 
 .coverImg { 
 	/*
-	 * alt='\"Open To\" by Ellen Wright source: https://i.pinimg.com/474x/53/1c/e3/531ce3f04d38c74230aa0058eff5425a--art-original-rosaries.jpg' 
+	 * http://saintmarysorthodoxchurchcorning.org/
+     * http://saintmarysorthodoxchurchcorning.org/assets/images/icons/Mother%20of%20God%20Platytera-reduced.jpg
 	 * */
-	background: url(../img/Open-To_by_Ellen-Wright.jpg) no-repeat center center fixed; 
+	background: url(../img/Mother-of-God-Platytera-reduced.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
