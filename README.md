@@ -4,7 +4,7 @@ ___This is a Node App using ExpressJS, Socket IO, and Electron.___
 
 Git: [https://github.com/mezcel/electron-container](https://github.com/mezcel/electron-container)
 
-Status: ```git branch v0.4.2``` is focused on ```ajax```. I want to avoid using ```ejs```, I think ajax script will be more compatible and overlap-able
+Status: ```git branch v0.4.2``` is focused on ```ajax```. I want to avoid using ```ejs```, I think ajax script will be more compatible and overlap-able. I have got some tweaking to do.
 
 
 ---
