@@ -2,6 +2,6 @@
 
 * I dont remember when or where I initially downloaded this icon.
 
-* The demo screenshots were taken on an Arch Linux running a ```Gtk``` desktop with a ```Vertex``` theme.
+* The splash screen is a photo from [](http://saintmarysorthodoxchurchcorning.org/) 
 
-    * This app on Win10 looks a lot better and smoother. Mobile iOS looks the best in my opinion.
+![Mother%20of%20God%20Platytera-reduced.jpg](http://saintmarysorthodoxchurchcorning.org/assets/images/icons/Mother%20of%20God%20Platytera-reduced.jpg)
