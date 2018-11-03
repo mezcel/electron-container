@@ -1,28 +1,27 @@
 /***************************************************************
  *  Global Vars
  * */
+ var initialMysteryFlag = false; // Initiated 1st mystery after the Mary Icon
+ var showBibleListFlag = false; // whether or not an html list was dynamically populated
+ var showPrayerListFlag = false; // whether or not an html list was dynamically populated
+ var iamtyping = false; // a flag indicating if I am typing so I dont trigger keydown events
 
-var initialMysteryFlag = false; // Initiated 1st mystery after the Mary Icon
-var showBibleListFlag = false; // whether or not an html list was dynamically populated
-var showPrayerListFlag = false; // whether or not an html list was dynamically populated
-var iamtyping = false; // a flag indicating if I am typing so I dont trigger keydown events
+ var initialHailMaryCounter = 0;
+ var stringSpaceCounter = 0;
+ var hailmaryCounter = 0;
+ var beadCounter = 0;
+ var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
 
-var initialHailMaryCounter = 0;
-var stringSpaceCounter = 0;
-var hailmaryCounter = 0;
-var beadCounter = 0;
-var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
+ rosaryJSON = rosaryJSONvulgate;
 
-rosaryJSON = rosaryJSONvulgate;
-
-var progressBar = { // var containing progressbar state
-    setValue: function(beadCounterDecade, beadCounterRosary) {
-        $('#decadeSlider').val(beadCounterDecade);
-        $('#decadeSlider').slider("refresh");
-        $('#rosaryProgress').val(beadCounterRosary);
-        $('#rosaryProgress').slider("refresh");
-    }
-};
+ var progressBar = { // var containing progressbar state
+     setValue: function(beadCounterDecade, beadCounterRosary) {
+         $('#decadeSlider').val(beadCounterDecade);
+         $('#decadeSlider').slider("refresh");
+         $('#rosaryProgress').val(beadCounterRosary);
+         $('#rosaryProgress').slider("refresh");
+     }
+ };
 
 /***************************************************************
  * My Function Objects
@@ -286,7 +285,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
 function populateBookJsonList() { // populate the right pannel list with bible content
 
-    var li = '<li data-theme="b" class="ui-bar">Database Quotes</li>';
+    var li = '<li data-theme="b" class="ui-bar">Bible Quotes </li>';
     var tempbookIndex = [];
     //container for $li's to be added
     $.each(rosaryJSON.scripture, function(i, name) { // consolidate scriptured from the same book
@@ -354,6 +353,8 @@ function populatePrayerJsonList() { // populate the right pannel list with bible
 }
 
 function initAudioVolume() { // initial audio volume setting
+    //$("#audioAveMaria").play();
+    //$("#audioAveMaria").pause();
     $("#audioAveMaria").prop('volume', 0.25);
 }
 
@@ -366,12 +367,6 @@ function initUi() {
 /***************************************************************
  * Page Load Events
  */
-
- /*
- $(document).on('pageshow', '#splashpage', function() {
-    $("#popupStartApp").popup("open");
-});
-*/
 
 /* configure progressbars  */
 $(document).on('pageshow', '#rosary', function() {
@@ -415,6 +410,9 @@ $(document).on('pageshow', '#rosary', function() {
     // initialize progressbar and prayer display
     progressBar.setValue(beadCounter, beadCounter);
     document.getElementById('prayer').innerHTML = rosaryJSON.prayer[1].prayerText;
+
+    $("#mystery").html('Express JQM Rosary');
+    $(".mysteryTranslationIndicator").text('Vulgate');
 });
 
 /* the code destination for dynamically generated bible list */
@@ -492,7 +490,7 @@ $(document).on("pagecreate", "#rosary", function() {
         iamtyping = true;
     });
 
-    // keyboard controlls
+    /* keyboard controlls */
     $("html").on("keydown", function(event) {
 
         if (iamtyping === false) {
@@ -570,20 +568,12 @@ $(document).on("pagecreate", "#rosary", function() {
                     }
                     break;
                 default:
-                    /*// flicker screen
-                    $('html').css('display', 'none');
-                    setTimeout(function(){
-                        $('html').css('display', 'block');
-                    }, 10);*/
-            } 
+                    // no default
+            }
 
         }
 
     });
-});
-
-/* toggle theme presets */
-$(document).on("pagecreate", function() {
 
     /* Color themes */
     $("#darklight input").on("change", function(event) { // black white
@@ -600,7 +590,6 @@ $(document).on("pagecreate", function() {
                 $("#entireBody").addClass("ui-page-theme-b");
                 $(".myUiBody").addClass("ui-body-b");
             }
-
         }
     });
 
@@ -640,10 +629,13 @@ $(document).on("pagecreate", function() {
 
             if ($("#nabTranslation").is(":checked")) {
                 rosaryJSON = rosaryJSONnab;
+                $(".mysteryTranslationIndicator").text('NAB');
             }
 
             if ($("#vulgateTranslation").is(":checked")) {
-                rosaryJSON = rosaryJSONvulgate;            }
+                rosaryJSON = rosaryJSONvulgate;
+                $(".mysteryTranslationIndicator").text('Vulgate');
+            }
 
             $("#bible-list").html(''); //clear dom list
             $("#prayer-list").html(''); //clear dom list
@@ -658,9 +650,8 @@ $(document).on("pagecreate", function() {
 });
 
 /* translation db variable initialization */
-/* pagecreate, pageinit, pageshow, beforepagecreate */
-$(document).on('pagecreate', '#rosary', function(e, data){ // import json files
-    
+$(document).on('pagebeforehide', '#splashpage', function(e, data){ // import json files
+
 	// there are other ways to do this, but ajax script works the best with JQM
 	// Note: https://joshzeigler.com/technology/web-development/how-big-is-too-big-for-json
 
@@ -692,11 +683,21 @@ $(document).on('pagecreate', '#rosary', function(e, data){ // import json files
         }
     });
 
+    // alert('begin');
+
 });
 
 /* initialize features provided the page's DOM is loaded */
-$(document).on('pageshow', '#rosary', function() {
+$(document).on('pageinit', '#rosary', function() {
 	initUi();
+});
+
+/* a splash page to allow full content dl */
+$(document).on('pageinit', '#splashpage', function() {
+    setTimeout(function(){
+        // window.location="#coverpage";
+        $("#btnEnter").fadeIn();
+    },500); /* 1000 = 1 second*/
 });
 
 ////

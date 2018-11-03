@@ -4,18 +4,16 @@ ___This is a Node App using ExpressJS, Socket IO, and Electron.___
 
 Git: [https://github.com/mezcel/electron-container](https://github.com/mezcel/electron-container)
 
-Status: ```git branch v0.4.2``` is focused on modifying the:
-*  ```ajax``` json import
-* messaging UI
-* Electron and Jqm Menu
-* intro screen
-
+Status: ```git branch v0.4.3``` is focused on gradually polishing the:
+* misc content within db json
+* misc. styles and ui tweaks
+* splash is new-ish. it is very basic
 
 ---
 
 ### Development thoughts:
 
-* I expanded on the [Heroku app](https://github.com/mezcel/heroku-joyful-mystery), got rid of the ```ejs``` components, added ```socketio``` and made it an Electron App.
+* I expanded on the [Heroku app](https://github.com/mezcel/heroku-joyful-mystery), got rid of the ```ejs``` components, added ```socketio``` features, and made it an Electron App.
 * The user experience now closer resembles an even older C# version I made a while back, [rosary.net](https://github.com/mezcel/rosary.net).
 
 ###### Translation Modifications
@@ -33,19 +31,18 @@ I ended up rewriting all the db's.
 ### Intended user:
 
 * local intranet or ad-hoc networks
+* absolutely trusted private networks
 * servers hosted on mobile devices with NodeJs server
 * 1-8 Clients who turn off application when not using it
-* absolutely trusted private networks
-
 
 ### Key Features:
 
-* Focuses on Electron page loading and modals
-* Express instant messaging
-* Date specific app events
-* modular json db
-* themes and keyboard shortcuts
-* New: English/Latin languages
+* ExpressJs Node Server
+* SocketIO instant messaging
+* Weekday calendar date specific app events
+* Modular json db
+* Color themes and keyboard shortcuts
+* NAB English/Vulgate Latin Scripture languages
 
 ## NPM
 
