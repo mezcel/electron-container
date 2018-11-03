@@ -5,3 +5,5 @@ I used ```themeroller.jquerymobile.com``` to customize my jquery-mobile color th
 The color scheme is intended to reflect the different colors of the liturgical calendar.
 * ```liturgical-colors.min.css``` will overwrite the jqm default themes
 * Here is the online editor: [themeroller link](https://themeroller.jquerymobile.com:443/?ver=1.4.5&style_id=20181026-7)
+
+I kept the non-minimized versions inorder to re-input them back into themeroller if needed

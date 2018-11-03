@@ -4,29 +4,23 @@ ___This is a Node App using ExpressJS, Socket IO, and Electron.___
 
 Git: [https://github.com/mezcel/electron-container](https://github.com/mezcel/electron-container)
 
-Status: ```git branch v0.4.2``` is focused on ```ajax``` json import and I redesigned the messaging UI.
+Status: ```git branch v0.4.2``` is focused on modifying the:
+*  ```ajax``` json import
+* messaging UI
+* Electron and Jqm Menu
+* intro screen
 
 
 ---
 
-### Development thoughts, rationale, and pending changes:
+### Development thoughts:
 
-* This is the social version of a previous Jquery-Mobile app I made a while back. The Electron and SocketIO implementation is new and I discovered some additional jqm theme techniques along the way.
+* I expanded on the [Heroku app](https://github.com/mezcel/heroku-joyful-mystery), got rid of the ```ejs``` components, added ```socketio``` and made it an Electron App.
+* The user experience now closer resembles an even older C# version I made a while back, [rosary.net](https://github.com/mezcel/rosary.net).
 
-    * [/myAssets/database/README.md](./myAssets/database/README.md) Has more information regarding what is new with the DB.
-
-
-* Not sure if this would be considered a 'fork' off the [Heroku app](https://github.com/mezcel/heroku-joyful-mystery) version or considered a whole 'new version', ex: v4.2 or v5
-
-    * That version is depreciated and not maintained.
-    * Heroku was an Express App with Ejs. This still uses Express, but I avoided ejs.
-
-* The user experience closer resembles an even older C# rosary version I made a while back, [rosary.net](https://github.com/mezcel/rosary.net). (_It has less features and visuals, but now it now falls under the category of social networking application again._)
-
-##### Readability?
-* Many versions ago I produced a DB from a pamphlet. That db went though various transposing from: css, odb, sql, mysql, json, and a slew of other Regex style parsing. Somewhere I may have even scraped an online resource to auto generated a db.
-* When I started to do the English/Latin translation I discovered a lot of inconsistencies.
-* The version as it is now is not as charismatic as my original source DB, but it is at least consistent with the NAB and Vulgate.
+###### Translation Modifications
+I ended up rewriting all the db's.
+* [/myAssets/database/README.md](./myAssets/database/README.md) Has more information regarding what is new with the DB.
 
 ---
 
@@ -52,10 +46,6 @@ Status: ```git branch v0.4.2``` is focused on ```ajax``` json import and I redes
 * modular json db
 * themes and keyboard shortcuts
 * New: English/Latin languages
-
-### Ideas for another version:
-
-React has good reviews regarding having the cross compatibility and robust features to compete with Swift and Andriod Studio Apps. Perhaps if I want to beef up the Social networking features, I will consider it. JQM was pretty much a 1 stop shop, and it is lighter in weight than Bootstrap/Angular and other leading frameworks. I found myself having to 'make stuff' as needed with JQM and JQM apps look like Jqm. _...The iPhone 1 generation know what I mean._
 
 ## NPM
 
@@ -91,7 +81,7 @@ package.json
 
 ---
 
-## Build as an executable
+## Build as a standalone executable
 
 If you want to build this app into a standalone executable, use ```electron-packager```
 

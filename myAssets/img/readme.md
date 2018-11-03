@@ -1,7 +1,5 @@
 ### Project Images
 
-* I dont remember when or where I initially downloaded this icon.
+* The splash screen, ```Mother of God Platytera```, is a photo from [archangelicons.org](http://www.archangelicons.com/mogplatytera1.html).
 
-* The splash screen is a photo from [](http://saintmarysorthodoxchurchcorning.org/) 
-
-![Mother%20of%20God%20Platytera-reduced.jpg](http://saintmarysorthodoxchurchcorning.org/assets/images/icons/Mother%20of%20God%20Platytera-reduced.jpg)
+![Mother of God Platytera](http://www.archangelicons.com/files/Mother%20of%20God%20Platytera%203%20a.JPG)
