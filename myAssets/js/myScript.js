@@ -1,28 +1,27 @@
 /***************************************************************
  *  Global Vars
  * */
+ var initialMysteryFlag = false; // Initiated 1st mystery after the Mary Icon
+ var showBibleListFlag = false; // whether or not an html list was dynamically populated
+ var showPrayerListFlag = false; // whether or not an html list was dynamically populated
+ var iamtyping = false; // a flag indicating if I am typing so I dont trigger keydown events
 
-var initialMysteryFlag = false; // Initiated 1st mystery after the Mary Icon
-var showBibleListFlag = false; // whether or not an html list was dynamically populated
-var showPrayerListFlag = false; // whether or not an html list was dynamically populated
-var iamtyping = false; // a flag indicating if I am typing so I dont trigger keydown events
+ var initialHailMaryCounter = 0;
+ var stringSpaceCounter = 0;
+ var hailmaryCounter = 0;
+ var beadCounter = 0;
+ var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
 
-var initialHailMaryCounter = 0;
-var stringSpaceCounter = 0;
-var hailmaryCounter = 0;
-var beadCounter = 0;
-var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
+ rosaryJSON = rosaryJSONvulgate;
 
-rosaryJSON = rosaryJSONvulgate;
-
-var progressBar = { // var containing progressbar state
-    setValue: function(beadCounterDecade, beadCounterRosary) {
-        $('#decadeSlider').val(beadCounterDecade);
-        $('#decadeSlider').slider("refresh");
-        $('#rosaryProgress').val(beadCounterRosary);
-        $('#rosaryProgress').slider("refresh");
-    }
-};
+ var progressBar = { // var containing progressbar state
+     setValue: function(beadCounterDecade, beadCounterRosary) {
+         $('#decadeSlider').val(beadCounterDecade);
+         $('#decadeSlider').slider("refresh");
+         $('#rosaryProgress').val(beadCounterRosary);
+         $('#rosaryProgress').slider("refresh");
+     }
+ };
 
 /***************************************************************
  * My Function Objects
@@ -367,12 +366,6 @@ function initUi() {
  * Page Load Events
  */
 
- /*
- $(document).on('pageshow', '#splashpage', function() {
-    $("#popupStartApp").popup("open");
-});
-*/
-
 /* configure progressbars  */
 $(document).on('pageshow', '#rosary', function() {
 
@@ -471,7 +464,7 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
 });
 
 /* UI swipe, slicks, & keydown triggers */
-$(document).on("pagecreate", "#rosary", function() {
+$(document).on("pagecreate", function() {
 
 	// swipe
     $(".mySwipeClass").on("swiperight", function() { beadRev(); });
@@ -492,7 +485,7 @@ $(document).on("pagecreate", "#rosary", function() {
         iamtyping = true;
     });
 
-    // keyboard controlls
+    /* keyboard controlls */
     $("html").on("keydown", function(event) {
 
         if (iamtyping === false) {
@@ -575,15 +568,11 @@ $(document).on("pagecreate", "#rosary", function() {
                     setTimeout(function(){
                         $('html').css('display', 'block');
                     }, 10);*/
-            } 
+            }
 
         }
 
     });
-});
-
-/* toggle theme presets */
-$(document).on("pagecreate", function() {
 
     /* Color themes */
     $("#darklight input").on("change", function(event) { // black white
@@ -600,7 +589,6 @@ $(document).on("pagecreate", function() {
                 $("#entireBody").addClass("ui-page-theme-b");
                 $(".myUiBody").addClass("ui-body-b");
             }
-
         }
     });
 
@@ -658,9 +646,11 @@ $(document).on("pagecreate", function() {
 });
 
 /* translation db variable initialization */
-/* pagecreate, pageinit, pageshow, beforepagecreate */
-$(document).on('pagecreate', '#rosary', function(e, data){ // import json files
-    
+// pagebeforehide
+// pagebeforeshow
+// pageshow
+$(document).on('pagebeforehide', '#splashpage', function(e, data){ // import json files
+
 	// there are other ways to do this, but ajax script works the best with JQM
 	// Note: https://joshzeigler.com/technology/web-development/how-big-is-too-big-for-json
 
@@ -692,11 +682,14 @@ $(document).on('pagecreate', '#rosary', function(e, data){ // import json files
         }
     });
 
+    alert('ajax');
+
 });
 
 /* initialize features provided the page's DOM is loaded */
 $(document).on('pageshow', '#rosary', function() {
 	initUi();
+    alert('initUi');
 });
 
 ////
