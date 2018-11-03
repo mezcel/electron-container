@@ -5,11 +5,7 @@ hr {
 }
 
 .coverImg {
-	/*
-	 * http://saintmarysorthodoxchurchcorning.org/
-     * http://saintmarysorthodoxchurchcorning.org/assets/images/icons/Mother%20of%20God%20Platytera-reduced.jpg
-	 * */
-	background: url(../img/Mother-of-God-Platytera-reduced.jpg) no-repeat center center fixed;
+	background: url(../img/Mother-of-God-Platytera-3-a.JPG) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
