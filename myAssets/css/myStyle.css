@@ -30,16 +30,19 @@ hr {
 }
 
 .coverImg {
-	background: url(../img/Mother-of-God-Platytera-3-a.jpg) no-repeat center center fixed;
+	background: url('../img/Mother-of-God-Platytera-3-a(compressed).jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
     text-decoration: none;
+
+    -webkit-filter: grayscale(20%);
+    filter: grayscale(20%);
 }
 
 .coverpageInfo {
-    background-color: rgba(230, 245, 255, 0.4);
+    background-color: rgba(230, 245, 255, 0.7);
     color : #003d66;
     text-align: center;
 }
