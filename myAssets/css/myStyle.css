@@ -5,11 +5,17 @@ hr {
 }
 
 .coverImg {
-	background: url(../img/Mother-of-God-Platytera-3-a.JPG) no-repeat center center fixed;
+	background: url(../img/Mother-of-God-Platytera-3-a.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+    text-decoration: none;
+}
+.coverpageInfo {
+    background-color: rgba(230, 245, 255, 0.4);
+    color : #003d66;
+    text-align: center;
 }
 
 #myDialogPopUp a.ui-link {text-decoration: none}
@@ -33,6 +39,7 @@ hr {
 }
 
 /* table style  */
+.myTableStyle {width: 100%;}
 .myTableStyle thead th,
 .myTableStyle tbody th .ui-table-cell-label,
 .myTableStyle tbody td .ui-table-cell-label {
