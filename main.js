@@ -1,149 +1,122 @@
-var myHostip = "http://localhost"; // debug ip
-// var myHostip = "http://10.42.0.1"; // intended linux adhoc hosting
-// var myHostip = "http://192.168.x.1xx"; // external router
-
-/* --------------------------------------------------------------------------- */
-
-function getIPvarString() {
-
-    var os = require('os');
-
-    var interfaces = os.networkInterfaces();
-    var addresses = [];
-    for (var k in interfaces) {
-        for (var k2 in interfaces[k]) {
-            var address = interfaces[k][k2];
-            console.log('Available Network Interface Address\n',address.family + ' -', address.address); // debug
-            if (address.family === 'IPv4' && !address.internal) {
-                addresses.push(address.address);
-            }
-        }
-    }
-
-    console.log('IPv4 Addresses: \n' + addresses, "Number of IPv4 Addresses: " + addresses.length + "\n"); // debug
-    if (addresses.length < 1) {
-        // default to 127.0.0.1
-        returnIp = "http://localhost";
-    } else {
-        // just grab the 1st on the list
-        // on a real deployment you may want give it a dedicated static ip (you are not inherently secure... expecially on Socket IO)
-        returnIp = addresses[0];
-    }
-
-    return returnIp;
-}
-
-myHostip = "http://" + getIPvarString();
-
-/* ---------------------------------------------------------------------------
- * Express jquery-mobile
- * -------------------------------------------------------------------------- */
-
-function PrimaryAppViewExpress() {
-
-    var myExpressJqm = require("express");
-    var myAppJqm = myExpressJqm();
-
-    // i am just going to use the root dir as a common root
-    var myAppPath = __dirname + '/';
-
-    myAppJqm.get("/", function(req, res) {
-        // res.sendfile(myAppPath + "myViews/index.html");
-        res.sendfile(myAppPath + "index.html");
-    });
-
-    myAppJqm.use(myExpressJqm.static(myAppPath));
-
-    myAppJqm.use("*", function(req, res) {
-        res.sendFile(myAppPath + "404.html");
-    });
-
-    myAppJqm.listen(7777, function() {
-        console.log("Live at Port " + myHostip + ":7777", myAppPath);
-    });
-
-}
-
-/* ---------------------------------------------------------------------------
- * Express Socket IO - Messaging Port
- * -------------------------------------------------------------------------- */
-
-function SocketIOExpress() {
-
-    var myAppMsgServer = require('express')(); // msg room gui
-    var http = require('http').Server(myAppMsgServer);
-    var io = require('socket.io')(http);
-    var myAppPath = __dirname + '/';
-
-    function getRandomHexColor() {
-        var letters = '012345'.split('');
-        var hexcolor = '#';
-        hexcolor += letters[Math.round(Math.random() * 5)];
-        letters = '0123456789ABCDEF'.split('');
-        for (var i = 0; i < 5; i++) {
-            hexcolor += letters[Math.round(Math.random() * 15)];
-        }
-        return hexcolor;
-    }
-
-    myAppMsgServer.get('/', function(req, res) {
-        res.sendfile(myAppPath + 'myViews/index-msg.html');
-    });
-
-    users = [];
-    io.on('connection', function(socket) {
-
-        socket.on('setUsername', function(data) {
-            var randomHexColor = getRandomHexColor();
-
-            if (users.indexOf(data) > -1) {
-                socket.emit('userExists', data + ' username is taken! Try some other username.');
-            } else {
-
-                users.push(data);
-                socket.emit('userSet', {
-                    username: data,
-                    allusers: users,
-                    colorname: randomHexColor,
-                    iptitle: myHostip
-                });
-
-                console.log('A user was added\n\t Current User Arr: ' + users); // display updated user array in Node
-            }
-        });
-
-        socket.on('msg', function(data) {
-            //Send message to everyone
-            io.sockets.emit('newmsg', data);
-        });
-
-        socket.on('removeUser', function(data) {
-            // filter remove name from array
-            users = users.filter(function(e) {
-                return e !== data
-            });
-            console.log('A user was removed\n\t Current User Arr: ' + users); // display updated user array in Node
-            socket.emit('userRemove', users);
-        });
-
-        socket.on('disconnect', function() {
-            console.log('a user disconnected'); // display updated user array in Node
-        });
-
-    });
-
-    http.listen(3000, function() {
-        console.log("listening on " + myHostip + ":3000");
-    });
-}
+/* main.js */
 
 
-PrimaryAppViewExpress();
-SocketIOExpress();
 
-/* ---------------------------------------------------------------------------
+/* ---------------------------------------------------------------------
+ * EXPRESS
+ * ------------------------------------------------------------------ */
+
+	
+	var express = require('express');
+	var expressApp = require('express')();
+	var myHttpserver = require('http').createServer(expressApp);
+	var io = require('socket.io')(myHttpserver);
+	// console.log(io);
+	// var path = require('path'); console.log(path);
+	var myAppPath = __dirname + '/';
+
+	var PORT = process.env.PORT || 7777;
+
+	// expressApp.get('/', (req, res) => res.render(myAppPath + "index.html"));
+	expressApp.get('/', function(req, res){
+		res.sendFile(myAppPath + "index.html");
+	});
+	  
+	expressApp.use(express.static(myAppPath));
+
+	function getRandomHexColor() {
+		
+		var letters = '012345'.split('');
+		var hexcolor = '#';
+		hexcolor += letters[Math.round(Math.random() * 5)];
+		letters = '0123456789ABCDEF'.split('');
+		
+		for (var i = 0; i < 5; i++) {
+			hexcolor += letters[Math.round(Math.random() * 15)];
+		}
+		
+		return hexcolor;		
+	}
+	
+	function getIPvarString() {
+
+		var os = require('os');
+		var interfaces = os.networkInterfaces();
+		var addresses = [];
+		console.log('Available Network Interface Address:');
+		
+		for (var k in interfaces) {
+			for (var k2 in interfaces[k]) {
+				var address = interfaces[k][k2];
+				console.log('\n\t',address.family + ' -', address.address); // debug
+				if (address.family === 'IPv4' && !address.internal) {
+					addresses.push(address.address);
+				}
+			}
+		}
+		
+		returnIp = addresses[0]; // just grab the 1st on the list
+		
+		return returnIp;
+	}
+	
+	// var myHostip = "http://localhost"; // debug ip
+	var myHostip = "http://" + getIPvarString();
+	console.log('\nmyHostip = ' + myHostip);
+
+	users = [];
+
+	io.on('connection', function(socket) {
+
+		socket.on('setUsername', function(data) {
+			var randomHexColor = getRandomHexColor();
+
+			if (users.indexOf(data) > -1) {
+				socket.emit('userExists', data + ' username is allready taken! Try another username.');
+			} else {
+
+				users.push(data);
+				socket.emit('userSet', {
+					username: data,
+					allusers: users,
+					colorname: randomHexColor,
+					iptitle: myHostip
+				});
+
+				console.log('A user was added\n\t Current User Array is: ' + users); // display updated user array in Node
+			}
+		});
+
+		socket.on('msg', function(data) {
+			io.sockets.emit('newmsg', data); //Send message to everyone
+		});
+
+		socket.on('removeUser', function(data) {
+			
+			// filter remove name from array
+			users = users.filter(function(e) {
+				return e !== data
+			});
+			
+			// display updated user array in Node
+			console.log('A user was removed\n\t Current User Array is: ' + users); 
+			socket.emit('userRemove', users);
+			
+		});
+
+		socket.on('disconnect', function() {
+			console.log('a user disconnected'); // display updated user array in Node
+		});
+
+	});
+
+	myHttpserver.listen(PORT, () => console.log(`\nListening on port ${ PORT }`));
+	
+/////////////
+
+/* ---------------------------------------------------------------------
  * ELECTRON
- * -------------------------------------------------------------------------- */
+ * ------------------------------------------------------------------ */
 
 const {
     app,
@@ -152,15 +125,16 @@ const {
     shell
 } = require('electron'); // Electron specific vars
 
-let mainWindow, childWindow;
+let mainWindow;
 
 function createMainWindow() {
 
     // Create the browser window.
-    mainWindow = new BrowserWindow({
-        /* My personal settings: 700x900 */
-        // tablet reff: 768 x 1024
-        // -25% = 576x768
+    /* My personal settings: 700x900 
+     * tablet reff: 768 x 1024, -25% = 576x768
+     * */
+     
+    mainWindow = new BrowserWindow({        
         width: 576,
         height: 768,
         icon: './myAssets/img/favicon.ico'
@@ -184,35 +158,19 @@ function createMainWindow() {
                     {role: 'quit'}
                 ]
             },
-            {
-                label: 'Messaging',
-                submenu: [
-                    {
-                        label: 'Show Electron Messenger',
-                        accelerator: 'CmdOrCtrl+Up',
-                        click() {
-                            childWindow.maximize();
-                        }
-                    },
-                    {
-                        label: 'Hide Electron Messenger',
-                        click() {
-                            childWindow.minimize();
-
-                        }
-                    },
-                    {
-                        type: 'separator'
-                    },
-                    {
-                        label: 'WebBrowser Express Messaging',
-                        click() {
-                            shell.openExternal(myHostip + ':3000/');
-                        }
-                    }
-                ]
-            },
-            {
+			{
+				label: 'View',
+				submenu: [
+					{role: 'toggledevtools'},
+					{type: 'separator'},
+					{role: 'resetzoom'},
+					{role: 'zoomin'},
+					{role: 'zoomout'},
+					{type: 'separator'},
+					{role: 'togglefullscreen'}
+				]
+			},
+			{
                 label: 'About',
                 submenu: [
                     {
@@ -222,8 +180,12 @@ function createMainWindow() {
                         }
                     },
                     {
-                        type: 'separator'
+                        label: 'Development Wiki',
+                        click() {
+                            shell.openExternal('http://mezcel.wixsite.com/rosary')
+                        }
                     },
+                    { type: 'separator' },
                     {
                         label: 'Wiki: Mod/Debug - BrowserWindow',
                         click() {
@@ -244,8 +206,9 @@ function createMainWindow() {
     Menu.setApplicationMenu(myElectronMenu);
 
     // and load the index.html of the app.
-    mainWindow.loadFile('index.html');
-    // mainWindow.loadFile(__dirname + '/index.html');
+    // mainWindow.loadFile('index.html'); // electron without messaging
+    mainWindow.loadURL('http://localhost:7777'); // the express app
+
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function() {
@@ -253,43 +216,22 @@ function createMainWindow() {
     });
 
     mainWindow.once('ready-to-show', () => {
-        // splash.destroy();
         mainWindow.show();
     });
 
 }
 
-function createChildWindow() {
+/////////////
 
-    childWindow = new BrowserWindow({
-        parent: mainWindow,
-        show: false,
-        closable: false,
-        width: 576,
-        height: 520,
-        icon: './myAssets/img/favicon.ico'
-    });
+/* ---------------------------------------------------------------------
+ * Run
+ * ------------------------------------------------------------------ */
 
-    childWindow.once('ready-to-show', () => {
-        childWindow.show()
-    });
 
-    // and load the index.html of the app.
-    //childWindow.loadFile('index.html');
-    childWindow.loadURL(myHostip + ':3000/');
 
-    // Emitted when the window is closed.
-    childWindow.on('closed', function() {
-        childWindow = null;
-    });
-
-}
-
-// app.on('ready', createMainWindow);
 app.on('ready', function() {
     createMainWindow();
-    createChildWindow();
-    childWindow.minimize();
+    
 });
 
 // Quit when all windows are closed.

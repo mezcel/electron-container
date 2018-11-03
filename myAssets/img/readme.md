@@ -1,7 +1,5 @@
 ### Project Images
 
-* I dont remember when or where I initially downloaded this icon.
+* The splash screen, ```Mother of God Platytera```, is a photo from [archangelicons.org](http://www.archangelicons.com/mogplatytera1.html).
 
-* The demo screenshots were taken on an Arch Linux running a ```Gtk``` desktop with a ```Vertex``` theme.
-
-    * This app on Win10 looks a lot better and smoother. Mobile iOS looks the best in my opinion.
+![Mother of God Platytera](http://www.archangelicons.com/files/Mother%20of%20God%20Platytera%203%20a.JPG)

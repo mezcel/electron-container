@@ -5,15 +5,15 @@
 var initialMysteryFlag = false; // Initiated 1st mystery after the Mary Icon
 var showBibleListFlag = false; // whether or not an html list was dynamically populated
 var showPrayerListFlag = false; // whether or not an html list was dynamically populated
+var iamtyping = false; // a flag indicating if I am typing so I dont trigger keydown events
 
 var initialHailMaryCounter = 0;
 var stringSpaceCounter = 0;
 var hailmaryCounter = 0;
 var beadCounter = 0;
+var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
 
-/* translation db variable initialization */
-// var rosaryJSON = rosaryJSONnab; // rosaryJSONnab was defined in myAssets/database/rosaryJSON-nab.js
-var rosaryJSON = rosaryJSONvulgate; // rosaryJSONnab was defined in myAssets/database/rosaryJSON-vulgate.js
+rosaryJSON = rosaryJSONvulgate;
 
 var progressBar = { // var containing progressbar state
     setValue: function(beadCounterDecade, beadCounterRosary) {
@@ -62,7 +62,7 @@ function populateJumpToPosition(mysteryInfoID, jumptoBeadID) { // populate butto
     var onclickFunction = 'beadCounter = ' + jumptoBeadID + '; hailmaryCounter = ' + ((mysteryInfoID * 10) - 10) + '; beadFwd(); progressBar.setValue(hailmaryCounter % 10, hailmaryCounter % 50);';
 
     // dynamic populate button
-    var btnMysteryString = '<p><a href="#pageone" class="ui-btn ui-corner-all ui-icon-actiont" data-rel="back" onclick="' + onclickFunction + '">Start</a><p>';
+    var btnMysteryString = '<p><a href="#rosary" class="ui-btn ui-corner-all ui-icon-actiont" data-rel="back" onclick="' + onclickFunction + '">Start</a><p>';
 
     return btnMysteryString;
 }
@@ -353,53 +353,30 @@ function populatePrayerJsonList() { // populate the right pannel list with bible
     });
 }
 
-function getBrowserUrl() { // get ipurl to string
-    const hostUrl = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port: '');
-    var urlParse = new URL(hostUrl);
-
-    //  Get any piece of the url you're interested in
-    urlParse.hostname;  //  'example.com'
-    urlParse.port;      //   12345
-    urlParse.search;    //  '?startIndex=1&pageSize=10'
-    urlParse.pathname;  //  '/blog/foo/bar'
-    urlParse.protocol;  //  'http:'
-
-    if (urlParse.protocol == 'http:') {
-        // assumes we are connected on the same server ip
-        urlParse.port = 3000;
-    } else {
-        // assumes we are on host machine
-        urlParse = 'http://localhost:3000';
-    }
-
-    $('#inputMsgIp').val(urlParse);
-    $('#show-val').attr('placeholder', urlParse);
-}
-
-function messengerLinkEvent() { // allow user to set which server to message with
-    getBrowserUrl();
-
-    // Messenger popup button
-    $( "#btnMessenger" ).on( "click", function() {
-        var href = $('#inputMsgIp').val();
-        if (href !== 'No Network' ) {
-            var link = $('<a href="' + href + '" />');
-            link.attr('target', '_blank');
-            window.open(link.attr('href'));
-        }
-    });
-}
-
 function initAudioVolume() { // initial audio volume setting
     $("#audioAveMaria").prop('volume', 0.25);
+}
+
+function initUi() {
+	populateBookJsonList();
+    populatePrayerJsonList();
+    initAudioVolume();
 }
 
 /***************************************************************
  * Page Load Events
  */
 
+ /*
+ $(document).on('pageshow', '#splashpage', function() {
+    $("#popupStartApp").popup("open");
+});
+*/
+
 /* configure progressbars  */
-$(document).on('pageshow', '#pageone', function() {
+$(document).on('pageshow', '#rosary', function() {
+
+    $("#btnOpenMessenger").hide();
 
     $('<input>').appendTo('[ data-role="decadeProgress"]').attr({
         'name': 'decadeSlider',
@@ -493,86 +470,113 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
 
 });
 
-/* swipe event to trigger buttons */
-$(document).on("pagecreate", "#pageone", function() {
+/* UI swipe, slicks, & keydown triggers */
+$(document).on("pagecreate", "#rosary", function() {
 
+	// swipe
     $(".mySwipeClass").on("swiperight", function() { beadRev(); });
 
     $(".mySwipeClass").on("swipeleft", function() { beadFwd(); });
 
+    // flag if I am in typing mode
+    $("#myMessage").focusout(function(){
+        iamtyping = false;
+    });
+    $("#myMessage").focusin(function(){
+        iamtyping = true;
+    });
+    $("#myName").focusout(function(){
+        iamtyping = false;
+    });
+    $("#myName").focusin(function(){
+        iamtyping = true;
+    });
+
     // keyboard controlls
     $("html").on("keydown", function(event) {
 
-        switch(event.which) {
-            case 39: //lt arrow
-                beadFwd();
-                break;
-            case 37: //rt arrow
-                beadRev();
-                break;
-            case 49: case 97: // no 1
-                $('#btnHomePanel').click();
-                break;
-            case 50: case 98: // no2
-                $('#btnInfoPanel').click();
-                break;
-            case 78: // letter n
-                $('#nabTranslation').click();
-                break;
-            case 86: // letter v
-                $('#vulgateTranslation').click();
-                break;
-            case 81: // letter q
-                $('#daynightSwitch').click();
-                break;
-            case 87: // letter w
-                $('#feastRed').click();
-                break;
-            case 69: // letter e
-                $('#marianBlue').click();
-                break;
-            case 82: // letter r
-                $('#adventPurple').click();
-                break;
-            case 84: // letter t
-                $('#ordinaryGreen').click();
-                break;
-            case 89: // letter y
-                $('#easterGold').click();
-                break;
-            case 80: // letter p
-                let firstAudioTrack = $('audio')[0];
-                firstAudioTrack[firstAudioTrack.paused ? 'play' : 'pause']();
-                // $('#audioAveMaria').trigger("play");
-                break;
-            case 38: // up arrow
-                var volLevel = $('audio')[0].volume;
-                $('audio')[0].volume = volLevel + 0.25;
-                $('audio')[1].volume = volLevel + 0.25;
-                break;
-            case 40: // down arrow
-                var volLevel = $('audio')[0].volume;
-                $('audio')[0].volume = volLevel - 0.25;
-                $('audio')[1].volume = volLevel - 0.25;
-                break;
-            case 73: // letter i
-                // hacky but it works as a toggle
-                $("#myDialogPopUp").popup("close");
-                $('#pageone').click();
-                $('#btnGithub').click();
-                break;
-            case 72: // letter h
-                // hacky but it works as a toggle
-                $("#myDialogPopUp").popup("close");
-                $('#pageone').click();
-                $('#btnShortcuts').click();
-                break;
-            default:
-                /*// flicker screen
-                $('html').css('display', 'none');
-                setTimeout(function(){
-                    $('html').css('display', 'block');
-                }, 10);*/
+        if (iamtyping === false) {
+
+            switch(event.which) {
+                case 39: //lt arrow
+                    beadFwd();
+                    break;
+                case 37: //rt arrow
+                    beadRev();
+                    break;
+                case 49: case 97: // no 1
+                    $('#btnHomePanel').click();
+                    break;
+                case 50: case 98: // no2
+                    $('#btnInfoPanel').click();
+                    break;
+                case 78: // letter n
+                    $('#nabTranslation').click();
+                    break;
+                case 86: // letter v
+                    $('#vulgateTranslation').click();
+                    break;
+                case 81: // letter q
+                    $('#daynightSwitch').click();
+                    break;
+                case 87: // letter w
+                    $('#feastRed').click();
+                    break;
+                case 69: // letter e
+                    $('#marianBlue').click();
+                    break;
+                case 82: // letter r
+                    $('#adventPurple').click();
+                    break;
+                case 84: // letter t
+                    $('#ordinaryGreen').click();
+                    break;
+                case 89: // letter y
+                    $('#easterGold').click();
+                    break;
+                case 80: // letter p
+                    let firstAudioTrack = $('audio')[0];
+                    firstAudioTrack[firstAudioTrack.paused ? 'play' : 'pause']();
+                    // $('#audioAveMaria').trigger("play");
+                    break;
+                case 38: // up arrow
+                    var volLevel = $('audio')[0].volume;
+                    $('audio')[0].volume = volLevel + 0.25;
+                    $('audio')[1].volume = volLevel + 0.25;
+                    break;
+                case 40: // down arrow
+                    var volLevel = $('audio')[0].volume;
+                    $('audio')[0].volume = volLevel - 0.25;
+                    $('audio')[1].volume = volLevel - 0.25;
+                    break;
+                case 73: // letter i
+                    // hacky but it works as a toggle
+                    $("#myDialogPopUp").popup("close");
+                    $('#rosary').click();
+                    $('#btnGithub').click();
+                    break;
+                case 72: // letter h
+                    // hacky but it works as a toggle
+                    $("#myDialogPopUp").popup("close");
+                    $('#rosary').click();
+                    $('#btnShortcuts').click();
+                    break;
+                case 77: // letter m
+                    // m for message
+                    if (uniqueUser) {
+                        $("#messagingPopUp").popup("open");
+                    } else {
+                        $("#loginPopUp").popup("open");
+                    }
+                    break;
+                default:
+                    /*// flicker screen
+                    $('html').css('display', 'none');
+                    setTimeout(function(){
+                        $('html').css('display', 'block');
+                    }, 10);*/
+            } 
+
         }
 
     });
@@ -653,13 +657,46 @@ $(document).on("pagecreate", function() {
 
 });
 
+/* translation db variable initialization */
+/* pagecreate, pageinit, pageshow, beforepagecreate */
+$(document).on('pagecreate', '#rosary', function(e, data){ // import json files
+    
+	// there are other ways to do this, but ajax script works the best with JQM
+	// Note: https://joshzeigler.com/technology/web-development/how-big-is-too-big-for-json
+
+	// import nab and define global nab json
+	$.ajax({url: 'myAssets/database/rosaryJSON-min-nab.json',
+        dataType: "json",
+        async: true,
+        success: function (result) {
+            rosaryJSONnab = result;
+            //alert('rosaryJSONnab');
+        },
+        error: function (request,error) {
+            alert('NAB translation did not upload');
+        }
+    });
+
+    // import Vulgate and define global vulgate json
+    // vulgate will also be my initial language
+    $.ajax({url: 'myAssets/database/rosaryJSON-min-vulgate.json',
+        dataType: "json",
+        async: true,
+        success: function (result) {
+            rosaryJSONvulgate = result;
+            rosaryJSON = rosaryJSONvulgate;
+            // alert('rosaryJSONvulgate');
+        },
+        error: function (request,error) {
+            alert('Vulgate translation did not upload');
+        }
+    });
+
+});
+
 /* initialize features provided the page's DOM is loaded */
-$( document ).ready( function() {
-    populateBookJsonList();
-    populatePrayerJsonList();
-    getBrowserUrl();
-    messengerLinkEvent();
-    initAudioVolume();
+$(document).on('pageshow', '#rosary', function() {
+	initUi();
 });
 
 ////

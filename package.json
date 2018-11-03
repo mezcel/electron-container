@@ -1,6 +1,6 @@
 {
     "name": "electron-rosary",
-    "version": "0.3.0",
+    "version": "0.4.2",
     "description": "I ported my old jquery-mobile-rosary html page into an ElectronJs Application with SocketIO messaging features.",
     "main": "main.js",
     "scripts": {
