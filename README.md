@@ -7,6 +7,7 @@ Git: [https://github.com/mezcel/electron-container](https://github.com/mezcel/el
 Status: ```git branch v0.4.3``` is focused on gradually polishing the:
 * misc content within db json
 * misc. styles and ui tweaks
+* splash is new-ish. it is very basic
 
 ---
 
