@@ -1,112 +1,122 @@
 /* main.js */
 
-var express = require('express');
-var expressApp = require('express')();
-var myHttpserver = require('http').createServer(expressApp);
-var io = require('socket.io')(myHttpserver);
-// console.log(io);
-// var path = require('path'); console.log(path);
-var myAppPath = __dirname + '/';
 
-var PORT = process.env.PORT || 7777;
 
-// expressApp.get('/', (req, res) => res.render(myAppPath + "index.html"));
-expressApp.get('/', function(req, res){
-    res.sendFile(myAppPath + "index.html");
-});
-  
+/* ---------------------------------------------------------------------
+ * EXPRESS
+ * ------------------------------------------------------------------ */
 
-expressApp.use(express.static(myAppPath));
+	
+	var express = require('express');
+	var expressApp = require('express')();
+	var myHttpserver = require('http').createServer(expressApp);
+	var io = require('socket.io')(myHttpserver);
+	// console.log(io);
+	// var path = require('path'); console.log(path);
+	var myAppPath = __dirname + '/';
 
-expressApp.use("*", function(req, res) { 
-	res.sendFile(myAppPath + "404.html"); 
-});
+	var PORT = process.env.PORT || 7777;
 
-function getRandomHexColor() {
-	var letters = '012345'.split('');
-	var hexcolor = '#';
-	hexcolor += letters[Math.round(Math.random() * 5)];
-	letters = '0123456789ABCDEF'.split('');
-	for (var i = 0; i < 5; i++) {
-		hexcolor += letters[Math.round(Math.random() * 15)];
+	// expressApp.get('/', (req, res) => res.render(myAppPath + "index.html"));
+	expressApp.get('/', function(req, res){
+		res.sendFile(myAppPath + "index.html");
+	});
+	  
+	expressApp.use(express.static(myAppPath));
+
+	function getRandomHexColor() {
+		
+		var letters = '012345'.split('');
+		var hexcolor = '#';
+		hexcolor += letters[Math.round(Math.random() * 5)];
+		letters = '0123456789ABCDEF'.split('');
+		
+		for (var i = 0; i < 5; i++) {
+			hexcolor += letters[Math.round(Math.random() * 15)];
+		}
+		
+		return hexcolor;		
 	}
-	return hexcolor;
-}
+	
+	function getIPvarString() {
 
-function getIPvarString() {
-
-	var os = require('os');
-
-	var interfaces = os.networkInterfaces();
-	var addresses = [];
-	for (var k in interfaces) {
-		for (var k2 in interfaces[k]) {
-			var address = interfaces[k][k2];
-			console.log('Available Network Interface Address\n',address.family + ' -', address.address); // debug
-			if (address.family === 'IPv4' && !address.internal) {
-				addresses.push(address.address);
+		var os = require('os');
+		var interfaces = os.networkInterfaces();
+		var addresses = [];
+		console.log('Available Network Interface Address:');
+		
+		for (var k in interfaces) {
+			for (var k2 in interfaces[k]) {
+				var address = interfaces[k][k2];
+				console.log('\n\t',address.family + ' -', address.address); // debug
+				if (address.family === 'IPv4' && !address.internal) {
+					addresses.push(address.address);
+				}
 			}
 		}
+		
+		returnIp = addresses[0]; // just grab the 1st on the list
+		
+		return returnIp;
 	}
-	returnIp = addresses[0]; // just grab the 1st on the list
-	return returnIp;
-}
+	
+	// var myHostip = "http://localhost"; // debug ip
+	var myHostip = "http://" + getIPvarString();
+	console.log('\nmyHostip = ' + myHostip);
 
-// var myHostip = "http://localhost"; // debug ip
-var myHostip = "http://" + getIPvarString(); console.log(myHostip);
-console.log(myHostip);
-users = [];
+	users = [];
 
-io.on('connection', function(socket) {
+	io.on('connection', function(socket) {
 
-	socket.on('setUsername', function(data) {
-		var randomHexColor = getRandomHexColor();
+		socket.on('setUsername', function(data) {
+			var randomHexColor = getRandomHexColor();
 
-		if (users.indexOf(data) > -1) {
-			socket.emit('userExists', data + ' username is allready taken! Try another username.');
-		} else {
+			if (users.indexOf(data) > -1) {
+				socket.emit('userExists', data + ' username is allready taken! Try another username.');
+			} else {
 
-			users.push(data);
-			socket.emit('userSet', {
-				username: data,
-				allusers: users,
-				colorname: randomHexColor,
-				iptitle: myHostip
-			});
+				users.push(data);
+				socket.emit('userSet', {
+					username: data,
+					allusers: users,
+					colorname: randomHexColor,
+					iptitle: myHostip
+				});
 
-			console.log('A user was added\n\t Current User Array is: ' + users); // display updated user array in Node
-		}
-	});
-
-	socket.on('msg', function(data) {
-		io.sockets.emit('newmsg', data); //Send message to everyone
-	});
-
-	socket.on('removeUser', function(data) {
-		
-		// filter remove name from array
-		users = users.filter(function(e) {
-			return e !== data
+				console.log('A user was added\n\t Current User Array is: ' + users); // display updated user array in Node
+			}
 		});
-		
-		// display updated user array in Node
-		console.log('A user was removed\n\t Current User Array is: ' + users); 
-		socket.emit('userRemove', users);
-		
+
+		socket.on('msg', function(data) {
+			io.sockets.emit('newmsg', data); //Send message to everyone
+		});
+
+		socket.on('removeUser', function(data) {
+			
+			// filter remove name from array
+			users = users.filter(function(e) {
+				return e !== data
+			});
+			
+			// display updated user array in Node
+			console.log('A user was removed\n\t Current User Array is: ' + users); 
+			socket.emit('userRemove', users);
+			
+		});
+
+		socket.on('disconnect', function() {
+			console.log('a user disconnected'); // display updated user array in Node
+		});
+
 	});
 
-	socket.on('disconnect', function() {
-		console.log('a user disconnected'); // display updated user array in Node
-	});
-
-});
-
-myHttpserver.listen(PORT, () => console.log(`Listening on ${ PORT }`));
+	myHttpserver.listen(PORT, () => console.log(`\nListening on port ${ PORT }`));
+	
 /////////////
 
-/* ---------------------------------------------------------------------------
+/* ---------------------------------------------------------------------
  * ELECTRON
- * -------------------------------------------------------------------------- */
+ * ------------------------------------------------------------------ */
 
 const {
     app,
@@ -115,15 +125,16 @@ const {
     shell
 } = require('electron'); // Electron specific vars
 
-let mainWindow, childWindow;
+let mainWindow;
 
 function createMainWindow() {
 
     // Create the browser window.
-    mainWindow = new BrowserWindow({
-        /* My personal settings: 700x900 */
-        // tablet reff: 768 x 1024
-        // -25% = 576x768
+    /* My personal settings: 700x900 
+     * tablet reff: 768 x 1024, -25% = 576x768
+     * */
+     
+    mainWindow = new BrowserWindow({        
         width: 576,
         height: 768,
         icon: './myAssets/img/favicon.ico'
@@ -147,7 +158,19 @@ function createMainWindow() {
                     {role: 'quit'}
                 ]
             },
-            {
+			{
+				label: 'View',
+				submenu: [
+					{role: 'toggledevtools'},
+					{type: 'separator'},
+					{role: 'resetzoom'},
+					{role: 'zoomin'},
+					{role: 'zoomout'},
+					{type: 'separator'},
+					{role: 'togglefullscreen'}
+				]
+			},
+			{
                 label: 'About',
                 submenu: [
                     {
@@ -157,8 +180,12 @@ function createMainWindow() {
                         }
                     },
                     {
-                        type: 'separator'
+                        label: 'Development Wiki',
+                        click() {
+                            shell.openExternal('http://mezcel.wixsite.com/rosary')
+                        }
                     },
+                    { type: 'separator' },
                     {
                         label: 'Wiki: Mod/Debug - BrowserWindow',
                         click() {
@@ -194,10 +221,17 @@ function createMainWindow() {
 
 }
 
-// Run the app 
-  
+/////////////
+
+/* ---------------------------------------------------------------------
+ * Run
+ * ------------------------------------------------------------------ */
+
+
+
 app.on('ready', function() {
     createMainWindow();
+    
 });
 
 // Quit when all windows are closed.
