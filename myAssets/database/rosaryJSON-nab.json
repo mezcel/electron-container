@@ -2736,8 +2736,8 @@
 	"book": [
 		{
 			"bookID": 0,
-			"bookName": "",
-			"library": ""
+            "bookName": "NAB Bible",
+            "library": "<a href='http://www.usccb.org/bible/books-of-the-bible/index.cfm' target='_blank'>usccb.org</a>"
 		},
 		{
 			"bookID": 1,
@@ -2818,10 +2818,10 @@
 	"scripture": [
 		{
 			"scriptureID": 0,
-			"bookIndex": 0,
-			"chapterIndex": 0,
-			"verseIndex": 0,
-			"scriptureText": ""
+            "bookIndex": 0,
+            "chapterIndex": 0,
+            "verseIndex": 0,
+            "scriptureText": ""
 		},
 		{
 			"scriptureID": 1,
