@@ -29,13 +29,21 @@
         <script src="./myAssets/js/myScript.js"></script>
         <script src="/socket.io/socket.io.js"></script>
 		<script src="./myAssets/js/myMessengerScript.js"></script>
-
     </head>
 
     <body id="entireBody" class="ui-page-theme-a ui-content">
 
+        <!-- splash page -->
+		<div data-role="page" id="splashpage">
+            <a href="#coverpage" class='fullscreenDiv' style="text-decoration:none">
+                <div class="absoluteCenter">
+                    <span id="btnEnter">enter</span>
+                </div>
+            </a>
+        </div>
+
 		<!-- cover page -->
-		<a data-role="page" id="splashpage" href="#rosary" class="btnCenterPage coverImg" style="text-decoration:none">
+		<a data-role="page" id="coverpage" href="#rosary" data-transition="flip" class="coverImg" style="text-decoration:none">
             <p class="ui-bar coverpageInfo" style="text-decoration:none">Scripture Rosary with NAB and Vulgate Translations</p>
             <p class="ui-bar coverpageInfo" style="text-decoration:none; position: absolute; bottom: 0;">by Mezcel</p>
         </a>
@@ -47,7 +55,7 @@
                 <!-- App Header -->
                 <a id="btnHomePanel" href="#homePanel" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-left">Home</a>
                 <h1 id="appHeaderTitle">
-					<em id="mystery">ElectronJS JQM Rosary</em>
+					<em id="mystery">Express JQM Rosary</em> <sub class="mysteryTranslationIndicator"></sub>
                 </h1>
                 <a id="btnInfoPanel" href="#infoPanel" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left">Info</a>
             </div>
@@ -210,7 +218,7 @@
                                 <label for="nabTranslation">English - NAB</label>
 
                                 <input type="radio" name="rdoTranslation" id="vulgateTranslation" value="translation2" checked="checked">
-                                <label for="vulgateTranslation">Latin - vulgate</label>
+                                <label for="vulgateTranslation">Latin - Vulgate</label>
 
                                 <input type="radio" name="rdoTranslation" id="otherTranslation" value="translation3" disabled="disabled">
                                 <label for="otherTranslation">other (n/a)</label>
@@ -265,6 +273,8 @@
 				<input id="myName" value="" type="text" placeholder="Enter a User Name!">
 				<button id="btnUsrInput" onclick="setUsername()">Use this name</button>
             </div>
+
+
 
             <!-- Main Center View -->
             <div data-role="main" class="ui-content mySwipeClass" data-position="fixed">
