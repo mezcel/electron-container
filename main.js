@@ -71,6 +71,7 @@
 
 		socket.on('setUsername', function(data) {
 			var randomHexColor = getRandomHexColor();
+			var usercount = users.length;
 
 			if (users.indexOf(data) > -1) {
 				socket.emit('userExists', data + ' username is allready taken! Try another username.');
@@ -84,8 +85,9 @@
 					iptitle: myHostip
 				});
 
-				console.log('\x1b[32m', 'A client user was added ++','\x1b[0m' ); // display updated user array in Node
-				console.log('\t Current User Array, users[' + users.length + '], is: ' + users);
+				console.log('\x1b[32m', 'A messaging client user was added ++','\x1b[0m' ); // display updated user array in Node
+
+				console.log('\t Current User Array, users[' + usercount + '], is: ' + users);
 			}
 		});
 
@@ -95,14 +97,17 @@
 
 		socket.on('removeUser', function(data) {
 
+			var usercount = users.length - 1;
+			if (usercount <= 0) {usercount = ''} else {usercount -= 1}
+
 			// filter remove name from array
 			users = users.filter(function(e) {
 				return e !== data
 			});
 
 			// display updated user array in Node
-			console.log('\x1b[31m', 'A client user was removed --','\x1b[0m'); // display updated user array in Node
-			console.log('\t Current User Array, users[' + users.length + '], is: ' + users);
+			console.log('\x1b[31m', 'A client user disconnected --','\x1b[0m'); // display updated user array in Node
+			console.log('\t Current User Array, users[' + usercount + '], is: ' + users);
 			socket.emit('userRemove', users);
 
 		});
