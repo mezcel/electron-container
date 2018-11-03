@@ -4598,28 +4598,28 @@
             "infoHeader": "Vision behind this App version",
             "infoSubHeader": "<b>A ElectronJs jQuery Mobile App version in my Rosary App series</b>",
             "infoFooter": "footer",
-            "infoText": "<p>This is the NodeJs, Express, and Electron version of my jQuery-mobile Rosary App series. This is the latest working test bench and proof of concept for an educational DIY rosary app tutorial. The visual are minimal: White, Black and Gray. This app thoroughly covers 1 of the 4 mysteries in the Rosary. The Rosary/Chaplet text readings are all contained within a JSON variable called rosaryJSON.  This is the focal point of all future content modifications. A sold JSON lends for scalability and modular app development.</p><p>I made this Rosary app as both a fun way to teach myself how to use jQuery Mobile, and as a prayerful activity. There is no excuse to \"not incorporate\" our faith in everything we do.</p>"
+            "infoText": "<p>This is a JQM application hosted by Express Node Server.</p><p>This application is modeled around the functionality of a scriptural rosary</p><p>I made this Rosary app as both a fun way to teach myself how to use jQuery Mobile, and as a prayerful activity. There is no excuse to \"not incorporate\" our faith in everything we do.</p>"
         },
         {
             "infoID": 3,
-            "infoHeader": "Pro's and Con's of this App Version",
-            "infoSubHeader": "<b>This is my most minimal yet most useable version</b>",
+            "infoHeader": "",
+            "infoSubHeader": "",
             "infoFooter": "footer",
-            "infoText": "<p>This version is cross platform for any computer with NodeJs enabled and the screen display allows Chromium Browser. There is a multi-client messaging feature in play.</p>Pros compared to my other App platform versions:<ul><li>Except for the JsonDB, the script is small.</li><li>Lightweight and truly cross platform.</li><li>ExpressJs & Socket IO is used for messaging.</li><li>Audio music</li><li>Fast deployment</li><li>Short code development time (not including debugs and typos)</li></ul>Cons compared to my other App platform versions:<ul><li>Not visually stimulating.</li><li>1 variable db.</li><li>Social networking clients must manuall establish which host IP to use.</li><li>Changes to the database must be made from within the index.html file.</li></ul>"
+            "infoText": ""
         },
         {
             "infoID": 4,
-            "infoHeader": "Development Platform",
-            "infoSubHeader": "<b>NodeJs, npm Electron, npm Express, npm Socket IO, jQuery Mobile 1.4.5</b>",
+            "infoHeader": "",
+            "infoSubHeader": "",
             "infoFooter": "footer",
-            "infoText": "<p>The Electron framework lets you write cross-platform desktop applications using JavaScript, HTML and CSS. It is based on Node.js and Chromium and is used by the Atom editor and many other apps.</p><p>Express is an unopinionated, minimalist web framework for node.</p><p>Socket.IO enables real-time bidirectional event-based communication.</p><p>jQuery Mobile is a platform based on jQuery and Java Script.</p><p>JQM is this app's UI and what make it fully cross compattable with all current web browsers. Electron does require a browser display compatable with Chromium</p>"
+            "infoText": ""
         },
         {
             "infoID": 5,
             "infoHeader": "Source Code",
-            "infoSubHeader": "<b>Wiki & Git</b>",
+            "infoSubHeader": "<p>Visit my detailed <a href=''>rosary.net</a> Wiki Website for details around my development process and philosophy. This is not a .Net application, but my primary design blocks are similar.</p>",
             "infoFooter": "footer",
-            "infoText": "<table data-role='table' data-mode='reflow' class='myTableStyle'><thead><tr><th>Resource</th><th>link</th></tr></thead><tbody><tr><td>Github</td><td><a class='ui-link' href='https://github.com/mezcel' target='_blank'>https://github.com/mezcel</a></td></tr><tr><td>Git</td><td><a class='ui-link' href='https://github.com/mezcel/electron-container' target='_blank'>ElectronJS App</a></td></tr><tr><td>Legacy Wiki Website</td><td><a class='ui-link' href='http://mezcel.wixsite.com/rosary' target='_blank'>Project Design of an earlier C# Version</a></td></tr><tr><td>Original JQM Version Git</td><td><a class='ui-link' href='https://github.com/mezcel/rosary-jquery-mobile' target='_blank'>The original JQM project this app is based off of</a></td></tr></tbody></table>"
+            "infoText": "<table data-role='table' data-mode='reflow' class='myTableStyle'><thead><tr><th>Resource</th><th>link</th></tr></thead><tbody><tr><td>Github</td><td><a class='ui-link' href='https://github.com/mezcel' target='_blank'>github.com/mezcel</a></td></tr><tr><td>Git</td><td><a class='ui-link' href='https://github.com/mezcel/electron-container' target='_blank'>electron-container</a></td></tr><tr><td>Wiki Website</td><td><a class='ui-link' href='http://mezcel.wixsite.com/rosary' target='_blank'>rosary.net</a></td></tr><tr><td>Initial jQm Repo</td><td><a class='ui-link' href='https://github.com/mezcel/rosary-jquery-mobile' target='_blank'>rosary-jquery-mobile</a></td></tr></tbody></table>"
         },
         {
             "infoID": 6,
