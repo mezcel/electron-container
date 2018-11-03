@@ -285,7 +285,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
 function populateBookJsonList() { // populate the right pannel list with bible content
 
-    var li = '<li data-theme="b" class="ui-bar">Database Quotes</li>';
+    var li = '<li data-theme="b" class="ui-bar">Bible Quotes </li>';
     var tempbookIndex = [];
     //container for $li's to be added
     $.each(rosaryJSON.scripture, function(i, name) { // consolidate scriptured from the same book
@@ -353,6 +353,8 @@ function populatePrayerJsonList() { // populate the right pannel list with bible
 }
 
 function initAudioVolume() { // initial audio volume setting
+    //$("#audioAveMaria").play();
+    //$("#audioAveMaria").pause();
     $("#audioAveMaria").prop('volume', 0.25);
 }
 
@@ -408,6 +410,9 @@ $(document).on('pageshow', '#rosary', function() {
     // initialize progressbar and prayer display
     progressBar.setValue(beadCounter, beadCounter);
     document.getElementById('prayer').innerHTML = rosaryJSON.prayer[1].prayerText;
+
+    $("#mystery").html('Express JQM Rosary');
+    $(".mysteryTranslationIndicator").text('Vulgate');
 });
 
 /* the code destination for dynamically generated bible list */
@@ -464,7 +469,7 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
 });
 
 /* UI swipe, slicks, & keydown triggers */
-$(document).on("pagecreate", function() {
+$(document).on("pagecreate", "#rosary", function() {
 
 	// swipe
     $(".mySwipeClass").on("swiperight", function() { beadRev(); });
@@ -563,11 +568,7 @@ $(document).on("pagecreate", function() {
                     }
                     break;
                 default:
-                    /*// flicker screen
-                    $('html').css('display', 'none');
-                    setTimeout(function(){
-                        $('html').css('display', 'block');
-                    }, 10);*/
+                    // no default
             }
 
         }
@@ -628,10 +629,13 @@ $(document).on("pagecreate", function() {
 
             if ($("#nabTranslation").is(":checked")) {
                 rosaryJSON = rosaryJSONnab;
+                $(".mysteryTranslationIndicator").text('NAB');
             }
 
             if ($("#vulgateTranslation").is(":checked")) {
-                rosaryJSON = rosaryJSONvulgate;            }
+                rosaryJSON = rosaryJSONvulgate;
+                $(".mysteryTranslationIndicator").text('Vulgate');
+            }
 
             $("#bible-list").html(''); //clear dom list
             $("#prayer-list").html(''); //clear dom list
@@ -646,9 +650,6 @@ $(document).on("pagecreate", function() {
 });
 
 /* translation db variable initialization */
-// pagebeforehide
-// pagebeforeshow
-// pageshow
 $(document).on('pagebeforehide', '#splashpage', function(e, data){ // import json files
 
 	// there are other ways to do this, but ajax script works the best with JQM
@@ -682,14 +683,21 @@ $(document).on('pagebeforehide', '#splashpage', function(e, data){ // import jso
         }
     });
 
-    alert('ajax');
+    // alert('begin');
 
 });
 
 /* initialize features provided the page's DOM is loaded */
-$(document).on('pageshow', '#rosary', function() {
+$(document).on('pageinit', '#rosary', function() {
 	initUi();
-    alert('initUi');
+});
+
+/* a splash page to allow full content dl */
+$(document).on('pageinit', '#splashpage', function() {
+    setTimeout(function(){
+        // window.location="#coverpage";
+        $("#btnEnter").fadeIn();
+    },500); /* 1000 = 1 second*/
 });
 
 ////
