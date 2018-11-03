@@ -1,15 +1,34 @@
 /*  myAssets/js/myMessengerScript.js */
 
 var user, usercolor, usersAll, thisClientName, thisClientNameColor;
+var socket = io();
 var uniqueUser = false;// flag if a unique user was set 
 
-try {
-	// try/catch is for when I debug between electron vs express mods
-    var socket = io();
+function messengerFeatureButton() {
+	// decides to make messenger inputs available 
+    if (uniqueUser == true) {
+        $('#btnPromptLogin').hide();
+        $('#btnOpenMessenger').show();
+        $('#rosary').click();
+        $("#loginPopUp").popup("close");
+    }
 }
-catch(err) {
-    alert(err.message);
+
+// Messenger Keyboard event handler
+function msgKeyUpEvent() {
+	// Get the input field
+	var inputEventMsg = document.getElementById("myMessage");
+	inputEventMsg.addEventListener("keyup", function(mymessageevent) {
+		// Number 13 is the "Enter" key on the keyboard
+		if (mymessageevent.keyCode === 13) {
+			sendmyMessage();
+		}
+	});
 }
+
+/***********************************************************************
+ * Socket.io functions
+ * */
 
 /* log user */
 function setUsername() {
@@ -42,6 +61,9 @@ function sendmyMessage() {
 	
 };
 
+/***********************************************************************
+ * Socket.io events
+ * */
 socket.on('userExists', function(data) {
 	document.getElementById('error-container').innerHTML = data;
 });
@@ -79,28 +101,3 @@ socket.on('newmsg', function(data) {
 window.addEventListener("beforeunload", function(e) {
 	removeUsername(); // this function never finishes when called by "beforeunload"
 }, false);
-
-// Keyboard event handler
-function userNameKeyUpEvent() {
-	// Get the input field
-	var inputEventUser = document.getElementById("myName");
-	inputEventUser.addEventListener("keyup", function(mynameevent) {
-		// Number 13 is the "Enter" key on the keyboard
-		if (mynameevent.keyCode === 13) {
-			setUsername();
-		}
-	});
-}
-
-function msgKeyUpEvent() {
-	// Get the input field
-	var inputEventMsg = document.getElementById("myMessage");
-	inputEventMsg.addEventListener("keyup", function(mymessageevent) {
-		// Number 13 is the "Enter" key on the keyboard
-		if (mymessageevent.keyCode === 13) {
-			sendmyMessage();
-		}
-	});
-}
-
-//userNameKeyUpEvent();

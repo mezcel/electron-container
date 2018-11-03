@@ -357,17 +357,6 @@ function initAudioVolume() { // initial audio volume setting
     $("#audioAveMaria").prop('volume', 0.25);
 }
 
-function messengerFeatureButton() {
-    // called by myMessengerScript.js
-    if (uniqueUser == true) {
-        $('#btnPromptLogin').hide();
-        $('#btnOpenMessenger').show();
-        $('#rosary').click();
-        $("#loginPopUp").popup("close");
-        // $('#messagingPopUp').popup("open");
-    }
-}
-
 function initUi() {
 	populateBookJsonList();
     populatePrayerJsonList();
@@ -669,7 +658,8 @@ $(document).on("pagecreate", function() {
 });
 
 /* translation db variable initialization */
-$(document).on('pageinit', '#rosary', function(e, data){ // import json files
+/* pagecreate, pageinit, pageshow, beforepagecreate */
+$(document).on('pagecreate', '#rosary', function(e, data){ // import json files
     
 	// there are other ways to do this, but ajax script works the best with JQM
 	// Note: https://joshzeigler.com/technology/web-development/how-big-is-too-big-for-json
