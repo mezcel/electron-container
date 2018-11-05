@@ -75,6 +75,21 @@
 
 			if (users.indexOf(data) > -1) {
 				socket.emit('userExists', data + ' username is allready taken! Try another username.');
+
+				data = data + '\[' + usercount + '\]';
+
+				users.push(data);
+				socket.emit('userSet', {
+					username: data,
+					allusers: users,
+					colorname: randomHexColor,
+					iptitle: myHostip
+				});
+
+				console.log('\x1b[32m', 'A messaging client user was added ++','\x1b[0m' ); // display updated user array in Node
+
+				console.log('\t Current User Array, users[' + usercount + '], is: ' + users);
+
 			} else {
 
 				users.push(data);
