@@ -2,17 +2,6 @@
 
 var user, usercolor, usersAll, thisClientName, thisClientNameColor;
 var socket = io();
-var uniqueUser = false;// flag if a unique user was set 
-
-function messengerFeatureButton() {
-	// decides to make messenger inputs available 
-    if (uniqueUser == true) {
-        $('#btnPromptLogin').hide();
-        $('#btnOpenMessenger').show();
-        $('#rosary').click();
-        $("#loginPopUp").popup("close");
-    }
-}
 
 // Messenger Keyboard event handler
 function msgKeyUpEvent() {
@@ -33,8 +22,25 @@ function msgKeyUpEvent() {
 /* log user */
 function setUsername() {
 	thisClientName = document.getElementById('myName').value;
+
+	if (thisClientName == '') {
+		/*
+		var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+		var string_length = 4;
+		var randomstring = '';
+
+		for (var i=0; i<string_length; i++) {
+			var rnum = Math.floor(Math.random() * chars.length);
+			randomstring += chars.substring(rnum,rnum+1);
+		}
+		*/
+
+		var x = location.hostname;
+		thisClientName = 'user\@'+x;
+	}
+
 	socket.emit('setUsername', thisClientName);
-	
+
 };
 
 /* log out user */
@@ -44,7 +50,7 @@ function removeUsername() {
 
 /* msg history */
 function sendmyMessage() {
-	
+
 	var msg = document.getElementById('myMessage').value;
 	var divUsers = document.getElementById("divAllUsers").innerHTML;
 	if (msg) {
@@ -58,7 +64,6 @@ function sendmyMessage() {
 	document.getElementById('myMessage').value = "";
 	document.getElementById("myMessage").focus();
 
-	
 };
 
 /***********************************************************************
@@ -73,13 +78,10 @@ socket.on('userSet', function(data) {
 	usercolor = data.colorname;
 	usersAll = data.allusers;
 	thisClientNameColor = usercolor;
-	
+
 	document.getElementById("divAllUsers").innerHTML = usersAll;
 	document.getElementById("myMessage").value = '<i style="color: ' + usercolor + '">*** ' + user + ' joined the msg room ***</i>';
 
-	uniqueUser = true; // unique user flag
-	messengerFeatureButton(); // defined in myScript.js
-	
 	sendmyMessage();
 	msgKeyUpEvent(); // event binding
 });
