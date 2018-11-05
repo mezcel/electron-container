@@ -364,114 +364,8 @@ function initUi() {
     initAudioVolume();
 }
 
-/***************************************************************
- * Page Load Events
- */
-
-/* configure progressbars  */
-$(document).on('pageshow', '#rosary', function() {
-
-    $("#btnOpenMessenger").hide();
-
-    $('<input>').appendTo('[ data-role="decadeProgress"]').attr({
-        'name': 'decadeSlider',
-        'id': 'decadeSlider',
-        'data-highlight': 'true',
-        'min': '0',
-        'max': '10',
-        'value': '0',
-        'type': 'range'
-    }).slider({
-        create: function(event, ui) {
-            $(this).parent().find('input').hide();
-            $(this).parent().find('input').css('margin-left', '-9999px'); // Fix for some FF versions
-            $(this).parent().find('.ui-slider-track').css('margin', '0 15px 0 15px');
-            $(this).parent().find('.ui-slider-handle').hide();
-        }
-    }).slider("refresh");
-
-    $('<input>').appendTo('[ data-role="rosaryProgress"]').attr({
-        'name': 'rosaryProgress',
-        'id': 'rosaryProgress',
-        'data-highlight': 'true',
-        'min': '0',
-        'max': '50',
-        'value': '0',
-        'type': 'range'
-    }).slider({
-        create: function(event, ui) {
-            $(this).parent().find('input').hide();
-            $(this).parent().find('input').css('margin-left', '-9999px'); // Fix for some FF versions
-            $(this).parent().find('.ui-slider-track').css('margin', '0 15px 0 15px');
-            $(this).parent().find('.ui-slider-handle').hide();
-        }
-    }).slider("refresh");
-
-    // initialize progressbar and prayer display
-    progressBar.setValue(beadCounter, beadCounter);
-    document.getElementById('prayer').innerHTML = rosaryJSON.prayer[1].prayerText;
-
-    $("#mystery").html('Express JQM Rosary');
-    $(".mysteryTranslationIndicator").text('Vulgate');
-});
-
-/* the code destination for dynamically generated bible list */
-$(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamically populated list content when active is clicked
-
-    if (showBibleListFlag === true) { // Bible Book list in right panel
-        var info = $("#myDialogPopUp").data("myDataJsonVar");
-        var info_view = '<ol style="list-style: none; padding-left: 0;">';
-        var bookID = info["bookID"];
-
-        for (var iLoop = 0; iLoop < rosaryJSON.scripture.length; iLoop += 1) {
-            if (rosaryJSON.scripture[iLoop].bookIndex === bookID) {
-                info_view += '<li class="ui-field-contain ui-corner-all ui-shadow"><strong>(' + rosaryJSON.scripture[iLoop].chapterIndex + ":" + rosaryJSON.scripture[iLoop].verseIndex + ") &#x270d; </strong>" + rosaryJSON.scripture[iLoop].scriptureText + '</li>';
-            }
-        }
-        info_view += '</ol>';
-
-        // hide extra elements
-        $(this).find("[data-role=prayerContent]").html('');
-        $("#infoSubHeader").css("display","none");
-        $("#infoBody").css("display","none");
-
-        // show modal content
-        $("#infoHeader").html(info["bookName"]);
-        $(this).find("[data-role=bibleContent]").html(info_view);
-        $("#infoFooter").html("Readings found in: " + info["library"]);
-
-
-    } else if (showPrayerListFlag === true) { // Prayer Book list in right panel
-        var info = $("#myDialogPopUp").data("myDataJsonVar2");
-        var prayerID = info["prayerID"];
-        var info_view = '<ol style="list-style: none; padding-left: 0;"><li class="ui-field-contain ui-corner-all ui-shadow">' + rosaryJSON.prayer[prayerID].prayerText + '</li></ol>';
-
-        // hide extra elements
-        $(this).find("[data-role=bibleContent]").html('');
-        $("#infoSubHeader").css("display","none");
-        $("#infoBody").css("display","none");
-
-        // show modal content
-        $("#infoHeader").html(rosaryJSON.prayer[prayerID].prayerName);
-        $(this).find("[data-role=prayerContent]").html(info_view);
-        $("#infoFooter").html("footer");
-
-    } else { // the other content
-        // hide bible verse and prayer elements
-		$(this).find("[data-role=bibleContent]").html('');
-		$(this).find("[data-role=prayerContent]").html('');
-
-        // show modal content
-        $("#infoSubHeader").show();
-        $("#infoBody").show();
-    }
-
-});
-
-/* UI swipe, slicks, & keydown triggers */
-$(document).on("pagecreate", "#rosary", function() {
-
-	// swipe
+function myControllEvents() {
+    // swipe
     $(".mySwipeClass").on("swiperight", function() { beadRev(); });
 
     $(".mySwipeClass").on("swipeleft", function() { beadFwd(); });
@@ -481,12 +375,6 @@ $(document).on("pagecreate", "#rosary", function() {
         iamtyping = false;
     });
     $("#myMessage").focusin(function(){
-        iamtyping = true;
-    });
-    $("#myName").focusout(function(){
-        iamtyping = false;
-    });
-    $("#myName").focusin(function(){
         iamtyping = true;
     });
 
@@ -561,11 +449,7 @@ $(document).on("pagecreate", "#rosary", function() {
                     break;
                 case 77: // letter m
                     // m for message
-                    if (uniqueUser) {
-                        $("#messagingPopUp").popup("open");
-                    } else {
-                        $("#loginPopUp").popup("open");
-                    }
+                    $("#messagingPopUp").popup("open");
                     break;
                 default:
                     // no default
@@ -574,7 +458,9 @@ $(document).on("pagecreate", "#rosary", function() {
         }
 
     });
+}
 
+function myThemeEvents() {
     /* Color themes */
     $("#darklight input").on("change", function(event) { // black white
         if (event.target.name === "theme") {
@@ -646,59 +532,172 @@ $(document).on("pagecreate", "#rosary", function() {
             fillRosaryBeadPage(beadCounter); // display translation of current bead
         }
     });
+}
+
+function initProgressBars() {
+    $('<input>').appendTo('[ data-role="decadeProgress"]').attr({
+        'name': 'decadeSlider',
+        'id': 'decadeSlider',
+        'data-highlight': 'true',
+        'min': '0',
+        'max': '10',
+        'value': '0',
+        'type': 'range'
+    }).slider({
+        create: function(event, ui) {
+            $(this).parent().find('input').hide();
+            $(this).parent().find('input').css('margin-left', '-9999px'); // Fix for some FF versions
+            $(this).parent().find('.ui-slider-track').css('margin', '0 15px 0 15px');
+            $(this).parent().find('.ui-slider-handle').hide();
+        }
+    }).slider("refresh");
+
+    $('<input>').appendTo('[ data-role="rosaryProgress"]').attr({
+        'name': 'rosaryProgress',
+        'id': 'rosaryProgress',
+        'data-highlight': 'true',
+        'min': '0',
+        'max': '50',
+        'value': '0',
+        'type': 'range'
+    }).slider({
+        create: function(event, ui) {
+            $(this).parent().find('input').hide();
+            $(this).parent().find('input').css('margin-left', '-9999px'); // Fix for some FF versions
+            $(this).parent().find('.ui-slider-track').css('margin', '0 15px 0 15px');
+            $(this).parent().find('.ui-slider-handle').hide();
+        }
+    }).slider("refresh");
+
+    // initialize progressbar and prayer display
+    progressBar.setValue(beadCounter, beadCounter);
+
+}
+/***************************************************************
+ * Page Load Events
+ */
+
+ /* translation db variable initialization */
+ $(document).on('pageshow', '#coverpage', function(e, data){ // import json files
+
+ 	// there are other ways to do this, but ajax script works the best with JQM
+ 	// Note: https://joshzeigler.com/technology/web-development/how-big-is-too-big-for-json
+
+ 	// import nab and define global nab json
+ 	$.ajax({url: 'myAssets/database/rosaryJSON-min-nab.json',
+         dataType: "json",
+         async: true,
+         success: function (result) {
+             rosaryJSONnab = result;
+             alert('rosaryJSONnab');
+         },
+         error: function (request,error) {
+             alert('NAB translation did not upload');
+         }
+     });
+
+     // import Vulgate and define global vulgate json
+     // vulgate will also be my initial language
+     $.ajax({url: 'myAssets/database/rosaryJSON-min-vulgate.json',
+         dataType: "json",
+         async: true,
+         success: function (result) {
+             rosaryJSONvulgate = result;
+             rosaryJSON = rosaryJSONvulgate;
+             alert('rosaryJSONvulgate');
+         },
+         error: function (request,error) {
+             alert('Vulgate translation did not upload');
+         }
+     });
+
+     // alert('begin');
+
+ });
+
+/* configure progressbars  */
+$(document).on('pageshow', '#rosary', function() {
+
+    initUi();
+
+    myControllEvents();
+    myThemeEvents();
+
+    initProgressBars();
+
+    $("#prayer").html(rosaryJSON.prayer[1].prayerText);
+    $("#mystery").html('Express JQM Rosary');
+    $(".mysteryTranslationIndicator").text('Vulgate');
 
 });
 
-/* translation db variable initialization */
-$(document).on('pagebeforehide', '#splashpage', function(e, data){ // import json files
+/* the code destination for dynamically generated bible list */
+$(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamically populated list content when active is clicked
 
-	// there are other ways to do this, but ajax script works the best with JQM
-	// Note: https://joshzeigler.com/technology/web-development/how-big-is-too-big-for-json
+    if (showBibleListFlag === true) { // Bible Book list in right panel
+        var info = $("#myDialogPopUp").data("myDataJsonVar");
+        var info_view = '<ol style="list-style: none; padding-left: 0;">';
+        var bookID = info["bookID"];
 
-	// import nab and define global nab json
-	$.ajax({url: 'myAssets/database/rosaryJSON-min-nab.json',
-        dataType: "json",
-        async: true,
-        success: function (result) {
-            rosaryJSONnab = result;
-            //alert('rosaryJSONnab');
-        },
-        error: function (request,error) {
-            alert('NAB translation did not upload');
+        for (var iLoop = 0; iLoop < rosaryJSON.scripture.length; iLoop += 1) {
+            if (rosaryJSON.scripture[iLoop].bookIndex === bookID) {
+                info_view += '<li class="ui-field-contain ui-corner-all ui-shadow"><strong>(' + rosaryJSON.scripture[iLoop].chapterIndex + ":" + rosaryJSON.scripture[iLoop].verseIndex + ") &#x270d; </strong>" + rosaryJSON.scripture[iLoop].scriptureText + '</li>';
+            }
         }
-    });
+        info_view += '</ol>';
 
-    // import Vulgate and define global vulgate json
-    // vulgate will also be my initial language
-    $.ajax({url: 'myAssets/database/rosaryJSON-min-vulgate.json',
-        dataType: "json",
-        async: true,
-        success: function (result) {
-            rosaryJSONvulgate = result;
-            rosaryJSON = rosaryJSONvulgate;
-            // alert('rosaryJSONvulgate');
-        },
-        error: function (request,error) {
-            alert('Vulgate translation did not upload');
-        }
-    });
+        // hide extra elements
+        $(this).find("[data-role=prayerContent]").html('');
+        $("#infoSubHeader").css("display","none");
+        $("#infoBody").css("display","none");
 
-    // alert('begin');
+        // show modal content
+        $("#infoHeader").html(info["bookName"]);
+        $(this).find("[data-role=bibleContent]").html(info_view);
+        $("#infoFooter").html("Readings found in: " + info["library"]);
+
+
+    } else if (showPrayerListFlag === true) { // Prayer Book list in right panel
+        var info = $("#myDialogPopUp").data("myDataJsonVar2");
+        var prayerID = info["prayerID"];
+        var info_view = '<ol style="list-style: none; padding-left: 0;"><li class="ui-field-contain ui-corner-all ui-shadow">' + rosaryJSON.prayer[prayerID].prayerText + '</li></ol>';
+
+        // hide extra elements
+        $(this).find("[data-role=bibleContent]").html('');
+        $("#infoSubHeader").css("display","none");
+        $("#infoBody").css("display","none");
+
+        // show modal content
+        $("#infoHeader").html(rosaryJSON.prayer[prayerID].prayerName);
+        $(this).find("[data-role=prayerContent]").html(info_view);
+        $("#infoFooter").html("footer");
+
+    } else { // the other content
+        // hide bible verse and prayer elements
+		$(this).find("[data-role=bibleContent]").html('');
+		$(this).find("[data-role=prayerContent]").html('');
+
+        // show modal content
+        $("#infoSubHeader").show();
+        $("#infoBody").show();
+    }
 
 });
+
+/* UI swipe, slicks, & keydown triggers */
+/*
+$(document).on("pagecreate", "#rosary", function() {
+	myControllEvents();
+    myThemeEvents();
+});
+*/
 
 /* initialize features provided the page's DOM is loaded */
+/*
 $(document).on('pageinit', '#rosary', function() {
 	initUi();
 });
-
-/* a splash page to allow full content dl */
-$(document).on('pageinit', '#splashpage', function() {
-    setTimeout(function(){
-        // window.location="#coverpage";
-        $("#btnEnter").fadeIn();
-    },500); /* 1000 = 1 second*/
-});
+*/
 
 ////
 /* prevent images from getting dragged on swipe */
