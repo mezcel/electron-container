@@ -24,27 +24,16 @@ hr {
     text-align: center;
 }
 */
-#myDialogPopUp a.ui-link {text-decoration: none}
+#myDialogPopUp a.ui-link { text-decoration: none; }
 
-#messagingPopUp {
-	width:80vw;
-	height:85vh;
-}
-.msgLog {
-	height: 68%;
-	overflow-y:auto;
-}
-
-.audioStyle {
-    width: 100%;
-}
+.audioStyle { width: 100%; }
 
 .ui-icon-delete { /* close modal icon */
     font-size: 2em;
 }
 
 /* table style  */
-.myTableStyle {width: 100%;}
+.myTableStyle { width: 100%; }
 .myTableStyle thead th,
 .myTableStyle tbody th .ui-table-cell-label,
 .myTableStyle tbody td .ui-table-cell-label {
@@ -83,14 +72,7 @@ hr {
         font-size: 80%;
     }*/
 
-    #myDialogPopUp {
-        font-size: 110%;
-    }
-    #entireBody {
-        font-size: 80%;
-    }
-    #appHeaderTitle {
-        font-size: 115%;
-    }
-
+    #myDialogPopUp { font-size: 110%; }
+    #entireBody { font-size: 80%; }
+    #appHeaderTitle { font-size: 115%; }
 }

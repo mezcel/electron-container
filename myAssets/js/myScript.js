@@ -5,12 +5,44 @@
  var showBibleListFlag = false; // whether or not an html list was dynamically populated
  var showPrayerListFlag = false; // whether or not an html list was dynamically populated
  var iamtyping = false; // a flag indicating if I am typing so I dont trigger keydown events
+ var mainPageLoaded = false; // a flag to prevent re-loading dom objects;
 
  var initialHailMaryCounter = 0;
  var stringSpaceCounter = 0;
  var hailmaryCounter = 0;
  var beadCounter = 0;
  var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
+ // rosaryJSON = rosaryJSONvulgate;
+
+ // import nab and define global nab json
+$.ajax({
+    url: './myAssets/database/rosaryJSON-min-nab.json',
+    dataType: "json",
+    async: false,
+    success: function (result) {
+        rosaryJSONnab = result;
+        //alert('rosaryJSONnab');
+    },
+    error: function (request,error) {
+        alert('NAB translation did not upload');
+    }
+});
+
+// import Vulgate and define global vulgate json
+// vulgate will also be my initial language
+$.ajax({
+    url: './myAssets/database/rosaryJSON-min-vulgate.json',
+    dataType: "json",
+    async: false,
+    success: function (result) {
+        rosaryJSONvulgate = result;
+        rosaryJSON = rosaryJSONvulgate;
+        //alert('rosaryJSONvulgate');
+    },
+    error: function (request,error) {
+        alert('Vulgate translation did not upload');
+    }
+});
 
  rosaryJSON = rosaryJSONvulgate;
 
@@ -101,10 +133,6 @@ function fillRosaryBeadPage(counterNo) {
     $("#scripture").html(rosaryJSON.scripture[scriptureIndex].scriptureText);
     $("#message").html(rosaryJSON.message[messageIndex].mesageText);
     $("#prayer").html(rosaryJSON.prayer[prayerIndex].prayerText);
-    /*	//used to display optional navigation art ui
-        $('#mySwipeImg').attr('src',rosaryJSON.decade[decadeIndex].decadeArt);
-        $('#mySwipeImg').attr('width', '100%');
-    */
 }
 
 /* navigation buttons */
@@ -128,12 +156,6 @@ function beadRev() {
 }
 
 function beadProcess(directionFwRw) { // event displays based on bead counter sequence
-	/* Note:
-	 *  Progress Calculation Variables:
-	 * 	    hailmaryCounter
-	 * 	    thisDecadeSet
-	 * 	    beadCounter
-	 * */
 
     beadCounter += directionFwRw; // increment
     mysteryProgress = 0;
@@ -362,14 +384,19 @@ function initUi() {
 	populateBookJsonList();
     populatePrayerJsonList();
     initAudioVolume();
+
+    myControllEvents();
+    myThemeEvents();
+    initProgressBars();
 }
 
 function myControllEvents() {
+    
     // swipe
     $(".mySwipeClass").on("swiperight", function() { beadRev(); });
 
     $(".mySwipeClass").on("swipeleft", function() { beadFwd(); });
-
+    
     // flag if I am in typing mode
     $("#myMessage").focusout(function(){
         iamtyping = false;
@@ -377,9 +404,10 @@ function myControllEvents() {
     $("#myMessage").focusin(function(){
         iamtyping = true;
     });
-
-    /* keyboard controlls */
-    $("html").on("keydown", function(event) {
+    
+    // keyboard controlls
+    /*
+    $("#rosary").on("keydown", function(event) {
 
         if (iamtyping === false) {
 
@@ -452,16 +480,18 @@ function myControllEvents() {
                     $("#messagingPopUp").popup("open");
                     break;
                 default:
-                    // no default
+                    console.log("a trigger was pressed: ", event.which);
             }
 
         }
 
     });
+    */
 }
 
 function myThemeEvents() {
-    /* Color themes */
+
+    // Color themes
     $("#darklight input").on("change", function(event) { // black white
         if (event.target.name === "theme") {
             $('input:radio[name=rdoLiturgicalColors]:checked').prop('checked', false).checkboxradio("refresh");
@@ -508,7 +538,7 @@ function myThemeEvents() {
         }
     });
 
-    /* text translations */
+    // text translations
     $("#language input").on("change", function(event) {
         console.log('$("#language input").on("change", function(event)');
         if (event.target.name === "rdoTranslation") {
@@ -577,57 +607,13 @@ function initProgressBars() {
  * Page Load Events
  */
 
- /* translation db variable initialization */
- $(document).on('pageshow', '#coverpage', function(e, data){ // import json files
-
- 	// there are other ways to do this, but ajax script works the best with JQM
- 	// Note: https://joshzeigler.com/technology/web-development/how-big-is-too-big-for-json
-
- 	// import nab and define global nab json
- 	$.ajax({url: 'myAssets/database/rosaryJSON-min-nab.json',
-         dataType: "json",
-         async: true,
-         success: function (result) {
-             rosaryJSONnab = result;
-             alert('rosaryJSONnab');
-         },
-         error: function (request,error) {
-             alert('NAB translation did not upload');
-         }
-     });
-
-     // import Vulgate and define global vulgate json
-     // vulgate will also be my initial language
-     $.ajax({url: 'myAssets/database/rosaryJSON-min-vulgate.json',
-         dataType: "json",
-         async: true,
-         success: function (result) {
-             rosaryJSONvulgate = result;
-             rosaryJSON = rosaryJSONvulgate;
-             alert('rosaryJSONvulgate');
-         },
-         error: function (request,error) {
-             alert('Vulgate translation did not upload');
-         }
-     });
-
-     // alert('begin');
-
- });
-
 /* configure progressbars  */
 $(document).on('pageshow', '#rosary', function() {
 
-    initUi();
-
-    myControllEvents();
-    myThemeEvents();
-
-    initProgressBars();
-
-    $("#prayer").html(rosaryJSON.prayer[1].prayerText);
-    $("#mystery").html('Express JQM Rosary');
-    $(".mysteryTranslationIndicator").text('Vulgate');
+    if (mainPageLoaded == false) {
+        initUi();
+        mainPageLoaded = true; // prevent reactivating
+    }
 
 });
 
@@ -684,25 +670,3 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
 
 });
 
-/* UI swipe, slicks, & keydown triggers */
-/*
-$(document).on("pagecreate", "#rosary", function() {
-	myControllEvents();
-    myThemeEvents();
-});
-*/
-
-/* initialize features provided the page's DOM is loaded */
-/*
-$(document).on('pageinit', '#rosary', function() {
-	initUi();
-});
-*/
-
-////
-/* prevent images from getting dragged on swipe */
-/*
-$('img').on('dragstart', function(event) {
-    event.preventDefault();
-}); //prevent img for being dragged
-*/

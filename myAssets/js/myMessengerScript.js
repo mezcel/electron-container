@@ -63,12 +63,14 @@ function sendmyMessage() {
 	}
 	document.getElementById('myMessage').value = "";
 	document.getElementById("myMessage").focus();
+	$(window).scrollTop(0); // scroll back to top of page
 
 };
 
 /***********************************************************************
  * Socket.io events
  * */
+
 socket.on('userExists', function(data) {
 	document.getElementById('error-container').innerHTML = data;
 });
@@ -95,7 +97,7 @@ socket.on('userRemove', function(users) {
 
 socket.on('newmsg', function(data) {
 	if (user) {
-		document.getElementById('myMessage-container').innerHTML = '<div> <b style="color: ' + data.usercolor + '">' + data.user + '</b>: ' + data.myMessage + '</div>' + document.getElementById('myMessage-container').innerHTML;
+		document.getElementById('myMessageContainer').innerHTML = '<div class="ui-corner-all ui-body ui-shadow"> <b style="color: ' + data.usercolor + '">' + data.user + '</b>: ' + data.myMessage + '</div>' + document.getElementById('myMessageContainer').innerHTML;
 		document.getElementById("divAllUsers").innerHTML = data.usersAll;
 	}
 });
