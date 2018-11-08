@@ -15,7 +15,8 @@
  // rosaryJSON = rosaryJSONvulgate;
 
  // import nab and define global nab json
-$.ajax({
+ 
+ $.ajax({
     url: './myAssets/database/rosaryJSON-min-nab.json',
     dataType: "json",
     async: false,
@@ -26,11 +27,11 @@ $.ajax({
     error: function (request,error) {
         alert('NAB translation did not upload');
     }
-});
+ });
 
 // import Vulgate and define global vulgate json
 // vulgate will also be my initial language
-$.ajax({
+ $.ajax({
     url: './myAssets/database/rosaryJSON-min-vulgate.json',
     dataType: "json",
     async: false,
@@ -42,7 +43,7 @@ $.ajax({
     error: function (request,error) {
         alert('Vulgate translation did not upload');
     }
-});
+ });
 
  rosaryJSON = rosaryJSONvulgate;
 
@@ -406,87 +407,83 @@ function myControllEvents() {
     });
     
     // keyboard controlls
-    /*
-    $("#rosary").on("keydown", function(event) {
+/*
+    $("html").on("keydown", function(event) {
 
-        if (iamtyping === false) {
+        if (iamtyping == false) { alert('idk');}
 
-            switch(event.which) {
-                case 39: //lt arrow
-                    beadFwd();
-                    break;
-                case 37: //rt arrow
-                    beadRev();
-                    break;
-                case 49: case 97: // no 1
-                    $('#btnHomePanel').click();
-                    break;
-                case 50: case 98: // no2
-                    $('#btnInfoPanel').click();
-                    break;
-                case 78: // letter n
-                    $('#nabTranslation').click();
-                    break;
-                case 86: // letter v
-                    $('#vulgateTranslation').click();
-                    break;
-                case 81: // letter q
-                    $('#daynightSwitch').click();
-                    break;
-                case 87: // letter w
-                    $('#feastRed').click();
-                    break;
-                case 69: // letter e
-                    $('#marianBlue').click();
-                    break;
-                case 82: // letter r
-                    $('#adventPurple').click();
-                    break;
-                case 84: // letter t
-                    $('#ordinaryGreen').click();
-                    break;
-                case 89: // letter y
-                    $('#easterGold').click();
-                    break;
-                case 80: // letter p
-                    let firstAudioTrack = $('audio')[0];
-                    firstAudioTrack[firstAudioTrack.paused ? 'play' : 'pause']();
-                    // $('#audioAveMaria').trigger("play");
-                    break;
-                case 38: // up arrow
-                    var volLevel = $('audio')[0].volume;
-                    $('audio')[0].volume = volLevel + 0.25;
-                    $('audio')[1].volume = volLevel + 0.25;
-                    break;
-                case 40: // down arrow
-                    var volLevel = $('audio')[0].volume;
-                    $('audio')[0].volume = volLevel - 0.25;
-                    $('audio')[1].volume = volLevel - 0.25;
-                    break;
-                case 73: // letter i
-                    // hacky but it works as a toggle
-                    $("#myDialogPopUp").popup("close");
-                    $('#rosary').click();
-                    $('#btnGithub').click();
-                    break;
-                case 72: // letter h
-                    // hacky but it works as a toggle
-                    $("#myDialogPopUp").popup("close");
-                    $('#rosary').click();
-                    $('#btnShortcuts').click();
-                    break;
-                case 77: // letter m
-                    // m for message
-                    $("#messagingPopUp").popup("open");
-                    break;
-                default:
-                    console.log("a trigger was pressed: ", event.which);
-            }
-
+        switch(event.which) {
+            case 39: //lt arrow
+                beadFwd();
+                break;
+            case 37: //rt arrow
+                beadRev();
+                break;
+            case 49: case 97: // no 1
+                $('#btnHomePanel').click();
+                break;
+            case 50: case 98: // no2
+                $('#btnInfoPanel').click();
+                break;
+            case 78: // letter n
+                $('#nabTranslation').click();
+                break;
+            case 86: // letter v
+                $('#vulgateTranslation').click();
+                break;
+            case 81: // letter q
+                $('#daynightSwitch').click();
+                break;
+            case 87: // letter w
+                $('#feastRed').click();
+                break;
+            case 69: // letter e
+                $('#marianBlue').click();
+                break;
+            case 82: // letter r
+                $('#adventPurple').click();
+                break;
+            case 84: // letter t
+                $('#ordinaryGreen').click();
+                break;
+            case 89: // letter y
+                $('#easterGold').click();
+                break;
+            case 80: // letter p
+                let firstAudioTrack = $('audio')[0];
+                firstAudioTrack[firstAudioTrack.paused ? 'play' : 'pause']();
+                break;
+            case 38: // up arrow
+                var volLevel = $('audio')[0].volume;
+                $('audio')[0].volume = volLevel + 0.25;
+                $('audio')[1].volume = volLevel + 0.25;
+                break;
+            case 40: // down arrow
+                var volLevel = $('audio')[0].volume;
+                $('audio')[0].volume = volLevel - 0.25;
+                $('audio')[1].volume = volLevel - 0.25;
+                break;
+            case 73: // letter i
+                // hacky but it works as a toggle
+                $("#myDialogPopUp").popup("close");
+                $('#rosary').click();
+                $('#btnGithub').click();
+                break;
+            case 72: // letter h
+                // hacky but it works as a toggle
+                $("#myDialogPopUp").popup("close");
+                $('#rosary').click();
+                $('#btnShortcuts').click();
+                break;
+            case 77: // letter m
+                // m for message
+                $("#messagingPopUp").popup("open");
+                break;
+            default:
+                console.log("a trigger was pressed: ", event.which);
         }
-
     });
-    */
+*/
 }
 
 function myThemeEvents() {
