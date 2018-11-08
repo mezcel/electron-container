@@ -37,15 +37,17 @@
 
         <!-- splash page / mane registration -->
 		<div data-role="page" id="splashpage" data-theme="d">
-            <div style="text-align: center" data-role="header">Welcome</div>
+            <div style="text-align: center" data-role="header"><h3>Welcome</h3></div>
             <div class="ui-content">
     			<input id="myName" value="" type="text" placeholder="enter a user name" style="text-align: center">
-    			<a id="btnUsrInput" data-role="button" class="ui-btn ui-corner-all" onClick="setUsername()" href="#coverpage" >Enter</a>
+            </div>
+            <div class="ui-content">    			
+    			<a id="btnUsrInput" data-role="button" class="ui-btn ui-corner-all" onClick="setUsername()" href="#coverpage" data-transition="flip"><h3>Enter</h3></a>
             </div>
         </div>
 
 		<!-- cover page -->
-		<a data-role="page" id="coverpage" href="#rosary" data-transition="flip" class="coverImg" style="text-decoration:none">
+		<a data-role="page" id="coverpage" href="#rosary" data-transition="fade" class="coverImg" style="text-decoration:none" >
             <p class="ui-bar coverpageInfo" style="text-decoration:none">Scripture Rosary with NAB and Vulgate Translations</p>
             <p class="ui-bar coverpageInfo" style="text-decoration:none; position: absolute; bottom: 0;">by Mezcel</p>
         </a>
@@ -240,9 +242,8 @@
 
                 </div>
                 <h3>Group Messaging:</h3>
-                <a id="btnOpenMessenger" href="#messagingPage" data-transition="fade" class="ui-btn ui-btn-b ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-left">Messenger</a>
+                <a id="btnOpenMessenger" href="#messagingPage" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-left">Messenger</a>
                 
-
             </div>
 
             <!-- Information Popup Dialog -->
@@ -294,24 +295,29 @@
 
         <div data-role="page" id="messagingPage">
 
-            <div data-role="header" data-position="fixed" style="text-align: center">
+            <div data-role="header" class="msgPageHeader" style="text-align: center">
                 Messenger
                 <div data-role="navbar" data-mini="true">
                     <ul>
-                        <li><a href="#rosary">back</a></li>
-                        <li><a href="#rosary">.</a></li>
-                        <li><a href="#rosary">.</a></li>
+                        <li><a href="#rosary" data-transition="fade" data-icon="arrow-l"></a></li>
+                        <li><a href="#" data-icon="info"></a></li>
                     </ul>
                 </div>
             </div>
             
-            <div role="main" id="myMessageContainer" class="msgLog "></div>
-            
+            <div role="main" id="myMessageContainer" class="msgLog "></div>            
 
-            <div data-role="footer" data-position="fixed">
+            <div data-role="footer" class="msgPageFooter" data-position="fixed">
                 <div id="divAllUsers" style="overflow-y:auto;"></div>
                 <input id="myMessage" value="" type="text" placeholder="Enter a message ...">
-                <a href="#topAnchor" id="btnEnterMsg" data-role="button" onclick='sendmyMessage();'>Send / Enter</a>
+                <div data-role="navbar" data-mini="true">
+                    <ul>                        
+                        <li> <a onClick='$(window).scrollTop(0);' data-icon="arrow-u"></a> </li>
+                        <li> <a href="#topAnchor" id="btnEnterMsg" onClick='sendmyMessage();' data-icon="comment"></a> </li>
+                    </ul>
+                </div>
+                
+                
             </div>
 
         </div>

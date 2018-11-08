@@ -24,6 +24,16 @@ hr {
     text-align: center;
 }
 */
+
+.msgPageHeader {
+    border-bottom: solid 4px;
+}
+
+.msgPageFooter {
+    border-top: solid 4px;
+    border-bottom: solid 4px;
+}
+
 #myDialogPopUp a.ui-link { text-decoration: none; }
 
 .audioStyle { width: 100%; }
