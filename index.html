@@ -3,18 +3,20 @@
 
     <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="author" content="Mezcel, mezcel@hotmail.com">
 		<meta name="description" content="Electron Express Vulgate Rosary"/>
 		<meta name="subject" content="religion and spirituality">
 		<meta name="url" content="https://github.com/mezcel/electron-container">
 
 		<link rel="icon" href="./myAssets/img/favicon.ico" type="image/x-icon" />
-		<link rel="shortcut icon" href="./myAssets/img/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="./myAssets/img/favicon.ico" type="image/x-icon" />
+        
 		<script>
             // i need this for node for some reasion with stand alone electron
 			window.$ = window.jQuery = require('jquery');
-		</script>
+        </script>
+        
 
 		<!-- dom style -->
 		<link rel="stylesheet" href="./myAssets/css/jquery.mobile-1.4.5.min.css" />
@@ -33,21 +35,24 @@
 
     <body id="entireBody" class="ui-page-theme-a ui-content">
 
-        <!-- splash page -->
-		<div data-role="page" id="splashpage">
-            <a href="#coverpage" class='fullscreenDiv' style="text-decoration:none">
-                <div class="absoluteCenter">
-                    <span id="btnEnter">enter</span>
-                </div>
-            </a>
+        <!-- splash page / mane registration -->
+		<div data-role="page" id="splashpage" data-theme="d">
+            <div style="text-align: center" data-role="header"><h3>Welcome</h3></div>
+            <div class="ui-content">
+    			<input id="myName" value="" type="text" placeholder="enter a user name" style="text-align: center">
+            </div>
+            <div class="ui-content">    			
+    			<a id="btnUsrInput" data-role="button" class="ui-btn ui-corner-all" onClick="setUsername()" href="#coverpage" data-transition="flip"><h3>Enter</h3></a>
+            </div>
         </div>
 
 		<!-- cover page -->
-		<a data-role="page" id="coverpage" href="#rosary" data-transition="flip" class="coverImg" style="text-decoration:none">
+		<a data-role="page" id="coverpage" href="#rosary" data-transition="fade" class="coverImg" style="text-decoration:none" >
             <p class="ui-bar coverpageInfo" style="text-decoration:none">Scripture Rosary with NAB and Vulgate Translations</p>
             <p class="ui-bar coverpageInfo" style="text-decoration:none; position: absolute; bottom: 0;">by Mezcel</p>
         </a>
 
+        <!-- main rosary ui page -->
         <div data-role="page" id="rosary">
 
             <!-- header top bar -->
@@ -182,11 +187,13 @@
 
                     <div data-role="collapsible">
                         <h4>Colors</h4>
+
                         <form id="darklight">
                             <fieldset data-role="controlgroup" data-type="horizontal" id="theme-setting">
                                 <input type="checkbox" name="theme" id="daynightSwitch" data-role="flipswitch" data-on-text="day" data-off-text="night" checked> day/night
                             </fieldset>
                         </form>
+
                         Liturgical Colors:
                         <div id="liturgicalColors" data-role="controlgroup">
                             <fieldset data-role="controlgroup" data-mini="true">
@@ -234,14 +241,9 @@
                     </div>
 
                 </div>
-                <h3>Social Messaging:</h3>
-                <div data-role="collapsible">
-					<h4>Social Network</h4>
-                    <!-- <a target='_blank' href='http://localhost:5001' class="ui-btn ui-btn-b ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-left">Open New Msg</a> -->
-                    <a id="btnOpenMessenger" href="#messagingPopUp" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-btn-b ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-left">Messenger</a>
-                    <a id="btnPromptLogin" href="#loginPopUp" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-btn-b ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-left">Login</a>
-                </div>
-
+                <h3>Group Messaging:</h3>
+                <a id="btnOpenMessenger" href="#messagingPage" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-left">Messenger</a>
+                
             </div>
 
             <!-- Information Popup Dialog -->
@@ -257,26 +259,7 @@
                 <span id="infoFooter" style="text-align: center" data-role="footer"></span>
             </div>
 
-            <!-- Messaging Popup Dialog -->
-            <div data-role="popup" id="messagingPopUp" class="ui-content" data-overlay-theme="b" data-position="fixed">
-				<a href="#rosary" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-left ui-shadow ui-btn-up-a" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Close"></a>
-				<span style="text-align: center" data-role="header">Messenger</span>
-                <div id="myMessage-container" class="msgLog ui-body ui-corner-all ui-shadow"></div>
-                <div id="divAllUsers" class="ui-bar" style="overflow-y:auto;"></div>
-				<input id="myMessage" value="" type="text" placeholder="Enter a message ...">
-				<button id="btnEnterMsg" onclick="sendmyMessage();">send</button>
-            </div>
-
-            <!-- Messaging Login Dialog -->
-            <div data-role="popup" id="loginPopUp" class="ui-content" data-overlay-theme="b" data-position="fixed">
-				<span style="text-align: center" data-role="header">Login</span>
-				<input id="myName" value="" type="text" placeholder="Enter a User Name!">
-				<button id="btnUsrInput" onclick="setUsername()">Use this name</button>
-            </div>
-
-
-
-            <!-- Main Center View -->
+            <!-- Main Rosary - Center View -->
             <div data-role="main" class="ui-content mySwipeClass" data-position="fixed">
 
                 <!-- App Main View -->
@@ -297,7 +280,7 @@
                 </div>
             </div>
 
-            <!-- footer bottom bar -->
+            <!-- footer bottom bar - progress graph -->
             <div data-role="footer" data-position="fixed">
                 <div class="ui-grid-a">
                     <div class="ui-block-a"><button style="width:98.5%" onclick="beadRev()">Bead Reverse</button></div>
@@ -306,6 +289,35 @@
                 <span id="beadMarker" class="ui-bar" style="text-align: center">0 / 0</span>
                 <div data-role="decadeProgress"></div><!-- decade progress bar -->
                 <div data-role="rosaryProgress"></div><!-- rosary progress bar -->
+            </div>            
+
+        </div>
+
+        <div data-role="page" id="messagingPage">
+
+            <div data-role="header" class="msgPageHeader" style="text-align: center">
+                Messenger
+                <div data-role="navbar" data-mini="true">
+                    <ul>
+                        <li><a href="#rosary" data-transition="fade" data-icon="arrow-l"></a></li>
+                        <li><a href="#" data-icon="info"></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div role="main" id="myMessageContainer" class="msgLog "></div>            
+
+            <div data-role="footer" class="msgPageFooter" data-position="fixed">
+                <div id="divAllUsers" style="overflow-y:auto;"></div>
+                <input id="myMessage" value="" type="text" placeholder="Enter a message ...">
+                <div data-role="navbar" data-mini="true">
+                    <ul>                        
+                        <li> <a onClick='$(window).scrollTop(0);' data-icon="arrow-u"></a> </li>
+                        <li> <a href="#topAnchor" id="btnEnterMsg" onClick='sendmyMessage();' data-icon="comment"></a> </li>
+                    </ul>
+                </div>
+                
+                
             </div>
 
         </div>

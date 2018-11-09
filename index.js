@@ -1,4 +1,5 @@
-/* main.js */
+/* index.js */
+/* used for debugging side-projects and runs express and not electron */
 
 console.log('\x1b[33m','______________________________________________________________________');
 console.log('',"electron-container\n\t.");
@@ -134,76 +135,3 @@ io.on('connection', function(socket) {
 });
 
 myHttpserver.listen(PORT, () => console.log(`\tListening on \[port :${ PORT }\]\n`));
-
-/////////////
-
-/* ---------------------------------------------------------------------
-* ELECTRON
-* ------------------------------------------------------------------ */
-
-const {
-	app,
-	BrowserWindow,
-	Menu,
-	shell
-} = require('electron'); // Electron specific vars
-
-let mainWindow;
-
-function createMainWindow() {
-
-	// Create the browser window.
-	/* My personal settings: 700x900
-	 * tablet reff: 768 x 1024, -25% = 576x768
-	 * */
-
-	mainWindow = new BrowserWindow({
-		width: 576,
-		height: 768,
-		icon: './myAssets/img/favicon.ico'
-	});
-
-	// electron menu json
-	var myElectronMenu = Menu.buildFromTemplate([ { label: 'Menu', submenu: [ { label: 'Web Browser Instance', accelerator: 'CmdOrCtrl+`', click() { shell.openExternal(myHostip + ':7777/') } }, {type: 'separator'}, {role: 'minimize'}, {role: 'quit'} ] }, { label: 'View', submenu: [ {role: 'toggledevtools'}, {type: 'separator'}, {role: 'resetzoom'}, {role: 'zoomin'}, {role: 'zoomout'}, {type: 'separator'}, {role: 'togglefullscreen'} ] }, { label: 'About', submenu: [ { label: 'Github', click() { shell.openExternal('http://github.com/mezcel/') } }, { label: 'Development Wiki', click() { shell.openExternal('http://mezcel.wixsite.com/rosary') } }, { type: 'separator' }, { label: 'Wiki: Mod/Debug - BrowserWindow', click() { shell.openExternal('https://electronjs.org/docs/api/browser-window') } }, { label: 'Wiki: Mod/Debug - Menu', click() { shell.openExternal('https://electronjs.org/docs/api/menu') } } ] } ]);
-
-	Menu.setApplicationMenu(myElectronMenu);
-
-	// and load the index.html of the app.
-	// mainWindow.loadFile('index.html'); // electron without messaging
-	mainWindow.loadURL('http://localhost:7777'); // the express app
-
-
-	// Emitted when the window is closed.
-	mainWindow.on('closed', function() {
-		mainWindow = null;
-	});
-
-	mainWindow.once('ready-to-show', () => {
-		mainWindow.show();
-	});
-
-}
-
-/////////////
-
-/* ---------------------------------------------------------------------
-* Run
-* ------------------------------------------------------------------ */
-
-app.on('ready', function() {
-	createMainWindow();
-
-});
-
-// Quit when all windows are closed.
-app.on('window-all-closed', function() {
-	if (process.platform !== 'darwin') {
-		app.quit();
-	}
-});
-
-app.on('activate', function() {
-	if (mainWindow === null) {
-		createMainWindow();
-	}
-});

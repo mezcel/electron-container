@@ -8,6 +8,9 @@ Status: ```git branch v0.4.3``` is focused on gradually polishing the:
 * misc content within db json
 * misc. styles and ui tweaks
 * splash is new-ish. it is very basic
+* completely remade the messaging ui
+* took out features that did not work in ios
+* messed arround with the non-synchronous Ajax
 
 ---
 

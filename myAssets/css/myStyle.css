@@ -4,31 +4,7 @@ hr {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.4));
 }
 
-#btnEnter{ /* spash screen */
-    display: none;
-}
-
-.fullscreenDiv { /* spash screen */
-    background: none;
-    width: 100%;
-    height: auto;
-    bottom: 0px;
-    top: 0px;
-    left: 0;
-    position: absolute;
-}
-
-.absoluteCenter { /* spash screen */
-    position: absolute;
-    width: 100px;
-    height: 50px;
-    top: 50%;
-    left: 50%;
-    margin-top: -25px;
-    margin-left: -50px;
-    text-align: center
-}
-
+/*
 .coverImg {
 	background: url('../img/Mother-of-God-Platytera-3-a(compressed).jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -40,35 +16,34 @@ hr {
     -webkit-filter: grayscale(20%);
     filter: grayscale(20%);
 }
-
+*/
+/*
 .coverpageInfo {
     background-color: rgba(230, 245, 255, 0.7);
     color : #003d66;
     text-align: center;
 }
+*/
 
-#myDialogPopUp a.ui-link {text-decoration: none}
-
-#messagingPopUp {
-	width:80vw;
-	height:85vh;
-}
-.msgLog {
-	height: 70%;
-	overflow-y:auto;
+.msgPageHeader {
+    border-bottom: solid 4px;
 }
 
-.audioStyle {
-    width: 100%;
-    background-color: red;
+.msgPageFooter {
+    border-top: solid 4px;
+    border-bottom: solid 4px;
 }
+
+#myDialogPopUp a.ui-link { text-decoration: none; }
+
+.audioStyle { width: 100%; }
 
 .ui-icon-delete { /* close modal icon */
     font-size: 2em;
 }
 
 /* table style  */
-.myTableStyle {width: 100%;}
+.myTableStyle { width: 100%; }
 .myTableStyle thead th,
 .myTableStyle tbody th .ui-table-cell-label,
 .myTableStyle tbody td .ui-table-cell-label {
@@ -107,14 +82,7 @@ hr {
         font-size: 80%;
     }*/
 
-    #myDialogPopUp {
-        font-size: 110%;
-    }
-    #entireBody {
-        font-size: 80%;
-    }
-    #appHeaderTitle {
-        font-size: 115%;
-    }
-
+    #myDialogPopUp { font-size: 110%; }
+    #entireBody { font-size: 80%; }
+    #appHeaderTitle { font-size: 115%; }
 }

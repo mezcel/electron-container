@@ -5,12 +5,45 @@
  var showBibleListFlag = false; // whether or not an html list was dynamically populated
  var showPrayerListFlag = false; // whether or not an html list was dynamically populated
  var iamtyping = false; // a flag indicating if I am typing so I dont trigger keydown events
+ var mainPageLoaded = false; // a flag to prevent re-loading dom objects;
 
  var initialHailMaryCounter = 0;
  var stringSpaceCounter = 0;
  var hailmaryCounter = 0;
  var beadCounter = 0;
  var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
+ // rosaryJSON = rosaryJSONvulgate;
+
+ // import nab and define global nab json
+ 
+ $.ajax({
+    url: './myAssets/database/rosaryJSON-min-nab.json',
+    dataType: "json",
+    async: false,
+    success: function (result) {
+        rosaryJSONnab = result;
+        //alert('rosaryJSONnab');
+    },
+    error: function (request,error) {
+        alert('NAB translation did not upload');
+    }
+ });
+
+// import Vulgate and define global vulgate json
+// vulgate will also be my initial language
+ $.ajax({
+    url: './myAssets/database/rosaryJSON-min-vulgate.json',
+    dataType: "json",
+    async: false,
+    success: function (result) {
+        rosaryJSONvulgate = result;
+        rosaryJSON = rosaryJSONvulgate;
+        //alert('rosaryJSONvulgate');
+    },
+    error: function (request,error) {
+        alert('Vulgate translation did not upload');
+    }
+ });
 
  rosaryJSON = rosaryJSONvulgate;
 
@@ -101,10 +134,6 @@ function fillRosaryBeadPage(counterNo) {
     $("#scripture").html(rosaryJSON.scripture[scriptureIndex].scriptureText);
     $("#message").html(rosaryJSON.message[messageIndex].mesageText);
     $("#prayer").html(rosaryJSON.prayer[prayerIndex].prayerText);
-    /*	//used to display optional navigation art ui
-        $('#mySwipeImg').attr('src',rosaryJSON.decade[decadeIndex].decadeArt);
-        $('#mySwipeImg').attr('width', '100%');
-    */
 }
 
 /* navigation buttons */
@@ -128,12 +157,6 @@ function beadRev() {
 }
 
 function beadProcess(directionFwRw) { // event displays based on bead counter sequence
-	/* Note:
-	 *  Progress Calculation Variables:
-	 * 	    hailmaryCounter
-	 * 	    thisDecadeSet
-	 * 	    beadCounter
-	 * */
 
     beadCounter += directionFwRw; // increment
     mysteryProgress = 0;
@@ -362,17 +385,183 @@ function initUi() {
 	populateBookJsonList();
     populatePrayerJsonList();
     initAudioVolume();
+
+    myControllEvents();
+    myThemeEvents();
+    initProgressBars();
 }
 
-/***************************************************************
- * Page Load Events
- */
+function myControllEvents() {
+    
+    // swipe
+    $(".mySwipeClass").on("swiperight", function() { beadRev(); });
 
-/* configure progressbars  */
-$(document).on('pageshow', '#rosary', function() {
+    $(".mySwipeClass").on("swipeleft", function() { beadFwd(); });
+    
+    // flag if I am in typing mode
+    $("#myMessage").focusout(function(){
+        iamtyping = false;
+    });
+    $("#myMessage").focusin(function(){
+        iamtyping = true;
+    });
+    
+    // keyboard controlls
+/*
+    $("html").on("keydown", function(event) {
 
-    $("#btnOpenMessenger").hide();
+        if (iamtyping == false) { alert('idk');}
 
+        switch(event.which) {
+            case 39: //lt arrow
+                beadFwd();
+                break;
+            case 37: //rt arrow
+                beadRev();
+                break;
+            case 49: case 97: // no 1
+                $('#btnHomePanel').click();
+                break;
+            case 50: case 98: // no2
+                $('#btnInfoPanel').click();
+                break;
+            case 78: // letter n
+                $('#nabTranslation').click();
+                break;
+            case 86: // letter v
+                $('#vulgateTranslation').click();
+                break;
+            case 81: // letter q
+                $('#daynightSwitch').click();
+                break;
+            case 87: // letter w
+                $('#feastRed').click();
+                break;
+            case 69: // letter e
+                $('#marianBlue').click();
+                break;
+            case 82: // letter r
+                $('#adventPurple').click();
+                break;
+            case 84: // letter t
+                $('#ordinaryGreen').click();
+                break;
+            case 89: // letter y
+                $('#easterGold').click();
+                break;
+            case 80: // letter p
+                let firstAudioTrack = $('audio')[0];
+                firstAudioTrack[firstAudioTrack.paused ? 'play' : 'pause']();
+                break;
+            case 38: // up arrow
+                var volLevel = $('audio')[0].volume;
+                $('audio')[0].volume = volLevel + 0.25;
+                $('audio')[1].volume = volLevel + 0.25;
+                break;
+            case 40: // down arrow
+                var volLevel = $('audio')[0].volume;
+                $('audio')[0].volume = volLevel - 0.25;
+                $('audio')[1].volume = volLevel - 0.25;
+                break;
+            case 73: // letter i
+                // hacky but it works as a toggle
+                $("#myDialogPopUp").popup("close");
+                $('#rosary').click();
+                $('#btnGithub').click();
+                break;
+            case 72: // letter h
+                // hacky but it works as a toggle
+                $("#myDialogPopUp").popup("close");
+                $('#rosary').click();
+                $('#btnShortcuts').click();
+                break;
+            case 77: // letter m
+                // m for message
+                $("#messagingPopUp").popup("open");
+                break;
+            default:
+                console.log("a trigger was pressed: ", event.which);
+        }
+    });
+*/
+}
+
+function myThemeEvents() {
+
+    // Color themes
+    $("#darklight input").on("change", function(event) { // black white
+        if (event.target.name === "theme") {
+            $('input:radio[name=rdoLiturgicalColors]:checked').prop('checked', false).checkboxradio("refresh");
+
+            $("#entireBody").removeClass("ui-page-theme-a ui-page-theme-b ui-page-theme-c ui-page-theme-d ui-page-theme-e ui-page-theme-f ui-page-theme-g");
+            $(".myUiBody").removeClass("ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e ui-body-f ui-body-g");
+
+            if ($("#daynightSwitch").is(":checked")) {
+                $("#entireBody").addClass("ui-page-theme-a");
+                $(".myUiBody").addClass("ui-body-a");
+            } else {
+                $("#entireBody").addClass("ui-page-theme-b");
+                $(".myUiBody").addClass("ui-body-b");
+            }
+        }
+    });
+
+    $("#liturgicalColors input").on("change", function(event) { // multi color
+        if (event.target.name === "rdoLiturgicalColors") {
+            $("#entireBody").removeClass("ui-page-theme-a ui-page-theme-b ui-page-theme-c ui-page-theme-d ui-page-theme-e ui-page-theme-f ui-page-theme-g");
+            $(".myUiBody").removeClass("ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e ui-body-f ui-body-g");
+
+            if ($("#feastRed").is(":checked")) {
+                $("#entireBody").addClass("ui-page-theme-c");
+                $(".myUiBody").addClass("ui-body-c");
+            }
+            if ($("#marianBlue").is(":checked")) {
+                $("#entireBody").addClass("ui-page-theme-d");
+                $(".myUiBody").addClass("ui-body-d");
+            }
+            if ($("#adventPurple").is(":checked")) {
+                $("#entireBody").addClass("ui-page-theme-e");
+                $(".myUiBody").addClass("ui-body-e");
+            }
+            if ($("#ordinaryGreen").is(":checked")) {
+                $("#entireBody").addClass("ui-page-theme-f");
+                $(".myUiBody").addClass("ui-body-f");
+            }
+            if ($("#easterGold").is(":checked")) {
+                $("#entireBody").addClass("ui-page-theme-g");
+                $(".myUiBody").addClass("ui-body-g");
+            }
+
+        }
+    });
+
+    // text translations
+    $("#language input").on("change", function(event) {
+        console.log('$("#language input").on("change", function(event)');
+        if (event.target.name === "rdoTranslation") {
+
+            if ($("#nabTranslation").is(":checked")) {
+                rosaryJSON = rosaryJSONnab;
+                $(".mysteryTranslationIndicator").text('NAB');
+            }
+
+            if ($("#vulgateTranslation").is(":checked")) {
+                rosaryJSON = rosaryJSONvulgate;
+                $(".mysteryTranslationIndicator").text('Vulgate');
+            }
+
+            $("#bible-list").html(''); //clear dom list
+            $("#prayer-list").html(''); //clear dom list
+
+            populateBookJsonList(); // repopulate dom list
+            populatePrayerJsonList(); // repopulate dom list
+
+            fillRosaryBeadPage(beadCounter); // display translation of current bead
+        }
+    });
+}
+
+function initProgressBars() {
     $('<input>').appendTo('[ data-role="decadeProgress"]').attr({
         'name': 'decadeSlider',
         'id': 'decadeSlider',
@@ -409,10 +598,20 @@ $(document).on('pageshow', '#rosary', function() {
 
     // initialize progressbar and prayer display
     progressBar.setValue(beadCounter, beadCounter);
-    document.getElementById('prayer').innerHTML = rosaryJSON.prayer[1].prayerText;
 
-    $("#mystery").html('Express JQM Rosary');
-    $(".mysteryTranslationIndicator").text('Vulgate');
+}
+/***************************************************************
+ * Page Load Events
+ */
+
+/* configure progressbars  */
+$(document).on('pageshow', '#rosary', function() {
+
+    if (mainPageLoaded == false) {
+        initUi();
+        mainPageLoaded = true; // prevent reactivating
+    }
+
 });
 
 /* the code destination for dynamically generated bible list */
@@ -468,242 +667,3 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
 
 });
 
-/* UI swipe, slicks, & keydown triggers */
-$(document).on("pagecreate", "#rosary", function() {
-
-	// swipe
-    $(".mySwipeClass").on("swiperight", function() { beadRev(); });
-
-    $(".mySwipeClass").on("swipeleft", function() { beadFwd(); });
-
-    // flag if I am in typing mode
-    $("#myMessage").focusout(function(){
-        iamtyping = false;
-    });
-    $("#myMessage").focusin(function(){
-        iamtyping = true;
-    });
-    $("#myName").focusout(function(){
-        iamtyping = false;
-    });
-    $("#myName").focusin(function(){
-        iamtyping = true;
-    });
-
-    /* keyboard controlls */
-    $("html").on("keydown", function(event) {
-
-        if (iamtyping === false) {
-
-            switch(event.which) {
-                case 39: //lt arrow
-                    beadFwd();
-                    break;
-                case 37: //rt arrow
-                    beadRev();
-                    break;
-                case 49: case 97: // no 1
-                    $('#btnHomePanel').click();
-                    break;
-                case 50: case 98: // no2
-                    $('#btnInfoPanel').click();
-                    break;
-                case 78: // letter n
-                    $('#nabTranslation').click();
-                    break;
-                case 86: // letter v
-                    $('#vulgateTranslation').click();
-                    break;
-                case 81: // letter q
-                    $('#daynightSwitch').click();
-                    break;
-                case 87: // letter w
-                    $('#feastRed').click();
-                    break;
-                case 69: // letter e
-                    $('#marianBlue').click();
-                    break;
-                case 82: // letter r
-                    $('#adventPurple').click();
-                    break;
-                case 84: // letter t
-                    $('#ordinaryGreen').click();
-                    break;
-                case 89: // letter y
-                    $('#easterGold').click();
-                    break;
-                case 80: // letter p
-                    let firstAudioTrack = $('audio')[0];
-                    firstAudioTrack[firstAudioTrack.paused ? 'play' : 'pause']();
-                    // $('#audioAveMaria').trigger("play");
-                    break;
-                case 38: // up arrow
-                    var volLevel = $('audio')[0].volume;
-                    $('audio')[0].volume = volLevel + 0.25;
-                    $('audio')[1].volume = volLevel + 0.25;
-                    break;
-                case 40: // down arrow
-                    var volLevel = $('audio')[0].volume;
-                    $('audio')[0].volume = volLevel - 0.25;
-                    $('audio')[1].volume = volLevel - 0.25;
-                    break;
-                case 73: // letter i
-                    // hacky but it works as a toggle
-                    $("#myDialogPopUp").popup("close");
-                    $('#rosary').click();
-                    $('#btnGithub').click();
-                    break;
-                case 72: // letter h
-                    // hacky but it works as a toggle
-                    $("#myDialogPopUp").popup("close");
-                    $('#rosary').click();
-                    $('#btnShortcuts').click();
-                    break;
-                case 77: // letter m
-                    // m for message
-                    if (uniqueUser) {
-                        $("#messagingPopUp").popup("open");
-                    } else {
-                        $("#loginPopUp").popup("open");
-                    }
-                    break;
-                default:
-                    // no default
-            }
-
-        }
-
-    });
-
-    /* Color themes */
-    $("#darklight input").on("change", function(event) { // black white
-        if (event.target.name === "theme") {
-            $('input:radio[name=rdoLiturgicalColors]:checked').prop('checked', false).checkboxradio("refresh");
-
-            $("#entireBody").removeClass("ui-page-theme-a ui-page-theme-b ui-page-theme-c ui-page-theme-d ui-page-theme-e ui-page-theme-f ui-page-theme-g");
-            $(".myUiBody").removeClass("ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e ui-body-f ui-body-g");
-
-            if ($("#daynightSwitch").is(":checked")) {
-                $("#entireBody").addClass("ui-page-theme-a");
-                $(".myUiBody").addClass("ui-body-a");
-            } else {
-                $("#entireBody").addClass("ui-page-theme-b");
-                $(".myUiBody").addClass("ui-body-b");
-            }
-        }
-    });
-
-    $("#liturgicalColors input").on("change", function(event) { // multi color
-        if (event.target.name === "rdoLiturgicalColors") {
-            $("#entireBody").removeClass("ui-page-theme-a ui-page-theme-b ui-page-theme-c ui-page-theme-d ui-page-theme-e ui-page-theme-f ui-page-theme-g");
-            $(".myUiBody").removeClass("ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e ui-body-f ui-body-g");
-
-            if ($("#feastRed").is(":checked")) {
-                $("#entireBody").addClass("ui-page-theme-c");
-                $(".myUiBody").addClass("ui-body-c");
-            }
-            if ($("#marianBlue").is(":checked")) {
-                $("#entireBody").addClass("ui-page-theme-d");
-                $(".myUiBody").addClass("ui-body-d");
-            }
-            if ($("#adventPurple").is(":checked")) {
-                $("#entireBody").addClass("ui-page-theme-e");
-                $(".myUiBody").addClass("ui-body-e");
-            }
-            if ($("#ordinaryGreen").is(":checked")) {
-                $("#entireBody").addClass("ui-page-theme-f");
-                $(".myUiBody").addClass("ui-body-f");
-            }
-            if ($("#easterGold").is(":checked")) {
-                $("#entireBody").addClass("ui-page-theme-g");
-                $(".myUiBody").addClass("ui-body-g");
-            }
-
-        }
-    });
-
-    /* text translations */
-    $("#language input").on("change", function(event) {
-        console.log('$("#language input").on("change", function(event)');
-        if (event.target.name === "rdoTranslation") {
-
-            if ($("#nabTranslation").is(":checked")) {
-                rosaryJSON = rosaryJSONnab;
-                $(".mysteryTranslationIndicator").text('NAB');
-            }
-
-            if ($("#vulgateTranslation").is(":checked")) {
-                rosaryJSON = rosaryJSONvulgate;
-                $(".mysteryTranslationIndicator").text('Vulgate');
-            }
-
-            $("#bible-list").html(''); //clear dom list
-            $("#prayer-list").html(''); //clear dom list
-
-            populateBookJsonList(); // repopulate dom list
-            populatePrayerJsonList(); // repopulate dom list
-
-            fillRosaryBeadPage(beadCounter); // display translation of current bead
-        }
-    });
-
-});
-
-/* translation db variable initialization */
-$(document).on('pagebeforehide', '#splashpage', function(e, data){ // import json files
-
-	// there are other ways to do this, but ajax script works the best with JQM
-	// Note: https://joshzeigler.com/technology/web-development/how-big-is-too-big-for-json
-
-	// import nab and define global nab json
-	$.ajax({url: 'myAssets/database/rosaryJSON-min-nab.json',
-        dataType: "json",
-        async: true,
-        success: function (result) {
-            rosaryJSONnab = result;
-            //alert('rosaryJSONnab');
-        },
-        error: function (request,error) {
-            alert('NAB translation did not upload');
-        }
-    });
-
-    // import Vulgate and define global vulgate json
-    // vulgate will also be my initial language
-    $.ajax({url: 'myAssets/database/rosaryJSON-min-vulgate.json',
-        dataType: "json",
-        async: true,
-        success: function (result) {
-            rosaryJSONvulgate = result;
-            rosaryJSON = rosaryJSONvulgate;
-            // alert('rosaryJSONvulgate');
-        },
-        error: function (request,error) {
-            alert('Vulgate translation did not upload');
-        }
-    });
-
-    // alert('begin');
-
-});
-
-/* initialize features provided the page's DOM is loaded */
-$(document).on('pageinit', '#rosary', function() {
-	initUi();
-});
-
-/* a splash page to allow full content dl */
-$(document).on('pageinit', '#splashpage', function() {
-    setTimeout(function(){
-        // window.location="#coverpage";
-        $("#btnEnter").fadeIn();
-    },500); /* 1000 = 1 second*/
-});
-
-////
-/* prevent images from getting dragged on swipe */
-/*
-$('img').on('dragstart', function(event) {
-    event.preventDefault();
-}); //prevent img for being dragged
-*/
