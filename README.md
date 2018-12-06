@@ -11,6 +11,7 @@ Status: ```git branch v0.4.3.2-arch-linux``` is focused on gradually polishing t
 * completely remade the messaging ui
 * took out features that did not work in ios
 * messed arround with the non-synchronous Ajax
+* Electron development dependancies using Arch Linux
 
 ---
 
@@ -90,6 +91,10 @@ sudo pacman -S --needed npm
 npm install --arch=ia64 electron
 npm install --platform=linux electron
 npm install electron -g
+
+## install this app's node packages, you can do this 1st or last
+
+npm install
 ```
 ---
 
