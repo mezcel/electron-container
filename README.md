@@ -4,7 +4,7 @@ ___This is a Node App using ExpressJS, Socket IO, and Electron.___
 
 Git: [https://github.com/mezcel/electron-container](https://github.com/mezcel/electron-container)
 
-Status: ```git branch v0.4.3``` is focused on gradually polishing the:
+Status: ```git branch v0.4.3.2-arch-linux``` is focused on gradually polishing the:
 * misc content within db json
 * misc. styles and ui tweaks
 * splash is new-ish. it is very basic
@@ -110,9 +110,6 @@ npm install -g electron-packager
 
 electron-packager .
 ```
-
-
-
 ---
 
 Repo size proportions (aproximately)
