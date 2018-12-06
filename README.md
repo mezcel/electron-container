@@ -79,6 +79,18 @@ package.json
 }
 ```
 
+Electron development for Arch Linux ```install-electron-on-arch.sh```
+
+```sh
+## Recommended, but not required: Install this script first as not-root. Not doing so 'might' give Nodejs mixed messages about your intended usecase.
+
+sudo pacman -S --needed nodejs
+sudo pacman -S --needed npm
+	
+npm install --arch=ia64 electron
+npm install --platform=linux electron
+npm install electron -g
+```
 ---
 
 ## Build as a standalone executable
@@ -91,13 +103,15 @@ If you want to build this app into a standalone executable, use ```electron-pack
 npm install -g electron-packager
 
 ## Linux install workaround/fix
-##      sudo npm install electron -g --unsafe-perm=true --verbose --allow-root
+## sudo npm install electron -g --unsafe-perm=true --verbose --allow-root
 
 
 ## perform the packager on my desired Electron App directory.
 
 electron-packager .
 ```
+
+
 
 ---
 
