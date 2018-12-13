@@ -12,3 +12,5 @@ sudo pacman -S --needed npm
 npm install --arch=ia64 electron
 npm install --platform=linux electron
 npm install electron -g
+
+npm install
