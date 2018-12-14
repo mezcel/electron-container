@@ -3,7 +3,7 @@
 
 console.log('\x1b[33m','______________________________________________________________________');
 console.log('',"electron-container\n\t.");
-console.log('','\tnode main.js');
+console.log('','\tnode index.js');
 console.log('','\tgit: https://github.com/mezcel/electron-container\n', '\x1b[0m');
 // Note: console colors -- https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
 

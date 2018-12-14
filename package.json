@@ -14,11 +14,9 @@
         "jquery-mobile"
     ],
     "author": "Mezcel",
-    "license": "I do not own the technology medium, such as the rights for the JQM, NPM Packages, biblical scriptures, images or audio. I freely distribute, just the code and its application, because it is a product of my thoughts and efforts.",
-    "devDependencies": {
-        "electron": "^2.0.0"
-    },
+    "license": "ISC - THe dont just copy and turn this into your teacher license.",
     "dependencies": {
+        "electron": "^3.0.10",
         "express": "^4.16.3",
         "jquery": "^1.11.1",
         "popper.js": "^1.14.4",

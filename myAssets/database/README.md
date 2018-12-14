@@ -25,14 +25,23 @@ All scripture quotes have been re-done. This update has introduced the need to r
 ##### Note:
 
 My initial 'trial and error' db development was:
+
     1. an old pamphlet from the 1950's
-    2. &#8627; odb spreadsheet  
+    
+    2. &#8627; odb spreadsheet
+    
     3. &#8627; css
+    
     4. &#8627; MS Sql
+    
     5. &#8627; MySql
+    
     6. &#8627; Json
+    
     7. &#8627; Misc Regex automating script
+    
     8. &#8627; Web scraping attempts (trust but verify, sometimes...)
+    
     9. &#8627; me and my typos ...
 
 ##### ramblings

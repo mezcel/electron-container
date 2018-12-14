@@ -1,6 +1,7 @@
 /***************************************************************
  *  Global Vars
  * */
+ 
  var initialMysteryFlag = false; // Initiated 1st mystery after the Mary Icon
  var showBibleListFlag = false; // whether or not an html list was dynamically populated
  var showPrayerListFlag = false; // whether or not an html list was dynamically populated
@@ -14,6 +15,9 @@
  var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
  // rosaryJSON = rosaryJSONvulgate;
 
+/***************************************************************
+ *  Contrived Ajax
+ * */
  // import nab and define global nab json
  
  $.ajax({
@@ -45,6 +49,10 @@
     }
  });
 
+/***************************************************************
+ *  Global Progressbar
+ * */
+ 
  rosaryJSON = rosaryJSONvulgate;
 
  var progressBar = { // var containing progressbar state
@@ -77,7 +85,7 @@ function initialMystery() { // initial mystery based on weekday
         case 2: case 5: // Tuesday, Friday
             initialMysteryArr = [11,165];
             break;
-        case 3: // Thursday
+        case 4: // Thursday
             initialMysteryArr = [6,86];
             break;
         default: // default to monday
@@ -280,11 +288,14 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
             // App's initial startup mystery, a one time toggle
             if (initialMysteryFlag == false) {
-                beadCounter = initialMystery()[1];
-                hailmaryCounter = ((initialMystery()[0] * 10) - 10);
+				initialMysteryArr=initialMystery();
+				
+                beadCounter=initialMysteryArr[1];
+                hailmaryCounter = ((initialMysteryArr[0] * 10) - 10);
+                
                 initialMysteryFlag = true;
             }
-
+            
             break;
 
         case 6: // cross
@@ -389,6 +400,9 @@ function initUi() {
     myControllEvents();
     myThemeEvents();
     initProgressBars();
+
+	// Sign of the cross
+    beadProcess(0);
 }
 
 function myControllEvents() {
@@ -407,10 +421,8 @@ function myControllEvents() {
     });
     
     // keyboard controlls
-/*
-    $("html").on("keydown", function(event) {
 
-        if (iamtyping == false) { alert('idk');}
+    $("html").on("keydown", function(event) {
 
         switch(event.which) {
             case 39: //lt arrow
@@ -483,7 +495,7 @@ function myControllEvents() {
                 console.log("a trigger was pressed: ", event.which);
         }
     });
-*/
+
 }
 
 function myThemeEvents() {
@@ -600,8 +612,9 @@ function initProgressBars() {
     progressBar.setValue(beadCounter, beadCounter);
 
 }
+
 /***************************************************************
- * Page Load Events
+ * Page Load Events (JQM Specific)
  */
 
 /* configure progressbars  */
@@ -666,4 +679,3 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
     }
 
 });
-
