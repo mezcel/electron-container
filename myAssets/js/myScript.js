@@ -6,6 +6,7 @@
  var showBibleListFlag = false; // whether or not an html list was dynamically populated
  var showPrayerListFlag = false; // whether or not an html list was dynamically populated
  var iamtyping = false; // a flag indicating if I am typing so I dont trigger keydown events
+ var isMessengerOpen = false; // a flag to determine of the Messenger is the main display focus
  var mainPageLoaded = false; // a flag to prevent re-loading dom objects;
 
  var initialHailMaryCounter = 0;
@@ -419,80 +420,96 @@ function myControllEvents() {
     $("#myMessage").focusin(function(){
         iamtyping = true;
     });
+
+    // Messaging State Toggle
+    
+    $("#btnOpenMessenger").focusin(function() {
+        // true
+        isMessengerOpen = !isMessengerOpen;
+    });
+    $("#btnCloseMessenger").focusin(function() {
+        // false
+        isMessengerOpen = !isMessengerOpen;
+    });
+
     
     // keyboard controlls
 
     $("html").on("keydown", function(event) {
 
-        switch(event.which) {
-            case 39: //lt arrow
-                beadFwd();
-                break;
-            case 37: //rt arrow
-                beadRev();
-                break;
-            case 49: case 97: // no 1
-                $('#btnHomePanel').click();
-                break;
-            case 50: case 98: // no2
-                $('#btnInfoPanel').click();
-                break;
-            case 78: // letter n
-                $('#nabTranslation').click();
-                break;
-            case 86: // letter v
-                $('#vulgateTranslation').click();
-                break;
-            case 81: // letter q
-                $('#daynightSwitch').click();
-                break;
-            case 87: // letter w
-                $('#feastRed').click();
-                break;
-            case 69: // letter e
-                $('#marianBlue').click();
-                break;
-            case 82: // letter r
-                $('#adventPurple').click();
-                break;
-            case 84: // letter t
-                $('#ordinaryGreen').click();
-                break;
-            case 89: // letter y
-                $('#easterGold').click();
-                break;
-            case 80: // letter p
-                let firstAudioTrack = $('audio')[0];
-                firstAudioTrack[firstAudioTrack.paused ? 'play' : 'pause']();
-                break;
-            case 38: // up arrow
-                var volLevel = $('audio')[0].volume;
-                $('audio')[0].volume = volLevel + 0.25;
-                $('audio')[1].volume = volLevel + 0.25;
-                break;
-            case 40: // down arrow
-                var volLevel = $('audio')[0].volume;
-                $('audio')[0].volume = volLevel - 0.25;
-                $('audio')[1].volume = volLevel - 0.25;
-                break;
-            case 73: // letter i
-                // hacky but it works as a toggle
-                $("#myDialogPopUp").popup("close");
-                $('#rosary').click();
-                $('#btnGithub').click();
-                break;
-            case 72: // letter h
-                // hacky but it works as a toggle
-                $("#myDialogPopUp").popup("close");
-                $('#rosary').click();
-                $('#btnShortcuts').click();
-                break;
-            case 77: // letter m
-                // m for message
-                $("#messagingPopUp").popup("open");
-                break;
-            default:
-                console.log("a trigger was pressed: ", event.which);
+        if (isMessengerOpen == false) {
+
+            switch(event.which) {
+                case 39: //lt arrow
+                    beadFwd();
+                    break;
+                case 37: //rt arrow
+                    beadRev();
+                    break;
+                case 49: case 97: // no 1
+                    $('#btnHomePanel').click();
+                    break;
+                case 50: case 98: // no2
+                    $('#btnInfoPanel').click();
+                    break;
+                case 78: // letter n
+                    $('#nabTranslation').click();
+                    break;
+                case 86: // letter v
+                    $('#vulgateTranslation').click();
+                    break;
+                case 81: // letter q
+                    $('#daynightSwitch').click();
+                    break;
+                case 87: // letter w
+                    $('#feastRed').click();
+                    break;
+                case 69: // letter e
+                    $('#marianBlue').click();
+                    break;
+                case 82: // letter r
+                    $('#adventPurple').click();
+                    break;
+                case 84: // letter t
+                    $('#ordinaryGreen').click();
+                    break;
+                case 89: // letter y
+                    $('#easterGold').click();
+                    break;
+                case 80: // letter p
+                    let firstAudioTrack = $('audio')[0];
+                    firstAudioTrack[firstAudioTrack.paused ? 'play' : 'pause']();
+                    break;
+                case 38: // up arrow
+                    var volLevel = $('audio')[0].volume;
+                    $('audio')[0].volume = volLevel + 0.25;
+                    $('audio')[1].volume = volLevel + 0.25;
+                    break;
+                case 40: // down arrow
+                    var volLevel = $('audio')[0].volume;
+                    $('audio')[0].volume = volLevel - 0.25;
+                    $('audio')[1].volume = volLevel - 0.25;
+                    break;
+                case 73: // letter i
+                    // hacky but it works as a toggle
+                    $("#myDialogPopUp").popup("close");
+                    $('#rosary').click();
+                    $('#btnGithub').click();
+                    break;
+                case 72: // letter h
+                    // hacky but it works as a toggle
+                    $("#myDialogPopUp").popup("close");
+                    $('#rosary').click();
+                    $('#btnShortcuts').click();
+                    break;
+                case 77: // letter m
+                    // m for message
+                    $("#messagingPopUp").popup("open");
+                    break;
+                default:
+                    console.log("a trigger was pressed: ", event.which);
+            }
+
         }
     });
 
