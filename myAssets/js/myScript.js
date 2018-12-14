@@ -85,7 +85,7 @@ function initialMystery() { // initial mystery based on weekday
         case 2: case 5: // Tuesday, Friday
             initialMysteryArr = [11,165];
             break;
-        case 3: // Thursday
+        case 4: // Thursday
             initialMysteryArr = [6,86];
             break;
         default: // default to monday
@@ -288,11 +288,14 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
             // App's initial startup mystery, a one time toggle
             if (initialMysteryFlag == false) {
-                beadCounter = initialMystery()[1];
-                hailmaryCounter = ((initialMystery()[0] * 10) - 10);
+				initialMysteryArr=initialMystery();
+				
+                beadCounter=initialMysteryArr[1];
+                hailmaryCounter = ((initialMysteryArr[0] * 10) - 10);
+                
                 initialMysteryFlag = true;
             }
-
+            
             break;
 
         case 6: // cross
