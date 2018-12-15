@@ -4,7 +4,7 @@ ___This is a Node App using ExpressJS, Socket IO, and Electron.___
 
 Git: [https://github.com/mezcel/electron-container](https://github.com/mezcel/electron-container)
 
-Youtube: [demo link](https://www.youtube.com/watch?v=rKPKwyEvuk8)
+Youtube: [demo link](https://youtu.be/xlhLjpW-QMs)
 
 Status: ```git branch v0.4.4``` is focused on gradually polishing the:
 * misc content within db json
