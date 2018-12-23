@@ -16,10 +16,10 @@
     "author": "Mezcel",
     "license": "ISC - THe dont just copy and turn this into your teacher license.",
     "dependencies": {
-        "electron": "^3.0.10",
-        "express": "^4.16.3",
+        "electron": "^3.0.13",
+        "express": "^4.16.4",
         "jquery": "^1.11.1",
         "popper.js": "^1.14.4",
-        "socket.io": "^2.1.1"
+        "socket.io": "^2.2.0"
     }
 }
