@@ -6,24 +6,22 @@ Git: [https://github.com/mezcel/electron-container](https://github.com/mezcel/el
 
 Youtube: [demo link](https://youtu.be/xlhLjpW-QMs)
 
-Status: ```git branch v0.4.4``` is focused on gradually polishing the:
-* misc content within db json
-* misc. styles and ui tweaks
-* splash is new-ish. it is very basic
-* completely remade the messaging ui
-* took out features that did not work in ios
-* messed arround with the non-synchronous Ajax
-* Electron development dependancies using Arch Linux
+Status: ```git branch v0.4.4.1``` is focused on:
 
+* Electron development dependencies using Arch Linux and Ubuntu
+* Troubleshooting Ajax compatibility on 'ancient' mobile browsers
 ---
 
 ### Development thoughts:
 
 * I expanded on the [Heroku app](https://github.com/mezcel/heroku-joyful-mystery), got rid of the ```ejs``` components, added ```socketio``` features, and made it an Electron App.
+
 * The user experience now closer resembles an even older C# version I made a while back, [rosary.net](https://github.com/mezcel/rosary.net).
 
 ###### Translation Modifications
+
 I ended up rewriting all the db's.
+
 * [/myAssets/database/README.md](./myAssets/database/README.md) Has more information regarding what is new with the DB.
 
 ---
@@ -82,14 +80,16 @@ package.json
 }
 ```
 
+Electron development for Ubuntu Linux ```install-electron-on-ubuntu.sh```
+
 Electron development for Arch Linux ```install-electron-on-arch.sh```
 
 ```sh
-## Recommended, but not required: Install this script first as not-root. Not doing so 'might' give Nodejs mixed messages about your intended usecase.
+## Arch
 
 sudo pacman -S --needed nodejs
 sudo pacman -S --needed npm
-	
+
 npm install --arch=ia64 electron
 npm install --platform=linux electron
 npm install electron -g
