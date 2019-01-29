@@ -10,10 +10,10 @@ Youtube: [demo link](https://youtu.be/xlhLjpW-QMs)
 
 Best performance experienced on Win10 and Debian
 
-Status: ```git branch v0.5``` is focused on:
+Status: Current Development branch ```git branch v0.5``` is focused on:
 
-* Merging in features from [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal)
-* Liturgical Callendar, Paschal Full Moon
+* Merging in features used in [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal)
+* Including Liturgical Callendar, Paschal Full Moon
 
 ---
 
