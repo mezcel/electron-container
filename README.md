@@ -2,14 +2,19 @@
 
 ___This is a Node App using ExpressJS, Socket IO, and Electron.___
 
+Minimal yet colorfull Scripture Rosary for NodeJs. It contains Vulgate Latin translations and runs on Express or Electron.
+
 Git: [https://github.com/mezcel/electron-container](https://github.com/mezcel/electron-container)
 
 Youtube: [demo link](https://youtu.be/xlhLjpW-QMs)
+
+Best performance experienced on Win10 and Debian
 
 Status: ```git branch v0.4.4.1``` is focused on:
 
 * Electron development dependencies using Arch Linux and Ubuntu
 * Troubleshooting Ajax compatibility on 'ancient' mobile browsers
+
 ---
 
 ### Development thoughts:
