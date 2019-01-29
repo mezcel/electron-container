@@ -10,10 +10,10 @@ Youtube: [demo link](https://youtu.be/xlhLjpW-QMs)
 
 Best performance experienced on Win10 and Debian
 
-Status: ```git branch v0.4.4.1``` is focused on:
+Status: ```git branch v0.5``` is focused on:
 
-* Electron development dependencies using Arch Linux and Ubuntu
-* Troubleshooting Ajax compatibility on 'ancient' mobile browsers
+* Merging in features from [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal)
+* Liturgical Callendar, Paschal Full Moon
 
 ---
 
