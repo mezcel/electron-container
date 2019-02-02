@@ -725,11 +725,11 @@ function liturgicalSeasonToday() {
         feastDayString += " <div> " + yearCycleABC(currentTime).abcEaster + " </div>";
     }
     if ( isOrdinaryTimeSeason(currentTime) ) {
-        feastDayString += " <div> Ordinary Time";
+        feastDayString += " <div> Ordinary Time Season </div>";
     }
 
     document.getElementById('infoHeader').innerHTML = "Liturgical Calendar";
     document.getElementById('infoSubHeader').innerHTML = "Liturgical " + yearCycleABC(currentTime).cycleLetter ;
-    document.getElementById('infoBody').innerHTML = feastDayString
+    document.getElementById('infoBody').innerHTML = feastDayString;
     document.getElementById('infoFooter').innerHTML = "PFM Calulation Tables";
 }
