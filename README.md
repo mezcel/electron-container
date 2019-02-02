@@ -10,28 +10,16 @@ Youtube: [demo link](https://youtu.be/xlhLjpW-QMs)
 
 Best performance experienced on Win10 and Debian
 
-Status: Current Development branch ```git branch v0.5``` is focused on:
+__Status:__ Latest development branch ```git branch v0.5``` is focused on:
 
-* Merging in features used in [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal)
-* Including Liturgical Callendar, Paschal Full Moon
-
----
-
-### Development thoughts:
-
-* I expanded on the [Heroku app](https://github.com/mezcel/heroku-joyful-mystery), got rid of the ```ejs``` components, added ```socketio``` features, and made it an Electron App.
-
-* The user experience now closer resembles an even older C# version I made a while back, [rosary.net](https://github.com/mezcel/rosary.net).
-
-###### Translation Modifications
-
-I ended up rewriting all the db's.
-
-* [/myAssets/database/README.md](./myAssets/database/README.md) Has more information regarding what is new with the DB.
+* Integrated features used in [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal)
+* Included a Liturgical Calendar based on Paschal Full Moon schedule
+* Included Daily mass reading scraped from usccb.org using the [whateverorigin.org](www.whateverorigin.org/) service.
+    * Note: consider [wgetjs](https://www.npmjs.com/package/wgetjs) for continued development.
 
 ---
 
-### Main Goals:
+### Main Dev Objective:
 
 * Desktop standalone and mobile networked app
 * Works as a Server Hosted App.
@@ -39,10 +27,10 @@ I ended up rewriting all the db's.
 
 ### Intended user:
 
-* local intranet or ad-hoc networks
-* absolutely trusted private networks
-* servers hosted on mobile devices with NodeJs server
-* 1-8 Clients who turn off application when not using it
+* Local intranet or ad-hoc networks
+* Absolutely trusted private networks
+* Servers hosted on mobile devices with NodeJs server
+* 1-8 Clients who will turn off application when not using it
 
 ### Key Features:
 
@@ -52,6 +40,10 @@ I ended up rewriting all the db's.
 * Modular json db
 * Color themes and keyboard shortcuts
 * NAB English/Vulgate Latin Scripture languages
+* Liturgical Calendar Calculator
+* Daily web scraped mass readings (single online user feature)
+
+---
 
 ## NPM
 
@@ -85,9 +77,9 @@ package.json
 }
 ```
 
-Electron development for Ubuntu Linux ```install-electron-on-ubuntu.sh```
+Electron development for Ubuntu Linux ```install-electron-debian.sh```
 
-Electron development for Arch Linux ```install-electron-on-arch.sh```
+Electron development for Arch Linux ```install-electron-arch.sh```
 
 ```sh
 ## Arch
