@@ -254,7 +254,8 @@
                     <div data-role="collapsible">
                         <h4>Mass Readings</h4>
                         <form>
-                            <a id="btnDailyMass" href="http://www.usccb.org/bible/readings" target="_blank" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right">usccb.org</a>
+                            <!--<a id="btnDailyMass" href="http://www.usccb.org/bible/readings" target="_blank" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right">usccb.org</a>-->
+                            <a id="btnDailyMass" href="#dailyMassPage" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right" onclick="scrapeUsccb()">usccb.org</a>
                         </form>
                     </div>
                 </div>
@@ -334,10 +335,21 @@
                         <li> <a href="#topAnchor" id="btnEnterMsg" onClick='sendmyMessage();' data-icon="comment"></a> </li>
                     </ul>
                 </div>
-
-
             </div>
 
+        </div>
+
+        <div data-role="page" id="dailyMassPage">
+            <div data-role="header" class="msgPageHeader" style="text-align: center">
+                Daily Mass Readings
+                <div data-role="navbar" data-mini="true">
+                    <ul>
+                        <li><a id="btnCloseMassPage" href="#rosary" data-transition="fade" data-icon="arrow-l"></a></li>
+                        <li><a href="http://www.usccb.org/bible/readings" data-icon="info" target="_blank"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div role="main" id="usccbOrg" class="msgLog "></div>
         </div>
     </body>
 
