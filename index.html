@@ -11,12 +11,12 @@
 
 		<link rel="icon" href="./myAssets/img/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="./myAssets/img/favicon.ico" type="image/x-icon" />
-        
+
 		<script>
             // i need this for node for some reasion with stand alone electron
 			window.$ = window.jQuery = require('jquery');
         </script>
-        
+
 
 		<!-- dom style -->
 		<link rel="stylesheet" href="./myAssets/css/jquery.mobile-1.4.5.min.css" />
@@ -29,6 +29,7 @@
 
 		<!-- my dom Application data and instructions -->
         <script src="./myAssets/js/myScript.js"></script>
+        <script src="./myAssets/js/pfm-calculation.js"></script>
         <script src="/socket.io/socket.io.js"></script>
 		<script src="./myAssets/js/myMessengerScript.js"></script>
     </head>
@@ -41,7 +42,7 @@
             <div class="ui-content">
     			<input id="myName" value="" type="text" placeholder="enter a user name" style="text-align: center">
             </div>
-            <div class="ui-content">    			
+            <div class="ui-content">
     			<a id="btnUsrInput" data-role="button" class="ui-btn ui-corner-all" onClick="setUsername()" href="#coverpage" data-transition="flip"><h3>Enter</h3></a>
             </div>
         </div>
@@ -246,21 +247,21 @@
                     <div data-role="collapsible">
                         <h4>Liturgical Season</h4>
                         <form>
-                            <a id="" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(9)">Today</a>
+                            <a id="btnLiturgicalSeason" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="liturgicalSeasonToday()">Today</a>
                         </form>
                     </div>
 
                     <div data-role="collapsible">
                         <h4>Mass Readings</h4>
                         <form>
-                            <a id="" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(9)">usccb.org</a>
+                            <a id="btnDailyMass" href="http://www.usccb.org/bible/readings" target="_blank" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right">usccb.org</a>
                         </form>
                     </div>
                 </div>
 
                 <h3>Group Messaging:</h3>
                 <a id="btnOpenMessenger" href="#messagingPage" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-left">Messenger</a>
-                
+
             </div>
 
             <!-- Information Popup Dialog -->
@@ -306,7 +307,7 @@
                 <span id="beadMarker" class="ui-bar" style="text-align: center">0 / 0</span>
                 <div data-role="decadeProgress"></div><!-- decade progress bar -->
                 <div data-role="rosaryProgress"></div><!-- rosary progress bar -->
-            </div>            
+            </div>
 
         </div>
 
@@ -321,20 +322,20 @@
                     </ul>
                 </div>
             </div>
-            
-            <div role="main" id="myMessageContainer" class="msgLog "></div>            
+
+            <div role="main" id="myMessageContainer" class="msgLog "></div>
 
             <div data-role="footer" class="msgPageFooter" data-position="fixed">
                 <div id="divAllUsers" style="overflow-y:auto;"></div>
                 <input id="myMessage" value="" type="text" placeholder="Enter a message ...">
                 <div data-role="navbar" data-mini="true">
-                    <ul>                        
+                    <ul>
                         <li> <a onClick='$(window).scrollTop(0);' data-icon="arrow-u"></a> </li>
                         <li> <a href="#topAnchor" id="btnEnterMsg" onClick='sendmyMessage();' data-icon="comment"></a> </li>
                     </ul>
                 </div>
-                
-                
+
+
             </div>
 
         </div>
