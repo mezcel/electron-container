@@ -1,5 +1,5 @@
 function initializeFeastFlags() {
-    var isTodayEaster = 0;
+    var isToday_Easter = 0;
     var isEasterSeason = 0;
     var isTodayAsh_Wednesday = 0;
     var isLentSeasion = 0;
@@ -275,12 +275,30 @@ function pfmTableSum(annualNo, centuryNo, decadeNo) {
     };
 }
 
-function calculate_Paschal_Full_Moon() {
+function daysUntill(nowDate, thenDate) {
+
+    // The number of milliseconds in one day
+    var dayMilliseconds = 1000 * 60 * 60 * 24;
+
+    // Convert both dates to milliseconds
+    var nowDate_ms = nowDate.getTime();
+    var thenDate_ms = thenDate.getTime();
+
+    // Calculate the difference in milliseconds
+    //var difference_ms = Math.abs(date1_ms - date2_ms);
+    var difference_ms = thenDate_ms - nowDate_ms;
+
+    // Convert back to days and return
+    return Math.round(difference_ms/dayMilliseconds);
+
+}
+
+function calculate_Paschal_Full_Moon(year) {
     "use strict";
 	// Easter
 
-    var currentTime = new Date();
-    var year = currentTime.getFullYear();
+    //var currentTime = new Date();
+    //var year = currentTime.getFullYear();
     var pfmDate = pfmTableDate(year);
     var estimatedDay = pfmTableMonth(pfmDate).estimatedDay;
     var virtualMonthNo = pfmTableMonth(pfmDate).virtualMonthNo;
@@ -291,12 +309,194 @@ function calculate_Paschal_Full_Moon() {
     var daysToAdd = pfmTableSum(annualNo, centuryNo, decadeNo).daysToAdd;
 
     var tabulatedDate = new Date(year, virtualMonthNo, estimatedDay);
-    tabulatedDate.setDate(tabulatedDate.getDate() + daysToAdd);
+        tabulatedDate.setDate(tabulatedDate.getDate() + daysToAdd);
 
     return tabulatedDate;
 }
 
+function thisYearCountdownPFM(currentTime, offsetNumber) {
+    "use strict";
+    var year = currentTime.getFullYear();
+    var thisyearDay = calculate_Paschal_Full_Moon(year);
+
+    if ( offsetNumber !== 0) {
+        thisyearDay.setDate(thisyearDay.getDate() + offsetNumber);
+    }
+
+    var countDown = daysUntill(currentTime, thisyearDay);
+
+    if ( countDown < 0 ) {
+        currentTime.setMonth(currentTime.getMonth() + 12); // next year
+        year = currentTime.getFullYear();
+        var nextyearDay = calculate_Paschal_Full_Moon(year);
+
+        if ( offsetNumber !== 0) {
+            nextyearDay.setDate(nextyearDay.getDate() + offsetNumber);
+        }
+
+        countDown = daysUntill(currentTime, nextyearDay);
+    }
+
+    return countDown;
+}
+
+function thisYearCountdownFixedDates(currentTime, thenDate) {
+    "use strict";
+    var countDown = daysUntill(currentTime, thenDate);
+
+    if ( countDown < 0 ) {
+        thenDate.setMonth(thenDate.getMonth() + 12); // next year
+        countDown = daysUntill(currentTime, thenDate);
+    }
+
+    return countDown;
+}
+
+function daysUntill_Easter(currentTime) {
+    "use strict";
+    var offsetNumber = 0;
+    var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
+
+    if ( countDown < 0) {
+        countDown = nextYearCountdownPFM(currentTime, offsetNumber);
+    }
+
+    return countDown;
+}
+
+function  daysUntill_HolyThursday(currentTime) {
+	// Triduum Thursday
+    "use strict";
+
+    var offsetNumber = -3;
+    var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
+    return countDown;
+}
+
+function  daysUntill_GoodFriday(currentTime) {
+	// Triduum Friday
+    "use strict";
+    var offsetNumber = -2;
+    var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
+
+    return countDown;
+}
+
+function  daysUntill_HolySaturday(currentTime) {
+	// Triduum Saturday
+    "use strict";
+    var offsetNumber = -1;
+    var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
+
+    return countDown;
+}
+
+function daysUntill_AshWednesday(currentTime) {
+	// Lent begins on Ash Wednesday, which is always held 46 days (40 fasting days and 6 Sundays) before Easter Sunday.
+    "use strict";
+    var offsetNumber = -46;
+    var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
+
+    return countDown;
+}
+
+function daysUntill_JesusAssension(currentTime) {
+	// 40 Days After Easter, Thursday
+    "use strict";
+    var offsetNumber = 40;
+    var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
+
+    return countDown;
+}
+
+function daysUntill_Pentecost(currentTime) {
+	// 7 Sundays after Easter
+    "use strict";
+    var offsetNumber = 49;
+    var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
+
+    return countDown;
+}
+
+function daysUntill_ImmaculateConception(currentTime) {
+	// Dec 8
+    "use strict";
+    var year = currentTime.getFullYear();
+    var thenDate = new Date(year, 11, 8);
+    var countDown = thisYearCountdownFixedDates(currentTime, thenDate);
+
+    return countDown;
+}
+
+function firstSunday(year, month) {
+    "use strict";
+    var isSunday = false;
+    var dayCounter = 1;
+    var sundayDate; //= new Date(year, month, 1);
+    while ( isSunday == false ) {
+        sundayDate = new Date(year, month, dayCounter);
+
+        if ( sundayDate.getDay() == 0 ) {
+            dayCounter += 1;
+        } else {
+            isSunday = true;
+        }
+    }
+
+    return sundayDate;
+}
+
+function daysUntill_Advent(currentTime) {
+	// 1st sunday of Dec through Dec 24
+	// Start of Liturgical Year
+	// Min 4 sunday durations
+
+    "use strict";
+    var year = currentTime.getFullYear();
+    var thenDate = firstSunday(year, 11);
+    var countDown = daysUntill(currentTime, thenDate);
+
+    if ( countDown < 0 ) {
+        year += 1;
+        thenDate = firstSunday(year, 11); // next year
+        countDown = daysUntill(currentTime, thenDate);
+    }
+
+    return countDown;
+}
+
+function daysUntill_Christmas(currentTime) {
+	// Dec 25
+    "use strict";
+    var year = currentTime.getFullYear();
+    var thenDate = new Date(year, 11, 25);
+    var countDown = thisYearCountdownFixedDates(currentTime, thenDate);
+
+    return countDown;
+}
+
+function daysUntill_AllSaints(currentTime)  {
+	// Nov 1
+    "use strict";
+    var year = currentTime.getFullYear();
+    var thenDate = new Date(year, 10, 1);
+    var countDown = thisYearCountdownFixedDates(currentTime, thenDate);
+
+    return countDown;
+}
+
+function daysUntill_SolemnityOfMary(currentTime)  {
+	// Jan 1
+    "use strict";
+    var year = currentTime.getFullYear();
+    var thenDate = new Date(year, 0, 1);
+    var countDown = thisYearCountdownFixedDates(currentTime, thenDate);
+
+    return countDown;
+}
+
 $(document).ready(function() {
+
     var currentTime = new Date();
 
     var year = currentTime.getFullYear();
@@ -322,8 +522,19 @@ $(document).ready(function() {
     var daysToAdd = pfmTableSum(annualNo, centuryNo, decadeNo).daysToAdd
 
     $("#pfmTableSum").html("pfmWeekDay = " + pfmWeekDay + ", daysToAdd = " + daysToAdd);
-
-
-    $("#calculate_Paschal_Full_Moon").html( calculate_Paschal_Full_Moon() );
+    $("#calculate_Paschal_Full_Moon").html( calculate_Paschal_Full_Moon(year) );
+    $("#daysUntill").html( daysUntill(new Date(), new Date(2019, 3, 21)) );
+    $("#daysUntill_Easter").html( "countDown = " + daysUntill_Easter(currentTime) );
+    $("#daysUntill_HolyThursday").html( "countDown = " + daysUntill_HolyThursday(currentTime) );
+    $("#daysUntill_GoodFriday").html( "countDown = " + daysUntill_GoodFriday(currentTime) );
+    $("#daysUntill_HolySaturday").html( "countDown = " + daysUntill_HolySaturday(currentTime) );
+    $("#daysUntill_AshWednesday").html( "countDown = " + daysUntill_AshWednesday(currentTime) );
+    $("#daysUntill_JesusAssension").html( "countDown = " + daysUntill_JesusAssension(currentTime) );
+    $("#daysUntill_Pentecost").html( "countDown = " + daysUntill_Pentecost(currentTime) );
+    $("#daysUntill_ImmaculateConception").html( "countDown = " + daysUntill_ImmaculateConception(currentTime) );
+    $("#daysUntill_Advent").html( "countDown = " + daysUntill_Advent(currentTime) );
+    $("#daysUntill_Christmas").html( "countDown = " + daysUntill_Christmas(currentTime) );
+    $("#daysUntill_AllSaints").html( "countDown = " + daysUntill_AllSaints(currentTime) );
+    $("#daysUntill_SolemnityOfMary").html( "countDown = " + daysUntill_SolemnityOfMary(currentTime) );
 
 });
