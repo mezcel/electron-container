@@ -1,4 +1,4 @@
-
+/* Liturgical Calendar Calculations */
 
 function pfmTableDate(year) {
     "use strict";
@@ -778,6 +778,9 @@ function calendarSummary() {
     if ( isChristmasSeason(currentTime) ) {
         feastDayString += " <br> " + yearCycleABC(currentTime).abcEaster;
     }
+    if ( isOrdinaryTimeSeason(currentTime) ) {
+        feastDayString += " <br> Ordinary Time";
+    }
 
     feastDayString += " <br> Liturgical " + yearCycleABC(currentTime).cycleLetter;
 
@@ -785,6 +788,7 @@ function calendarSummary() {
 }
 
 $(document).ready(function() {
+    debugVars();
     calendarSummary();
 });
 
