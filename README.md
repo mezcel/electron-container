@@ -2,13 +2,13 @@
 
 ___This is a Node App using ExpressJS, Socket IO, and Electron.___
 
-Minimal yet colorfull Scripture Rosary for NodeJs. It contains Vulgate Latin translations and runs on Express or Electron.
+A minimal yet colorfull Scripture Rosary for NodeJs. It contains Vulgate Latin translations and runs on Express or Electron. It also supports LAN instant messaging and WWW streaming audio and daily Mass readings.
 
-Git: [https://github.com/mezcel/electron-container](https://github.com/mezcel/electron-container)
+Git: [repo](https://github.com/mezcel/electron-container), Youtube: [outdated demo](https://youtu.be/xlhLjpW-QMs)
 
-Youtube: [demo link](https://youtu.be/xlhLjpW-QMs)
+* _Host Computer_: Best performance experienced on Win10 and Debian Linux. (install, build, and run)
 
-Best performance experienced on Win10 and Debian
+* _Client Computer_: Best experience on Desktop, iPad & iPhone sized monitors.
 
 __Status:__ Latest development branch ```git branch v0.5``` is focused on:
 
@@ -16,6 +16,9 @@ __Status:__ Latest development branch ```git branch v0.5``` is focused on:
 * Included a Liturgical Calendar based on Paschal Full Moon schedule
 * Included Daily mass reading scraped from usccb.org using the [whateverorigin.org](www.whateverorigin.org/) service.
     * Note: consider [wgetjs](https://www.npmjs.com/package/wgetjs) for continued development.
+
+__Todo:__
+In the development of [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal), I simplified and filled in the under developed holes in the JSON db. I have not integrated those changes to this app's DB yet. This app still has residual bloat.
 
 ---
 
@@ -25,22 +28,19 @@ __Status:__ Latest development branch ```git branch v0.5``` is focused on:
 * Works as a Server Hosted App.
 * Send/Receive text communication between different app instances
 
-### Intended user:
+### Intended usecase:
 
-* Local intranet or ad-hoc networks
-* Absolutely trusted private networks
-* Servers hosted on mobile devices with NodeJs server
-* 1-8 Clients who will turn off application when not using it
+* Academic refference
+* Local intranet or ad-hoc networks (trusted)
+* Servers hosted on mobile devices with NodeJs server (1-8 clients)
 
 ### Key Features:
 
-* ExpressJs Node Server
+* ExpressJs Service
 * SocketIO instant messaging
-* Weekday calendar date specific app events
-* Modular json db
 * Color themes and keyboard shortcuts
 * NAB English/Vulgate Latin Scripture languages
-* Liturgical Calendar Calculator
+* Liturgical Calendar Day Flag
 * Daily web scraped mass readings (single online user feature)
 
 ---
@@ -120,4 +120,4 @@ Repo size proportions (aproximately)
 
 dir | MiB
 --- | ---
-./myAssets | 9 - 10
+./myAssets | 8-9
