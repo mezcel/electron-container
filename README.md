@@ -8,7 +8,7 @@ Youtube: [outdated demo](https://youtu.be/xlhLjpW-QMs)
 
 ---
 
-__Status:__ Latest development branch ```git branch v0.5``` is focused on:
+__Status:__ Latest development branch ```git branch v0.5.1``` is focused on:
 
 * Integrated features used in [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal)
 * Included a Liturgical Calendar based on Paschal Full Moon schedule
