@@ -1,11 +1,9 @@
 /* Liturgical Calendar Calculations */
 
-function pfmTableDate(year) {
+function pfmTableDate(year) { // PFM Step 1 of 6
     "use strict";
     // Divide the current year by 19 and get the 1st 3 digits after the decimal
 
-    //var currentTime = new Date();
-    //var year = currentTime.getFullYear();
     var yearDiv3_decimal = new Number(year / 19);
     yearDiv3_decimal = yearDiv3_decimal.toFixed(4).slice(3, -1); //parse digits
 
@@ -35,11 +33,9 @@ function pfmTableDate(year) {
     return pmfArray[wholeNum]; //pfmDate
 }
 
-function pfmTableMonth(pfmDate) {
+function pfmTableMonth(pfmDate) {  // PFM Step 2 of 6
     "use strict";
 
-    // determine month according to PMF Date
-    // var pfmDate = pfmTableDate();
     var firstLetter = pfmDate.charAt(0);
 
     var virtualMonthName, virtualMonthNo, last2numbers, estimatedDay;
@@ -69,7 +65,7 @@ function pfmTableMonth(pfmDate) {
     };
 }
 
-function pfmTableYear(pmfDate) {
+function pfmTableYear(pmfDate) {  // PFM Step 3 of 6
     "use strict";
 
     // PFM Date for year (M=March, A=April)
@@ -124,7 +120,7 @@ function pfmTableYear(pmfDate) {
     return annualNo;
 }
 
-function pfmTableDecade(year) {
+function pfmTableDecade(year) {  // PFM Step 4 of 6
     "use strict";
     // Last 2 digits in the current year
     // I am just going to use 18-21 and a few more future years just to fill it out
@@ -168,7 +164,7 @@ function pfmTableDecade(year) {
     return decadeNo;
 }
 
-function pfmTableCentury() {
+function pfmTableCentury() {  // PFM Step 5 of 6
     "use strict";
     // First 2 digits if current year
     // I expect it will be 20 for the next +900 years... but the calander has changed more than once in the last 900 years
@@ -179,7 +175,7 @@ function pfmTableCentury() {
     return centuryNo;
 }
 
-function pfmTableSum(annualNo, centuryNo, decadeNo) {
+function pfmTableSum(annualNo, centuryNo, decadeNo) {  // PFM Step 6 of 6
     "use strict";
     // Add results from all 3 tables
     var tableSum = annualNo + centuryNo + decadeNo;
@@ -262,8 +258,6 @@ function calculate_Paschal_Full_Moon(year) {
     "use strict";
 	// Easter
 
-    //var currentTime = new Date();
-    //var year = currentTime.getFullYear();
     var pfmDate = pfmTableDate(year);
     var estimatedDay = pfmTableMonth(pfmDate).estimatedDay;
     var virtualMonthNo = pfmTableMonth(pfmDate).virtualMonthNo;
@@ -281,6 +275,7 @@ function calculate_Paschal_Full_Moon(year) {
 
 function thisYearCountdownPFM(currentTime, offsetNumber) {
     "use strict";
+
     var year = currentTime.getFullYear();
     var thisyearDay = calculate_Paschal_Full_Moon(year);
 
@@ -322,19 +317,15 @@ function daysUntill_Easter(currentTime) {
     var offsetNumber = 0;
     var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
 
-    if ( countDown < 0) {
-        countDown = nextYearCountdownPFM(currentTime, offsetNumber);
-    }
-
     return countDown;
 }
 
 function  daysUntill_HolyThursday(currentTime) {
 	// Triduum Thursday
     "use strict";
-
     var offsetNumber = -3;
     var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
+
     return countDown;
 }
 
@@ -462,12 +453,9 @@ function daysUntill_SolemnityOfMary(currentTime)  {
 
 function daysUntill_Epiphany(currentTime) {
 	// Aprox: Jan 6
-	// Start of the 1st segment of ordinary time
-	// Sunday closest to 12 days after Christmas
-	// If Jan 6 is >= friday add days forward to Sun
-	// If Jan 6 is < friday subtract days back to Sun
-	// The day is transfered to a Sunday if the day falls between Jan 2-8
-	// Day of Obligation
+	// Start of the 1st segment of ordinary time // Sunday closest to 12 days after Christmas
+	// If Jan 6 is >= friday add days forward to Sun // If Jan 6 is < friday subtract days back to Sun
+	// The day is transfered to a Sunday if the day falls between Jan 2-8 // Day of Obligation
 
     "use strict";
     var year = currentTime.getFullYear();
@@ -617,18 +605,21 @@ function isOrdinaryTimeSeason(currentTime) {
     return output;
 }
 
-function yearCycleABC(currentTime) {
-	// Year A  12/2016-11/2017, 2019-2020, 2022-23
-	// Year B  12/2017-11/2018,  2020-2021, 2023-24
-	// Year C  12/2015-11/2016, 2018-19, 2021-22
+function isDateBeforeToday(date) {
+    return new Date(date.toDateString()) < new Date(new Date().toDateString());
+}
 
+function yearCycleABC(currentTime) {
 	// Year starts on the 1st Sunday of Advent on the previous year
     "use strict";
     var year = currentTime.getFullYear();
-    var decemberMonth = currentTime.getMonth();
-    if (decemberMonth == 11) {
-        year += 1;
+
+    if ( isDateBeforeToday(new Date(year, 11, 1)) ) {
+        year = year;
+    } else {
+        year = year - 1;
     }
+
     var decadeYear = year - 2000;
     var modDivThree = decadeYear % 3;
     var cycleLetter, abcNo;
@@ -636,20 +627,19 @@ function yearCycleABC(currentTime) {
     var cycleSeasonAdvent = ["", "Season of Waiting", "Season of Preparation", "Season of Holiness"];
     var cycleSeasonEpiphany = ["", "Season of Foundation", "Season of New Beginning", "Season of Manifestation"];
     var cycleSeasonLent = ["", "Season of Hope", "Season of Cross Purposes", "Season of Repentance"];
-    var cycleSeasonPentacost = ["", "Season of Glory", "Season of Power", "Season of the Spirit"];
     var cycleSeasonEaster = ["", "Season of Salvation", "Season of More Season of Witness", "Season of Joy & Life"];
 
     switch (modDivThree) {
         case 1:
-            cycleLetter="Anual Cycle A: The Gospel of Matthew";
+            cycleLetter="Sunday Cycle A: The Gospel of Matthew";
             abcNo=1;
             break;
         case 2:
-            cycleLetter="Anual Cycle B: The Gospel of Mark";
+            cycleLetter="Sunday Cycle B: The Gospel of Mark";
             abcNo=2;
             break;
         case 0:
-            cycleLetter="Anual Cycle C: The Gospel of Luke";
+            cycleLetter="Sunday Cycle C: The Gospel of Luke";
             abcNo=3;
             break;
     }
@@ -672,64 +662,113 @@ function liturgicalSeasonToday() {
     "use strict";
     var currentTime = new Date();
     var feastDayString = "";
+    var countdown;
 
-    if ( daysUntill_Easter(currentTime) == 0 ) {
-        feastDayString += "<li> Today is the Feast of Easter </li>";
-    }
-    if ( daysUntill_HolyThursday(currentTime) == 0 ) {
-        feastDayString += "<li>  Today is the Feast of Holy Thursday </li>";
-    }
-    if ( daysUntill_GoodFriday(currentTime) == 0 ) {
-        feastDayString += "<li>  Today is the Feast of Good Friday </li>";
-    }
-    if ( daysUntill_HolySaturday(currentTime) == 0 ) {
-        feastDayString += "<li>  Today is the Feast of Holy Saturday </li>";
-    }
-    if ( daysUntill_AshWednesday(currentTime) == 0 ) {
-        feastDayString += "<li>  Today is the Feast of Ash Wednesday </li>";
-    }
-    if ( daysUntill_JesusAssension(currentTime) == 0 ) {
-        feastDayString += "<li>  Today is the Feast of Jessus' Assension </li>";
-    }
-    if ( daysUntill_Pentecost(currentTime) == 0 ) {
-        feastDayString += "<li>  Today is the Feast of Pentacost </li>";
-    }
-    if ( daysUntill_ImmaculateConception(currentTime) == 0 ) {
-        feastDayString += "<li>  Today is the Feast of Immaculate Conception of Mary </li>";
-    }
-    if ( daysUntill_Christmas(currentTime) == 0 ) {
-        feastDayString += " Today is the Feast of Christmas </li>";
-    }
-    if ( daysUntill_AllSaints(currentTime) == 0 ) {
-        feastDayString += "<li>  Today is the Feast of All Saints </li>";
-    }
-    if ( daysUntill_SolemnityOfMary(currentTime) == 0 ) {
-        feastDayString += "<li>  Today is the Feast of Solemnity of Mary </li>";
-    }
-    if ( daysUntill_Epiphany(currentTime) == 0 ) {
-        feastDayString += "<li>  Today is the Feast of Epiphany </li>";
-    }
-    if ( daysUntill_JesusBaptism(currentTime) == 0 ) {
-        feastDayString += "<li>  Today is the Feast of Jesus' Baptism </li>";
-    }
-    if ( isLentSeason(currentTime) ) {
-        feastDayString += " <li> " + yearCycleABC(currentTime).abcLent + " </li>";
-    }
-    if ( isEasterSeason(currentTime) ) {
-        feastDayString += " <li> " + yearCycleABC(currentTime).abcEaster + " </li>";
-    }
-    if ( isAdventSeason(currentTime) ) {
-        feastDayString += " <li> " + yearCycleABC(currentTime).abcAdvent + " </li>";
-    }
-    if ( isChristmasSeason(currentTime) ) {
-        feastDayString += " <li> " + yearCycleABC(currentTime).abcEaster + " </li>";
-    }
     if ( isOrdinaryTimeSeason(currentTime) ) {
-        feastDayString += " <li> Ordinary Time Season </li>";
+        feastDayString += " <li> Today is Ordinary Time Season </li><hr>";
+    } else if ( isLentSeason(currentTime) ) {
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcLent + ": Lent </li><hr>";
+    } else if( isEasterSeason(currentTime) ) {
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcEaster + ": Easter </li><hr>";
+    } else if ( isAdventSeason(currentTime) ) {
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcAdvent + ": Advent </li><hr>";
+    } else if ( isChristmasSeason(currentTime) ) {
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcChristmas + ": Christmas </li><hr>";
     }
 
-    document.getElementById('infoHeader').innerHTML = "Liturgical Season Flag";
+    countdown = daysUntill_Easter(currentTime);
+    if ( countdown == 0 ) {
+        feastDayString += "<li> <b> Today is the Feast of Easter </b> </li>";
+    } else {
+        feastDayString += "<li> " + countdown + " days until the Feast of Easter </li>";
+    }
+
+    countdown = daysUntill_HolyThursday(currentTime);
+    if ( countdown == 0 ) {
+        feastDayString += "<li> <b> Today is the Feast of Holy Thursday </b> </li>";
+    } else {
+        feastDayString += "<li> " + countdown + " days until the Feast of Holy Thursday </li>";
+    }
+
+    countdown = daysUntill_GoodFriday(currentTime);
+    if ( countdown == 0 ) {
+        feastDayString += "<li> <b> Today is the Feast of Good Friday </b> </li>";
+    } else {
+        feastDayString += "<li> " + countdown + " days until the Feast of Good Friday </li>";
+    }
+
+    countdown = daysUntill_HolySaturday(currentTime);
+    if ( countdown == 0 ) {
+        feastDayString += "<li> <b> Today is the Feast of Holy Saturday </b> </li>";
+    } else {
+        feastDayString += "<li> " + countdown + " days until the Feast of Holy Saturday </li>";
+    }
+
+    countdown = daysUntill_AshWednesday(currentTime);
+    if ( countdown == 0 ) {
+        feastDayString += "<li> <b> Today is the Feast of Ash Wednesday </b> </li>";
+    } else {
+        feastDayString += "<li> " + countdown + " days until the Feast of Ash Wednesday </li>";
+    }
+
+    countdown = daysUntill_JesusAssension(currentTime);
+    if ( countdown == 0 ) {
+        feastDayString += "<li> <b> Today is the Feast of Jessus' Assension </b> </li>";
+    } else {
+        feastDayString += "<li> " + countdown + " days until the Feast of Jessus' Assension </li>";
+    }
+
+    countdown = daysUntill_Pentecost(currentTime);
+    if ( countdown == 0 ) {
+        feastDayString += "<li> <b> Today is the Feast of Pentacost </b> </li>";
+    } else {
+        feastDayString += "<li> " + countdown + " days until the Feast of Pentacost </li>";
+    }
+
+    countdown = daysUntill_ImmaculateConception(currentTime);
+    if ( countdown == 0 ) {
+        feastDayString += "<li> <b> Today is the Feast of The Immaculate Conception of Mary </b> </li>";
+    } else {
+        feastDayString += "<li> " + countdown + " days until the Feast of The Immaculate Conception of Mary </li>";
+    }
+
+    countdown = daysUntill_Christmas(currentTime);
+    if ( countdown == 0 ) {
+        feastDayString += "<li> <b> Today is the Feast of Christmas </b> </li>";
+    } else {
+        feastDayString += "<li> " + countdown + " days until the Feast of Christmas </li>";
+    }
+
+    countdown = daysUntill_AllSaints(currentTime);
+    if ( countdown == 0 ) {
+        feastDayString += "<li> <b> Today is the Feast of All Saints </b> </li>";
+    } else {
+        feastDayString += "<li> " + countdown + " days until the Feast of All Saints </li>";
+    }
+
+    countdown = daysUntill_SolemnityOfMary(currentTime);
+    if ( countdown == 0 ) {
+        feastDayString += "<li> <b> Today is the Feast of The Solemnity of Mary </b> </li>";
+    } else {
+        feastDayString += "<li> " + countdown + " days until the Feast of The Solemnity of Mary </li>";
+    }
+
+    countdown = daysUntill_Epiphany(currentTime);
+    if ( countdown == 0 ) {
+        feastDayString += "<li> <b> Today is the Feast of The Epiphany </b> </li>";
+    } else {
+        feastDayString += "<li> " + countdown + " days until the Feast of The Epiphany </li>";
+    }
+
+    countdown = daysUntill_JesusBaptism(currentTime);
+    if ( countdown == 0 ) {
+        feastDayString += "<li> <b> Today is the Feast of Jesus' Baptism </b> </li>";
+    } else {
+        feastDayString += "<li> " + countdown + " days until the Feast of Jesus' Baptism </li>";
+    }
+
+    document.getElementById('infoHeader').innerHTML = "Liturgical Season Flags";
     document.getElementById('infoSubHeader').innerHTML = yearCycleABC(currentTime).cycleLetter ;
     document.getElementById('infoBody').innerHTML = feastDayString;
-    document.getElementById('infoFooter').innerHTML = "Today";
+    document.getElementById('infoFooter').innerHTML = "Countdown";
 }
