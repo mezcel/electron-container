@@ -665,15 +665,15 @@ function liturgicalSeasonToday() {
     var countdown;
 
     if ( isOrdinaryTimeSeason(currentTime) ) {
-        feastDayString += " <li> Ordinary Time Season </li><hr>";
+        feastDayString += " <li> Today is Ordinary Time Season </li><hr>";
     } else if ( isLentSeason(currentTime) ) {
-        feastDayString += " <li> " + yearCycleABC(currentTime).abcLent + " </li><hr>";
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcLent + ": Lent </li><hr>";
     } else if( isEasterSeason(currentTime) ) {
-        feastDayString += " <li> " + yearCycleABC(currentTime).abcEaster + " </li><hr>";
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcEaster + ": Easter </li><hr>";
     } else if ( isAdventSeason(currentTime) ) {
-        feastDayString += " <li> " + yearCycleABC(currentTime).abcAdvent + " </li><hr>";
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcAdvent + ": Advent </li><hr>";
     } else if ( isChristmasSeason(currentTime) ) {
-        feastDayString += " <li> " + yearCycleABC(currentTime).abcEaster + " </li><hr>";
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcChristmas + ": Christmas </li><hr>";
     }
 
     countdown = daysUntill_Easter(currentTime);
@@ -767,8 +767,8 @@ function liturgicalSeasonToday() {
         feastDayString += "<li> " + countdown + " days until the Feast of Jesus' Baptism </li>";
     }
 
-    document.getElementById('infoHeader').innerHTML = "Liturgical Season Flag";
+    document.getElementById('infoHeader').innerHTML = "Liturgical Season Flags";
     document.getElementById('infoSubHeader').innerHTML = yearCycleABC(currentTime).cycleLetter ;
     document.getElementById('infoBody').innerHTML = feastDayString;
-    document.getElementById('infoFooter').innerHTML = "Today";
+    document.getElementById('infoFooter').innerHTML = "Countdown";
 }
