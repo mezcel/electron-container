@@ -610,10 +610,6 @@ function isDateBeforeToday(date) {
 }
 
 function yearCycleABC(currentTime) {
-	// Year A  12/2016-11/2017, 2019-2020, 2022-23
-	// Year B  12/2017-11/2018,  2020-2021, 2023-24
-	// Year C  12/2015-11/2016, 2018-19, 2021-22
-
 	// Year starts on the 1st Sunday of Advent on the previous year
     "use strict";
     var year = currentTime.getFullYear();
