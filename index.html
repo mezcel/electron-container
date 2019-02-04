@@ -11,12 +11,12 @@
 
 		<link rel="icon" href="./myAssets/img/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="./myAssets/img/favicon.ico" type="image/x-icon" />
-        
+
 		<script>
             // i need this for node for some reasion with stand alone electron
 			window.$ = window.jQuery = require('jquery');
         </script>
-        
+
 
 		<!-- dom style -->
 		<link rel="stylesheet" href="./myAssets/css/jquery.mobile-1.4.5.min.css" />
@@ -29,6 +29,7 @@
 
 		<!-- my dom Application data and instructions -->
         <script src="./myAssets/js/myScript.js"></script>
+        <script src="./myAssets/js/pfm-calculation.js"></script>
         <script src="/socket.io/socket.io.js"></script>
 		<script src="./myAssets/js/myMessengerScript.js"></script>
     </head>
@@ -41,7 +42,7 @@
             <div class="ui-content">
     			<input id="myName" value="" type="text" placeholder="enter a user name" style="text-align: center">
             </div>
-            <div class="ui-content">    			
+            <div class="ui-content">
     			<a id="btnUsrInput" data-role="button" class="ui-btn ui-corner-all" onClick="setUsername()" href="#coverpage" data-transition="flip"><h3>Enter</h3></a>
             </div>
         </div>
@@ -171,15 +172,16 @@
 					<h4>Ave Maria Music</h4>
 					<hr>
 					<audio id="audioAveMaria" class="audioStyle" controls loop>
-						<source src="myAssets/audio/tumblr_lia3pvqnO81qzvvkmo1.mp3" type="audio/mpeg"><!-- Maria Callas -->
+						<source src="myAssets/audio/JOHN_MICHEL_CELLO-BACH_AVE_MARIA.ogg" type="audio/mpeg"><!-- local -->
     					Your browser does not support the audio element.
-                    </audio> - by: Barbara Bonney \?
-					<hr>
-					<audio id="audioAveMaria2" class="audioStyle" controls loop>
-						<source src="myAssets/audio/--Ave-Maria-Musica-Sacra-----Maria-Callas---Mozart---Opera.mp3" type="audio/mpeg"><!-- Barbara Bonney -->
-    					Your browser does not support the audio element. BJR Enterprises, Inc. has legally transferred the copyright of all their Maria Callas vinyl disc editions to Divina Records/Maria Callas Museum on September 9, 2009
-                    </audio> - by: Maria Callas \?
-					<hr>
+                    </audio>
+                    <hr>
+                    Ave Maria composed by Charles Gounod. Ave Maria was composed based off of the harmony and texture of Johann Sebastian Bach's Prelude No.1 in C Major from Well-Tempered Clavier Book I (BWV 846). Performance by John Michel.
+                    <hr>
+					<!-- <audio id="audioAveMaria2" class="audioStyle" controls loop>
+						<source src="https://upload.wikimedia.org/wikipedia/commons/d/d4/JOHN_MICHEL_CELLO-BACH_AVE_MARIA.ogg" type="audio/mpeg">
+                    </audio>
+					<hr> -->
 
                 </div>
                 <div data-role="collapsible-set">
@@ -239,11 +241,29 @@
                             <a id="btnShortcuts" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(9)">Shortcut Table</a>
                         </form>
                     </div>
-
                 </div>
+
+                <h3>Liturgical Calendar:</h3>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible">
+                        <h4>Liturgical Season</h4>
+                        <form>
+                            <a id="btnLiturgicalSeason" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="liturgicalSeasonToday()">Today</a>
+                        </form>
+                    </div>
+
+                    <div data-role="collapsible">
+                        <h4>Mass Readings</h4>
+                        <form>
+                            <!--<a id="btnDailyMass" href="http://www.usccb.org/bible/readings" target="_blank" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right">usccb.org</a>-->
+                            <a id="btnDailyMass" href="#dailyMassPage" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right" onclick="scrapeUsccb()">usccb.org</a>
+                        </form>
+                    </div>
+                </div>
+
                 <h3>Group Messaging:</h3>
                 <a id="btnOpenMessenger" href="#messagingPage" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-left">Messenger</a>
-                
+
             </div>
 
             <!-- Information Popup Dialog -->
@@ -289,7 +309,7 @@
                 <span id="beadMarker" class="ui-bar" style="text-align: center">0 / 0</span>
                 <div data-role="decadeProgress"></div><!-- decade progress bar -->
                 <div data-role="rosaryProgress"></div><!-- rosary progress bar -->
-            </div>            
+            </div>
 
         </div>
 
@@ -304,22 +324,33 @@
                     </ul>
                 </div>
             </div>
-            
-            <div role="main" id="myMessageContainer" class="msgLog "></div>            
+
+            <div role="main" id="myMessageContainer" class="msgLog "></div>
 
             <div data-role="footer" class="msgPageFooter" data-position="fixed">
                 <div id="divAllUsers" style="overflow-y:auto;"></div>
                 <input id="myMessage" value="" type="text" placeholder="Enter a message ...">
                 <div data-role="navbar" data-mini="true">
-                    <ul>                        
+                    <ul>
                         <li> <a onClick='$(window).scrollTop(0);' data-icon="arrow-u"></a> </li>
                         <li> <a href="#topAnchor" id="btnEnterMsg" onClick='sendmyMessage();' data-icon="comment"></a> </li>
                     </ul>
                 </div>
-                
-                
             </div>
 
+        </div>
+
+        <div data-role="page" id="dailyMassPage">
+            <div data-role="header" class="msgPageHeader" style="text-align: center">
+                Daily Mass Readings
+                <div data-role="navbar" data-mini="true">
+                    <ul>
+                        <li><a id="btnCloseMassPage" href="#rosary" data-transition="fade" data-icon="arrow-l"></a></li>
+                        <li><a href="http://www.usccb.org/bible/readings" data-icon="info" target="_blank"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div role="main" id="usccbOrg" class="ui-content"></div>
         </div>
     </body>
 

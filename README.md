@@ -2,51 +2,46 @@
 
 ___This is a Node App using ExpressJS, Socket IO, and Electron.___
 
-Git: [https://github.com/mezcel/electron-container](https://github.com/mezcel/electron-container)
+A minimal yet colorfull Scripture Rosary for NodeJs. It contains NAB English & Vulgate Latin translation options and it supports LAN instant messaging and WWW streaming audio with daily Mass text readings.
 
-Youtube: [demo link](https://youtu.be/xlhLjpW-QMs)
-
-Status: ```git branch v0.4.4.1``` is focused on:
-
-* Electron development dependencies using Arch Linux and Ubuntu
-* Troubleshooting Ajax compatibility on 'ancient' mobile browsers
----
-
-### Development thoughts:
-
-* I expanded on the [Heroku app](https://github.com/mezcel/heroku-joyful-mystery), got rid of the ```ejs``` components, added ```socketio``` features, and made it an Electron App.
-
-* The user experience now closer resembles an even older C# version I made a while back, [rosary.net](https://github.com/mezcel/rosary.net).
-
-###### Translation Modifications
-
-I ended up rewriting all the db's.
-
-* [/myAssets/database/README.md](./myAssets/database/README.md) Has more information regarding what is new with the DB.
+Youtube: [outdated demo](https://youtu.be/xlhLjpW-QMs)
 
 ---
 
-### Main Goals:
+__Status:__ Latest development branch ```git branch v0.5``` is focused on:
+
+* Integrated features used in [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal)
+* Included a Liturgical Calendar based on Paschal Full Moon schedule
+* Included Daily mass reading scraped from usccb.org using the [whateverorigin.org](www.whateverorigin.org/) service.
+    * Note: consider [wgetjs](https://www.npmjs.com/package/wgetjs) for continued development.
+
+__Todo:__
+In the development of [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal), I simplified and filled in the under developed holes in the JSON db. I have not yet integrated those changes to this app's DB.
+
+---
+
+### Main Dev Objective:
 
 * Desktop standalone and mobile networked app
-* Works as a Server Hosted App.
-* Send/Receive text communication between different app instances
+* Works as a Server Hosted app and as a Client recipiant app.
+* Send/Receive text communication between different app instances.
 
-### Intended user:
+### Intended usecase:
 
-* local intranet or ad-hoc networks
-* absolutely trusted private networks
-* servers hosted on mobile devices with NodeJs server
-* 1-8 Clients who turn off application when not using it
+* Academic refference
+* Local intranet or ad-hoc networks (trusted)
+* Servers hosted on mobile devices with NodeJs server (1-8 clients)
 
 ### Key Features:
 
-* ExpressJs Node Server
+* ExpressJs Service
 * SocketIO instant messaging
-* Weekday calendar date specific app events
-* Modular json db
 * Color themes and keyboard shortcuts
 * NAB English/Vulgate Latin Scripture languages
+* Liturgical Calendar Day Flag
+* Daily web scraped mass readings (single online user feature)
+
+---
 
 ## NPM
 
@@ -80,9 +75,9 @@ package.json
 }
 ```
 
-Electron development for Ubuntu Linux ```install-electron-on-ubuntu.sh```
+Electron development for Ubuntu Linux ```install-electron-debian.sh```
 
-Electron development for Arch Linux ```install-electron-on-arch.sh```
+Electron development for Arch Linux ```install-electron-arch.sh```
 
 ```sh
 ## Arch
@@ -123,4 +118,10 @@ Repo size proportions (aproximately)
 
 dir | MiB
 --- | ---
-./myAssets | 9 - 10
+./myAssets | 8-9
+
+Dev Testing:
+
+* _Host Computer_: Best performance experienced on Win10 and Debian Linux. (install, build, and run)
+
+* _Client Computer_: Best experience on Desktop, iPad & iPhone sized monitors.

@@ -1,7 +1,7 @@
 /***************************************************************
  *  Global Vars
  * */
- 
+
  var initialMysteryFlag = false; // Initiated 1st mystery after the Mary Icon
  var showBibleListFlag = false; // whether or not an html list was dynamically populated
  var showPrayerListFlag = false; // whether or not an html list was dynamically populated
@@ -20,7 +20,7 @@
  *  Contrived Ajax
  * */
  // import nab and define global nab json
- 
+
  $.ajax({
     url: './myAssets/database/rosaryJSON-min-nab.json',
     dataType: "json",
@@ -53,7 +53,7 @@
 /***************************************************************
  *  Global Progressbar
  * */
- 
+
  rosaryJSON = rosaryJSONvulgate;
 
  var progressBar = { // var containing progressbar state
@@ -290,13 +290,13 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             // App's initial startup mystery, a one time toggle
             if (initialMysteryFlag == false) {
 				initialMysteryArr=initialMystery();
-				
+
                 beadCounter=initialMysteryArr[1];
                 hailmaryCounter = ((initialMysteryArr[0] * 10) - 10);
-                
+
                 initialMysteryFlag = true;
             }
-            
+
             break;
 
         case 6: // cross
@@ -407,12 +407,12 @@ function initUi() {
 }
 
 function myControllEvents() {
-    
+
     // swipe
     $(".mySwipeClass").on("swiperight", function() { beadRev(); });
 
     $(".mySwipeClass").on("swipeleft", function() { beadFwd(); });
-    
+
     // flag if I am in typing mode
     $("#myMessage").focusout(function(){
         iamtyping = false;
@@ -422,7 +422,7 @@ function myControllEvents() {
     });
 
     // Messaging State Toggle
-    
+
     $("#btnOpenMessenger").focusin(function() {
         // true
         isMessengerOpen = !isMessengerOpen;
@@ -432,7 +432,7 @@ function myControllEvents() {
         isMessengerOpen = !isMessengerOpen;
     });
 
-    
+
     // keyboard controlls
 
     $("html").on("keydown", function(event) {
@@ -629,6 +629,25 @@ function initProgressBars() {
     progressBar.setValue(beadCounter, beadCounter);
 
 }
+
+/***************************************************************
+ * Web Scrape Usccb.org
+ */
+
+function scrapeUsccb() {
+    $.getJSON("http://www.whateverorigin.org/get?url=" + encodeURIComponent("http://www.usccb.org/bible/readings") + "&callback=?", function(data){
+        //alert(data.contents);
+        scrapeVar = data.contents;
+
+        var remBottomHtml = scrapeVar.substring(0, scrapeVar.indexOf('<a name="readingssignup"'));
+        var remTopHtml = remBottomHtml.substring(remBottomHtml.indexOf('<div class="contentarea">'));
+        var cropHtml = remTopHtml;
+
+        // <object type="text/html" data="http://www.usccb.org/bible/readings" width="100%" height="800px"></object>
+        $("#usccbOrg").html(cropHtml);
+    });
+}
+
 
 /***************************************************************
  * Page Load Events (JQM Specific)

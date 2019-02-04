@@ -158,8 +158,8 @@ function createMainWindow() {
 	 * */
 
 	mainWindow = new BrowserWindow({
-		width: 576,
-		height: 768,
+		width: 625,
+		height: 850,
 		icon: './myAssets/img/favicon.ico'
 	});
 
