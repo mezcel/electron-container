@@ -605,6 +605,10 @@ function isOrdinaryTimeSeason(currentTime) {
     return output;
 }
 
+function isDateBeforeToday(date) {
+    return new Date(date.toDateString()) < new Date(new Date().toDateString());
+}
+
 function yearCycleABC(currentTime) {
 	// Year A  12/2016-11/2017, 2019-2020, 2022-23
 	// Year B  12/2017-11/2018,  2020-2021, 2023-24
@@ -613,10 +617,13 @@ function yearCycleABC(currentTime) {
 	// Year starts on the 1st Sunday of Advent on the previous year
     "use strict";
     var year = currentTime.getFullYear();
-    var decemberMonth = currentTime.getMonth();
-    if (decemberMonth == 11) {
-        year += 1;
+
+    if ( isDateBeforeToday(new Date(year, 11, 1)) ) {
+        year = year;
+    } else {
+        year = year - 1;
     }
+
     var decadeYear = year - 2000;
     var modDivThree = decadeYear % 3;
     var cycleLetter, abcNo;
@@ -628,15 +635,15 @@ function yearCycleABC(currentTime) {
 
     switch (modDivThree) {
         case 1:
-            cycleLetter="Anual Cycle A: The Gospel of Matthew";
+            cycleLetter="Sunday Cycle A: The Gospel of Matthew";
             abcNo=1;
             break;
         case 2:
-            cycleLetter="Anual Cycle B: The Gospel of Mark";
+            cycleLetter="Sunday Cycle B: The Gospel of Mark";
             abcNo=2;
             break;
         case 0:
-            cycleLetter="Anual Cycle C: The Gospel of Luke";
+            cycleLetter="Sunday Cycle C: The Gospel of Luke";
             abcNo=3;
             break;
     }
