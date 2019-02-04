@@ -2,13 +2,11 @@
 
 ___This is a Node App using ExpressJS, Socket IO, and Electron.___
 
-A minimal yet colorfull Scripture Rosary for NodeJs. It contains Vulgate Latin translations and runs on Express or Electron. It also supports LAN instant messaging and WWW streaming audio and daily Mass readings.
+A minimal yet colorfull Scripture Rosary for NodeJs. It contains NAB English & Vulgate Latin translation options and it supports LAN instant messaging and WWW streaming audio with daily Mass text readings.
 
-Git: [repo](https://github.com/mezcel/electron-container), Youtube: [outdated demo](https://youtu.be/xlhLjpW-QMs)
+Youtube: [outdated demo](https://youtu.be/xlhLjpW-QMs)
 
-* _Host Computer_: Best performance experienced on Win10 and Debian Linux. (install, build, and run)
-
-* _Client Computer_: Best experience on Desktop, iPad & iPhone sized monitors.
+---
 
 __Status:__ Latest development branch ```git branch v0.5``` is focused on:
 
@@ -18,15 +16,15 @@ __Status:__ Latest development branch ```git branch v0.5``` is focused on:
     * Note: consider [wgetjs](https://www.npmjs.com/package/wgetjs) for continued development.
 
 __Todo:__
-In the development of [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal), I simplified and filled in the under developed holes in the JSON db. I have not integrated those changes to this app's DB yet. This app still has residual bloat.
+In the development of [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal), I simplified and filled in the under developed holes in the JSON db. I have not yet integrated those changes to this app's DB.
 
 ---
 
 ### Main Dev Objective:
 
 * Desktop standalone and mobile networked app
-* Works as a Server Hosted App.
-* Send/Receive text communication between different app instances
+* Works as a Server Hosted app and as a Client recipiant app.
+* Send/Receive text communication between different app instances.
 
 ### Intended usecase:
 
@@ -121,3 +119,9 @@ Repo size proportions (aproximately)
 dir | MiB
 --- | ---
 ./myAssets | 8-9
+
+Dev Testing:
+
+* _Host Computer_: Best performance experienced on Win10 and Debian Linux. (install, build, and run)
+
+* _Client Computer_: Best experience on Desktop, iPad & iPhone sized monitors.
