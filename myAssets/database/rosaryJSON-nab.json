@@ -4650,6 +4650,13 @@
             "infoSubHeader": "Ascii Keyboard Controlls",
             "infoFooter": "footer",
             "infoText": "<table data-role='table' id='myShorcutsTable' data-mode='reflow' class='myTableStyle'><thead><tr><th>trigger key</th><th>event</th></tr></thead><tbody><tr><td>&larr; / &rarr;</td><td>back / next</td></tr><tr><td>n</td><td>Toggle NAB - English Translation</td></tr><tr><td>v</td><td>Toggle Vulgate - Latin Translation</td></tr><tr><td>p</td><td>start/pause audio</td></tr><tr><td>&uarr; / &darr;</td><td>audio volume</td></tr><tr><td>q</td><td>toggle black/white (color theme)</td></tr><tr><td>w,e,r,t,y</td><td>toggle liturgical calendar (color theme)</td></tr><tr><td>1 / 2</td><td>toggle left / right (panel)</td></tr><tr><td>i</td><td>toggle github source code links</td></tr><tr><td>h</td><td>toggle shortcut display</td></tr><tr><td>m</td><td>messenger</td></tr></tbody></table>"
+		},
+		{
+            "infoID": 10,
+            "infoHeader": "",
+            "infoSubHeader": "",
+            "infoFooter": "",
+            "infoText": ""
         }
     ]
 }
