@@ -641,7 +641,9 @@ function scrapeUsccb() {
 
         var remBottomHtml = scrapeVar.substring(0, scrapeVar.indexOf('<a name="readingssignup"'));
         var remTopHtml = remBottomHtml.substring(remBottomHtml.indexOf('<div class="contentarea">'));
-        var cropHtml = remTopHtml;
+        var scrapeHeader = new Date() + "<br>";
+        var scrapeFooter = "<hr><center>Readings taken from: <a href='http://www.usccb.org/bible/readings' target='_blank' >http://www.usccb.org/bible/readings</a></center>";
+        var cropHtml = scrapeHeader + remTopHtml + scrapeFooter;
 
         // <object type="text/html" data="http://www.usccb.org/bible/readings" width="100%" height="800px"></object>
         $("#usccbOrg").html(cropHtml);
