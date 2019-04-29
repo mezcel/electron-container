@@ -628,18 +628,18 @@ function yearCycleABC(currentTime) {
     var cycleSeasonAdvent = ["", "Season of Waiting", "Season of Preparation", "Season of Holiness"];
     var cycleSeasonEpiphany = ["", "Season of Foundation", "Season of New Beginning", "Season of Manifestation"];
     var cycleSeasonLent = ["", "Season of Hope", "Season of Cross Purposes", "Season of Repentance"];
-    var cycleSeasonEaster = ["", "Season of Salvation", "Season of More Season of Witness", "Season of Joy & Life"];
+    var cycleSeasonEaster = ["", "Season of Salvation", "Season of Witness", "Season of Joy & Life"];
 
     switch (modDivThree) {
-        case 2:
+        case 1:
             cycleLetter="Sunday Cycle A: The Gospel of Matthew";
             abcNo=1;
             break;
-        case 0:
+        case 2:
             cycleLetter="Sunday Cycle B: The Gospel of Mark";
             abcNo=2;
             break;
-        case 1:
+        case 0:
             cycleLetter="Sunday Cycle C: The Gospel of Luke";
             abcNo=3;
             break;
