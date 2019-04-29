@@ -273,6 +273,19 @@ function calculate_Paschal_Full_Moon(year) {
     return tabulatedDate;
 }
 
+function astroPFM(year) {
+    "use strict";
+	// The day of the full moon of the harvest
+
+    var pfmDate = pfmTableDate(year);
+    var estimatedDay = pfmTableMonth(pfmDate).estimatedDay;
+    var virtualMonthNo = pfmTableMonth(pfmDate).virtualMonthNo;
+
+    var tabulatedDate = new Date(year, virtualMonthNo, estimatedDay);
+
+    return tabulatedDate;
+}
+
 function thisYearCountdownPFM(currentTime, offsetNumber) {
     "use strict";
 
@@ -284,7 +297,7 @@ function thisYearCountdownPFM(currentTime, offsetNumber) {
     }
 
     var countDown = daysUntill(currentTime, thisyearDay);
-		countDown = countDown + 1; // fudge a day off
+		// countDown = countDown + 1; // fudge a day off
 
     /* if ( countDown < 0 ) {
         currentTime.setMonth(currentTime.getMonth() + 12); // next year
@@ -679,19 +692,19 @@ function countdownString(countdown, countdownFeastName) {
 function liturgicalSeasonToday() {
     "use strict";
     var currentTime = new Date();
-    var feastDayString = currentTime + "<hr>";
+    var feastDayString = '';
     var countdown, countdownFeastName;
 
     if ( isOrdinaryTimeSeason(currentTime) ) {
-        feastDayString += " <li> Today is Ordinary Time Season </li><hr>";
+        feastDayString += " <li> Today is Ordinary Time Season </li><li><i>" + currentTime + "</i></li><hr>";
     } else if ( isLentSeason(currentTime) ) {
-        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcLent + ": Lent </li><hr>";
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcLent + ": Lent </li><li><i>" + currentTime + "</i></li><hr>";
     } else if( isEasterSeason(currentTime) ) {
-        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcEaster + ": Easter </li><hr>";
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcEaster + ": Eastertide </li><li><i>" + currentTime + "</i></li><hr>";
     } else if ( isAdventSeason(currentTime) ) {
-        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcAdvent + ": Advent </li><hr>";
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcAdvent + ": Advent </li><li><i>" + currentTime + "</i></li><hr>";
     } else if ( isChristmasSeason(currentTime) ) {
-        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcChristmas + ": Christmas </li><hr>";
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcChristmas + ": Christmas </li><li><i>" + currentTime + "</i></li><hr>";
     }
 
     countdown = daysUntill_Easter(currentTime);
@@ -749,5 +762,5 @@ function liturgicalSeasonToday() {
     document.getElementById('infoHeader').innerHTML = "Liturgical Season Flags";
     document.getElementById('infoSubHeader').innerHTML = yearCycleABC(currentTime).cycleLetter ;
     document.getElementById('infoBody').innerHTML = feastDayString;
-    document.getElementById('infoFooter').innerHTML = "Countdown";
+    document.getElementById('infoFooter').innerHTML = "Annual Countdown";
 }
