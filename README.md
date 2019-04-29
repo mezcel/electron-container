@@ -12,6 +12,8 @@ __Status:__ Latest development branch ```git branch v0.5.2``` is focused on:
 
 * Integrated features used in [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal)
 * Included a Liturgical Calendar based on Paschal Full Moon schedule (WIP)
+	* Tinkered with date flag calculations
+	* Calculating all flags would have been less convoluted, but I wanted to play with the 'date tradition' geometry.
 * Included Daily mass reading scraped from usccb.org using the [whateverorigin.org](www.whateverorigin.org/) service.
     * Note: consider [wgetjs](https://www.npmjs.com/package/wgetjs) for continued development.
 
