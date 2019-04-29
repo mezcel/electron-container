@@ -6,6 +6,8 @@
 currentDirPath=$(dirname $0)
 cd $currentDirPath
 
+sudo pacman -Sy --needed base base-devel
+
 sudo pacman -S --needed nodejs
 sudo pacman -S --needed npm
 
