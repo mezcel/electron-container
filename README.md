@@ -4,14 +4,14 @@ ___This is a Node App using ExpressJS, Socket IO, and Electron.___
 
 A minimal yet colorfull Scripture Rosary for NodeJs. It contains NAB English & Vulgate Latin translation options and it supports LAN instant messaging and WWW streaming audio with daily Mass text readings.
 
-Youtube: [outdated demo](https://youtu.be/xlhLjpW-QMs)
+Youtube: Old [outdated demo](https://youtu.be/xlhLjpW-QMs)
 
 ---
 
-__Status:__ Latest development branch ```git branch v0.5.1``` is focused on:
+__Status:__ Latest development branch ```git branch v0.5.2``` is focused on:
 
 * Integrated features used in [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal)
-* Included a Liturgical Calendar based on Paschal Full Moon schedule
+* Included a Liturgical Calendar based on Paschal Full Moon schedule (WIP)
 * Included Daily mass reading scraped from usccb.org using the [whateverorigin.org](www.whateverorigin.org/) service.
     * Note: consider [wgetjs](https://www.npmjs.com/package/wgetjs) for continued development.
 

@@ -284,8 +284,9 @@ function thisYearCountdownPFM(currentTime, offsetNumber) {
     }
 
     var countDown = daysUntill(currentTime, thisyearDay);
+		countDown = countDown + 1; // fudge a day off
 
-    if ( countDown < 0 ) {
+    /* if ( countDown < 0 ) {
         currentTime.setMonth(currentTime.getMonth() + 12); // next year
         year = currentTime.getFullYear();
         var nextyearDay = calculate_Paschal_Full_Moon(year);
@@ -295,7 +296,7 @@ function thisYearCountdownPFM(currentTime, offsetNumber) {
         }
 
         countDown = daysUntill(currentTime, nextyearDay);
-    }
+    } */
 
     return countDown;
 }
@@ -678,7 +679,7 @@ function countdownString(countdown, countdownFeastName) {
 function liturgicalSeasonToday() {
     "use strict";
     var currentTime = new Date();
-    var feastDayString = "";
+    var feastDayString = currentTime + "<hr>";
     var countdown, countdownFeastName;
 
     if ( isOrdinaryTimeSeason(currentTime) ) {
