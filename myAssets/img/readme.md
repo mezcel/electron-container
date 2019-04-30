@@ -1,8 +1,11 @@
 ### Project Images
 
-* The splash screen, ```Mother of God Platytera```, is a photo from [archangelicons.org](http://www.archangelicons.com/mogplatytera1.html).
+* [cover art rosary](https://i.pinimg.com/474x/e5/80/91/e58091080df3f9a388afb44ff25e1163.jpg)
 
-* 985x400 pixels, 229.4 KiB, jpg
-* I tried to reduce the quality down to 118.9 kiB
+---
 
-![Mother of God Platytera](http://www.archangelicons.com/files/Mother%20of%20God%20Platytera%203%20a.JPG)
+other art considerations:
+
+* [African Madonna, by Hennie Niemann Jnr](http://www.johansborman.co.za/contemporary-artists/niemann-hennie-jnr/african-madonna-2006-50.jpg/)
+
+* [“Theotokos”, by Ryan Carreon Carreon](https://live.staticflickr.com/6189/6119423031_3031df71a0_b.jpg)

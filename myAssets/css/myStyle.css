@@ -11,19 +11,18 @@ hr {
 	background-color: pink;
 }
 
-/*
 .coverImg {
-	background: url('../img/Mother-of-God-Platytera-3-a(compressed).jpg') no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	background: url('../img/e58091080df3f9a388afb44ff25e1163.jpg') no-repeat center center;
+	-webkit-background-size: 48%;
+	-moz-background-size: 48%;
+	-o-background-size: 48%;
+	background-size: 48%;
     text-decoration: none;
-
-    -webkit-filter: grayscale(20%);
-    filter: grayscale(20%);
+    
+    /*-webkit-filter: grayscale(20%);
+    filter: grayscale(20%);*/
 }
-*/
+
 /*
 .coverpageInfo {
     background-color: rgba(230, 245, 255, 0.7);
