@@ -13,6 +13,7 @@ hr {
 
 .coverImg {
 	background: url('../img/e58091080df3f9a388afb44ff25e1163.jpg') no-repeat center center;
+	background-color: white;
 	-webkit-background-size: 48%;
 	-moz-background-size: 48%;
 	-o-background-size: 48%;
