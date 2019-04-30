@@ -390,7 +390,7 @@ function populatePrayerJsonList() { // populate the right pannel list with bible
 function initAudioVolume() { // initial audio volume setting
     //$("#audioAveMaria").play();
     //$("#audioAveMaria").pause();
-    $("#audioAveMaria").prop('volume', 0.25);
+    $("#audioAveMaria").prop('volume', 0.30);
 }
 
 function initUi() {
@@ -559,6 +559,8 @@ function myThemeEvents() {
             if ($("#easterGold").is(":checked")) {
                 $("#entireBody").addClass("ui-page-theme-g");
                 $(".myUiBody").addClass("ui-body-g");
+                $("audio").addClass("ui-body-g");
+                
             }
 
         }
@@ -648,6 +650,10 @@ function scrapeUsccb() {
         // <object type="text/html" data="http://www.usccb.org/bible/readings" width="100%" height="800px"></object>
         $("#usccbOrg").html(cropHtml);
     });
+    
+    if ( $("#usccbOrg").is(":empty") ) {
+		$("#usccbOrg").load("./myAssets/404/404.html");
+	}
 }
 
 
@@ -715,5 +721,9 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
         $("#infoSubHeader").show();
         $("#infoBody").show();
     }
+    
+
 
 });
+
+
