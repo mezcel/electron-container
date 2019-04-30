@@ -8,15 +8,17 @@ Youtube: Old [outdated demo](https://youtu.be/xlhLjpW-QMs)
 
 ---
 
-__Status:__ Latest development branch ```git branch v0.5.2``` is focused on:
+__Development Status:__ Latest development branch ```git branch v0.5.2``` is focused on:
 
-* Integrated features used in [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal)
-* Included a Liturgical Calendar based on Paschal Full Moon schedule (WIP)
+* Took features from [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal) and added it into this app.
+* Included a Liturgical Calendar based on a Paschal Full Moon schedule (WIP)
+	* Tinkered with date flag calculations
+	* Decorated the flag states and flag groups
 * Included Daily mass reading scraped from usccb.org using the [whateverorigin.org](www.whateverorigin.org/) service.
-    * Note: consider [wgetjs](https://www.npmjs.com/package/wgetjs) for continued development.
+    * Note: consider [wgetjs](https://www.npmjs.com/package/wgetjs) for continued secure development.
 
 __Todo:__
-In the development of [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal), I simplified and filled in the under developed holes in the JSON db. I have not yet integrated those changes to this app's DB.
+The ```pmf-calculation.js``` script is bloated. Iv been adjusting it on the fly and a lot of techniques are just injections and workarrounds. I either want to make it just "secular non-dynamic date returns" or consistently refactor everything as jquery objects.
 
 ---
 

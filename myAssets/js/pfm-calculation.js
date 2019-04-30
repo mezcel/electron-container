@@ -273,6 +273,19 @@ function calculate_Paschal_Full_Moon(year) {
     return tabulatedDate;
 }
 
+function astroPFM(year) {
+    "use strict";
+	// The day of the full moon of the harvest
+
+    var pfmDate = pfmTableDate(year);
+    var estimatedDay = pfmTableMonth(pfmDate).estimatedDay;
+    var virtualMonthNo = pfmTableMonth(pfmDate).virtualMonthNo;
+
+    var tabulatedDate = new Date(year, virtualMonthNo, estimatedDay);
+
+    return tabulatedDate;
+}
+
 function thisYearCountdownPFM(currentTime, offsetNumber) {
     "use strict";
 
@@ -284,7 +297,7 @@ function thisYearCountdownPFM(currentTime, offsetNumber) {
     }
 
     var countDown = daysUntill(currentTime, thisyearDay);
-		countDown = countDown + 1; // fudge a day off
+		// countDown = countDown + 1; // fudge a day off
 
     /* if ( countDown < 0 ) {
         currentTime.setMonth(currentTime.getMonth() + 12); // next year
@@ -317,7 +330,28 @@ function daysUntill_Easter(currentTime) {
     "use strict";
     var offsetNumber = 0;
     var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
+    
+	if ( !isEasterSeason(currentTime) && (countDown < 0 ) ) {
+		var year = currentTime.getFullYear();
+		var nextyearDay = calculate_Paschal_Full_Moon(year+1);
+		countDown = daysUntill(currentTime, nextyearDay) + offsetNumber;
+	}
 
+    return countDown;
+}
+
+function  daysUntill_PalmSunday(currentTime) {
+	// Palm Sunday
+    "use strict";
+    var offsetNumber = -7;
+    var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
+    
+	if ( !isLentSeason(currentTime) && (countDown < 0 ) ) {
+		var year = currentTime.getFullYear();
+		var nextyearDay = calculate_Paschal_Full_Moon(year+1);
+		countDown = daysUntill(currentTime, nextyearDay) + offsetNumber;
+	}
+	
     return countDown;
 }
 
@@ -326,6 +360,12 @@ function  daysUntill_HolyThursday(currentTime) {
     "use strict";
     var offsetNumber = -3;
     var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
+    
+    if ( !isLentSeason(currentTime) && (countDown < 0 ) ) {
+		var year = currentTime.getFullYear();
+		var nextyearDay = calculate_Paschal_Full_Moon(year+1);
+		countDown = daysUntill(currentTime, nextyearDay) + offsetNumber;
+	}
 
     return countDown;
 }
@@ -335,6 +375,12 @@ function  daysUntill_GoodFriday(currentTime) {
     "use strict";
     var offsetNumber = -2;
     var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
+    
+    if ( !isLentSeason(currentTime) && (countDown < 0 ) ) {
+		var year = currentTime.getFullYear();
+		var nextyearDay = calculate_Paschal_Full_Moon(year+1);
+		countDown = daysUntill(currentTime, nextyearDay) + offsetNumber;
+	}
 
     return countDown;
 }
@@ -345,6 +391,12 @@ function  daysUntill_HolySaturday(currentTime) {
     var offsetNumber = -1;
     var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
 
+    if ( !isLentSeason(currentTime) && (countDown < 0 ) ) {
+		var year = currentTime.getFullYear();
+		var nextyearDay = calculate_Paschal_Full_Moon(year+1);
+		countDown = daysUntill(currentTime, nextyearDay) + offsetNumber;
+	}
+	
     return countDown;
 }
 
@@ -354,6 +406,12 @@ function daysUntill_AshWednesday(currentTime) {
     var offsetNumber = -46;
     var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
 
+    if ( !isLentSeason(currentTime) && (countDown < 0 ) ) {
+		var year = currentTime.getFullYear();
+		var nextyearDay = calculate_Paschal_Full_Moon(year+1);
+		countDown = daysUntill(currentTime, nextyearDay) + offsetNumber;
+	}
+	
     return countDown;
 }
 
@@ -362,6 +420,12 @@ function daysUntill_JesusAssension(currentTime) {
     "use strict";
     var offsetNumber = 40;
     var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
+    
+    if ( !isEasterSeason(currentTime) && (countDown < 0) ) {
+		var year = currentTime.getFullYear();
+		var nextyearDay = calculate_Paschal_Full_Moon(year+1);
+		countDown = daysUntill(currentTime, nextyearDay) + offsetNumber;
+	}
 
     return countDown;
 }
@@ -372,6 +436,12 @@ function daysUntill_Pentecost(currentTime) {
     var offsetNumber = 49;
     var countDown = thisYearCountdownPFM(currentTime, offsetNumber);
 
+    if ( countDown < 0 ) {
+		var year = currentTime.getFullYear();
+		var nextyearDay = calculate_Paschal_Full_Moon(year+1);
+		countDown = daysUntill(currentTime, nextyearDay) + offsetNumber;
+	}
+	
     return countDown;
 }
 
@@ -380,7 +450,12 @@ function daysUntill_ImmaculateConception(currentTime) {
     "use strict";
     var year = currentTime.getFullYear();
     var thenDate = new Date(year, 11, 8);
-    var countDown = thisYearCountdownFixedDates(currentTime, thenDate);
+    var countDown = daysUntill(currentTime, thenDate);
+
+    if ( !isAdventSeason && (countDown < 0) ) {
+        thenDate.setMonth(thenDate.getMonth() + 12); // next year
+        countDown = daysUntill(currentTime, thenDate);
+    }
 
     return countDown;
 }
@@ -413,7 +488,7 @@ function daysUntill_Advent(currentTime) {
     var thenDate = firstSunday(year, 11);
     var countDown = daysUntill(currentTime, thenDate);
 
-    if ( countDown < 0 ) {
+    if ( !isAdventSeason && (countDown < 0) ) {
         year += 1;
         thenDate = firstSunday(year, 11); // next year
         countDown = daysUntill(currentTime, thenDate);
@@ -427,7 +502,13 @@ function daysUntill_Christmas(currentTime) {
     "use strict";
     var year = currentTime.getFullYear();
     var thenDate = new Date(year, 11, 25);
-    var countDown = thisYearCountdownFixedDates(currentTime, thenDate);
+    // var countDown = thisYearCountdownFixedDates(currentTime, thenDate);
+    var countDown = daysUntill(currentTime, thenDate);
+
+    if ( !isChristmasSeason && (countDown < 0) ) {
+        thenDate.setMonth(thenDate.getMonth() + 12); // next year
+        countDown = daysUntill(currentTime, thenDate);
+    }
 
     return countDown;
 }
@@ -447,7 +528,14 @@ function daysUntill_SolemnityOfMary(currentTime)  {
     "use strict";
     var year = currentTime.getFullYear();
     var thenDate = new Date(year, 0, 1);
-    var countDown = thisYearCountdownFixedDates(currentTime, thenDate);
+    // var countDown = thisYearCountdownFixedDates(currentTime, thenDate);
+    var countDown = daysUntill(currentTime, thenDate);
+	// var baptismCountdown = daysUntill_JesusBaptism(currentTime);
+	
+	if ( !isChristmasSeason(currentTime) && (countDown < 0) ) {
+		thenDate.setMonth(thenDate.getMonth() + 12); // next year
+        countDown = daysUntill(currentTime, thenDate);
+	}
 
     return countDown;
 }
@@ -491,7 +579,7 @@ function daysUntill_Epiphany(currentTime) {
     thenDate.setDate( thenDate.getDate() + offsetNumber );
     var countDown = thisYearCountdownFixedDates(currentTime, thenDate);
 
-    if ( countDown < 0 ) {
+    if ( ( countDown < 0 ) && (daysUntill_JesusBaptism(currentTime) < 0) ){
         thenDate = new Date(year, 0, 6);
         thenDate.setMonth(thenDate.getMonth() + 12); // next year
         dayofweek = thenDate.getDay();
@@ -533,7 +621,13 @@ function daysUntill_JesusBaptism(currentTime) {
     "use strict";
     var year = currentTime.getFullYear();
     var thenDate = new Date(year, 0, 13);
-    var countDown = thisYearCountdownFixedDates(currentTime, thenDate);
+    // var countDown = thisYearCountdownFixedDates(currentTime, thenDate);
+    var countDown = daysUntill(currentTime, thenDate);
+
+    if ( !isChristmasSeason && (countDown < 0) ) {
+        thenDate.setMonth(thenDate.getMonth() + 12); // next year
+        countDown = daysUntill(currentTime, thenDate);
+    }
 
     if (countDown == 0) {
         countDown += 1;
@@ -610,6 +704,10 @@ function isDateBeforeToday(date) {
     return new Date(date.toDateString()) < new Date(new Date().toDateString());
 }
 
+/* ************************************************* */
+/* GUI html rendering */
+/* ************************************************* */
+
 function yearCycleABC(currentTime) {
 	// Year starts on the 1st Sunday of Advent on the previous year
     "use strict";
@@ -659,95 +757,119 @@ function yearCycleABC(currentTime) {
     }
 }
 
-function countdownString(countdown, countdownFeastName) {
+function countdownString(countdown, countdownFeastName, boolHighlight) {
     "use strict";
     var stringOut;
+    var dd, mm, y;    
+    var tmpDate = new Date();
+		tmpDate.setDate(tmpDate.getDate() + countdown);
 
     if ( countdown == 0 ) {
         stringOut = "<li> <b> Today is the Feast of " + countdownFeastName + " </b> </li>";
     } else {
         if ( countdown > 0 ) { 
-            countdown = "<b><font color='blue'>" + countdown + "</font></b> days until"; 
+            countdown = "<b><font color='blue'>" + countdown + "</font></b> days until";
+            if (boolHighlight == true) {
+				countdownFeastName = "<b class='highlightLightBlue'><i>" + countdownFeastName + "</i></b>";
+			}
+            stringOut = "<li> " + countdown + " the Feast of <u title='" + tmpDate + "'>" + countdownFeastName + "</u> </li>";
         } else { 
-            countdown = "<b><font color='red'>" + countdown + "</font></b> days since"; 
-        }
-        stringOut = "<li> " + countdown + " the Feast of <u>" + countdownFeastName + "</u> </li>";
+            countdown = "<b><font color='red'>" + countdown + "</font></b> days since";
+            if (boolHighlight == true) {
+				countdownFeastName = "<b class='highlightPink'><i>" + countdownFeastName + "</i></b>";
+			}
+            stringOut = "<li> " + countdown + " the Feast of <u title='" + tmpDate + "'>" + countdownFeastName + "</u> </li>";
+        }    
     }
+    
     return stringOut;
 }
 
 function liturgicalSeasonToday() {
     "use strict";
     var currentTime = new Date();
-    var feastDayString = currentTime + "<hr>";
+    var feastDayString = '';
     var countdown, countdownFeastName;
+    
+    var boolHighlightAdvent = false;
+    var boolHighlightChristmas = false;
+    var boolHighlightLent = false;
+    var boolHighlightEaster = false;
 
     if ( isOrdinaryTimeSeason(currentTime) ) {
-        feastDayString += " <li> Today is Ordinary Time Season </li><hr>";
+        feastDayString += " <li> Today is Ordinary Time Season </li><li><i>" + currentTime + "</i></li><hr>";
     } else if ( isLentSeason(currentTime) ) {
-        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcLent + ": Lent </li><hr>";
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcLent + ": Lent </li><li><i>" + currentTime + "</i></li><hr>";
+        boolHighlightLent = true;
     } else if( isEasterSeason(currentTime) ) {
-        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcEaster + ": Easter </li><hr>";
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcEaster + ": Eastertide </li><li><i>" + currentTime + "</i></li><hr>";
+        boolHighlightEaster = true;
     } else if ( isAdventSeason(currentTime) ) {
-        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcAdvent + ": Advent </li><hr>";
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcAdvent + ": Advent </li><li><i>" + currentTime + "</i></li><hr>";
+        boolHighlightAdvent = true;
     } else if ( isChristmasSeason(currentTime) ) {
-        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcChristmas + ": Christmas </li><hr>";
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcChristmas + ": Christmastide </li><li><i>" + currentTime + "</i></li><hr>";
+        boolHighlightChristmas = true;
     }
-
-    countdown = daysUntill_Easter(currentTime);
-    countdownFeastName = "Easter";
-    feastDayString += countdownString(countdown, countdownFeastName);
-
-    countdown = daysUntill_HolyThursday(currentTime);
-    countdownFeastName = "Holy Thursday";
-    feastDayString += countdownString(countdown, countdownFeastName);
-
-    countdown = daysUntill_GoodFriday(currentTime);
-    countdownFeastName = "Good Friday";
-    feastDayString += countdownString(countdown, countdownFeastName);
-
-    countdown = daysUntill_HolySaturday(currentTime);
-    countdownFeastName = "Holy Saturday";
-    feastDayString += countdownString(countdown, countdownFeastName);
-
-    countdown = daysUntill_AshWednesday(currentTime);
-    countdownFeastName = "Ash Wednesday";
-    feastDayString += countdownString(countdown, countdownFeastName);
-
-    countdown = daysUntill_JesusAssension(currentTime);
-    countdownFeastName = "Jessus' Assension";
-    feastDayString += countdownString(countdown, countdownFeastName);
-
-    countdown = daysUntill_Pentecost(currentTime);
-    countdownFeastName = "Pentacost";
-    feastDayString += countdownString(countdown, countdownFeastName);
-
-    countdown = daysUntill_ImmaculateConception(currentTime);
+	
+	countdown = daysUntill_ImmaculateConception(currentTime);
     countdownFeastName = "The Immaculate Conception of Mary";
-    feastDayString += countdownString(countdown, countdownFeastName);
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightAdvent);
 
     countdown = daysUntill_Christmas(currentTime);
     countdownFeastName = "Christmas";
-    feastDayString += countdownString(countdown, countdownFeastName);
-
-    countdown = daysUntill_AllSaints(currentTime);
-    countdownFeastName = "All Saints";
-    feastDayString += countdownString(countdown, countdownFeastName);
-
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightAdvent);
+	
     countdown = daysUntill_SolemnityOfMary(currentTime);
     countdownFeastName = "Solemnity of Mary";
-    feastDayString += countdownString(countdown, countdownFeastName);
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightChristmas);
 
     countdown = daysUntill_Epiphany(currentTime);
     countdownFeastName = "The Epiphany";
-    feastDayString += countdownString(countdown, countdownFeastName);
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightChristmas);
 
     countdown = daysUntill_JesusBaptism(currentTime);
     countdownFeastName = "Jesus' Baptism";
-    feastDayString += countdownString(countdown, countdownFeastName);
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightChristmas);
+    	
+    countdown = daysUntill_AshWednesday(currentTime);
+    countdownFeastName = "Ash Wednesday";
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightLent);
+
+	countdown = daysUntill_PalmSunday(currentTime);
+    countdownFeastName = "Palm Sunday";
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightLent);
+    
+    countdown = daysUntill_HolyThursday(currentTime);
+    countdownFeastName = "Holy Thursday";
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightLent);
+
+    countdown = daysUntill_GoodFriday(currentTime);
+    countdownFeastName = "Good Friday";
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightLent);
+
+    countdown = daysUntill_HolySaturday(currentTime);
+    countdownFeastName = "Holy Saturday";
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightLent);
+    	
+    countdown = daysUntill_Easter(currentTime);
+    countdownFeastName = "Easter";
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightEaster);
+    
+    countdown = daysUntill_JesusAssension(currentTime);
+    countdownFeastName = "Jessus' Assension";
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightEaster);
+
+    countdown = daysUntill_Pentecost(currentTime);
+    countdownFeastName = "Pentacost";
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightEaster);
+    
+    countdown = daysUntill_AllSaints(currentTime);
+    countdownFeastName = "All Saints";
+    feastDayString += countdownString(countdown, countdownFeastName, false);
 
     document.getElementById('infoHeader').innerHTML = "Liturgical Season Flags";
     document.getElementById('infoSubHeader').innerHTML = yearCycleABC(currentTime).cycleLetter ;
     document.getElementById('infoBody').innerHTML = feastDayString;
-    document.getElementById('infoFooter').innerHTML = "Countdown";
+    document.getElementById('infoFooter').innerHTML = "Annual Countdown" + " <a href='http://www.vatican.va/archive/ccc_css/archive/catechism/p2s1c2a1.htm' target='_blank'>Celebration Of The Paschal Mystery</a>";
 }
