@@ -43,7 +43,11 @@ hr {
 
 #myDialogPopUp a.ui-link { text-decoration: none; }
 
-.audioStyle { width: 100%; }
+.audioStyle { 
+	width: 100%;
+	color: white;
+	opacity: .3;
+}
 
 .ui-icon-delete { /* close modal icon */
     font-size: 2em;
