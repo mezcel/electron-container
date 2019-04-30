@@ -704,6 +704,10 @@ function isDateBeforeToday(date) {
     return new Date(date.toDateString()) < new Date(new Date().toDateString());
 }
 
+/* ************************************************* */
+/* GUI html rendering */
+/* ************************************************* */
+
 function yearCycleABC(currentTime) {
 	// Year starts on the 1st Sunday of Advent on the previous year
     "use strict";
@@ -753,20 +757,31 @@ function yearCycleABC(currentTime) {
     }
 }
 
-function countdownString(countdown, countdownFeastName) {
+function countdownString(countdown, countdownFeastName, boolHighlight) {
     "use strict";
     var stringOut;
+    var dd, mm, y;    
+    var tmpDate = new Date();
+		tmpDate.setDate(tmpDate.getDate() + countdown);
 
     if ( countdown == 0 ) {
         stringOut = "<li> <b> Today is the Feast of " + countdownFeastName + " </b> </li>";
     } else {
         if ( countdown > 0 ) { 
-            countdown = "<b><font color='blue'>" + countdown + "</font></b> days until"; 
+            countdown = "<b><font color='blue'>" + countdown + "</font></b> days until";
+            if (boolHighlight == true) {
+				countdownFeastName = "<b class='highlightLightBlue'><i>" + countdownFeastName + "</i></b>";
+			}
+            stringOut = "<li> " + countdown + " the Feast of <u title='" + tmpDate + "'>" + countdownFeastName + "</u> </li>";
         } else { 
-            countdown = "<b><font color='red'>" + countdown + "</font></b> days since"; 
-        }
-        stringOut = "<li> " + countdown + " the Feast of <u>" + countdownFeastName + "</u> </li>";
+            countdown = "<b><font color='red'>" + countdown + "</font></b> days since";
+            if (boolHighlight == true) {
+				countdownFeastName = "<b class='highlightPink'><i>" + countdownFeastName + "</i></b>";
+			}
+            stringOut = "<li> " + countdown + " the Feast of <u title='" + tmpDate + "'>" + countdownFeastName + "</u> </li>";
+        }    
     }
+    
     return stringOut;
 }
 
@@ -775,76 +790,83 @@ function liturgicalSeasonToday() {
     var currentTime = new Date();
     var feastDayString = '';
     var countdown, countdownFeastName;
+    
+    var boolHighlightAdvent = false;
+    var boolHighlightChristmas = false;
+    var boolHighlightLent = false;
+    var boolHighlightEaster = false;
 
     if ( isOrdinaryTimeSeason(currentTime) ) {
         feastDayString += " <li> Today is Ordinary Time Season </li><li><i>" + currentTime + "</i></li><hr>";
     } else if ( isLentSeason(currentTime) ) {
         feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcLent + ": Lent </li><li><i>" + currentTime + "</i></li><hr>";
+        boolHighlightLent = true;
     } else if( isEasterSeason(currentTime) ) {
         feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcEaster + ": Eastertide </li><li><i>" + currentTime + "</i></li><hr>";
+        boolHighlightEaster = true;
     } else if ( isAdventSeason(currentTime) ) {
         feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcAdvent + ": Advent </li><li><i>" + currentTime + "</i></li><hr>";
+        boolHighlightAdvent = true;
     } else if ( isChristmasSeason(currentTime) ) {
-        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcChristmas + ": Christmas </li><li><i>" + currentTime + "</i></li><hr>";
+        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcChristmas + ": Christmastide </li><li><i>" + currentTime + "</i></li><hr>";
+        boolHighlightChristmas = true;
     }
-
+	
 	countdown = daysUntill_ImmaculateConception(currentTime);
     countdownFeastName = "The Immaculate Conception of Mary";
-    feastDayString += countdownString(countdown, countdownFeastName);
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightAdvent);
 
     countdown = daysUntill_Christmas(currentTime);
     countdownFeastName = "Christmas";
-    feastDayString += countdownString(countdown, countdownFeastName);
-
-    
-
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightAdvent);
+	
     countdown = daysUntill_SolemnityOfMary(currentTime);
     countdownFeastName = "Solemnity of Mary";
-    feastDayString += countdownString(countdown, countdownFeastName);
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightChristmas);
 
     countdown = daysUntill_Epiphany(currentTime);
     countdownFeastName = "The Epiphany";
-    feastDayString += countdownString(countdown, countdownFeastName);
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightChristmas);
 
     countdown = daysUntill_JesusBaptism(currentTime);
     countdownFeastName = "Jesus' Baptism";
-    feastDayString += countdownString(countdown, countdownFeastName);
-    
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightChristmas);
+    	
     countdown = daysUntill_AshWednesday(currentTime);
     countdownFeastName = "Ash Wednesday";
-    feastDayString += countdownString(countdown, countdownFeastName);
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightLent);
 
 	countdown = daysUntill_PalmSunday(currentTime);
     countdownFeastName = "Palm Sunday";
-    feastDayString += countdownString(countdown, countdownFeastName);
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightLent);
     
     countdown = daysUntill_HolyThursday(currentTime);
     countdownFeastName = "Holy Thursday";
-    feastDayString += countdownString(countdown, countdownFeastName);
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightLent);
 
     countdown = daysUntill_GoodFriday(currentTime);
     countdownFeastName = "Good Friday";
-    feastDayString += countdownString(countdown, countdownFeastName);
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightLent);
 
     countdown = daysUntill_HolySaturday(currentTime);
     countdownFeastName = "Holy Saturday";
-    feastDayString += countdownString(countdown, countdownFeastName);
-    
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightLent);
+    	
     countdown = daysUntill_Easter(currentTime);
     countdownFeastName = "Easter";
-    feastDayString += countdownString(countdown, countdownFeastName);
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightEaster);
     
     countdown = daysUntill_JesusAssension(currentTime);
     countdownFeastName = "Jessus' Assension";
-    feastDayString += countdownString(countdown, countdownFeastName);
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightEaster);
 
     countdown = daysUntill_Pentecost(currentTime);
     countdownFeastName = "Pentacost";
-    feastDayString += countdownString(countdown, countdownFeastName);
+    feastDayString += countdownString(countdown, countdownFeastName, boolHighlightEaster);
     
     countdown = daysUntill_AllSaints(currentTime);
     countdownFeastName = "All Saints";
-    feastDayString += countdownString(countdown, countdownFeastName);    
+    feastDayString += countdownString(countdown, countdownFeastName, false);
 
     document.getElementById('infoHeader').innerHTML = "Liturgical Season Flags";
     document.getElementById('infoSubHeader').innerHTML = yearCycleABC(currentTime).cycleLetter ;

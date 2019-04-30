@@ -13,7 +13,6 @@ __Development Status:__ Latest development branch ```git branch v0.5.2``` is foc
 * Took features from [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal) and added it into this app.
 * Included a Liturgical Calendar based on a Paschal Full Moon schedule (WIP)
 	* Tinkered with date flag calculations
-	* Calculating all flags would have been less convoluted, but I wanted to play with the 'date tradition' geometry.
 	* Only Feast Days bundled within a common season will have negative values, and only while that season is active.
 * Included Daily mass reading scraped from usccb.org using the [whateverorigin.org](www.whateverorigin.org/) service.
     * Note: consider [wgetjs](https://www.npmjs.com/package/wgetjs) for continued development.
