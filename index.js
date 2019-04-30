@@ -64,6 +64,10 @@ function getIPvarString() {
 
 // var myHostip = "http://localhost"; // debug ip
 var myHostip = "http://" + getIPvarString();
+if (myHostip == "http://undefined") {
+	myHostip = "http://localhost";
+}
+
 console.log("\n\tServer Ip = \x1b[4m" + myHostip + '\x1b[0m');
 
 users = [];
