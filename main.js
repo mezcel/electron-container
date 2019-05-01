@@ -1,4 +1,5 @@
 /* main.js */
+/* Node script for the Electron client UI which also activates the Express Server */
 
 console.log('\x1b[33m','______________________________________________________________________');
 console.log('',"electron-container\n\t.");
@@ -61,11 +62,13 @@ function getIPvarString() {
 	return returnIp;
 }
 
-// var myHostip = "http://localhost"; // debug ip
-var myHostip = "http://" + getIPvarString();
-if (myHostip == "http://undefined") {
+// Domain
+var sharedIpDisplay = getIPvarString();
+var myHostip = "http://" + sharedIpDisplay;
+
+/*if (myHostip == "http://undefined") {
 	myHostip = "http://localhost";
-}
+}*/
 
 console.log("\n\tServer Ip = \x1b[4m" + myHostip + '\x1b[0m');
 
@@ -76,35 +79,47 @@ io.on('connection', function(socket) {
 	socket.on('setUsername', function(data) {
 		var randomHexColor = getRandomHexColor();
 		var usercount = users.length;
+		
+		// if the last 4 chars of data is "HOST"
+		if (data == "HOST") {
+			data = data + "\@" + sharedIpDisplay;
+		}
 
-		if (users.indexOf(data) > -1) {
+		if ( users.indexOf(data) > -1 ) {
 			socket.emit('userExists', data + ' username is allready taken! Try another username.');
 
-			data = data + '\[' + usercount + '\]';
-
+			// data = data + '\[' + usercount + '\]';
+			data = data.toString();
+			data += usercount;
+			
 			users.push(data);
+			
 			socket.emit('userSet', {
 				username: data,
 				allusers: users,
 				colorname: randomHexColor,
 				iptitle: myHostip
 			});
-
-			console.log('\x1b[32m', '\u2713 A messaging client user was added ++','\x1b[0m' ); // display updated user array in Node
+			
+			// display updated user array in Node
+			console.log('\x1b[32m', '\u2713 A messaging client user was added ++++++++++++++++++++++++++++','\x1b[0m' ); 
 
 			console.log('\t Current User Array, users[' + usercount + "], is: ", users, "]");
 
 		} else {
 
+			//data = data + "\@" + sharedIpDisplay;
 			users.push(data);
+			
 			socket.emit('userSet', {
 				username: data,
 				allusers: users,
 				colorname: randomHexColor,
 				iptitle: myHostip
 			});
-
-			console.log('\x1b[32m', '\u2713 A messaging client user was added ++','\x1b[0m' ); // display updated user array in Node
+			
+			// display updated user array in Node
+			console.log('\x1b[32m', '\u2713 A messaging client user was added ++++++++++++++++++++++++++++','\x1b[0m' ); 
 
 			console.log('\t Current User Array, users[' + usercount + "], is: " + users);
 		}
@@ -125,7 +140,8 @@ io.on('connection', function(socket) {
 		});
 
 		// display updated user array in Node
-		console.log('\x1b[31m', '\u2717 A client user disconnected --','\x1b[0m'); // display updated user array in Node
+		
+		console.log('\x1b[31m', '\u2717 A client user disconnected ----------------------------','\x1b[0m'); // display updated user array in Node
 		console.log('\t Current User Array, users[' + usercount + '], is: ' + users);
 		socket.emit('userRemove', users);
 
@@ -175,6 +191,8 @@ function createMainWindow() {
 	// and load the index.html of the app.
 	// mainWindow.loadFile('index.html'); // electron without messaging
 	mainWindow.loadURL('http://localhost:7777'); // the express app
+	// mainWindow.loadURL('http://127.0.0.1:7777'); // the express app
+	// mainWindow.loadURL('http://' + returnIp + ':7777'); // the express app
 
 
 	// Emitted when the window is closed.

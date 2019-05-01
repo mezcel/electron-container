@@ -21,11 +21,29 @@ function msgKeyUpEvent() {
 
 /* log user */
 function setUsername() {
+	
+	var isHostServer = false;
+	var isAnnomouse = false;
+	var clientIp = location.hostname;
+	
 	thisClientName = document.getElementById('myName').value;
-
+	
+	if (clientIp == 'localhost') {
+		isHostServer = true;
+	}
+	
 	if (thisClientName == '') {
-		var x = location.hostname;
-		thisClientName = 'user\@'+x;
+		isAnnomouse = true;		
+	}
+	
+	if (isAnnomouse && !isHostServer) {		
+		thisClientName = "user";		
+	}
+	
+	if ( isHostServer && isAnnomouse ) {
+		thisClientName = "HOST";
+	} else if (isHostServer) {
+		thisClientName = thisClientName + "-HOST";
 	}
 
 	socket.emit('setUsername', thisClientName);
@@ -41,7 +59,10 @@ function removeUsername() {
 function sendmyMessage() {
 
 	var msg = document.getElementById('myMessage').value;
+		msg += "<br><code><i> -\[" + messengerBeadProgress + "\]- </i></code>";
+		
 	var divUsers = document.getElementById("divAllUsers").innerHTML;
+	
 	if (msg) {
 		socket.emit('msg', {
 			myMessage: msg,
@@ -50,6 +71,7 @@ function sendmyMessage() {
 			usersAll: divUsers
 		});
 	}
+	
 	document.getElementById('myMessage').value = "";
 	document.getElementById("myMessage").focus();
 	$(window).scrollTop(0); // scroll back to top of page
@@ -60,10 +82,10 @@ function sendmyMessage() {
 
 function sendmyMessageInfo() {
 
-	var msg = "(Rules) Min. of 2 users on network, and 1 is the NodeJs server.";
+	var msg = "( Rule ) At least 2 users on network, one being the NodeJs server.";
 	document.getElementById('myMessage').value = msg;
 	
-	msg = "<b>(Rules)</b> <i>Min. of <mark>2 users</mark> on network, and 1 is the <mark>NodeJs server</mark>.</i>";
+	msg = "<b>( Rule )</b> <i>Requires at least 2 users on network, one being a <mark>NodeJs host server</mark>. Clients can join the host ip using a web browser.</i>";
 	
 	var divUsers = document.getElementById("divAllUsers").innerHTML;
 	if (divUsers.length > 0) {
@@ -78,7 +100,7 @@ function sendmyMessageInfo() {
 		document.getElementById('myMessage').value = "";
 		document.getElementById("myMessage").focus();
 		$(window).scrollTop(0); // scroll back to top of page
-		}
+	}
 	
 };
 
@@ -96,8 +118,10 @@ socket.on('userSet', function(data) {
 	usersAll = data.allusers;
 	thisClientNameColor = usercolor;
 
+	var timeStamp = new Date();
 	document.getElementById("divAllUsers").innerHTML = usersAll;
-	document.getElementById("myMessage").value = '<i style="color: ' + usercolor + '">*** ' + user + ' joined the msg room ***</i>';
+	document.getElementById("myMessage").value = '<i style="color: ' + usercolor + 
+		'">*** ' + user + ' joined the msg room ***</i><br><code>' + timeStamp + '</code>';
 
 	sendmyMessage();
 	msgKeyUpEvent(); // event binding
@@ -119,4 +143,5 @@ socket.on('newmsg', function(data) {
 
 window.addEventListener("beforeunload", function(e) {
 	removeUsername(); // this function never finishes when called by "beforeunload"
+	pause();
 }, false);

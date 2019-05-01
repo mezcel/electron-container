@@ -14,7 +14,17 @@
  var hailmaryCounter = 0;
  var beadCounter = 0;
  var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
- // rosaryJSON = rosaryJSONvulgate;
+ 
+ /* WIP Variables:
+  * about: global string used to inform the messenger group of this clients bead progress
+  * experimental: to be used in further synchronizing developments
+  * goal: when everyone is at the same counter, then bead progress can continue.
+  * temp: for now i am just using messages to verify all clients know each others progress
+  * 	NO! the prayer chat is not a real-world thing... despite what seculars are 'selling'
+  * 	The chat is a toy/distraction, the real app is synchronizing behavior and accademics
+  * */
+ 
+ var decadeTextDisplay, messengerBeadProgress; // message place holders
 
 /***************************************************************
  *  Contrived Ajax
@@ -137,9 +147,11 @@ function fillRosaryBeadPage(counterNo) {
     var prayerIndex = rosaryJSON.rosaryBead[counterNo].prayerIndex;
     var scriptureIndex = rosaryJSON.rosaryBead[counterNo].scriptureIndex;
     var messageIndex = rosaryJSON.rosaryBead[counterNo].messageIndex;
-
+	
+	decadeTextDisplay = rosaryJSON.decade[decadeIndex].decadeName; // used for messenger
+	
     $("#mystery").html(rosaryJSON.mystery[mysteryIndex].mysteryName);
-    $("#decade").html(rosaryJSON.decade[decadeIndex].decadeName);
+    $("#decade").html(decadeTextDisplay);
     $("#scripture").html(rosaryJSON.scripture[scriptureIndex].scriptureText);
     $("#message").html(rosaryJSON.message[messageIndex].mesageText);
     $("#prayer").html(rosaryJSON.prayer[prayerIndex].prayerText);
@@ -199,6 +211,9 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
 				$("#beadMarker").html("small rosary bead: " + thisDecadeSet + " / 10");
 				progressBar.setValue(thisDecadeSet, mysteryProgress);
+				
+				// Adds a status update string to your messenger messages
+				messengerBeadProgress = decadeTextDisplay + ", bead " + thisDecadeSet;
 
 			}
 
@@ -224,6 +239,9 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
                     $("#beadMarker").html("small rosary bead: " + initialHailMaryCounter + " / 3");
                 }
+                
+                // Adds a status update string to your messenger messages
+				messengerBeadProgress = "introductionary prayers ...";
             }
 
             stringSpaceCounter = 0;
@@ -296,6 +314,9 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
                 initialMysteryFlag = true;
             }
+            
+            // Adds a status update string to your messenger messages
+			messengerBeadProgress = "introductionary prayers ...";
 
             break;
 
@@ -304,6 +325,9 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             initialHailMaryCounter = 0;
             progressBar.setValue(0, 0);
             stringSpaceCounter = 0;
+            
+            messengerBeadProgress = "starting ...";
+            
             break;
 
         default: // just when the app turns on
