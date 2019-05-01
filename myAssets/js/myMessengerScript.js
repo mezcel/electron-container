@@ -24,17 +24,6 @@ function setUsername() {
 	thisClientName = document.getElementById('myName').value;
 
 	if (thisClientName == '') {
-		/*
-		var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
-		var string_length = 4;
-		var randomstring = '';
-
-		for (var i=0; i<string_length; i++) {
-			var rnum = Math.floor(Math.random() * chars.length);
-			randomstring += chars.substring(rnum,rnum+1);
-		}
-		*/
-
 		var x = location.hostname;
 		thisClientName = 'user\@'+x;
 	}
@@ -65,6 +54,32 @@ function sendmyMessage() {
 	document.getElementById("myMessage").focus();
 	$(window).scrollTop(0); // scroll back to top of page
 
+};
+
+/* msg info */
+
+function sendmyMessageInfo() {
+
+	var msg = "(Rules) Min. of 2 users on network, and 1 is the NodeJs server.";
+	document.getElementById('myMessage').value = msg;
+	
+	msg = "<b>(Rules)</b> <i>Min. of <mark>2 users</mark> on network, and 1 is the <mark>NodeJs server</mark>.</i>";
+	
+	var divUsers = document.getElementById("divAllUsers").innerHTML;
+	if (divUsers.length > 0) {
+		if (msg) {
+			socket.emit('msg', {
+				myMessage: msg,
+				user: user,
+				usercolor: usercolor,
+				usersAll: divUsers
+			});
+		}
+		document.getElementById('myMessage').value = "";
+		document.getElementById("myMessage").focus();
+		$(window).scrollTop(0); // scroll back to top of page
+		}
+	
 };
 
 /***********************************************************************

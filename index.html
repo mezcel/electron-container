@@ -38,7 +38,7 @@
 
         <!-- splash page / mane registration -->
 		<div data-role="page" id="splashpage" data-theme="d">
-            <div style="text-align: center" data-role="header"><h3>Welcome</h3></div>
+            <div style="text-align: center" data-role="header"><h3>Welcome Login</h3></div>
             <div class="ui-content">
     			<input id="myName" value="" type="text" placeholder="enter a user name" style="text-align: center">
             </div>
@@ -59,11 +59,11 @@
             <!-- header top bar -->
             <div data-role="header" data-position="fixed">
                 <!-- App Header -->
-                <a id="btnHomePanel" href="#homePanel" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-left">Home</a>
+                <a id="btnHomePanel" href="#homePanel" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-left">Settings</a>
                 <h1 id="appHeaderTitle">
 					<em id="mystery">Express JQM Rosary</em> <sub class="mysteryTranslationIndicator"></sub>
                 </h1>
-                <a id="btnInfoPanel" href="#infoPanel" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left">Info</a>
+                <a id="btnInfoPanel" href="#infoPanel" class="ui-btn ui-corner-all ui-icon-star ui-btn-icon-left">Content</a>
             </div>
 
             <!-- Right Panel - Mysteries and Scriptures  -->
@@ -251,8 +251,7 @@
                     <div data-role="collapsible">
                         <h4>Mass Readings</h4>
                         <form>
-                            <!--<a id="btnDailyMass" href="http://www.usccb.org/bible/readings" target="_blank" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right">usccb.org</a>-->
-                            <a id="btnDailyMass" href="#dailyMassPage" class="ui-btn ui-corner-all ui-icon-eye ui-btn-icon-right" onclick="scrapeUsccb()">usccb.org</a>
+                            <a id="btnDailyMass" href="#dailyMassPage" class="ui-btn ui-corner-all ui-icon-cloud ui-btn-icon-right" onclick="scrapeUsccb()">usccb.org</a>
                         </form>
                     </div>
                 </div>
@@ -315,8 +314,8 @@
                 Messenger
                 <div data-role="navbar" data-mini="true">
                     <ul>
-                        <li><a id="btnCloseMessenger" href="#rosary" data-transition="fade" data-icon="arrow-l"></a></li>
-                        <li><a href="#" data-icon="info"></a></li>
+                        <li><a id="btnCloseMessenger" href="#rosary" data-transition="fade" data-icon="arrow-l" title="Exit Messenger"></a></li>
+                        <li><a href="#" onClick='sendmyMessageInfo();' data-icon="info" title="Rules"></a></li>
                     </ul>
                 </div>
             </div>
@@ -328,8 +327,8 @@
                 <input id="myMessage" value="" type="text" placeholder="Enter a message ...">
                 <div data-role="navbar" data-mini="true">
                     <ul>
-                        <li> <a onClick='$(window).scrollTop(0);' data-icon="arrow-u"></a> </li>
-                        <li> <a href="#topAnchor" id="btnEnterMsg" onClick='sendmyMessage();' data-icon="comment"></a> </li>
+                        <li> <a onClick='$(window).scrollTop(0);' data-icon="arrow-u" title="scroll to top"></a> </li>
+                        <li> <a href="#topAnchor" id="btnEnterMsg" onClick='sendmyMessage();' data-icon="comment" title="send message"></a> </li>
                     </ul>
                 </div>
             </div>

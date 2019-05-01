@@ -422,16 +422,16 @@ function myControllEvents() {
     });
 
     // Messaging State Toggle
-
-    $("#btnOpenMessenger").focusin(function() {
+    
+    $("#btnOpenMessenger").click(function() {
         // true
-        isMessengerOpen = !isMessengerOpen;
+        isMessengerOpen = true;
     });
-    $("#btnCloseMessenger").focusin(function() {
+    
+    $("#btnCloseMessenger").click(function() {
         // false
-        isMessengerOpen = !isMessengerOpen;
+        isMessengerOpen = false;
     });
-
 
     // keyboard controlls
 
@@ -504,7 +504,7 @@ function myControllEvents() {
                     break;
                 case 77: // letter m
                     // m for message
-                    $("#messagingPopUp").popup("open");
+                    $('#btnOpenMessenger').click();
                     break;
                 default:
                     console.log("a trigger was pressed: ", event.which);
