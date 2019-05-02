@@ -19,8 +19,8 @@ __Development Status:__ Latest development branch ```git branch v0.5.2``` is foc
     * Note: consider [wgetjs](https://www.npmjs.com/package/wgetjs) for continued secure development.
 
 __Todo:__
-* The ```pmf-calculation.js``` script is bloated due to the "on the fly" patches, adds, and tweaks. Considering cleaning it up or making it more OOP.
-* Synronize and controll the app's navigational pace amd preogress using the built in ```socketio.js```.
+* The ```pmf-calculation.js``` script is bloated due to the "on the fly" patches, adds, and tweaks. Considering cleaning up my tweaks or making the tweaks more jqs vs js.
+* (multi user feature) Synronizing the navigational pace and progress location using the built in ```socketio.js```.
 ---
 
 ### Main Dev Objective:

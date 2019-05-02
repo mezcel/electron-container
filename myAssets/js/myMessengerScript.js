@@ -40,10 +40,14 @@ function setUsername() {
 		thisClientName = "user";		
 	}
 	
-	if ( isHostServer && isAnnomouse ) {
-		thisClientName = "HOST";
-	} else if (isHostServer) {
-		thisClientName = thisClientName + "-HOST";
+	if (isHostServer) {
+		
+		if (isAnnomouse) {
+			thisClientName = "HOST";
+		} else {
+			thisClientName = thisClientName + "-HOST";
+		}
+		
 	}
 
 	socket.emit('setUsername', thisClientName);
@@ -121,7 +125,7 @@ socket.on('userSet', function(data) {
 	var timeStamp = new Date();
 	document.getElementById("divAllUsers").innerHTML = usersAll;
 	document.getElementById("myMessage").value = '<i style="color: ' + usercolor + 
-		'">*** ' + user + ' joined the msg room ***</i><br><code>' + timeStamp + '</code>';
+		'">*** joined ***</i><br><code>' + timeStamp + '</code>';
 
 	sendmyMessage();
 	msgKeyUpEvent(); // event binding

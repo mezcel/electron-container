@@ -1,9 +1,11 @@
 /* index.js */
-/* used for debugging side-projects and runs express and not electron */
+/* used for debugging side-projects and runs express and not electron 
+ * same as the Express code used in index.js
+ * */
 
 console.log('\x1b[33m','______________________________________________________________________');
 console.log('',"electron-container\n\t.");
-console.log('','\tnode index.js');
+console.log('','\tnode main.js');
 console.log('','\tgit: https://github.com/mezcel/electron-container\n', '\x1b[0m');
 // Note: console colors -- https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
 
@@ -26,8 +28,10 @@ expressApp.get('/', function(req, res){
 
 expressApp.use(express.static(myAppPath));
 
-function getRandomHexColor() {
+function getRandomHexColor(data) {
 
+	var ascii2text = data.charCodeAt(0).toString(16);
+	
 	var letters = '012345'.split('');
 	var hexcolor = '#';
 	hexcolor += letters[Math.round(Math.random() * 5)];
@@ -36,7 +40,12 @@ function getRandomHexColor() {
 	for (var i = 0; i < 5; i++) {
 		hexcolor += letters[Math.round(Math.random() * 15)];
 	}
+	
+	// cut the deck
+	var firstPart = "#" + ascii2text.substr(ascii2text.length - 3);
+	var secondPart = hexcolor.substr(hexcolor.length - 3);;
 
+	hexcolor = firstPart + secondPart;
 	return hexcolor;
 }
 
@@ -66,9 +75,11 @@ function getIPvarString() {
 var sharedIpDisplay = getIPvarString();
 var myHostip = "http://" + sharedIpDisplay;
 
-/*if (myHostip == "http://undefined") {
-	myHostip = "http://localhost";
-}*/
+if (myHostip == "http://undefined") {
+	// I am just going to assume 127.0.0.1
+	sharedIpDisplay = "localhost";
+	myHostip = "http://" + sharedIpDisplay;
+}
 
 console.log("\n\tServer Ip = \x1b[4m" + myHostip + '\x1b[0m');
 
@@ -77,22 +88,35 @@ users = [];
 io.on('connection', function(socket) {
 
 	socket.on('setUsername', function(data) {
-		var randomHexColor = getRandomHexColor();
+		var randomHexColor = getRandomHexColor(data);
+		
 		var usercount = users.length;
+		var isHostComputer = false;
+		var tmpData = data;
 		
 		// if the last 4 chars of data is "HOST"
-		if (data == "HOST") {
+		var last4letters = data.substr(data.length - 4);
+		if ( last4letters == "HOST" ) {
 			data = data + "\@" + sharedIpDisplay;
+			isHostComputer = true;
 		}
 
+		// the following applies to additional client users
 		if ( users.indexOf(data) > -1 ) {
-			socket.emit('userExists', data + ' username is allready taken! Try another username.');
-
-			// data = data + '\[' + usercount + '\]';
-			data = data.toString();
-			data += usercount;
 			
-			users.push(data);
+			socket.emit('userExists', data + ' username is allready taken! Try another username.');
+			
+			// used for clients on the same server machine
+			if (isHostComputer) {				
+				tmpData = tmpData.replace(/-HOST/gi, "-serverUser");
+				tmpData = tmpData.replace(/HOST/gi, "-serverUser");
+				data = tmpData + '_' + usercount + "\@" + sharedIpDisplay;
+			} else {
+				data = data.replace(tmpData, '_' + usercount);
+				//data = data + '_' + usercount;
+			}
+			
+			users.push(data.toString());
 			
 			socket.emit('userSet', {
 				username: data,
@@ -104,9 +128,18 @@ io.on('connection', function(socket) {
 			// display updated user array in Node
 			console.log('\x1b[32m', '\u2713 A messaging client user was added ++++++++++++++++++++++++++++','\x1b[0m' ); 
 
-			console.log('\t Current User Array, users[' + usercount + "], is: ", users, "]");
+			console.log('\t Current User Array, users[' + usercount + "], is: ", users);
 
 		} else {
+			
+			if (users.length > 0) {
+				// used for clients on the same server machine
+				if (isHostComputer) {				
+					tmpData = tmpData.replace(/-HOST/gi, "-serverUser");
+					tmpData = tmpData.replace(/HOST/gi, "-serverUser");
+					data = tmpData + '_' + usercount + "\@" + sharedIpDisplay;
+				}
+			}
 
 			//data = data + "\@" + sharedIpDisplay;
 			users.push(data);
