@@ -24,7 +24,8 @@
   * 	The chat is a toy/distraction, the real app is synchronizing behavior and accademics
   * */
  
- var decadeTextDisplay, messengerBeadProgress; // message place holders
+ var decadeTextDisplay = ""; // message place holders
+ var messengerBeadProgress = ""; // message place holders
 
 /***************************************************************
  *  Contrived Ajax
@@ -241,7 +242,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
                 }
                 
                 // Adds a status update string to your messenger messages
-				messengerBeadProgress = "introductionary prayers ...";
+				messengerBeadProgress = "Introduction prayers, " + $("#beadMarker").text();
             }
 
             stringSpaceCounter = 0;
@@ -261,6 +262,11 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             }
 
             progressBar.setValue(0, hailmaryCounter % 50);
+            if (beadCounter < 8) {
+				messengerBeadProgress = "Introduction prayers ...";
+			} else {
+				messengerBeadProgress = decadeTextDisplay + ", bead 0";
+			}
 
             break;
 
@@ -295,6 +301,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             }
 
             $("#beadMarker").html("string space: " + stringSpaceCounter + " / 2");
+            messengerBeadProgress = decadeTextDisplay + ", " + $("#beadMarker").text();
 
             break;
 
@@ -316,7 +323,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             }
             
             // Adds a status update string to your messenger messages
-			messengerBeadProgress = "introductionary prayers ...";
+			messengerBeadProgress = "Mary Icon ...";
 
             break;
 
@@ -326,7 +333,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             progressBar.setValue(0, 0);
             stringSpaceCounter = 0;
             
-            messengerBeadProgress = "starting ...";
+            messengerBeadProgress = "crucifix ...";
             
             break;
 
@@ -334,7 +341,9 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             thisDecadeSet = 0;
             $("#beadMarker").html("0 / 0");
             stringSpaceCounter = 0;
-
+            
+			messengerBeadProgress = "starting ...";
+            
             break;
     }
 

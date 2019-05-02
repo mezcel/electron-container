@@ -63,7 +63,7 @@ function removeUsername() {
 function sendmyMessage() {
 
 	var msg = document.getElementById('myMessage').value;
-		msg += "<br><code><i> -\[" + messengerBeadProgress + "\]- </i></code>";
+		msg += "<br><font size='2' color='gray'><i> -\[" + messengerBeadProgress + "\]- </i></font>";
 		
 	var divUsers = document.getElementById("divAllUsers").innerHTML;
 	
@@ -89,7 +89,7 @@ function sendmyMessageInfo() {
 	var msg = "( Rule ) At least 2 users on network, one being the NodeJs server.";
 	document.getElementById('myMessage').value = msg;
 	
-	msg = "<b>( Rule )</b> <i>Requires at least 2 users on network, one being a <mark>NodeJs host server</mark>. Clients can join the host ip using a web browser.</i>";
+	msg = "<code>( Rule ) <i>Requires at least 2 users on network, one being a <mark>NodeJs</mark> host server. The leader's name displays the ip address.</i></code>";
 	
 	var divUsers = document.getElementById("divAllUsers").innerHTML;
 	if (divUsers.length > 0) {

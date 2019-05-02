@@ -40,8 +40,8 @@ function getRandomHexColor(data) {
 	}
 	
 	// cut the deck
-	var firstPart = "#" + ascii2text.substr(ascii2text.length - 3);
-	var secondPart = hexcolor.substr(hexcolor.length - 3);;
+	var firstPart = "#9" + ascii2text.substr(ascii2text.length - 2);
+	var secondPart = hexcolor.substr(hexcolor.length - 2) + "0";
 
 	hexcolor = firstPart + secondPart;
 	return hexcolor;
@@ -108,11 +108,9 @@ io.on('connection', function(socket) {
 			if (isHostComputer) {				
 				tmpData = tmpData.replace(/-HOST/gi, "-serverUser");
 				tmpData = tmpData.replace(/HOST/gi, "-serverUser");
-				data = tmpData + '_' + usercount + "\@" + sharedIpDisplay;
-			} else {
-				data = data.replace(tmpData, '_' + usercount);
-				//data = data + '_' + usercount;
 			}
+			
+			data = tmpData + '_' + usercount;
 			
 			users.push(data.toString());
 			
@@ -135,7 +133,7 @@ io.on('connection', function(socket) {
 				if (isHostComputer) {				
 					tmpData = tmpData.replace(/-HOST/gi, "-serverUser");
 					tmpData = tmpData.replace(/HOST/gi, "-serverUser");
-					data = tmpData + '_' + usercount + "\@" + sharedIpDisplay;
+					data = tmpData + '_' + usercount;
 				}
 			}
 
