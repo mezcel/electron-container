@@ -110,7 +110,8 @@ io.on('connection', function(socket) {
 				tmpData = tmpData.replace(/HOST/gi, "-serverUser");
 			}
 			
-			data = tmpData + '_' + usercount;
+			// data = tmpData + '_' + usercount;
+			data = tmpData.toString() + usercount.toString() ;
 			
 			users.push(data.toString());
 			
@@ -123,7 +124,6 @@ io.on('connection', function(socket) {
 			
 			// display updated user array in Node
 			console.log('\x1b[32m', '\u2713 A messaging client user was added ++++++++++++++++++++++++++++','\x1b[0m' ); 
-
 			console.log('\t Current User Array, users[' + usercount + "], is: ", users);
 
 		} else {
@@ -131,13 +131,13 @@ io.on('connection', function(socket) {
 			if (users.length > 0) {
 				// used for clients on the same server machine
 				if (isHostComputer) {				
-					tmpData = tmpData.replace(/-HOST/gi, "-serverUser");
-					tmpData = tmpData.replace(/HOST/gi, "-serverUser");
-					data = tmpData + '_' + usercount;
+					tmpData = tmpData.replace(/-HOST/gi, "ServerUser");
+					tmpData = tmpData.replace(/HOST/gi, "ServerUser");
+					// data = tmpData + '_' + usercount;
+					data = tmpData.toString() + usercount.toString() ;
 				}
 			}
 
-			//data = data + "\@" + sharedIpDisplay;
 			users.push(data);
 			
 			socket.emit('userSet', {
@@ -149,7 +149,6 @@ io.on('connection', function(socket) {
 			
 			// display updated user array in Node
 			console.log('\x1b[32m', '\u2713 A messaging client user was added ++++++++++++++++++++++++++++','\x1b[0m' ); 
-
 			console.log('\t Current User Array, users[' + usercount + "], is: " + users);
 		}
 	});
@@ -169,15 +168,16 @@ io.on('connection', function(socket) {
 		});
 
 		// display updated user array in Node
-		
 		console.log('\x1b[31m', '\u2717 A client user disconnected ----------------------------','\x1b[0m'); // display updated user array in Node
 		console.log('\t Current User Array, users[' + usercount + '], is: ' + users);
+		
 		socket.emit('userRemove', users);
+		//io.emit('disconnect msg', users);
 
 	});
 
 	socket.on('disconnect', function() {
-		console.log('\t - Disconnect flag from a socketio client.', '\x1b[0m');
+		console.log('\t - Disconnect flag from a socketio client. (socket disconnect)', '\x1b[0m');
 	});
 
 });
@@ -220,8 +220,6 @@ function createMainWindow() {
 	// and load the index.html of the app.
 	// mainWindow.loadFile('index.html'); // electron without messaging
 	mainWindow.loadURL('http://localhost:7777'); // the express app
-	// mainWindow.loadURL('http://127.0.0.1:7777'); // the express app
-	// mainWindow.loadURL('http://' + returnIp + ':7777'); // the express app
 
 
 	// Emitted when the window is closed.

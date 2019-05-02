@@ -175,7 +175,6 @@ function beadRev() {
     if (beadCounter > 0) {
         beadProcess(-1);
     }
-    //beadProcess(-1);
 }
 
 function beadProcess(directionFwRw) { // event displays based on bead counter sequence
@@ -689,34 +688,45 @@ function scrapeUsccb() {
 	}
 }
 
-
 /***************************************************************
  * Page Load Events (JQM Specific)
  */
+
+$(document).on('pagebeforeshow', '#splashpage', function() {
+	// do not show ip input prompt for  Firefox client
+	if ( getBrowser() == "isFirefox") {
+		$("#joinIpFooter").hide();
+	}
+});
 
 /* configure progressbars  */
 $(document).on('pageshow', '#rosary', function() {
 
     if (mainPageLoaded == false) {
-        initUi();
-        mainPageLoaded = true; // prevent reactivating
+        initUi(); // generate rosary
+        mainPageLoaded = true; // prevent reactivating or resetting
     }
 
 });
 
 /* the code destination for dynamically generated bible list */
-$(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamically populated list content when active is clicked
+$(document).on("popupbeforeposition", "#myDialogPopUp", function() { 
+	// Dynamically populated list content when active is clicked
 
     if (showBibleListFlag === true) { // Bible Book list in right panel
+		
         var info = $("#myDialogPopUp").data("myDataJsonVar");
         var info_view = '<ol style="list-style: none; padding-left: 0;">';
         var bookID = info["bookID"];
 
         for (var iLoop = 0; iLoop < rosaryJSON.scripture.length; iLoop += 1) {
             if (rosaryJSON.scripture[iLoop].bookIndex === bookID) {
-                info_view += '<li class="ui-field-contain ui-corner-all ui-shadow"><strong>(' + rosaryJSON.scripture[iLoop].chapterIndex + ":" + rosaryJSON.scripture[iLoop].verseIndex + ") &#x270d; </strong>" + rosaryJSON.scripture[iLoop].scriptureText + '</li>';
+                info_view += '<li class="ui-field-contain ui-corner-all ui-shadow"><strong>(' + 
+					rosaryJSON.scripture[iLoop].chapterIndex + ":" + rosaryJSON.scripture[iLoop].verseIndex + 
+					") &#x270d; </strong>" + rosaryJSON.scripture[iLoop].scriptureText + '</li>';
             }
         }
+        
         info_view += '</ol>';
 
         // hide extra elements
@@ -728,12 +738,14 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
         $("#infoHeader").html(info["bookName"]);
         $(this).find("[data-role=bibleContent]").html(info_view);
         $("#infoFooter").html("Readings found in: " + info["library"]);
-
-
+        
     } else if (showPrayerListFlag === true) { // Prayer Book list in right panel
+		
         var info = $("#myDialogPopUp").data("myDataJsonVar2");
         var prayerID = info["prayerID"];
-        var info_view = '<ol style="list-style: none; padding-left: 0;"><li class="ui-field-contain ui-corner-all ui-shadow">' + rosaryJSON.prayer[prayerID].prayerText + '</li></ol>';
+        var info_view = '<ol style="list-style: none; padding-left: 0;">' + 
+			'<li class="ui-field-contain ui-corner-all ui-shadow">' + 
+			rosaryJSON.prayer[prayerID].prayerText + '</li></ol>';
 
         // hide extra elements
         $(this).find("[data-role=bibleContent]").html('');
@@ -746,6 +758,7 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
         $("#infoFooter").html("footer");
 
     } else { // the other content
+		
         // hide bible verse and prayer elements
 		$(this).find("[data-role=bibleContent]").html('');
 		$(this).find("[data-role=prayerContent]").html('');
@@ -755,8 +768,6 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
         $("#infoBody").show();
     }
     
-
-
 });
 
 

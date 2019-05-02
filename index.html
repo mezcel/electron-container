@@ -45,6 +45,13 @@
             <div class="ui-content">
     			<a id="btnUsrInput" data-role="button" class="ui-btn ui-corner-all" onClick="setUsername()" href="#coverpage" data-transition="flip"><h3>Enter</h3></a>
             </div>
+            <!-- just for Electron Clients -->
+            <div data-role="footer" id="joinIpFooter" data-position="fixed">
+				<center><font size='2' color='lightgray'> Leave below blank if you are hosting your own service. </font></center>
+				<br>
+				<center><font size='2' color='lightgray'> Non implimented placeholder </font></center>
+                <input id="inputJoinIp" value="" type="text" placeholder="Join someone's server. ex: 10.42.0.1" style="text-align: center">
+            </div>
         </div>
 
 		<!-- cover page -->
@@ -308,6 +315,7 @@
 
         </div>
 
+		<!-- group messaging page -->
         <div data-role="page" id="messagingPage">
 
             <div data-role="header" class="msgPageHeader" style="text-align: center">
@@ -335,6 +343,7 @@
 
         </div>
 
+		<!-- daily mass readings page -->
         <div data-role="page" id="dailyMassPage">
             <div data-role="header" class="msgPageHeader" style="text-align: center">
                 Daily Mass Readings
@@ -347,6 +356,7 @@
             </div>
             <div role="main" id="usccbOrg" class="ui-content"></div>
         </div>
+        
     </body>
 
 </html>
