@@ -14,7 +14,18 @@
  var hailmaryCounter = 0;
  var beadCounter = 0;
  var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
- // rosaryJSON = rosaryJSONvulgate;
+ 
+ /* WIP Variables:
+  * about: global string used to inform the messenger group of this clients bead progress
+  * experimental: to be used in further synchronizing developments
+  * goal: when everyone is at the same counter, then bead progress can continue.
+  * temp: for now i am just using messages to verify all clients know each others progress
+  * 	NO! the prayer chat is not a real-world thing... despite what seculars are 'selling'
+  * 	The chat is a toy/distraction, the real app is synchronizing behavior and accademics
+  * */
+ 
+ var decadeTextDisplay = ""; // message place holders
+ var messengerBeadProgress = ""; // message place holders
 
 /***************************************************************
  *  Contrived Ajax
@@ -137,9 +148,11 @@ function fillRosaryBeadPage(counterNo) {
     var prayerIndex = rosaryJSON.rosaryBead[counterNo].prayerIndex;
     var scriptureIndex = rosaryJSON.rosaryBead[counterNo].scriptureIndex;
     var messageIndex = rosaryJSON.rosaryBead[counterNo].messageIndex;
-
+	
+	decadeTextDisplay = rosaryJSON.decade[decadeIndex].decadeName; // used for messenger
+	
     $("#mystery").html(rosaryJSON.mystery[mysteryIndex].mysteryName);
-    $("#decade").html(rosaryJSON.decade[decadeIndex].decadeName);
+    $("#decade").html(decadeTextDisplay);
     $("#scripture").html(rosaryJSON.scripture[scriptureIndex].scriptureText);
     $("#message").html(rosaryJSON.message[messageIndex].mesageText);
     $("#prayer").html(rosaryJSON.prayer[prayerIndex].prayerText);
@@ -162,7 +175,6 @@ function beadRev() {
     if (beadCounter > 0) {
         beadProcess(-1);
     }
-    //beadProcess(-1);
 }
 
 function beadProcess(directionFwRw) { // event displays based on bead counter sequence
@@ -199,6 +211,9 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
 				$("#beadMarker").html("small rosary bead: " + thisDecadeSet + " / 10");
 				progressBar.setValue(thisDecadeSet, mysteryProgress);
+				
+				// Adds a status update string to your messenger messages
+				messengerBeadProgress = decadeTextDisplay + ", bead " + thisDecadeSet;
 
 			}
 
@@ -224,6 +239,9 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
                     $("#beadMarker").html("small rosary bead: " + initialHailMaryCounter + " / 3");
                 }
+                
+                // Adds a status update string to your messenger messages
+				messengerBeadProgress = "Introduction prayers, " + $("#beadMarker").text();
             }
 
             stringSpaceCounter = 0;
@@ -243,6 +261,11 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             }
 
             progressBar.setValue(0, hailmaryCounter % 50);
+            if (beadCounter < 8) {
+				messengerBeadProgress = "Introduction prayers ...";
+			} else {
+				messengerBeadProgress = decadeTextDisplay + ", bead 0";
+			}
 
             break;
 
@@ -277,6 +300,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             }
 
             $("#beadMarker").html("string space: " + stringSpaceCounter + " / 2");
+            messengerBeadProgress = decadeTextDisplay + ", " + $("#beadMarker").text();
 
             break;
 
@@ -296,6 +320,9 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
                 initialMysteryFlag = true;
             }
+            
+            // Adds a status update string to your messenger messages
+			messengerBeadProgress = "Mary Icon ...";
 
             break;
 
@@ -304,13 +331,18 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             initialHailMaryCounter = 0;
             progressBar.setValue(0, 0);
             stringSpaceCounter = 0;
+            
+            messengerBeadProgress = "crucifix ...";
+            
             break;
 
         default: // just when the app turns on
             thisDecadeSet = 0;
             $("#beadMarker").html("0 / 0");
             stringSpaceCounter = 0;
-
+            
+			messengerBeadProgress = "starting ...";
+            
             break;
     }
 
@@ -422,16 +454,16 @@ function myControllEvents() {
     });
 
     // Messaging State Toggle
-
-    $("#btnOpenMessenger").focusin(function() {
+    
+    $("#btnOpenMessenger").click(function() {
         // true
-        isMessengerOpen = !isMessengerOpen;
+        isMessengerOpen = true;
     });
-    $("#btnCloseMessenger").focusin(function() {
+    
+    $("#btnCloseMessenger").click(function() {
         // false
-        isMessengerOpen = !isMessengerOpen;
+        isMessengerOpen = false;
     });
-
 
     // keyboard controlls
 
@@ -504,7 +536,7 @@ function myControllEvents() {
                     break;
                 case 77: // letter m
                     // m for message
-                    $("#messagingPopUp").popup("open");
+                    $('#btnOpenMessenger').click();
                     break;
                 default:
                     console.log("a trigger was pressed: ", event.which);
@@ -656,34 +688,48 @@ function scrapeUsccb() {
 	}
 }
 
-
 /***************************************************************
  * Page Load Events (JQM Specific)
  */
 
+/* login page */
+$(document).on('pagebeforeshow', '#splashpage', function() {
+	// do not show ip input prompt for  Firefox client (WIP)
+	if ( getBrowser() == "isFirefox") {
+		$("#joinIpFooter").hide();
+	}
+});
+
+$(document).on('pageshow', '#splashpage', function() {
+    document.getElementById("myName").focus();
+});
+
 /* configure progressbars  */
 $(document).on('pageshow', '#rosary', function() {
-
     if (mainPageLoaded == false) {
-        initUi();
-        mainPageLoaded = true; // prevent reactivating
+        initUi(); // generate rosary
+        mainPageLoaded = true; // prevent reactivating or resetting
     }
-
 });
 
 /* the code destination for dynamically generated bible list */
-$(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamically populated list content when active is clicked
+$(document).on("popupbeforeposition", "#myDialogPopUp", function() { 
+	// Dynamically populated list content when active is clicked
 
     if (showBibleListFlag === true) { // Bible Book list in right panel
+		
         var info = $("#myDialogPopUp").data("myDataJsonVar");
         var info_view = '<ol style="list-style: none; padding-left: 0;">';
         var bookID = info["bookID"];
 
         for (var iLoop = 0; iLoop < rosaryJSON.scripture.length; iLoop += 1) {
             if (rosaryJSON.scripture[iLoop].bookIndex === bookID) {
-                info_view += '<li class="ui-field-contain ui-corner-all ui-shadow"><strong>(' + rosaryJSON.scripture[iLoop].chapterIndex + ":" + rosaryJSON.scripture[iLoop].verseIndex + ") &#x270d; </strong>" + rosaryJSON.scripture[iLoop].scriptureText + '</li>';
+                info_view += '<li class="ui-field-contain ui-corner-all ui-shadow"><strong>(' + 
+					rosaryJSON.scripture[iLoop].chapterIndex + ":" + rosaryJSON.scripture[iLoop].verseIndex + 
+					") &#x270d; </strong>" + rosaryJSON.scripture[iLoop].scriptureText + '</li>';
             }
         }
+        
         info_view += '</ol>';
 
         // hide extra elements
@@ -695,12 +741,14 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
         $("#infoHeader").html(info["bookName"]);
         $(this).find("[data-role=bibleContent]").html(info_view);
         $("#infoFooter").html("Readings found in: " + info["library"]);
-
-
+        
     } else if (showPrayerListFlag === true) { // Prayer Book list in right panel
+		
         var info = $("#myDialogPopUp").data("myDataJsonVar2");
         var prayerID = info["prayerID"];
-        var info_view = '<ol style="list-style: none; padding-left: 0;"><li class="ui-field-contain ui-corner-all ui-shadow">' + rosaryJSON.prayer[prayerID].prayerText + '</li></ol>';
+        var info_view = '<ol style="list-style: none; padding-left: 0;">' + 
+			'<li class="ui-field-contain ui-corner-all ui-shadow">' + 
+			rosaryJSON.prayer[prayerID].prayerText + '</li></ol>';
 
         // hide extra elements
         $(this).find("[data-role=bibleContent]").html('');
@@ -713,6 +761,7 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
         $("#infoFooter").html("footer");
 
     } else { // the other content
+		
         // hide bible verse and prayer elements
 		$(this).find("[data-role=bibleContent]").html('');
 		$(this).find("[data-role=prayerContent]").html('');
@@ -722,8 +771,10 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() { // Dynamica
         $("#infoBody").show();
     }
     
-
-
 });
 
+/* messenger input */
+$(document).on('pageshow', '#messagingPage', function() {
+    document.getElementById("myMessage").focus();
+});
 

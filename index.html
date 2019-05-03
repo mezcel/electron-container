@@ -38,12 +38,19 @@
 
         <!-- splash page / mane registration -->
 		<div data-role="page" id="splashpage" data-theme="d">
-            <div style="text-align: center" data-role="header"><h3>Welcome</h3></div>
+            <div style="text-align: center" data-role="header"><h3>Welcome Login</h3></div>
             <div class="ui-content">
     			<input id="myName" value="" type="text" placeholder="enter a user name" style="text-align: center">
             </div>
             <div class="ui-content">
     			<a id="btnUsrInput" data-role="button" class="ui-btn ui-corner-all" onClick="setUsername()" href="#coverpage" data-transition="flip"><h3>Enter</h3></a>
+            </div>
+            <!-- just for Electron Clients -->
+            <div data-role="footer" id="joinIpFooter" data-position="fixed">
+				<center><font size='2' color='lightgray'> Leave below blank if you are hosting your own service. </font></center>
+				<br>
+				<center><font size='2' color='lightgray'> Non implimented placeholder </font></center>
+                <input id="inputJoinIp" value="" type="text" placeholder="Join someone's server. ex: 10.42.0.1" style="text-align: center">
             </div>
         </div>
 
@@ -59,11 +66,11 @@
             <!-- header top bar -->
             <div data-role="header" data-position="fixed">
                 <!-- App Header -->
-                <a id="btnHomePanel" href="#homePanel" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-left">Home</a>
+                <a id="btnHomePanel" href="#homePanel" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-left">Settings</a>
                 <h1 id="appHeaderTitle">
 					<em id="mystery">Express JQM Rosary</em> <sub class="mysteryTranslationIndicator"></sub>
                 </h1>
-                <a id="btnInfoPanel" href="#infoPanel" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left">Info</a>
+                <a id="btnInfoPanel" href="#infoPanel" class="ui-btn ui-corner-all ui-icon-star ui-btn-icon-left">Content</a>
             </div>
 
             <!-- Right Panel - Mysteries and Scriptures  -->
@@ -173,11 +180,11 @@
 					
 					<div data-role="collapsible" class="leftColCollapsible">
 						<h4>Audio</h4>
-						<hr>
+						<!--<hr>
 						<audio id="audioAveMaria" class="audioStyle" controls loop>
 							<source src="myAssets/audio/JOHN_MICHEL_CELLO-BACH_AVE_MARIA.ogg" type="audio/mpeg">
 						</audio>
-						<hr>
+						<hr>-->
 						<i>"Ave Maria"</i>, by Charles Gounod, was based off of Johann Sebastian Bach's Prelude No.1 in C Major, Well-Tempered Clavier Book I (BWV 846). Performed by John Michel.
 
 					</div>
@@ -251,8 +258,7 @@
                     <div data-role="collapsible">
                         <h4>Mass Readings</h4>
                         <form>
-                            <!--<a id="btnDailyMass" href="http://www.usccb.org/bible/readings" target="_blank" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right">usccb.org</a>-->
-                            <a id="btnDailyMass" href="#dailyMassPage" class="ui-btn ui-corner-all ui-icon-eye ui-btn-icon-right" onclick="scrapeUsccb()">usccb.org</a>
+                            <a id="btnDailyMass" href="#dailyMassPage" class="ui-btn ui-corner-all ui-icon-cloud ui-btn-icon-right" onclick="scrapeUsccb()">usccb.org</a>
                         </form>
                     </div>
                 </div>
@@ -309,14 +315,15 @@
 
         </div>
 
+		<!-- group messaging page -->
         <div data-role="page" id="messagingPage">
 
             <div data-role="header" class="msgPageHeader" style="text-align: center">
                 Messenger
                 <div data-role="navbar" data-mini="true">
                     <ul>
-                        <li><a id="btnCloseMessenger" href="#rosary" data-transition="fade" data-icon="arrow-l"></a></li>
-                        <li><a href="#" data-icon="info"></a></li>
+                        <li><a id="btnCloseMessenger" href="#rosary" data-transition="fade" data-icon="arrow-l" title="Exit Messenger"></a></li>
+                        <li><a href="#" onClick='sendmyMessageInfo();' data-icon="info" title="Rules"></a></li>
                     </ul>
                 </div>
             </div>
@@ -328,14 +335,15 @@
                 <input id="myMessage" value="" type="text" placeholder="Enter a message ...">
                 <div data-role="navbar" data-mini="true">
                     <ul>
-                        <li> <a onClick='$(window).scrollTop(0);' data-icon="arrow-u"></a> </li>
-                        <li> <a href="#topAnchor" id="btnEnterMsg" onClick='sendmyMessage();' data-icon="comment"></a> </li>
+                        <li> <a onClick='$(window).scrollTop(0);' data-icon="arrow-u" title="scroll to top"></a> </li>
+                        <li> <a href="#topAnchor" id="btnEnterMsg" onClick='sendmyMessage();' data-icon="comment" title="send message"></a> </li>
                     </ul>
                 </div>
             </div>
 
         </div>
 
+		<!-- daily mass readings page -->
         <div data-role="page" id="dailyMassPage">
             <div data-role="header" class="msgPageHeader" style="text-align: center">
                 Daily Mass Readings
@@ -348,6 +356,7 @@
             </div>
             <div role="main" id="usccbOrg" class="ui-content"></div>
         </div>
+        
     </body>
 
 </html>

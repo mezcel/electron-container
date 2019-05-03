@@ -10,6 +10,7 @@ Youtube: Old [outdated demo](https://youtu.be/xlhLjpW-QMs)
 
 __Development Status:__ Latest development branch ```git branch v0.5.2``` is focused on:
 
+* (mostly ui touchups)
 * Took features from [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal) and added it into this app.
 * Included a Liturgical Calendar based on a Paschal Full Moon schedule (WIP)
 	* Tinkered with date flag calculations
@@ -18,8 +19,8 @@ __Development Status:__ Latest development branch ```git branch v0.5.2``` is foc
     * Note: consider [wgetjs](https://www.npmjs.com/package/wgetjs) for continued secure development.
 
 __Todo:__
-The ```pmf-calculation.js``` script is bloated. Iv been adjusting it on the fly and a lot of techniques are just injections and workarrounds. I either want to make it just "secular non-dynamic date returns" or consistently refactor everything as jquery objects.
-
+* The ```pmf-calculation.js``` script is bloated due to the "on the fly" patches, adds, and tweaks. Considering cleaning up my tweaks or making the tweaks more jqs vs js.
+* (multi user feature) Synronizing the navigational pace and progress location using the built in ```socketio.js```.
 ---
 
 ### Main Dev Objective:

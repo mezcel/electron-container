@@ -1,4 +1,5 @@
 /* main.js */
+/* Node script for the Electron client UI which also activates the Express Server */
 
 console.log('\x1b[33m','______________________________________________________________________');
 console.log('',"electron-container\n\t.");
@@ -25,8 +26,10 @@ expressApp.get('/', function(req, res){
 
 expressApp.use(express.static(myAppPath));
 
-function getRandomHexColor() {
+function getRandomHexColor(data) {
 
+	var ascii2text = data.charCodeAt(0).toString(16);
+	
 	var letters = '012345'.split('');
 	var hexcolor = '#';
 	hexcolor += letters[Math.round(Math.random() * 5)];
@@ -35,7 +38,12 @@ function getRandomHexColor() {
 	for (var i = 0; i < 5; i++) {
 		hexcolor += letters[Math.round(Math.random() * 15)];
 	}
+	
+	// cut the deck
+	var firstPart = "#9" + ascii2text.substr(ascii2text.length - 2);
+	var secondPart = hexcolor.substr(hexcolor.length - 2) + "0";
 
+	hexcolor = firstPart + secondPart;
 	return hexcolor;
 }
 
@@ -61,10 +69,14 @@ function getIPvarString() {
 	return returnIp;
 }
 
-// var myHostip = "http://localhost"; // debug ip
-var myHostip = "http://" + getIPvarString();
+// Domain
+var sharedIpDisplay = getIPvarString();
+var myHostip = "http://" + sharedIpDisplay;
+
 if (myHostip == "http://undefined") {
-	myHostip = "http://localhost";
+	// I am just going to assume 127.0.0.1
+	sharedIpDisplay = "localhost";
+	myHostip = "http://" + sharedIpDisplay;
 }
 
 console.log("\n\tServer Ip = \x1b[4m" + myHostip + '\x1b[0m');
@@ -74,38 +86,69 @@ users = [];
 io.on('connection', function(socket) {
 
 	socket.on('setUsername', function(data) {
-		var randomHexColor = getRandomHexColor();
+		var randomHexColor = getRandomHexColor(data);
+		
 		var usercount = users.length;
+		var isHostComputer = false;
+		var tmpData = data;
+		
+		// if the last 4 chars of data is "HOST"
+		var last4letters = data.substr(data.length - 4);
+		if ( last4letters == "HOST" ) {
+			data = data + "\@" + sharedIpDisplay;
+			isHostComputer = true;
+		}
 
-		if (users.indexOf(data) > -1) {
+		// the following applies to additional client users
+		if ( users.indexOf(data) > -1 ) {
+			
 			socket.emit('userExists', data + ' username is allready taken! Try another username.');
-
-			data = data + '\[' + usercount + '\]';
-
-			users.push(data);
+			
+			// used for clients on the same server machine
+			if (isHostComputer) {				
+				tmpData = tmpData.replace(/-HOST/gi, "_ServerUser");
+				tmpData = tmpData.replace(/HOST/gi, "_ServerUser");
+			}
+			
+			// data = tmpData + '_' + usercount;
+			data = tmpData.toString() + usercount.toString() ;
+			
+			users.push(data.toString());
+			
 			socket.emit('userSet', {
 				username: data,
 				allusers: users,
 				colorname: randomHexColor,
 				iptitle: myHostip
 			});
-
-			console.log('\x1b[32m', '\u2713 A messaging client user was added ++','\x1b[0m' ); // display updated user array in Node
-
-			console.log('\t Current User Array, users[' + usercount + "], is: ", users, "]");
+			
+			// display updated user array in Node
+			console.log('\x1b[32m', '\u2713 A messaging client user was added ++++++++++++++++++++++++++++','\x1b[0m' ); 
+			console.log('\t Current User Array, users[' + usercount + "], is: ", users);
 
 		} else {
+			
+			if (users.length > 0) {
+				// used for clients on the same server machine
+				if (isHostComputer) {				
+					tmpData = tmpData.replace(/-HOST/gi, "ServerUser");
+					tmpData = tmpData.replace(/HOST/gi, "ServerUser");
+					// data = tmpData + '_' + usercount;
+					data = tmpData.toString() + usercount.toString() ;
+				}
+			}
 
 			users.push(data);
+			
 			socket.emit('userSet', {
 				username: data,
 				allusers: users,
 				colorname: randomHexColor,
 				iptitle: myHostip
 			});
-
-			console.log('\x1b[32m', '\u2713 A messaging client user was added ++','\x1b[0m' ); // display updated user array in Node
-
+			
+			// display updated user array in Node
+			console.log('\x1b[32m', '\u2713 A messaging client user was added ++++++++++++++++++++++++++++','\x1b[0m' ); 
 			console.log('\t Current User Array, users[' + usercount + "], is: " + users);
 		}
 	});
@@ -125,14 +168,17 @@ io.on('connection', function(socket) {
 		});
 
 		// display updated user array in Node
-		console.log('\x1b[31m', '\u2717 A client user disconnected --','\x1b[0m'); // display updated user array in Node
+		console.log('\x1b[31m', '\u2717 A client user disconnected ----------------------------','\x1b[0m'); // display updated user array in Node
 		console.log('\t Current User Array, users[' + usercount + '], is: ' + users);
+		
+		socket.broadcast.emit('updateUserDisplay', users);
 		socket.emit('userRemove', users);
 
 	});
 
 	socket.on('disconnect', function() {
-		console.log('\t - Disconnect flag from a socketio client.', '\x1b[0m');
+		socket.broadcast.emit('updateUserDisplay', users);
+		console.log('\t - Disconnect flag from a socketio client. (socket disconnect)', '\x1b[0m');
 	});
 
 });

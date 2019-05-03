@@ -15,35 +15,86 @@ function msgKeyUpEvent() {
 	});
 }
 
+/***************************************************************
+ * Multi-client UI related
+ */
+ 
+function getBrowser() {
+	// WIP Not field tested
+	
+	//https://jsfiddle.net/311aLtkz/
+	// Opera 8.0+
+	var isOpera = (window.opr && opr.addons) || window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+	// Firefox 1.0+
+	var isFirefox = typeof InstallTrigger !== 'undefined';
+	// Safari 3.0+ "[object HTMLElementConstructor]"
+	var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+	// Internet Explorer 6-11
+	var isIE = /*@cc_on!@*/false || document.documentMode;
+	// Edge 20+
+	var isEdge = !isIE && window.StyleMedia;
+	// Chrome 1+
+	var isChrome = window.chrome && window.chrome.webstore;
+	// Blink engine detection
+	var isBlink = (isChrome || isOpera) && window.CSS;
+
+	if (isChrome) {
+		return "chrome";
+	} else if (isOpera) {
+		return "isOpera";
+	} else if (isIE) {
+		return "isIE";
+	} else if (isSafari) {
+		return "isSafari";
+	} else if (isFirefox) {
+		return "isFirefox";
+	} else if (isBlink) {
+		return "isBlink";
+	} else {
+		return " :)";
+	}
+}
+
 /***********************************************************************
  * Socket.io functions
  * */
 
 /* log user */
 function setUsername() {
+	
+	var isHostServer = false;
+	var isAnnomouse = false;
+	var clientIp = location.hostname;
+	
 	thisClientName = document.getElementById('myName').value;
-
+	
+	if (clientIp == 'localhost') {
+		isHostServer = true;
+	}
+	
 	if (thisClientName == '') {
-		/*
-		var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
-		var string_length = 4;
-		var randomstring = '';
-
-		for (var i=0; i<string_length; i++) {
-			var rnum = Math.floor(Math.random() * chars.length);
-			randomstring += chars.substring(rnum,rnum+1);
+		isAnnomouse = true;		
+	}
+	
+	if (isAnnomouse && !isHostServer) {		
+		thisClientName = "user";		
+	}
+	
+	if (isHostServer) {
+		
+		if (isAnnomouse) {
+			thisClientName = "HOST";
+		} else {
+			thisClientName = thisClientName + "-HOST";
 		}
-		*/
-
-		var x = location.hostname;
-		thisClientName = 'user\@'+x;
+		
 	}
 
 	socket.emit('setUsername', thisClientName);
 
 };
 
-/* log out user */
+/* log out user - remove user name from server */
 function removeUsername() {
 	socket.emit('removeUser', thisClientName);
 };
@@ -52,19 +103,49 @@ function removeUsername() {
 function sendmyMessage() {
 
 	var msg = document.getElementById('myMessage').value;
+		msg += "<br><font size='2' color='gray'><i> -\[" + messengerBeadProgress + "\]- </i></font>";
+		
 	var divUsers = document.getElementById("divAllUsers").innerHTML;
+	
 	if (msg) {
-		socket.emit('msg', {
-			myMessage: msg,
-			user: user,
-			usercolor: usercolor,
-			usersAll: divUsers
-		});
+			socket.emit('msg', {
+				myMessage: msg,
+				user: user,
+				usercolor: usercolor,
+				usersAll: divUsers
+			});
 	}
+	
 	document.getElementById('myMessage').value = "";
 	document.getElementById("myMessage").focus();
 	$(window).scrollTop(0); // scroll back to top of page
 
+};
+
+/* msg info */
+
+function sendmyMessageInfo() {
+	
+	var msg = "-\[" + messengerBeadProgress + "\]-";	
+	document.getElementById('myMessage').value = msg;
+	
+	msg = "<font size='2' color='gray'><i> -\[" + messengerBeadProgress + "\]- </i></font>";
+	
+	var divUsers = document.getElementById("divAllUsers").innerHTML;
+	if (divUsers.length > 0) {
+		if (msg) {
+			socket.emit('msg', {
+				myMessage: msg,
+				user: user,
+				usercolor: usercolor,
+				usersAll: divUsers
+			});
+		}
+		document.getElementById('myMessage').value = "";
+		document.getElementById("myMessage").focus();
+		$(window).scrollTop(0); // scroll back to top of page
+	}
+	
 };
 
 /***********************************************************************
@@ -81,8 +162,10 @@ socket.on('userSet', function(data) {
 	usersAll = data.allusers;
 	thisClientNameColor = usercolor;
 
+	var timeStamp = new Date();
 	document.getElementById("divAllUsers").innerHTML = usersAll;
-	document.getElementById("myMessage").value = '<i style="color: ' + usercolor + '">*** ' + user + ' joined the msg room ***</i>';
+	document.getElementById("myMessage").value = '<i style="color: ' + usercolor + 
+		'">*** joined ***</i><br><code>' + timeStamp + '</code>';
 
 	sendmyMessage();
 	msgKeyUpEvent(); // event binding
@@ -90,14 +173,25 @@ socket.on('userSet', function(data) {
 
 socket.on('userRemove', function(users) {
 	document.getElementById("divAllUsers").innerHTML = users;
-	document.getElementById('myMessage').value = '<i style="color: ' + thisClientNameColor + '">*** ' + thisClientName + ' has left the msg room ***</i>';
+	document.getElementById('myMessage').value = '<i style="color: ' + thisClientNameColor + 
+		'">*** ' + thisClientName + ' has left the msg room ***</i>';
+		
 	sendmyMessage();
-	window.close();
+	// window.close();
+});
+
+socket.on('updateUserDisplay', function(users) {
+	// usersAll = data.allusers;
+	document.getElementById("divAllUsers").innerHTML = users;
 });
 
 socket.on('newmsg', function(data) {
 	if (user) {
-		document.getElementById('myMessageContainer').innerHTML = '<div class="ui-corner-all ui-body ui-shadow"> <b style="color: ' + data.usercolor + '">' + data.user + '</b>: ' + data.myMessage + '</div>' + document.getElementById('myMessageContainer').innerHTML;
+		document.getElementById('myMessageContainer').innerHTML = 
+			'<div class="ui-corner-all ui-body ui-shadow"> <b style="color: ' + 
+			data.usercolor + '">' + data.user + '</b>: ' + data.myMessage + '</div>' + 
+			document.getElementById('myMessageContainer').innerHTML;
+		
 		document.getElementById("divAllUsers").innerHTML = data.usersAll;
 	}
 });

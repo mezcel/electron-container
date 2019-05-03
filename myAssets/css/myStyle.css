@@ -12,12 +12,13 @@ hr {
 }
 
 .coverImg {
-	background: url('../img/e58091080df3f9a388afb44ff25e1163.jpg') no-repeat center center;
+	background: url('../img/cover-art.png') no-repeat center center;
 	background-color: white;
-	-webkit-background-size: 48%;
-	-moz-background-size: 48%;
-	-o-background-size: 48%;
-	background-size: 48%;
+	/*-webkit-background-size: 50%;
+	-moz-background-size: 50%;
+	-o-background-size: 50%;
+	background-size: 50%;*/
+	background-size: auto 60%;
     text-decoration: none;
     
     /*-webkit-filter: grayscale(20%);
