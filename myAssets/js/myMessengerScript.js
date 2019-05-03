@@ -106,12 +106,12 @@ function sendmyMessage() {
 	var divUsers = document.getElementById("divAllUsers").innerHTML;
 	
 	if (msg) {
-		socket.emit('msg', {
-			myMessage: msg,
-			user: user,
-			usercolor: usercolor,
-			usersAll: divUsers
-		});
+			socket.emit('msg', {
+				myMessage: msg,
+				user: user,
+				usercolor: usercolor,
+				usersAll: divUsers
+			});
 	}
 	
 	document.getElementById('myMessage').value = "";
@@ -123,12 +123,11 @@ function sendmyMessage() {
 /* msg info */
 
 function sendmyMessageInfo() {
-
-	var msg = "( Rule ) At least 2 users on network, one being the NodeJs server.";
+	
+	var msg = "-\[" + messengerBeadProgress + "\]-";	
 	document.getElementById('myMessage').value = msg;
 	
-	msg = "<code>( Rule ) <i>Requires at least 2 users on network," + 
-		" one being a <mark>NodeJs</mark> host server. The leader's name displays the ip address.</i></code>";
+	msg = "<font size='2' color='gray'><i> -\[" + messengerBeadProgress + "\]- </i></font>";
 	
 	var divUsers = document.getElementById("divAllUsers").innerHTML;
 	if (divUsers.length > 0) {
@@ -177,6 +176,11 @@ socket.on('userRemove', function(users) {
 		
 	sendmyMessage();
 	// window.close();
+});
+
+socket.on('updateUserDisplay', function(users) {
+	// usersAll = data.allusers;
+	document.getElementById("divAllUsers").innerHTML = users;
 });
 
 socket.on('newmsg', function(data) {

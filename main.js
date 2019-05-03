@@ -171,12 +171,13 @@ io.on('connection', function(socket) {
 		console.log('\x1b[31m', '\u2717 A client user disconnected ----------------------------','\x1b[0m'); // display updated user array in Node
 		console.log('\t Current User Array, users[' + usercount + '], is: ' + users);
 		
+		socket.broadcast.emit('updateUserDisplay', users);
 		socket.emit('userRemove', users);
-		//io.emit('disconnect msg', users);
 
 	});
 
 	socket.on('disconnect', function() {
+		socket.broadcast.emit('updateUserDisplay', users);
 		console.log('\t - Disconnect flag from a socketio client. (socket disconnect)', '\x1b[0m');
 	});
 
