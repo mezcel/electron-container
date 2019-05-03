@@ -106,8 +106,8 @@ io.on('connection', function(socket) {
 			
 			// used for clients on the same server machine
 			if (isHostComputer) {				
-				tmpData = tmpData.replace(/-HOST/gi, "-serverUser");
-				tmpData = tmpData.replace(/HOST/gi, "-serverUser");
+				tmpData = tmpData.replace(/-HOST/gi, "_ServerUser");
+				tmpData = tmpData.replace(/HOST/gi, "_ServerUser");
 			}
 			
 			// data = tmpData + '_' + usercount;

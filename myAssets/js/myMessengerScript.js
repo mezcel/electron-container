@@ -20,37 +20,39 @@ function msgKeyUpEvent() {
  */
  
 function getBrowser() {
-   //https://jsfiddle.net/311aLtkz/
-   // Opera 8.0+
-   var isOpera = (window.opr && opr.addons) || window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-   // Firefox 1.0+
-   var isFirefox = typeof InstallTrigger !== 'undefined';
-   // Safari 3.0+ "[object HTMLElementConstructor]"
-   var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
-   // Internet Explorer 6-11
-   var isIE = /*@cc_on!@*/false || document.documentMode;
-   // Edge 20+
-   var isEdge = !isIE && window.StyleMedia;
-   // Chrome 1+
-   var isChrome = window.chrome && window.chrome.webstore;
-   // Blink engine detection
-   var isBlink = (isChrome || isOpera) && window.CSS;
+	// WIP Not field tested
+	
+	//https://jsfiddle.net/311aLtkz/
+	// Opera 8.0+
+	var isOpera = (window.opr && opr.addons) || window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+	// Firefox 1.0+
+	var isFirefox = typeof InstallTrigger !== 'undefined';
+	// Safari 3.0+ "[object HTMLElementConstructor]"
+	var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+	// Internet Explorer 6-11
+	var isIE = /*@cc_on!@*/false || document.documentMode;
+	// Edge 20+
+	var isEdge = !isIE && window.StyleMedia;
+	// Chrome 1+
+	var isChrome = window.chrome && window.chrome.webstore;
+	// Blink engine detection
+	var isBlink = (isChrome || isOpera) && window.CSS;
 
-   if (isChrome) {
-	   return "chrome";
-   } else if (isOpera) {
-	   return "isOpera";
-   } else if (isIE) {
-	   return "isIE";
-   } else if (isSafari) {
-	   return "isSafari";
-   } else if (isFirefox) {
-	   return "isFirefox";
-   } else if (isBlink) {
-	   return "isBlink";
-   } else {
-	   return " :)";
-   }
+	if (isChrome) {
+		return "chrome";
+	} else if (isOpera) {
+		return "isOpera";
+	} else if (isIE) {
+		return "isIE";
+	} else if (isSafari) {
+		return "isSafari";
+	} else if (isFirefox) {
+		return "isFirefox";
+	} else if (isBlink) {
+		return "isBlink";
+	} else {
+		return " :)";
+	}
 }
 
 /***********************************************************************

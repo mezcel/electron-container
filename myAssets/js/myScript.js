@@ -692,21 +692,24 @@ function scrapeUsccb() {
  * Page Load Events (JQM Specific)
  */
 
+/* login page */
 $(document).on('pagebeforeshow', '#splashpage', function() {
-	// do not show ip input prompt for  Firefox client
+	// do not show ip input prompt for  Firefox client (WIP)
 	if ( getBrowser() == "isFirefox") {
 		$("#joinIpFooter").hide();
 	}
 });
 
+$(document).on('pageshow', '#splashpage', function() {
+    document.getElementById("myName").focus();
+});
+
 /* configure progressbars  */
 $(document).on('pageshow', '#rosary', function() {
-
     if (mainPageLoaded == false) {
         initUi(); // generate rosary
         mainPageLoaded = true; // prevent reactivating or resetting
     }
-
 });
 
 /* the code destination for dynamically generated bible list */
@@ -770,4 +773,8 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() {
     
 });
 
+/* messenger input */
+$(document).on('pageshow', '#messagingPage', function() {
+    document.getElementById("myMessage").focus();
+});
 
