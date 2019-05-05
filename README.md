@@ -2,25 +2,25 @@
 
 ___This is a Node App using ExpressJS, Socket IO, and Electron.___
 
-A minimal yet colorfull Scripture Rosary for NodeJs. It contains NAB English & Vulgate Latin translation options and it supports LAN instant messaging and WWW streaming audio with daily Mass text readings.
+A colorfull yet minimal ```scripture rosary``` for NodeJs.
 
-Youtube: Old [outdated demo](https://youtu.be/xlhLjpW-QMs)
+* It contains NAB English & Vulgate Latin translation options.
+* Has a medatative audio option.
+* Imports daily Mass readings (online only).
+* Optional multi-user group communication with bead progress updates.
+
+Youtube: Very old [outdated demo](https://youtu.be/xlhLjpW-QMs)
+
+
 
 ---
 
-__Development Status:__ Latest development branch ```git branch v0.5.2``` is focused on:
+__Development Status:__ Latest development branch ```git branch v0.5.2.1``` is focused on:
 
 * (mostly ui touchups)
-* Took features from [jq-tput-terminal](https://github.com/mezcel/jq-tput-terminal) and added it into this app.
-* Included a Liturgical Calendar based on a Paschal Full Moon schedule (WIP)
-	* Tinkered with date flag calculations
-	* Decorated the flag states and flag groups
-* Included Daily mass reading scraped from usccb.org using the [whateverorigin.org](www.whateverorigin.org/) service.
-    * Note: consider [wgetjs](https://www.npmjs.com/package/wgetjs) for continued secure development.
 
-__Todo:__
-* The ```pmf-calculation.js``` script is bloated due to the "on the fly" patches, adds, and tweaks. Considering cleaning up my tweaks or making the tweaks more jqs vs js.
-* (multi user feature) Synronizing the navigational pace and progress location using the built in ```socketio.js```.
+* __Note:__ Scrapped development for iOS because the .json files are too much for Safari. The Messenger feature still works on the iOS. ***The "Messenger's" true purpose is not for talking(distraction), it is for synchronizing multiple devices. I use the "Messenger" for debugging the different user states.*** But since it's in there ... may as well.
+
 ---
 
 ### Main Dev Objective:
@@ -33,7 +33,7 @@ __Todo:__
 
 * Academic refference
 * Local intranet or ad-hoc networks (trusted)
-* Servers hosted on mobile devices with NodeJs server (1-8 clients)
+* Servers hosted on mobile devices with NodeJs server
 
 ### Key Features:
 
@@ -125,6 +125,6 @@ dir | MiB
 
 Dev Testing:
 
-* _Host Computer_: Best performance experienced on Win10 and Debian Linux. (install, build, and run)
+* _Host Computer_: Best performance experienced on Win10 and Arch/Debian Linux.
 
-* _Client Computer_: Best experience on Desktop, iPad & iPhone sized monitors.
+* _Client Computer_: Best experience on desktop/laptop sized and mobile device sized monitors. (scrapped Safari development)

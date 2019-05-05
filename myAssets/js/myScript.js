@@ -6,7 +6,7 @@
  var showBibleListFlag = false; // whether or not an html list was dynamically populated
  var showPrayerListFlag = false; // whether or not an html list was dynamically populated
  var iamtyping = false; // a flag indicating if I am typing so I dont trigger keydown events
- var isMessengerOpen = false; // a flag to determine of the Messenger is the main display focus
+ var isMessengerOpen = false; // a flag to determine of the Messenger is the display focus
  var mainPageLoaded = false; // a flag to prevent re-loading dom objects;
 
  var initialHailMaryCounter = 0;
@@ -539,10 +539,22 @@ function myControllEvents() {
                     $('#btnOpenMessenger').click();
                     break;
                 default:
-                    console.log("a trigger was pressed: ", event.which);
+                    console.log("keyboard entry: ", event.which);
+                    
+					if ( $("#dailyMassPage").focus() ) {
+						$('#btnCloseMessenger').click();
+					}
             }
-
-        }
+        } else {
+			// Messenger			
+			switch(event.which) {
+				case 27: // escape key
+					if ( $("#messagingPage").focus() ) {
+						$('#btnCloseMessenger').click();
+					}
+			}
+		}
+        
     });
 
 }
@@ -668,9 +680,8 @@ function initProgressBars() {
  * Web Scrape Usccb.org
  */
 
-function scrapeUsccb() {
+function scrapeUsccb() {	
     $.getJSON("http://www.whateverorigin.org/get?url=" + encodeURIComponent("http://www.usccb.org/bible/readings") + "&callback=?", function(data){
-        //alert(data.contents);
         scrapeVar = data.contents;
 
         var remBottomHtml = scrapeVar.substring(0, scrapeVar.indexOf('<a name="readingssignup"'));
@@ -698,10 +709,23 @@ $(document).on('pagebeforeshow', '#splashpage', function() {
 	if ( getBrowser() == "isFirefox") {
 		$("#joinIpFooter").hide();
 	}
+	
+	$("#btnUsrInput").click( function() {
+		setUsername();
+	});
+	
 });
 
 $(document).on('pageshow', '#splashpage', function() {
-    document.getElementById("myName").focus();
+	
+    $("#myName").on("keydown", function(event) {
+		if (event.which == 13) {
+			$.mobile.navigate("#coverpage", {transition: "flip"});
+			$("#btnUsrInput").click();
+		}
+	});
+	
+    $("#myName").focus();
 });
 
 /* configure progressbars  */
@@ -777,4 +801,3 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() {
 $(document).on('pageshow', '#messagingPage', function() {
     document.getElementById("myMessage").focus();
 });
-

@@ -43,14 +43,14 @@
     			<input id="myName" value="" type="text" placeholder="enter a user name" style="text-align: center">
             </div>
             <div class="ui-content">
-    			<a id="btnUsrInput" data-role="button" class="ui-btn ui-corner-all" onClick="setUsername()" href="#coverpage" data-transition="flip"><h3>Enter</h3></a>
+    			<a id="btnUsrInput" data-role="button" class="ui-btn ui-corner-all" href="#coverpage" data-transition="flip"><h3>Enter</h3></a>
             </div>
             <!-- just for Electron Clients -->
             <div data-role="footer" id="joinIpFooter" data-position="fixed">
-				<center><font size='2' color='lightgray'> Leave below blank if you are hosting your own service. </font></center>
+				<center><font size='2' color='lightgray'> Leave blank if you are the host. </font></center>
 				<br>
-				<center><font size='2' color='lightgray'> Non implimented placeholder </font></center>
-                <input id="inputJoinIp" value="" type="text" placeholder="Join someone's server. ex: 10.42.0.1" style="text-align: center">
+				<center><font size='2' color='lightgray'> ( Not implimented: just a placeholder ) </font></center>
+                <input id="inputJoinIp" value="" type="text" placeholder="Join a server. ex: 10.42.0.1" style="text-align: center">
             </div>
         </div>
 
@@ -323,7 +323,7 @@
                 <div data-role="navbar" data-mini="true">
                     <ul>
                         <li><a id="btnCloseMessenger" href="#rosary" data-transition="fade" data-icon="arrow-l" title="Exit Messenger"></a></li>
-                        <li><a href="#" onClick='sendmyMessageInfo();' data-icon="info" title="Rules"></a></li>
+                        <li><a href="#" onClick='sendmyMessageInfo();' data-icon="info" title="my position progress"></a></li>
                     </ul>
                 </div>
             </div>
