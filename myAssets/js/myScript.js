@@ -541,8 +541,8 @@ function myControllEvents() {
                 default:
                     console.log("a trigger was pressed: ", event.which);
             }
-
         }
+        
     });
 
 }
@@ -698,10 +698,26 @@ $(document).on('pagebeforeshow', '#splashpage', function() {
 	if ( getBrowser() == "isFirefox") {
 		$("#joinIpFooter").hide();
 	}
+	
+	$("#btnUsrInput").click( function() {
+		setUsername();
+	});
+	
 });
 
 $(document).on('pageshow', '#splashpage', function() {
-    document.getElementById("myName").focus();
+	
+    $("#myName").on("keydown", function(event) {
+		
+		console.log(event.which);
+		if (event.which == 13) {
+			$.mobile.navigate("#coverpage", {transition: "flip"});
+			$("#btnUsrInput").click();
+		}
+		
+	});
+	
+    $("#myName").focus();
 });
 
 /* configure progressbars  */
