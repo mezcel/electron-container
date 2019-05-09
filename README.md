@@ -9,7 +9,7 @@ A colorfull yet minimal ```scripture rosary``` for NodeJs.
 * Imports daily Mass readings (online only).
 * Optional multi-user group communication with bead progress updates.
 
-Youtube: Very old [outdated demo](https://youtu.be/xlhLjpW-QMs)
+Youtube: Very old [outdated demo](https://youtu.be/SZ9aQIspbvs)
 
 
 
