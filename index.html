@@ -273,9 +273,7 @@
                 <span id="infoHeader" style="text-align: center" data-role="header"></span>
                 <h4 id="infoSubHeader" class="ui-content"></h4>
                 <div id="infoBody" class="ui-content" style="overflow-y:auto"></div>
-                <!-- populated by list buttons on right panel -->
-                <div data-role="bibleContent"></div>
-                <div data-role="prayerContent"></div>
+                
 
                 <span id="infoFooter" style="text-align: center" data-role="footer"></span>
             </div>
@@ -354,6 +352,25 @@
                 </div>
             </div>
             <div role="main" id="usccbOrg" class="ui-content"></div>
+        </div>
+        
+        <!-- refferences Page -->
+        <div data-role="page" id="refferencesPage">
+            <div data-role="header" class="msgPageHeader" style="text-align: center">
+                refferencesPage
+                <div data-role="navbar" data-mini="true">
+                    <ul>
+                        <li><a id="btnCloseRefferencePage" href="#rosary" data-transition="fade" data-icon="arrow-l"></a></li>
+                        <li><a href="#" data-icon="info" target="_blank"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div role="main" id="refferenceBody" class="ui-content">
+				<!-- populated by list buttons on right panel -->
+                
+                <div data-role="bibleContent"></div>
+                <div data-role="prayerContent"></div>
+            </div>
         </div>
         
     </body>

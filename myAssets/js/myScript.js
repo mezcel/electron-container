@@ -355,7 +355,7 @@ function populateBookJsonList() { // populate the right pannel list with bible c
     var li = '<li data-theme="b" class="ui-bar">Bible Quotes </li>';
     var tempbookIndex = [];
     //container for $li's to be added
-    $.each(rosaryJSON.scripture, function(i, name) { // consolidate scriptured from the same book
+    $.each(rosaryJSON.scripture, function(i, name) { // consolidate scriptures from the same book
         if ($.inArray(name.bookIndex, tempbookIndex) !== -1) { // -1 = false
         } else {
             tempbookIndex.push(name.bookIndex);
@@ -373,16 +373,17 @@ function populateBookJsonList() { // populate the right pannel list with bible c
     //append li to ul
     $("#bible-list").append(li).promise().done(function() {
         $(this).on("click", ".infoDisp", function(e) {
-            $("#infoSubHeader").hide();
-            $("#infoBody").hide();
+            //$("#infoSubHeader").hide();
+            //$("#infoBody").hide();
 
             // flag to determine bible verses will display in popup
             showBibleListFlag = true;
             showPrayerListFlag = false;
 
             e.preventDefault();
-            $("#myDialogPopUp").data("myDataJsonVar", rosaryJSON.book[this.id]);
-            $("#myDialogPopUp").popup("open");
+            $("#refferencesPage").data("myDataJsonVar", rosaryJSON.book[this.id]);
+            // $("#myDialogPopUp").popup("open");
+            $.mobile.navigate("#refferencesPage", {transition: "flip"});
         });
         $(this).listview("refresh");
     });
@@ -404,16 +405,17 @@ function populatePrayerJsonList() { // populate the right pannel list with bible
     //append li to ul
     $("#prayer-list").append(li).promise().done(function() {
         $(this).on("click", ".infoDisp", function(e) {
-            $("#infoSubHeader").hide();
-            $("#infoBody").hide();
+            //$("#infoSubHeader").hide();
+            //$("#infoBody").hide();
 
             // flag to determine prayers will display in popup
             showPrayerListFlag = true;
             showBibleListFlag = false;
 
             e.preventDefault();
-            $("#myDialogPopUp").data("myDataJsonVar2", rosaryJSON.prayer[this.id]);
-            $("#myDialogPopUp").popup("open");
+            $("#refferencesPage").data("myDataJsonVar2", rosaryJSON.prayer[this.id]);
+            // $("#myDialogPopUp").popup("open");
+            $.mobile.navigate("#refferencesPage", {transition: "flip"});
         });
         $(this).listview("refresh");
     });
@@ -737,11 +739,9 @@ $(document).on('pageshow', '#rosary', function() {
     }
 });
 
-/* the code destination for dynamically generated bible list */
 $(document).on("popupbeforeposition", "#myDialogPopUp", function() { 
 	// Dynamically populated list content when active is clicked
-
-    if (showBibleListFlag === true) { // Bible Book list in right panel
+    /*if (showBibleListFlag === true) { // Bible Book list in right panel
 		
         var info = $("#myDialogPopUp").data("myDataJsonVar");
         var info_view = '<ol style="list-style: none; padding-left: 0;">';
@@ -770,6 +770,70 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() {
     } else if (showPrayerListFlag === true) { // Prayer Book list in right panel
 		
         var info = $("#myDialogPopUp").data("myDataJsonVar2");
+        var prayerID = info["prayerID"];
+        var info_view = '<ol style="list-style: none; padding-left: 0;">' + 
+			'<li class="ui-field-contain ui-corner-all ui-shadow">' + 
+			rosaryJSON.prayer[prayerID].prayerText + '</li></ol>';
+
+        // hide extra elements
+        $(this).find("[data-role=bibleContent]").html('');
+        $("#infoSubHeader").css("display","none");
+        $("#infoBody").css("display","none");
+
+        // show modal content
+        $("#infoHeader").html(rosaryJSON.prayer[prayerID].prayerName);
+        $(this).find("[data-role=prayerContent]").html(info_view);
+        $("#infoFooter").html("footer");
+
+    } else { // the other content
+		
+        // hide bible verse and prayer elements
+		$(this).find("[data-role=bibleContent]").html('');
+		$(this).find("[data-role=prayerContent]").html('');
+
+        // show modal content
+        $("#infoSubHeader").show();
+        $("#infoBody").show();
+    }*/
+    
+    // show modal content
+        $("#infoSubHeader").show();
+        $("#infoBody").show();
+    
+});
+
+/* the code destination for dynamically generated bible list */
+$(document).on("pagebeforeshow", "#refferencesPage", function() { 
+	// Dynamically populated list content when active is clicked
+    if (showBibleListFlag === true) { // Bible Book list in right panel
+		
+        var info = $("#refferencesPage").data("myDataJsonVar");
+        var info_view = '<ol style="list-style: none; padding-left: 0;">';
+        var bookID = info["bookID"];
+
+        for (var iLoop = 0; iLoop < rosaryJSON.scripture.length; iLoop += 1) {
+            if (rosaryJSON.scripture[iLoop].bookIndex === bookID) {
+                info_view += '<li class="ui-field-contain ui-corner-all ui-shadow"><strong>(' + 
+					rosaryJSON.scripture[iLoop].chapterIndex + ":" + rosaryJSON.scripture[iLoop].verseIndex + 
+					") &#x270d; </strong>" + rosaryJSON.scripture[iLoop].scriptureText + '</li>';
+            }
+        }
+        
+        info_view += '</ol>';
+
+        // hide extra elements
+        $(this).find("[data-role=prayerContent]").html('');
+        $("#infoSubHeader").css("display","none");
+        $("#infoBody").css("display","none");
+
+        // show modal content
+        $("#infoHeader").html(info["bookName"]);
+        $(this).find("[data-role=bibleContent]").html(info_view);
+        $("#infoFooter").html("Readings found in: " + info["library"]);
+        
+    } else if (showPrayerListFlag === true) { // Prayer Book list in right panel
+		
+        var info = $("#refferencesPage").data("myDataJsonVar2");
         var prayerID = info["prayerID"];
         var info_view = '<ol style="list-style: none; padding-left: 0;">' + 
 			'<li class="ui-field-contain ui-corner-all ui-shadow">' + 
