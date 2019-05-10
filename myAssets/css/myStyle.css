@@ -47,7 +47,7 @@ hr {
 .audioStyle { 
 	width: 100%;
 	color: white;
-	opacity: .3;
+	/*opacity: .3;*/
 }
 
 .ui-icon-delete { /* close modal icon */
