@@ -509,18 +509,19 @@ function myControllEvents() {
                     $('#easterGold').click();
                     break;
                 case 80: // letter p
-                    let firstAudioTrack = $('audio')[0];
-                    firstAudioTrack[firstAudioTrack.paused ? 'play' : 'pause']();
+                    $('audio').each(function(){
+						this.pause(); // Stop playing
+					}); 
                     break;
                 case 38: // up arrow
                     var volLevel = $('audio')[0].volume;
                     $('audio')[0].volume = volLevel + 0.25;
-                    $('audio')[1].volume = volLevel + 0.25;
+                    //$('audio')[1].volume = volLevel + 0.25;
                     break;
                 case 40: // down arrow
                     var volLevel = $('audio')[0].volume;
                     $('audio')[0].volume = volLevel - 0.25;
-                    $('audio')[1].volume = volLevel - 0.25;
+                    //$('audio')[1].volume = volLevel - 0.25;
                     break;
                 case 73: // letter i
                     // hacky but it works as a toggle
