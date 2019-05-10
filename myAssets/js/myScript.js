@@ -139,6 +139,16 @@ function fillAppInfoContent(infoID) { // called within html
     document.getElementById('infoFooter').innerHTML = rosaryJSON.appInfo[infoID].infoFooter;
 }
 
+function fillAppInfoContent2(infoID) { // called within html
+    showBibleListFlag = false;
+    showPrayerListFlag = false;
+
+    document.getElementById('reffHeader').innerHTML = rosaryJSON.appInfo[infoID].infoHeader;
+    document.getElementById('reffSubHeader').innerHTML = rosaryJSON.appInfo[infoID].infoSubHeader;
+    document.getElementById('reffBody').innerHTML = rosaryJSON.appInfo[infoID].infoText;
+    document.getElementById('reffFooter').innerHTML = rosaryJSON.appInfo[infoID].infoFooter;
+}
+
 function fillRosaryBeadPage(counterNo) {
     showBibleListFlag = false;
     showPrayerListFlag = false;
@@ -547,6 +557,11 @@ function myControllEvents() {
 					if ( $("#dailyMassPage").focus() ) {
 						$('#btnCloseMessenger').click();
 					}
+					
+					if ( $("#refferencesPage").focus() ) {
+						$('#btnCloseRefferencePage').click();
+						// $('#btnInfoPanel').click();
+					}
             }
         } else {
 			// Messenger			
@@ -741,61 +756,7 @@ $(document).on('pageshow', '#rosary', function() {
 
 $(document).on("popupbeforeposition", "#myDialogPopUp", function() { 
 	// Dynamically populated list content when active is clicked
-    /*if (showBibleListFlag === true) { // Bible Book list in right panel
-		
-        var info = $("#myDialogPopUp").data("myDataJsonVar");
-        var info_view = '<ol style="list-style: none; padding-left: 0;">';
-        var bookID = info["bookID"];
-
-        for (var iLoop = 0; iLoop < rosaryJSON.scripture.length; iLoop += 1) {
-            if (rosaryJSON.scripture[iLoop].bookIndex === bookID) {
-                info_view += '<li class="ui-field-contain ui-corner-all ui-shadow"><strong>(' + 
-					rosaryJSON.scripture[iLoop].chapterIndex + ":" + rosaryJSON.scripture[iLoop].verseIndex + 
-					") &#x270d; </strong>" + rosaryJSON.scripture[iLoop].scriptureText + '</li>';
-            }
-        }
-        
-        info_view += '</ol>';
-
-        // hide extra elements
-        $(this).find("[data-role=prayerContent]").html('');
-        $("#infoSubHeader").css("display","none");
-        $("#infoBody").css("display","none");
-
-        // show modal content
-        $("#infoHeader").html(info["bookName"]);
-        $(this).find("[data-role=bibleContent]").html(info_view);
-        $("#infoFooter").html("Readings found in: " + info["library"]);
-        
-    } else if (showPrayerListFlag === true) { // Prayer Book list in right panel
-		
-        var info = $("#myDialogPopUp").data("myDataJsonVar2");
-        var prayerID = info["prayerID"];
-        var info_view = '<ol style="list-style: none; padding-left: 0;">' + 
-			'<li class="ui-field-contain ui-corner-all ui-shadow">' + 
-			rosaryJSON.prayer[prayerID].prayerText + '</li></ol>';
-
-        // hide extra elements
-        $(this).find("[data-role=bibleContent]").html('');
-        $("#infoSubHeader").css("display","none");
-        $("#infoBody").css("display","none");
-
-        // show modal content
-        $("#infoHeader").html(rosaryJSON.prayer[prayerID].prayerName);
-        $(this).find("[data-role=prayerContent]").html(info_view);
-        $("#infoFooter").html("footer");
-
-    } else { // the other content
-		
-        // hide bible verse and prayer elements
-		$(this).find("[data-role=bibleContent]").html('');
-		$(this).find("[data-role=prayerContent]").html('');
-
-        // show modal content
-        $("#infoSubHeader").show();
-        $("#infoBody").show();
-    }*/
-    
+	
     // show modal content
         $("#infoSubHeader").show();
         $("#infoBody").show();
@@ -823,13 +784,13 @@ $(document).on("pagebeforeshow", "#refferencesPage", function() {
 
         // hide extra elements
         $(this).find("[data-role=prayerContent]").html('');
-        $("#infoSubHeader").css("display","none");
-        $("#infoBody").css("display","none");
+        $("#reffSubHeader").css("display","none");
+        $("#reffBody").css("display","none");
 
         // show modal content
-        $("#infoHeader").html(info["bookName"]);
+        $("#reffHeader").html(info["bookName"]);
         $(this).find("[data-role=bibleContent]").html(info_view);
-        $("#infoFooter").html("Readings found in: " + info["library"]);
+        $("#reffFooter").html("Readings found in: " + info["library"]);
         
     } else if (showPrayerListFlag === true) { // Prayer Book list in right panel
 		
@@ -841,13 +802,13 @@ $(document).on("pagebeforeshow", "#refferencesPage", function() {
 
         // hide extra elements
         $(this).find("[data-role=bibleContent]").html('');
-        $("#infoSubHeader").css("display","none");
-        $("#infoBody").css("display","none");
+        $("#reffSubHeader").css("display","none");
+        $("#reffBody").css("display","none");
 
         // show modal content
-        $("#infoHeader").html(rosaryJSON.prayer[prayerID].prayerName);
+        $("#reffHeader").html(rosaryJSON.prayer[prayerID].prayerName);
         $(this).find("[data-role=prayerContent]").html(info_view);
-        $("#infoFooter").html("footer");
+        $("#reffFooter").html("footer");
 
     } else { // the other content
 		
@@ -856,8 +817,8 @@ $(document).on("pagebeforeshow", "#refferencesPage", function() {
 		$(this).find("[data-role=prayerContent]").html('');
 
         // show modal content
-        $("#infoSubHeader").show();
-        $("#infoBody").show();
+        $("#reffSubHeader").show();
+        $("#reffBody").show();
     }
     
 });

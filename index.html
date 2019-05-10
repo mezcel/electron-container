@@ -145,9 +145,9 @@
                         <h4>Catechism</h4>
                         <ul data-role="listview">
 							<li data-theme="b" class="ui-bar">Doctrine Refferences</li>
-                            <li><a href="#myDialogPopUp" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(0)">- Drafting</a></li>
-                            <li><a href="#myDialogPopUp" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(1)">- Saint Mary</a></li>
-                            <li><a href="#myDialogPopUp" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(8)">- QBVM</a></li>
+                            <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="fillAppInfoContent2(0)">- Drafting</a></li>
+                            <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="fillAppInfoContent2(1)">- Saint Mary</a></li>
+                            <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="fillAppInfoContent2(8)">- QBVM</a></li>
                         </ul>
                     </div>
 
@@ -155,8 +155,8 @@
                         <h4>Bible</h4>
                         <ul data-role="listview">
 							<li data-theme="b" class="ui-bar">Versions</li>
-                            <li><a href="#myDialogPopUp" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(6)">- NAB</a></li>
-                            <li><a href="#myDialogPopUp" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(7)">- Vulgate</a></li>
+                            <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="fillAppInfoContent2(6)">- NAB</a></li>
+                            <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="fillAppInfoContent2(7)">- Vulgate</a></li>
                         </ul>
                     </div>
 
@@ -357,19 +357,22 @@
         <!-- refferences Page -->
         <div data-role="page" id="refferencesPage">
             <div data-role="header" class="msgPageHeader" style="text-align: center">
-                refferencesPage
+                Refference Read
                 <div data-role="navbar" data-mini="true">
                     <ul>
-                        <li><a id="btnCloseRefferencePage" href="#rosary" data-transition="fade" data-icon="arrow-l"></a></li>
+                        <li><a id="btnCloseRefferencePage" href="#rosary" data-transition="flip" data-icon="arrow-l"></a></li>
                         <li><a href="#" data-icon="info" target="_blank"></a></li>
                     </ul>
                 </div>
             </div>
-            <div role="main" id="refferenceBody" class="ui-content">
+            <div role="main" class="ui-content">
 				<!-- populated by list buttons on right panel -->
-                
+				<h2 id="reffHeader" style="text-align: center"></h2>
+                <h4 id="reffSubHeader"></h4>
+                <div id="reffBody"></div>
                 <div data-role="bibleContent"></div>
                 <div data-role="prayerContent"></div>
+                <span id="reffFooter"></span>
             </div>
         </div>
         
