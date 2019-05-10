@@ -9,17 +9,17 @@ A colorfull yet minimal ```scripture rosary``` for NodeJs.
 * Imports daily Mass readings (online only).
 * Optional multi-user group communication with bead progress updates.
 
-Youtube: Very old [outdated demo](https://youtu.be/SZ9aQIspbvs)
-
-
+Youtube: General mechanics [outdated demo](https://youtu.be/SZ9aQIspbvs), not the newest version.
 
 ---
 
-__Development Status:__ Latest development branch ```git branch v0.5.2.1``` is focused on:
+__Development Status:__ Latest development branch ```git branch v0.5.3``` is focused on:
 
 * (mostly ui touchups)
 
-* __Note:__ Scrapped development for iOS because the .json files are too much for Safari. The Messenger feature still works on the iOS. ***The "Messenger's" true purpose is not for talking(distraction), it is for synchronizing multiple devices. I use the "Messenger" for debugging the different user states.*** But since it's in there ... may as well.
+* Popup bubbles
+
+* __Note:__ ***The "Messenger's" true purpose is not for talking(distraction), it is for synchronizing multiple devices. I use the "Messenger" for debugging the different user states.***
 
 ---
 
