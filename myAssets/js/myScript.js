@@ -30,15 +30,15 @@
 /***************************************************************
  *  Contrived Ajax
  * */
- // import nab and define global nab json
-
+// import nab and define global nab json
+// NAB will also be my initial language
  $.ajax({
     url: './myAssets/database/rosaryJSON-min-nab.json',
     dataType: "json",
     async: false,
     success: function (result) {
         rosaryJSONnab = result;
-        //alert('rosaryJSONnab');
+        rosaryJSON = rosaryJSONnab;
     },
     error: function (request,error) {
         alert('NAB translation did not upload');
@@ -46,15 +46,14 @@
  });
 
 // import Vulgate and define global vulgate json
-// vulgate will also be my initial language
+
  $.ajax({
     url: './myAssets/database/rosaryJSON-min-vulgate.json',
     dataType: "json",
     async: false,
     success: function (result) {
         rosaryJSONvulgate = result;
-        rosaryJSON = rosaryJSONvulgate;
-        //alert('rosaryJSONvulgate');
+        // rosaryJSON = rosaryJSONvulgate;
     },
     error: function (request,error) {
         alert('Vulgate translation did not upload');
@@ -65,7 +64,8 @@
  *  Global Progressbar
  * */
 
- rosaryJSON = rosaryJSONvulgate;
+ // rosaryJSON = rosaryJSONvulgate;
+ rosaryJSON = rosaryJSONnab;
 
  var progressBar = { // var containing progressbar state
      setValue: function(beadCounterDecade, beadCounterRosary) {
@@ -377,7 +377,7 @@ function populateBookJsonList() { // populate the right pannel list with bible c
 
     for (var iLoop = 0; iLoop < tempbookIndex.length; iLoop += 1) { // collect book names for display
         li += '<li><a href="#" id="' + tempbookIndex[iLoop];
-        li += '" class="infoDisp">' + rosaryJSON.book[tempbookIndex[iLoop]].bookName + '</a></li>';
+        li += '" class="infoDisp">- ' + rosaryJSON.book[tempbookIndex[iLoop]].bookName + '</a></li>';
     }
 
     //append li to ul
@@ -409,7 +409,7 @@ function populatePrayerJsonList() { // populate the right pannel list with bible
 
     for (var iLoop = 0; iLoop < tempprayerIndex.length; iLoop += 1) { // collect prayer names
         li += '<li><a href="#" id="' + tempprayerIndex[iLoop];
-        li += '" class="infoDisp">' + rosaryJSON.prayer[tempprayerIndex[iLoop]].prayerName + '</a></li>';
+        li += '" class="infoDisp">- ' + rosaryJSON.prayer[tempprayerIndex[iLoop]].prayerName + '</a></li>';
     }
 
     //append li to ul
@@ -448,6 +448,18 @@ function initUi() {
 
 	// Sign of the cross
     beadProcess(0);
+}
+
+function minimalText() {
+	
+	$("#lblscripture").toggle();
+	/*$("#scripture").toggle();*/
+	
+	$("#lblmessage").toggle();
+	$("#message").toggle();
+	
+	$("#lblprayer").toggle();
+	/*$("#prayer").toggle();*/
 }
 
 function myControllEvents() {

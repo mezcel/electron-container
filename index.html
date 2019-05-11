@@ -64,7 +64,7 @@
         <div data-role="page" id="rosary">
 
             <!-- header top bar -->
-            <div data-role="header" data-position="fixed">
+            <div data-role="header" data-position="fixed" >
                 <!-- App Header -->
                 <a id="btnHomePanel" href="#homePanel" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-left">Settings</a>
                 <h1 id="appHeaderTitle">
@@ -75,7 +75,7 @@
 
             <!-- Right Panel - Mysteries and Scriptures  -->
             <div data-role="panel" id="infoPanel" data-position="right">
-				<h3>Mysteries</h3>
+				<h4>Mysteries</h4>
 				
                 <div data-role="collapsible-set">
 
@@ -122,7 +122,7 @@
 
                 </div>
 
-                <h3>Sacred Scriptures</h3>
+                <h4>Sacred Scriptures</h4>
 
                 <div data-role="collapsible-set">
                     <div data-role="collapsible">
@@ -135,12 +135,6 @@
                         <!-- JSON prayer list -->
                         <ul data-role="listview" id="prayer-list" data-divider-theme="b"></ul>
                     </div>
-                </div>
-
-				<h3>Authority</h3>
-				
-                <div data-role="collapsible-set">                    
-
                     <div data-role="collapsible">
                         <h4>Catechism</h4>
                         <ul data-role="listview">
@@ -150,7 +144,6 @@
                             <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="fillAppInfoContent2(8)">- QBVM</a></li>
                         </ul>
                     </div>
-
                     <div data-role="collapsible">
                         <h4>Bible</h4>
                         <ul data-role="listview">
@@ -159,14 +152,12 @@
                             <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="fillAppInfoContent2(7)">- Vulgate</a></li>
                         </ul>
                     </div>
-
-
                 </div>
             </div>
 
             <!-- Left Panel - About and Audio Option -->
             <div data-role="panel" id="homePanel" data-position="left">
-                <h3>About</h3>
+                <h4>About</h4>
                 <div data-role="collapsible">
                     <h4>Development Model</h4>
                     <ul data-role="listview">
@@ -175,7 +166,7 @@
                     </ul>
                 </div>
                                 
-                <h3>Settings:</h3>
+                <h4>Settings:</h4>
                 <div data-role="collapsible-set">
 					
 					<div data-role="collapsible">
@@ -225,10 +216,10 @@
                             <fieldset data-role="controlgroup" data-mini="true" data-iconpos="right">
                                 <legend>Toggle Language</legend>
 
-                                <input type="radio" name="rdoTranslation" id="nabTranslation" value="translation1">
+                                <input type="radio" name="rdoTranslation" id="nabTranslation" value="translation1" checked="checked">
                                 <label for="nabTranslation">English - NAB</label>
 
-                                <input type="radio" name="rdoTranslation" id="vulgateTranslation" value="translation2" checked="checked">
+                                <input type="radio" name="rdoTranslation" id="vulgateTranslation" value="translation2" >
                                 <label for="vulgateTranslation">Latin - Vulgate</label>
 
                                 <input type="radio" name="rdoTranslation" id="otherTranslation" value="translation3" disabled="disabled">
@@ -237,33 +228,15 @@
                         </form>
                     </div>
 
-                    <div data-role="collapsible">
-                        <h4>Shortcuts</h4>
-                        <form>
+					<div data-role="controlgroup">
                             <a id="btnShortcuts" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(9)">Shortcut Table</a>
-                        </form>
+                            <a id="btnMinimal" class="ui-btn ui-corner-all ui-icon-eye ui-btn-icon-right" onclick="minimalText()">toggle headers</a>
+                            <a id="btnLiturgicalSeason" href="#refferencesPage" class="ui-btn ui-corner-all ui-icon-calendar ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(10); liturgicalSeasonToday()">Feast Countdown</a>
+							<a id="btnDailyMass" href="#dailyMassPage" class="ui-btn ui-corner-all ui-icon-cloud ui-btn-icon-right" onclick="scrapeUsccb()">Mass Readings</a>
+							<a id="btnOpenMessenger" href="#messagingPage" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-right">Messenger</a>
                     </div>
+                    
                 </div>
-
-                <h3>Liturgical Calendar:</h3>
-                <div data-role="collapsible-set">
-                    <div data-role="collapsible">
-                        <h4>Liturgical Season</h4>
-                        <form>
-                            <a id="btnLiturgicalSeason" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-calendar ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(10); liturgicalSeasonToday()">Today</a>
-                        </form>
-                    </div>
-
-                    <div data-role="collapsible">
-                        <h4>Mass Readings</h4>
-                        <form>
-                            <a id="btnDailyMass" href="#dailyMassPage" class="ui-btn ui-corner-all ui-icon-cloud ui-btn-icon-right" onclick="scrapeUsccb()">usccb.org</a>
-                        </form>
-                    </div>
-                </div>
-
-                <h3>Group Messaging:</h3>
-                <a id="btnOpenMessenger" href="#messagingPage" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-left">Messenger</a>
 
             </div>
 
@@ -287,20 +260,20 @@
                         <i id="decade" ></i>
                     </div>
                     <!-- Decade Name for each bead -->
-                    <h3>Scripture:</h3>
+                    <h3 id="lblscripture">Scripture:</h3>
                     <div id="scripture" class="ui-content ui-shadow"></div>
                     <!-- Scripture Readings for each bead -->
-                    <h3>Message:</h3>
+                    <h3 id="lblmessage">Message:</h3>
                     <div id="message" class="ui-content ui-shadow"></div>
                     <!-- Custom Message for each bead -->
-                    <h3>Prayer:</h3>
+                    <h3 id="lblprayer">Prayer:</h3>
                     <div id="prayer" class="ui-content ui-shadow">...</div>
                     <!-- Prayer Readings for each bead -->
                 </div>
             </div>
 
             <!-- footer bottom bar - progress graph -->
-            <div data-role="footer" data-position="fixed">
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false">
                 <div class="ui-grid-a">
                     <div class="ui-block-a"><button style="width:98.5%" onclick="beadRev()">Bead Reverse</button></div>
                     <div class="ui-block-b"><button style="width:98.5%" onclick="beadFwd()">Bead Forward</button></div>
@@ -367,12 +340,12 @@
             </div>
             <div role="main" class="ui-content">
 				<!-- populated by list buttons on right panel -->
-				<h2 id="reffHeader" style="text-align: center"></h2>
+				<h3 id="reffHeader" style="text-align: center"></h3>
                 <h4 id="reffSubHeader"></h4>
                 <div id="reffBody"></div>
                 <div data-role="bibleContent"></div>
                 <div data-role="prayerContent"></div>
-                <span id="reffFooter"></span>
+                <p id="reffFooter" style="text-align: center"></p>
             </div>
         </div>
         
