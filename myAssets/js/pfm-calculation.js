@@ -868,8 +868,13 @@ function liturgicalSeasonToday() {
     countdownFeastName = "All Saints";
     feastDayString += countdownString(countdown, countdownFeastName, false);
 
-    document.getElementById('infoHeader').innerHTML = "Liturgical Season Flags";
+    /*document.getElementById('infoHeader').innerHTML = "Liturgical Season Flags";
     document.getElementById('infoSubHeader').innerHTML = yearCycleABC(currentTime).cycleLetter ;
     document.getElementById('infoBody').innerHTML = feastDayString;
-    document.getElementById('infoFooter').innerHTML = "Annual Countdown" + " <a href='http://www.vatican.va/archive/ccc_css/archive/catechism/p2s1c2a1.htm' target='_blank'>Celebration Of The Paschal Mystery</a>";
+    document.getElementById('infoFooter').innerHTML = "Annual Countdown" + " <a href='http://www.vatican.va/archive/ccc_css/archive/catechism/p2s1c2a1.htm' target='_blank'>Celebration Of The Paschal Mystery</a>";*/
+    
+    document.getElementById('reffHeader').innerHTML = "Liturgical Season Flags";
+    document.getElementById('reffSubHeader').innerHTML = yearCycleABC(currentTime).cycleLetter ;
+    document.getElementById('reffBody').innerHTML = feastDayString;
+    document.getElementById('reffFooter').innerHTML = "Annual Countdown" + " <a href='http://www.vatican.va/archive/ccc_css/archive/catechism/p2s1c2a1.htm' target='_blank'>Celebration Of The Paschal Mystery</a>";
 }
