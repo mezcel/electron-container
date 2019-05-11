@@ -45,12 +45,8 @@
             <div class="ui-content">
     			<a id="btnUsrInput" data-role="button" class="ui-btn ui-corner-all" href="#coverpage" data-transition="flip"><h3>Enter</h3></a>
             </div>
-            <!-- just for Electron Clients -->
-            <div data-role="footer" id="joinIpFooter" data-position="fixed">
-				<center><font size='2' color='lightgray'> Leave blank if you are the host. </font></center>
-				<br>
-				<center><font size='2' color='lightgray'> ( Not implimented: just a placeholder ) </font></center>
-                <input id="inputJoinIp" value="" type="text" placeholder="Join a server. ex: 10.42.0.1" style="text-align: center">
+            <div data-role="footer" data-position="fixed">
+				<center><font size='2' color='lightgray'> A Scripture Rosary App hosted on a NodeJs server </font></center>
             </div>
         </div>
 
@@ -69,6 +65,7 @@
                 <a id="btnHomePanel" href="#homePanel" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-left">Settings</a>
                 <h1 id="appHeaderTitle">
 					<em id="mystery">Express JQM Rosary</em> <sub class="mysteryTranslationIndicator"></sub>
+					<center><img class="headerIcon" src="myAssets/img/favicon.ico"></center>
                 </h1>
                 <a id="btnInfoPanel" href="#infoPanel" class="ui-btn ui-corner-all ui-icon-star ui-btn-icon-left">Content</a>
             </div>
@@ -230,7 +227,7 @@
 
 					<div data-role="controlgroup">
                             <a id="btnShortcuts" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(9)">Shortcut Table</a>
-                            <a id="btnMinimal" class="ui-btn ui-corner-all ui-icon-eye ui-btn-icon-right" onclick="minimalText()">toggle headers</a>
+                            <a id="btnMinimal" class="ui-btn ui-corner-all ui-icon-eye ui-btn-icon-right" onclick="minimalUI()">Minimal UI</a>
                             <a id="btnLiturgicalSeason" href="#refferencesPage" class="ui-btn ui-corner-all ui-icon-calendar ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(10); liturgicalSeasonToday()">Feast Countdown</a>
 							<a id="btnDailyMass" href="#dailyMassPage" class="ui-btn ui-corner-all ui-icon-cloud ui-btn-icon-right" onclick="scrapeUsccb()">Mass Readings</a>
 							<a id="btnOpenMessenger" href="#messagingPage" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-right">Messenger</a>
@@ -273,14 +270,14 @@
             </div>
 
             <!-- footer bottom bar - progress graph -->
-            <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+            <div data-role="footer" data-position="fixed" > <!-- data-tap-toggle="false" -->
                 <div class="ui-grid-a">
                     <div class="ui-block-a"><button style="width:98.5%" onclick="beadRev()">Bead Reverse</button></div>
                     <div class="ui-block-b"><button style="width:98.5%" onclick="beadFwd()">Bead Forward</button></div>
                 </div>
                 <span id="beadMarker" class="ui-bar" style="text-align: center">0 / 0</span>
-                <div data-role="decadeProgress"></div><!-- decade progress bar -->
-                <div data-role="rosaryProgress"></div><!-- rosary progress bar -->
+                <div class="progressBar" data-role="decadeProgress"></div><!-- decade progress bar -->
+                <div class="progressBar" data-role="rosaryProgress"></div><!-- rosary progress bar -->
             </div>
 
         </div>
@@ -330,7 +327,6 @@
         <!-- refferences Page -->
         <div data-role="page" id="refferencesPage">
             <div data-role="header" class="msgPageHeader" style="text-align: center">
-                Refference Read
                 <div data-role="navbar" data-mini="true">
                     <ul>
                         <li><a id="btnCloseRefferencePage" href="#rosary" data-transition="flip" data-icon="arrow-l"></a></li>

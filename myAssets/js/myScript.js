@@ -2,79 +2,79 @@
  *  Global Vars
  * */
 
- var initialMysteryFlag = false; // Initiated 1st mystery after the Mary Icon
- var showBibleListFlag = false; // whether or not an html list was dynamically populated
- var showPrayerListFlag = false; // whether or not an html list was dynamically populated
- var iamtyping = false; // a flag indicating if I am typing so I dont trigger keydown events
- var isMessengerOpen = false; // a flag to determine of the Messenger is the display focus
- var mainPageLoaded = false; // a flag to prevent re-loading dom objects;
+var initialMysteryFlag = false; // Initiated 1st mystery after the Mary Icon
+var showBibleListFlag = false; // whether or not an html list was dynamically populated
+var showPrayerListFlag = false; // whether or not an html list was dynamically populated
+var iamtyping = false; // a flag indicating if I am typing so I dont trigger keydown events
+var isMessengerOpen = false; // a flag to determine of the Messenger is the display focus
+var mainPageLoaded = false; // a flag to prevent re-loading dom objects;
 
- var initialHailMaryCounter = 0;
- var stringSpaceCounter = 0;
- var hailmaryCounter = 0;
- var beadCounter = 0;
- var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
+var initialHailMaryCounter = 0;
+var stringSpaceCounter = 0;
+var hailmaryCounter = 0;
+var beadCounter = 0;
+var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
  
- /* WIP Variables:
-  * about: global string used to inform the messenger group of this clients bead progress
-  * experimental: to be used in further synchronizing developments
-  * goal: when everyone is at the same counter, then bead progress can continue.
-  * temp: for now i am just using messages to verify all clients know each others progress
-  * 	NO! the prayer chat is not a real-world thing... despite what seculars are 'selling'
-  * 	The chat is a toy/distraction, the real app is synchronizing behavior and accademics
-  * */
+/* WIP Variables:
+* about: global string used to inform the messenger group of this clients bead progress
+* experimental: to be used in further synchronizing developments
+* goal: when everyone is at the same counter, then bead progress can continue.
+* temp: for now i am just using messages to verify all clients know each others progress
+* 	NO! the prayer chat is not a real-world thing... despite what seculars are 'selling'
+* 	The chat is a toy/distraction, the real app is synchronizing behavior and accademics
+* */
  
- var decadeTextDisplay = ""; // message place holders
- var messengerBeadProgress = ""; // message place holders
+var decadeTextDisplay = ""; // message place holders
+var messengerBeadProgress = ""; // message place holders
 
 /***************************************************************
  *  Contrived Ajax
  * */
 // import nab and define global nab json
 // NAB will also be my initial language
- $.ajax({
-    url: './myAssets/database/rosaryJSON-min-nab.json',
-    dataType: "json",
-    async: false,
-    success: function (result) {
-        rosaryJSONnab = result;
-        rosaryJSON = rosaryJSONnab;
-    },
-    error: function (request,error) {
-        alert('NAB translation did not upload');
-    }
- });
+$.ajax({
+	url: './myAssets/database/rosaryJSON-min-nab.json',
+	dataType: "json",
+	async: false,
+	success: function (result) {
+		rosaryJSONnab = result;
+		rosaryJSON = rosaryJSONnab;
+	},
+	error: function (request,error) {
+		alert('NAB translation did not upload');
+	}
+});
 
 // import Vulgate and define global vulgate json
 
- $.ajax({
-    url: './myAssets/database/rosaryJSON-min-vulgate.json',
-    dataType: "json",
-    async: false,
-    success: function (result) {
-        rosaryJSONvulgate = result;
-        // rosaryJSON = rosaryJSONvulgate;
-    },
-    error: function (request,error) {
-        alert('Vulgate translation did not upload');
-    }
- });
+$.ajax({
+	url: './myAssets/database/rosaryJSON-min-vulgate.json',
+	dataType: "json",
+	async: false,
+	success: function (result) {
+		rosaryJSONvulgate = result;
+		// rosaryJSON = rosaryJSONvulgate;
+	},
+	error: function (request,error) {
+		alert('Vulgate translation did not upload');
+	}
+});
 
 /***************************************************************
  *  Global Progressbar
  * */
 
- // rosaryJSON = rosaryJSONvulgate;
- rosaryJSON = rosaryJSONnab;
+// rosaryJSON = rosaryJSONvulgate;
+rosaryJSON = rosaryJSONnab;
 
- var progressBar = { // var containing progressbar state
-     setValue: function(beadCounterDecade, beadCounterRosary) {
-         $('#decadeSlider').val(beadCounterDecade);
-         $('#decadeSlider').slider("refresh");
-         $('#rosaryProgress').val(beadCounterRosary);
-         $('#rosaryProgress').slider("refresh");
-     }
- };
+var progressBar = { // var containing progressbar state
+	setValue: function(beadCounterDecade, beadCounterRosary) {
+		$('#decadeSlider').val(beadCounterDecade);
+		$('#decadeSlider').slider("refresh");
+		$('#rosaryProgress').val(beadCounterRosary);
+		$('#rosaryProgress').slider("refresh");
+	}
+};
 
 /***************************************************************
  * My Function Objects
@@ -219,7 +219,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 					mysteryProgress = 50;
 				}
 
-				$("#beadMarker").html("small rosary bead: " + thisDecadeSet + " / 10");
+				$("#beadMarker").html("hail Mary bead: " + thisDecadeSet + " / 10");
 				progressBar.setValue(thisDecadeSet, mysteryProgress);
 				
 				// Adds a status update string to your messenger messages
@@ -237,7 +237,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
                         initialHailMaryCounter = initialHailMaryCounter + (1 * directionFwRw);
                     }
 
-                    $("#beadMarker").html("small rosary bead: " + initialHailMaryCounter + " / 3");
+                    $("#beadMarker").html("hail Mary bead: " + initialHailMaryCounter + " / 3");
 
                 } else {
                     // rev
@@ -247,7 +247,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
                         initialHailMaryCounter = initialHailMaryCounter + (1 * directionFwRw);
                     }
 
-                    $("#beadMarker").html("small rosary bead: " + initialHailMaryCounter + " / 3");
+                    $("#beadMarker").html("hail Mary bead: " + initialHailMaryCounter + " / 3");
                 }
                 
                 // Adds a status update string to your messenger messages
@@ -450,16 +450,14 @@ function initUi() {
     beadProcess(0);
 }
 
-function minimalText() {
+function minimalUI() {
+	// minimal ui display
 	
-	$("#lblscripture").toggle();
-	/*$("#scripture").toggle();*/
-	
+	$("#lblscripture").toggle();	
 	$("#lblmessage").toggle();
 	$("#message").toggle();
-	
-	$("#lblprayer").toggle();
-	/*$("#prayer").toggle();*/
+	$("#lblprayer").toggle();	
+	$(".progressBar").toggle();
 }
 
 function myControllEvents() {
@@ -532,21 +530,6 @@ function myControllEvents() {
                 case 89: // letter y
                     $('#easterGold').click();
                     break;
-                case 80: // letter p
-                    $('audio').each(function(){
-						this.pause(); // Stop playing
-					}); 
-                    break;
-                case 38: // up arrow
-                    var volLevel = $('audio')[0].volume;
-                    $('audio')[0].volume = volLevel + 0.25;
-                    //$('audio')[1].volume = volLevel + 0.25;
-                    break;
-                case 40: // down arrow
-                    var volLevel = $('audio')[0].volume;
-                    $('audio')[0].volume = volLevel - 0.25;
-                    //$('audio')[1].volume = volLevel - 0.25;
-                    break;
                 case 73: // letter i
                     // hacky but it works as a toggle
                     $("#myDialogPopUp").popup("close");
@@ -563,24 +546,22 @@ function myControllEvents() {
                     // m for message
                     $('#btnOpenMessenger').click();
                     break;
-                default:
-                    console.log("keyboard entry: ", event.which);
-                    
+                default:                    
 					if ( $("#dailyMassPage").focus() ) {
-						$('#btnCloseMessenger').click();
-					}
-					
-					if ( $("#refferencesPage").focus() ) {
-						$('#btnCloseRefferencePage').click();
-						// $('#btnInfoPanel').click();
+						$('#btnCloseMassPage').click();
 					}
             }
+            
         } else {
 			// Messenger			
 			switch(event.which) {
 				case 27: // escape key
 					if ( $("#messagingPage").focus() ) {
 						$('#btnCloseMessenger').click();
+					}
+					
+					if ( $("#refferencesPage").focus() ) {
+						$('#btnCloseRefferencePage').click();
 					}
 			}
 		}
@@ -735,10 +716,6 @@ function scrapeUsccb() {
 
 /* login page */
 $(document).on('pagebeforeshow', '#splashpage', function() {
-	// do not show ip input prompt for  Firefox client (WIP)
-	if ( getBrowser() == "isFirefox") {
-		$("#joinIpFooter").hide();
-	}
 	
 	$("#btnUsrInput").click( function() {
 		setUsername();
@@ -770,8 +747,8 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() {
 	// Dynamically populated list content when active is clicked
 	
     // show modal content
-        $("#infoSubHeader").show();
-        $("#infoBody").show();
+	$("#infoSubHeader").show();
+	$("#infoBody").show();
     
 });
 
