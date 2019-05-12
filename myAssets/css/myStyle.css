@@ -11,6 +11,11 @@ hr {
 	background-color: pink;
 }
 
+.headerIcon {
+	height: 22px;
+	display: none;
+}
+
 .coverImg {
 	background: url('../img/cover-art.png') no-repeat center center;
 	background-color: white;
@@ -47,7 +52,6 @@ hr {
 .audioStyle { 
 	width: 100%;
 	color: white;
-	/*opacity: .3;*/
 }
 
 .ui-icon-delete { /* close modal icon */
@@ -88,13 +92,28 @@ hr {
 }
 
 /* this is intended for mobile screen displays */
-@media all and (max-width: 500px) {
-
-    /*html {
-        font-size: 80%;
-    }*/
+@media all and (max-width: 600px)  {
 
     #myDialogPopUp { font-size: 110%; }
     #entireBody { font-size: 80%; }
     #appHeaderTitle { font-size: 115%; }
+    #mystery {display: none;}
+    .mysteryTranslationIndicator {display: none;}
+    .headerIcon { display: block; }
+    
+    #lblscripture { display: none; }
+    #lblmessage { display: none; }
+    #lblprayer { display: none; }
+}
+
+@media all and (max-height: 450px)  {
+
+    #myDialogPopUp { font-size: 110%; }
+    #entireBody { font-size: 80%; }
+    #appHeaderTitle { font-size: 115%; }
+    
+    #lblscripture { display: none; }
+    #lblmessage { display: none; }
+    #lblprayer { display: none; }
+    .progressBar { display: none; }
 }

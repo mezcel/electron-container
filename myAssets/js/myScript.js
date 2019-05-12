@@ -2,79 +2,79 @@
  *  Global Vars
  * */
 
- var initialMysteryFlag = false; // Initiated 1st mystery after the Mary Icon
- var showBibleListFlag = false; // whether or not an html list was dynamically populated
- var showPrayerListFlag = false; // whether or not an html list was dynamically populated
- var iamtyping = false; // a flag indicating if I am typing so I dont trigger keydown events
- var isMessengerOpen = false; // a flag to determine of the Messenger is the display focus
- var mainPageLoaded = false; // a flag to prevent re-loading dom objects;
+var initialMysteryFlag = false; // Initiated 1st mystery after the Mary Icon
+var showBibleListFlag = false; // whether or not an html list was dynamically populated
+var showPrayerListFlag = false; // whether or not an html list was dynamically populated
+var iamtyping = false; // a flag indicating if I am typing so I dont trigger keydown events
+var isMessengerOpen = false; // a flag to determine of the Messenger is the display focus
+var mainPageLoaded = false; // a flag to prevent re-loading dom objects;
 
- var initialHailMaryCounter = 0;
- var stringSpaceCounter = 0;
- var hailmaryCounter = 0;
- var beadCounter = 0;
- var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
+var initialHailMaryCounter = 0;
+var stringSpaceCounter = 0;
+var hailmaryCounter = 0;
+var beadCounter = 0;
+var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
  
- /* WIP Variables:
-  * about: global string used to inform the messenger group of this clients bead progress
-  * experimental: to be used in further synchronizing developments
-  * goal: when everyone is at the same counter, then bead progress can continue.
-  * temp: for now i am just using messages to verify all clients know each others progress
-  * 	NO! the prayer chat is not a real-world thing... despite what seculars are 'selling'
-  * 	The chat is a toy/distraction, the real app is synchronizing behavior and accademics
-  * */
+/* WIP Variables:
+* about: global string used to inform the messenger group of this clients bead progress
+* experimental: to be used in further synchronizing developments
+* goal: when everyone is at the same counter, then bead progress can continue.
+* temp: for now i am just using messages to verify all clients know each others progress
+* 	NO! the prayer chat is not a real-world thing... despite what seculars are 'selling'
+* 	The chat is a toy/distraction, the real app is synchronizing behavior and accademics
+* */
  
- var decadeTextDisplay = ""; // message place holders
- var messengerBeadProgress = ""; // message place holders
+var decadeTextDisplay = ""; // message place holders
+var messengerBeadProgress = ""; // message place holders
 
 /***************************************************************
  *  Contrived Ajax
  * */
- // import nab and define global nab json
-
- $.ajax({
-    url: './myAssets/database/rosaryJSON-min-nab.json',
-    dataType: "json",
-    async: false,
-    success: function (result) {
-        rosaryJSONnab = result;
-        //alert('rosaryJSONnab');
-    },
-    error: function (request,error) {
-        alert('NAB translation did not upload');
-    }
- });
+// import nab and define global nab json
+// NAB will also be my initial language
+$.ajax({
+	url: './myAssets/database/rosaryJSON-nab.json',
+	dataType: "json",
+	async: false,
+	success: function (result) {
+		rosaryJSONnab = result;
+		rosaryJSON = rosaryJSONnab;
+	},
+	error: function (request,error) {
+		alert('NAB translation did not upload');
+	}
+});
 
 // import Vulgate and define global vulgate json
-// vulgate will also be my initial language
- $.ajax({
-    url: './myAssets/database/rosaryJSON-min-vulgate.json',
-    dataType: "json",
-    async: false,
-    success: function (result) {
-        rosaryJSONvulgate = result;
-        rosaryJSON = rosaryJSONvulgate;
-        //alert('rosaryJSONvulgate');
-    },
-    error: function (request,error) {
-        alert('Vulgate translation did not upload');
-    }
- });
+
+$.ajax({
+	url: './myAssets/database/rosaryJSON-vulgate.json',
+	dataType: "json",
+	async: false,
+	success: function (result) {
+		rosaryJSONvulgate = result;
+		// rosaryJSON = rosaryJSONvulgate;
+	},
+	error: function (request,error) {
+		alert('Vulgate translation did not upload');
+	}
+});
 
 /***************************************************************
  *  Global Progressbar
  * */
 
- rosaryJSON = rosaryJSONvulgate;
+// rosaryJSON = rosaryJSONvulgate;
+rosaryJSON = rosaryJSONnab;
 
- var progressBar = { // var containing progressbar state
-     setValue: function(beadCounterDecade, beadCounterRosary) {
-         $('#decadeSlider').val(beadCounterDecade);
-         $('#decadeSlider').slider("refresh");
-         $('#rosaryProgress').val(beadCounterRosary);
-         $('#rosaryProgress').slider("refresh");
-     }
- };
+var progressBar = { // var containing progressbar state
+	setValue: function(beadCounterDecade, beadCounterRosary) {
+		$('#decadeSlider').val(beadCounterDecade);
+		$('#decadeSlider').slider("refresh");
+		$('#rosaryProgress').val(beadCounterRosary);
+		$('#rosaryProgress').slider("refresh");
+	}
+};
 
 /***************************************************************
  * My Function Objects
@@ -108,13 +108,19 @@ function initialMystery() { // initial mystery based on weekday
 
 }
 
+function jumpFunction(mysteryInfoID, jumptoBeadID) {
+	beadCounter = jumptoBeadID ;
+	hailmaryCounter = ((mysteryInfoID * 10) - 10);
+	beadFwd();
+	progressBar.setValue(hailmaryCounter % 10, hailmaryCounter % 50);
+	$("#btnClosePopup").click(); 
+	$("#btnInfoPanel").click();
+}
+
 function populateJumpToPosition(mysteryInfoID, jumptoBeadID) { // populate button and function
 
-    // jump to positions function string
-    var onclickFunction = 'beadCounter = ' + jumptoBeadID + '; hailmaryCounter = ' + ((mysteryInfoID * 10) - 10) + '; beadFwd(); progressBar.setValue(hailmaryCounter % 10, hailmaryCounter % 50);';
-
     // dynamic populate button
-    var btnMysteryString = '<p><a href="#rosary" class="ui-btn ui-corner-all ui-icon-actiont" data-rel="back" onclick="' + onclickFunction + '">Start</a><p>';
+    var btnMysteryString = '<p><a class="ui-btn ui-corner-all ui-icon-actiont" onclick="jumpFunction(' + mysteryInfoID + ', ' + jumptoBeadID + ')">Start</a><p>';
 
     return btnMysteryString;
 }
@@ -130,6 +136,7 @@ function fillMysteryInfoContent(mysteryInfoID, jumptoBeadID) { // populate myste
 }
 
 function fillAppInfoContent(infoID) { // called within html
+	// used for popup modal
     showBibleListFlag = false;
     showPrayerListFlag = false;
 
@@ -137,6 +144,17 @@ function fillAppInfoContent(infoID) { // called within html
     document.getElementById('infoSubHeader').innerHTML = rosaryJSON.appInfo[infoID].infoSubHeader;
     document.getElementById('infoBody').innerHTML = rosaryJSON.appInfo[infoID].infoText;
     document.getElementById('infoFooter').innerHTML = rosaryJSON.appInfo[infoID].infoFooter;
+}
+
+function fillAppInfoContent2(infoID) { // called within html
+	// used for a dedicated jqm page
+    showBibleListFlag = false;
+    showPrayerListFlag = false;
+
+    document.getElementById('reffHeader').innerHTML = rosaryJSON.appInfo[infoID].infoHeader;
+    document.getElementById('reffSubHeader').innerHTML = rosaryJSON.appInfo[infoID].infoSubHeader;
+    document.getElementById('reffBody').innerHTML = rosaryJSON.appInfo[infoID].infoText;
+    document.getElementById('reffFooter').innerHTML = rosaryJSON.appInfo[infoID].infoFooter;
 }
 
 function fillRosaryBeadPage(counterNo) {
@@ -185,6 +203,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
     var decadeIndex = rosaryJSON.rosaryBead[beadCounter].decadeIndex;
     var beadIndex 	= rosaryJSON.rosaryBead[beadCounter].beadIndex;
     var beadType 	= rosaryJSON.bead[beadIndex].beadID;
+    var prepostMystery; // intro or conclusion prayers
 
     switch (beadType) { // the bead type is used to configre count/progress settings
 
@@ -209,7 +228,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 					mysteryProgress = 50;
 				}
 
-				$("#beadMarker").html("small rosary bead: " + thisDecadeSet + " / 10");
+				$("#beadMarker").html("small bead: " + thisDecadeSet + " / 10");
 				progressBar.setValue(thisDecadeSet, mysteryProgress);
 				
 				// Adds a status update string to your messenger messages
@@ -227,7 +246,8 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
                         initialHailMaryCounter = initialHailMaryCounter + (1 * directionFwRw);
                     }
 
-                    $("#beadMarker").html("small rosary bead: " + initialHailMaryCounter + " / 3");
+					prepostMystery = "introductory prayers";
+                    $("#beadMarker").html("small bead: " + initialHailMaryCounter + " / 3");
 
                 } else {
                     // rev
@@ -236,8 +256,8 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
                     } else {
                         initialHailMaryCounter = initialHailMaryCounter + (1 * directionFwRw);
                     }
-
-                    $("#beadMarker").html("small rosary bead: " + initialHailMaryCounter + " / 3");
+					prepostMystery = "introductory prayers";
+                    $("#beadMarker").html("small bead: " + initialHailMaryCounter + " / 3");
                 }
                 
                 // Adds a status update string to your messenger messages
@@ -266,6 +286,8 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 			} else {
 				messengerBeadProgress = decadeTextDisplay + ", bead 0";
 			}
+			
+			prepostMystery = "introductory prayers";
 
             break;
 
@@ -285,7 +307,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 				}
 
             } else {
-				//rev
+				// rev
 				if (stringSpaceCounter == 0) {
 					stringSpaceCounter = 2;
 					if ((hailmaryCounter % 10) > 0) {
@@ -299,6 +321,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 				}
             }
 
+			prepostMystery = "introductory prayers";
             $("#beadMarker").html("string space: " + stringSpaceCounter + " / 2");
             messengerBeadProgress = decadeTextDisplay + ", " + $("#beadMarker").text();
 
@@ -323,6 +346,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             
             // Adds a status update string to your messenger messages
 			messengerBeadProgress = "Mary Icon ...";
+			prepostMystery = "conclusion prayers";
 
             break;
 
@@ -332,6 +356,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             progressBar.setValue(0, 0);
             stringSpaceCounter = 0;
             
+            prepostMystery = "introductory prayers";
             messengerBeadProgress = "crucifix ...";
             
             break;
@@ -341,12 +366,27 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             $("#beadMarker").html("0 / 0");
             stringSpaceCounter = 0;
             
+            prepostMystery = "introductory prayers";
 			messengerBeadProgress = "starting ...";
             
             break;
     }
 
     fillRosaryBeadPage(beadCounter); // populare dom with text
+    
+    if ($("#decade").html() == "") {
+		$("#decade").html(prepostMystery);
+		
+		// hide unused elements
+		$("#lblscripture").hide();
+		$("#scripture").hide();
+		$("#lblmessage").hide();
+		$("#message").hide();
+	} else {
+		$("#scripture").show();
+		$("#message").show();
+		setMinimalState();
+	}
 
 }
 
@@ -355,7 +395,7 @@ function populateBookJsonList() { // populate the right pannel list with bible c
     var li = '<li data-theme="b" class="ui-bar">Bible Quotes </li>';
     var tempbookIndex = [];
     //container for $li's to be added
-    $.each(rosaryJSON.scripture, function(i, name) { // consolidate scriptured from the same book
+    $.each(rosaryJSON.scripture, function(i, name) { // consolidate scriptures from the same book
         if ($.inArray(name.bookIndex, tempbookIndex) !== -1) { // -1 = false
         } else {
             tempbookIndex.push(name.bookIndex);
@@ -367,22 +407,23 @@ function populateBookJsonList() { // populate the right pannel list with bible c
 
     for (var iLoop = 0; iLoop < tempbookIndex.length; iLoop += 1) { // collect book names for display
         li += '<li><a href="#" id="' + tempbookIndex[iLoop];
-        li += '" class="infoDisp">' + rosaryJSON.book[tempbookIndex[iLoop]].bookName + '</a></li>';
+        li += '" class="infoDisp">- ' + rosaryJSON.book[tempbookIndex[iLoop]].bookName + '</a></li>';
     }
 
     //append li to ul
     $("#bible-list").append(li).promise().done(function() {
         $(this).on("click", ".infoDisp", function(e) {
-            $("#infoSubHeader").hide();
-            $("#infoBody").hide();
+            //$("#infoSubHeader").hide();
+            //$("#infoBody").hide();
 
             // flag to determine bible verses will display in popup
             showBibleListFlag = true;
             showPrayerListFlag = false;
 
             e.preventDefault();
-            $("#myDialogPopUp").data("myDataJsonVar", rosaryJSON.book[this.id]);
-            $("#myDialogPopUp").popup("open");
+            $("#refferencesPage").data("myDataJsonVar", rosaryJSON.book[this.id]);
+            // $("#myDialogPopUp").popup("open");
+            $.mobile.navigate("#refferencesPage", {transition: "fade"});
         });
         $(this).listview("refresh");
     });
@@ -398,31 +439,109 @@ function populatePrayerJsonList() { // populate the right pannel list with bible
 
     for (var iLoop = 0; iLoop < tempprayerIndex.length; iLoop += 1) { // collect prayer names
         li += '<li><a href="#" id="' + tempprayerIndex[iLoop];
-        li += '" class="infoDisp">' + rosaryJSON.prayer[tempprayerIndex[iLoop]].prayerName + '</a></li>';
+        li += '" class="infoDisp">- ' + rosaryJSON.prayer[tempprayerIndex[iLoop]].prayerName + '</a></li>';
     }
 
     //append li to ul
     $("#prayer-list").append(li).promise().done(function() {
         $(this).on("click", ".infoDisp", function(e) {
-            $("#infoSubHeader").hide();
-            $("#infoBody").hide();
+            //$("#infoSubHeader").hide();
+            //$("#infoBody").hide();
 
             // flag to determine prayers will display in popup
             showPrayerListFlag = true;
             showBibleListFlag = false;
 
             e.preventDefault();
-            $("#myDialogPopUp").data("myDataJsonVar2", rosaryJSON.prayer[this.id]);
-            $("#myDialogPopUp").popup("open");
+            $("#refferencesPage").data("myDataJsonVar2", rosaryJSON.prayer[this.id]);
+            // $("#myDialogPopUp").popup("open");
+            $.mobile.navigate("#refferencesPage", {transition: "fade"});
         });
         $(this).listview("refresh");
     });
 }
 
 function initAudioVolume() { // initial audio volume setting
-    //$("#audioAveMaria").play();
-    //$("#audioAveMaria").pause();
     $("#audioAveMaria").prop('volume', 0.30);
+}
+
+function collapsibleEvents() {	
+    
+    $('#collapsibleMystery a').click( function() {
+		$('#collapsibleRefferences').children().collapsible("collapse");
+		$('#collapsibleAbout').collapsible("collapse");
+		$('#collapsibleSettings').children().collapsible("collapse");
+	});
+	
+    $('#collapsibleRefferences a').click( function() {
+		$('#collapsibleMystery').children().collapsible("collapse");
+		$('#collapsibleAbout').collapsible("collapse");
+		$('#collapsibleSettings').children().collapsible("collapse");
+	});
+	
+    $('#collapsibleAbout a').click( function() {
+		$('#collapsibleMystery').children().collapsible("collapse");
+		$('#collapsibleRefferences').children().collapsible("collapse");
+		$('#collapsibleSettings').children().collapsible("collapse");
+	});
+	
+    $('#collapsibleSettings a').click( function() {
+		$('#collapsibleMystery').children().collapsible("collapse");
+		$('#collapsibleRefferences').children().collapsible("collapse");
+		$('#collapsibleAbout').collapsible("collapse");
+	});
+	
+	$('#btnInfoPanel').click( function() {
+		$('#collapsibleMystery').children().collapsible("collapse");
+		$('#collapsibleRefferences').children().collapsible("collapse");
+	});
+	
+}
+
+function minimalText() {
+	$('#lblscripture').hide(); 
+	$('#lblmessage').hide(); 
+	$('#lblprayer').hide(); 
+	$('.progressBar').show(); 
+}
+
+function minimalNavigation() {
+	$('#lblscripture').show(); 
+	$('#lblmessage').show(); 
+	$('#lblprayer').show(); 
+	$('.progressBar').hide();
+}
+
+function minimalAll() { 
+	$('#lblscripture').hide(); 
+	$('#lblmessage').hide(); 
+	$('#lblprayer').hide(); 
+	$('.progressBar').hide(); 
+}
+
+function minimalShowAll() { 
+	$('#lblscripture').show(); 
+	$('#lblmessage').show(); 
+	$('#lblprayer').show(); 
+	$('.progressBar').show(); 
+}
+
+function setMinimalState() {
+	if ($("#hideHeading").is(":checked")) {
+		minimalText();
+	}
+	
+	if ($("#hideProgressbar").is(":checked")) {
+		minimalNavigation();
+	}
+	
+	if ($("#hideAll").is(":checked")) {
+		minimalAll();
+	}
+	
+	if ($("#hideNone").is(":checked")) {
+		minimalShowAll();
+	}
 }
 
 function initUi() {
@@ -433,11 +552,14 @@ function initUi() {
     myControllEvents();
     myThemeEvents();
     initProgressBars();
+    
+    collapsibleEvents();
 
 	// Sign of the cross
     beadProcess(0);
 }
 
+/* keystroke inputs */
 function myControllEvents() {
 
     // swipe
@@ -495,37 +617,27 @@ function myControllEvents() {
                     break;
                 case 87: // letter w
                     $('#feastRed').click();
+                    $('#feastRed').click();
                     break;
                 case 69: // letter e
+                    $('#marianBlue').click();
                     $('#marianBlue').click();
                     break;
                 case 82: // letter r
                     $('#adventPurple').click();
+                    $('#adventPurple').click();
                     break;
                 case 84: // letter t
+                    $('#ordinaryGreen').click();
                     $('#ordinaryGreen').click();
                     break;
                 case 89: // letter y
                     $('#easterGold').click();
-                    break;
-                case 80: // letter p
-                    $('audio').each(function(){
-						this.pause(); // Stop playing
-					}); 
-                    break;
-                case 38: // up arrow
-                    var volLevel = $('audio')[0].volume;
-                    $('audio')[0].volume = volLevel + 0.25;
-                    //$('audio')[1].volume = volLevel + 0.25;
-                    break;
-                case 40: // down arrow
-                    var volLevel = $('audio')[0].volume;
-                    $('audio')[0].volume = volLevel - 0.25;
-                    //$('audio')[1].volume = volLevel - 0.25;
+                    $('#easterGold').click();
                     break;
                 case 73: // letter i
                     // hacky but it works as a toggle
-                    $("#myDialogPopUp").popup("close");
+                    $('#myDialogPopUp').popup("close");
                     $('#rosary').click();
                     $('#btnGithub').click();
                     break;
@@ -539,19 +651,23 @@ function myControllEvents() {
                     // m for message
                     $('#btnOpenMessenger').click();
                     break;
-                default:
-                    console.log("keyboard entry: ", event.which);
-                    
-					if ( $("#dailyMassPage").focus() ) {
-						$('#btnCloseMessenger').click();
+                default:                    
+					if ( $('#dailyMassPage').focus() ) {
+						$('#btnCloseMassPage').click();
 					}
+					// console.log("key press", event.which); // debug keys
             }
+            
         } else {
 			// Messenger			
 			switch(event.which) {
 				case 27: // escape key
 					if ( $("#messagingPage").focus() ) {
 						$('#btnCloseMessenger').click();
+					}
+					
+					if ( $("#refferencesPage").focus() ) {
+						$('#btnCloseRefferencePage').click();
 					}
 			}
 		}
@@ -589,23 +705,25 @@ function myThemeEvents() {
                 $("#entireBody").addClass("ui-page-theme-c");
                 $(".myUiBody").addClass("ui-body-c");
             }
+            
             if ($("#marianBlue").is(":checked")) {
                 $("#entireBody").addClass("ui-page-theme-d");
                 $(".myUiBody").addClass("ui-body-d");
             }
+            
             if ($("#adventPurple").is(":checked")) {
                 $("#entireBody").addClass("ui-page-theme-e");
                 $(".myUiBody").addClass("ui-body-e");
             }
+            
             if ($("#ordinaryGreen").is(":checked")) {
                 $("#entireBody").addClass("ui-page-theme-f");
                 $(".myUiBody").addClass("ui-body-f");
             }
+            
             if ($("#easterGold").is(":checked")) {
                 $("#entireBody").addClass("ui-page-theme-g");
                 $(".myUiBody").addClass("ui-body-g");
-                $("audio").addClass("ui-body-g");
-                
             }
 
         }
@@ -635,6 +753,18 @@ function myThemeEvents() {
             fillRosaryBeadPage(beadCounter); // display translation of current bead
         }
     });
+
+	// Minimal display themes
+    $("#minimalStates input").on("change", function(event) { // multi color
+        if (event.target.name === "rdoMinimalism") {
+            setMinimalState();
+        }
+        
+        // a tweak to reduce footer whitespace
+        $('#homePanel').trigger("updatelayout");
+    });
+
+	
 }
 
 function initProgressBars() {
@@ -706,44 +836,74 @@ function scrapeUsccb() {
 
 /* login page */
 $(document).on('pagebeforeshow', '#splashpage', function() {
-	// do not show ip input prompt for  Firefox client (WIP)
-	if ( getBrowser() == "isFirefox") {
-		$("#joinIpFooter").hide();
-	}
-	
-	$("#btnUsrInput").click( function() {
-		setUsername();
-	});
-	
-});
-
-$(document).on('pageshow', '#splashpage', function() {
-	
     $("#myName").on("keydown", function(event) {
 		if (event.which == 13) {
 			$.mobile.navigate("#coverpage", {transition: "flip"});
 			$("#btnUsrInput").click();
 		}
 	});
-	
-    $("#myName").focus();
+	$("#btnUsrInput").click( function() {
+		setUsername();
+	});
+});
+
+$(document).on('pageshow', '#splashpage', function() {
+    $("#myName").focus();  
 });
 
 /* configure progressbars  */
-$(document).on('pageshow', '#rosary', function() {
+$(document).on('pagebeforeshow', '#rosary', function() {
     if (mainPageLoaded == false) {
-        initUi(); // generate rosary
+        initUi(); // generate rosary and rosary UI
         mainPageLoaded = true; // prevent reactivating or resetting
+        
+        // used for initializing the look and feel for variable screen UIs
+        // manual @media css-like setting, minimal UI
+        
+        var initialScreenHeight = $(document).height();
+		var initialScreenWidth =  $(document).width();
+		console.log("h= " + initialScreenHeight, "w= " + initialScreenWidth);
+		
+		if (initialScreenHeight < 450) {
+			$('#hideAll').click();
+			$('#hideAll').click();
+		} 
+		
+		if ((initialScreenWidth < 600) && (initialScreenHeight > 450)) {
+			$('#hideHeading').click();
+			$('#hideHeading').click();
+		} 
+		
+		if ((initialScreenHeight > 450) && (initialScreenWidth > 600)) {
+			$('#hideNone').click();
+			$('#hideNone').click();
+		}
+		
+		// initially hide placeholders on 1st load
+		$("#lblscripture").hide();
+		$("#scripture").hide();
+		$("#lblmessage").hide();
+		$("#message").hide();
+	
     }
 });
 
-/* the code destination for dynamically generated bible list */
+/* popup modal */
 $(document).on("popupbeforeposition", "#myDialogPopUp", function() { 
 	// Dynamically populated list content when active is clicked
+	
+    // show modal content
+	$("#infoSubHeader").show();
+	$("#infoBody").show();
+    
+});
 
+/* the code destination for dynamically generated bible list */
+$(document).on("pagebeforeshow", "#refferencesPage", function() { 
+	// Dynamically populated list content when active is clicked
     if (showBibleListFlag === true) { // Bible Book list in right panel
 		
-        var info = $("#myDialogPopUp").data("myDataJsonVar");
+        var info = $("#refferencesPage").data("myDataJsonVar");
         var info_view = '<ol style="list-style: none; padding-left: 0;">';
         var bookID = info["bookID"];
 
@@ -759,17 +919,17 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() {
 
         // hide extra elements
         $(this).find("[data-role=prayerContent]").html('');
-        $("#infoSubHeader").css("display","none");
-        $("#infoBody").css("display","none");
+        $("#reffSubHeader").css("display","none");
+        $("#reffBody").css("display","none");
 
         // show modal content
-        $("#infoHeader").html(info["bookName"]);
+        $("#reffHeader").html(info["bookName"]);
         $(this).find("[data-role=bibleContent]").html(info_view);
-        $("#infoFooter").html("Readings found in: " + info["library"]);
+        $("#reffFooter").html("Readings found in: " + info["library"]);
         
     } else if (showPrayerListFlag === true) { // Prayer Book list in right panel
 		
-        var info = $("#myDialogPopUp").data("myDataJsonVar2");
+        var info = $("#refferencesPage").data("myDataJsonVar2");
         var prayerID = info["prayerID"];
         var info_view = '<ol style="list-style: none; padding-left: 0;">' + 
 			'<li class="ui-field-contain ui-corner-all ui-shadow">' + 
@@ -777,13 +937,13 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() {
 
         // hide extra elements
         $(this).find("[data-role=bibleContent]").html('');
-        $("#infoSubHeader").css("display","none");
-        $("#infoBody").css("display","none");
+        $("#reffSubHeader").css("display","none");
+        $("#reffBody").css("display","none");
 
         // show modal content
-        $("#infoHeader").html(rosaryJSON.prayer[prayerID].prayerName);
+        $("#reffHeader").html(rosaryJSON.prayer[prayerID].prayerName);
         $(this).find("[data-role=prayerContent]").html(info_view);
-        $("#infoFooter").html("footer");
+        $("#reffFooter").html(rosaryJSON.prayer[prayerID].prayerFooter);
 
     } else { // the other content
 		
@@ -792,8 +952,8 @@ $(document).on("popupbeforeposition", "#myDialogPopUp", function() {
 		$(this).find("[data-role=prayerContent]").html('');
 
         // show modal content
-        $("#infoSubHeader").show();
-        $("#infoBody").show();
+        $("#reffSubHeader").show();
+        $("#reffBody").show();
     }
     
 });

@@ -9,17 +9,19 @@ A colorfull yet minimal ```scripture rosary``` for NodeJs.
 * Imports daily Mass readings (online only).
 * Optional multi-user group communication with bead progress updates.
 
-Youtube: Very old [outdated demo](https://youtu.be/SZ9aQIspbvs)
+Youtube: General mechanics [outdated demo](https://youtu.be/SZ9aQIspbvs), not the newest version.
 
-
+Note: The app is not the UI, the app is what is going on inside the box. Ex: the bloated json parsing.
 
 ---
 
-__Development Status:__ Latest development branch ```git branch v0.5.2.1``` is focused on:
+__Development Status:__ Latest development branch ```git branch v0.5.3``` is focused on:
 
 * (mostly ui touchups)
 
-* __Note:__ Scrapped development for iOS because the .json files are too much for Safari. The Messenger feature still works on the iOS. ***The "Messenger's" true purpose is not for talking(distraction), it is for synchronizing multiple devices. I use the "Messenger" for debugging the different user states.*** But since it's in there ... may as well.
+	* Most of the bloat is UI event workarrounds.
+	* Other than my decision to go the json db rout... I almost doubled my code recreating existing jqm features.
+	* New systems wont feel the bloat but 'true'/legacy systems will call me out wherever bad practice was invoked.
 
 ---
 
@@ -82,6 +84,8 @@ Electron development for Ubuntu Linux ```install-electron-debian.sh```
 
 Electron development for Arch Linux ```install-electron-arch.sh```
 
+Win10 just requires a standard [Node JS download](https://nodejs.org/en/download/)
+
 ```sh
 ## Arch
 
@@ -127,4 +131,6 @@ Dev Testing:
 
 * _Host Computer_: Best performance experienced on Win10 and Arch/Debian Linux.
 
-* _Client Computer_: Best experience on desktop/laptop sized and mobile device sized monitors. (scrapped Safari development)
+* _Client Computer_: Best experience on desktop/laptop sized and mobile device sized monitors. (abandoned Safari development)
+
+	* the tablet and mobile screen sizes are approximations based on old device standards.
