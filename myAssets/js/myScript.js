@@ -120,7 +120,7 @@ function jumpFunction(mysteryInfoID, jumptoBeadID) {
 function populateJumpToPosition(mysteryInfoID, jumptoBeadID) { // populate button and function
 
     // dynamic populate button
-    var btnMysteryString = '<p><a class="ui-btn ui-corner-all ui-icon-actiont" data-rel="back" onclick="jumpFunction(' + mysteryInfoID + ', ' + jumptoBeadID + ')">Start</a><p>';
+    var btnMysteryString = '<p><a class="ui-btn ui-corner-all ui-icon-actiont" onclick="jumpFunction(' + mysteryInfoID + ', ' + jumptoBeadID + ')">Start</a><p>';
 
     return btnMysteryString;
 }
@@ -505,11 +505,11 @@ function minimalUI() {
 
     document.getElementById('infoHeader').innerHTML = "Minimal";
     document.getElementById('infoSubHeader').innerHTML = "Toggle text headers and progress bars.";
-    document.getElementById('infoBody').innerHTML = "4 view states: <hr>" + 
-		"<a href='#rosary' class='ui-btn ui-corner-all ui-icon-arrow-u ui-btn-icon-left' onclick='minimalText()'>min text</a>" + 
-		"<a href='#rosary' class='ui-btn ui-corner-all ui-icon-arrow-d ui-btn-icon-left' onclick='minimalNavigation()'>min bars</a>" + 
-		"<a href='#rosary' class='ui-btn ui-corner-all ui-icon-eye ui-btn-icon-left' onclick='minimalAll()'>min all</a>" + 
-		"<a href='#rosary' class='ui-btn ui-corner-all ui-icon-grid ui-btn-icon-left' onclick='minimalShowAll()'>show all</a>";
+    document.getElementById('infoBody').innerHTML = "Use for tiny screens: <hr>" + 
+		"<a href='#rosary' class='ui-btn ui-corner-all ui-icon-arrow-u ui-btn-icon-left' onclick='minimalText()'>min text, show bars</a>" + 
+		"<a href='#rosary' class='ui-btn ui-corner-all ui-icon-arrow-d ui-btn-icon-left' onclick='minimalNavigation()'>min bars, show text</a>" + 
+		"<a href='#rosary' class='ui-btn ui-corner-all ui-icon-eye ui-btn-icon-left' onclick='minimalAll()'>max minimal</a>" + 
+		"<a href='#rosary' class='ui-btn ui-corner-all ui-icon-grid ui-btn-icon-left' onclick='minimalShowAll()'>minimal off</a>";
     document.getElementById('infoFooter').innerHTML = "-";
 }
 
@@ -871,7 +871,7 @@ $(document).on("pagebeforeshow", "#refferencesPage", function() {
         // show modal content
         $("#reffHeader").html(rosaryJSON.prayer[prayerID].prayerName);
         $(this).find("[data-role=prayerContent]").html(info_view);
-        $("#reffFooter").html("footer");
+        $("#reffFooter").html(rosaryJSON.prayer[prayerID].prayerFooter);
 
     } else { // the other content
 		
