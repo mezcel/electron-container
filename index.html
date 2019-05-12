@@ -39,14 +39,15 @@
         <!-- splash page / mane registration -->
 		<div data-role="page" id="splashpage" data-theme="d">
             <div style="text-align: center" data-role="header"><h3>Welcome Login</h3></div>
-            <div class="ui-content">
-    			<input id="myName" value="" type="text" placeholder="enter a user name" style="text-align: center">
-            </div>
-            <div class="ui-content">
+
+            <div data-role="main" class="ui-content">
+				<input id="myName" value="" type="text" placeholder="enter a user name" style="text-align: center">
+				<hr>
     			<a id="btnUsrInput" data-role="button" class="ui-btn ui-corner-all" href="#coverpage" data-transition="flip"><h3>Enter</h3></a>
             </div>
-            <div data-role="footer" data-position="fixed">
-				<center><font size='2' color='lightgray'> A Scripture Rosary App hosted on a NodeJs server </font></center>
+            
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+				<center><font size='2' color='lightgray'>Scripture Rosary hosted on NodeJs</font></center>
             </div>
         </div>
 
@@ -57,7 +58,7 @@
         </a>
 
         <!-- main rosary ui page -->
-        <div data-role="page" id="rosary">
+        <div data-role="page" id="rosary" class="mySwipeClass">
 
             <!-- header top bar -->
             <div data-role="header" data-position="fixed" >
@@ -74,7 +75,7 @@
             <div data-role="panel" id="infoPanel" data-position="right">
 				<h4>Mysteries</h4>
 				
-                <div data-role="collapsible-set">
+                <div id="collapsibleMystery" data-role="collapsible-set">
 
                     <div data-role="collapsible">
                         <h4>Joyful Mysteries</h4>
@@ -121,7 +122,7 @@
 
                 <h4>Sacred Scriptures</h4>
 
-                <div data-role="collapsible-set">
+                <div id="collapsibleRefferences" data-role="collapsible-set">
                     <div data-role="collapsible">
                         <h4>Refference</h4>
                         <!-- JSON bible list -->
@@ -136,17 +137,17 @@
                         <h4>Catechism</h4>
                         <ul data-role="listview">
 							<li data-theme="b" class="ui-bar">Doctrine Refferences</li>
-                            <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="fillAppInfoContent2(0)">- Drafting</a></li>
-                            <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="fillAppInfoContent2(1)">- Saint Mary</a></li>
-                            <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="fillAppInfoContent2(8)">- QBVM</a></li>
+                            <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent2(0)">- Drafting</a></li>
+                            <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent2(1)">- Saint Mary</a></li>
+                            <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent2(8)">- QBVM</a></li>
                         </ul>
                     </div>
                     <div data-role="collapsible">
                         <h4>Bible</h4>
                         <ul data-role="listview">
 							<li data-theme="b" class="ui-bar">Versions</li>
-                            <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="fillAppInfoContent2(6)">- NAB</a></li>
-                            <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="fillAppInfoContent2(7)">- Vulgate</a></li>
+                            <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent2(6)">- NAB</a></li>
+                            <li><a href="#refferencesPage" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent2(7)">- Vulgate</a></li>
                         </ul>
                     </div>
                 </div>
@@ -155,7 +156,7 @@
             <!-- Left Panel - About and Audio Option -->
             <div data-role="panel" id="homePanel" data-position="left">
                 <h4>About</h4>
-                <div data-role="collapsible">
+                <div id="collapsibleAbout" data-role="collapsible">
                     <h4>Development Model</h4>
                     <ul data-role="listview">
                         <li><a href="#myDialogPopUp" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(2)">Objective</a></li>
@@ -164,7 +165,7 @@
                 </div>
                                 
                 <h4>Settings:</h4>
-                <div data-role="collapsible-set">
+                <div id="collapsibleSettings" data-role="collapsible-set">
 					
 					<div data-role="collapsible">
 						<h4>Audio</h4>
@@ -227,10 +228,10 @@
 
 					<div data-role="controlgroup">
                             <a id="btnShortcuts" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(9)">Shortcut Table</a>
-                            <a id="btnMinimal" class="ui-btn ui-corner-all ui-icon-eye ui-btn-icon-right" onclick="minimalUI()">Minimal UI</a>
+                            <a id="btnMinimal" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-eye ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade"  onclick="minimalUI()">Minimal UI</a>
                             <a id="btnLiturgicalSeason" href="#refferencesPage" class="ui-btn ui-corner-all ui-icon-calendar ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(10); liturgicalSeasonToday()">Feast Countdown</a>
-							<a id="btnDailyMass" href="#dailyMassPage" class="ui-btn ui-corner-all ui-icon-cloud ui-btn-icon-right" onclick="scrapeUsccb()">Mass Readings</a>
-							<a id="btnOpenMessenger" href="#messagingPage" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-right">Messenger</a>
+							<a id="btnDailyMass" href="#dailyMassPage" class="ui-btn ui-corner-all ui-icon-cloud ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="scrapeUsccb()">Mass Readings</a>
+							<a id="btnOpenMessenger" href="#messagingPage" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-right">Messenger</a>
                     </div>
                     
                 </div>
@@ -239,17 +240,15 @@
 
             <!-- Information Popup Dialog -->
             <div data-role="popup" id="myDialogPopUp" class="ui-content" data-overlay-theme="b" data-position="fixed">
-                <a href="#rosary" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-left ui-shadow ui-btn-up-a" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Close"></a>
+                <a id="btnClosePopup" href="#rosary" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-left ui-shadow ui-btn-up-a" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Close"></a>
                 <span id="infoHeader" style="text-align: center" data-role="header"></span>
                 <h4 id="infoSubHeader" class="ui-content"></h4>
                 <div id="infoBody" class="ui-content" style="overflow-y:auto"></div>
-                
-
                 <span id="infoFooter" style="text-align: center" data-role="footer"></span>
             </div>
 
             <!-- Main Rosary - Center View -->
-            <div data-role="main" class="ui-content mySwipeClass" data-position="fixed">
+            <div data-role="main" class="ui-content" data-position="fixed">
 
                 <!-- App Main View -->
                 <div id="rosaryBeadText">
@@ -270,7 +269,7 @@
             </div>
 
             <!-- footer bottom bar - progress graph -->
-            <div data-role="footer" data-position="fixed" > <!-- data-tap-toggle="false" -->
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false">
                 <div class="ui-grid-a">
                     <div class="ui-block-a"><button style="width:98.5%" onclick="beadRev()">Bead Reverse</button></div>
                     <div class="ui-block-b"><button style="width:98.5%" onclick="beadFwd()">Bead Forward</button></div>
@@ -285,7 +284,7 @@
 		<!-- group messaging page -->
         <div data-role="page" id="messagingPage">
 
-            <div data-role="header" class="msgPageHeader" style="text-align: center">
+            <div data-role="header" class="msgPageHeader" style="text-align: center" data-position="fixed" data-tap-toggle="false">
                 Messenger
                 <div data-role="navbar" data-mini="true">
                     <ul>
@@ -297,7 +296,7 @@
 
             <div role="main" id="myMessageContainer" class="msgLog "></div>
 
-            <div data-role="footer" class="msgPageFooter" data-position="fixed">
+            <div data-role="footer" class="msgPageFooter" data-position="fixed" data-tap-toggle="false">
                 <div id="divAllUsers" style="overflow-y:auto;"></div>
                 <input id="myMessage" value="" type="text" placeholder="Enter a message ...">
                 <div data-role="navbar" data-mini="true">
@@ -312,7 +311,7 @@
 
 		<!-- daily mass readings page -->
         <div data-role="page" id="dailyMassPage">
-            <div data-role="header" class="msgPageHeader" style="text-align: center">
+            <div data-role="header" class="msgPageHeader" style="text-align: center" data-position="fixed" data-tap-toggle="false">
                 Daily Mass Readings
                 <div data-role="navbar" data-mini="true">
                     <ul>
@@ -326,10 +325,10 @@
         
         <!-- refferences Page -->
         <div data-role="page" id="refferencesPage">
-            <div data-role="header" class="msgPageHeader" style="text-align: center">
+            <div data-role="header" class="msgPageHeader" class="ui-content" style="text-align: center" data-position="fixed" data-tap-toggle="false">
                 <div data-role="navbar" data-mini="true">
                     <ul>
-                        <li><a id="btnCloseRefferencePage" href="#rosary" data-transition="flip" data-icon="arrow-l"></a></li>
+                        <li><a id="btnCloseRefferencePage" href="#rosary" data-transition="fade" data-icon="arrow-l"></a></li>
                         <li><a href="#" data-icon="info" target="_blank"></a></li>
                     </ul>
                 </div>

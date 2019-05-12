@@ -77,7 +77,7 @@ function sendmyMessage() {
 	}
 	
 	document.getElementById('myMessage').value = "";
-	document.getElementById("myMessage").focus();
+	// document.getElementById("myMessage").focus();
 	$(window).scrollTop(0); // scroll back to top of page
 
 };
@@ -102,7 +102,7 @@ function sendmyMessageInfo() {
 			});
 		}
 		document.getElementById('myMessage').value = "";
-		document.getElementById("myMessage").focus();
+		// document.getElementById("myMessage").focus();
 		$(window).scrollTop(0); // scroll back to top of page
 	}
 	

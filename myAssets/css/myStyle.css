@@ -12,7 +12,7 @@ hr {
 }
 
 .headerIcon {
-	height: 30px;
+	height: 22px;
 	display: none;
 }
 
@@ -52,7 +52,6 @@ hr {
 .audioStyle { 
 	width: 100%;
 	color: white;
-	/*opacity: .3;*/
 }
 
 .ui-icon-delete { /* close modal icon */
@@ -93,11 +92,7 @@ hr {
 }
 
 /* this is intended for mobile screen displays */
-@media all and (max-width: 500px) {
-
-    /*html {
-        font-size: 80%;
-    }*/
+@media all and (max-width: 500px)  {
 
     #myDialogPopUp { font-size: 110%; }
     #entireBody { font-size: 80%; }
@@ -105,4 +100,23 @@ hr {
     #mystery {display: none;}
     .mysteryTranslationIndicator {display: none;}
     .headerIcon { display: block; }
+    
+    #lblscripture { display: none; }
+    #lblmessage { display: none; }
+    #lblprayer { display: none; }
+}
+
+@media all and (max-height: 350px)  {
+
+    #myDialogPopUp { font-size: 110%; }
+    #entireBody { font-size: 80%; }
+    #appHeaderTitle { font-size: 115%; }
+    /*#mystery {display: none;}
+    .mysteryTranslationIndicator {display: none;}
+    .headerIcon { display: block; }*/
+    
+    #lblscripture { display: none; }
+    #lblmessage { display: none; }
+    #lblprayer { display: none; }
+    .progressBar { display: none; }
 }
