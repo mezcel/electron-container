@@ -155,16 +155,17 @@
 
             <!-- Left Panel - About and Audio Option -->
             <div data-role="panel" id="homePanel" data-position="left">
-                <h4>About</h4>
+                <b>About:</b>
                 <div id="collapsibleAbout" data-role="collapsible">
                     <h4>Development Model</h4>
                     <ul data-role="listview">
                         <li><a href="#myDialogPopUp" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(2)">Objective</a></li>
                         <li><a id= "btnGithub" href="#myDialogPopUp" class="ui-btn ui-icon-info ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(5)">Source Code</a></li>
+                        <li><a id="btnShortcuts" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(9)">Shortcut Table</a></li>
                     </ul>
                 </div>
                                 
-                <h4>Settings:</h4>
+                <b>Settings:</b>
                 <div id="collapsibleSettings" data-role="collapsible-set">
 					
 					<div data-role="collapsible">
@@ -177,7 +178,8 @@
 						<font size='1' color='gray'><i>"Ave Maria"</i>, by Charles Gounod, was based off of Johann Sebastian Bach's Prelude No.1 in C Major, Well-Tempered Clavier Book I (BWV 846). Performed by John Michel.</font>
 
 					</div>
-	
+					
+					<!-- color themes -->
 					<div data-role="collapsible">
                         <h4>Colors</h4>
 
@@ -207,7 +209,8 @@
                             </fieldset>
                         </div>
                     </div>
-
+					
+					<!-- nab or vulgate -->
                     <div data-role="collapsible">
                         <h4>Translation</h4>
                         <form id="language">
@@ -225,10 +228,30 @@
                             </fieldset>
                         </form>
                     </div>
+                    
+                    <!-- compact minimalism -->
+                    <div data-role="collapsible">
+                        <h4 id="btnCompactCollapse">Compact</h4>
+                        Rosary Text Display
+                        <div id="minimalStates" data-role="controlgroup">
+                            <fieldset data-role="controlgroup" data-mini="true">
+                                <input type="radio" name="rdoMinimalism" id="hideHeading" value="minimal1" />
+                                <label for="hideHeading">hide label heading</label> <!-- hide just the text headings -->
+
+                                <input type="radio" name="rdoMinimalism" id="hideProgressbar" value="minimal2" />
+                                <label for="hideProgressbar">hide progress bars</label> <!-- hide just progress bars -->
+
+                                <input type="radio" name="rdoMinimalism" id="hideAll" value="minimal3" />
+                                <label for="hideAll">hide all</label> <!-- show only text and direction arrows -->
+
+                                <input type="radio" name="rdoMinimalism" id="hideNone" value="minimal4" />
+                                <label for="hideNone">show all</label> <!-- default ui -->
+                            </fieldset>
+                        </div>
+                    </div>
 
 					<div data-role="controlgroup">
-                            <a id="btnShortcuts" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(9)">Shortcut Table</a>
-                            <a id="btnMinimal" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-eye ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade"  onclick="minimalUI()">Minimal UI</a>
+                            
                             <a id="btnLiturgicalSeason" href="#refferencesPage" class="ui-btn ui-corner-all ui-icon-calendar ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(10); liturgicalSeasonToday()">Feast Countdown</a>
 							<a id="btnDailyMass" href="#dailyMassPage" class="ui-btn ui-corner-all ui-icon-cloud ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="scrapeUsccb()">Mass Readings</a>
 							<a id="btnOpenMessenger" href="#messagingPage" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-right">Messenger</a>
@@ -256,14 +279,14 @@
                         <i id="decade" ></i>
                     </div>
                     <!-- Decade Name for each bead -->
-                    <h3 id="lblscripture">Scripture:</h3>
-                    <div id="scripture" class="ui-content ui-shadow"></div>
+                    <h4 id="lblscripture">Scripture:</h4>
+                    <div id="scripture" class="ui-content ui-shadow ui-mini"></div>
                     <!-- Scripture Readings for each bead -->
-                    <h3 id="lblmessage">Message:</h3>
-                    <div id="message" class="ui-content ui-shadow"></div>
+                    <h5 id="lblmessage">Message:</h5>
+                    <div id="message" class="ui-content ui-shadow ui-mini"></div>
                     <!-- Custom Message for each bead -->
-                    <h3 id="lblprayer">Prayer:</h3>
-                    <div id="prayer" class="ui-content ui-shadow">...</div>
+                    <h5 id="lblprayer">Prayer:</h5>
+                    <div id="prayer" class="ui-content ui-overlay-shadow ui-mini">...</div>
                     <!-- Prayer Readings for each bead -->
                 </div>
             </div>

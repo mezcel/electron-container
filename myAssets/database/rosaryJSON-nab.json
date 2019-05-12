@@ -2554,158 +2554,137 @@
 			"beadType": "crusifix"
 		}
 	],
-	"decade": [
-		{
-			"decadeID": 0,
-			"mysteryIndex": 0,
-			"decadeNo": 0,
-			"decadeName": "",
-			"decadeArt": "http://1.bp.blogspot.com/-YvXtiei6hRA/VNRnxBrmgPI/AAAAAAAAJoc/64W4plee7t0/s1600/Atr%2BGoswijn%2Bvan%2Bder%2BWeyden_15%2BMysteries%2Band%2BVirgin%2Bof%2Bthe%2BRosary_c.1515-20_Met.jpg"
-		},
-		{
-			"decadeID": 1,
-			"mysteryIndex": 1,
-			"decadeNo": 1,
-			"decadeName": "The First Joyful Mystery: The Annunciation",
-			"decadeArt": "http://www.joyfulheart.com/christmas/tissot-christmas-childhood/tissot-the-annunciation-753x590x72.jpg"
-		},
-		{
-			"decadeID": 2,
-			"mysteryIndex": 2,
-			"decadeNo": 2,
-			"decadeName": "The Second Joyful Mystery: The Visitation",
-			"decadeArt": "http://3.bp.blogspot.com/-nH9kVrV2d6s/Tgry1A3xx9I/AAAAAAAAAG8/bmvEkFl57pQ/s1600/DSC01145.JPG"
-		},
-		{
-			"decadeID": 3,
-			"mysteryIndex": 4,
-			"decadeNo": 3,
-			"decadeName": "The Third Joyful Mystery: The Nativity",
-			"decadeArt": "https://benedictsbeads.files.wordpress.com/2015/04/duccio_di_buoninsegna_-_the_nativity_with_the_prophets_isaiah_and_ezekiel_-_google_art_project.jpg?w=1024&h=415&crop=1"
-		},
-		{
-			"decadeID": 4,
-			"mysteryIndex": 4,
-			"decadeNo": 4,
-			"decadeName": "The Fourth Joyful Mystery: The Presentation of Jesus at the Temple",
-			"decadeArt": ""
-		},
-		{
-			"decadeID": 5,
-			"mysteryIndex": 5,
-			"decadeNo": 5,
-			"decadeName": "The Fifth Joyful Mystery: The Finding of Jesus at the Temple",
-			"decadeArt": ""
-		},
+    "decade": [
+        {
+            "decadeID": 0,
+            "mysteryIndex": 0,
+            "decadeNo": 0,
+            "decadeName": ""
+        },
+        {
+            "decadeID": 1,
+            "mysteryIndex": 1,
+            "decadeNo": 1,
+            "decadeName": "The First Joyful Mystery: The Annunciation"
+        },
+        {
+            "decadeID": 2,
+            "mysteryIndex": 2,
+            "decadeNo": 2,
+            "decadeName": "The Second Joyful Mystery: The Visitation"
+        },
+        {
+            "decadeID": 3,
+            "mysteryIndex": 4,
+            "decadeNo": 3,
+            "decadeName": "The Third Joyful Mystery: The Nativity"
+        },
+        {
+            "decadeID": 4,
+            "mysteryIndex": 4,
+            "decadeNo": 4,
+            "decadeName": "The Fourth Joyful Mystery: The Presentation of Jesus at the Temple"
+        },
+        {
+            "decadeID": 5,
+            "mysteryIndex": 5,
+            "decadeNo": 5,
+            "decadeName": "The Fifth Joyful Mystery: The Finding of Jesus at the Temple"
+        },
 
-		{
-			"decadeID": 6,
-			"mysteryIndex": 1,
-			"decadeNo": 1,
-			"decadeName": "First Luminous Mystery: The Baptism in the Jordan",
-			"decadeArt": ""
-		},
-		{
-			"decadeID": 7,
-			"mysteryIndex": 2,
-			"decadeNo": 2,
-			"decadeName": "Second Luminous Mystery: The wedding at Cana, when Christ manifested himself",
-			"decadeArt": ""
-		},
-		{
-			"decadeID": 8,
-			"mysteryIndex": 3,
-			"decadeNo": 3,
-			"decadeName": "Third Luminous Mystery: The Proclamation of the Kingdom",
-			"decadeArt": ""
-		},
-		{
-			"decadeID": 9,
-			"mysteryIndex": 4,
-			"decadeNo": 4,
-			"decadeName": "Fourth Luminous Mystery: The Transfiguration of our Lord",
-			"decadeArt": ""
-		},
-		{
-			"decadeID": 10,
-			"mysteryIndex": 5,
-			"decadeNo": 5,
-			"decadeName": "Fifth Luminous Mystery: The Last Supper, when our Lord gave us the Eucharist",
-			"decadeArt": ""
-		},
+        {
+            "decadeID": 6,
+            "mysteryIndex": 1,
+            "decadeNo": 1,
+            "decadeName": "First Luminous Mystery: The Baptism in the Jordan"
+        },
+        {
+            "decadeID": 7,
+            "mysteryIndex": 2,
+            "decadeNo": 2,
+            "decadeName": "Second Luminous Mystery: The wedding at Cana, when Christ manifested himself"
+        },
+        {
+            "decadeID": 8,
+            "mysteryIndex": 3,
+            "decadeNo": 3,
+            "decadeName": "Third Luminous Mystery: The Proclamation of the Kingdom"
+        },
+        {
+            "decadeID": 9,
+            "mysteryIndex": 4,
+            "decadeNo": 4,
+            "decadeName": "Fourth Luminous Mystery: The Transfiguration of our Lord"
+        },
+        {
+            "decadeID": 10,
+            "mysteryIndex": 5,
+            "decadeNo": 5,
+            "decadeName": "Fifth Luminous Mystery: The Last Supper, when our Lord gave us the Eucharist"
+        },
 
-		{
-			"decadeID": 11,
-			"mysteryIndex": 1,
-			"decadeNo": 1,
-			"decadeName": "First Sorrowful Mystery: The Agony in the Garden",
-			"decadeArt": ""
-		},
-		{
-			"decadeID": 12,
-			"mysteryIndex": 2,
-			"decadeNo": 2,
-			"decadeName": "Second Sorrowful Mystery: The Scourging At The Pillar",
-			"decadeArt": ""
-		},
-		{
-			"decadeID": 13,
-			"mysteryIndex": 3,
-			"decadeNo": 3,
-			"decadeName": "Third Sorrowful Mystery: The Crowning with Thorns",
-			"decadeArt": ""
-		},
-		{
-			"decadeID": 14,
-			"mysteryIndex": 4,
-			"decadeNo": 4,
-			"decadeName": "Fourth Sorrowful Mystery: The Carrying of the Cross",
-			"decadeArt": ""
-		},
-		{
-			"decadeID": 15,
-			"mysteryIndex": 5,
-			"decadeNo": 5,
-			"decadeName": "Fifth Sorrowful Mystery: The Crucifixion of Our Lord",
-			"decadeArt": ""
-		},
+        {
+            "decadeID": 11,
+            "mysteryIndex": 1,
+            "decadeNo": 1,
+            "decadeName": "First Sorrowful Mystery: The Agony in the Garden"
+        },
+        {
+            "decadeID": 12,
+            "mysteryIndex": 2,
+            "decadeNo": 2,
+            "decadeName": "Second Sorrowful Mystery: The Scourging At The Pillar"
+        },
+        {
+            "decadeID": 13,
+            "mysteryIndex": 3,
+            "decadeNo": 3,
+            "decadeName": "Third Sorrowful Mystery: The Crowning with Thorns"
+        },
+        {
+            "decadeID": 14,
+            "mysteryIndex": 4,
+            "decadeNo": 4,
+            "decadeName": "Fourth Sorrowful Mystery: The Carrying of the Cross"
+        },
+        {
+            "decadeID": 15,
+            "mysteryIndex": 5,
+            "decadeNo": 5,
+            "decadeName": "Fifth Sorrowful Mystery: The Crucifixion of Our Lord"
+        },
 
-		{
-			"decadeID": 16,
-			"mysteryIndex": 1,
-			"decadeNo": 1,
-			"decadeName": "First Glorious Mystery: The Resurrection",
-			"decadeArt": ""
-		},
-		{
-			"decadeID": 17,
-			"mysteryIndex": 2,
-			"decadeNo": 2,
-			"decadeName": "Second Glorious Mystery: The Ascension",
-			"decadeArt": ""
-		},
-		{
-			"decadeID": 18,
-			"mysteryIndex": 3,
-			"decadeNo": 3,
-			"decadeName": "Third Glorious Mystery: The Descent of the Holy Spirit",
-			"decadeArt": ""
-		},
-		{
-			"decadeID": 19,
-			"mysteryIndex": 4,
-			"decadeNo": 4,
-			"decadeName": "Fourth Glorious Mystery: The Assumption",
-			"decadeArt": ""
-		},
-		{
-			"decadeID": 20,
-			"mysteryIndex": 5,
-			"decadeNo": 5,
-			"decadeName": "Fifth Glorious Mystery: The Coronation",
-			"decadeArt": ""
-		}
-	],
+        {
+            "decadeID": 16,
+            "mysteryIndex": 1,
+            "decadeNo": 1,
+            "decadeName": "First Glorious Mystery: The Resurrection"
+        },
+        {
+            "decadeID": 17,
+            "mysteryIndex": 2,
+            "decadeNo": 2,
+            "decadeName": "Second Glorious Mystery: The Ascension"
+        },
+        {
+            "decadeID": 18,
+            "mysteryIndex": 3,
+            "decadeNo": 3,
+            "decadeName": "Third Glorious Mystery: The Descent of the Holy Spirit"
+        },
+        {
+            "decadeID": 19,
+            "mysteryIndex": 4,
+            "decadeNo": 4,
+            "decadeName": "Fourth Glorious Mystery: The Assumption"
+        },
+        {
+            "decadeID": 20,
+            "mysteryIndex": 5,
+            "decadeNo": 5,
+            "decadeName": "Fifth Glorious Mystery: The Coronation"
+        }
+    ],
 	"mystery": [
 		{
 			"mysteryID": 0,
@@ -2826,7 +2805,7 @@
             "bookIndex": 0,
             "chapterIndex": 0,
             "verseIndex": 0,
-            "scriptureText": ""
+            "scriptureText": "-"
 		},
 		{
 			"scriptureID": 1,
@@ -4232,7 +4211,7 @@
 	"message": [
 		{
 			"messageID": 0,
-			"mesageText": ""
+			"mesageText": "..."
 		},
 		{
 			"messageID": 1,
@@ -4426,7 +4405,7 @@
 			"infoSubHeader": "",
 			"infoFooter": "",
 			"infoText": "",
-			"infoRefference": ""
+			"infoRefference": "-"
 		},
 		{
 			"infoID": 1,

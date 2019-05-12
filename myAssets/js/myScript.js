@@ -480,11 +480,6 @@ function collapsibleEvents() {
 		$('#collapsibleAbout').collapsible("collapse");
 	});
 	
-	/*$('#btnHomePanel').click( function() {
-		$('#collapsibleAbout').collapsible("collapse");
-		$('#collapsibleSettings').children().collapsible("collapse");
-	});*/
-	
 	$('#btnInfoPanel').click( function() {
 		$('#collapsibleMystery').children().collapsible("collapse");
 		$('#collapsibleRefferences').children().collapsible("collapse");
@@ -492,25 +487,32 @@ function collapsibleEvents() {
 	
 }
 
-function minimalText() { $('#lblscripture').hide(); $('#lblmessage').hide(); $('#lblprayer').hide(); $('.progressBar').show(); $("#btnClosePopup").click(); $("#btnHomePanel").click(); }
-function minimalNavigation() { $('#lblscripture').show(); $('#lblmessage').show(); $('#lblprayer').show(); $('.progressBar').hide(); $("#btnClosePopup").click(); $("#btnHomePanel").click(); }
-function minimalAll() { $('#lblscripture').hide(); $('#lblmessage').hide(); $('#lblprayer').hide(); $('.progressBar').hide(); $("#btnClosePopup").click(); $("#btnHomePanel").click(); }
-function minimalShowAll() { $('#lblscripture').show(); $('#lblmessage').show(); $('#lblprayer').show(); $('.progressBar').show(); $("#btnClosePopup").click(); $("#btnHomePanel").click(); }
+function minimalText() {
+	$('#lblscripture').hide(); 
+	$('#lblmessage').hide(); 
+	$('#lblprayer').hide(); 
+	$('.progressBar').show(); 
+}
 
-function minimalUI() {
-	// minimal ui display
-	
-	showBibleListFlag = false;
-    showPrayerListFlag = false;
+function minimalNavigation() {
+	$('#lblscripture').show(); 
+	$('#lblmessage').show(); 
+	$('#lblprayer').show(); 
+	$('.progressBar').hide();
+}
 
-    document.getElementById('infoHeader').innerHTML = "Minimal";
-    document.getElementById('infoSubHeader').innerHTML = "Toggle text headers and progress bars.";
-    document.getElementById('infoBody').innerHTML = "Use for tiny screens: <hr>" + 
-		"<a href='#rosary' class='ui-btn ui-corner-all ui-icon-arrow-u ui-btn-icon-left' onclick='minimalText()'>min text, show bars</a>" + 
-		"<a href='#rosary' class='ui-btn ui-corner-all ui-icon-arrow-d ui-btn-icon-left' onclick='minimalNavigation()'>min bars, show text</a>" + 
-		"<a href='#rosary' class='ui-btn ui-corner-all ui-icon-eye ui-btn-icon-left' onclick='minimalAll()'>max minimal</a>" + 
-		"<a href='#rosary' class='ui-btn ui-corner-all ui-icon-grid ui-btn-icon-left' onclick='minimalShowAll()'>minimal off</a>";
-    document.getElementById('infoFooter').innerHTML = "-";
+function minimalAll() { 
+	$('#lblscripture').hide(); 
+	$('#lblmessage').hide(); 
+	$('#lblprayer').hide(); 
+	$('.progressBar').hide(); 
+}
+
+function minimalShowAll() { 
+	$('#lblscripture').show(); 
+	$('#lblmessage').show(); 
+	$('#lblprayer').show(); 
+	$('.progressBar').show(); 
 }
 
 function initUi() {
@@ -615,11 +617,6 @@ function myControllEvents() {
                     // m for message
                     $('#btnOpenMessenger').click();
                     break;
-                case 109: // toggle minimal UI display
-                    // minus sign
-                    $('#btnHomePanel').click();
-                    $('#btnMinimal').click();
-                    break;
                 default:                    
 					if ( $('#dailyMassPage').focus() ) {
 						$('#btnCloseMassPage').click();
@@ -722,6 +719,33 @@ function myThemeEvents() {
             fillRosaryBeadPage(beadCounter); // display translation of current bead
         }
     });
+
+	// Minimal display themes
+    $("#minimalStates input").on("change", function(event) { // multi color
+        if (event.target.name === "rdoMinimalism") {
+
+            if ($("#hideHeading").is(":checked")) {
+				minimalText();
+            }
+            
+            if ($("#hideProgressbar").is(":checked")) {
+				minimalNavigation();
+            }
+            
+            if ($("#hideAll").is(":checked")) {
+				minimalAll();
+            }
+            
+            if ($("#hideNone").is(":checked")) {
+				minimalShowAll();
+            }
+        }
+        
+        // a tweak to reduce footer whitespace
+        $('#homePanel').trigger("updatelayout");
+    });
+
+	
 }
 
 function initProgressBars() {
