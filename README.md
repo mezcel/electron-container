@@ -17,9 +17,7 @@ __Development Status:__ Latest development branch ```git branch v0.5.3``` is foc
 
 * (mostly ui touchups)
 
-* Popup bubbles
-
-* __Note:__ ***The "Messenger's" true purpose is not for talking(distraction), it is for synchronizing multiple devices. I use the "Messenger" for debugging the different user states.***
+* Modifying the .json (i have not yet updated the min or either of the vulgate)
 
 ---
 
@@ -82,6 +80,8 @@ Electron development for Ubuntu Linux ```install-electron-debian.sh```
 
 Electron development for Arch Linux ```install-electron-arch.sh```
 
+Win10 just requires a standard [Node JS download](https://nodejs.org/en/download/)
+
 ```sh
 ## Arch
 
@@ -127,4 +127,6 @@ Dev Testing:
 
 * _Host Computer_: Best performance experienced on Win10 and Arch/Debian Linux.
 
-* _Client Computer_: Best experience on desktop/laptop sized and mobile device sized monitors. (scrapped Safari development)
+* _Client Computer_: Best experience on desktop/laptop sized and mobile device sized monitors. (abandoned Safari development)
+
+	* the tablet and mobile screen sizes are approximations based on old device standards.
