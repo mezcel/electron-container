@@ -11,13 +11,17 @@ A colorfull yet minimal ```scripture rosary``` for NodeJs.
 
 Youtube: General mechanics [outdated demo](https://youtu.be/SZ9aQIspbvs), not the newest version.
 
+Note: The app is not the UI, the app is what is going on inside the box. Ex: the bloated json parsing.
+
 ---
 
 __Development Status:__ Latest development branch ```git branch v0.5.3``` is focused on:
 
 * (mostly ui touchups)
 
-* Modifying the .json (i have not yet updated the min or either of the vulgate)
+	* Most of the bloat is UI event workarrounds.
+	* Other than my decision to go the json db rout... I almost doubled my code recreating existing jqm features.
+	* New systems wont feel the bloat but 'true'/legacy systems will call me out wherever bad practice was invoked.
 
 ---
 

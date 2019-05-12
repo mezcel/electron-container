@@ -92,7 +92,7 @@ hr {
 }
 
 /* this is intended for mobile screen displays */
-@media all and (max-width: 500px)  {
+@media all and (max-width: 600px)  {
 
     #myDialogPopUp { font-size: 110%; }
     #entireBody { font-size: 80%; }
@@ -106,7 +106,7 @@ hr {
     #lblprayer { display: none; }
 }
 
-@media all and (max-height: 350px)  {
+@media all and (max-height: 450px)  {
 
     #myDialogPopUp { font-size: 110%; }
     #entireBody { font-size: 80%; }

@@ -168,94 +168,95 @@
                 <b>Settings:</b>
                 <div id="collapsibleSettings" data-role="collapsible-set">
 					
-					<div data-role="collapsible">
-						<h4>Audio</h4>
-						<hr>
-						<audio id="audioAveMaria" class="audioStyle" controls loop>
-							<source src="myAssets/audio/JOHN_MICHEL_CELLO-BACH_AVE_MARIA.ogg" type="audio/mpeg">
-						</audio>
-						<hr>
-						<font size='1' color='gray'><i>"Ave Maria"</i>, by Charles Gounod, was based off of Johann Sebastian Bach's Prelude No.1 in C Major, Well-Tempered Clavier Book I (BWV 846). Performed by John Michel.</font>
+				<!-- audio -->
+				<div data-role="collapsible">
+					<h4>Audio</h4>
+					<hr>
+					<audio id="audioAveMaria" class="audioStyle" controls loop>
+						<source src="myAssets/audio/JOHN_MICHEL_CELLO-BACH_AVE_MARIA.ogg" type="audio/mpeg">
+					</audio>
+					<hr>
+					<font size='1' color='gray'><i>"Ave Maria"</i>, by Charles Gounod, was based off of Johann Sebastian Bach's Prelude No.1 in C Major, Well-Tempered Clavier Book I (BWV 846). Performed by John Michel.</font>
 
+				</div>
+					
+				<!-- color themes -->
+				<div data-role="collapsible">
+					<h4>Colors</h4>
+
+					<form id="darklight">
+						<fieldset data-role="controlgroup" data-type="horizontal" id="theme-setting">
+						<input type="checkbox" name="theme" id="daynightSwitch" data-role="flipswitch" data-on-text="day" data-off-text="night" checked> day/night
+						</fieldset>
+					</form>
+
+					Liturgical Colors:
+					<div id="liturgicalColors" data-role="controlgroup">
+						<fieldset data-role="controlgroup" data-mini="true">
+							<input type="radio" name="rdoLiturgicalColors" id="feastRed" value="liturgical1" />
+							<label for="feastRed">Feast Days</label> <!-- red -->
+
+							<input type="radio" name="rdoLiturgicalColors" id="marianBlue" value="liturgical2"  />
+							<label for="marianBlue">Marian Blue</label> <!-- blue -->
+
+							<input type="radio" name="rdoLiturgicalColors" id="adventPurple" value="liturgical3"  />
+							<label for="adventPurple">Advent / Lent</label> <!-- purple -->
+
+							<input type="radio" name="rdoLiturgicalColors" id="ordinaryGreen" value="liturgical4"  />
+							<label for="ordinaryGreen">Ordinary Time</label> <!-- green -->
+
+							<input type="radio" name="rdoLiturgicalColors" id="easterGold" value="liturgical5"  />
+							<label for="easterGold">Easter / Christmas</label> <!--  gold -->
+						</fieldset>
 					</div>
+				</div>
 					
-					<!-- color themes -->
-					<div data-role="collapsible">
-                        <h4>Colors</h4>
+				<!-- nab or vulgate -->
+				<div data-role="collapsible">
+					<h4>Translation</h4>
+					<form id="language">
+						<fieldset data-role="controlgroup" data-mini="true" data-iconpos="right">
+							<legend>Toggle Language</legend>
 
-                        <form id="darklight">
-                            <fieldset data-role="controlgroup" data-type="horizontal" id="theme-setting">
-                                <input type="checkbox" name="theme" id="daynightSwitch" data-role="flipswitch" data-on-text="day" data-off-text="night" checked> day/night
-                            </fieldset>
-                        </form>
+							<input type="radio" name="rdoTranslation" id="nabTranslation" value="translation1" checked="checked">
+							<label for="nabTranslation">English - NAB</label>
 
-                        Liturgical Colors:
-                        <div id="liturgicalColors" data-role="controlgroup">
-                            <fieldset data-role="controlgroup" data-mini="true">
-                                <input type="radio" name="rdoLiturgicalColors" id="feastRed" value="liturgical1" />
-                                <label for="feastRed">Feast Days</label> <!-- red -->
+							<input type="radio" name="rdoTranslation" id="vulgateTranslation" value="translation2" >
+							<label for="vulgateTranslation">Latin - Vulgate</label>
 
-                                <input type="radio" name="rdoLiturgicalColors" id="marianBlue" value="liturgical2"  />
-                                <label for="marianBlue">Marian Blue</label> <!-- blue -->
-
-                                <input type="radio" name="rdoLiturgicalColors" id="adventPurple" value="liturgical3"  />
-                                <label for="adventPurple">Advent / Lent</label> <!-- purple -->
-
-                                <input type="radio" name="rdoLiturgicalColors" id="ordinaryGreen" value="liturgical4"  />
-                                <label for="ordinaryGreen">Ordinary Time</label> <!-- green -->
-
-                                <input type="radio" name="rdoLiturgicalColors" id="easterGold" value="liturgical5"  />
-                                <label for="easterGold">Easter / Christmas</label> <!--  gold -->
-                            </fieldset>
-                        </div>
-                    </div>
+							<input type="radio" name="rdoTranslation" id="otherTranslation" value="translation3" disabled="disabled">
+							<label for="otherTranslation">other (n/a)</label>
+						</fieldset>
+					</form>
+				</div>
 					
-					<!-- nab or vulgate -->
-                    <div data-role="collapsible">
-                        <h4>Translation</h4>
-                        <form id="language">
-                            <fieldset data-role="controlgroup" data-mini="true" data-iconpos="right">
-                                <legend>Toggle Language</legend>
+				<!-- compact minimalism -->
+				<div data-role="collapsible">
+					<h4 id="btnCompactCollapse">Compact</h4>
+					Rosary Text Display
+					<div id="minimalStates" data-role="controlgroup">
+						<fieldset data-role="controlgroup" data-mini="true">
+							<input type="radio" name="rdoMinimalism" id="hideHeading" value="minimal1" />
+							<label for="hideHeading">hide label heading</label> <!-- hide just the text headings -->
 
-                                <input type="radio" name="rdoTranslation" id="nabTranslation" value="translation1" checked="checked">
-                                <label for="nabTranslation">English - NAB</label>
+							<input type="radio" name="rdoMinimalism" id="hideProgressbar" value="minimal2" />
+							<label for="hideProgressbar">hide progress bars</label> <!-- hide just progress bars -->
 
-                                <input type="radio" name="rdoTranslation" id="vulgateTranslation" value="translation2" >
-                                <label for="vulgateTranslation">Latin - Vulgate</label>
+							<input type="radio" name="rdoMinimalism" id="hideAll" value="minimal3" />
+							<label for="hideAll">hide all</label> <!-- show only text and direction arrows -->
 
-                                <input type="radio" name="rdoTranslation" id="otherTranslation" value="translation3" disabled="disabled">
-                                <label for="otherTranslation">other (n/a)</label>
-                            </fieldset>
-                        </form>
-                    </div>
-                    
-                    <!-- compact minimalism -->
-                    <div data-role="collapsible">
-                        <h4 id="btnCompactCollapse">Compact</h4>
-                        Rosary Text Display
-                        <div id="minimalStates" data-role="controlgroup">
-                            <fieldset data-role="controlgroup" data-mini="true">
-                                <input type="radio" name="rdoMinimalism" id="hideHeading" value="minimal1" />
-                                <label for="hideHeading">hide label heading</label> <!-- hide just the text headings -->
+							<input type="radio" name="rdoMinimalism" id="hideNone" value="minimal4" />
+							<label for="hideNone">show all</label> <!-- default ui -->
+						</fieldset>
+					</div>
+				</div>
 
-                                <input type="radio" name="rdoMinimalism" id="hideProgressbar" value="minimal2" />
-                                <label for="hideProgressbar">hide progress bars</label> <!-- hide just progress bars -->
+				<div data-role="controlgroup">
 
-                                <input type="radio" name="rdoMinimalism" id="hideAll" value="minimal3" />
-                                <label for="hideAll">hide all</label> <!-- show only text and direction arrows -->
-
-                                <input type="radio" name="rdoMinimalism" id="hideNone" value="minimal4" />
-                                <label for="hideNone">show all</label> <!-- default ui -->
-                            </fieldset>
-                        </div>
-                    </div>
-
-					<div data-role="controlgroup">
-                            
-                            <a id="btnLiturgicalSeason" href="#refferencesPage" class="ui-btn ui-corner-all ui-icon-calendar ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(10); liturgicalSeasonToday()">Feast Countdown</a>
-							<a id="btnDailyMass" href="#dailyMassPage" class="ui-btn ui-corner-all ui-icon-cloud ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="scrapeUsccb()">Mass Readings</a>
-							<a id="btnOpenMessenger" href="#messagingPage" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-right">Messenger</a>
-                    </div>
+					<a id="btnLiturgicalSeason" href="#refferencesPage" class="ui-btn ui-corner-all ui-icon-calendar ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(10); liturgicalSeasonToday()">Feast Countdown</a>
+					<a id="btnDailyMass" href="#dailyMassPage" class="ui-btn ui-corner-all ui-icon-cloud ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="scrapeUsccb()">Mass Readings</a>
+					<a id="btnOpenMessenger" href="#messagingPage" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-right">Messenger</a>
+				</div>
                     
                 </div>
 
@@ -279,10 +280,10 @@
                         <i id="decade" ></i>
                     </div>
                     <!-- Decade Name for each bead -->
-                    <h4 id="lblscripture">Scripture:</h4>
+                    <h4 id="lblscripture" >Scripture:</h4>
                     <div id="scripture" class="ui-content ui-shadow ui-mini"></div>
                     <!-- Scripture Readings for each bead -->
-                    <h5 id="lblmessage">Message:</h5>
+                    <h5 id="lblmessage" >Message:</h5>
                     <div id="message" class="ui-content ui-shadow ui-mini"></div>
                     <!-- Custom Message for each bead -->
                     <h5 id="lblprayer">Prayer:</h5>

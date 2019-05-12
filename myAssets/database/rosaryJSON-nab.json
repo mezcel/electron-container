@@ -2805,7 +2805,7 @@
             "bookIndex": 0,
             "chapterIndex": 0,
             "verseIndex": 0,
-            "scriptureText": "-"
+            "scriptureText": ""
 		},
 		{
 			"scriptureID": 1,
@@ -4211,7 +4211,7 @@
 	"message": [
 		{
 			"messageID": 0,
-			"mesageText": "..."
+			"mesageText": ""
 		},
 		{
 			"messageID": 1,
@@ -4412,7 +4412,7 @@
 			"infoHeader": "First Joyful Mystery",
 			"infoSubHeader": "The Annunciation",
 			"infoFooter": "",
-			"infoText": "<p>The Annunciation (from Latin annuntiatio), also referred to as the Annunciation to the Blessed Virgin Mary, the Annunciation of Our Lady, or the Annunciation of the Lord, is the Christian celebration of the announcement by the angel Gabriel to the Virgin Mary that she would conceive and become the mother of Jesus, the Son of God, marking his Incarnation. Gabriel told Mary to name her son Yehoshua , meaning \"YHWH is salvation\".</p> <p>According to Luke 1:26, the Annunciation occurred in \"the sixth month\" of Elizabeth's pregnancy with John the Baptist. Many Christians observe this event with the Feast of the Annunciation on 25 March, an approximation of the northern vernal equinox nine full months before Christmas, the ceremonial birthday of Jesus. In England, this came to be known as Lady Day. It marked the new year until 1752. The 2nd-century writer Irenaeus of Lyon regarded the conception of Jesus as 25 March coinciding with the Passion.</p> <p>The Annunciation has been a key topic in Christian art in general, as well as in Marian art in the Catholic Church, particularly during the Middle Ages and Renaissance. A work of art depicting the Annunciation is sometimes itself called an Annunciation.</p>",
+			"infoText": "<p>The Annunciation to the Blessed Virgin Mary, the Annunciation of Our Lady, or the Annunciation of the Lord, is the Christian celebration of the announcement by the angel Gabriel to the Virgin Mary that she would conceive and become the mother of Jesus, the Son of God, marking his Incarnation. Gabriel told Mary to name her son Yehoshua , meaning \"YHWH is salvation\".</p> <p>According to Luke 1:26, the Annunciation occurred in \"the sixth month\" of Elizabeth's pregnancy with John the Baptist. Many Christians observe this event with the Feast of the Annunciation on 25 March, an approximation of the northern vernal equinox nine full months before Christmas, the ceremonial birthday of Jesus.</p>",
 			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Annunciation' target='_blank'>link</a>"
 		},
 		{
@@ -4436,7 +4436,7 @@
 			"infoHeader": "Fourth Joyful Mystery",
 			"infoSubHeader": "Presentation of Jesus at the Temple",
 			"infoFooter": "",
-			"infoText": "<p>The Presentation of Jesus at the Temple is an early episode in the life of Jesus that is celebrated by the Church on the holiday of Candlemas. It is described in the Gospel of Luke of the New Testament in the Christian Bible.[1] Within the account, \"Luke's narration of the Presentation in the Temple combines the purification rite with the Jewish ceremony of the redemption of the firstborn (Luke 2:23-24).\"</p>",
+			"infoText": "<p>The Presentation of Jesus at the Temple is an early episode in the life of Jesus that is celebrated by the Church on the holiday of Candlemas. It is described in the Gospel of Luke of the New Testament in the Christian Bible. Within the account, \"Luke's narration of the Presentation in the Temple combines the purification rite with the Jewish ceremony of the redemption of the firstborn (Luke 2:23-24).\"</p>",
 			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Presentation_of_Jesus_at_the_Temple' target='_blank'>link</a>"
 		},
 		{
@@ -4551,7 +4551,7 @@
 			"infoHeader": "Fourth Glorious Mystery",
 			"infoSubHeader": "The Assumption",
 			"infoFooter": "-",
-			"infoText": "<p>The Catholic Church teaches as dogma that the Virgin Mary \"having completed the course of her earthly life, was assumed body and soul into heavenly glory\".[5] This doctrine was dogmatically defined by Pope Pius XII on 1 November 1950, in the apostolic constitution Munificentissimus Deus by exercising papal infallibility.</p>",
+			"infoText": "<p>The Catholic Church teaches as dogma that the Virgin Mary \"having completed the course of her earthly life, was assumed body and soul into heavenly glory\". This doctrine was dogmatically defined by Pope Pius XII on 1 November 1950, in the apostolic constitution Munificentissimus Deus by exercising papal infallibility.</p>",
 			"infoRefference": "<a href='https://en.wikipedia.org/wiki/Assumption_of_Mary' target='_blank'>link</a>"
 		}, {
 			"infoID": 20,

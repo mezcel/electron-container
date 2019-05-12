@@ -48,7 +48,7 @@ $.ajax({
 // import Vulgate and define global vulgate json
 
 $.ajax({
-	url: './myAssets/database/rosaryJSON-min-vulgate.json',
+	url: './myAssets/database/rosaryJSON-vulgate.json',
 	dataType: "json",
 	async: false,
 	success: function (result) {
@@ -307,7 +307,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 				}
 
             } else {
-				//rev
+				// rev
 				if (stringSpaceCounter == 0) {
 					stringSpaceCounter = 2;
 					if ((hailmaryCounter % 10) > 0) {
@@ -373,8 +373,19 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
     }
 
     fillRosaryBeadPage(beadCounter); // populare dom with text
+    
     if ($("#decade").html() == "") {
-		$("#decade").html(prepostMystery) ;
+		$("#decade").html(prepostMystery);
+		
+		// hide unused elements
+		$("#lblscripture").hide();
+		$("#scripture").hide();
+		$("#lblmessage").hide();
+		$("#message").hide();
+	} else {
+		$("#scripture").show();
+		$("#message").show();
+		setMinimalState();
 	}
 
 }
@@ -515,6 +526,24 @@ function minimalShowAll() {
 	$('.progressBar').show(); 
 }
 
+function setMinimalState() {
+	if ($("#hideHeading").is(":checked")) {
+		minimalText();
+	}
+	
+	if ($("#hideProgressbar").is(":checked")) {
+		minimalNavigation();
+	}
+	
+	if ($("#hideAll").is(":checked")) {
+		minimalAll();
+	}
+	
+	if ($("#hideNone").is(":checked")) {
+		minimalShowAll();
+	}
+}
+
 function initUi() {
 	populateBookJsonList();
     populatePrayerJsonList();
@@ -588,17 +617,22 @@ function myControllEvents() {
                     break;
                 case 87: // letter w
                     $('#feastRed').click();
+                    $('#feastRed').click();
                     break;
                 case 69: // letter e
+                    $('#marianBlue').click();
                     $('#marianBlue').click();
                     break;
                 case 82: // letter r
                     $('#adventPurple').click();
+                    $('#adventPurple').click();
                     break;
                 case 84: // letter t
                     $('#ordinaryGreen').click();
+                    $('#ordinaryGreen').click();
                     break;
                 case 89: // letter y
+                    $('#easterGold').click();
                     $('#easterGold').click();
                     break;
                 case 73: // letter i
@@ -723,22 +757,7 @@ function myThemeEvents() {
 	// Minimal display themes
     $("#minimalStates input").on("change", function(event) { // multi color
         if (event.target.name === "rdoMinimalism") {
-
-            if ($("#hideHeading").is(":checked")) {
-				minimalText();
-            }
-            
-            if ($("#hideProgressbar").is(":checked")) {
-				minimalNavigation();
-            }
-            
-            if ($("#hideAll").is(":checked")) {
-				minimalAll();
-            }
-            
-            if ($("#hideNone").is(":checked")) {
-				minimalShowAll();
-            }
+            setMinimalState();
         }
         
         // a tweak to reduce footer whitespace
@@ -835,8 +854,37 @@ $(document).on('pageshow', '#splashpage', function() {
 /* configure progressbars  */
 $(document).on('pagebeforeshow', '#rosary', function() {
     if (mainPageLoaded == false) {
-        initUi(); // generate rosary
+        initUi(); // generate rosary and rosary UI
         mainPageLoaded = true; // prevent reactivating or resetting
+        
+        // used for initializing the look and feel for variable screen UIs
+        // manual @media css-like setting, minimal UI
+        
+        var initialScreenHeight = $(document).height();
+		var initialScreenWidth =  $(document).width();
+		console.log("h= " + initialScreenHeight, "w= " + initialScreenWidth);
+		
+		if (initialScreenHeight < 450) {
+			$('#hideAll').click();
+			$('#hideAll').click();
+		} 
+		
+		if ((initialScreenWidth < 600) && (initialScreenHeight > 450)) {
+			$('#hideHeading').click();
+			$('#hideHeading').click();
+		} 
+		
+		if ((initialScreenHeight > 450) && (initialScreenWidth > 600)) {
+			$('#hideNone').click();
+			$('#hideNone').click();
+		}
+		
+		// initially hide placeholders on 1st load
+		$("#lblscripture").hide();
+		$("#scripture").hide();
+		$("#lblmessage").hide();
+		$("#message").hide();
+	
     }
 });
 
