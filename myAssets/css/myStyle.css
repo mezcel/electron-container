@@ -93,7 +93,6 @@ hr {
 
 /* this is intended for mobile screen displays */
 @media all and (max-width: 450px)  {
-
     #myDialogPopUp { font-size: 110%; }
     #entireBody { font-size: 80%; }
     #appHeaderTitle { font-size: 115%; }

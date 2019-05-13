@@ -160,6 +160,7 @@ function fillAppInfoContent2(infoID) { // called within html
 function fillRosaryBeadPage(counterNo) {
     showBibleListFlag = false;
     showPrayerListFlag = false;
+    //$("#prayer").fadeOut();
 
     var decadeIndex = rosaryJSON.rosaryBead[counterNo].decadeIndex;
     var mysteryIndex = rosaryJSON.rosaryBead[counterNo].mysteryIndex;
@@ -167,13 +168,16 @@ function fillRosaryBeadPage(counterNo) {
     var scriptureIndex = rosaryJSON.rosaryBead[counterNo].scriptureIndex;
     var messageIndex = rosaryJSON.rosaryBead[counterNo].messageIndex;
 	
-	decadeTextDisplay = rosaryJSON.decade[decadeIndex].decadeName; // used for messenger
+	decadeTextDisplay = rosaryJSON.decade[decadeIndex].decadeName; // used for messenger synch
 	
     $("#mystery").html(rosaryJSON.mystery[mysteryIndex].mysteryName);
     $("#decade").html(decadeTextDisplay);
     $("#scripture").html(rosaryJSON.scripture[scriptureIndex].scriptureText);
     $("#message").html(rosaryJSON.message[messageIndex].mesageText);
     $("#prayer").html(rosaryJSON.prayer[prayerIndex].prayerText);
+
+    //glow effect
+    //$("#prayer").fadeIn("slow");
 }
 
 /* navigation buttons */
@@ -465,6 +469,7 @@ function initAudioVolume() { // initial audio volume setting
     $("#audioAveMaria").prop('volume', 0.30);
 }
 
+/* minimization bundle */
 function collapsibleEvents() {	
     
     $('#collapsibleMystery a').click( function() {
@@ -846,8 +851,9 @@ function scrapeUsccb() {
         var remBottomHtml = scrapeVar.substring(0, scrapeVar.indexOf('<a name="readingssignup"'));
         var remTopHtml = remBottomHtml.substring(remBottomHtml.indexOf('<div class="contentarea">'));
         var scrapeHeader = new Date() + "<br>";
+        var prependLinks = remTopHtml.replace(/href="\//ig,'href="http://www.usccb.org/');
         var scrapeFooter = "<hr><center>Readings taken from: <a href='http://www.usccb.org/bible/readings' target='_blank' >http://www.usccb.org/bible/readings</a></center>";
-        var cropHtml = scrapeHeader + remTopHtml + scrapeFooter;
+        var cropHtml = scrapeHeader + prependLinks + scrapeFooter;
 
         // <object type="text/html" data="http://www.usccb.org/bible/readings" width="100%" height="800px"></object>
         $("#usccbOrg").html(cropHtml);
