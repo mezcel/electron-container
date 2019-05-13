@@ -19,15 +19,8 @@ hr {
 .coverImg {
 	background: url('../img/cover-art.png') no-repeat center center;
 	background-color: white;
-	/*-webkit-background-size: 50%;
-	-moz-background-size: 50%;
-	-o-background-size: 50%;
-	background-size: 50%;*/
 	background-size: auto 60%;
     text-decoration: none;
-    
-    /*-webkit-filter: grayscale(20%);
-    filter: grayscale(20%);*/
 }
 
 /*
@@ -92,28 +85,20 @@ hr {
 }
 
 /* this is intended for mobile screen displays */
-@media all and (max-width: 600px)  {
-
+@media all and (max-width: 450px)  {
     #myDialogPopUp { font-size: 110%; }
     #entireBody { font-size: 80%; }
     #appHeaderTitle { font-size: 115%; }
     #mystery {display: none;}
     .mysteryTranslationIndicator {display: none;}
     .headerIcon { display: block; }
-    
-    #lblscripture { display: none; }
-    #lblmessage { display: none; }
-    #lblprayer { display: none; }
 }
 
-@media all and (max-height: 450px)  {
-
-    #myDialogPopUp { font-size: 110%; }
-    #entireBody { font-size: 80%; }
-    #appHeaderTitle { font-size: 115%; }
-    
-    #lblscripture { display: none; }
-    #lblmessage { display: none; }
-    #lblprayer { display: none; }
-    .progressBar { display: none; }
+@media all and (min-width: 451px)  {
+    #scripture, #message, #prayer { font-size: 90%; }
 }
+
+@media all and (max-height: 350px)  {
+    #scripture, #message, #prayer { font-size: 80%; }
+}
+

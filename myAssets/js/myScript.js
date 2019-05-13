@@ -160,6 +160,7 @@ function fillAppInfoContent2(infoID) { // called within html
 function fillRosaryBeadPage(counterNo) {
     showBibleListFlag = false;
     showPrayerListFlag = false;
+    //$("#prayer").fadeOut();
 
     var decadeIndex = rosaryJSON.rosaryBead[counterNo].decadeIndex;
     var mysteryIndex = rosaryJSON.rosaryBead[counterNo].mysteryIndex;
@@ -167,13 +168,16 @@ function fillRosaryBeadPage(counterNo) {
     var scriptureIndex = rosaryJSON.rosaryBead[counterNo].scriptureIndex;
     var messageIndex = rosaryJSON.rosaryBead[counterNo].messageIndex;
 	
-	decadeTextDisplay = rosaryJSON.decade[decadeIndex].decadeName; // used for messenger
+	decadeTextDisplay = rosaryJSON.decade[decadeIndex].decadeName; // used for messenger synch
 	
     $("#mystery").html(rosaryJSON.mystery[mysteryIndex].mysteryName);
     $("#decade").html(decadeTextDisplay);
     $("#scripture").html(rosaryJSON.scripture[scriptureIndex].scriptureText);
     $("#message").html(rosaryJSON.message[messageIndex].mesageText);
     $("#prayer").html(rosaryJSON.prayer[prayerIndex].prayerText);
+
+    //glow effect
+    //$("#prayer").fadeIn("slow");
 }
 
 /* navigation buttons */
@@ -465,6 +469,7 @@ function initAudioVolume() { // initial audio volume setting
     $("#audioAveMaria").prop('volume', 0.30);
 }
 
+/* minimization bundle */
 function collapsibleEvents() {	
     
     $('#collapsibleMystery a').click( function() {
@@ -541,6 +546,34 @@ function setMinimalState() {
 	
 	if ($("#hideNone").is(":checked")) {
 		minimalShowAll();
+	}
+}
+
+function autoMinimize() {
+	// window.innerHeight
+	var winHeight = window.innerHeight;
+	var winWidth = window.innerWidth;
+
+	if (winHeight < 600 ) {
+		if (winHeight < 520 ) {
+			$('#hideAll').click();
+			$('#hideAll').click();
+			
+		} else if ( winWidth > 520 )  {
+			$('#hideHeading').click();
+			$('#hideHeading').click();
+		}
+	} else if (winWidth < 520 ) {
+		if (winHeight < 520) {
+			$('#hideAll').click();
+			$('#hideAll').click();
+		} else if ( winHeight > 600 ) {
+			$('#hideHeading').click();
+			$('#hideHeading').click();
+		}
+	} else {
+		$('#hideNone').click();
+		$('#hideNone').click();
 	}
 }
 
@@ -818,8 +851,9 @@ function scrapeUsccb() {
         var remBottomHtml = scrapeVar.substring(0, scrapeVar.indexOf('<a name="readingssignup"'));
         var remTopHtml = remBottomHtml.substring(remBottomHtml.indexOf('<div class="contentarea">'));
         var scrapeHeader = new Date() + "<br>";
+        var prependLinks = remTopHtml.replace(/a href="\//ig,'a target="_blank" href="http://www.usccb.org/');
         var scrapeFooter = "<hr><center>Readings taken from: <a href='http://www.usccb.org/bible/readings' target='_blank' >http://www.usccb.org/bible/readings</a></center>";
-        var cropHtml = scrapeHeader + remTopHtml + scrapeFooter;
+        var cropHtml = scrapeHeader + prependLinks + scrapeFooter;
 
         // <object type="text/html" data="http://www.usccb.org/bible/readings" width="100%" height="800px"></object>
         $("#usccbOrg").html(cropHtml);
@@ -857,29 +891,9 @@ $(document).on('pagebeforeshow', '#rosary', function() {
         initUi(); // generate rosary and rosary UI
         mainPageLoaded = true; // prevent reactivating or resetting
         
-        // used for initializing the look and feel for variable screen UIs
-        // manual @media css-like setting, minimal UI
-        
-        var initialScreenHeight = $(document).height();
-		var initialScreenWidth =  $(document).width();
-		console.log("h= " + initialScreenHeight, "w= " + initialScreenWidth);
+        autoMinimize();
 		
-		if (initialScreenHeight < 450) {
-			$('#hideAll').click();
-			$('#hideAll').click();
-		} 
-		
-		if ((initialScreenWidth < 600) && (initialScreenHeight > 450)) {
-			$('#hideHeading').click();
-			$('#hideHeading').click();
-		} 
-		
-		if ((initialScreenHeight > 450) && (initialScreenWidth > 600)) {
-			$('#hideNone').click();
-			$('#hideNone').click();
-		}
-		
-		// initially hide placeholders on 1st load
+		// initially hide placeholders on 1st page load
 		$("#lblscripture").hide();
 		$("#scripture").hide();
 		$("#lblmessage").hide();
@@ -961,4 +975,8 @@ $(document).on("pagebeforeshow", "#refferencesPage", function() {
 /* messenger input */
 $(document).on('pageshow', '#messagingPage', function() {
     document.getElementById("myMessage").focus();
+});
+
+$(window).on('resize', function() {
+	autoMinimize() ;
 });
