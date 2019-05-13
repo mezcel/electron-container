@@ -544,6 +544,34 @@ function setMinimalState() {
 	}
 }
 
+function autoMinimize() {
+	// window.innerHeight
+	var winHeight = window.innerHeight;
+	var winWidth = window.innerWidth;
+
+	if (winHeight < 600 ) {
+		if (winHeight < 520 ) {
+			$('#hideAll').click();
+			$('#hideAll').click();
+			
+		} else if ( winWidth > 520 )  {
+			$('#hideHeading').click();
+			$('#hideHeading').click();
+		}
+	} else if (winWidth < 520 ) {
+		if (winHeight < 520) {
+			$('#hideAll').click();
+			$('#hideAll').click();
+		} else if ( winHeight > 600 ) {
+			$('#hideHeading').click();
+			$('#hideHeading').click();
+		}
+	} else {
+		$('#hideNone').click();
+		$('#hideNone').click();
+	}
+}
+
 function initUi() {
 	populateBookJsonList();
     populatePrayerJsonList();
@@ -857,29 +885,9 @@ $(document).on('pagebeforeshow', '#rosary', function() {
         initUi(); // generate rosary and rosary UI
         mainPageLoaded = true; // prevent reactivating or resetting
         
-        // used for initializing the look and feel for variable screen UIs
-        // manual @media css-like setting, minimal UI
-        
-        var initialScreenHeight = $(document).height();
-		var initialScreenWidth =  $(document).width();
-		console.log("h= " + initialScreenHeight, "w= " + initialScreenWidth);
+        autoMinimize();
 		
-		if (initialScreenHeight < 450) {
-			$('#hideAll').click();
-			$('#hideAll').click();
-		} 
-		
-		if ((initialScreenWidth < 600) && (initialScreenHeight > 450)) {
-			$('#hideHeading').click();
-			$('#hideHeading').click();
-		} 
-		
-		if ((initialScreenHeight > 450) && (initialScreenWidth > 600)) {
-			$('#hideNone').click();
-			$('#hideNone').click();
-		}
-		
-		// initially hide placeholders on 1st load
+		// initially hide placeholders on 1st page load
 		$("#lblscripture").hide();
 		$("#scripture").hide();
 		$("#lblmessage").hide();
@@ -961,4 +969,8 @@ $(document).on("pagebeforeshow", "#refferencesPage", function() {
 /* messenger input */
 $(document).on('pageshow', '#messagingPage', function() {
     document.getElementById("myMessage").focus();
+});
+
+$(window).on('resize', function() {
+	autoMinimize() ;
 });
