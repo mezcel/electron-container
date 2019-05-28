@@ -6,6 +6,7 @@
 ## apt
 sudo apt-get update
 sudo apt-get install build-essential
+sudo apt-get install curl
 
 ## dl and install a stable Nodejs version
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
