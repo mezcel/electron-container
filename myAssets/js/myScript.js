@@ -627,61 +627,65 @@ function myControllEvents() {
         if (isMessengerOpen == false) {
 
             switch(event.which) {
-                case 39: //lt arrow
+                case 39:        // lt arrow
+                case 76:        // l
                     beadFwd();
                     break;
-                case 37: //rt arrow
+                case 72:        // h
+                case 37:        // rt arrow
                     beadRev();
                     break;
                 case 49: case 97: // no 1
+                case 74:        // j
                     $('#btnHomePanel').click();
                     break;
                 case 50: case 98: // no2
+                case 75:        // k
                     $('#btnInfoPanel').click();
                     break;
-                case 78: // letter n
+                case 78:        // letter n
                     $('#nabTranslation').click();
                     break;
-                case 86: // letter v
+                case 86:        // letter v
                     $('#vulgateTranslation').click();
                     break;
-                case 81: // letter q
+                case 81:        // letter q
                     $('#daynightSwitch').click();
                     break;
-                case 87: // letter w
+                case 87:        // letter w
                     $('#feastRed').click();
                     $('#feastRed').click();
                     break;
-                case 69: // letter e
+                case 69:        // letter e
                     $('#marianBlue').click();
                     $('#marianBlue').click();
                     break;
-                case 82: // letter r
+                case 82:        // letter r
                     $('#adventPurple').click();
                     $('#adventPurple').click();
                     break;
-                case 84: // letter t
+                case 84:        // letter t
                     $('#ordinaryGreen').click();
                     $('#ordinaryGreen').click();
                     break;
-                case 89: // letter y
+                case 89:        // letter y
                     $('#easterGold').click();
                     $('#easterGold').click();
                     break;
-                case 73: // letter i
+                case 73:        // letter i
                     // hacky but it works as a toggle
                     $('#myDialogPopUp').popup("close");
                     $('#rosary').click();
                     $('#btnGithub').click();
                     break;
-                case 72: // letter h
+                case 72:        // letter h
                     // hacky but it works as a toggle
                     $("#myDialogPopUp").popup("close");
                     $('#rosary').click();
                     $('#btnShortcuts').click();
                     break;
-                case 77: // letter m
-                    // m for message
+                case 77:        // letter m
+                    // instatnt message
                     $('#btnOpenMessenger').click();
                     break;
                 default:                    
