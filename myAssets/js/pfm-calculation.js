@@ -169,7 +169,7 @@ function pfmTableDecade(year) {  // PFM Step 4 of 6
 function pfmTableCentury() {  // PFM Step 5 of 6
     "use strict";
     // First 2 digits if current year
-    // I expect it will be 20 for the next +900 years... but the calander has changed more than once in the last 900 years
+    // I expect it will be 20 for the next +900 years... but the calendar has changed more than once in the last 900 years
     // There is a lookup table for this... but we do not need to do that, 20 is just 0
 
     var centuryNo = 0;
@@ -545,8 +545,8 @@ function daysUntill_SolemnityOfMary(currentTime)  {
 function daysUntill_Epiphany(currentTime) {
 	// Aprox: Jan 6
 	// Start of the 1st segment of ordinary time // Sunday closest to 12 days after Christmas
-	// If Jan 6 is >= friday add days forward to Sun // If Jan 6 is < friday subtract days back to Sun
-	// The day is transfered to a Sunday if the day falls between Jan 2-8 // Day of Obligation
+	// If Jan 6 is >= Friday add days forward to Sun // If Jan 6 is < Friday subtract days back to Sun
+	// The day is transferred to a Sunday if the day falls between Jan 2-8 // Day of Obligation
 
     "use strict";
     var year = currentTime.getFullYear();
@@ -617,7 +617,7 @@ function daysUntill_Epiphany(currentTime) {
 
 function daysUntill_JesusBaptism(currentTime) {
 	// Aprox Jan 13
-	// sunday after the Mass which celbrates the Epiphany
+	// Sunday after the Mass which celebrates the Epiphany
 	// Monday if Epiphany Sunday shared the same day
 
     "use strict";

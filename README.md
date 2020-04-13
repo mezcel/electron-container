@@ -2,42 +2,41 @@
 
 ___This is a Node App using ExpressJS, Socket IO, and Electron.___
 
-A colorfull yet minimal ```scripture rosary``` for NodeJs.
+## 1.0 About:
+
+A colorful ```scripture rosary``` for NodeJs.
+
+* Electron client container with a JQM UI.
+
+Primary features:
 
 * It contains NAB English & Vulgate Latin translation options.
-* Has a medatative audio option.
+* Has a meditative audio option.
 * Imports daily Mass readings (online only).
 * Optional multi-user group communication with bead progress updates.
 
-Youtube: General mechanics [outdated demo](https://youtu.be/SZ9aQIspbvs), not the newest version.
+Youtube Demo:
 
-Note: The app is not the UI, the app is what is going on inside the box. Ex: the bloated json parsing.
-
----
-
-__Development Status:__ Latest development branch ```git branch v0.5.3``` is focused on:
-
-* (mostly ui touchups)
-
-	* Most of the bloat is UI event workarrounds.
-	* Other than my decision to go the json db rout... I almost doubled my code recreating existing jqm features.
-	* New systems wont feel the bloat but 'true'/legacy systems will call me out wherever bad practice was invoked.
+* General mechanics [outdated demo](https://youtu.be/SZ9aQIspbvs), not the newest version.
+* [screenshots](./demo-screenshots/)
 
 ---
 
-### Main Dev Objective:
+## 2.0 Development Background:
+
+### 2.1 Main Dev Objective:
 
 * Desktop standalone and mobile networked app
 * Works as a Server Hosted app and as a Client recipiant app.
 * Send/Receive text communication between different app instances.
 
-### Intended usecase:
+### 2.2 Intended usecase:
 
-* Academic refference
+* Academic reference
 * Local intranet or ad-hoc networks (trusted)
 * Servers hosted on mobile devices with NodeJs server
 
-### Key Features:
+### 2.3 Key Features:
 
 * ExpressJs Service
 * SocketIO instant messaging
@@ -48,9 +47,9 @@ __Development Status:__ Latest development branch ```git branch v0.5.3``` is foc
 
 ---
 
-## NPM
+## 3.0 NPM Installation
 
-NPM Dependencies
+### 3.1 NPM Dependencies
 
 ```sh
 # download and install dependencies
@@ -80,6 +79,8 @@ package.json
 }
 ```
 
+### 3.2 OS Platforms
+
 Electron development for Ubuntu Linux ```install-electron-debian.sh```
 
 Electron development for Arch Linux ```install-electron-arch.sh```
@@ -102,7 +103,9 @@ npm install
 ```
 ---
 
-## Build as a standalone executable
+## 4.0 Extras:
+
+### 4.1 Build as a standalone executable
 
 If you want to build this app into a standalone executable, use ```electron-packager```
 
@@ -119,9 +122,10 @@ npm install -g electron-packager
 
 electron-packager .
 ```
----
 
-Repo size proportions (aproximately)
+### 4.1 Testing Notes
+
+Repo size proportions (approximately)
 
 dir | MiB
 --- | ---

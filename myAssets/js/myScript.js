@@ -5,7 +5,7 @@
 var initialMysteryFlag = false; // Initiated 1st mystery after the Mary Icon
 var showBibleListFlag = false; // whether or not an html list was dynamically populated
 var showPrayerListFlag = false; // whether or not an html list was dynamically populated
-var iamtyping = false; // a flag indicating if I am typing so I dont trigger keydown events
+var iamtyping = false; // a flag indicating if I am typing so I don't trigger keydown events
 var isMessengerOpen = false; // a flag to determine of the Messenger is the display focus
 var mainPageLoaded = false; // a flag to prevent re-loading dom objects;
 
@@ -21,7 +21,7 @@ var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
 * goal: when everyone is at the same counter, then bead progress can continue.
 * temp: for now i am just using messages to verify all clients know each others progress
 * 	NO! the prayer chat is not a real-world thing... despite what seculars are 'selling'
-* 	The chat is a toy/distraction, the real app is synchronizing behavior and accademics
+* 	The chat is a toy/distraction, the real app is synchronizing behavior and academics
 * */
  
 var decadeTextDisplay = ""; // message place holders
@@ -209,7 +209,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
     var beadType 	= rosaryJSON.bead[beadIndex].beadID;
     var prepostMystery; // intro or conclusion prayers
 
-    switch (beadType) { // the bead type is used to configre count/progress settings
+    switch (beadType) { // the bead type is used to configure count/progress settings
 
 		case 2:
 			if (decadeIndex !== 0){
@@ -394,7 +394,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
 }
 
-function populateBookJsonList() { // populate the right pannel list with bible content
+function populateBookJsonList() { // populate the right panel list with bible content
 
     var li = '<li data-theme="b" class="ui-bar">Bible Quotes </li>';
     var tempbookIndex = [];
