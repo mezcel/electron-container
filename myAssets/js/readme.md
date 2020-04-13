@@ -22,3 +22,4 @@
 * The PFM date is a central refference point.
 * Many feast days and seasonal windows vary from year to year depending on when Easter is and on the sunday certain fests are adjusted for.
 * In my opinon this code is not effient, but the cumbersom steps I took reflect how the Fiest days are deduced. They are not just 'hollidays on a calendar', they are proportional to astronomical and geological patterns. Once uppon a time, people paired their faith to the rules of nature and regional cultural habits.
+* The PFM algorithm was modeled from [assa.org](https://www.assa.org.au/edm)

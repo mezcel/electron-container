@@ -1,4 +1,6 @@
-/* Liturgical Calendar Calculations */
+/* Liturgical Calendar Calculations 
+ * Guidance: The PFM algorithm was modeled from https://www.assa.org.au/edm
+ */
 
 function pfmTableDate(year) { // PFM Step 1 of 6
     "use strict";
