@@ -18,7 +18,7 @@
     "dependencies": {
         "electron": "^3.0.13",
         "express": "^4.16.4",
-        "jquery": "^1.11.1",
+        "jquery": "^3.5.0",
         "popper.js": "^1.14.4",
         "socket.io": "^2.2.0"
     }
