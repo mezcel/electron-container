@@ -1,0 +1,6 @@
+## ignore vscode settings
+.vscode
+
+## ignore local npm imports
+node_modules
+package-lock.json
