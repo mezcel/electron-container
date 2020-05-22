@@ -27,34 +27,34 @@ function buildNewPackage() {
     Start-Sleep 3
 }
 
-function set-shortcut( [string]$ShortcutFile, [string]$WorkingDir, [string]$TargetFile ) {
+function set-shortcut( [string]$ShortcutFile, [string]$WorkingDir, [string]$TargetFile, [string]$shortcutIcon ) {
     $WScriptShell = New-Object -ComObject WScript.Shell
+
     $Shortcut = $WScriptShell.CreateShortcut($ShortcutFile)
     $Shortcut.TargetPath = $TargetFile
     $Shortcut.WorkingDirectory = $WorkingDir
+    $Shortcut.IconLocation=$shortcutIcon
+
     $Shortcut.Save()
 }
 function createShortcutLinks() {
     ## Make a shortcut link
     Write-Host "Creating shortcut links..." -ForegroundColor Cyan
-    Set-Location -Path electron-rosary*
+    Set-Location -Path electron-rosary-*
 
     $verbosePath = Get-Location
     $appName = "electron-rosary"
     $linkName = "$appName.lnk"
     $exeName = "$appName.exe"
     $ShortcutFile1 = "$env:UserProfile\Desktop\$linkName"
-    #$ShortcutFile2 = "$env:AppData\Microsoft\Windows\Start Menu\Programs\Startup\$linkName"
 
     $WorkingDir = "$verbosePath"
     $TargetFile = "$verbosePath\$exeName"
+    $shortcutIcon = "$verbosePath\resources\app\myAssets\img\favicon.ico"
 
     ## desktop
-    set-shortcut $ShortcutFile1 $WorkingDir $TargetFile
+    set-shortcut $ShortcutFile1 $WorkingDir $TargetFile $shortcutIcon
     Write-Host "Created a desktop shortcut ..." -ForegroundColor Cyan
-    ## startup
-    #set-shortcut $ShortcutFile2 $WorkingDir $TargetFile
-    #Write-Host "Created a startup link ..." -ForegroundColor Cyan
 
     Set-Location -Path ..\
 
@@ -62,6 +62,7 @@ function createShortcutLinks() {
 
 function main() {
     ## Install npm package
+    npm install
     #npm install -g electron-packager
 
     killRunningProcess
