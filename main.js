@@ -15,6 +15,9 @@ var express = require('express');
 var expressApp = require('express')();
 var myHttpserver = require('http').createServer(expressApp);
 var io = require('socket.io')(myHttpserver);
+
+const fs = require('fs');
+
 var myAppPath = __dirname + '/';
 
 var PORT = process.env.PORT || 7777;
@@ -29,7 +32,7 @@ expressApp.use(express.static(myAppPath));
 function getRandomHexColor(data) {
 
 	var ascii2text = data.charCodeAt(0).toString(16);
-	
+
 	var letters = '012345'.split('');
 	var hexcolor = '#';
 	hexcolor += letters[Math.round(Math.random() * 5)];
@@ -38,7 +41,7 @@ function getRandomHexColor(data) {
 	for (var i = 0; i < 5; i++) {
 		hexcolor += letters[Math.round(Math.random() * 15)];
 	}
-	
+
 	// cut the deck
 	var firstPart = "#9" + ascii2text.substr(ascii2text.length - 2);
 	var secondPart = hexcolor.substr(hexcolor.length - 2) + "0";
@@ -87,11 +90,11 @@ io.on('connection', function(socket) {
 
 	socket.on('setUsername', function(data) {
 		var randomHexColor = getRandomHexColor(data);
-		
+
 		var usercount = users.length;
 		var isHostComputer = false;
 		var tmpData = data;
-		
+
 		// if the last 4 chars of data is "HOST"
 		var last4letters = data.substr(data.length - 4);
 		if ( last4letters == "HOST" ) {
@@ -101,36 +104,36 @@ io.on('connection', function(socket) {
 
 		// the following applies to additional client users
 		if ( users.indexOf(data) > -1 ) {
-			
+
 			socket.emit('userExists', data + ' username is allready taken! Try another username.');
-			
+
 			// used for clients on the same server machine
-			if (isHostComputer) {				
+			if (isHostComputer) {
 				tmpData = tmpData.replace(/-HOST/gi, "_ServerUser");
 				tmpData = tmpData.replace(/HOST/gi, "_ServerUser");
 			}
-			
+
 			// data = tmpData + '_' + usercount;
 			data = tmpData.toString() + usercount.toString() ;
-			
+
 			users.push(data.toString());
-			
+
 			socket.emit('userSet', {
 				username: data,
 				allusers: users,
 				colorname: randomHexColor,
 				iptitle: myHostip
 			});
-			
+
 			// display updated user array in Node
-			console.log('\x1b[32m', '\u2713 A messaging client user was added ++++++++++++++++++++++++++++','\x1b[0m' ); 
+			console.log('\x1b[32m', '\u2713 A messaging client user was added ++++++++++++++++++++++++++++','\x1b[0m' );
 			console.log('\t Current User Array, users[' + usercount + "], is: ", users);
 
 		} else {
-			
+
 			if (users.length > 0) {
 				// used for clients on the same server machine
-				if (isHostComputer) {				
+				if (isHostComputer) {
 					tmpData = tmpData.replace(/-HOST/gi, "ServerUser");
 					tmpData = tmpData.replace(/HOST/gi, "ServerUser");
 					// data = tmpData + '_' + usercount;
@@ -139,16 +142,16 @@ io.on('connection', function(socket) {
 			}
 
 			users.push(data);
-			
+
 			socket.emit('userSet', {
 				username: data,
 				allusers: users,
 				colorname: randomHexColor,
 				iptitle: myHostip
 			});
-			
+
 			// display updated user array in Node
-			console.log('\x1b[32m', '\u2713 A messaging client user was added ++++++++++++++++++++++++++++','\x1b[0m' ); 
+			console.log('\x1b[32m', '\u2713 A messaging client user was added ++++++++++++++++++++++++++++','\x1b[0m' );
 			console.log('\t Current User Array, users[' + usercount + "], is: " + users);
 		}
 	});
@@ -170,7 +173,7 @@ io.on('connection', function(socket) {
 		// display updated user array in Node
 		console.log('\x1b[31m', '\u2717 A client user disconnected ----------------------------','\x1b[0m'); // display updated user array in Node
 		console.log('\t Current User Array, users[' + usercount + '], is: ' + users);
-		
+
 		socket.broadcast.emit('updateUserDisplay', users);
 		socket.emit('userRemove', users);
 
@@ -200,17 +203,40 @@ const {
 
 let mainWindow;
 
+function setMainWindowFavicon() {
+	var faviconPath = "";
+	/*try {
+		if ( fs.existsSync( "myAssets/img/favicon.ico" ) ) {
+			faviconPath = "myAssets/img/favicon.ico";
+		}
+	} catch(err) {
+		console.error(err)
+		faviconPath = "resources/app/myAssets/img/favicon.ico";
+	}*/
+	var unpackagedPath = "myAssets/img/favicon.ico";
+	var packagedPath = "resources/app/myAssets/img/favicon.ico";
+
+	if ( fs.existsSync( unpackagedPath ) ) {
+		faviconPath = unpackagedPath;
+	} else if ( fs.existsSync( packagedPath ) ) {
+		faviconPath = packagedPath;
+	}
+
+	return faviconPath
+}
+
 function createMainWindow() {
 
 	// Create the browser window.
 	/* My personal settings: 700x900
 	 * tablet reff: 768 x 1024, -25% = 576x768
 	 * */
+	var faviconPath = setMainWindowFavicon(); // icon: 'myAssets/img/favicon.ico'
 
 	mainWindow = new BrowserWindow({
 		width: 625,
 		height: 850,
-		icon: './myAssets/img/favicon.ico'
+		icon: faviconPath
 	});
 
 	// electron menu json
