@@ -4,3 +4,6 @@
 ## ignore local npm imports
 node_modules
 package-lock.json
+electron-rosary-win32-x64
+electron-rosary-win32-ia32
+electron-rosary-*
