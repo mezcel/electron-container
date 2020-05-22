@@ -205,21 +205,17 @@ let mainWindow;
 
 function setMainWindowFavicon() {
 	var faviconPath = "";
-	/*try {
-		if ( fs.existsSync( "myAssets/img/favicon.ico" ) ) {
-			faviconPath = "myAssets/img/favicon.ico";
-		}
-	} catch(err) {
-		console.error(err)
-		faviconPath = "resources/app/myAssets/img/favicon.ico";
-	}*/
 	var unpackagedPath = "myAssets/img/favicon.ico";
 	var packagedPath = "resources/app/myAssets/img/favicon.ico";
+	var verbosePath = process.cwd() + "/";
+		verbosePath = verbosePath + packagedPath;
 
 	if ( fs.existsSync( unpackagedPath ) ) {
 		faviconPath = unpackagedPath;
 	} else if ( fs.existsSync( packagedPath ) ) {
 		faviconPath = packagedPath;
+	} else if ( fs.existsSync( verbosePath ) ) {
+		faviconPath = verbosePath;
 	}
 
 	return faviconPath

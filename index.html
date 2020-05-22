@@ -9,8 +9,8 @@
 		<meta name="subject" content="religion and spirituality">
 		<meta name="url" content="https://github.com/mezcel/electron-container">
 
-		<link rel="icon" href="./myAssets/img/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="./myAssets/img/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="myAssets/img/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="myAssets/img/favicon.ico" type="image/x-icon" />
 
 		<script>
             // i need this for node for some reasion with stand alone electron
@@ -45,7 +45,7 @@
 				<br>
     			<a id="btnUsrInput" data-role="button" class="ui-btn ui-corner-all" href="#coverpage" data-transition="flip"><h3>Enter</h3></a>
             </div>
-            
+
             <div data-role="footer" data-position="fixed" data-tap-toggle="false">
 				<center><font size='2' color='lightgray'>Scripture Rosary hosted on NodeJs</font></center>
             </div>
@@ -74,7 +74,7 @@
             <!-- Right Panel - Mysteries and Scriptures  -->
             <div data-role="panel" id="infoPanel" data-position="right">
 				<h4>Mysteries</h4>
-				
+
                 <div id="collapsibleMystery" data-role="collapsible-set">
 
                     <div data-role="collapsible">
@@ -164,10 +164,10 @@
                         <li><a id="btnShortcuts" href="#myDialogPopUp" class="ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right" data-rel="popup" data-position-to="window" data-transition="fade" onclick="fillAppInfoContent(9)">- Shortcut Table</a></li>
                     </ul>
                 </div>
-                                
+
                 <b>Settings:</b>
                 <div id="collapsibleSettings" data-role="collapsible-set">
-					
+
 				<!-- audio -->
 				<div data-role="collapsible">
 					<h4>Audio</h4>
@@ -179,7 +179,7 @@
 					<font size='1' color='gray'><i>"Ave Maria"</i>, by Charles Gounod, was based off of Johann Sebastian Bach's Prelude No.1 in C Major, Well-Tempered Clavier Book I (BWV 846). Performed by John Michel.</font>
 
 				</div>
-					
+
 				<!-- color themes -->
 				<div data-role="collapsible">
 					<h4>Colors</h4>
@@ -210,7 +210,7 @@
 						</fieldset>
 					</div>
 				</div>
-					
+
 				<!-- nab or vulgate -->
 				<div data-role="collapsible">
 					<h4>Translation</h4>
@@ -229,7 +229,7 @@
 						</fieldset>
 					</form>
 				</div>
-					
+
 				<!-- compact minimalism -->
 				<div data-role="collapsible">
 					<h4 id="btnCompactCollapse">Compact</h4>
@@ -257,7 +257,7 @@
 					<a id="btnDailyMass" href="#dailyMassPage" class="ui-btn ui-corner-all ui-icon-cloud ui-btn-icon-right" data-rel="page" data-position-to="window" data-transition="flip" onclick="scrapeUsccb()">Mass Readings</a>
 					<a id="btnOpenMessenger" href="#messagingPage" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-icon-comment ui-btn-icon-right">Messenger</a>
 				</div>
-                    
+
                 </div>
 
             </div>
@@ -346,7 +346,7 @@
             </div>
             <div role="main" id="usccbOrg" class="ui-content"></div>
         </div>
-        
+
         <!-- refferences Page -->
         <div data-role="page" id="refferencesPage">
             <div data-role="header" class="msgPageHeader" class="ui-content" style="text-align: center" data-position="fixed" data-tap-toggle="false">
@@ -367,7 +367,7 @@
                 <p id="reffFooter" style="text-align: center"></p>
             </div>
         </div>
-        
+
     </body>
 
 </html>
