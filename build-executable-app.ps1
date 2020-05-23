@@ -11,13 +11,21 @@ function killRunningProcess() {
 }
 
 function removePreviousBuild() {
+
     ## rm old build
     Write-Host "Remove previous build ..." -ForegroundColor Cyan
-    #Remove-Item -Recurse -Force ".\electron-rosary-win32-x64" -ErrorAction Ignore
-    #Remove-Item -Recurse -Force ".\electron-rosary-win32-ia32" -ErrorAction Ignore
-    Remove-Item -Recurse -Force ".\electron-rosary-win32-*" -ErrorAction Ignore
-    Start-Sleep 3
 
+    $arch = $env:PROCESSOR_ARCHITECTURE
+    $length = $arch.length
+    $archNo = $arch.substring($length -2)
+
+    if ( $archNo = "64" ) {
+        Remove-Item -Recurse -Force ".\electron-rosary-win32-x64" -ErrorAction Ignore
+    } else {
+        Remove-Item -Recurse -Force ".\electron-rosary-win32-ia32" -ErrorAction Ignore
+    }
+
+    Start-Sleep 3
 }
 
 function buildNewPackage() {
@@ -63,7 +71,10 @@ function createShortcutLinks() {
 function main() {
     ## Install npm package
     npm install
-    #npm install -g electron-packager
+    Start-Sleep 3
+
+    npm install -g electron-packager
+    Start-Sleep 3
 
     killRunningProcess
     removePreviousBuild
