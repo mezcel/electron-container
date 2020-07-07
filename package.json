@@ -16,7 +16,7 @@
     "author": "Mezcel",
     "license": "ISC - THe dont just copy and turn this into your teacher license.",
     "dependencies": {
-        "electron": "^3.0.13",
+        "electron": "^9.1.0",
         "express": "^4.16.4",
         "jquery": "^1.11.1",
         "popper.js": "^1.14.4",
