@@ -14,16 +14,16 @@ var stringSpaceCounter = 0;
 var hailmaryCounter = 0;
 var beadCounter = 0;
 var rosaryJSON, rosaryJSONnab, rosaryJSONvulgate;
- 
+
 /* WIP Variables:
 * about: global string used to inform the messenger group of this clients bead progress
 * experimental: to be used in further synchronizing developments
 * goal: when everyone is at the same counter, then bead progress can continue.
 * temp: for now i am just using messages to verify all clients know each others progress
-* 	NO! the prayer chat is not a real-world thing... despite what seculars are 'selling'
-* 	The chat is a toy/distraction, the real app is synchronizing behavior and academics
+*   NO! the prayer chat is not a real-world thing... despite what seculars are 'selling'
+*   The chat is a toy/distraction, the real app is synchronizing behavior and academics
 * */
- 
+
 var decadeTextDisplay = ""; // message place holders
 var messengerBeadProgress = ""; // message place holders
 
@@ -33,31 +33,31 @@ var messengerBeadProgress = ""; // message place holders
 // import nab and define global nab json
 // NAB will also be my initial language
 $.ajax({
-	url: './myAssets/database/rosaryJSON-nab.json',
-	dataType: "json",
-	async: false,
-	success: function (result) {
-		rosaryJSONnab = result;
-		rosaryJSON = rosaryJSONnab;
-	},
-	error: function (request,error) {
-		alert('NAB translation did not upload');
-	}
+    url: './myAssets/database/rosaryJSON-nab.json',
+    dataType: "json",
+    async: false,
+    success: function (result) {
+        rosaryJSONnab = result;
+        rosaryJSON = rosaryJSONnab;
+    },
+    error: function (request,error) {
+        alert('NAB translation did not upload');
+    }
 });
 
 // import Vulgate and define global vulgate json
 
 $.ajax({
-	url: './myAssets/database/rosaryJSON-vulgate.json',
-	dataType: "json",
-	async: false,
-	success: function (result) {
-		rosaryJSONvulgate = result;
-		// rosaryJSON = rosaryJSONvulgate;
-	},
-	error: function (request,error) {
-		alert('Vulgate translation did not upload');
-	}
+    url: './myAssets/database/rosaryJSON-vulgate.json',
+    dataType: "json",
+    async: false,
+    success: function (result) {
+        rosaryJSONvulgate = result;
+        // rosaryJSON = rosaryJSONvulgate;
+    },
+    error: function (request,error) {
+        alert('Vulgate translation did not upload');
+    }
 });
 
 /***************************************************************
@@ -68,12 +68,12 @@ $.ajax({
 rosaryJSON = rosaryJSONnab;
 
 var progressBar = { // var containing progressbar state
-	setValue: function(beadCounterDecade, beadCounterRosary) {
-		$('#decadeSlider').val(beadCounterDecade);
-		$('#decadeSlider').slider("refresh");
-		$('#rosaryProgress').val(beadCounterRosary);
-		$('#rosaryProgress').slider("refresh");
-	}
+    setValue: function(beadCounterDecade, beadCounterRosary) {
+        $('#decadeSlider').val(beadCounterDecade);
+        $('#decadeSlider').slider("refresh");
+        $('#rosaryProgress').val(beadCounterRosary);
+        $('#rosaryProgress').slider("refresh");
+    }
 };
 
 /***************************************************************
@@ -109,12 +109,12 @@ function initialMystery() { // initial mystery based on weekday
 }
 
 function jumpFunction(mysteryInfoID, jumptoBeadID) {
-	beadCounter = jumptoBeadID ;
-	hailmaryCounter = ((mysteryInfoID * 10) - 10);
-	beadFwd();
-	progressBar.setValue(hailmaryCounter % 10, hailmaryCounter % 50);
-	$("#btnClosePopup").click(); 
-	$("#btnInfoPanel").click();
+    beadCounter = jumptoBeadID ;
+    hailmaryCounter = ((mysteryInfoID * 10) - 10);
+    beadFwd();
+    progressBar.setValue(hailmaryCounter % 10, hailmaryCounter % 50);
+    $("#btnClosePopup").click();
+    $("#btnInfoPanel").click();
 }
 
 function populateJumpToPosition(mysteryInfoID, jumptoBeadID) { // populate button and function
@@ -136,7 +136,7 @@ function fillMysteryInfoContent(mysteryInfoID, jumptoBeadID) { // populate myste
 }
 
 function fillAppInfoContent(infoID) { // called within html
-	// used for popup modal
+    // used for popup modal
     showBibleListFlag = false;
     showPrayerListFlag = false;
 
@@ -147,7 +147,7 @@ function fillAppInfoContent(infoID) { // called within html
 }
 
 function fillAppInfoContent2(infoID) { // called within html
-	// used for a dedicated jqm page
+    // used for a dedicated jqm page
     showBibleListFlag = false;
     showPrayerListFlag = false;
 
@@ -167,9 +167,9 @@ function fillRosaryBeadPage(counterNo) {
     var prayerIndex = rosaryJSON.rosaryBead[counterNo].prayerIndex;
     var scriptureIndex = rosaryJSON.rosaryBead[counterNo].scriptureIndex;
     var messageIndex = rosaryJSON.rosaryBead[counterNo].messageIndex;
-	
-	decadeTextDisplay = rosaryJSON.decade[decadeIndex].decadeName; // used for messenger synch
-	
+
+    decadeTextDisplay = rosaryJSON.decade[decadeIndex].decadeName; // used for messenger synch
+
     $("#mystery").html(rosaryJSON.mystery[mysteryIndex].mysteryName);
     $("#decade").html(decadeTextDisplay);
     $("#scripture").html(rosaryJSON.scripture[scriptureIndex].scriptureText);
@@ -182,14 +182,14 @@ function fillRosaryBeadPage(counterNo) {
 
 /* navigation buttons */
 function beadFwd() {
-	var jsonBeadLength = (rosaryJSON.rosaryBead.length) - 1;
+    var jsonBeadLength = (rosaryJSON.rosaryBead.length) - 1;
 
     if (beadCounter < jsonBeadLength) {
         beadProcess(+1);
     } else {
-		beadCounter = 0; // reset counter
-		beadProcess(+1);
-	}
+        beadCounter = 0; // reset counter
+        beadProcess(+1);
+    }
 
 }
 
@@ -205,42 +205,42 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
     mysteryProgress = 0;
 
     var decadeIndex = rosaryJSON.rosaryBead[beadCounter].decadeIndex;
-    var beadIndex 	= rosaryJSON.rosaryBead[beadCounter].beadIndex;
-    var beadType 	= rosaryJSON.bead[beadIndex].beadID;
+    var beadIndex   = rosaryJSON.rosaryBead[beadCounter].beadIndex;
+    var beadType    = rosaryJSON.bead[beadIndex].beadID;
     var prepostMystery; // intro or conclusion prayers
 
     switch (beadType) { // the bead type is used to configure count/progress settings
 
-		case 2:
-			if (decadeIndex !== 0){
+        case 2:
+            if (decadeIndex !== 0){
 
-				if(directionFwRw > 0) {
-					// fwd
-					hailmaryCounter = hailmaryCounter + 1;
-				} else {
-					// rev
-					hailmaryCounter = hailmaryCounter - 1;
-				}
+                if(directionFwRw > 0) {
+                    // fwd
+                    hailmaryCounter = hailmaryCounter + 1;
+                } else {
+                    // rev
+                    hailmaryCounter = hailmaryCounter - 1;
+                }
 
-				var thisDecadeSet = (hailmaryCounter % 10);
-				if (thisDecadeSet == 0) {
-					thisDecadeSet = 10;
-				}
+                var thisDecadeSet = (hailmaryCounter % 10);
+                if (thisDecadeSet == 0) {
+                    thisDecadeSet = 10;
+                }
 
-				var mysteryProgress = hailmaryCounter % 50;
-				if (mysteryProgress == 0){
-					mysteryProgress = 50;
-				}
+                var mysteryProgress = hailmaryCounter % 50;
+                if (mysteryProgress == 0){
+                    mysteryProgress = 50;
+                }
 
-				$("#beadMarker").html("small bead: " + thisDecadeSet + " / 10");
-				progressBar.setValue(thisDecadeSet, mysteryProgress);
-				
-				// Adds a status update string to your messenger messages
-				messengerBeadProgress = decadeTextDisplay + ", bead " + thisDecadeSet;
+                $("#beadMarker").html("small bead: " + thisDecadeSet + " / 10");
+                progressBar.setValue(thisDecadeSet, mysteryProgress);
 
-			}
+                // Adds a status update string to your messenger messages
+                messengerBeadProgress = decadeTextDisplay + ", bead " + thisDecadeSet;
 
-			if (decadeIndex == 0) { // handles only the intro hail marys
+            }
+
+            if (decadeIndex == 0) { // handles only the intro hail marys
                 if (directionFwRw > 0) {
 
                     // fwd
@@ -250,7 +250,7 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
                         initialHailMaryCounter = initialHailMaryCounter + (1 * directionFwRw);
                     }
 
-					prepostMystery = "introductory prayers";
+                    prepostMystery = "introductory prayers";
                     $("#beadMarker").html("small bead: " + initialHailMaryCounter + " / 3");
 
                 } else {
@@ -260,20 +260,20 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
                     } else {
                         initialHailMaryCounter = initialHailMaryCounter + (1 * directionFwRw);
                     }
-					prepostMystery = "introductory prayers";
+                    prepostMystery = "introductory prayers";
                     $("#beadMarker").html("small bead: " + initialHailMaryCounter + " / 3");
                 }
-                
+
                 // Adds a status update string to your messenger messages
-				messengerBeadProgress = "Introduction prayers, " + $("#beadMarker").text();
+                messengerBeadProgress = "Introduction prayers, " + $("#beadMarker").text();
             }
 
             stringSpaceCounter = 0;
 
-			break;
+            break;
 
-		case 3: // big bead
-			stringSpaceCounter = 0;
+        case 3: // big bead
+            stringSpaceCounter = 0;
             initialHailMaryCounter = 0;
 
             $("#beadMarker").html("big bead");
@@ -286,52 +286,52 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
             progressBar.setValue(0, hailmaryCounter % 50);
             if (beadCounter < 8) {
-				messengerBeadProgress = "Introduction prayers ...";
-			} else {
-				messengerBeadProgress = decadeTextDisplay + ", bead 0";
-			}
-			
-			prepostMystery = "introductory prayers";
+                messengerBeadProgress = "Introduction prayers ...";
+            } else {
+                messengerBeadProgress = decadeTextDisplay + ", bead 0";
+            }
+
+            prepostMystery = "introductory prayers";
 
             break;
 
         case 4: // string space
             if (directionFwRw > 0) {
-				// fwd
-				if (stringSpaceCounter == 0) {
-					stringSpaceCounter = 1;
-					if ((hailmaryCounter % 10) == 0) {
+                // fwd
+                if (stringSpaceCounter == 0) {
+                    stringSpaceCounter = 1;
+                    if ((hailmaryCounter % 10) == 0) {
                         hailmaryCounter += 1;
-					}
-				} else if (stringSpaceCounter == 1) {
-					stringSpaceCounter = 2;
-					if ((hailmaryCounter % 10) > 0) {
+                    }
+                } else if (stringSpaceCounter == 1) {
+                    stringSpaceCounter = 2;
+                    if ((hailmaryCounter % 10) > 0) {
                         hailmaryCounter -= 1;
-					}
-				}
+                    }
+                }
 
             } else {
-				// rev
-				if (stringSpaceCounter == 0) {
-					stringSpaceCounter = 2;
-					if ((hailmaryCounter % 10) > 0) {
-						hailmaryCounter -= 1;
-					}
-				} else if (stringSpaceCounter == 2) {
-					stringSpaceCounter = 1;
-					if ((hailmaryCounter % 10) == 0) {
+                // rev
+                if (stringSpaceCounter == 0) {
+                    stringSpaceCounter = 2;
+                    if ((hailmaryCounter % 10) > 0) {
+                        hailmaryCounter -= 1;
+                    }
+                } else if (stringSpaceCounter == 2) {
+                    stringSpaceCounter = 1;
+                    if ((hailmaryCounter % 10) == 0) {
                         hailmaryCounter += 1;
-					}
-				}
+                    }
+                }
             }
 
-			prepostMystery = "introductory prayers";
+            prepostMystery = "introductory prayers";
             $("#beadMarker").html("string space: " + stringSpaceCounter + " / 2");
             messengerBeadProgress = decadeTextDisplay + ", " + $("#beadMarker").text();
 
             break;
 
-		case 5: // Mary icon / bigbead alternate
+        case 5: // Mary icon / bigbead alternate
             $("#beadMarker").html("Mary Icon");
             if (directionFwRw < 0) {
                 stringSpaceCounter = 3;
@@ -340,17 +340,17 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
 
             // App's initial startup mystery, a one time toggle
             if (initialMysteryFlag == false) {
-				initialMysteryArr=initialMystery();
+                initialMysteryArr=initialMystery();
 
                 beadCounter=initialMysteryArr[1];
                 hailmaryCounter = ((initialMysteryArr[0] * 10) - 10);
 
                 initialMysteryFlag = true;
             }
-            
+
             // Adds a status update string to your messenger messages
-			messengerBeadProgress = "Mary Icon ...";
-			prepostMystery = "conclusion prayers";
+            messengerBeadProgress = "Mary Icon ...";
+            prepostMystery = "conclusion prayers";
 
             break;
 
@@ -359,38 +359,38 @@ function beadProcess(directionFwRw) { // event displays based on bead counter se
             initialHailMaryCounter = 0;
             progressBar.setValue(0, 0);
             stringSpaceCounter = 0;
-            
+
             prepostMystery = "introductory prayers";
             messengerBeadProgress = "crucifix ...";
-            
+
             break;
 
         default: // just when the app turns on
             thisDecadeSet = 0;
             $("#beadMarker").html("0 / 0");
             stringSpaceCounter = 0;
-            
+
             prepostMystery = "introductory prayers";
-			messengerBeadProgress = "starting ...";
-            
+            messengerBeadProgress = "starting ...";
+
             break;
     }
 
     fillRosaryBeadPage(beadCounter); // populare dom with text
-    
+
     if ($("#decade").html() == "") {
-		$("#decade").html(prepostMystery);
-		
-		// hide unused elements
-		$("#lblscripture").hide();
-		$("#scripture").hide();
-		$("#lblmessage").hide();
-		$("#message").hide();
-	} else {
-		$("#scripture").show();
-		$("#message").show();
-		setMinimalState();
-	}
+        $("#decade").html(prepostMystery);
+
+        // hide unused elements
+        $("#lblscripture").hide();
+        $("#scripture").hide();
+        $("#lblmessage").hide();
+        $("#message").hide();
+    } else {
+        $("#scripture").show();
+        $("#message").show();
+        setMinimalState();
+    }
 
 }
 
@@ -470,125 +470,125 @@ function initAudioVolume() { // initial audio volume setting
 }
 
 /* minimization bundle */
-function collapsibleEvents() {	
-    
+function collapsibleEvents() {
+
     $('#collapsibleMystery a').click( function() {
-		$('#collapsibleRefferences').children().collapsible("collapse");
-		$('#collapsibleAbout').collapsible("collapse");
-		$('#collapsibleSettings').children().collapsible("collapse");
-	});
-	
+        $('#collapsibleRefferences').children().collapsible("collapse");
+        $('#collapsibleAbout').collapsible("collapse");
+        $('#collapsibleSettings').children().collapsible("collapse");
+    });
+
     $('#collapsibleRefferences a').click( function() {
-		$('#collapsibleMystery').children().collapsible("collapse");
-		$('#collapsibleAbout').collapsible("collapse");
-		$('#collapsibleSettings').children().collapsible("collapse");
-	});
-	
+        $('#collapsibleMystery').children().collapsible("collapse");
+        $('#collapsibleAbout').collapsible("collapse");
+        $('#collapsibleSettings').children().collapsible("collapse");
+    });
+
     $('#collapsibleAbout a').click( function() {
-		$('#collapsibleMystery').children().collapsible("collapse");
-		$('#collapsibleRefferences').children().collapsible("collapse");
-		$('#collapsibleSettings').children().collapsible("collapse");
-	});
-	
+        $('#collapsibleMystery').children().collapsible("collapse");
+        $('#collapsibleRefferences').children().collapsible("collapse");
+        $('#collapsibleSettings').children().collapsible("collapse");
+    });
+
     $('#collapsibleSettings a').click( function() {
-		$('#collapsibleMystery').children().collapsible("collapse");
-		$('#collapsibleRefferences').children().collapsible("collapse");
-		$('#collapsibleAbout').collapsible("collapse");
-	});
-	
-	$('#btnInfoPanel').click( function() {
-		$('#collapsibleMystery').children().collapsible("collapse");
-		$('#collapsibleRefferences').children().collapsible("collapse");
-	});
-	
+        $('#collapsibleMystery').children().collapsible("collapse");
+        $('#collapsibleRefferences').children().collapsible("collapse");
+        $('#collapsibleAbout').collapsible("collapse");
+    });
+
+    $('#btnInfoPanel').click( function() {
+        $('#collapsibleMystery').children().collapsible("collapse");
+        $('#collapsibleRefferences').children().collapsible("collapse");
+    });
+
 }
 
 function minimalText() {
-	$('#lblscripture').hide(); 
-	$('#lblmessage').hide(); 
-	$('#lblprayer').hide(); 
-	$('.progressBar').show(); 
+    $('#lblscripture').hide();
+    $('#lblmessage').hide();
+    $('#lblprayer').hide();
+    $('.progressBar').show();
 }
 
 function minimalNavigation() {
-	$('#lblscripture').show(); 
-	$('#lblmessage').show(); 
-	$('#lblprayer').show(); 
-	$('.progressBar').hide();
+    $('#lblscripture').show();
+    $('#lblmessage').show();
+    $('#lblprayer').show();
+    $('.progressBar').hide();
 }
 
-function minimalAll() { 
-	$('#lblscripture').hide(); 
-	$('#lblmessage').hide(); 
-	$('#lblprayer').hide(); 
-	$('.progressBar').hide(); 
+function minimalAll() {
+    $('#lblscripture').hide();
+    $('#lblmessage').hide();
+    $('#lblprayer').hide();
+    $('.progressBar').hide();
 }
 
-function minimalShowAll() { 
-	$('#lblscripture').show(); 
-	$('#lblmessage').show(); 
-	$('#lblprayer').show(); 
-	$('.progressBar').show(); 
+function minimalShowAll() {
+    $('#lblscripture').show();
+    $('#lblmessage').show();
+    $('#lblprayer').show();
+    $('.progressBar').show();
 }
 
 function setMinimalState() {
-	if ($("#hideHeading").is(":checked")) {
-		minimalText();
-	}
-	
-	if ($("#hideProgressbar").is(":checked")) {
-		minimalNavigation();
-	}
-	
-	if ($("#hideAll").is(":checked")) {
-		minimalAll();
-	}
-	
-	if ($("#hideNone").is(":checked")) {
-		minimalShowAll();
-	}
+    if ($("#hideHeading").is(":checked")) {
+        minimalText();
+    }
+
+    if ($("#hideProgressbar").is(":checked")) {
+        minimalNavigation();
+    }
+
+    if ($("#hideAll").is(":checked")) {
+        minimalAll();
+    }
+
+    if ($("#hideNone").is(":checked")) {
+        minimalShowAll();
+    }
 }
 
 function autoMinimize() {
-	// window.innerHeight
-	var winHeight = window.innerHeight;
-	var winWidth = window.innerWidth;
+    // window.innerHeight
+    var winHeight = window.innerHeight;
+    var winWidth = window.innerWidth;
 
-	if (winHeight < 600 ) {
-		if (winHeight < 520 ) {
-			$('#hideAll').click();
-			$('#hideAll').click();
-			
-		} else if ( winWidth > 520 )  {
-			$('#hideHeading').click();
-			$('#hideHeading').click();
-		}
-	} else if (winWidth < 520 ) {
-		if (winHeight < 520) {
-			$('#hideAll').click();
-			$('#hideAll').click();
-		} else if ( winHeight > 600 ) {
-			$('#hideHeading').click();
-			$('#hideHeading').click();
-		}
-	} else {
-		$('#hideNone').click();
-		$('#hideNone').click();
-	}
+    if (winHeight < 600 ) {
+        if (winHeight < 520 ) {
+            $('#hideAll').click();
+            $('#hideAll').click();
+
+        } else if ( winWidth > 520 )  {
+            $('#hideHeading').click();
+            $('#hideHeading').click();
+        }
+    } else if (winWidth < 520 ) {
+        if (winHeight < 520) {
+            $('#hideAll').click();
+            $('#hideAll').click();
+        } else if ( winHeight > 600 ) {
+            $('#hideHeading').click();
+            $('#hideHeading').click();
+        }
+    } else {
+        $('#hideNone').click();
+        $('#hideNone').click();
+    }
 }
 
 function initUi() {
-	populateBookJsonList();
+    populateBookJsonList();
     populatePrayerJsonList();
     initAudioVolume();
 
     myControllEvents();
     myThemeEvents();
     initProgressBars();
-    
+
     collapsibleEvents();
 
-	// Sign of the cross
+    // Sign of the cross
     beadProcess(0);
 }
 
@@ -609,12 +609,12 @@ function myControllEvents() {
     });
 
     // Messaging State Toggle
-    
+
     $("#btnOpenMessenger").click(function() {
         // true
         isMessengerOpen = true;
     });
-    
+
     $("#btnCloseMessenger").click(function() {
         // false
         isMessengerOpen = false;
@@ -688,27 +688,27 @@ function myControllEvents() {
                     // instatnt message
                     $('#btnOpenMessenger').click();
                     break;
-                default:                    
-					if ( $('#dailyMassPage').focus() ) {
-						$('#btnCloseMassPage').click();
-					}
-					// console.log("key press", event.which); // debug keys
+                default:
+                    if ( $('#dailyMassPage').focus() ) {
+                        $('#btnCloseMassPage').click();
+                    }
+                    // console.log("key press", event.which); // debug keys
             }
-            
+
         } else {
-			// Messenger			
-			switch(event.which) {
-				case 27: // escape key
-					if ( $("#messagingPage").focus() ) {
-						$('#btnCloseMessenger').click();
-					}
-					
-					if ( $("#refferencesPage").focus() ) {
-						$('#btnCloseRefferencePage').click();
-					}
-			}
-		}
-        
+            // Messenger
+            switch(event.which) {
+                case 27: // escape key
+                    if ( $("#messagingPage").focus() ) {
+                        $('#btnCloseMessenger').click();
+                    }
+
+                    if ( $("#refferencesPage").focus() ) {
+                        $('#btnCloseRefferencePage').click();
+                    }
+            }
+        }
+
     });
 
 }
@@ -742,22 +742,22 @@ function myThemeEvents() {
                 $("#entireBody").addClass("ui-page-theme-c");
                 $(".myUiBody").addClass("ui-body-c");
             }
-            
+
             if ($("#marianBlue").is(":checked")) {
                 $("#entireBody").addClass("ui-page-theme-d");
                 $(".myUiBody").addClass("ui-body-d");
             }
-            
+
             if ($("#adventPurple").is(":checked")) {
                 $("#entireBody").addClass("ui-page-theme-e");
                 $(".myUiBody").addClass("ui-body-e");
             }
-            
+
             if ($("#ordinaryGreen").is(":checked")) {
                 $("#entireBody").addClass("ui-page-theme-f");
                 $(".myUiBody").addClass("ui-body-f");
             }
-            
+
             if ($("#easterGold").is(":checked")) {
                 $("#entireBody").addClass("ui-page-theme-g");
                 $(".myUiBody").addClass("ui-body-g");
@@ -791,17 +791,17 @@ function myThemeEvents() {
         }
     });
 
-	// Minimal display themes
+    // Minimal display themes
     $("#minimalStates input").on("change", function(event) { // multi color
         if (event.target.name === "rdoMinimalism") {
             setMinimalState();
         }
-        
+
         // a tweak to reduce footer whitespace
         $('#homePanel').trigger("updatelayout");
     });
 
-	
+
 }
 
 function initProgressBars() {
@@ -848,8 +848,11 @@ function initProgressBars() {
  * Web Scrape Usccb.org
  */
 
-function scrapeUsccb() {	
-    $.getJSON("http://www.whateverorigin.org/get?url=" + encodeURIComponent("http://www.usccb.org/bible/readings") + "&callback=?", function(data){
+function scrapeUsccb() {
+    // Removed Web scrape feature on Dec2020.
+    // Source website and other web related conditions changes since the initial design of this app.
+
+    /*$.getJSON("http://www.whateverorigin.org/get?url=" + encodeURIComponent("http://www.usccb.org/bible/readings") + "&callback=?", function(data){
         scrapeVar = data.contents;
 
         var remBottomHtml = scrapeVar.substring(0, scrapeVar.indexOf('<a name="readingssignup"'));
@@ -862,10 +865,13 @@ function scrapeUsccb() {
         // <object type="text/html" data="http://www.usccb.org/bible/readings" width="100%" height="800px"></object>
         $("#usccbOrg").html(cropHtml);
     });
-    
+
     if ( $("#usccbOrg").is(":empty") ) {
-		$("#usccbOrg").load("./myAssets/404/404.html");
-	}
+        $("#usccbOrg").load("./myAssets/404/404.html");
+    }
+    */
+
+    $("#usccbOrg").load("./myAssets/404/404.html");
 }
 
 /***************************************************************
@@ -875,18 +881,18 @@ function scrapeUsccb() {
 /* login page */
 $(document).on('pagebeforeshow', '#splashpage', function() {
     $("#myName").on("keydown", function(event) {
-		if (event.which == 13) {
-			$.mobile.navigate("#coverpage", {transition: "flip"});
-			$("#btnUsrInput").click();
-		}
-	});
-	$("#btnUsrInput").click( function() {
-		setUsername();
-	});
+        if (event.which == 13) {
+            $.mobile.navigate("#coverpage", {transition: "flip"});
+            $("#btnUsrInput").click();
+        }
+    });
+    $("#btnUsrInput").click( function() {
+        setUsername();
+    });
 });
 
 $(document).on('pageshow', '#splashpage', function() {
-    $("#myName").focus();  
+    $("#myName").focus();
 });
 
 /* configure progressbars  */
@@ -894,45 +900,45 @@ $(document).on('pagebeforeshow', '#rosary', function() {
     if (mainPageLoaded == false) {
         initUi(); // generate rosary and rosary UI
         mainPageLoaded = true; // prevent reactivating or resetting
-        
+
         autoMinimize();
-		
-		// initially hide placeholders on 1st page load
-		$("#lblscripture").hide();
-		$("#scripture").hide();
-		$("#lblmessage").hide();
-		$("#message").hide();
-	
+
+        // initially hide placeholders on 1st page load
+        $("#lblscripture").hide();
+        $("#scripture").hide();
+        $("#lblmessage").hide();
+        $("#message").hide();
+
     }
 });
 
 /* popup modal */
-$(document).on("popupbeforeposition", "#myDialogPopUp", function() { 
-	// Dynamically populated list content when active is clicked
-	
+$(document).on("popupbeforeposition", "#myDialogPopUp", function() {
+    // Dynamically populated list content when active is clicked
+
     // show modal content
-	$("#infoSubHeader").show();
-	$("#infoBody").show();
-    
+    $("#infoSubHeader").show();
+    $("#infoBody").show();
+
 });
 
 /* the code destination for dynamically generated bible list */
-$(document).on("pagebeforeshow", "#refferencesPage", function() { 
-	// Dynamically populated list content when active is clicked
+$(document).on("pagebeforeshow", "#refferencesPage", function() {
+    // Dynamically populated list content when active is clicked
     if (showBibleListFlag === true) { // Bible Book list in right panel
-		
+
         var info = $("#refferencesPage").data("myDataJsonVar");
         var info_view = '<ol style="list-style: none; padding-left: 0;">';
         var bookID = info["bookID"];
 
         for (var iLoop = 0; iLoop < rosaryJSON.scripture.length; iLoop += 1) {
             if (rosaryJSON.scripture[iLoop].bookIndex === bookID) {
-                info_view += '<li class="ui-field-contain ui-corner-all ui-shadow"><strong>(' + 
-					rosaryJSON.scripture[iLoop].chapterIndex + ":" + rosaryJSON.scripture[iLoop].verseIndex + 
-					") &#x270d; </strong>" + rosaryJSON.scripture[iLoop].scriptureText + '</li>';
+                info_view += '<li class="ui-field-contain ui-corner-all ui-shadow"><strong>(' +
+                    rosaryJSON.scripture[iLoop].chapterIndex + ":" + rosaryJSON.scripture[iLoop].verseIndex +
+                    ") &#x270d; </strong>" + rosaryJSON.scripture[iLoop].scriptureText + '</li>';
             }
         }
-        
+
         info_view += '</ol>';
 
         // hide extra elements
@@ -944,14 +950,14 @@ $(document).on("pagebeforeshow", "#refferencesPage", function() {
         $("#reffHeader").html(info["bookName"]);
         $(this).find("[data-role=bibleContent]").html(info_view);
         $("#reffFooter").html("Readings found in: " + info["library"]);
-        
+
     } else if (showPrayerListFlag === true) { // Prayer Book list in right panel
-		
+
         var info = $("#refferencesPage").data("myDataJsonVar2");
         var prayerID = info["prayerID"];
-        var info_view = '<ol style="list-style: none; padding-left: 0;">' + 
-			'<li class="ui-field-contain ui-corner-all ui-shadow">' + 
-			rosaryJSON.prayer[prayerID].prayerText + '</li></ol>';
+        var info_view = '<ol style="list-style: none; padding-left: 0;">' +
+            '<li class="ui-field-contain ui-corner-all ui-shadow">' +
+            rosaryJSON.prayer[prayerID].prayerText + '</li></ol>';
 
         // hide extra elements
         $(this).find("[data-role=bibleContent]").html('');
@@ -964,16 +970,16 @@ $(document).on("pagebeforeshow", "#refferencesPage", function() {
         $("#reffFooter").html(rosaryJSON.prayer[prayerID].prayerFooter);
 
     } else { // the other content
-		
+
         // hide bible verse and prayer elements
-		$(this).find("[data-role=bibleContent]").html('');
-		$(this).find("[data-role=prayerContent]").html('');
+        $(this).find("[data-role=bibleContent]").html('');
+        $(this).find("[data-role=prayerContent]").html('');
 
         // show modal content
         $("#reffSubHeader").show();
         $("#reffBody").show();
     }
-    
+
 });
 
 /* messenger input */
@@ -982,5 +988,5 @@ $(document).on('pageshow', '#messagingPage', function() {
 });
 
 $(window).on('resize', function() {
-	autoMinimize() ;
+    autoMinimize() ;
 });
