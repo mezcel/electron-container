@@ -45,7 +45,7 @@ Youtube Demo:
 * Liturgical Calendar Day Flag
 
 ```diff
-REMOVED (Commented out): Daily web scraped mass readings (single online user feature)
+- REMOVED (Commented out): Daily web scraped mass readings (single online user feature)
 ```
 ---
 
