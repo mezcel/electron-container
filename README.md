@@ -42,10 +42,10 @@ Youtube Demo:
 * SocketIO instant messaging
 * Color themes and keyboard shortcuts
 * NAB English/Vulgate Latin Scripture languages
-* Liturgical Calendar Day Flag
+* Liturgical Calendar Day Flag ( 24h "day window" is rounded up )
 
 ```diff
-- REMOVED (Commented out): Daily web scraped mass readings (single online user feature)
+- REMOVED: Daily web scraped mass readings.
 ```
 ---
 
@@ -139,4 +139,4 @@ Dev Testing:
 
 * _Client Computer_: Best experience on desktop/laptop sized and mobile device sized monitors. (abandoned Safari development)
 
-    * the tablet and mobile screen sizes are approximations based on old device standards.
+    * the tablet and mobile screen sizes are approximations based on "old" device standards.
