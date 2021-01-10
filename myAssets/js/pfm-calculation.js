@@ -869,7 +869,7 @@ function countdownString(countdown, countdownFeastName, boolHighlight) {
 		tmpDate.setDate(tmpDate.getDate() + countdown);
 
     if ( countdown == 0 ) {
-        stringOut = "<li> <b> Today is the Feast of " + countdownFeastName + " </b> </li>";
+        stringOut = "<li> <b> Today is the Feast of <i>" + countdownFeastName + "</i> </b> </li>";
     } else {
         if ( countdown > 0 ) {
             countdown = "<b><font color='blue'>" + countdown + "</font></b> days until";
@@ -901,18 +901,18 @@ function liturgicalSeasonToday() {
     var boolHighlightEaster = false;
 
     if ( isOrdinaryTimeSeason(currentTime) ) {
-        feastDayString += " <li> Today is Ordinary Time Season </li><li><i>" + currentTime + "</i></li><hr>";
+        feastDayString += " <li> Today is <b style='background-color: #C8E6C9'>Ordinary Time Season </b></li><li><i>" + currentTime + "</i></li><hr>";
     } else if ( isLentSeason(currentTime) ) {
-        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcLent + ": Lent </li><li><i>" + currentTime + "</i></li><hr>";
+        feastDayString += "<li> Today is the <span style='background-color: #BA68C8'><i>" + yearCycleABC(currentTime).abcLent + "</i>: <b>Lent</b> </span></li><li><i>" + currentTime + "</i></li><hr>";
         boolHighlightLent = true;
     } else if( isEasterSeason(currentTime) ) {
-        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcEaster + ": Eastertide </li><li><i>" + currentTime + "</i></li><hr>";
+        feastDayString += " <li> Today is the <span style='background-color: #FFF176'><i>" + yearCycleABC(currentTime).abcEaster + "</i>: <b>Eastertide</b> </span></li><li><i>" + currentTime + "</i></li><hr>";
         boolHighlightEaster = true;
     } else if ( isAdventSeason(currentTime) ) {
-        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcAdvent + ": Advent </li><li><i>" + currentTime + "</i></li><hr>";
+        feastDayString += "<li> Today is the <span style='background-color: #BA68C8'><i>" + yearCycleABC(currentTime).abcAdvent + "</i>: <b>Advent</b> </span></li><li><i>" + currentTime + "</i></li><hr>";
         boolHighlightAdvent = true;
     } else if ( isChristmasSeason(currentTime) ) {
-        feastDayString += " <li> Today is the " + yearCycleABC(currentTime).abcChristmas + ": Christmastide </li><li><i>" + currentTime + "</i></li><hr>";
+        feastDayString += " <li> Today is the <span style='background-color: #FFF176'><i>" + yearCycleABC(currentTime).abcChristmas + "</i>: <b>Christmastide</b> </span></li><li><i>" + currentTime + "</i></li><hr>";
         boolHighlightChristmas = true;
     }
 
